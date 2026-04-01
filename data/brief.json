@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-31T23:47:36.924Z",
+  "generatedAt": "2026-04-01T03:41:28.293Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,212 +85,244 @@
   "sections": {
     "research": [
       {
-        "title": "Adaptive Block-Scaled Data Types",
-        "url": "https://arxiv.org/abs/2603.28765v1",
-        "publishedAt": "2026-03-30T17:59:33.000Z",
-        "summary": "NVFP4 has grown increasingly popular as a 4-bit format for quantizing large language models due to its hardware support and its ability to retain useful information with relatively few bits per parameter. However, the format is not without limitations: recent work has shown that NVFP4 suffers from its error distribution, resulting in large amounts of quantization error on near-maximal values in each group of 16 values. In this work, we leverage this insight to design new Adaptive Block-Scaled Data Types that can adapt to the distribution of their input values. For four-bit quantization, our proposed IF4 (Int/Float 4) data type selects between FP4 and INT4 representations for each group of 16 values, which are then scaled by an E4M3 scale factor as is done with NVFP4. The selected data type is denoted using the scale factor's sign bit, which is currently unused in NVFP4, and we apply the same insight to design formats for other bit-widths, including IF3 and IF6. When used to quantize language models, we find that IF4 outperforms existing 4-bit block-scaled formats, achieving lower loss during quantized training and achieving higher accuracy on many tasks in post-training quantization. We additionally design and evaluate an IF4 Multiply-Accumulate (MAC) unit to demonstrate that IF4 can be implemented efficiently in next-generation hardware accelerators. Our code is available at https://github.com/mit-han-lab/fouroversix.",
+        "title": "Automatic Identification of Parallelizable Loops Using Transformer-Based Source Code Representations",
+        "url": "https://arxiv.org/abs/2603.30040v1",
+        "publishedAt": "2026-03-31T17:54:27.000Z",
+        "summary": "Automatic parallelization remains a challenging problem in software engineering, particularly in identifying code regions where loops can be safely executed in parallel on modern multi-core architectures. Traditional static analysis techniques, such as dependence analysis and polyhedral models, often struggle with irregular or dynamically structured code. In this work, we propose a Transformer-based approach to classify the parallelization potential of source code, focusing on distinguishing independent (parallelizable) loops from undefined ones. We adopt DistilBERT to process source code sequences using subword tokenization, enabling the model to capture contextual syntactic and semantic patterns without handcrafted features. The approach is evaluated on a balanced dataset combining synthetically generated loops and manually annotated real-world code, using 10-fold cross-validation and multiple performance metrics. Results show consistently high performance, with mean accuracy above 99\\% and low false positive rates, demonstrating robustness and reliability. Compared to prior token-based methods, the proposed approach simplifies preprocessing while improving generalization and maintaining computational efficiency. These findings highlight the potential of lightweight Transformer models for practical identification of parallelization opportunities at the loop level.",
         "authors": [
-          "Jack Cook",
-          "Hyemin S. Lee",
-          "Kathryn Le",
-          "Junxian Guo",
-          "Giovanni Traverso",
-          "Anantha P. Chandrakasan",
-          "Song Han"
+          "Izavan dos S. Correia",
+          "Henrique C. T. Santos",
+          "Tiago A. E. Ferreira"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Aligned, Orthogonal or In-conflict: When can we safely optimize Chain-of-Thought?",
+        "url": "https://arxiv.org/abs/2603.30036v1",
+        "publishedAt": "2026-03-31T17:38:39.000Z",
+        "summary": "Chain-of-Thought (CoT) monitoring, in which automated systems monitor the CoT of an LLM, is a promising approach for effectively overseeing AI systems. However, the extent to which a model's CoT helps us oversee the model - the monitorability of the CoT - can be affected by training, for instance by the model learning to hide important features of its reasoning. We propose and empirically validate a conceptual framework for predicting when and why this occurs. We model LLM post-training as an RL environment where the reward decomposes into two terms: one term depending on final outputs and another term depending on the CoT. Our framework allows us to classify these two terms as \"aligned\", \"orthogonal\", or \"in-conflict\" before training. We predict that training with in-conflict terms will reduce monitorability, orthogonal terms will not affect it, and aligned terms will improve it. To validate our framework, we use it to classify a set of RL environments, train LLMs within those environments, and evaluate how training affects CoT monitorability. We find that (1) training with \"in-conflict\" reward terms reduces CoT monitorability and (2) optimizing in-conflict reward terms is difficult.",
+        "authors": [
+          "Max Kaufmann",
+          "David Lindner",
+          "Roland S. Zimmermann",
+          "and Rohin Shah"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Reward-Based Online LLM Routing via NeuralUCB",
+        "url": "https://arxiv.org/abs/2603.30035v1",
+        "publishedAt": "2026-03-31T17:35:34.000Z",
+        "summary": "This study investigates the use of NeuralUCB for cost-aware large language model (LLM) routing. Existing routing approaches can be broadly grouped into supervised routing methods and partial-feedback methods, each with different tradeoffs in efficiency and adaptivity. We implement a NeuralUCB-based routing policy and evaluate it on RouterBench under a simulated online setting. Experimental results show that the proposed method consistently outperforms random and min-cost baselines in utility reward. Compared with the max-quality reference, our method achieves substantially lower inference cost while maintaining competitive reward. These findings suggest that NeuralUCB is a promising approach for cost-aware LLM routing, while also highlighting remaining challenges in action discrimination and exploration.",
+        "authors": [
+          "Ming-Hua Tsai",
+          "Phat Tran"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 10
+      },
+      {
+        "title": "Tucker Attention: A generalization of approximate attention mechanisms",
+        "url": "https://arxiv.org/abs/2603.30033v1",
+        "publishedAt": "2026-03-31T17:30:51.000Z",
+        "summary": "The pursuit of reducing the memory footprint of the self-attention mechanism in multi-headed self attention (MHA) spawned a rich portfolio of methods, e.g., group-query attention (GQA) and multi-head latent attention (MLA). The methods leverage specialized low-rank factorizations across embedding dimensions or attention heads. From the point of view of classical low-rank approximation, these methods are unconventional and raise questions of which objects they really approximate and how to interpret the low-rank behavior of the resulting representations. To answer these questions, this work proposes a generalized view on the weight objects in the self-attention layer and a factorization strategy, which allows us to construct a parameter efficient scheme, called Tucker Attention. Tucker Attention requires an order of magnitude fewer parameters for comparable validation metrics, compared to GQA and MLA, as evaluated in LLM and ViT test cases. Additionally, Tucker Attention~encompasses GQA, MLA, MHA as special cases and is fully compatible with flash-attention and rotary position embeddings (RoPE). This generalization strategy yields insights of the actual ranks achieved by MHA, GQA, and MLA, and further enables simplifications for MLA.",
+        "authors": [
+          "Timon Klein",
+          "Jonas Kusch",
+          "Sebastian Sager",
+          "Stefan Schnake",
+          "Steffen Schotthöfer"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 10
+      },
+      {
+        "title": "Covertly improving intelligibility with data-driven adaptations of speech timing",
+        "url": "https://arxiv.org/abs/2603.30032v1",
+        "publishedAt": "2026-03-31T17:30:47.000Z",
+        "summary": "Human talkers often address listeners with language-comprehension challenges, such as hard-of-hearing or non-native adults, by globally slowing down their speech. However, it remains unclear whether this strategy actually makes speech more intelligible. Here, we take advantage of recent advancements in machine-generated speech allowing more precise control of speech rate in order to systematically examine how targeted speech-rate adjustments may improve comprehension. We first use reverse-correlation experiments to show that the temporal influence of speech rate prior to a target vowel contrast (ex. the tense-lax distinction) in fact manifests in a scissor-like pattern, with opposite effects in early versus late context windows; this pattern is remarkably stable both within individuals and across native L1-English listeners and L2-English listeners with French, Mandarin, and Japanese L1s. Second, we show that this speech rate structure not only facilitates L2 listeners' comprehension of the target vowel contrast, but that native listeners also rely on this pattern in challenging acoustic conditions. Finally, we build a data-driven text-to-speech algorithm that replicates this temporal structure on novel speech sequences. Across a variety of sentences and vowel contrasts, listeners remained unaware that such targeted slowing improved word comprehension. Strikingly, participants instead judged the common strategy of global slowing as clearer, even though it actually increased comprehension errors. Together, these results show that targeted adjustments to speech rate significantly aid intelligibility under challenging conditions, while often going unnoticed. More generally, this paper provides a data-driven methodology to improve the accessibility of machine-generated speech which can be extended to other aspects of speech comprehension and a wide variety of listeners and environments.",
+        "authors": [
+          "Paige Tuttösí",
+          "Angelica Lim",
+          "H. Henny Yeung",
+          "Yue Wang",
+          "Jean-Julien Aucouturier"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
+        "category": "General",
+        "ageHours": 10
       },
       {
-        "title": "Geometry-aware similarity metrics for neural representations on Riemannian and statistical manifolds",
-        "url": "https://arxiv.org/abs/2603.28764v1",
-        "publishedAt": "2026-03-30T17:59:22.000Z",
-        "summary": "Similarity measures are widely used to interpret the representational geometries used by neural networks to solve tasks. Yet, because existing methods compare the extrinsic geometry of representations in state space, rather than their intrinsic geometry, they may fail to capture subtle yet crucial distinctions between fundamentally different neural network solutions. Here, we introduce metric similarity analysis (MSA), a novel method which leverages tools from Riemannian geometry to compare the intrinsic geometry of neural representations under the manifold hypothesis. We show that MSA can be used to i) disentangle features of neural computations in deep networks with different learning regimes, ii) compare nonlinear dynamics, and iii) investigate diffusion models. Hence, we introduce a mathematically grounded and broadly applicable framework to understand the mechanisms behind neural computations by comparing their intrinsic geometries.",
+        "title": "The Triadic Cognitive Architecture: Bounding Autonomous Action via Spatio-Temporal and Epistemic Friction",
+        "url": "https://arxiv.org/abs/2603.30031v1",
+        "publishedAt": "2026-03-31T17:30:25.000Z",
+        "summary": "Current autonomous AI agents, driven primarily by Large Language Models (LLMs), operate in a state of cognitive weightlessness: they process information without an intrinsic sense of network topology, temporal pacing, or epistemic limits. Consequently, heuristic agentic loops (e.g., ReAct) can exhibit failure modes in interactive environments, including excessive tool use under congestion, prolonged deliberation under time decay, and brittle behavior under ambiguous evidence. In this paper, we propose the Triadic Cognitive Architecture (TCA), a unified mathematical framework that grounds machine reasoning in continuous-time physics. By synthesizing nonlinear filtering theory, Riemannian routing geometry, and optimal control, we formally define the concept of Cognitive Friction. We map the agent's deliberation process to a coupled stochastic control problem where information acquisition is path-dependent and physically constrained. Rather than relying on arbitrary heuristic stop-tokens, the TCA uses an HJB-motivated stopping boundary and instantiates a rollout-based approximation of belief-dependent value-of-information with a net-utility halting condition. Through empirical validation in a simulated Emergency Medical Diagnostic Grid (EMDG), we demonstrate that while greedy baselines over-deliberate under latency and congestion costs, the triadic policy reduces time-to-action while improving patient viability without degrading diagnostic accuracy in this environment.",
         "authors": [
-          "N Alex Cayco Gajic",
-          "Arthur Pellegrino"
+          "Davide Di Gioia"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "On-the-fly Repulsion in the Contextual Space for Rich Diversity in Diffusion Transformers",
-        "url": "https://arxiv.org/abs/2603.28762v1",
-        "publishedAt": "2026-03-30T17:59:13.000Z",
-        "summary": "Modern Text-to-Image (T2I) diffusion models have achieved remarkable semantic alignment, yet they often suffer from a significant lack of variety, converging on a narrow set of visual solutions for any given prompt. This typicality bias presents a challenge for creative applications that require a wide range of generative outcomes. We identify a fundamental trade-off in current approaches to diversity: modifying model inputs requires costly optimization to incorporate feedback from the generative path. In contrast, acting on spatially-committed intermediate latents tends to disrupt the forming visual structure, leading to artifacts. In this work, we propose to apply repulsion in the Contextual Space as a novel framework for achieving rich diversity in Diffusion Transformers. By intervening in the multimodal attention channels, we apply on-the-fly repulsion during the transformer's forward pass, injecting the intervention between blocks where text conditioning is enriched with emergent image structure. This allows for redirecting the guidance trajectory after it is structurally informed but before the composition is fixed. Our results demonstrate that repulsion in the Contextual Space produces significantly richer diversity without sacrificing visual fidelity or semantic adherence. Furthermore, our method is uniquely efficient, imposing a small computational overhead while remaining effective even in modern \"Turbo\" and distilled models where traditional trajectory-based interventions typically fail.",
+        "title": "ContextClaim: A Context-Driven Paradigm for Verifiable Claim Detection",
+        "url": "https://arxiv.org/abs/2603.30025v1",
+        "publishedAt": "2026-03-31T17:20:46.000Z",
+        "summary": "Verifiable claim detection asks whether a claim expresses a factual statement that can, in principle, be assessed against external evidence. As an early filtering stage in automated fact-checking, it plays an important role in reducing the burden on downstream verification components. However, existing approaches to claim detection, whether based on check-worthiness or verifiability, rely solely on the claim text itself. This is a notable limitation for verifiable claim detection in particular, where determining whether a claim is checkable may benefit from knowing what entities and events it refers to and whether relevant information exists to support verification. Inspired by the established role of evidence retrieval in later-stage claim verification, we propose Context-Driven Claim Detection (ContextClaim), a paradigm that advances retrieval to the detection stage. ContextClaim extracts entity mentions from the input claim, retrieves relevant information from Wikipedia as a structured knowledge source, and employs large language models to produce concise contextual summaries for downstream classification. We evaluate ContextClaim on two datasets covering different topics and text genres, the CheckThat! 2022 COVID-19 Twitter dataset and the PoliClaim political debate dataset, across encoder-only and decoder-only models under fine-tuning, zero-shot, and few-shot settings. Results show that context augmentation can improve verifiable claim detection, although its effectiveness varies across domains, model architectures, and learning settings. Through component analysis, human evaluation, and error analysis, we further examine when and why the retrieved context contributes to more reliable verifiability judgments.",
         "authors": [
-          "Omer Dahary",
-          "Benaya Koren",
-          "Daniel Garibi",
-          "Daniel Cohen-Or"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Temporal Credit Is Free",
-        "url": "https://arxiv.org/abs/2603.28750v1",
-        "publishedAt": "2026-03-30T17:54:55.000Z",
-        "summary": "Recurrent networks do not need Jacobian propagation to adapt online. The hidden state already carries temporal credit through the forward pass; immediate derivatives suffice if you stop corrupting them with stale trace memory and normalize gradient scales across parameter groups. An architectural rule predicts when normalization is needed: \\b{eta}2 is required when gradients must pass through a nonlinear state update with no output bypass, and unnecessary otherwise. Across ten architectures, real primate neural data, and streaming ML benchmarks, immediate derivatives with RMSprop match or exceed full RTRL, scaling to n = 1024 at 1000x less memory.",
-        "authors": [
-          "Aur Shalev Merin"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Stop Probing, Start Coding: Why Linear Probes and Sparse Autoencoders Fail at Compositional Generalisation",
-        "url": "https://arxiv.org/abs/2603.28744v1",
-        "publishedAt": "2026-03-30T17:52:16.000Z",
-        "summary": "The linear representation hypothesis states that neural network activations encode high-level concepts as linear mixtures. However, under superposition, this encoding is a projection from a higher-dimensional concept space into a lower-dimensional activation space, and a linear decision boundary in the concept space need not remain linear after projection. In this setting, classical sparse coding methods with per-sample iterative inference leverage compressed sensing guarantees to recover latent factors. Sparse autoencoders (SAEs), on the other hand, amortise sparse inference into a fixed encoder, introducing a systematic gap. We show this amortisation gap persists across training set sizes, latent dimensions, and sparsity levels, causing SAEs to fail under out-of-distribution (OOD) compositional shifts. Through controlled experiments that decompose the failure, we identify dictionary learning -- not the inference procedure -- as the binding constraint: SAE-learned dictionaries point in substantially wrong directions, and replacing the encoder with per-sample FISTA on the same dictionary does not close the gap. An oracle baseline proves the problem is solvable with a good dictionary at all scales tested. Our results reframe the SAE failure as a dictionary learning challenge, not an amortisation problem, and point to scalable dictionary learning as the key open problem for sparse inference under superposition.",
-        "authors": [
-          "Vitória Barin Pacela",
-          "Shruti Joshi",
-          "Isabela Camacho",
-          "Simon Lacoste-Julien",
-          "David Klindt"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "Rethinking Language Model Scaling under Transferable Hypersphere Optimization",
-        "url": "https://arxiv.org/abs/2603.28743v1",
-        "publishedAt": "2026-03-30T17:51:47.000Z",
-        "summary": "Scaling laws for large language models depend critically on the optimizer and parameterization. Existing hyperparameter transfer laws are mainly developed for first-order optimizers, and they do not structurally prevent training instability at scale. Recent hypersphere optimization methods constrain weight matrices to a fixed-norm hypersphere, offering a promising alternative for more stable scaling. We introduce HyperP (Hypersphere Parameterization), the first framework for transferring optimal learning rates across model width, depth, training tokens, and Mixture-of-Experts (MoE) granularity under the Frobenius-sphere constraint with the Muon optimizer. We prove that weight decay is a first-order no-op on the Frobenius sphere, show that Depth-$μ$P remains necessary, and find that the optimal learning rate follows the same data-scaling power law with the \"magic exponent\" 0.32 previously observed for AdamW. A single base learning rate tuned at the smallest scale transfers across all compute budgets under HyperP, yielding $1.58\\times$ compute efficiency over a strong Muon baseline at $6\\times10^{21}$ FLOPs. Moreover, HyperP delivers transferable stability: all monitored instability indicators, including $Z$-values, output RMS, and activation outliers, remain bounded and non-increasing under training FLOPs scaling. We also propose SqrtGate, an MoE gating mechanism derived from the hypersphere constraint that preserves output RMS across MoE granularities for improved granularity scaling, and show that hypersphere optimization enables substantially larger auxiliary load-balancing weights, yielding both strong performance and good expert balance. We release our training codebase at https://github.com/microsoft/ArchScale.",
-        "authors": [
-          "Liliang Ren",
-          "Yang Liu",
-          "Yelong Shen",
-          "Weizhu Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "Expectation Error Bounds for Transfer Learning in Linear Regression and Linear Neural Networks",
-        "url": "https://arxiv.org/abs/2603.28739v1",
-        "publishedAt": "2026-03-30T17:50:52.000Z",
-        "summary": "In transfer learning, the learner leverages auxiliary data to improve generalization on a main task. However, the precise theoretical understanding of when and how auxiliary data help remains incomplete. We provide new insights on this issue in two canonical linear settings: ordinary least squares regression and under-parameterized linear neural networks. For linear regression, we derive exact closed-form expressions for the expected generalization error with bias-variance decomposition, yielding necessary and sufficient conditions for auxiliary tasks to improve generalization on the main task. We also derive globally optimal task weights as outputs of solvable optimization programs, with consistency guarantees for empirical estimates. For linear neural networks with shared representations of width $q \\leq K$, where $K$ is the number of auxiliary tasks, we derive a non-asymptotic expectation bound on the generalization error, yielding the first non-vacuous sufficient condition for beneficial auxiliary learning in this setting, as well as principled directions for task weight curation. We achieve this by proving a new column-wise low-rank perturbation bound for random matrices, which improves upon existing bounds by preserving fine-grained column structures. Our results are verified on synthetic data simulated with controlled parameters.",
-        "authors": [
-          "Meitong Liu",
-          "Christopher Jung",
-          "Rui Li",
-          "Xue Feng",
-          "Han Zhao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Infrastructure",
-        "ageHours": 30
-      },
-      {
-        "title": "ParaSpeechCLAP: A Dual-Encoder Speech-Text Model for Rich Stylistic Language-Audio Pretraining",
-        "url": "https://arxiv.org/abs/2603.28737v1",
-        "publishedAt": "2026-03-30T17:50:07.000Z",
-        "summary": "We introduce ParaSpeechCLAP, a dual-encoder contrastive model that maps speech and text style captions into a common embedding space, supporting a wide range of intrinsic (speaker-level) and situational (utterance-level) descriptors (such as pitch, texture and emotion) far beyond the narrow set handled by existing models. We train specialized ParaSpeechCLAP-Intrinsic and ParaSpeechCLAP-Situational models alongside a unified ParaSpeechCLAP-Combined model, finding that specialization yields stronger performance on individual style dimensions while the unified model excels on compositional evaluation. We further show that ParaSpeechCLAP-Intrinsic benefits from an additional classification loss and class-balanced training. We demonstrate our models' performance on style caption retrieval, speech attribute classification and as an inference-time reward model that improves style-prompted TTS without additional training. ParaSpeechCLAP outperforms baselines on most metrics across all three applications. Our models and code are released at https://github.com/ajd12342/paraspeechclap .",
-        "authors": [
-          "Anuj Diwan",
-          "Eunsol Choi",
-          "David Harwath"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "RAD-AI: Rethinking Architecture Documentation for AI-Augmented Ecosystems",
-        "url": "https://arxiv.org/abs/2603.28735v1",
-        "publishedAt": "2026-03-30T17:48:56.000Z",
-        "summary": "AI-augmented ecosystems (interconnected systems where multiple AI components interact through shared data and infrastructure) are becoming the architectural norm for smart cities, autonomous fleets, and intelligent platforms. Yet the architecture documentation frameworks practitioners rely on, arc42 and the C4 model, were designed for deterministic software and cannot capture probabilistic behavior, data-dependent evolution, or dual ML/software lifecycles. This gap carries regulatory consequence: the EU AI Act (Regulation 2024/1689) mandates technical documentation through Annex IV that no existing framework provides structured support for, with enforcement for high-risk systems beginning August 2, 2026. We present RAD-AI, a backward-compatible extension framework that augments arc42 with eight AI-specific sections and C4 with three diagram extensions, complemented by a systematic EU AI Act Annex IV compliance mapping. A regulatory coverage assessment with six experienced software-architecture practitioners provides preliminary evidence that RAD-AI increases Annex IV addressability from approximately 36% to 93% (mean rating) and demonstrates substantial improvement over existing frameworks. Comparative analysis on two production AI platforms (Uber Michelangelo, Netflix Metaflow) captures eight additional AI-specific concerns missed by standard frameworks and demonstrates that documentation deficiencies are structural rather than domain-specific. An illustrative smart mobility ecosystem case study reveals ecosystem-level concerns, including cascading drift and differentiated compliance obligations, that are invisible under standard notation.",
-        "authors": [
-          "Oliver Aleksander Larsen",
-          "Mahyar T. Moghaddam"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "See it to Place it: Evolving Macro Placements with Vision-Language Models",
-        "url": "https://arxiv.org/abs/2603.28733v1",
-        "publishedAt": "2026-03-30T17:47:34.000Z",
-        "summary": "We propose using Vision-Language Models (VLMs) for macro placement in chip floorplanning, a complex optimization task that has recently shown promising advancements through machine learning methods. Because human designers rely heavily on spatial reasoning to arrange components on the chip canvas, we hypothesize that VLMs with strong visual reasoning abilities can effectively complement existing learning-based approaches. We introduce VeoPlace (Visual Evolutionary Optimization Placement), a novel framework that uses a VLM, without any fine-tuning, to guide the actions of a base placer by constraining them to subregions of the chip canvas. The VLM proposals are iteratively optimized through an evolutionary search strategy with respect to resulting placement quality. On open-source benchmarks, VeoPlace outperforms the best prior learning-based approach on 9 of 10 benchmarks with peak wirelength reductions exceeding 32%. We further demonstrate that VeoPlace generalizes to analytical placers, improving DREAMPlace performance on all 8 evaluated benchmarks with gains up to 4.3%. Our approach opens new possibilities for electronic design automation tools that leverage foundation models to solve complex physical design problems.",
-        "authors": [
-          "Ikechukwu Uchendu",
-          "Swati Goel",
-          "Karly Hou",
-          "Ebrahim Songhori",
-          "Kuang-Huei Lee",
-          "Joe Wenjie Jiang",
-          "Vijay Janapa Reddi",
-          "Vincent Zhuang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "SAGAI-MID: A Generative AI-Driven Middleware for Dynamic Runtime Interoperability",
-        "url": "https://arxiv.org/abs/2603.28731v1",
-        "publishedAt": "2026-03-30T17:46:41.000Z",
-        "summary": "Modern distributed systems integrate heterogeneous services, REST APIs with different schema versions, GraphQL endpoints, and IoT devices with proprietary payloads that suffer from persistent schema mismatches. Traditional static adapters require manual coding for every schema pair and cannot handle novel combinations at runtime. We present SAGAI-MID, a FastAPI-based middleware that uses large language models (LLMs) to dynamically detect and resolve schema mismatches at runtime. The system employs a five-layer pipeline: hybrid detection (structural diff plus LLM semantic analysis), dual resolution strategies (per-request LLM transformation and LLM-generated reusable adapter code), and a three-tier safeguard stack (validation, ensemble voting, rule-based fallback). We frame the architecture through Bass et al.'s interoperability tactics, transforming them from design-time artifacts into runtime capabilities. We evaluate SAGAI-MID on 10 interoperability scenarios spanning REST version migration, IoT-to-analytics bridging, and GraphQL protocol conversion across six LLMs from two providers. The best-performing configuration achieves 0.90 pass@1 accuracy. The CODEGEN strategy consistently outperforms DIRECT (0.83 vs 0.77 mean pass@1), while cost varies by over 30x across models with no proportional accuracy gain; the most accurate model is also the cheapest. We discuss implications for software architects adopting LLMs as runtime architectural components.",
-        "authors": [
-          "Oliver Aleksander Larsen",
-          "Mahyar T. Moghaddam"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2603.28730v1",
-        "publishedAt": "2026-03-30T17:46:31.000Z",
-        "summary": "Vision-language models (VLMs) have shown impressive capabilities across diverse tasks, motivating efforts to leverage these models to supervise robot learning. However, when used as evaluators in reinforcement learning (RL), today's strongest models often fail under partial observability and distribution shift, enabling policies to exploit perceptual errors rather than solve the task. To address this limitation, we introduce SOLE-R1 (Self-Observing LEarner), a video-language reasoning model explicitly designed to serve as the sole reward signal for online RL. Given only raw video observations and a natural-language goal, SOLE-R1 performs per-timestep spatiotemporal chain-of-thought (CoT) reasoning and produces dense estimates of task progress that can be used directly as rewards. To train SOLE-R1, we develop a large-scale video trajectory and reasoning synthesis pipeline that generates temporally grounded CoT traces aligned with continuous progress supervision. This data is combined with foundational spatial and multi-frame temporal reasoning, and used to train the model with a hybrid framework that couples supervised fine-tuning with RL from verifiable rewards. Across four different simulation environments and a real-robot setting, SOLE-R1 enables zero-shot online RL from random initialization: robots learn previously unseen manipulation tasks without ground-truth rewards, success indicators, demonstrations, or task-specific tuning. SOLE-R1 succeeds on 24 unseen tasks and substantially outperforms strong vision-language rewarders, including GPT-5 and Gemini-3-Pro, while exhibiting markedly greater robustness to reward hacking.",
-        "authors": [
-          "Philip Schroeder",
-          "Thomas Weng",
-          "Karl Schmeckpeper",
-          "Eric Rosen",
-          "Stephen Hart",
-          "Ondrej Biza"
+          "Yufeng Li",
+          "Rrubaa Panchendrarajan",
+          "Arkaitz Zubiaga"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
+      },
+      {
+        "title": "Hybrid Framework for Robotic Manipulation: Integrating Reinforcement Learning and Large Language Models",
+        "url": "https://arxiv.org/abs/2603.30022v1",
+        "publishedAt": "2026-03-31T17:19:34.000Z",
+        "summary": "This paper introduces a new hybrid framework that combines Reinforcement Learning (RL) and Large Language Models (LLMs) to improve robotic manipulation tasks. By utilizing RL for accurate low-level control and LLMs for high level task planning and understanding of natural language, the proposed framework effectively connects low-level execution with high-level reasoning in robotic systems. This integration allows robots to understand and carry out complex, human-like instructions while adapting to changing environments in real time. The framework is tested in a PyBullet-based simulation environment using the Franka Emika Panda robotic arm, with various manipulation scenarios as benchmarks. The results show a 33.5% decrease in task completion time and enhancements of 18.1% and 36.4% in accuracy and adaptability, respectively, when compared to systems that use only RL. These results underscore the potential of LLM-enhanced robotic systems for practical applications, making them more efficient, adaptable, and capable of interacting with humans. Future research will aim to explore sim-to-real transfer, scalability, and multi-robot systems to further broaden the framework's applicability.",
+        "authors": [
+          "Md Saad",
+          "Sajjad Hussain",
+          "Mohd Suhaib"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Refined Detection for Gumbel Watermarking",
+        "url": "https://arxiv.org/abs/2603.30017v1",
+        "publishedAt": "2026-03-31T17:16:27.000Z",
+        "summary": "We propose a simple detection mechanism for the Gumbel watermarking scheme proposed by Aaronson (2022). The new mechanism is proven to be near-optimal in a problem-dependent sense among all model-agnostic watermarking schemes under the assumption that the next-token distribution is sampled i.i.d.",
+        "authors": [
+          "Tor Lattimore"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 10
+      },
+      {
+        "title": "Architecting Secure AI Agents: Perspectives on System-Level Defenses Against Indirect Prompt Injection Attacks",
+        "url": "https://arxiv.org/abs/2603.30016v1",
+        "publishedAt": "2026-03-31T17:15:46.000Z",
+        "summary": "AI agents, predominantly powered by large language models (LLMs), are vulnerable to indirect prompt injection, in which malicious instructions embedded in untrusted data can trigger dangerous agent actions. This position paper discusses our vision for system-level defenses against indirect prompt injection attacks. We articulate three positions: (1) dynamic replanning and security policy updates are often necessary for dynamic tasks and realistic environments; (2) certain context-dependent security decisions would still require LLMs (or other learned models), but should only be made within system designs that strictly constrain what the model can observe and decide; (3) in inherently ambiguous cases, personalization and human interaction should be treated as core design considerations. In addition to our main positions, we discuss limitations of existing benchmarks that can create a false sense of utility and security. We also highlight the value of system-level defenses, which serve as the skeleton of agentic systems by structuring and controlling agent behaviors, integrating rule-based and model-based security checks, and enabling more targeted research on model robustness and human interaction.",
+        "authors": [
+          "Chong Xiang",
+          "Drew Zagieboylo",
+          "Shaona Ghosh",
+          "Sanjay Kariyappa",
+          "Kai Greshake",
+          "Hanshen Xiao",
+          "Chaowei Xiao",
+          "G. Edward Suh"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Scalable AI-assisted Workflow Management for Detector Design Optimization Using Distributed Computing",
+        "url": "https://arxiv.org/abs/2603.30014v1",
+        "publishedAt": "2026-03-31T17:11:16.000Z",
+        "summary": "The Production and Distributed Analysis (PanDA) system, originally developed for the ATLAS experiment at the CERN Large Hadron Collider (LHC), has evolved into a robust platform for orchestrating large-scale workflows across distributed computing resources. Coupled with its intelligent Distributed Dispatch and Scheduling (iDDS) component, PanDA supports AI/ML-driven workflows through a scalable and flexible workflow engine.\n  We present an AI-assisted framework for detector design optimization that integrates multi-objective Bayesian optimization with the PanDA--iDDS workflow engine to coordinate iterative simulations across heterogeneous resources. The framework addresses the challenge of exploring high-dimensional parameter spaces inherent in modern detector design.\n  We demonstrate the framework using benchmark problems and realistic studies of the ePIC and dRICH detectors for the Electron-Ion Collider (EIC). Results show improved automation, scalability, and efficiency in multi-objective optimization. This work establishes a flexible and extensible paradigm for AI-driven detector design and other computationally intensive scientific applications.",
+        "authors": [
+          "Derek Anderson",
+          "Amit Bashyal",
+          "Markus Diefenthaler",
+          "Cristiano Fanelli",
+          "Wen Guan",
+          "Tanja Horn",
+          "Alex Jentsch Meifeng Lin",
+          "Tadashi Maeno",
+          "Kei Nagai",
+          "Hemalata Nayak",
+          "Connor Pecar",
+          "Karthik Suresh",
+          "Fang-Ying Tsai",
+          "Anselm Vossen",
+          "Tianle Wang",
+          "Torre Wenaus"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Tracking Equivalent Mechanistic Interpretations Across Neural Networks",
+        "url": "https://arxiv.org/abs/2603.30002v1",
+        "publishedAt": "2026-03-31T16:57:52.000Z",
+        "summary": "Mechanistic interpretability (MI) is an emerging framework for interpreting neural networks. Given a task and model, MI aims to discover a succinct algorithmic process, an interpretation, that explains the model's decision process on that task. However, MI is difficult to scale and generalize. This stems in part from two key challenges: there is no precise notion of a valid interpretation; and, generating interpretations is often an ad hoc process. In this paper, we address these challenges by defining and studying the problem of interpretive equivalence: determining whether two different models share a common interpretation, without requiring an explicit description of what that interpretation is. At the core of our approach, we propose and formalize the principle that two interpretations of a model are equivalent if all of their possible implementations are also equivalent. We develop an algorithm to estimate interpretive equivalence and case study its use on Transformer-based models. To analyze our algorithm, we introduce necessary and sufficient conditions for interpretive equivalence based on models' representation similarity. We provide guarantees that simultaneously relate a model's algorithmic interpretations, circuits, and representations. Our framework lays a foundation for the development of more rigorous evaluation methods of MI and automated, generalizable interpretation discovery methods.",
+        "authors": [
+          "Alan Sun",
+          "Mariya Toneva"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
       }
     ],
     "news": [
+      {
+        "title": "Mercor says it was hit by cyberattack tied to compromise of open-source LiteLLM project",
+        "url": "https://techcrunch.com/2026/03/31/mercor-says-it-was-hit-by-cyberattack-tied-to-compromise-of-open-source-litellm-project/",
+        "publishedAt": "2026-04-01T01:42:59.000Z",
+        "summary": "The AI recruiting startup confirmed a security incident after an extortion hacking crew took credit for stealing data from the company's systems.",
+        "authors": [
+          "Jagmeet Singh"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 2
+      },
+      {
+        "title": "Anthropic is having a month",
+        "url": "https://techcrunch.com/2026/03/31/anthropic-is-having-a-month/",
+        "publishedAt": "2026-03-31T23:58:26.000Z",
+        "summary": "A human really borks things at Anthropic for the second time this week.",
+        "authors": [
+          "Connie Loizos"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 4
+      },
       {
         "title": "Salesforce announces an AI-heavy makeover for Slack, with 30 new features",
         "url": "https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/",
@@ -303,7 +335,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 1
+        "ageHours": 5
       },
       {
         "title": "OpenAI, not yet public, raises $3B from retail investors in monster $122B fund raise",
@@ -317,7 +349,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 6
       },
       {
         "title": "Yupp shuts down after raising $33M from a16z crypto&#8217;s Chris Dixon",
@@ -331,7 +363,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "Alexa+ gets new food ordering experiences with Uber Eats and Grubhub",
@@ -345,7 +377,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 10
       },
       {
         "title": "Nomadic raises $8.4 million to wrangle the data pouring off autonomous vehicles",
@@ -359,7 +391,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 9
+        "ageHours": 13
       },
       {
         "title": "Exclusive: Runway launches $10M fund, Builders program to support early-stage AI startups",
@@ -373,7 +405,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 10
+        "ageHours": 14
       },
       {
         "title": "With its new app store, Ring bets on AI to go beyond home security",
@@ -387,7 +419,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 11
+        "ageHours": 15
       },
       {
         "title": "Accelerating the next phase of AI",
@@ -399,7 +431,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 11
+        "ageHours": 15
       },
       {
         "title": "15% of Americans say they&#8217;d be willing to work for an AI boss, according to new poll",
@@ -413,7 +445,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 24
+        "ageHours": 28
       },
       {
         "title": "Popular AI gateway startup LiteLLM ditches controversial startup Delve",
@@ -427,58 +459,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 25
-      },
-      {
-        "title": "As more Americans adopt AI tools, fewer say they can trust the results",
-        "url": "https://techcrunch.com/2026/03/30/ai-trust-adoption-poll-more-americans-adopt-tools-fewer-say-they-can-trust-the-results/",
-        "publishedAt": "2026-03-30T20:24:53.000Z",
-        "summary": "AI adoption is rising in the U.S., but trust remains low, with most Americans concerned about transparency, regulation, and the technology’s broader societal impact, according to a new Quinnipiac poll.",
-        "authors": [
-          "Rebecca Bellan"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 27
-      },
-      {
-        "title": "MIT researchers use AI to uncover atomic defects in materials",
-        "url": "https://news.mit.edu/2026/mit-researchers-use-ai-uncover-atomic-defects-materials-0330",
-        "publishedAt": "2026-03-30T15:00:00.000Z",
-        "summary": "In biology, defects are generally bad. But in materials science, defects can be intentionally tuned to give materials useful new properties. Today, atomic-scale defects are carefully introduced during the manufacturing process of products like steel, semiconductors, and solar cells to help improve strength, control electrical conductivity, optimize performance, and more. But even as defects have become a powerful tool, accurately measuring different types of defects and their concentrations in finished products has been challenging, especially without cutting open or damaging the final material. Without knowing what defects are in their materials, engineers risk making products that perform poorly or have unintended properties. Now, MIT researchers have built an AI model capable of classifying and quantifying certain defects using data from a noninvasive neutron-scattering technique. The model, which was trained on 2,000 different semiconductor materials, can detect up to six kinds of point defects in a material simultaneously, something that would be impossible using conventional techniques alone. “Existing techniques can’t accurately characterize defects in a universal and quantitative way without destroying the material,” says lead author Mouyang Cheng, a PhD candidate in the Department of Materials Science and Engineering. “For conventional techniques without machine learning, detecting six different defects is unthinkable. It’s something you can’t do any other way.” The researchers say the model is a step toward harnessing defects more precisely in products like semiconductors, microelectronics, solar cells, and battery materials. “Right now, detecting defects is like the saying about seeing an elephant: Each technique can only see part of it,” says senior author and associate professor of nuclear science and engineering Mingda Li. “Some see the nose, others the trunk or ears. But it is extremely hard to see the full elephant. We need better ways of getting the full picture of defects, because we have to understand them to make materials more useful.” Joining Cheng and Li on the paper are postdoc Chu-Liang Fu, undergraduate researcher Bowen Yu, master’s student Eunbi Rha, PhD student Abhijatmedhi Chotrattanapituk ’21, and Oak Ridge National Laboratory staff members Douglas L Abernathy PhD ’93 and Yongqiang Cheng. The paper appears today in the journal Matter . Detecting defects Manufacturers have gotten good at tuning defects in their materials, but measuring precise quantities of defects in finished products is still largely a guessing game. “Engineers have many ways to introduce defects, like through doping, but they still struggle with basic questions like what kind of defect they’ve created and in what concentration,” Fu says. “Sometimes they also have unwanted defects, like oxidation. They don’t always know if they introduced some unwanted defects or impurity during synthesis. It’s a longstanding challenge.” The result is that there are often multiple defects in each material. Unfortunately, each method for understanding defects has its limits. Techniques like X-ray diffraction and positron annihilation characterize only some types of defects. Raman spectroscopy can discern the type of defect but can’t directly infer the concentration. Another technique known as transmission electron microscope requires people to cut thin slices of samples for scanning. In a few previous papers, Li and collaborators applied machine learning to experimental spectroscopy data to characterize crystalline materials. For the new paper, they wanted to apply that technique to defects. For their experiment, the researchers built a computational database of 2,000 semiconductor materials. They made sample pairs of each material, with one doped for defects and one left without defects, then used a neutron-scattering technique that measures the different vibrational frequencies of atoms in solid materials. They trained a machine-learning model on the results. “That built a foundational model that covers 56 elements in the periodic table,” Cheng says. “The model leverages the multihead attention mechanism, just like what ChatGPT is using. It similarly extracts the difference in the data between materials with and without defects and outputs a prediction of what dopants were used and in what concentrations.” The researchers fine-tuned their model, verified it on experimental data, and showed it could measure defect concentrations in an alloy commonly used in electronics and in a separate superconductor material. The researchers also doped the materials multiple times to introduce multiple point defects and test the limits of the model, ultimately finding it can make predictions about up to six defects in materials simultaneously, with defect concentrations as low as 0.2 percent. “We were really surprised it worked that well,” Cheng says. “It’s very challenging to decode the mixed signals from two different types of defects — let alone six.” A model approach Typically, manufacturers of things like semiconductors run invasive tests on a small percentage of products as they come off the manufacturing line, a slow process that limits their ability to detect every defect. “Right now, people largely estimate the quantities of defects in their materials,” Yu says. “It is a painstaking experience to check the estimates by using each individual technique, which only offers local information in a single grain anyway. It creates misunderstandings about what defects people think they have in their material.” The results were exciting for the researchers, but they note their technique measuring the vibrational frequencies with neutrons would be difficult for companies to quickly deploy in their own quality-control processes. “This method is very powerful, but its availability is limited,” Rha says. “Vibrational spectra is a simple idea, but in certain setups it’s very complicated. There are some simpler experimental setups based on other approaches, like Raman spectroscopy, that could be more quickly adopted.” Li says companies have already expressed interest in the approach and asked when it will work with Raman spectroscopy, a widely used technique that measures the scattering of light. Li says the researchers’ next step is training a similar model based on Raman spectroscopy data. They also plan to expand their approach to detect features that are larger than point defects, like grains and dislocations. For now, though, the researchers believe their study demonstrates the inherent advantage of AI techniques for interpreting defect data. “To the human eye, these defect signals would look essentially the same,” Li says. “But the pattern recognition of AI is good enough to discern different signals and get to the ground truth. Defects are this double-edged sword. There are many good defects, but if there are too many, performance can degrade. This opens up a new paradigm in defect science.” The work was supported, in part, by the Department of Energy and the National Science Foundation.",
-        "authors": [
-          "Zach Winn | MIT News"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Models",
-        "ageHours": 33
+        "ageHours": 29
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 8,
+    "last24h": 22,
     "topCategories": [
       {
-        "name": "Models",
-        "count": 10
+        "name": "Research",
+        "count": 9
       },
       {
-        "name": "Research",
-        "count": 7
+        "name": "Models",
+        "count": 8
       },
       {
         "name": "General",
-        "count": 4
+        "count": 6
       },
       {
         "name": "Products",
-        "count": 2
+        "count": 1
       }
     ]
   }
