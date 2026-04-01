@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-01T15:39:04.434Z",
+  "generatedAt": "2026-04-01T17:09:43.989Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,8 +83,232 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "Automatic Identification of Parallelizable Loops Using Transformer-Based Source Code Representations",
+        "url": "https://arxiv.org/abs/2603.30040v1",
+        "publishedAt": "2026-03-31T17:54:27.000Z",
+        "summary": "Automatic parallelization remains a challenging problem in software engineering, particularly in identifying code regions where loops can be safely executed in parallel on modern multi-core architectures. Traditional static analysis techniques, such as dependence analysis and polyhedral models, often struggle with irregular or dynamically structured code. In this work, we propose a Transformer-based approach to classify the parallelization potential of source code, focusing on distinguishing independent (parallelizable) loops from undefined ones. We adopt DistilBERT to process source code sequences using subword tokenization, enabling the model to capture contextual syntactic and semantic patterns without handcrafted features. The approach is evaluated on a balanced dataset combining synthetically generated loops and manually annotated real-world code, using 10-fold cross-validation and multiple performance metrics. Results show consistently high performance, with mean accuracy above 99\\% and low false positive rates, demonstrating robustness and reliability. Compared to prior token-based methods, the proposed approach simplifies preprocessing while improving generalization and maintaining computational efficiency. These findings highlight the potential of lightweight Transformer models for practical identification of parallelization opportunities at the loop level.",
+        "authors": [
+          "Izavan dos S. Correia",
+          "Henrique C. T. Santos",
+          "Tiago A. E. Ferreira"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 23
+      },
+      {
+        "title": "Aligned, Orthogonal or In-conflict: When can we safely optimize Chain-of-Thought?",
+        "url": "https://arxiv.org/abs/2603.30036v1",
+        "publishedAt": "2026-03-31T17:38:39.000Z",
+        "summary": "Chain-of-Thought (CoT) monitoring, in which automated systems monitor the CoT of an LLM, is a promising approach for effectively overseeing AI systems. However, the extent to which a model's CoT helps us oversee the model - the monitorability of the CoT - can be affected by training, for instance by the model learning to hide important features of its reasoning. We propose and empirically validate a conceptual framework for predicting when and why this occurs. We model LLM post-training as an RL environment where the reward decomposes into two terms: one term depending on final outputs and another term depending on the CoT. Our framework allows us to classify these two terms as \"aligned\", \"orthogonal\", or \"in-conflict\" before training. We predict that training with in-conflict terms will reduce monitorability, orthogonal terms will not affect it, and aligned terms will improve it. To validate our framework, we use it to classify a set of RL environments, train LLMs within those environments, and evaluate how training affects CoT monitorability. We find that (1) training with \"in-conflict\" reward terms reduces CoT monitorability and (2) optimizing in-conflict reward terms is difficult.",
+        "authors": [
+          "Max Kaufmann",
+          "David Lindner",
+          "Roland S. Zimmermann",
+          "and Rohin Shah"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Reward-Based Online LLM Routing via NeuralUCB",
+        "url": "https://arxiv.org/abs/2603.30035v1",
+        "publishedAt": "2026-03-31T17:35:34.000Z",
+        "summary": "This study investigates the use of NeuralUCB for cost-aware large language model (LLM) routing. Existing routing approaches can be broadly grouped into supervised routing methods and partial-feedback methods, each with different tradeoffs in efficiency and adaptivity. We implement a NeuralUCB-based routing policy and evaluate it on RouterBench under a simulated online setting. Experimental results show that the proposed method consistently outperforms random and min-cost baselines in utility reward. Compared with the max-quality reference, our method achieves substantially lower inference cost while maintaining competitive reward. These findings suggest that NeuralUCB is a promising approach for cost-aware LLM routing, while also highlighting remaining challenges in action discrimination and exploration.",
+        "authors": [
+          "Ming-Hua Tsai",
+          "Phat Tran"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 24
+      },
+      {
+        "title": "Tucker Attention: A generalization of approximate attention mechanisms",
+        "url": "https://arxiv.org/abs/2603.30033v1",
+        "publishedAt": "2026-03-31T17:30:51.000Z",
+        "summary": "The pursuit of reducing the memory footprint of the self-attention mechanism in multi-headed self attention (MHA) spawned a rich portfolio of methods, e.g., group-query attention (GQA) and multi-head latent attention (MLA). The methods leverage specialized low-rank factorizations across embedding dimensions or attention heads. From the point of view of classical low-rank approximation, these methods are unconventional and raise questions of which objects they really approximate and how to interpret the low-rank behavior of the resulting representations. To answer these questions, this work proposes a generalized view on the weight objects in the self-attention layer and a factorization strategy, which allows us to construct a parameter efficient scheme, called Tucker Attention. Tucker Attention requires an order of magnitude fewer parameters for comparable validation metrics, compared to GQA and MLA, as evaluated in LLM and ViT test cases. Additionally, Tucker Attention~encompasses GQA, MLA, MHA as special cases and is fully compatible with flash-attention and rotary position embeddings (RoPE). This generalization strategy yields insights of the actual ranks achieved by MHA, GQA, and MLA, and further enables simplifications for MLA.",
+        "authors": [
+          "Timon Klein",
+          "Jonas Kusch",
+          "Sebastian Sager",
+          "Stefan Schnake",
+          "Steffen Schotthöfer"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 24
+      },
+      {
+        "title": "Covertly improving intelligibility with data-driven adaptations of speech timing",
+        "url": "https://arxiv.org/abs/2603.30032v1",
+        "publishedAt": "2026-03-31T17:30:47.000Z",
+        "summary": "Human talkers often address listeners with language-comprehension challenges, such as hard-of-hearing or non-native adults, by globally slowing down their speech. However, it remains unclear whether this strategy actually makes speech more intelligible. Here, we take advantage of recent advancements in machine-generated speech allowing more precise control of speech rate in order to systematically examine how targeted speech-rate adjustments may improve comprehension. We first use reverse-correlation experiments to show that the temporal influence of speech rate prior to a target vowel contrast (ex. the tense-lax distinction) in fact manifests in a scissor-like pattern, with opposite effects in early versus late context windows; this pattern is remarkably stable both within individuals and across native L1-English listeners and L2-English listeners with French, Mandarin, and Japanese L1s. Second, we show that this speech rate structure not only facilitates L2 listeners' comprehension of the target vowel contrast, but that native listeners also rely on this pattern in challenging acoustic conditions. Finally, we build a data-driven text-to-speech algorithm that replicates this temporal structure on novel speech sequences. Across a variety of sentences and vowel contrasts, listeners remained unaware that such targeted slowing improved word comprehension. Strikingly, participants instead judged the common strategy of global slowing as clearer, even though it actually increased comprehension errors. Together, these results show that targeted adjustments to speech rate significantly aid intelligibility under challenging conditions, while often going unnoticed. More generally, this paper provides a data-driven methodology to improve the accessibility of machine-generated speech which can be extended to other aspects of speech comprehension and a wide variety of listeners and environments.",
+        "authors": [
+          "Paige Tuttösí",
+          "Angelica Lim",
+          "H. Henny Yeung",
+          "Yue Wang",
+          "Jean-Julien Aucouturier"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 24
+      },
+      {
+        "title": "The Triadic Cognitive Architecture: Bounding Autonomous Action via Spatio-Temporal and Epistemic Friction",
+        "url": "https://arxiv.org/abs/2603.30031v1",
+        "publishedAt": "2026-03-31T17:30:25.000Z",
+        "summary": "Current autonomous AI agents, driven primarily by Large Language Models (LLMs), operate in a state of cognitive weightlessness: they process information without an intrinsic sense of network topology, temporal pacing, or epistemic limits. Consequently, heuristic agentic loops (e.g., ReAct) can exhibit failure modes in interactive environments, including excessive tool use under congestion, prolonged deliberation under time decay, and brittle behavior under ambiguous evidence. In this paper, we propose the Triadic Cognitive Architecture (TCA), a unified mathematical framework that grounds machine reasoning in continuous-time physics. By synthesizing nonlinear filtering theory, Riemannian routing geometry, and optimal control, we formally define the concept of Cognitive Friction. We map the agent's deliberation process to a coupled stochastic control problem where information acquisition is path-dependent and physically constrained. Rather than relying on arbitrary heuristic stop-tokens, the TCA uses an HJB-motivated stopping boundary and instantiates a rollout-based approximation of belief-dependent value-of-information with a net-utility halting condition. Through empirical validation in a simulated Emergency Medical Diagnostic Grid (EMDG), we demonstrate that while greedy baselines over-deliberate under latency and congestion costs, the triadic policy reduces time-to-action while improving patient viability without degrading diagnostic accuracy in this environment.",
+        "authors": [
+          "Davide Di Gioia"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "ContextClaim: A Context-Driven Paradigm for Verifiable Claim Detection",
+        "url": "https://arxiv.org/abs/2603.30025v1",
+        "publishedAt": "2026-03-31T17:20:46.000Z",
+        "summary": "Verifiable claim detection asks whether a claim expresses a factual statement that can, in principle, be assessed against external evidence. As an early filtering stage in automated fact-checking, it plays an important role in reducing the burden on downstream verification components. However, existing approaches to claim detection, whether based on check-worthiness or verifiability, rely solely on the claim text itself. This is a notable limitation for verifiable claim detection in particular, where determining whether a claim is checkable may benefit from knowing what entities and events it refers to and whether relevant information exists to support verification. Inspired by the established role of evidence retrieval in later-stage claim verification, we propose Context-Driven Claim Detection (ContextClaim), a paradigm that advances retrieval to the detection stage. ContextClaim extracts entity mentions from the input claim, retrieves relevant information from Wikipedia as a structured knowledge source, and employs large language models to produce concise contextual summaries for downstream classification. We evaluate ContextClaim on two datasets covering different topics and text genres, the CheckThat! 2022 COVID-19 Twitter dataset and the PoliClaim political debate dataset, across encoder-only and decoder-only models under fine-tuning, zero-shot, and few-shot settings. Results show that context augmentation can improve verifiable claim detection, although its effectiveness varies across domains, model architectures, and learning settings. Through component analysis, human evaluation, and error analysis, we further examine when and why the retrieved context contributes to more reliable verifiability judgments.",
+        "authors": [
+          "Yufeng Li",
+          "Rrubaa Panchendrarajan",
+          "Arkaitz Zubiaga"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Hybrid Framework for Robotic Manipulation: Integrating Reinforcement Learning and Large Language Models",
+        "url": "https://arxiv.org/abs/2603.30022v1",
+        "publishedAt": "2026-03-31T17:19:34.000Z",
+        "summary": "This paper introduces a new hybrid framework that combines Reinforcement Learning (RL) and Large Language Models (LLMs) to improve robotic manipulation tasks. By utilizing RL for accurate low-level control and LLMs for high level task planning and understanding of natural language, the proposed framework effectively connects low-level execution with high-level reasoning in robotic systems. This integration allows robots to understand and carry out complex, human-like instructions while adapting to changing environments in real time. The framework is tested in a PyBullet-based simulation environment using the Franka Emika Panda robotic arm, with various manipulation scenarios as benchmarks. The results show a 33.5% decrease in task completion time and enhancements of 18.1% and 36.4% in accuracy and adaptability, respectively, when compared to systems that use only RL. These results underscore the potential of LLM-enhanced robotic systems for practical applications, making them more efficient, adaptable, and capable of interacting with humans. Future research will aim to explore sim-to-real transfer, scalability, and multi-robot systems to further broaden the framework's applicability.",
+        "authors": [
+          "Md Saad",
+          "Sajjad Hussain",
+          "Mohd Suhaib"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Refined Detection for Gumbel Watermarking",
+        "url": "https://arxiv.org/abs/2603.30017v1",
+        "publishedAt": "2026-03-31T17:16:27.000Z",
+        "summary": "We propose a simple detection mechanism for the Gumbel watermarking scheme proposed by Aaronson (2022). The new mechanism is proven to be near-optimal in a problem-dependent sense among all model-agnostic watermarking schemes under the assumption that the next-token distribution is sampled i.i.d.",
+        "authors": [
+          "Tor Lattimore"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 24
+      },
+      {
+        "title": "Architecting Secure AI Agents: Perspectives on System-Level Defenses Against Indirect Prompt Injection Attacks",
+        "url": "https://arxiv.org/abs/2603.30016v1",
+        "publishedAt": "2026-03-31T17:15:46.000Z",
+        "summary": "AI agents, predominantly powered by large language models (LLMs), are vulnerable to indirect prompt injection, in which malicious instructions embedded in untrusted data can trigger dangerous agent actions. This position paper discusses our vision for system-level defenses against indirect prompt injection attacks. We articulate three positions: (1) dynamic replanning and security policy updates are often necessary for dynamic tasks and realistic environments; (2) certain context-dependent security decisions would still require LLMs (or other learned models), but should only be made within system designs that strictly constrain what the model can observe and decide; (3) in inherently ambiguous cases, personalization and human interaction should be treated as core design considerations. In addition to our main positions, we discuss limitations of existing benchmarks that can create a false sense of utility and security. We also highlight the value of system-level defenses, which serve as the skeleton of agentic systems by structuring and controlling agent behaviors, integrating rule-based and model-based security checks, and enabling more targeted research on model robustness and human interaction.",
+        "authors": [
+          "Chong Xiang",
+          "Drew Zagieboylo",
+          "Shaona Ghosh",
+          "Sanjay Kariyappa",
+          "Kai Greshake",
+          "Hanshen Xiao",
+          "Chaowei Xiao",
+          "G. Edward Suh"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Scalable AI-assisted Workflow Management for Detector Design Optimization Using Distributed Computing",
+        "url": "https://arxiv.org/abs/2603.30014v1",
+        "publishedAt": "2026-03-31T17:11:16.000Z",
+        "summary": "The Production and Distributed Analysis (PanDA) system, originally developed for the ATLAS experiment at the CERN Large Hadron Collider (LHC), has evolved into a robust platform for orchestrating large-scale workflows across distributed computing resources. Coupled with its intelligent Distributed Dispatch and Scheduling (iDDS) component, PanDA supports AI/ML-driven workflows through a scalable and flexible workflow engine.\n  We present an AI-assisted framework for detector design optimization that integrates multi-objective Bayesian optimization with the PanDA--iDDS workflow engine to coordinate iterative simulations across heterogeneous resources. The framework addresses the challenge of exploring high-dimensional parameter spaces inherent in modern detector design.\n  We demonstrate the framework using benchmark problems and realistic studies of the ePIC and dRICH detectors for the Electron-Ion Collider (EIC). Results show improved automation, scalability, and efficiency in multi-objective optimization. This work establishes a flexible and extensible paradigm for AI-driven detector design and other computationally intensive scientific applications.",
+        "authors": [
+          "Derek Anderson",
+          "Amit Bashyal",
+          "Markus Diefenthaler",
+          "Cristiano Fanelli",
+          "Wen Guan",
+          "Tanja Horn",
+          "Alex Jentsch Meifeng Lin",
+          "Tadashi Maeno",
+          "Kei Nagai",
+          "Hemalata Nayak",
+          "Connor Pecar",
+          "Karthik Suresh",
+          "Fang-Ying Tsai",
+          "Anselm Vossen",
+          "Tianle Wang",
+          "Torre Wenaus"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Tracking Equivalent Mechanistic Interpretations Across Neural Networks",
+        "url": "https://arxiv.org/abs/2603.30002v1",
+        "publishedAt": "2026-03-31T16:57:52.000Z",
+        "summary": "Mechanistic interpretability (MI) is an emerging framework for interpreting neural networks. Given a task and model, MI aims to discover a succinct algorithmic process, an interpretation, that explains the model's decision process on that task. However, MI is difficult to scale and generalize. This stems in part from two key challenges: there is no precise notion of a valid interpretation; and, generating interpretations is often an ad hoc process. In this paper, we address these challenges by defining and studying the problem of interpretive equivalence: determining whether two different models share a common interpretation, without requiring an explicit description of what that interpretation is. At the core of our approach, we propose and formalize the principle that two interpretations of a model are equivalent if all of their possible implementations are also equivalent. We develop an algorithm to estimate interpretive equivalence and case study its use on Transformer-based models. To analyze our algorithm, we introduce necessary and sufficient conditions for interpretive equivalence based on models' representation similarity. We provide guarantees that simultaneously relate a model's algorithmic interpretations, circuits, and representations. Our framework lays a foundation for the development of more rigorous evaluation methods of MI and automated, generalizable interpretation discovery methods.",
+        "authors": [
+          "Alan Sun",
+          "Mariya Toneva"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      }
+    ],
     "news": [
+      {
+        "title": "Cognichip wants AI to design the chips that power AI, and just raised $60M to try",
+        "url": "https://techcrunch.com/2026/04/01/cognichip-wants-ai-to-design-the-chips-that-power-ai-and-just-raised-60m-to-try/",
+        "publishedAt": "2026-04-01T16:00:00.000Z",
+        "summary": "The firm says it can can reduce the cost of chip development by more than 75% and cut the timeline by more than half.",
+        "authors": [
+          "Tim Fernholz"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Infrastructure",
+        "ageHours": 1
+      },
       {
         "title": "Less than a month: StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together",
         "url": "https://techcrunch.com/2026/04/01/join-the-first-strictlyvc-of-2026-in-sf-with-leaders-from-tdk-ventures-and-replits-co-founder/",
@@ -101,7 +321,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 3
       },
       {
         "title": "Preview tool helps makers visualize 3D-printed objects",
@@ -115,7 +335,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 13
       },
       {
         "title": "Gradient Labs gives every bank customer an AI account manager",
@@ -127,7 +347,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 14
+        "ageHours": 15
       },
       {
         "title": "Mercor says it was hit by cyberattack tied to compromise of open-source LiteLLM project",
@@ -141,7 +361,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 14
+        "ageHours": 15
       },
       {
         "title": "Anthropic is having a month",
@@ -155,7 +375,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 16
+        "ageHours": 17
       },
       {
         "title": "Salesforce announces an AI-heavy makeover for Slack, with 30 new features",
@@ -169,7 +389,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 17
+        "ageHours": 18
       },
       {
         "title": "OpenAI, not yet public, raises $3B from retail investors in monster $122B fund raise",
@@ -183,7 +403,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 18
+        "ageHours": 20
       },
       {
         "title": "Yupp shuts down after raising $33M from a16z crypto&#8217;s Chris Dixon",
@@ -197,7 +417,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 20
+        "ageHours": 21
       },
       {
         "title": "Alexa+ gets new food ordering experiences with Uber Eats and Grubhub",
@@ -211,7 +431,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 22
+        "ageHours": 23
       },
       {
         "title": "Nomadic raises $8.4 million to wrangle the data pouring off autonomous vehicles",
@@ -225,7 +445,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 25
+        "ageHours": 26
       },
       {
         "title": "Exclusive: Runway launches $10M fund, Builders program to support early-stage AI startups",
@@ -239,43 +459,29 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 26
-      },
-      {
-        "title": "With its new app store, Ring bets on AI to go beyond home security",
-        "url": "https://techcrunch.com/2026/03/31/ring-app-store-bets-on-ai-to-go-beyond-home-security/",
-        "publishedAt": "2026-03-31T13:00:00.000Z",
-        "summary": "Ring's app store will allow the company to target broader use cases beyond security, like elder care or business needs.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
         "ageHours": 27
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
-    "last24h": 9,
+    "totalItems": 24,
+    "last24h": 21,
     "topCategories": [
+      {
+        "name": "Research",
+        "count": 10
+      },
+      {
+        "name": "Models",
+        "count": 7
+      },
       {
         "name": "General",
         "count": 5
       },
       {
-        "name": "Models",
-        "count": 4
-      },
-      {
-        "name": "Research",
-        "count": 2
-      },
-      {
-        "name": "Products",
+        "name": "Infrastructure",
         "count": 1
       }
     ]
