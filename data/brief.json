@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-02T16:11:07.891Z",
+  "generatedAt": "2026-04-02T17:08:24.012Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 406",
+        "research:arXiv cs.LG -> HTTP 406",
+        "research:arXiv cs.CL -> HTTP 406"
+      ]
     },
     {
       "group": "news",
@@ -83,231 +87,22 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "HippoCamp: Benchmarking Contextual Agents on Personal Computers",
-        "url": "https://arxiv.org/abs/2604.01221v1",
-        "publishedAt": "2026-04-01T17:58:33.000Z",
-        "summary": "We present HippoCamp, a new benchmark designed to evaluate agents' capabilities on multimodal file management. Unlike existing agent benchmarks that focus on tasks like web interaction, tool use, or software automation in generic settings, HippoCamp evaluates agents in user-centric environments to model individual user profiles and search massive personal files for context-aware reasoning. Our benchmark instantiates device-scale file systems over real-world profiles spanning diverse modalities, comprising 42.4 GB of data across over 2K real-world files. Building upon the raw files, we construct 581 QA pairs to assess agents' capabilities in search, evidence perception, and multi-step reasoning. To facilitate fine-grained analysis, we provide 46.1K densely annotated structured trajectories for step-wise failure diagnosis. We evaluate a wide range of state-of-the-art multimodal large language models (MLLMs) and agentic methods on HippoCamp. Our comprehensive experiments reveal a significant performance gap: even the most advanced commercial models achieve only 48.3% accuracy in user profiling, struggling particularly with long-horizon retrieval and cross-modal reasoning within dense personal file systems. Furthermore, our step-wise failure diagnosis identifies multimodal perception and evidence grounding as the primary bottlenecks. Ultimately, HippoCamp exposes the critical limitations of current agents in realistic, user-centric environments and provides a robust foundation for developing next-generation personal AI assistants.",
-        "authors": [
-          "Zhe Yang",
-          "Shulin Tian",
-          "Kairui Hu",
-          "Shuai Liu",
-          "Hoang-Nhat Nguyen",
-          "Yichi Zhang",
-          "Zujin Guo",
-          "Mengying Yu",
-          "Zinan Zhang",
-          "Jingkang Yang",
-          "Chen Change Loy",
-          "Ziwei Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "Universal YOCO for Efficient Depth Scaling",
-        "url": "https://arxiv.org/abs/2604.01220v1",
-        "publishedAt": "2026-04-01T17:58:21.000Z",
-        "summary": "The rise of test-time scaling has remarkably boosted the reasoning and agentic proficiency of Large Language Models (LLMs). Yet, standard Transformers struggle to scale inference-time compute efficiently, as conventional looping strategies suffer from high computational overhead and a KV cache that inflates alongside model depth. We present Universal YOCO (YOCO-U), which combines the YOCO decoder-decoder architecture with recursive computation to achieve a synergistic effect greater than either alone. Built on the YOCO framework, YOCO-U implements a Universal Self-Decoder that performs multiple iterations via parameter sharing, while confining the iterative process to shallow, efficient-attention layers. This combination yields a favorable capability-efficiency tradeoff that neither YOCO nor recursion achieves independently. The YOCO architecture provides a constant global KV cache and linear pre-filling, while partial recursion enhances representational depth with limited overhead. Together, YOCO-U improves token utility and scaling behavior while maintaining efficient inference. Empirical results confirm that YOCO-U remains highly competitive in general and long-context benchmarks, demonstrating that the integration of efficient-attention architectures and recursive computation is a promising direction for scalable LLMs.",
-        "authors": [
-          "Yutao Sun",
-          "Li Dong",
-          "Tianzhu Ye",
-          "Shaohan Huang",
-          "Jianyong Wang",
-          "Furu Wei"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "LAtent Phase Inference from Short time sequences using SHallow REcurrent Decoders (LAPIS-SHRED)",
-        "url": "https://arxiv.org/abs/2604.01216v1",
-        "publishedAt": "2026-04-01T17:55:10.000Z",
-        "summary": "Reconstructing full spatio-temporal dynamics from sparse observations in both space and time remains a central challenge in complex systems, as measurements can be spatially incomplete and can be also limited to narrow temporal windows. Yet approximating the complete spatio-temporal trajectory is essential for mechanistic insight and understanding, model calibration, and operational decision-making. We introduce LAPIS-SHRED (LAtent Phase Inference from Short time sequence using SHallow REcurrent Decoders), a modular architecture that reconstructs and/or forecasts complete spatiotemporal dynamics from sparse sensor observations confined to short temporal windows. LAPIS-SHRED operates through a three-stage pipeline: (i) a SHRED model is pre-trained entirely on simulation data to map sensor time-histories into a structured latent space, (ii) a temporal sequence model, trained on simulation-derived latent trajectories, learns to propagate latent states forward or backward in time to span unobserved temporal regions from short observational time windows, and (iii) at deployment, only a short observation window of hyper-sparse sensor measurements from the true system is provided, from which the frozen SHRED model and the temporal model jointly reconstruct or forecast the complete spatiotemporal trajectory. The framework supports bidirectional inference, inherits data assimilation and multiscale reconstruction capabilities from its modular structure, and accommodates extreme observational constraints including single-frame terminal inputs. We evaluate LAPIS-SHRED on six experiments spanning complex spatio-temporal physics: turbulent flows, multiscale propulsion physics, volatile combustion transients, and satellite-derived environmental fields, highlighting a lightweight, modular architecture suited for operational settings where observation is constrained by physical or logistical limitations.",
-        "authors": [
-          "Yuxuan Bao",
-          "Xingyue Zhang",
-          "J. Nathan Kutz"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 22
-      },
-      {
-        "title": "The Recipe Matters More Than the Kitchen:Mathematical Foundations of the AI Weather Prediction Pipeline",
-        "url": "https://arxiv.org/abs/2604.01215v1",
-        "publishedAt": "2026-04-01T17:53:51.000Z",
-        "summary": "AI weather prediction has advanced rapidly, yet no unified mathematical framework explains what determines forecast skill. Existing theory addresses specific architectural choices rather than the learning pipeline as a whole, while operational evidence from 2023-2026 demonstrates that training methodology, loss function design, and data diversity matter at least as much as architecture selection. This paper makes two interleaved contributions. Theoretically, we construct a framework rooted in approximation theory on the sphere, dynamical systems theory, information theory, and statistical learning theory that treats the complete learning pipeline (architecture, loss function, training strategy, data distribution) rather than architecture alone. We establish a Learning Pipeline Error Decomposition showing that estimation error (loss- and data-dependent) dominates approximation error (architecture-dependent) at current scales. We develop a Loss Function Spectral Theory formalizing MSE-induced spectral blurring in spherical harmonic coordinates, and derive Out-of-Distribution Extrapolation Bounds proving that data-driven models systematically underestimate record-breaking extremes with bias growing linearly in record exceedance. Empirically, we validate these predictions via inference across ten architecturally diverse AI weather models using NVIDIA Earth2Studio with ERA5 initial conditions, evaluating six metrics across 30 initialization dates spanning all seasons. Results confirm universal spectral energy loss at high wavenumbers for MSE-trained models, rising Error Consensus Ratios showing that the majority of forecast error is shared across architectures, and linear negative bias during extreme events. A Holistic Model Assessment Score provides unified multi-dimensional evaluation, and a prescriptive framework enables mathematical evaluation of proposed pipelines before training.",
-        "authors": [
-          "Piyush Garg",
-          "Diana R. Gergel",
-          "Andrew E. Shao",
-          "Galen J. Yacalis"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "$\\texttt{YC-Bench}$: Benchmarking AI Agents for Long-Term Planning and Consistent Execution",
-        "url": "https://arxiv.org/abs/2604.01212v1",
-        "publishedAt": "2026-04-01T17:52:19.000Z",
-        "summary": "As LLM agents tackle increasingly complex tasks, a critical question is whether they can maintain strategic coherence over long horizons: planning under uncertainty, learning from delayed feedback, and adapting when early mistakes compound. We introduce $\\texttt{YC-Bench}$, a benchmark that evaluates these capabilities by tasking an agent with running a simulated startup over a one-year horizon spanning hundreds of turns. The agent must manage employees, select task contracts, and maintain profitability in a partially observable environment where adversarial clients and growing payroll create compounding consequences for poor decisions. We evaluate 12 models, both proprietary and open source, across 3 seeds each. Only three models consistently surpass the starting capital of \\$200K, with Claude Opus 4.6 achieving the highest average final funds at \\$1.27 M, followed by GLM-5 at \\$1.21 M at 11$\\times$ lower inference cost. Scratchpad usage, the sole mechanism for persisting information across context truncation, is the strongest predictor of success, and adversarial client detection is the primary failure mode, accounting for $47\\%$ of bankruptcies. Our analysis reveals that frontier models still fail through distinct failure modes such as over-parallelization, demonstrating the capability gaps for long-horizon performance. $\\texttt{YC-Bench}$ is open-source, reproducible, and configurable.",
-        "authors": [
-          "Muyu He",
-          "Adit Jain",
-          "Anand Kumar",
-          "Vincent Tu",
-          "Soumyadeep Bakshi",
-          "Sachin Patro",
-          "Nazneen Rajani"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "CliffSearch: Structured Agentic Co-Evolution over Theory and Code for Scientific Algorithm Discovery",
-        "url": "https://arxiv.org/abs/2604.01210v1",
-        "publishedAt": "2026-04-01T17:51:26.000Z",
-        "summary": "Scientific algorithm discovery is iterative: hypotheses are proposed, implemented, stress-tested, and revised. Current LLM-guided search systems accelerate proposal generation, but often under-represent scientific structure by optimizing code-only artifacts with weak correctness/originality gating. We present CliffSearch, an agentic evolutionary framework in which the core evolution operators (pair selection, crossover, mutation, and review) are implemented as LLM agents, and the loop is designed around three principles: (1) each node is a structured scientific artifact, instantiated in either theory+code or code_only mode, (2) reviewer judgments of correctness and originality are first-class selection gates alongside optimization of the benchmark metric of interest, and (3) mutation is split into exploration and correction pathways with distinct objectives. Exploration mutation imports ideas from adjacent scientific domains to increase novelty, while correction mutation performs targeted evidence-guided repair using reviewer signals over theory, code, benchmark results, and runtime errors. We illustrate the framework on three benchmark-grounded studies: transformer hyper-connection evolution, optimizer discovery on a fixed nanoGPT stack, and a smaller native-optimizer ablation. Across these settings, the same loop supports explicit metric direction, reproducible persistence, and reviewer-gated comparison of discoveries under controlled search conditions. The result is a discovery workflow that prioritizes scientific interpretability and correctness while optimizing task metrics under controlled novelty constraints, rather than maximizing candidate throughput alone. Full run artifacts, interactive visualizations, and exported best nodes for the reported studies are available at https://cliffsearch.ai .",
-        "authors": [
-          "Youssef Mroueh",
-          "Carlos Fonseca",
-          "Brian Belgodere",
-          "David Cox"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "LLM REgression with a Latent Iterative State Head",
-        "url": "https://arxiv.org/abs/2604.01206v1",
-        "publishedAt": "2026-04-01T17:50:32.000Z",
-        "summary": "We present RELISH (REgression with a Latent Iterative State Head), a novel, lightweight architecture designed for text regression with large language models. Rather than decoding numeric targets as text or aggregating multiple generated outputs, RELISH predicts scalar values directly from frozen LLM representations by iteratively refining a learned latent state through cross-attention over token-level representations, and then mapping the final state to a point estimate with a linear regressor. Across five datasets, four LLM backbones, and two LLM training regimes, RELISH consistently outperforms prior baselines from all three major LLM regression families, including autoregressive decoding, regression-aware inference, and existing predictive head methods. Despite these gains, RELISH remains highly parameter-efficient, requiring only 3.4-3.7M trainable parameters across frozen LLM backbones (only 0.01-0.04% additional overhead), far less than LoRA-based alternatives that grow with model size (0.26-0.42%).",
-        "authors": [
-          "Yiheng Su",
-          "Matthew Lease"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "Neural Harmonic Textures for High-Quality Primitive Based Neural Reconstruction",
-        "url": "https://arxiv.org/abs/2604.01204v1",
-        "publishedAt": "2026-04-01T17:48:22.000Z",
-        "summary": "Primitive-based methods such as 3D Gaussian Splatting have recently become the state-of-the-art for novel-view synthesis and related reconstruction tasks. Compared to neural fields, these representations are more flexible, adaptive, and scale better to large scenes. However, the limited expressivity of individual primitives makes modeling high-frequency detail challenging. We introduce Neural Harmonic Textures, a neural representation approach that anchors latent feature vectors on a virtual scaffold surrounding each primitive. These features are interpolated within the primitive at ray intersection points. Inspired by Fourier analysis, we apply periodic activations to the interpolated features, turning alpha blending into a weighted sum of harmonic components. The resulting signal is then decoded in a single deferred pass using a small neural network, significantly reducing computational cost. Neural Harmonic Textures yield state-of-the-art results in real-time novel view synthesis while bridging the gap between primitive- and neural-field-based reconstruction. Our method integrates seamlessly into existing primitive-based pipelines such as 3DGUT, Triangle Splatting, and 2DGS. We further demonstrate its generality with applications to 2D image fitting and semantic reconstruction.",
-        "authors": [
-          "Jorge Condor",
-          "Nicolas Moenne-Loccoz",
-          "Merlin Nimier-David",
-          "Piotr Didyk",
-          "Zan Gojcic",
-          "Qi Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 22
-      },
-      {
-        "title": "Therefore I am. I Think",
-        "url": "https://arxiv.org/abs/2604.01202v1",
-        "publishedAt": "2026-04-01T17:46:23.000Z",
-        "summary": "We consider the question: when a large language reasoning model makes a choice, did it think first and then decide to, or decide first and then think? In this paper, we present evidence that detectable, early-encoded decisions shape chain-of-thought in reasoning models. Specifically, we show that a simple linear probe successfully decodes tool-calling decisions from pre-generation activations with very high confidence, and in some cases, even before a single reasoning token is produced. Activation steering supports this causally: perturbing the decision direction leads to inflated deliberation, and flips behavior in many examples (between 7 - 79% depending on model and benchmark). We also show through behavioral analysis that, when steering changes the decision, the chain-of-thought process often rationalizes the flip rather than resisting it. Together, these results suggest that reasoning models can encode action choices before they begin to deliberate in text.",
-        "authors": [
-          "Esakkivel Esakkiraja",
-          "Sai Rajeswar",
-          "Denis Akhiyarov",
-          "Rajagopal Venkatesaramani"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "Learning and Generating Mixed States Prepared by Shallow Channel Circuits",
-        "url": "https://arxiv.org/abs/2604.01197v1",
-        "publishedAt": "2026-04-01T17:42:56.000Z",
-        "summary": "Learning quantum states from measurement data is a central problem in quantum information and computational complexity. In this work, we study the problem of learning to generate mixed states on a finite-dimensional lattice. Motivated by recent developments in mixed state phases of matter, we focus on arbitrary states in the trivial phase. A state belongs to the trivial phase if there exists a shallow preparation channel circuit under which local reversibility is preserved throughout the preparation. We prove that any mixed state in this class can be efficiently learned from measurement access alone. Specifically, given copies of an unknown trivial phase mixed state, our algorithm outputs a shallow local channel circuit that approximately generates this state in trace distance. The sample complexity and runtime are polynomial (or quasi-polynomial) in the number of qubits, assuming constant (or polylogarithmic) circuit depth and gate locality. Importantly, the learner is not given the original preparation circuit and relies only on its existence. Our results provide a structural foundation for quantum generative models based on shallow channel circuits. In the classical limit, our framework also inspires an efficient algorithm for classical diffusion models using only a polynomial overhead of training and generation.",
-        "authors": [
-          "Fangjun Hu",
-          "Christian Kokail",
-          "Milan Kornjača",
-          "Pedro L. S. Lopes",
-          "Weiyuan Gong",
-          "Sheng-Tao Wang",
-          "Xun Gao",
-          "Stefan Ostermann"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "ORBIT: Scalable and Verifiable Data Generation for Search Agents on a Tight Budget",
-        "url": "https://arxiv.org/abs/2604.01195v1",
-        "publishedAt": "2026-04-01T17:42:41.000Z",
-        "summary": "Search agents, which integrate language models (LMs) with web search, are becoming crucial for answering complex user queries. Constructing training datasets for deep research tasks, involving multi-step retrieval and reasoning, remains challenging due to expensive human annotation, or cumbersome prerequisites. In this work, we introduce ORBIT, a training dataset with 20K reasoning-intensive queries with short verifiable answers, generated using a frugal framework without relying on paid API services. The modular framework relies on four stages: seed creation, question--answer pair generation, and two stages of verification: self and external. ORBIT spans 15 domains and each training pair requires 4--5 reasoning steps, with external search verification required from the complete web. We train Qwen3-4B as the base model on ORBIT using GRPO and evaluate it on Wikipedia question answering tasks. Extensive experiment results demonstrate that ORBIT-4B achieves strong performance among sub-4B LLMs as search agents, proving the utility of synthetic datasets. Our framework, code and datasets are open-sourced and available publicly.",
-        "authors": [
-          "Nandan Thakur",
-          "Zijian Chen",
-          "Xueguang Ma",
-          "Jimmy Lin"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 22
-      },
-      {
-        "title": "Embarrassingly Simple Self-Distillation Improves Code Generation",
-        "url": "https://arxiv.org/abs/2604.01193v1",
-        "publishedAt": "2026-04-01T17:39:50.000Z",
-        "summary": "Can a large language model (LLM) improve at code generation using only its own raw outputs, without a verifier, a teacher model, or reinforcement learning? We answer in the affirmative with simple self-distillation (SSD): sample solutions from the model with certain temperature and truncation configurations, then fine-tune on those samples with standard supervised fine-tuning. SSD improves Qwen3-30B-Instruct from 42.4% to 55.3% pass@1 on LiveCodeBench v6, with gains concentrating on harder problems, and it generalizes across Qwen and Llama models at 4B, 8B, and 30B scale, including both instruct and thinking variants. To understand why such a simple method can work, we trace these gains to a precision-exploration conflict in LLM decoding and show that SSD reshapes token distributions in a context-dependent way, suppressing distractor tails where precision matters while preserving useful diversity where exploration matters. Taken together, SSD offers a complementary post-training direction for improving LLM code generation.",
-        "authors": [
-          "Ruixiang Zhang",
-          "Richard He Bai",
-          "Huangjie Zheng",
-          "Navdeep Jaitly",
-          "Ronan Collobert",
-          "Yizhe Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 23
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Microsoft takes on AI rivals with three new foundational models",
+        "url": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
+        "publishedAt": "2026-04-02T16:48:16.000Z",
+        "summary": "MAI released models that can transcribe voice into text as well as generate audio and images after the group's formation six months ago.",
+        "authors": [
+          "Rebecca Szkutak"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 0
+      },
       {
         "title": "Gemma 4: Byte for byte, the most capable open models",
         "url": "https://deepmind.google/blog/gemma-4-byte-for-byte-the-most-capable-open-models/",
@@ -318,13 +113,13 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Research",
-        "ageHours": 0
+        "ageHours": 1
       },
       {
         "title": "Google now lets you direct avatars through prompts in its Vids app",
         "url": "https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/",
         "publishedAt": "2026-04-02T16:00:00.000Z",
-        "summary": "Google is adding a way to customize and instruct avatars for video creation in the Vids app",
+        "summary": "Google is adding a way to customize and instruct avatars for video creation in the Vids app.",
         "authors": [
           "Ivan Mehta"
         ],
@@ -332,7 +127,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 0
+        "ageHours": 1
       },
       {
         "title": "Evaluating the ethics of autonomous systems",
@@ -346,7 +141,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 12
+        "ageHours": 13
       },
       {
         "title": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code — a move the company says was an accident",
@@ -360,7 +155,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 18
+        "ageHours": 19
       },
       {
         "title": "Meta’s natural gas binge could power South Dakota",
@@ -374,7 +169,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 22
+        "ageHours": 23
       },
       {
         "title": "Cognichip wants AI to design the chips that power AI, and just raised $60M to try",
@@ -388,7 +183,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 24
+        "ageHours": 25
       },
       {
         "title": "Less than a month: StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together",
@@ -402,7 +197,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 26
+        "ageHours": 27
       },
       {
         "title": "Preview tool helps makers visualize 3D-printed objects",
@@ -416,7 +211,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 36
+        "ageHours": 37
       },
       {
         "title": "Gradient Labs gives every bank customer an AI account manager",
@@ -428,7 +223,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 38
+        "ageHours": 39
       },
       {
         "title": "Mercor says it was hit by cyberattack tied to compromise of open source LiteLLM project",
@@ -442,7 +237,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 38
+        "ageHours": 39
       },
       {
         "title": "Anthropic is having a month",
@@ -456,40 +251,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 40
-      },
-      {
-        "title": "Salesforce announces an AI-heavy makeover for Slack, with 30 new features",
-        "url": "https://techcrunch.com/2026/03/31/salesforce-announces-an-ai-heavy-makeover-for-slack-with-30-new-features/",
-        "publishedAt": "2026-03-31T22:46:25.000Z",
-        "summary": "Slack just got a whole lot more useful.",
-        "authors": [
-          "Lucas Ropek"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
         "ageHours": 41
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 17,
+    "totalItems": 12,
+    "last24h": 6,
     "topCategories": [
-      {
-        "name": "Research",
-        "count": 12
-      },
-      {
-        "name": "Models",
-        "count": 5
-      },
       {
         "name": "General",
         "count": 5
+      },
+      {
+        "name": "Models",
+        "count": 3
+      },
+      {
+        "name": "Research",
+        "count": 3
       },
       {
         "name": "Infrastructure",
