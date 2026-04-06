@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-06T18:02:11.227Z",
+  "generatedAt": "2026-04-06T19:17:25.329Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,10 +27,7 @@
         }
       ],
       "itemCount": 12,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 503"
-      ]
+      "errors": []
     },
     {
       "group": "news",
@@ -99,10 +96,29 @@
           "Dipankar Maity"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 72
+        "ageHours": 73
+      },
+      {
+        "title": "BAS: A Decision-Theoretic Approach to Evaluating Large Language Model Confidence",
+        "url": "https://arxiv.org/abs/2604.03216v1",
+        "publishedAt": "2026-04-03T17:44:32.000Z",
+        "summary": "Large language models (LLMs) often produce confident but incorrect answers in settings where abstention would be safer. Standard evaluation protocols, however, require a response and do not account for how confidence should guide decisions under different risk preferences. To address this gap, we introduce the Behavioral Alignment Score (BAS), a decision-theoretic metric for evaluating how well LLM confidence supports abstention-aware decision making. BAS is derived from an explicit answer-or-abstain utility model and aggregates realized utility across a continuum of risk thresholds, yielding a measure of decision-level reliability that depends on both the magnitude and ordering of confidence. We show theoretically that truthful confidence estimates uniquely maximize expected BAS utility, linking calibration to decision-optimal behavior. BAS is related to proper scoring rules such as log loss, but differs structurally: log loss penalizes underconfidence and overconfidence symmetrically, whereas BAS imposes an asymmetric penalty that strongly prioritizes avoiding overconfident errors. Using BAS alongside widely used metrics such as ECE and AURC, we then construct a benchmark of self-reported confidence reliability across multiple LLMs and tasks. Our results reveal substantial variation in decision-useful confidence, and while larger and more accurate models tend to achieve higher BAS, even frontier models remain prone to severe overconfidence. Importantly, models with similar ECE or AURC can exhibit very different BAS due to highly overconfident errors, highlighting limitations of standard metrics. We further show that simple interventions, such as top-$k$ confidence elicitation and post-hoc calibration, can meaningfully improve confidence reliability. Overall, our work provides both a principled metric and a comprehensive benchmark for evaluating LLM confidence reliability.",
+        "authors": [
+          "Sean Wu",
+          "Fredrik K. Gustafsson",
+          "Edward Phillips",
+          "Boyan Gao",
+          "Anshul Thakur",
+          "David A. Clifton"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 74
       },
       {
         "title": "Hierarchical Planning with Latent World Models",
@@ -126,7 +142,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 74
       },
       {
         "title": "A Tsetlin Machine-driven Intrusion Detection System for Next-Generation IoMT Security",
@@ -144,7 +160,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 74
       },
       {
         "title": "PR3DICTR: A modular AI framework for medical 3D image-based detection and outcome prediction",
@@ -162,10 +178,25 @@
           "Lisanne V. van Dijk"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 73
+        "ageHours": 74
+      },
+      {
+        "title": "Coupled Control, Structured Memory, and Verifiable Action in Agentic AI (SCRAT -- Stochastic Control with Retrieval and Auditable Trajectories): A Comparative Perspective from Squirrel Locomotion and Scatter-Hoarding",
+        "url": "https://arxiv.org/abs/2604.03201v1",
+        "publishedAt": "2026-04-03T17:25:05.000Z",
+        "summary": "Agentic AI is increasingly judged not by fluent output alone but by whether it can act, remember, and verify under partial observability, delay, and strategic observation. Existing research often studies these demands separately: robotics emphasizes control, retrieval systems emphasize memory, and alignment or assurance work emphasizes checking and oversight. This article argues that squirrel ecology offers a sharp comparative case because arboreal locomotion, scatter-hoarding, and audience-sensitive caching couple all three demands in one organism. We synthesize evidence from fox, eastern gray, and, in one field comparison, red squirrels, and impose an explicit inference ladder: empirical observation, minimal computational inference, and AI design conjecture. We introduce a minimal hierarchical partially observed control model with latent dynamics, structured episodic memory, observer-belief state, option-level actions, and delayed verifier signals. This motivates three hypotheses: (H1) fast local feedback plus predictive compensation improves robustness under hidden dynamics shifts; (H2) memory organized for future control improves delayed retrieval under cue conflict and load; and (H3) verifiers and observer models inside the action-memory loop reduce silent failure and information leakage while remaining vulnerable to misspecification. A downstream conjecture is that role-differentiated proposer/executor/checker/adversary systems may reduce correlated error under asymmetric information and verification burden. The contribution is a comparative perspective and benchmark agenda: a disciplined program of falsifiable claims about the coupling of control, memory, and verifiable action.",
+        "authors": [
+          "Maximiliano Armesto",
+          "Christophe Kolb"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 74
       },
       {
         "title": "Learning the Signature of Memorization in Autoregressive Language Models",
@@ -182,7 +213,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 74
       },
       {
         "title": "Real-Time Surrogate Modeling for Personalized Blood Flow Prediction and Hemodynamic Analysis",
@@ -201,7 +232,27 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 74
+      },
+      {
+        "title": "Reliability Gated Multi-Teacher Distillation for Low Resource Abstractive Summarization",
+        "url": "https://arxiv.org/abs/2604.03192v1",
+        "publishedAt": "2026-04-03T17:06:51.000Z",
+        "summary": "We study multiteacher knowledge distillation for low resource abstractive summarization from a reliability aware perspective. We introduce EWAD (Entropy Weighted Agreement Aware Distillation), a token level mechanism that routes supervision between teacher distillation and gold supervision based on inter teacher agreement, and CPDP (Capacity Proportional Divergence Preservation), a geometric constraint on the student position relative to heterogeneous teachers. Across two Bangla datasets, 13 BanglaT5 ablations, and eight Qwen2.5 experiments, we find that logit level KD provides the most reliable gains, while more complex distillation improves semantic similarity for short summaries but degrades longer outputs. Cross lingual pseudo label KD across ten languages retains 71-122 percent of teacher ROUGE L at 3.2x compression. A human validated multi judge LLM evaluation further reveals calibration bias in single judge pipelines. Overall, our results show that reliability aware distillation helps characterize when multi teacher supervision improves summarization and when data scaling outweighs loss engineering.",
+        "authors": [
+          "Dipto Sumit",
+          "Ankan Kumar Roy",
+          "Sadia Khair Rodela",
+          "Atia Haque Asha",
+          "Mourchona Afrin",
+          "Niloy Farhan",
+          "Farig Yousuf Sadeque"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 74
       },
       {
         "title": "The Compression Gap: Why Discrete Tokenization Limits Vision-Language-Action Model Scaling",
@@ -215,7 +266,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 74
       },
       {
         "title": "Gradient Boosting within a Single Attention Layer",
@@ -226,10 +277,10 @@
           "Saleh Sargolzaei"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 74
       },
       {
         "title": "Reflective Context Learning: Studying the Optimization Primitives of Context Space",
@@ -245,71 +296,41 @@
           "Shikib Mehri"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 73
-      },
-      {
-        "title": "PRISM: LLM-Guided Semantic Clustering for High-Precision Topics",
-        "url": "https://arxiv.org/abs/2604.03180v1",
-        "publishedAt": "2026-04-03T16:56:47.000Z",
-        "summary": "In this paper, we propose Precision-Informed Semantic Modeling (PRISM), a structured topic modeling framework combining the benefits of rich representations captured by LLMs with the low cost and interpretability of latent semantic clustering methods. PRISM fine-tunes a sentence encoding model using a sparse set of LLM- provided labels on samples drawn from some corpus of interest. We segment this embedding space with thresholded clustering, yielding clusters that separate closely related topics within some narrow domain. Across multiple corpora, PRISM improves topic separability over state-of-the-art local topic models and even over clustering on large, frontier embedding models while requiring only a small number of LLM queries to train. This work contributes to several research streams by providing (i) a student-teacher pipeline to distill sparse LLM supervision into a lightweight model for topic discovery; (ii) an analysis of the efficacy of sampling strategies to improve local geometry for cluster separability; and (iii) an effective approach for web-scale text analysis, enabling researchers and practitioners to track nuanced claims and subtopics online with an interpretable, locally deployable framework.",
-        "authors": [
-          "Connor Douglas",
-          "Utkucan Balci",
-          "Joseph Aylett-Bullock"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 73
-      },
-      {
-        "title": "Understanding the Role of Hallucination in Reinforcement Post-Training of Multimodal Reasoning Models",
-        "url": "https://arxiv.org/abs/2604.03179v1",
-        "publishedAt": "2026-04-03T16:56:34.000Z",
-        "summary": "The recent success of reinforcement learning (RL) in large reasoning models has inspired the growing adoption of RL for post-training Multimodal Large Language Models (MLLMs) to enhance their visual reasoning capabilities. Although many studies have reported improved performance, it remains unclear whether RL training truly enables models to learn from visual information. In this work, we propose the Hallucination-as-Cue Framework, an analytical framework designed to investigate the effects of RL-based post-training on multimodal reasoning models from the perspective of model hallucination. Specifically, we introduce hallucination-inductive, modality-specific corruptions that remove or replace essential information required to derive correct answers, thereby forcing the model to reason by hallucination. By applying these corruptions during both training and evaluation, our framework provides a unique perspective for diagnosing RL training dynamics and understanding the intrinsic properties of datasets. Through extensive experiments and analyses across multiple multimodal reasoning benchmarks, we reveal that the role of model hallucination for RL-training is more significant than previously recognized. For instance, we find that RL post-training under purely hallucination-inductive settings can still significantly improve models' reasoning performance, and in some cases even outperform standard training. These findings challenge prevailing assumptions about MLLM reasoning training and motivate the development of more modality-aware RL-based training designs.",
-        "authors": [
-          "Gengwei Zhang",
-          "Jie Peng",
-          "Zhen Tan",
-          "Mufan Qiu",
-          "Hossein Nourkhiz Mahjoub",
-          "Vaishnav Tadiparthi",
-          "Kwonjoon Lee",
-          "Yanyong Zhang",
-          "Tianlong Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 73
-      },
-      {
-        "title": "DSBD: Dual-Aligned Structural Basis Distillation for Graph Domain Adaptation",
-        "url": "https://arxiv.org/abs/2604.03154v1",
-        "publishedAt": "2026-04-03T16:23:59.000Z",
-        "summary": "Graph domain adaptation (GDA) aims to transfer knowledge from a labeled source graph to an unlabeled target graph under distribution shifts. However, existing methods are largely feature-centric and overlook structural discrepancies, which become particularly detrimental under significant topology shifts. Such discrepancies alter both geometric relationships and spectral properties, leading to unreliable transfer of graph neural networks (GNNs). To address this limitation, we propose Dual-Aligned Structural Basis Distillation (DSBD) for GDA, a novel framework that explicitly models and adapts cross-domain structural variation. DSBD constructs a differentiable structural basis by synthesizing continuous probabilistic prototype graphs, enabling gradient-based optimization over graph topology. The basis is learned under source-domain supervision to preserve semantic discriminability, while being explicitly aligned to the target domain through a dual-alignment objective. Specifically, geometric consistency is enforced via permutation-invariant topological moment matching, and spectral consistency is achieved through Dirichlet energy calibration, jointly capturing structural characteristics across domains. Furthermore, we introduce a decoupled inference paradigm that mitigates source-specific structural bias by training a new GNN on the distilled structural basis. Extensive experiments on graph and image benchmarks demonstrate that DSBD consistently outperforms state-of-the-art methods.",
-        "authors": [
-          "Yingxu Wang",
-          "Kunyu Zhang",
-          "Jiaxin Huang",
-          "Mengzhu Wang",
-          "Mingyan Xiao",
-          "Siyang Gao",
-          "Nan Yin"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
         "ageHours": 74
       }
     ],
     "news": [
+      {
+        "title": "Google quietly releases an offline-first AI dictation app on iOS",
+        "url": "https://techcrunch.com/2026/04/06/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+        "publishedAt": "2026-04-06T18:54:33.000Z",
+        "summary": "Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.",
+        "authors": [
+          "Ivan Mehta"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 0
+      },
+      {
+        "title": "Iran threatens &#8216;Stargate&#8217; AI data centers",
+        "url": "https://techcrunch.com/2026/04/06/iran-threatens-stargate-ai-data-centers/",
+        "publishedAt": "2026-04-06T18:06:28.000Z",
+        "summary": "Iran said it will target U.S.-linked data centers with new missile strikes, as the war between the U.S. and Iran escalates.",
+        "authors": [
+          "Rebecca Szkutak"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
       {
         "title": "OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day work week",
         "url": "https://techcrunch.com/2026/04/06/openais-vision-for-the-ai-economy-public-wealth-funds-robot-taxes-and-a-four-day-work-week/",
@@ -322,7 +343,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 2
+        "ageHours": 3
       },
       {
         "title": "Startup Battlefield 200 applications open: a chance for VC access, TechCrunch coverage, and $100K",
@@ -336,7 +357,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 5
       },
       {
         "title": "How to use the new ChatGPT app integrations, including DoorDash, Spotify, Uber, and others",
@@ -350,7 +371,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 5
       },
       {
         "title": "Ticket savings of up to $500 this week for TechCrunch Disrupt 2026",
@@ -364,7 +385,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 5
       },
       {
         "title": "Spain&#8217;s Xoople raises $130 million Series B to map the Earth for AI",
@@ -378,7 +399,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 6
       },
       {
         "title": "Announcing the OpenAI Safety Fellowship",
@@ -390,7 +411,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Policy",
-        "ageHours": 8
+        "ageHours": 9
       },
       {
         "title": "Industrial policy for the Intelligence Age",
@@ -402,7 +423,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Policy",
-        "ageHours": 16
+        "ageHours": 17
       },
       {
         "title": "Copilot is ‘for entertainment purposes only,’ according to Microsoft’s terms of use",
@@ -416,7 +437,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 23
+        "ageHours": 24
       },
       {
         "title": "Can orbital data centers help justify a massive valuation for SpaceX?",
@@ -430,7 +451,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 26
+        "ageHours": 28
       },
       {
         "title": "In Japan, the robot isn&#8217;t coming for your job; it&#8217;s filling the one nobody wants",
@@ -444,46 +465,18 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 28
-      },
-      {
-        "title": "Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage",
-        "url": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
-        "publishedAt": "2026-04-04T16:32:22.000Z",
-        "summary": "It’s about to become more expensive for Claude Code subscribers to use Anthropic’s coding assistant with OpenClaw and other third-party tools.",
-        "authors": [
-          "Anthony Ha"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 50
-      },
-      {
-        "title": "Anthropic is having a moment in the private markets; SpaceX could spoil the party",
-        "url": "https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/",
-        "publishedAt": "2026-04-04T01:31:00.000Z",
-        "summary": "Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest trade around, OpenAI losing ground, and SpaceX's looming IPO poised to reshape the landscape for everyone.",
-        "authors": [
-          "Connie Loizos"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 65
+        "ageHours": 29
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 8,
+    "last24h": 9,
     "topCategories": [
       {
         "name": "Research",
-        "count": 10
+        "count": 11
       },
       {
         "name": "General",
@@ -491,7 +484,7 @@
       },
       {
         "name": "Models",
-        "count": 5
+        "count": 4
       },
       {
         "name": "Policy",
