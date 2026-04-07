@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-07T17:14:50.030Z",
+  "generatedAt": "2026-04-07T18:08:48.265Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,219 +87,22 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Beyond the Final Actor: Modeling the Dual Roles of Creator and Editor for Fine-Grained LLM-Generated Text Detection",
-        "url": "https://arxiv.org/abs/2604.04932v1",
-        "publishedAt": "2026-04-06T17:59:55.000Z",
-        "summary": "The misuse of large language models (LLMs) requires precise detection of synthetic text. Existing works mainly follow binary or ternary classification settings, which can only distinguish pure human/LLM text or collaborative text at best. This remains insufficient for the nuanced regulation, as the LLM-polished human text and humanized LLM text often trigger different policy consequences. In this paper, we explore fine-grained LLM-generated text detection under a rigorous four-class setting. To handle such complexities, we propose RACE (Rhetorical Analysis for Creator-Editor Modeling), a fine-grained detection method that characterizes the distinct signatures of creator and editor. Specifically, RACE utilizes Rhetorical Structure Theory to construct a logic graph for the creator's foundation while extracting Elementary Discourse Unit-level features for the editor's style. Experiments show that RACE outperforms 12 baselines in identifying fine-grained types with low false alarms, offering a policy-aligned solution for LLM regulation.",
-        "authors": [
-          "Yang Li",
-          "Qiang Sheng",
-          "Zhengjia Wang",
-          "Yehan Yang",
-          "Danding Wang",
-          "Juan Cao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 23
-      },
-      {
-        "title": "Early Stopping for Large Reasoning Models via Confidence Dynamics",
-        "url": "https://arxiv.org/abs/2604.04930v1",
-        "publishedAt": "2026-04-06T17:59:45.000Z",
-        "summary": "Large reasoning models rely on long chain-of-thought generation to solve complex problems, but extended reasoning often incurs substantial computational cost and can even degrade performance due to overthinking. A key challenge is determining when the model should stop reasoning and produce the final answer. In this work, we study the confidence of intermediate answers during reasoning and observe two characteristic behaviors: correct reasoning trajectories often reach high-confidence answers early, while incorrect rollouts tend to produce long, unproductive reasoning traces and exhibit less reliable confidence dynamics. Motivated by these observations, we propose CoDE-Stop (Confidence Dynamics Early Stop), an early stopping method that leverages the dynamics of intermediate answer confidence to decide when to terminate reasoning, requiring no additional training and easily integrating into existing models. We evaluate CoDE-Stop on diverse reasoning and science benchmarks across multiple models. Compared to prior early stopping methods, it achieves a more favorable accuracy-compute tradeoff and reduces total token usage by 25-50% compared to standard full-length reasoning. In addition, we provide analyses of confidence dynamics during reasoning, offering insights into how confidence changes in both correct and incorrect trajectories.",
-        "authors": [
-          "Parsa Hosseini",
-          "Sumit Nawathe",
-          "Mahdi Salmani",
-          "Meisam Razaviyayn",
-          "Soheil Feizi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "Your Pre-trained Diffusion Model Secretly Knows Restoration",
-        "url": "https://arxiv.org/abs/2604.04924v1",
-        "publishedAt": "2026-04-06T17:59:04.000Z",
-        "summary": "Pre-trained diffusion models have enabled significant advancements in All-in-One Restoration (AiOR), offering improved perceptual quality and generalization. However, diffusion-based restoration methods primarily rely on fine-tuning or Control-Net style modules to leverage the pre-trained diffusion model's priors for AiOR. In this work, we show that these pre-trained diffusion models inherently possess restoration behavior, which can be unlocked by directly learning prompt embeddings at the output of the text encoder. Interestingly, this behavior is largely inaccessible through text prompts and text-token embedding optimization. Furthermore, we observe that naive prompt learning is unstable because the forward noising process using degraded images is misaligned with the reverse sampling trajectory. To resolve this, we train prompts within a diffusion bridge formulation that aligns training and inference dynamics, enforcing a coherent denoising path from noisy degraded states to clean images. Building on these insights, we introduce our lightweight learned prompts on the pre-trained WAN video model and FLUX image models, converting them into high-performing restoration models. Extensive experiments demonstrate that our approach achieves competitive performance and generalization across diverse degradations, while avoiding fine-tuning and restoration-specific control modules.",
-        "authors": [
-          "Sudarshan Rajagopalan",
-          "Vishal M. Patel"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "Stratifying Reinforcement Learning with Signal Temporal Logic",
-        "url": "https://arxiv.org/abs/2604.04923v1",
-        "publishedAt": "2026-04-06T17:58:58.000Z",
-        "summary": "In this paper, we develop a stratification-based semantics for Signal Temporal Logic (STL) in which each atomic predicate is interpreted as a membership test in a stratified space. This perspective reveals a novel correspondence principle between stratification theory and STL, showing that most STL formulas can be viewed as inducing a stratification of space-time. The significance of this interpretation is twofold. First, it offers a fresh theoretical framework for analyzing the structure of the embedding space generated by deep reinforcement learning (DRL) and relates it to the geometry of the ambient decision space. Second, it provides a principled framework that both enables the reuse of existing high-dimensional analysis tools and motivates the creation of novel computational techniques. To ground the theory, we (1) illustrate the role of stratification theory in Minigrid games and (2) apply numerical techniques to the latent embeddings of a DRL agent playing such a game where the robustness of STL formulas is used as the reward. In the process, we propose computationally efficient signatures that, based on preliminary evidence, appear promising for uncovering the stratification structure of such embedding spaces.",
-        "authors": [
-          "Justin Curry",
-          "Alberto Speranzon"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "TriAttention: Efficient Long Reasoning with Trigonometric KV Compression",
-        "url": "https://arxiv.org/abs/2604.04921v1",
-        "publishedAt": "2026-04-06T17:58:42.000Z",
-        "summary": "Extended reasoning in large language models (LLMs) creates severe KV cache memory bottlenecks. Leading KV cache compression methods estimate KV importance using attention scores from recent post-RoPE queries. However, queries rotate with position during RoPE, making representative queries very few, leading to poor top-key selection and unstable reasoning. To avoid this issue, we turn to the pre-RoPE space, where we observe that Q and K vectors are highly concentrated around fixed non-zero centers and remain stable across positions -- Q/K concentration. We show that this concentration causes queries to preferentially attend to keys at specific distances (e.g., nearest keys), with the centers determining which distances are preferred via a trigonometric series. Based on this, we propose TriAttention to estimate key importance by leveraging these centers. Via the trigonometric series, we use the distance preference characterized by these centers to score keys according to their positions, and also leverage Q/K norms as an additional signal for importance estimation. On AIME25 with 32K-token generation, TriAttention matches Full Attention reasoning accuracy while achieving 2.5x higher throughput or 10.7x KV memory reduction, whereas leading baselines achieve only about half the accuracy at the same efficiency. TriAttention enables OpenClaw deployment on a single consumer GPU, where long context would otherwise cause out-of-memory with Full Attention.",
-        "authors": [
-          "Weian Mao",
-          "Xi Lin",
-          "Wei Huang",
-          "Yuxin Xie",
-          "Tianfu Fu",
-          "Bohan Zhuang",
-          "Song Han",
-          "Yukang Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "PINNs in PDE Constrained Optimal Control Problems: Direct vs Indirect Methods",
-        "url": "https://arxiv.org/abs/2604.04920v1",
-        "publishedAt": "2026-04-06T17:57:53.000Z",
-        "summary": "We study physics-informed neural networks (PINNs) as numerical tools for the optimal control of semilinear partial differential equations. We first recall the classical direct and indirect viewpoints for optimal control of PDEs, and then present two PINN formulations: a direct formulation based on minimizing the objective under the state constraint, and an indirect formulation based on the first-order optimality system. For a class of semilinear parabolic equations, we derive the state equation, the adjoint equation, and the stationarity condition in a form consistent with continuous-time Pontryagin-type optimality conditions. We then specialize the framework to an Allen-Cahn control problem and compare three numerical approaches: (i) a discretize-then-optimize adjoint method, (ii) a direct PINN, and (iii) an indirect PINN. Numerical results show that the PINN parameterization has an implicit regularizing effect, in the sense that it tends to produce smoother control profiles. They also indicate that the indirect PINN more faithfully preserves the PDE contraint and optimality structure and yields a more accurate neural approximation than the direct PINN.",
-        "authors": [
-          "Zhen Zhang",
-          "Shanqing Liu",
-          "Alessandro Alla",
-          "Jerome Darbon",
-          "George Em Karniadakis"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 23
-      },
-      {
-        "title": "Vero: An Open RL Recipe for General Visual Reasoning",
-        "url": "https://arxiv.org/abs/2604.04917v1",
-        "publishedAt": "2026-04-06T17:56:25.000Z",
-        "summary": "What does it take to build a visual reasoner that works across charts, science, spatial understanding, and open-ended tasks? The strongest vision-language models (VLMs) show such broad visual reasoning is within reach, but the recipe behind them remains unclear, locked behind proprietary reinforcement learning (RL) pipelines with non-public data. We introduce Vero, a family of fully open VLMs that matches or exceeds existing open-weight models across diverse visual reasoning tasks. We scale RL data and rewards across six broad task categories, constructing Vero-600K, a 600K-sample dataset from 59 datasets, and designing task-routed rewards that handle heterogeneous answer formats. Vero achieves state-of-the-art performance, improving over four base models by 3.7-5.5 points on average across VeroEval, our suite of 30 challenging benchmarks. Starting from Qwen3-VL-8B-Instruct, Vero outperforms Qwen3-VL-8B-Thinking on 23 of 30 benchmarks without additional proprietary thinking data. When trained from the same base model, Vero-600K exceeds existing RL datasets across task categories. Systematic ablations reveal that different task categories elicit qualitatively distinct reasoning patterns that transfer poorly in isolation, suggesting that broad data coverage is the primary driver of strong RL scaling. All data, code, and models are released.",
-        "authors": [
-          "Gabriel Sarch",
-          "Linrong Cai",
-          "Qunzhong Wang",
-          "Haoyang Wu",
-          "Danqi Chen",
-          "Zhuang Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "Empowering Power Outage Prediction with Spatially Aware Hybrid Graph Neural Networks and Contrastive Learning",
-        "url": "https://arxiv.org/abs/2604.04916v1",
-        "publishedAt": "2026-04-06T17:56:03.000Z",
-        "summary": "Extreme weather events, such as severe storms, hurricanes, snowstorms, and ice storms, which are exacerbated by climate change, frequently cause widespread power outages. These outages halt industrial operations, impact communities, damage critical infrastructure, profoundly disrupt economies, and have far-reaching effects across various sectors. To mitigate these effects, the University of Connecticut and Eversource Energy Center have developed an outage prediction modeling (OPM) system to provide pre-emptive forecasts for electric distribution networks before such weather events occur. However, existing predictive models in the system do not incorporate the spatial effect of extreme weather events. To this end, we develop Spatially Aware Hybrid Graph Neural Networks (SA-HGNN) with contrastive learning to enhance the OPM predictions for extreme weather-induced power outages. Specifically, we first encode spatial relationships of both static features (e.g., land cover, infrastructure) and event-specific dynamic features (e.g., wind speed, precipitation) via Spatially Aware Hybrid Graph Neural Networks (SA-HGNN). Next, we leverage contrastive learning to handle the imbalance problem associated with different types of extreme weather events and generate location-specific embeddings by minimizing intra-event distances between similar locations while maximizing inter-event distances across all locations. Thorough empirical studies in four utility service territories, i.e., Connecticut, Western Massachusetts, Eastern Massachusetts, and New Hampshire, demonstrate that SA-HGNN can achieve state-of-the-art performance for power outage prediction.",
-        "authors": [
-          "Xuyang Shen",
-          "Zijie Pan",
-          "Diego Cerrai",
-          "Xinxuan Zhang",
-          "Christopher Colorio",
-          "Emmanouil N. Anagnostou",
-          "Dongjin Song"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 23
-      },
-      {
-        "title": "Analyzing Symbolic Properties for DRL Agents in Systems and Networking",
-        "url": "https://arxiv.org/abs/2604.04914v1",
-        "publishedAt": "2026-04-06T17:55:15.000Z",
-        "summary": "Deep reinforcement learning (DRL) has shown remarkable performance on complex control problems in systems and networking, including adaptive video streaming, wireless resource management, and congestion control. For safe deployment, however, it is critical to reason about how agents behave across the range of system states they encounter in practice. Existing verification-based methods in this domain primarily focus on point properties, defined around fixed input states, which offer limited coverage and require substantial manual effort to identify relevant input-output pairs for analysis. In this paper, we study symbolic properties, that specify expected behavior over ranges of input states, for DRL agents in systems and networking. We present a generic formulation for symbolic properties, with monotonicity and robustness as concrete examples, and show how they can be analyzed using existing DNN verification engines. Our approach encodes symbolic properties as comparisons between related executions of the same policy and decomposes them into practically tractable sub-properties. These techniques serve as practical enablers for applying existing verification tools to symbolic analysis. Using our framework, diffRL, we conduct an extensive empirical study across three DRL-based control systems, adaptive video streaming, wireless resource management, and congestion control. Through these case studies, we analyze symbolic properties over broad input ranges, examine how property satisfaction evolves during training, study the impact of model size on verifiability, and compare multiple verification backends. Our results show that symbolic properties provide substantially broader coverage than point properties and can uncover non-obvious, operationally meaningful counterexamples, while also revealing practical solver trade-offs and limitations.",
-        "authors": [
-          "Mohammad Zangooei",
-          "Jannis Weil",
-          "Amr Rizk",
-          "Mina Tahmasbi Arashloo",
-          "Raouf Boutaba"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "HI-MoE: Hierarchical Instance-Conditioned Mixture-of-Experts for Object Detection",
-        "url": "https://arxiv.org/abs/2604.04908v1",
-        "publishedAt": "2026-04-06T17:52:58.000Z",
-        "summary": "Mixture-of-Experts (MoE) architectures enable conditional computation by activating only a subset of model parameters for each input. Although sparse routing has been highly effective in language models and has also shown promise in vision, most vision MoE methods operate at the image or patch level. This granularity is poorly aligned with object detection, where the fundamental unit of reasoning is an object query corresponding to a candidate instance. We propose Hierarchical Instance-Conditioned Mixture-of-Experts (HI-MoE), a DETR-style detection architecture that performs routing in two stages: a lightweight scene router first selects a scene-consistent expert subset, and an instance router then assigns each object query to a small number of experts within that subset. This design aims to preserve sparse computation while better matching the heterogeneous, instance-centric structure of detection. In the current draft, experiments are concentrated on COCO with preliminary specialization analysis on LVIS. Under these settings, HI-MoE improves over a dense DINO baseline and over simpler token-level or instance-only routing variants, with especially strong gains on small objects. We also provide an initial visualization of expert specialization patterns. We present the method, ablations, and current limitations in a form intended to support further experimental validation.",
-        "authors": [
-          "Vadim Vashkelis",
-          "Natalia Trukhina"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "How AI Aggregation Affects Knowledge",
-        "url": "https://arxiv.org/abs/2604.04906v1",
-        "publishedAt": "2026-04-06T17:51:34.000Z",
-        "summary": "Artificial intelligence (AI) changes social learning when aggregated outputs become training data for future predictions. To study this, we extend the DeGroot model by introducing an AI aggregator that trains on population beliefs and feeds synthesized signals back to agents. We define the learning gap as the deviation of long-run beliefs from the efficient benchmark, allowing us to capture how AI aggregation affects learning. Our main result identifies a threshold in the speed of updating: when the aggregator updates too quickly, there is no positive-measure set of training weights that robustly improves learning across a broad class of environments, whereas such weights exist when updating is sufficiently slow. We then compare global and local architectures. Local aggregators trained on proximate or topic-specific data robustly improve learning in all environments. Consequently, replacing specialized local aggregators with a single global aggregator worsens learning in at least one dimension of the state.",
-        "authors": [
-          "Daron Acemoglu",
-          "Tianyi Lin",
-          "Asuman Ozdaglar",
-          "James Siderius"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "Are Latent Reasoning Models Easily Interpretable?",
-        "url": "https://arxiv.org/abs/2604.04902v1",
-        "publishedAt": "2026-04-06T17:50:06.000Z",
-        "summary": "Latent reasoning models (LRMs) have attracted significant research interest due to their low inference cost (relative to explicit reasoning models) and theoretical ability to explore multiple reasoning paths in parallel. However, these benefits come at the cost of reduced interpretability: LRMs are difficult to monitor because they do not reason in natural language. This paper presents an investigation into LRM interpretability by examining two state-of-the-art LRMs. First, we find that latent reasoning tokens are often unnecessary for LRMs' predictions; on logical reasoning datasets, LRMs can almost always produce the same final answers without using latent reasoning at all. This underutilization of reasoning tokens may partially explain why LRMs do not consistently outperform explicit reasoning methods and raises doubts about the stated role of these tokens in prior work. Second, we demonstrate that when latent reasoning tokens are necessary for performance, we can decode gold reasoning traces up to 65-93% of the time for correctly predicted instances. This suggests LRMs often implement the expected solution rather than an uninterpretable reasoning process. Finally, we present a method to decode a verified natural language reasoning trace from latent tokens without knowing a gold reasoning trace a priori, demonstrating that it is possible to find a verified trace for a majority of correct predictions but only a minority of incorrect predictions. Our findings highlight that current LRMs largely encode interpretable processes, and interpretability itself can be a signal of prediction correctness.",
-        "authors": [
-          "Connor Dilgren",
-          "Sarah Wiegreffe"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 23
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Anthropic debuts preview of powerful new AI model Mythos in new cybersecurity initiative",
+        "url": "https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/",
+        "publishedAt": "2026-04-07T18:00:00.000Z",
+        "summary": "The new model will be used by a small number of high-profile companies to engage in defensive cybersecurity work.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 0
+      },
       {
         "title": "Uber is the latest to be won over by Amazon&#8217;s AI chips",
         "url": "https://techcrunch.com/2026/04/07/uber-is-the-latest-to-be-won-over-by-amazons-ai-chips/",
@@ -308,7 +115,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 0
+        "ageHours": 1
       },
       {
         "title": "Anthropic ups compute deal with Google and Broadcom amid skyrocketing demand",
@@ -322,13 +129,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 2
       },
       {
         "title": "Google Maps can now write captions for your photos using AI",
         "url": "https://techcrunch.com/2026/04/07/google-maps-can-now-write-captions-for-your-photos-using-ai/",
         "publishedAt": "2026-04-07T15:30:00.000Z",
-        "summary": "Gemini can now create captions when users are looking to share a photo or video.",
+        "summary": "Google is rolling out new features to make it easier for users to contribute local knowledge to Maps. Most notably, Gemini can now create captions when users are looking to share a photo or video about a place.",
         "authors": [
           "Aisha Malik"
         ],
@@ -336,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 3
       },
       {
         "title": "4 days left to save close to $500 on TechCrunch Disrupt 2026 passes",
@@ -350,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 4
       },
       {
         "title": "The AI gold rush is pulling private wealth into riskier, earlier bets",
@@ -364,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 4
+        "ageHours": 5
       },
       {
         "title": "AI startup Rocket offers vibe McKinsey-style reports at a fraction of the cost",
@@ -378,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 12
+        "ageHours": 13
       },
       {
         "title": "Helping data centers deliver higher performance with less hardware",
@@ -392,7 +199,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 13
+        "ageHours": 14
       },
       {
         "title": "OpenAI alums have been quietly investing from a new, potentially $100M fund",
@@ -406,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 19
+        "ageHours": 20
       },
       {
         "title": "Google quietly launched an AI dictation app that works offline",
@@ -420,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 22
+        "ageHours": 23
       },
       {
         "title": "Iran threatens &#8216;Stargate&#8217; AI data centers",
@@ -434,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 23
+        "ageHours": 24
       },
       {
         "title": "OpenAI’s vision for the AI economy: public wealth funds, robot taxes, and a four-day workweek",
@@ -448,44 +255,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 25
-      },
-      {
-        "title": "Startup Battlefield 200 applications open: a chance for VC access, TechCrunch coverage, and $100K",
-        "url": "https://techcrunch.com/2026/04/06/startup-battlefield-200-applications-open-get-vc-access-techcrunch-coverage-and-100k/",
-        "publishedAt": "2026-04-06T14:30:00.000Z",
-        "summary": "Nominate your startup, or one you know that deserves the spotlight, and finish the process by applying. Selected 200 have a chance at VC access, TechCrunch coverage, and $100K for Startup Battlefield 200. Applications close on May 27.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 27
+        "ageHours": 26
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 22,
+    "totalItems": 12,
+    "last24h": 10,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 10
-      },
-      {
         "name": "Products",
-        "count": 5
+        "count": 4
       },
       {
         "name": "Models",
-        "count": 4
+        "count": 3
       },
       {
         "name": "General",
-        "count": 4
+        "count": 3
+      },
+      {
+        "name": "Policy",
+        "count": 1
       }
     ]
   }
