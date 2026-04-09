@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-09T05:56:03.155Z",
+  "generatedAt": "2026-04-09T07:53:15.192Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 503",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 503"
+      ]
     },
     {
       "group": "news",
@@ -83,229 +87,7 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Fast Spatial Memory with Elastic Test-Time Training",
-        "url": "https://arxiv.org/abs/2604.07350v1",
-        "publishedAt": "2026-04-08T17:59:48.000Z",
-        "summary": "Large Chunk Test-Time Training (LaCT) has shown strong performance on long-context 3D reconstruction, but its fully plastic inference-time updates remain vulnerable to catastrophic forgetting and overfitting. As a result, LaCT is typically instantiated with a single large chunk spanning the full input sequence, falling short of the broader goal of handling arbitrarily long sequences in a single pass. We propose Elastic Test-Time Training inspired by elastic weight consolidation, that stabilizes LaCT fast-weight updates with a Fisher-weighted elastic prior around a maintained anchor state. The anchor evolves as an exponential moving average of past fast weights to balance stability and plasticity. Based on this updated architecture, we introduce Fast Spatial Memory (FSM), an efficient and scalable model for 4D reconstruction that learns spatiotemporal representations from long observation sequences and renders novel view-time combinations. We pre-trained FSM on large-scale curated 3D/4D data to capture the dynamics and semantics of complex spatial environments. Extensive experiments show that FSM supports fast adaptation over long sequences and delivers high-quality 3D/4D reconstruction with smaller chunks and mitigating the camera-interpolation shortcut. Overall, we hope to advance LaCT beyond the bounded single-chunk setting toward robust multi-chunk adaptation, a necessary step for generalization to genuinely longer sequences, while substantially alleviating the activation-memory bottleneck.",
-        "authors": [
-          "Ziqiao Ma",
-          "Xueyang Yu",
-          "Haoyu Zhen",
-          "Yuncong Yang",
-          "Joyce Chai",
-          "Chuang Gan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 12
-      },
-      {
-        "title": "Toward a Tractability Frontier for Exact Relevance Certification",
-        "url": "https://arxiv.org/abs/2604.07349v1",
-        "publishedAt": "2026-04-08T17:59:47.000Z",
-        "summary": "Exact relevance certification asks which coordinates are necessary to determine the optimal action in a coordinate-structured decision problem. The tractable families treated here admit a finite primitive basis, but optimizer-quotient realizability is maximal, so quotient shape alone cannot characterize the frontier.\n  We prove a meta-impossibility theorem for efficiently checkable structural predicates invariant under the theorem-forced closure laws of exact certification. Structural convergence with zero-distortion summaries, quotient entropy bounds, and support-counting arguments explains why those closure laws are canonical. We establish the theorem by constructing same-orbit disagreements for four obstruction families, namely dominant-pair concentration, margin masking, ghost-action concentration, and additive/statewise offset concentration, using action-independent, pair-targeted affine witnesses. Consequently no correct tractability classifier on a closure-closed domain yields an exact characterization over these families. Here closure-orbit agreement is forced by correctness rather than assumed as an invariance axiom. The result therefore applies to correct classifiers on closure-closed domains, not only to classifiers presented through a designated admissibility package.",
-        "authors": [
-          "Tristan Simas"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 12
-      },
-      {
-        "title": "MoRight: Motion Control Done Right",
-        "url": "https://arxiv.org/abs/2604.07348v1",
-        "publishedAt": "2026-04-08T17:59:22.000Z",
-        "summary": "Generating motion-controlled videos--where user-specified actions drive physically plausible scene dynamics under freely chosen viewpoints--demands two capabilities: (1) disentangled motion control, allowing users to separately control the object motion and adjust camera viewpoint; and (2) motion causality, ensuring that user-driven actions trigger coherent reactions from other objects rather than merely displacing pixels. Existing methods fall short on both fronts: they entangle camera and object motion into a single tracking signal and treat motion as kinematic displacement without modeling causal relationships between object motion. We introduce MoRight, a unified framework that addresses both limitations through disentangled motion modeling. Object motion is specified in a canonical static-view and transferred to an arbitrary target camera viewpoint via temporal cross-view attention, enabling disentangled camera and object control. We further decompose motion into active (user-driven) and passive (consequence) components, training the model to learn motion causality from data. At inference, users can either supply active motion and MoRight predicts consequences (forward reasoning), or specify desired passive outcomes and MoRight recovers plausible driving actions (inverse reasoning), all while freely adjusting the camera viewpoint. Experiments on three benchmarks demonstrate state-of-the-art performance in generation quality, motion controllability, and interaction awareness.",
-        "authors": [
-          "Shaowei Liu",
-          "Xuanchi Ren",
-          "Tianchang Shen",
-          "Huan Ling",
-          "Saurabh Gupta",
-          "Shenlong Wang",
-          "Sanja Fidler",
-          "Jun Gao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "Measurement of Generative AI Workload Power Profiles for Whole-Facility Data Center Infrastructure Planning",
-        "url": "https://arxiv.org/abs/2604.07345v1",
-        "publishedAt": "2026-04-08T17:56:41.000Z",
-        "summary": "The rapid growth of generative artificial intelligence (AI) has introduced unprecedented computational demands, driving significant increases in the energy footprint of data centers. However, existing power consumption data is largely proprietary and reported at varying resolutions, creating challenges for estimating whole-facility energy use and planning infrastructure. In this work, we present a methodology that bridges this gap by linking high-resolution workload power measurements to whole-facility energy demand. Using NLR's high-performance computing data center equipped with NVIDIA H100 GPUs, we measure power consumption of AI workloads at 0.1-second resolution for AI training, fine-tuning and inference jobs. Workloads are characterized using MLCommons benchmarks for model training and fine-tuning, and vLLM benchmarks for inference, enabling reproducible and standardized workload profiling. The dataset of power consumption profiles is made publicly available. These power profiles are then scaled to the whole-facility-level using a bottom-up, event-driven, data center energy model. The resulting whole-facility energy profiles capture realistic temporal fluctuations driven by AI workloads and user-behavior, and can be used to inform infrastructure planning for grid connection, on-site energy generation, and distributed microgrids.",
-        "authors": [
-          "Roberto Vercellino",
-          "Jared Willard",
-          "Gustavo Campos",
-          "Weslley da Silva Pereira",
-          "Olivia Hull",
-          "Matthew Selensky",
-          "Juliane Mueller"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "Personalized RewardBench: Evaluating Reward Models with Human Aligned Personalization",
-        "url": "https://arxiv.org/abs/2604.07343v1",
-        "publishedAt": "2026-04-08T17:55:00.000Z",
-        "summary": "Pluralistic alignment has emerged as a critical frontier in the development of Large Language Models (LLMs), with reward models (RMs) serving as a central mechanism for capturing diverse human values. While benchmarks for general response quality are prevalent, evaluating how well reward models account for individual user preferences remains an open challenge. To bridge this gap, we introduce Personalized RewardBench, a novel benchmark designed to rigorously assess reward models' capacity to model personalized preferences. We construct chosen and rejected response pairs based on strict adherence to (or violation of) user-specific rubrics, ensuring that preference distinctions are uniquely tailored to the individual. In particular, human evaluations confirm that the primary discriminative factor between pairs is strictly personal preference, with both responses maintaining high general quality (e.g., correctness, relevance and helpfulness). Extensive testing reveals that existing state-of-the-art reward models struggle significantly with personalization, peaking at an accuracy of just 75.94%. Crucially, because an effective reward model benchmark should predict a reward model's performance on downstream tasks, we conduct experiments demonstrating that our benchmark exhibits a significantly higher correlation with downstream performance in both Best-of-N (BoN) sampling and Proximal Policy Optimization (PPO) compared to existing baselines. These findings establish Personalized RewardBench as a robust and accurate proxy for evaluating reward models' performance in downstream applications.",
-        "authors": [
-          "Qiyao Ma",
-          "Dechen Gao",
-          "Rui Cai",
-          "Boqi Zhao",
-          "Hanchu Zhou",
-          "Junshan Zhang",
-          "Zhe Zhao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "Appear2Meaning: A Cross-Cultural Benchmark for Structured Cultural Metadata Inference from Images",
-        "url": "https://arxiv.org/abs/2604.07338v1",
-        "publishedAt": "2026-04-08T17:53:26.000Z",
-        "summary": "Recent advances in vision-language models (VLMs) have improved image captioning for cultural heritage. However, inferring structured cultural metadata (e.g., creator, origin, period) from visual input remains underexplored. We introduce a multi-category, cross-cultural benchmark for this task and evaluate VLMs using an LLM-as-Judge framework that measures semantic alignment with reference annotations. To assess cultural reasoning, we report exact-match, partial-match, and attribute-level accuracy across cultural regions. Results show that models capture fragmented signals and exhibit substantial performance variation across cultures and metadata types, leading to inconsistent and weakly grounded predictions. These findings highlight the limitations of current VLMs in structured cultural metadata inference beyond visual perception.",
-        "authors": [
-          "Yuechen Jiang",
-          "Enze Zhang",
-          "Md Mohsinul Kabir",
-          "Qianqian Xie",
-          "Stavroula Golfomitsou",
-          "Konstantinos Arvanitis",
-          "Sophia Ananiadou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "RoSHI: A Versatile Robot-oriented Suit for Human Data In-the-Wild",
-        "url": "https://arxiv.org/abs/2604.07331v1",
-        "publishedAt": "2026-04-08T17:48:46.000Z",
-        "summary": "Scaling up robot learning will likely require human data containing rich and long-horizon interactions in the wild. Existing approaches for collecting such data trade off portability, robustness to occlusion, and global consistency. We introduce RoSHI, a hybrid wearable that fuses low-cost sparse IMUs with the Project Aria glasses to estimate the full 3D pose and body shape of the wearer in a metric global coordinate frame from egocentric perception. This system is motivated by the complementarity of the two sensors: IMUs provide robustness to occlusions and high-speed motions, while egocentric SLAM anchors long-horizon motion and stabilizes upper body pose. We collect a dataset of agile activities to evaluate RoSHI. On this dataset, we generally outperform other egocentric baselines and perform comparably to a state-of-the-art exocentric baseline (SAM3D). Finally, we demonstrate that the motion data recorded from our system are suitable for real-world humanoid policy learning. For videos, data and more, visit the project webpage: https://roshi-mocap.github.io/",
-        "authors": [
-          "Wenjing Margaret Mao",
-          "Jefferson Ng",
-          "Luyang Hu",
-          "Daniel Gehrig",
-          "Antonio Loquercio"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "How to sketch a learning algorithm",
-        "url": "https://arxiv.org/abs/2604.07328v1",
-        "publishedAt": "2026-04-08T17:46:06.000Z",
-        "summary": "How does the choice of training data influence an AI model? This question is of central importance to interpretability, privacy, and basic science. At its core is the data deletion problem: after a reasonable amount of precomputation, quickly predict how the model would behave in a given situation if a given subset of training data had been excluded from the learning algorithm.\n  We present a data deletion scheme capable of predicting model outputs with vanishing error $\\varepsilon$ in the deep learning setting. Our precomputation and prediction algorithms are only $\\mathrm{poly}(1/\\varepsilon)$ factors slower than regular training and inference, respectively. The storage requirements are those of $\\mathrm{poly}(1/\\varepsilon)$ models.\n  Our proof is based on an assumption that we call \"stability.\" In contrast to the assumptions made by prior work, stability appears to be fully compatible with learning powerful AI models. In support of this, we show that stability is satisfied in a minimal set of experiments with microgpt. Our code is available at https://github.com/SamSpo1/microgpt-sketch.\n  At a technical level, our work is based on a new method for locally sketching an arithmetic circuit by computing higher-order derivatives in random complex directions. Forward-mode automatic differentiation allows cheap computation of these derivatives.",
-        "authors": [
-          "Sam Gunn"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 12
-      },
-      {
-        "title": "Gaussian Approximation for Asynchronous Q-learning",
-        "url": "https://arxiv.org/abs/2604.07323v1",
-        "publishedAt": "2026-04-08T17:37:15.000Z",
-        "summary": "In this paper, we derive rates of convergence in the high-dimensional central limit theorem for Polyak-Ruppert averaged iterates generated by the asynchronous Q-learning algorithm with a polynomial stepsize $k^{-ω},\\, ω\\in (1/2, 1]$. Assuming that the sequence of state-action-next-state triples $(s_k, a_k, s_{k+1})_{k \\geq 0}$ forms a uniformly geometrically ergodic Markov chain, we establish a rate of order up to $n^{-1/6} \\log^{4} (nS A)$ over the class of hyper-rectangles, where $n$ is the number of samples used by the algorithm and $S$ and $A$ denote the numbers of states and actions, respectively. To obtain this result, we prove a high-dimensional central limit theorem for sums of martingale differences, which may be of independent interest. Finally, we present bounds for high-order moments for the algorithm's last iterate.",
-        "authors": [
-          "Artemy Rubtsov",
-          "Sergey Samsonov",
-          "Vladimir Ulyanov",
-          "Alexey Naumov"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 12
-      },
-      {
-        "title": "Syntax Is Easy, Semantics Is Hard: Evaluating LLMs for LTL Translation",
-        "url": "https://arxiv.org/abs/2604.07321v1",
-        "publishedAt": "2026-04-08T17:36:33.000Z",
-        "summary": "Propositional Linear Temporal Logic (LTL) is a popular formalism for specifying desirable requirements and security and privacy policies for software, networks, and systems. Yet expressing such requirements and policies in LTL remains challenging because of its intricate semantics. Since many security and privacy analysis tools require LTL formulas as input, this difficulty places them out of reach for many developers and analysts. Large Language Models (LLMs) could broaden access to such tools by translating natural language fragments into LTL formulas. This paper evaluates that premise by assessing how effectively several representative LLMs translate assertive English sentences into LTL formulas. Using both human-generated and synthetic ground-truth data, we evaluate effectiveness along syntactic and semantic dimensions. The results reveal three findings: (1) in line with prior findings, LLMs perform better on syntactic aspects of LTL than on semantic ones; (2) they generally benefit from more detailed prompts; and (3) reformulating the task as a Python code-completion problem substantially improves overall performance. We also discuss challenges in conducting a fair evaluation on this task and conclude with recommendations for future work.",
-        "authors": [
-          "Priscilla Kyei Danso",
-          "Mohammad Saqib Hasan",
-          "Niranjan Balasubramanian",
-          "Omar Chowdhury"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "Evaluating In-Context Translation with Synchronous Context-Free Grammar Transduction",
-        "url": "https://arxiv.org/abs/2604.07320v1",
-        "publishedAt": "2026-04-08T17:35:44.000Z",
-        "summary": "Low-resource languages pose a challenge for machine translation with large language models (LLMs), which require large amounts of training data. One potential way to circumvent this data dependence is to rely on LLMs' ability to use in-context descriptions of languages, like textbooks and dictionaries. To do so, LLMs must be able to infer the link between the languages' grammatical descriptions and the sentences in question. Here we isolate this skill using a formal analogue of the task: string transduction based on a formal grammar provided in-context. We construct synchronous context-free grammars which define pairs of formal languages designed to model particular aspects of natural language grammar, morphology, and written representation. Using these grammars, we measure how well LLMs can translate sentences from one formal language into another when given both the grammar and the source-language sentence. We vary the size of the grammar, the lengths of the sentences, the syntactic and morphological properties of the languages, and their written script. We note three key findings. First, LLMs' translation accuracy decreases markedly as a function of grammar size and sentence length. Second, differences in morphology and written representation between the source and target languages can strongly diminish model performance. Third, we examine the types of errors committed by models and find they are most prone to recall the wrong words from the target language vocabulary, hallucinate new words, or leave source-language words untranslated.",
-        "authors": [
-          "Jackson Petty",
-          "Jaulie Goe",
-          "Tal Linzen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 12
-      },
-      {
-        "title": "SL-FAC: A Communication-Efficient Split Learning Framework with Frequency-Aware Compression",
-        "url": "https://arxiv.org/abs/2604.07316v1",
-        "publishedAt": "2026-04-08T17:25:22.000Z",
-        "summary": "The growing complexity of neural networks hinders the deployment of distributed machine learning on resource-constrained devices. Split learning (SL) offers a promising solution by partitioning the large model and offloading the primary training workload from edge devices to an edge server. However, the increasing number of participating devices and model complexity leads to significant communication overhead from the transmission of smashed data (e.g., activations and gradients), which constitutes a critical bottleneck for SL. To tackle this challenge, we propose SL-FAC, a communication-efficient SL framework comprising two key components: adaptive frequency decomposition (AFD) and frequency-based quantization compression (FQC). AFD first transforms the smashed data into the frequency domain and decomposes it into spectral components with distinct information. FQC then applies customized quantization bit widths to each component based on its spectral energy distribution. This collaborative approach enables SL-FAC to achieve significant communication reduction while strategically preserving the information most crucial for model convergence. Extensive experiments confirm the superior performance of SL-FAC for improving the training efficiency.",
-        "authors": [
-          "Zehang Lin",
-          "Miao Yang",
-          "Haihan Zhu",
-          "Zheng Lin",
-          "Jianhao Huang",
-          "Jing Yang",
-          "Guangjin Pan",
-          "Dianxin Luan",
-          "Zihan Fang",
-          "Shunzhi Zhu",
-          "Wei Ni",
-          "John Thompson"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 13
-      }
-    ],
+    "research": [],
     "news": [
       {
         "title": "Poke makes using AI agents as easy as sending a text",
@@ -319,7 +101,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 9
+        "ageHours": 11
       },
       {
         "title": "AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict",
@@ -333,7 +115,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 12
       },
       {
         "title": "Tubi is the first streamer to launch a native app within ChatGPT",
@@ -347,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "Astropad&#8217;s Workbench reimagines remote desktop for AI agents, not IT support",
@@ -361,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 14
+        "ageHours": 16
       },
       {
         "title": "OpenAI releases a new safety blueprint to address the rise in child sexual exploitation",
@@ -375,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 15
+        "ageHours": 17
       },
       {
         "title": "Databricks co-founder wins prestigious ACM award, says &#8216;AGI is here already&#8217;",
@@ -389,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 15
+        "ageHours": 17
       },
       {
         "title": "Final 3 days to save up to $500 on your TechCrunch Disrupt 2026 pass",
@@ -403,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 16
+        "ageHours": 18
       },
       {
         "title": "The next phase of enterprise AI",
@@ -415,7 +197,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 16
+        "ageHours": 18
       },
       {
         "title": "Atlassian launches visual AI tools and third-party agents in Confluence",
@@ -429,7 +211,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 17
+        "ageHours": 19
       },
       {
         "title": "Google quietly launched an AI dictation app that works offline",
@@ -443,7 +225,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 24
+        "ageHours": 26
       },
       {
         "title": "Introducing the Child Safety Blueprint",
@@ -455,7 +237,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Policy",
-        "ageHours": 25
+        "ageHours": 27
       },
       {
         "title": "I can&#8217;t help rooting for tiny open source AI model maker Arcee",
@@ -469,30 +251,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 32
+        "ageHours": 34
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 21,
+    "totalItems": 12,
+    "last24h": 9,
     "topCategories": [
       {
         "name": "Research",
-        "count": 10
-      },
-      {
-        "name": "Models",
-        "count": 7
-      },
-      {
-        "name": "General",
         "count": 4
       },
       {
-        "name": "Policy",
-        "count": 2
+        "name": "General",
+        "count": 3
+      },
+      {
+        "name": "Models",
+        "count": 3
+      },
+      {
+        "name": "Products",
+        "count": 1
       }
     ]
   }
