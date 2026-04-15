@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-15T12:05:37.470Z",
+  "generatedAt": "2026-04-15T14:02:33.188Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,250 +87,64 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "SceneCritic: A Symbolic Evaluator for 3D Indoor Scene Synthesis",
-        "url": "https://arxiv.org/abs/2604.13035v1",
-        "publishedAt": "2026-04-14T17:59:26.000Z",
-        "summary": "Large Language Models (LLMs) and Vision-Language Models (VLMs) increasingly generate indoor scenes through intermediate structures such as layouts and scene graphs, yet evaluation still relies on LLM or VLM judges that score rendered views, making judgments sensitive to viewpoint, prompt phrasing, and hallucination. When the evaluator is unstable, it becomes difficult to determine whether a model has produced a spatially plausible scene or whether the output score reflects the choice of viewpoint, rendering, or prompt. We introduce SceneCritic, a symbolic evaluator for floor-plan-level layouts. SceneCritic's constraints are grounded in SceneOnto, a structured spatial ontology we construct by aggregating indoor scene priors from 3D-FRONT, ScanNet, and Visual Genome. SceneOnto traverses this ontology to jointly verify semantic, orientation, and geometric coherence across object relationships, providing object-level and relationship-level assessments that identify specific violations and successful placements. Furthermore, we pair SceneCritic with an iterative refinement test bed that probes how models build and revise spatial structure under different critic modalities: a rule-based critic using collision constraints as feedback, an LLM critic operating on the layout as text, and a VLM critic operating on rendered observations. Through extensive experiments, we show that (a) SceneCritic aligns substantially better with human judgments than VLM-based evaluators, (b) text-only LLMs can outperform VLMs on semantic layout quality, and (c) image-based VLM refinement is the most effective critic modality for semantic and orientation correction.",
-        "authors": [
-          "Kathakoli Sengupta",
-          "Kai Ao",
-          "Paola Cascante-Bonilla"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Visual Preference Optimization with Rubric Rewards",
-        "url": "https://arxiv.org/abs/2604.13029v1",
-        "publishedAt": "2026-04-14T17:58:22.000Z",
-        "summary": "The effectiveness of Direct Preference Optimization (DPO) depends on preference data that reflect the quality differences that matter in multimodal tasks. Existing pipelines often rely on off-policy perturbations or coarse outcome-based signals, which are not well suited to fine-grained visual reasoning. We propose rDPO, a preference optimization framework based on instance-specific rubrics. For each image-instruction pair, we create a checklist-style rubric of essential and additional criteria to score responses from any possible policies. The instruction-rubric pool is built offline and reused during the construction of on-policy data. On public reward modeling benchmarks, rubric-based prompting massively improves a 30B-A3B judge and brings it close to GPT-5.4. On public downstream benchmarks, rubric-based filtering raises the macro average to 82.69, whereas outcome-based filtering drops it to 75.82 from 81.14. When evaluating scalability on a comprehensive benchmark, rDPO achieves 61.01, markedly outperforming the style-constrained baseline (52.36) and surpassing the 59.48 base model. Together, these results show that visual preference optimization benefits from combining on-policy data construction with instance-specific criterion-level feedback.",
-        "authors": [
-          "Ya-Qi Yu",
-          "Fangyu Hong",
-          "Xiangyang Qu",
-          "Hao Wang",
-          "Gaojie Wu",
-          "Qiaoyu Luo",
-          "Nuo Xu",
-          "Huixin Wang",
-          "Wuheng Xu",
-          "Yongxin Liao",
-          "Zihao Chen",
-          "Haonan Li",
-          "Ziming Li",
-          "Dezhi Peng",
-          "Minghui Liao",
-          "Jihao Wu",
-          "Haoyu Ren",
-          "Dandan Tu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "CLAD: Efficient Log Anomaly Detection Directly on Compressed Representations",
-        "url": "https://arxiv.org/abs/2604.13024v1",
-        "publishedAt": "2026-04-14T17:57:01.000Z",
-        "summary": "The explosive growth of system logs makes streaming compression essential, yet existing log anomaly detection (LAD) methods incur severe pre-processing overhead by requiring full decompression and parsing. We introduce CLAD, the first deep learning framework to perform LAD directly on compressed byte streams. CLAD bypasses these bottlenecks by exploiting a key insight: normal logs compress into regular byte patterns, while anomalies systematically disrupt them. To extract these multi-scale deviations from opaque bytes, we propose a purpose-built architecture integrating a dilated convolutional byte encoder, a hybrid Transformer--mLSTM, and four-way aggregation pooling. This is coupled with a two-stage training strategy of masked pre-training and focal-contrastive fine-tuning to effectively handle severe class imbalance. Evaluated across five datasets, CLAD achieves a state-of-the-art average F1-score of 0.9909 and outperforms the best baseline by 2.72 percentage points. It delivers superior accuracy while completely eliminating decompression and parsing overheads, offering a robust solution that generalizes to structured streaming compressors.",
-        "authors": [
-          "Benzhao Tang",
-          "Shiyu Yang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Classical and Quantum Speedups for Non-Convex Optimization via Energy Conserving Descent",
-        "url": "https://arxiv.org/abs/2604.13022v1",
-        "publishedAt": "2026-04-14T17:56:33.000Z",
-        "summary": "The Energy Conserving Descent (ECD) algorithm was recently proposed (De Luca & Silverstein, 2022) as a global non-convex optimization method. Unlike gradient descent, appropriately configured ECD dynamics escape strict local minima and converge to a global minimum, making it appealing for machine learning optimization.\n  We present the first analytical study of ECD, focusing on the one-dimensional setting for this first installment. We formalize a stochastic ECD dynamics (sECD) with energy-preserving noise, as well as a quantum analog of the ECD Hamiltonian (qECD), providing the foundation for a quantum algorithm through Hamiltonian simulation.\n  For positive double-well objectives, we compute the expected hitting time from a local to the global minimum. We prove that both sECD and qECD yield exponential speedup over respective gradient descent baselines--stochastic gradient descent and its quantization. For objectives with tall barriers, qECD achieves a further speedup over sECD.",
-        "authors": [
-          "Yihang Sun",
-          "Huaijin Wang",
-          "Patrick Hayden",
-          "Jose Blanchet"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "Representation geometry shapes task performance in vision-language modeling for CT enterography",
-        "url": "https://arxiv.org/abs/2604.13021v1",
-        "publishedAt": "2026-04-14T17:56:23.000Z",
-        "summary": "Computed tomography (CT) enterography is a primary imaging modality for assessing inflammatory bowel disease (IBD), yet the representational choices that best support automated analysis of this modality are unknown. We present the first study of vision-language transfer learning on abdominal CT enterography and identify two main findings. First, mean pooling of slice embeddings gives better categorical disease assessment (59.2\\% three-class accuracy), whereas attention pooling gives better cross-modal retrieval (0.235 text-to-image MRR). This pattern holds across all LoRA configurations tested and suggests that the two aggregators emphasize different properties of the learned representation. Second, per-slice tissue contrast matters more than broader spatial coverage: multi-window RGB encoding, which maps complementary Hounsfield Unit windows to RGB channels, outperforms all strategies that increase spatial coverage through multiplanar sampling, and in this setting adding coronal and sagittal views reduces classification performance. For report generation, fine-tuning without retrieval context yields within-1 severity accuracy at the prevalence-matched chance level (70.4\\% vs.\\ 71\\% random), suggesting little learned ordering beyond the class distribution. Retrieval-augmented generation (RAG) improves this across all configurations, scoring 7--14 percentage points above the chance baseline and improving ordinal MAE from 0.98 to 0.80--0.89. A three-teacher pseudolabel framework enables all comparisons without expert annotations. Together, these findings provide the first baselines for this underexplored modality and offer practical guidance for building vision-language systems for volumetric medical imaging.",
-        "authors": [
-          "Cristian Minoccheri",
-          "Emily Wittrup",
-          "Kayvan Najarian",
-          "Ryan Stidham"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "Toward Autonomous Long-Horizon Engineering for ML Research",
-        "url": "https://arxiv.org/abs/2604.13018v1",
-        "publishedAt": "2026-04-14T17:55:16.000Z",
-        "summary": "Autonomous AI research has advanced rapidly, but long-horizon ML research engineering remains difficult: agents must sustain coherent progress across task comprehension, environment setup, implementation, experimentation, and debugging over hours or days. We introduce AiScientist, a system for autonomous long-horizon engineering for ML research built on a simple principle: strong long-horizon performance requires both structured orchestration and durable state continuity. To this end, AiScientist combines hierarchical orchestration with a permission-scoped File-as-Bus workspace: a top-level Orchestrator maintains stage-level control through concise summaries and a workspace map, while specialized agents repeatedly re-ground on durable artifacts such as analyses, plans, code, and experimental evidence rather than relying primarily on conversational handoffs, yielding thin control over thick state. Across two complementary benchmarks, AiScientist improves PaperBench score by 10.54 points on average over the best matched baseline and achieves 81.82 Any Medal% on MLE-Bench Lite. Ablation studies further show that File-as-Bus protocol is a key driver of performance, reducing PaperBench by 6.41 points and MLE-Bench Lite by 31.82 points when removed. These results suggest that long-horizon ML research engineering is a systems problem of coordinating specialized work over durable project state, rather than a purely local reasoning problem.",
-        "authors": [
-          "Guoxin Chen",
-          "Jie Chen",
-          "Lei Chen",
-          "Jiale Zhao",
-          "Fanzhe Meng",
-          "Wayne Xin Zhao",
-          "Ruihua Song",
-          "Cheng Chen",
-          "Ji-Rong Wen",
-          "Kai Jia"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "PAL: Personal Adaptive Learner",
-        "url": "https://arxiv.org/abs/2604.13017v1",
-        "publishedAt": "2026-04-14T17:54:37.000Z",
-        "summary": "AI-driven education platforms have made some progress in personalisation, yet most remain constrained to static adaptation--predefined quizzes, uniform pacing, or generic feedback--limiting their ability to respond to learners' evolving understanding. This shortfall highlights the need for systems that are both context-aware and adaptive in real time. We introduce PAL (Personal Adaptive Learner), an AI-powered platform that transforms lecture videos into interactive learning experiences. PAL continuously analyzes multimodal lecture content and dynamically engages learners through questions of varying difficulty, adjusting to their responses as the lesson unfolds. At the end of a session, PAL generates a personalized summary that reinforces key concepts while tailoring examples to the learner's interests. By uniting multimodal content analysis with adaptive decision-making, PAL contributes a novel framework for responsive digital learning. Our work demonstrates how AI can move beyond static personalization toward real-time, individualized support, addressing a core challenge in AI-enabled education.",
-        "authors": [
-          "Megha Chakraborty",
-          "Darssan L. Eswaramoorthi",
-          "Madhur Thareja",
-          "Het Riteshkumar Shah",
-          "Finlay Palmer",
-          "Aryaman Bahl",
-          "Michelle A Ihetu",
-          "Amit Sheth"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Rethinking On-Policy Distillation of Large Language Models: Phenomenology, Mechanism, and Recipe",
-        "url": "https://arxiv.org/abs/2604.13016v1",
-        "publishedAt": "2026-04-14T17:54:28.000Z",
-        "summary": "On-policy distillation (OPD) has become a core technique in the post-training of large language models, yet its training dynamics remain poorly understood. This paper provides a systematic investigation of OPD dynamics and mechanisms. We first identify that two conditions govern whether OPD succeeds or fails: (i) the student and teacher should share compatible thinking patterns; and (ii) even with consistent thinking patterns and higher scores, the teacher must offer genuinely new capabilities beyond what the student has seen during training. We validate these findings through weak-to-strong reverse distillation, showing that same-family 1.5B and 7B teachers are distributionally indistinguishable from the student's perspective. Probing into the token-level mechanism, we show that successful OPD is characterized by progressive alignment on high-probability tokens at student-visited states, a small shared token set that concentrates most of the probability mass (97%-99%). We further propose two practical strategies to recover failing OPD: off-policy cold start and teacher-aligned prompt selection. Finally, we show that OPD's apparent free lunch of dense token-level reward comes at a cost, raising the question of whether OPD can scale to long-horizon distillation.",
-        "authors": [
-          "Yaxuan Li",
-          "Yuxin Zuo",
-          "Bingxiang He",
-          "Jinqian Zhang",
-          "Chaojun Xiao",
-          "Cheng Qian",
-          "Tianyu Yu",
-          "Huan-ang Gao",
-          "Wenkai Yang",
-          "Zhiyuan Liu",
-          "Ning Ding"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "Bilevel Late Acceptance Hill Climbing for the Electric Capacitated Vehicle Routing Problem",
-        "url": "https://arxiv.org/abs/2604.13013v1",
-        "publishedAt": "2026-04-14T17:47:12.000Z",
-        "summary": "This paper tackles the Electric Capacitated Vehicle Routing Problem (E-CVRP) through a bilevel optimization framework that handles routing and charging decisions separately or jointly depending on the search stage. By analyzing their interaction, we introduce a surrogate objective at the upper level to guide the search and accelerate convergence. A bilevel Late Acceptance Hill Climbing algorithm (b-LAHC) is introduced that operates through three phases: greedy descent, neighborhood exploration, and final solution refinement. b-LAHC operates with fixed parameters, eliminating the need for complex adaptation while remaining lightweight and effective. Extensive experiments on the IEEE WCCI-2020 benchmark show that b-LAHC achieves superior or competitive performance against eight state-of-the-art algorithms. Under a fixed evaluation budget, it attains near-optimal solutions on small-scale instances and sets 9/10 new best-known results on large-scale benchmarks, improving existing records by an average of 1.07%. Moreover, the strong correlation (though not universal) observed between the surrogate objective and the complete cost justifies the use of the surrogate objective while still necessitating a joint solution of both levels, thereby validating the effectiveness of the proposed bilevel framework and highlighting its potential for efficiently solving large-scale routing problems with a hierarchical structure.",
-        "authors": [
-          "Yinghao Qin",
-          "Mosab Bazargani",
-          "Edmund K. Burke",
-          "Carlos A. Coello Coello",
-          "Zhongmin Song",
-          "Jun Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Lightning OPD: Efficient Post-Training for Large Reasoning Models with Offline On-Policy Distillation",
-        "url": "https://arxiv.org/abs/2604.13010v1",
-        "publishedAt": "2026-04-14T17:44:50.000Z",
-        "summary": "On-policy distillation (OPD) has emerged as an efficient post-training paradigm for large language models. However, standard OPD requires a live teacher inference server throughout training, resulting in substantial infrastructure overhead. In this work, we investigate whether on-policy distillation can be performed offline. A natural approach is to precompute teacher log-probabilities once over SFT rollouts and reuse them during training. In practice, however, this offline variant fails to reliably match the performance of standard OPD. To understand this discrepancy, we identify a previously overlooked condition that is critical for any OPD pipeline, which we term teacher consistency. This condition requires that the same teacher model be used for both supervised fine-tuning and OPD. We show that violating teacher consistency introduces an irreducible gradient bias, causing both offline and online OPD to converge to a suboptimal fixed point regardless of training duration. Building on this insight, we propose Lightning OPD, an offline on-policy distillation framework that enforces teacher consistency by precomputing teacher log-probabilities over SFT rollouts. This design eliminates the need for a live teacher server entirely. We further show that, under teacher consistency, Lightning OPD shares the same optimum as standard OPD, with bounded gradient discrepancy and an implicit regularization effect that helps prevent policy drift. Extensive experiments on mathematical reasoning and code generation demonstrate that Lightning OPD achieves state-of-the-art performance with significantly improved efficiency. Starting from an SFT-initialized Qwen3-8B-Base model, Lightning OPD reaches 69.9% on AIME 2024 in just 30 GPU hours, achieving a 4.0x speedup over standard OPD and substantially lowering the barrier to entry for academic research on LLM post-training.",
-        "authors": [
-          "Yecheng Wu",
-          "Song Han",
-          "Hai Cai"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "One Token Away from Collapse: The Fragility of Instruction-Tuned Helpfulness",
-        "url": "https://arxiv.org/abs/2604.13006v1",
-        "publishedAt": "2026-04-14T17:40:01.000Z",
-        "summary": "Instruction-tuned large language models produce helpful, structured responses, but how robust is this helpfulness when trivially constrained? We show that simple lexical constraints (banning a single punctuation character or common word) cause instruction-tuned LLMs to collapse their responses, losing 14--48% of comprehensiveness in pairwise evaluation across three open-weight model families and one closed-weight model (GPT-4o-mini). The baseline response is preferred in 77--100% of 1,920 pairwise comparisons judged by GPT-4o-mini and GPT-4o. Notably, GPT-4o-mini suffers 31% comprehensiveness loss (99% baseline win rate), demonstrating that the fragility extends to commercially deployed closed-weight models, contrary to prior findings on format-level constraints. Through mechanistic analysis, we identify this as a planning failure: two-pass generation (free generation followed by constrained rewriting) recovers 59--96% of response length, and linear probes on prompt representations predict response length with $R^2 = 0.51$--$0.93$ before generation begins, with $R^2$ tracking collapse severity across models. The same probes yield negative $R^2$ on base models, confirming that instruction tuning creates the representational structure encoding the collapse decision. Crucially, base models show no systematic collapse under identical constraints, with effects that are small, noisy, and bidirectional, demonstrating that instruction tuning creates this fragility by coupling task competence to narrow surface-form templates. The effect replicates on MT-Bench across all eight task categories. We further show that standard independent LLM-as-judge evaluation detects only a 3.5% average quality drop where pairwise evaluation reveals 23%, exposing a methodological blind spot in how constrained generation is assessed.",
-        "authors": [
-          "Erfan Baghaei Potraghloo",
-          "Seyedarmin Azizi",
-          "Souvik Kundu",
-          "Massoud Pedram"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "PolicyLLM: Towards Excellent Comprehension of Public Policy for Large Language Models",
-        "url": "https://arxiv.org/abs/2604.12995v1",
-        "publishedAt": "2026-04-14T17:27:50.000Z",
-        "summary": "Large Language Models (LLMs) are increasingly integrated into real-world decision-making, including in the domain of public policy. Yet, their ability to comprehend and reason about policy-related content remains underexplored. To fill this gap, we present \\textbf{\\textit{PolicyBench}}, the first large-scale cross-system benchmark (US-China) evaluating policy comprehension, comprising 21K cases across a broad spectrum of policy areas, capturing the diversity and complexity of real-world governance. Following Bloom's taxonomy, the benchmark assesses three core capabilities: (1) \\textbf{Memorization}: factual recall of policy knowledge, (2) \\textbf{Understanding}: conceptual and contextual reasoning, and (3) \\textbf{Application}: problem-solving in real-life policy scenarios. Building on this benchmark, we further propose \\textbf{\\textit{PolicyMoE}}, a domain-specialized Mixture-of-Experts (MoE) model with expert modules aligned to each cognitive level. The proposed models demonstrate stronger performance on application-oriented policy tasks than on memorization or conceptual understanding, and yields the highest accuracy on structured reasoning tasks. Our results reveal key limitations of current LLMs in policy understanding and suggest paths toward more reliable, policy-focused models.",
-        "authors": [
-          "Han Bao",
-          "Penghao Zhang",
-          "Yue Huang",
-          "Zhengqing Yuan",
-          "Yanchi Ru",
-          "Rui Su",
-          "Yujun Zhou",
-          "Xiangqi Wang",
-          "Kehan Guo",
-          "Nitesh V Chawla",
-          "Yanfang Ye",
-          "Xiangliang Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Reid Hoffman weighs in on the &#8216;tokenmaxxing&#8217; debate",
+        "url": "https://techcrunch.com/2026/04/15/reid-hoffman-weighs-in-on-the-tokenmaxxing-debate/",
+        "publishedAt": "2026-04-15T13:06:54.000Z",
+        "summary": "Reid Hoffman says tracking AI token use can gauge adoption, but cautions it should be paired with context and not treated as a direct productivity metric.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 1
+      },
+      {
+        "title": "Adobe&#8217;s new Firefly AI assistant can use Creative Cloud apps to complete tasks",
+        "url": "https://techcrunch.com/2026/04/15/adobes-new-firefly-ai-assistant-can-use-creative-cloud-apps-to-complete-tasks/",
+        "publishedAt": "2026-04-15T13:01:00.000Z",
+        "summary": "Adobe says the assistant can work across apps like Firefly, Photoshop, Premiere, Lightroom, Express, Illustrator and its other apps to do tasks for you.",
+        "authors": [
+          "Ivan Mehta"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 1
+      },
+      {
+        "title": "Gitar, a startup that uses agents to secure code, emerges from stealth with $9 million",
+        "url": "https://techcrunch.com/2026/04/15/gitar-a-startup-that-uses-agents-to-secure-code-emerges-from-stealth-with-9-million/",
+        "publishedAt": "2026-04-15T13:00:00.000Z",
+        "summary": "The company uses AI to review code that, more often than not these days, has also been generated by AI.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 1
+      },
+      {
+        "title": "This startup is betting tokenmaxxing will create the next compute giant",
+        "url": "https://techcrunch.com/2026/04/15/parasail-raises-32m-to-feed-tokenmaxxing-ai-developers/",
+        "publishedAt": "2026-04-15T13:00:00.000Z",
+        "summary": "Parasail raised $32 million in a Series A, signaling a fractured future of models and compute.",
+        "authors": [
+          "Tim Fernholz"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 1
+      },
       {
         "title": "Anthropic&#8217;s rise is giving some OpenAI investors second thoughts",
         "url": "https://techcrunch.com/2026/04/14/anthropics-rise-is-giving-some-openai-investors-second-thoughts/",
@@ -339,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 12
       },
       {
         "title": "Anthropic co-founder confirms the company briefed the Trump administration on Mythos",
@@ -353,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 18
+        "ageHours": 20
       },
       {
         "title": "Max Hodak’s Science Corp. is preparing to place its first sensor in a human brain",
@@ -367,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Google adds AI Skills to Chrome to help you save favorite workflows",
@@ -381,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "In just a couple weeks, StrictlyVC San Francisco brings leaders from TDK Ventures, Replit, and more together",
@@ -395,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 21
+        "ageHours": 23
       },
       {
         "title": "Google brings its Gemini Personal Intelligence feature to India",
@@ -409,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 21
+        "ageHours": 23
       },
       {
         "title": "How vibe-coding app Anything is rebuilding after getting booted from the App Store twice",
@@ -423,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 22
+        "ageHours": 24
       },
       {
         "title": "Human-machine teaming dives underwater",
@@ -437,76 +255,18 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 23
-      },
-      {
-        "title": "Q&A: MIT SHASS and the future of education in the age of AI",
-        "url": "https://news.mit.edu/2026/qa-mit-shass-and-future-of-education-age-ai-0414",
-        "publishedAt": "2026-04-14T13:00:00.000Z",
-        "summary": "The MIT School of Humanities, Arts, and Social Sciences (SHASS) was&nbsp; founded in 1950 in response to “a new era emerging from social upheaval and the disasters of war,” as outlined in the 1949 Lewis Committee Report .&nbsp; The report’s findings emphasized MIT’s role and responsibility in the new nuclear age, which called for doubling down on genuine “integration” of scientific and technical topics with humanistic scholarship and teaching. Only that way, the committee wrote, could MIT tackle “the most difficult and complicated problems confronting our generation.” As SHASS marks its 75th anniversary, Dean Agustín Rayo answers questions about why the need for developing students with broad minds and human understanding is as urgent as ever, given pressing challenges in the midst of a new technological revolution. Q: Many universities are responding to artificial intelligence by launching new technical programs or updating curricula. You’ve suggested the change is deeper than that. Why? A: Artificial intelligence isn’t just changing the way students learn — it’s transforming every aspect of society. The labor market is experiencing a dramatic shift, upending traditional paths to financial stability. And AI is changing the ways we bring meaning to our lives: the ways we build relationships, the ways we pay attention, and the things we enjoy doing. The upshot is that the most important question universities need to ask is not how to adapt our pedagogy to AI — although we certainly need to address that. The most important question we need to ask is how to provide an education that brings real value to students in the age of AI.&nbsp; We need to ensure that universities provide students with the tools they need to find a path to financial security and to build meaningful lives. We need to produce students with minds that are both nimble and broad. We need our students to not only be able to execute tasks effectively, but also have the judgment to determine which tasks are worth executing. We need students who have a moral compass, and who understand how the world works, in all of its political, economic, and human complexity. We need students who know how to think critically, and who have excellent communication and leadership skills. Q: What role do the humanities, arts, and social sciences play in preparing MIT students for that future? A: They’re essential, and are rightly a core part of an MIT education: MIT has long required its undergraduates take at least eight courses in HASS disciplines to graduate. Fields like philosophy, political science, economics, literature, history, music, and anthropology are crucial to developing the parts of our lives that are essentially human — the parts that will not be replaced by AI. They are crucial to developing critical thinking and a moral compass. They are crucial to understanding people — our values, institutions, cultures, and ways of thinking. They are crucial to creating students who are broad thinkers who understand the way the world works. They are crucial to developing students who are excellent communicators and are able to describe their projects — and their lives — in a way that endows them with meaning. Our students understand this. Here is how one of them put the point: “Engineering gives me the tools to measure the world; the humanities teach me how to interpret it. That balance has shaped both how I do science and why I do it.” (Full interview&nbsp; here .) Q: Some people worry that emphasizing humanistic study could dilute MIT’s technological edge. How do you respond to that concern? A: I think the opposite is true.&nbsp; MIT is an important engine for social mobility in the United States, and a catalyst for entrepreneurship, which has added billions of dollars to the American economy. That cannot be separated from the fact that we are a technical institution, which brings together the country’s most talented undergraduates — regardless of socioeconomic background — and transforms them into the next generation of our country's top scientific and engineering leaders.&nbsp; MIT plays an incredibly important role in our country. So, the last thing I want to do is mess with our secret sauce. But I also think that the age of AI is forcing us to rethink what it means to be a top engineer.&nbsp; Think about artificial intelligence itself. The challenges we face are not just technical. Issues like bias, accountability, governance, and the societal impact of automation are no less important. Understanding those dimensions helps technologists design better systems and anticipate real-world consequences. Strengthening the humanities at MIT isn’t a departure from our core mission — it’s a way of ensuring that our technical leadership continues to matter in the world. Q: What kinds of changes is MIT SHASS pursuing to support this vision? A: There’s a lot going on!&nbsp; We’ve launched the&nbsp; MIT Human Insight Collaborative (MITHIC) as a way of strengthening research in the humanities, arts, and social sciences, and of deepening collaboration with colleagues across MIT. We’re shaping the undergraduate experience to ensure that every MIT student engages with the big societal questions shaping our time, from democratic resilience to climate change to the ethics of new technologies. We’re building stronger connections through initiatives like the creation of&nbsp; shared faculty positions with the MIT Schwarzman College of Computing (SCC). And we recently launched a new&nbsp; Music Technology and Computation Graduate Program with the School of Engineering. We’re partnering with&nbsp; SERC (the SCC’s Social and Ethical Responsibilities of Computing) to design new classes on the intersection of computing and human-centered issues, such as ethics. And we’re elevating the humanities — for their own sake, and as a space for experimentation, bringing together students, faculty, and partners to explore new forms of research, teaching, and public engagement. This is a very exciting time for SHASS.",
-        "authors": [
-          "School of Humanities, Arts, and Social Sciences"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Products",
-        "ageHours": 23
-      },
-      {
-        "title": "OpenAI has bought AI personal finance startup Hiro",
-        "url": "https://techcrunch.com/2026/04/13/openai-has-bought-ai-personal-finance-startup-hiro/",
-        "publishedAt": "2026-04-14T00:23:33.000Z",
-        "summary": "The acquisition indicates a capability that OpenAI is building into ChatGPT: financial planning.",
-        "authors": [
-          "Julie Bort"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 36
-      },
-      {
-        "title": "Trusted access for the next era of cyber defense",
-        "url": "https://openai.com/index/scaling-trusted-access-for-cyber-defense",
-        "publishedAt": "2026-04-14T00:00:00.000Z",
-        "summary": "OpenAI expands its Trusted Access for Cyber program, introducing GPT-5.4-Cyber to vetted defenders and strengthening safeguards as AI cybersecurity capabilities advance.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 36
-      },
-      {
-        "title": "Microsoft is working on yet another OpenClaw-like agent",
-        "url": "https://techcrunch.com/2026/04/13/microsoft-is-working-on-yet-another-openclaw-like-agent/",
-        "publishedAt": "2026-04-13T19:05:19.000Z",
-        "summary": "The new features would be geared toward enterprise customers, with better security controls than the famously risky open source OpenClaw agent.",
-        "authors": [
-          "Julie Bort"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 41
+        "ageHours": 25
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 21,
+    "totalItems": 12,
+    "last24h": 11,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 11
-      },
-      {
         "name": "Models",
-        "count": 7
+        "count": 4
       },
       {
         "name": "General",
@@ -514,6 +274,10 @@
       },
       {
         "name": "Products",
+        "count": 2
+      },
+      {
+        "name": "Research",
         "count": 2
       }
     ]
