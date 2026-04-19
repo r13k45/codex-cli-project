@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T15:51:49.340Z",
+  "generatedAt": "2026-04-19T16:56:38.085Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 503",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,228 +87,36 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "MM-WebAgent: A Hierarchical Multimodal Web Agent for Webpage Generation",
-        "url": "https://arxiv.org/abs/2604.15309v1",
-        "publishedAt": "2026-04-16T17:59:49.000Z",
-        "summary": "The rapid progress of Artificial Intelligence Generated Content (AIGC) tools enables images, videos, and visualizations to be created on demand for webpage design, offering a flexible and increasingly adopted paradigm for modern UI/UX. However, directly integrating such tools into automated webpage generation often leads to style inconsistency and poor global coherence, as elements are generated in isolation. We propose MM-WebAgent, a hierarchical agentic framework for multimodal webpage generation that coordinates AIGC-based element generation through hierarchical planning and iterative self-reflection. MM-WebAgent jointly optimizes global layout, local multimodal content, and their integration, producing coherent and visually consistent webpages. We further introduce a benchmark for multimodal webpage generation and a multi-level evaluation protocol for systematic assessment. Experiments demonstrate that MM-WebAgent outperforms code-generation and agent-based baselines, especially on multimodal element generation and integration. Code & Data: https://aka.ms/mm-webagent.",
-        "authors": [
-          "Yan Li",
-          "Zezi Zeng",
-          "Yifan Yang",
-          "Yuqing Yang",
-          "Ning Liao",
-          "Weiwei Guo",
-          "Lili Qiu",
-          "Mingxi Cheng",
-          "Qi Dai",
-          "Zhendong Wang",
-          "Zhengyuan Yang",
-          "Xue Yang",
-          "Ji Li",
-          "Lijuan Wang",
-          "Chong Luo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "Generalization in LLM Problem Solving: The Case of the Shortest Path",
-        "url": "https://arxiv.org/abs/2604.15306v1",
-        "publishedAt": "2026-04-16T17:59:43.000Z",
-        "summary": "Whether language models can systematically generalize remains actively debated. Yet empirical performance is jointly shaped by multiple factors such as training data, training paradigms, and inference-time strategies, making failures difficult to interpret. We introduce a controlled synthetic environment based on shortest-path planning, a canonical composable sequential optimization problem. The setup enables clean separation of these factors and supports two orthogonal axes of generalization: spatial transfer to unseen maps and length scaling to longer-horizon problems. We find that models exhibit strong spatial transfer but consistently fail under length scaling due to recursive instability. We further analyze how distinct stages of the learning pipeline influence systematic problem-solving: for example, data coverage sets capability limits; reinforcement learning improves training stability but does not expand those limits; and inference-time scaling enhances performance but cannot rescue length-scaling failures.",
-        "authors": [
-          "Yao Tong",
-          "Jiayuan Ye",
-          "Anastasia Borovykh",
-          "Reza Shokri"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 70
-      },
-      {
-        "title": "Diagnosing LLM Judge Reliability: Conformal Prediction Sets and Transitivity Violations",
-        "url": "https://arxiv.org/abs/2604.15302v1",
-        "publishedAt": "2026-04-16T17:58:21.000Z",
-        "summary": "LLM-as-judge frameworks are increasingly used for automatic NLG evaluation, yet their per-instance reliability remains poorly understood. We present a two-pronged diagnostic toolkit applied to SummEval: $\\textbf{(1)}$ a transitivity analysis that reveals widespread per-input inconsistency masked by low aggregate violation rates ($\\barρ = 0.8$-$4.1\\%$), with $33$-$67\\%$ of documents exhibiting at least one directed 3-cycle; and $\\textbf{(2)}$ split conformal prediction sets over 1-5 Likert scores providing theoretically-guaranteed $\\geq(1{-}α)$ coverage, with set width serving as a per-instance reliability indicator ($r_s = {+}0.576$, $N{=}1{,}918$, $p < 10^{-100}$, pooled across all judges). Critically, prediction set width shows consistent cross-judge agreement ($\\bar{r} = 0.32$-$0.38$), demonstrating it captures document-level difficulty rather than judge-specific noise. Across four judges and four criteria, both diagnostics converge: criterion matters more than judge, with relevance judged most reliably (avg. set size $\\approx 3.0$) and coherence moderately so (avg. set size $\\approx 3.9$), while fluency and consistency remain unreliable (avg. set size $\\approx 4.9$). We release all code, prompts, and cached results.",
-        "authors": [
-          "Manan Gupta",
-          "Dhruv Kumar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "Benchmarking Optimizers for MLPs in Tabular Deep Learning",
-        "url": "https://arxiv.org/abs/2604.15297v1",
-        "publishedAt": "2026-04-16T17:57:02.000Z",
-        "summary": "MLP is a heavily used backbone in modern deep learning (DL) architectures for supervised learning on tabular data, and AdamW is the go-to optimizer used to train tabular DL models. Unlike architecture design, however, the choice of optimizer for tabular DL has not been examined systematically, despite new optimizers showing promise in other domains. To fill this gap, we benchmark \\Noptimizers optimizers on \\Ndatasets tabular datasets for training MLP-based models in the standard supervised learning setting under a shared experiment protocol. Our main finding is that the Muon optimizer consistently outperforms AdamW, and thus should be considered a strong and practical choice for practitioners and researchers, if the associated training efficiency overhead is affordable. Additionally, we find exponential moving average of model weights to be a simple yet effective technique that improves AdamW on vanilla MLPs, though its effect is less consistent across model variants.",
-        "authors": [
-          "Yury Gorishniy",
-          "Ivan Rubachev",
-          "Dmitrii Feoktistov",
-          "Artem Babenko"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "How Do LLMs and VLMs Understand Viewpoint Rotation Without Vision? An Interpretability Study",
-        "url": "https://arxiv.org/abs/2604.15294v1",
-        "publishedAt": "2026-04-16T17:55:19.000Z",
-        "summary": "Over the past year, spatial intelligence has drawn increasing attention. Many prior works study it from the perspective of visual-spatial intelligence, where models have access to visuospatial information from visual inputs. However, in the absence of visual information, whether linguistic intelligence alone is sufficient to endow models with spatial intelligence, and how models perform relevant tasks with text-only inputs still remain unexplored. Therefore, in this paper, we focus on a fundamental and critical capability in spatial intelligence from a linguistic perspective: viewpoint rotation understanding (VRU). Specifically, LLMs and VLMs are asked to infer their final viewpoint and predict the corresponding observation in an environment given textual description of viewpoint rotation and observation over multiple steps. We find that both LLMs and VLMs perform poorly on our proposed dataset while human can easily achieve 100% accuracy, indicating a substantial gap between current model capabilities and the requirements of spatial intelligence. To uncover the underlying mechanisms, we conduct a layer-wise probing analysis and head-wise causal intervention. Our findings reveal that although models encode viewpoint information in the hidden states, they appear to struggle to bind the viewpoint position with corresponding observation, resulting in a hallucination in final layers. Finally, we selectively fine-tune the key attention heads identified by causal intervention to improve VRU performance. Experimental results demonstrate that such selective fine-tuning achieves improved VRU performance while avoiding catastrophic forgetting of generic abilities. Our dataset and code will be released at https://github.com/Young-Zhen/VRU_Interpret .",
-        "authors": [
-          "Zhen Yang",
-          "Ping Jian",
-          "Zhongbin Guo",
-          "Zuming Zhang",
-          "Chengzhi Li",
-          "Yonghong Deng",
-          "Xinyue Zhang",
-          "Wenpeng Lu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "AD4AD: Benchmarking Visual Anomaly Detection Models for Safer Autonomous Driving",
-        "url": "https://arxiv.org/abs/2604.15291v1",
-        "publishedAt": "2026-04-16T17:54:53.000Z",
-        "summary": "The reliability of a machine vision system for autonomous driving depends heavily on its training data distribution. When a vehicle encounters significantly different conditions, such as atypical obstacles, its perceptual capabilities can degrade substantially. Unlike many domains where errors carry limited consequences, failures in autonomous driving translate directly into physical risk for passengers, pedestrians, and other road users. To address this challenge, we explore Visual Anomaly Detection (VAD) as a solution. VAD enables the identification of anomalous objects not present during training, allowing the system to alert the driver when an unfamiliar situation is detected. Crucially, VAD models produce pixel-level anomaly maps that can guide driver attention to specific regions of concern without requiring any prior assumptions about the nature or form of the hazard. We benchmark eight state-of-the-art VAD methods on AnoVox, the largest synthetic dataset for anomaly detection in autonomous driving. In particular, we evaluate performance across four backbone architectures spanning from large networks to lightweight ones such as MobileNet and DeiT-Tiny. Our results demonstrate that VAD transfers effectively to road scenes. Notably, Tiny-Dinomaly achieves the best accuracy-efficiency trade-off for edge deployment, matching full-scale localization performance at a fraction of the memory cost. This study represents a concrete step toward safer, more responsible deployment of autonomous vehicles, ultimately improving protection for passengers, pedestrians, and all road users.",
-        "authors": [
-          "Fabrizio Genilotti",
-          "Arianna Stropeni",
-          "Gionata Grotto",
-          "Francesco Borsatti",
-          "Manuel Barusco",
-          "Davide Dalle Pezze",
-          "Gian Antonio Susto"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "Structural interpretability in SVMs with truncated orthogonal polynomial kernels",
-        "url": "https://arxiv.org/abs/2604.15285v1",
-        "publishedAt": "2026-04-16T17:52:08.000Z",
-        "summary": "We study post-training interpretability for Support Vector Machines (SVMs) built from truncated orthogonal polynomial kernels. Since the associated reproducing kernel Hilbert space is finite-dimensional and admits an explicit tensor-product orthonormal basis, the fitted decision function can be expanded exactly in intrinsic RKHS coordinates. This leads to Orthogonal Representation Contribution Analysis (ORCA), a diagnostic framework based on normalized Orthogonal Kernel Contribution (OKC) indices. These indices quantify how the squared RKHS norm of the classifier is distributed across interaction orders, total polynomial degrees, marginal coordinate effects, and pairwise contributions. The methodology is fully post-training and requires neither surrogate models nor retraining. We illustrate its diagnostic value on a synthetic double-spiral problem and on a real five-dimensional echocardiogram dataset. The results show that the proposed indices reveal structural aspects of model complexity that are not captured by predictive accuracy alone.",
-        "authors": [
-          "Víctor Soto-Larrosa",
-          "Nuria Torrado",
-          "Edmundo J. Huertas"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "Why Do Vision Language Models Struggle To Recognize Human Emotions?",
-        "url": "https://arxiv.org/abs/2604.15280v1",
-        "publishedAt": "2026-04-16T17:49:58.000Z",
-        "summary": "Understanding emotions is a fundamental ability for intelligent systems to be able to interact with humans. Vision-language models (VLMs) have made tremendous progress in the last few years for many visual tasks, potentially offering a promising solution for understanding emotions. However, it is surprising that even the most sophisticated contemporary VLMs struggle to recognize human emotions or to outperform even specialized vision-only classifiers. In this paper we ask the question \"Why do VLMs struggle to recognize human emotions?\", and observe that the inherently continuous and dynamic task of facial expression recognition (DFER) exposes two critical VLM vulnerabilities. First, emotion datasets are naturally long-tailed, and the web-scale data used to pre-train VLMs exacerbates this head-class bias, causing them to systematically collapse rare, under-represented emotions into common categories. We propose alternative sampling strategies that prevent favoring common concepts. Second, temporal information is critical for understanding emotions. However, VLMs are unable to represent temporal information over dense frame sequences, as they are limited by context size and the number of tokens that can fit in memory, which poses a clear challenge for emotion recognition. We demonstrate that the sparse temporal sampling strategy used in VLMs is inherently misaligned with the fleeting nature of micro-expressions (0.25-0.5 seconds), which are often the most critical affective signal. As a diagnostic probe, we propose a multi-stage context enrichment strategy that utilizes the information from \"in-between\" frames by first converting them into natural language summaries. This enriched textual context is provided as input to the VLM alongside sparse keyframes, preventing attentional dilution from excessive visual data while preserving the emotional trajectory.",
-        "authors": [
-          "Madhav Agarwal",
-          "Sotirios A. Tsaftaris",
-          "Laura Sevilla-Lara",
-          "Steven McDonagh"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "How Embeddings Shape Graph Neural Networks: Classical vs Quantum-Oriented Node Representations",
-        "url": "https://arxiv.org/abs/2604.15273v1",
-        "publishedAt": "2026-04-16T17:45:24.000Z",
-        "summary": "Node embeddings act as the information interface for graph neural networks, yet their empirical impact is often reported under mismatched backbones, splits, and training budgets. This paper provides a controlled benchmark of embedding choices for graph classification, comparing classical baselines with quantum-oriented node representations under a unified pipeline. We evaluate two classical baselines alongside quantum-oriented alternatives, including a circuit-defined variational embedding and quantum-inspired embeddings computed via graph operators and linear-algebraic constructions. All variants are trained and tested with the same backbone, stratified splits, identical optimization and early stopping, and consistent metrics. Experiments on five different TU datasets and on QM9 converted to classification via target binning show clear dataset dependence: quantum-oriented embeddings yield the most consistent gains on structure-driven benchmarks, while social graphs with limited node attributes remain well served by classical baselines. The study highlights practical trade-offs between inductive bias, trainability, and stability under a fixed training budget, and offers a reproducible reference point for selecting quantum-oriented embeddings in graph learning.",
-        "authors": [
-          "Nouhaila Innan",
-          "Antonello Rosato",
-          "Alberto Marchisio",
-          "Muhammad Shafique"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "Prism: Symbolic Superoptimization of Tensor Programs",
-        "url": "https://arxiv.org/abs/2604.15272v1",
-        "publishedAt": "2026-04-16T17:43:31.000Z",
-        "summary": "This paper presents Prism, the first symbolic superoptimizer for tensor programs. The key idea is sGraph, a symbolic, hierarchical representation that compactly encodes large classes of tensor programs by symbolically representing some execution parameters. Prism organizes optimization as a two-level search: it constructs symbolic graphs that represent families of programs, and then instantiates them into concrete implementations. This formulation enables structured pruning of provably suboptimal regions of the search space using symbolic reasoning over operator semantics, algebraic identities, and hardware constraints.\n  We develop techniques for efficient symbolic graph generation, equivalence verification via e-graph rewriting, and parameter instantiation through auto-tuning. Together, these components allow Prism to bridge the rigor of exhaustive search with the scalability required for modern ML workloads. Evaluation on five commonly used LLM workloads shows that Prism achieves up to $2.2\\times$ speedup over best superoptimizers and $4.9\\times$ over best compiler-based approaches, while reducing end-to-end optimization time by up to $3.4\\times$.",
-        "authors": [
-          "Mengdi Wu",
-          "Xiaoyu Jiang",
-          "Oded Padon",
-          "Zhihao Jia"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 70
-      },
-      {
-        "title": "SegWithU: Uncertainty as Perturbation Energy for Single-Forward-Pass Risk-Aware Medical Image Segmentation",
-        "url": "https://arxiv.org/abs/2604.15271v1",
-        "publishedAt": "2026-04-16T17:42:42.000Z",
-        "summary": "Reliable uncertainty estimation is critical for medical image segmentation, where automated contours feed downstream quantification and clinical decision support. Many strong uncertainty methods require repeated inference, while efficient single-forward-pass alternatives often provide weaker failure ranking or rely on restrictive feature-space assumptions. We present $\\textbf{SegWithU}$, a post-hoc framework that augments a frozen pretrained segmentation backbone with a lightweight uncertainty head. SegWithU taps intermediate backbone features and models uncertainty as perturbation energy in a compact probe space using rank-1 posterior probes. It produces two voxel-wise uncertainty maps: a calibration-oriented map for probability tempering and a ranking-oriented map for error detection and selective prediction. Across ACDC, BraTS2024, and LiTS, SegWithU is the strongest and most consistent single-forward-pass baseline, achieving AUROC/AURC of $0.9838/2.4885$, $0.9946/0.2660$, and $0.9925/0.8193$, respectively, while preserving segmentation quality. These results suggest that perturbation-based uncertainty modeling is an effective and practical route to reliability-aware medical segmentation.\n  Source code is available at https://github.com/ProjectNeura/SegWithU.",
-        "authors": [
-          "Tianhao Fu",
-          "Austin Wang",
-          "Charles Chen",
-          "Roby Aldave-Garza",
-          "Yucheng Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 70
-      },
-      {
-        "title": "Cloning is as Hard as Learning for Stabilizer States",
-        "url": "https://arxiv.org/abs/2604.15269v1",
-        "publishedAt": "2026-04-16T17:41:16.000Z",
-        "summary": "The impossibility of simultaneously cloning non-orthogonal states lies at the foundations of quantum theory. Even when allowing for approximation errors, cloning an arbitrary unknown pure state requires as many initial copies as needed to fully learn the state. Rather than arbitrary unknown states, modern quantum learning theory often considers structured classes of states and exploits such structure to develop learning algorithms that outperform general-state tomography. This raises the question: How do the sample complexities of learning and cloning relate for such structured classes? We answer this question for an important class of states. Namely, for $n$-qubit stabilizer states, we show that the optimal sample complexity of cloning is $Θ(n)$. Thus, also for this structured class of states, cloning is as hard as learning. To prove these results, we use representation-theoretic tools in the recently proposed Abelian State Hidden Subgroup framework and a new structured version of the recently introduced random purification channel to relate stabilizer state cloning to a variant of the sample amplification problem for probability distributions that was recently introduced in classical learning theory. This allows us to obtain our cloning lower bounds by proving new sample amplification lower bounds for classes of distributions with an underlying linear structure. Our results provide a more fine-grained perspective on No-Cloning theorems, opening up connections from foundations to quantum learning theory and quantum cryptography.",
-        "authors": [
-          "Nikhil Bansal",
-          "Matthias C. Caro",
-          "Gaurav Mahajan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 70
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Palantir posts mini-manifesto denouncing inclusivity and ‘regressive’ cultures",
+        "url": "https://techcrunch.com/2026/04/19/palantir-posts-mini-manifesto-denouncing-regressive-and-harmful-cultures/",
+        "publishedAt": "2026-04-19T16:30:00.000Z",
+        "summary": "Palantir's ideological bent has come under more scrutiny as it's worked with ICE and positioned itself as a defender of \"the West.\"",
+        "authors": [
+          "Anthony Ha"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 0
+      },
+      {
+        "title": "TechCrunch Mobility: Uber enters its assetmaxxing era",
+        "url": "https://techcrunch.com/2026/04/19/techcrunch-mobility-uber-enters-its-assetmaxxing-era/",
+        "publishedAt": "2026-04-19T16:01:00.000Z",
+        "summary": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part.",
+        "authors": [
+          "Kirsten Korosec"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
       {
         "title": "Tesla brings its robotaxi service to Dallas and Houston",
         "url": "https://techcrunch.com/2026/04/18/tesla-brings-its-robotaxi-service-to-dallas-and-houston/",
@@ -317,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 18
+        "ageHours": 19
       },
       {
         "title": "AI chip startup Cerebras files for IPO",
@@ -331,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 21
+        "ageHours": 22
       },
       {
         "title": "Anthropic’s relationship with the Trump administration seems to be thawing",
@@ -345,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 25
+        "ageHours": 26
       },
       {
         "title": "The App Store is booming again, and AI may be why",
@@ -359,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 27
+        "ageHours": 28
       },
       {
         "title": "Sam Altman&#8217;s project World looks to scale its human verification empire. First stop: Tinder.",
@@ -373,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 41
+        "ageHours": 42
       },
       {
         "title": "Kevin Weil and Bill Peebles exit OpenAI as company continues to shed &#8216;side quests&#8217;",
@@ -387,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 43
+        "ageHours": 44
       },
       {
         "title": "Sources: Cursor in talks to raise $2B+ at $50B valuation as enterprise growth surges",
@@ -401,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 45
+        "ageHours": 46
       },
       {
         "title": "&#8216;Tokenmaxxing&#8217; is making developers less productive than they think",
@@ -415,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 45
+        "ageHours": 46
       },
       {
         "title": "Tokenmaxxing, OpenAI&#8217;s shopping spree, and the AI Anxiety Gap",
@@ -429,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 48
+        "ageHours": 49
       },
       {
         "title": "Anthropic launches Claude Design, a new product for creating quick visuals",
@@ -443,58 +255,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 49
-      },
-      {
-        "title": "Jacob Andreas and Brett McGuire named Edgerton Award winners",
-        "url": "https://news.mit.edu/2026/jacob-andreas-brett-mcguire-edgerton-award-winners-0417",
-        "publishedAt": "2026-04-17T13:40:00.000Z",
-        "summary": "MIT Associate Professor&nbsp; Jacob Andreas of the Department of Electrical Engineering and Computer Science [EECS] and MIT Associate Professor&nbsp; Brett McGuire of the Department of Chemistry have been selected as the winners of the 2026&nbsp;Harold E. Edgerton Faculty Achievement Award. Established in 1982 as a permanent tribute to Institute Professor Emeritus Harold E. Edgerton’s great and enduring support for younger faculty members, this award is given annually in recognition of exceptional distinction in teaching, research, and service. “The Department of Chemistry is extremely delighted to see Brett recognized for science that has changed how we think about carbon in space,” says Class of 1942 Professor of Chemistry and Department Head Matthew D. Shoulders. “Brett’s lab combines laboratory spectroscopy, radio astronomy, and sophisticated signal-analysis methods to pull definitive molecular fingerprints out of extraordinarily faint data. His discovery of polycyclic aromatic hydrocarbons in the cold interstellar medium has opened a powerful new window on astrochemistry. Moreover, Brett is inventing the creative and unique tools that make discoveries like this possible.” “Jacob Andreas represents the very best of MIT EECS” says Asu Ozdaglar, EECS department head. “He is an innovative researcher whose work combines computational and linguistically informed approaches to build foundations of language learning. He is an extraordinary educator who has brought these forefront ideas into our core classes in natural language processing and machine learning. His ability to bridge foundational theory with real-world impact, while also advancing the social and ethical dimensions of computing, makes him truly deserving of the Edgerton Faculty Achievement Award.” Andreas joined the MIT faculty in July 2019, and is affiliated with the Computer Science and Artificial Intelligence Laboratory. His work is in natural language processing (NLP), and more broadly in AI. He aims to understand the computational foundations of language learning, and to build intelligent systems that can learn from human guidance. Among other honors, Andreas has received Samsung’s AI Researcher of the Year award, MIT’s Kolokotrones and Junior Bose teaching awards, a 2024 Sloan Research Fellow award, and paper awards at the National Accrediting Agency for Clinical Laboratory Sciences, the International Conference on Machine Learning, and the Association for Computational Linguistics. Andreas received his BS from Columbia University, his MPhil from Cambridge University (where he studied as a Churchill scholar), and his PhD in natural language processing from the University of California at Berkeley. His work in natural language processing has taken on thorny problems in the capability gap between humans and computers. “The defining feature of human language use is our capacity for compositional generalization,” explains Antonio Torralba, Delta Electronics Professor and faculty head of Artificial Intelligence and Decision-Making in the Department of EECS. “Many of the core challenges in natural language processing is addressed by simply training larger and larger neural models, but this kind of compositional generalization remains a persistent difficulty, and without the ability to generalize compositionally, the deep learning toolkit will never be robust enough for the most challenging real-world NLP tasks. Jacob’s work on compositional modeling draws new connections between NLP and work in computer vision and physics aimed at modeling systems governed by symmetries and other algebraic structures and, using them, they have been able to build NLP models exhibiting a number of new, human-like language acquisition behaviors, including one-shot word learning, learning via mutual exclusivity constraints, and learning of grammatical rules in extremely low-resource settings.” Within EECS, Andreas has developed multiple advanced courses in natural language processing, as well as new exercises designed to get students to grapple with important social and ethical considerations in machine learning deployment.&nbsp;“Jacob has taken a leading role in completely modernizing and extending our course offerings in natural language processing,” says award nominator Leslie Pack Kaelbling, Panasonic Professor in the Department of EECS. “He has led the development of a modern two-course sequence, which is a cornerstone of the new AI+D [artificial intelligence and decision-making] major, routinely enrolling several hundred students each semester. His command of the area is broad and deep, and his classes integrate classical structural understanding of language with the most modern learning-based approaches. He has put MIT EECS on the worldwide map as a place to study natural language at every level.” Brett McGuire&nbsp;joined the MIT faculty in 2020 and was promoted to associate professor in 2025. His research operates at the intersection of physical chemistry, molecular spectroscopy, and observational astrophysics, where he seeks to uncover how the chemical building blocks of life evolve alongside and help shape the birth of stars and planets. A former Jansky Fellow and then Hubble Postdoctoral Fellow at the National Radio Astronomy Observatory, McGuire has a BS in chemistry from the University of Illinois and a PhD in physical chemistry from Caltech. His honors include a 2026 Sloan Fellowship, the Beckman Young Investigator Award, the Helen B. Warner Prize for Astronomy, and the MIT Award for Teaching with Digital Technology. The faculty who nominated McGuire for this award praised his extraordinary public outreach, his immediate willingness to take on teaching class 5.111 (Principles of Chemical Science), a General Institute Requirement (GIR) course comprised of 150–500 students, and his service to both the MIT and astrochemical communities. “Brett is at the very top of astrochemical scientists in his age group due to his discovery of fused carbon ring compounds in the cold region of the ISM [interstellar medium], an observation that provides a route for carbon incorporation in planets,” says Sylvia Ceyer, the John C. Sheehan Professor of Chemistry in her nomination statement. “His extensive involvement in service-oriented activities within the astrochemical/physical community is highly unusual for a junior scientist, and is testament to the value that the astronomical community places in his wisdom and judgement. His phenomenal organizational skills have made his contributions to graduate admission protocols and seminar administration at MIT the envy of the department. And most importantly, Brett is a superb teacher, who cares deeply about students’ understanding and success, not only in his course, but in their future endeavors.” “As an assistant professor, Brett volunteered to teach 5.111, a large GIR course with 150–500 students, and has received some of the best teaching evaluations among all faculty who have led the subject,” says Mei Hong, the&nbsp;David A. Leighty Professor of Chemistry. “He has a natural talent in explaining abstract physical chemistry concepts in an engaging manner. His slides, which he prepared from scratch instead of modifying from previous years’ material from other professors, are clear, and … the combination of lucid explanation and humor has generated great enthusiasm and interest in chemistry among students.” Subject evaluations from McGuire’s courses praised his humor, the clarity of his explanations, and his ability to transform a lecture into a “science show.” “I haven't felt this sort of desire for the depth of understanding in a subject beyond just a straight grade [in some time],” says one student. “Brett definitely stimulated that love of learning for me.”&nbsp; “Brett is an outstanding faculty member who is dedicated to fostering student learning and success,” says Jennifer Weisman, assistant director of academic programs in chemistry. “He is thoughtful, caring, and goes above and beyond to help his colleagues, students, and staff.” “I’m thrilled to be selected for the Edgerton Award this year,” says McGuire. “The award is nominally for teaching, research, and service; MIT and the chemistry department in particular have been an incredible place to learn and grow in all these areas. I’m incredibly grateful for the mentorship, enthusiasm, and support I have received from my colleagues, from my students both in the lab and in the classroom, and from the MIT community during my time here. I look forward to many more years of exciting discovery together with this one-of-a-kind community.”",
-        "authors": [
-          "Danielle Randall Doughty | Jane Halpern | Department of Chemistry | Department of Electrical Engineering and Computer Science"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
         "ageHours": 50
-      },
-      {
-        "title": "Are we tokenmaxxing our way to nowhere?",
-        "url": "https://techcrunch.com/video/are-we-tokenmaxxing-our-way-to-nowhere/",
-        "publishedAt": "2026-04-17T13:00:00.000Z",
-        "summary": "The gap between AI insiders and everyone else&#160;is widening, and the spending, suspicion, and even new vocabulary are starting to show it. While OpenAI is busy buying up everything from&#160;finance apps&#160;to&#160;talk shows, a certain shoe company just&#160;rebranded as an AI infrastructure play, and Anthropic unveiled a model it says is&#160;too powerful to release publicly&#160;&#8230;but&#160;apparently not&#160;too [&#8230;]",
-        "authors": [
-          "Theresa Loconsolo"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 51
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 2,
+    "totalItems": 12,
+    "last24h": 4,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 10
+        "name": "General",
+        "count": 5
       },
       {
         "name": "Models",
-        "count": 6
+        "count": 3
       },
       {
         "name": "Products",
-        "count": 3
+        "count": 2
       },
       {
-        "name": "General",
-        "count": 3
+        "name": "Infrastructure",
+        "count": 1
       }
     ]
   }
