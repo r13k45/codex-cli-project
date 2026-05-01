@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-01T10:41:50.924Z",
+  "generatedAt": "2026-05-01T12:04:37.300Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,214 +87,7 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Computing Equilibrium beyond Unilateral Deviation",
-        "url": "https://arxiv.org/abs/2604.28186v1",
-        "publishedAt": "2026-04-30T17:59:07.000Z",
-        "summary": "Most familiar equilibrium concepts, such as Nash and correlated equilibrium, guarantee only that no single player can improve their utility by deviating unilaterally. They offer no guarantees against profitable coordinated deviations by coalitions. Although the literature proposes solution concepts that provide stability against multilateral deviations (\\emph{e.g.}, strong Nash and coalition-proof equilibrium), these generally fail to exist. In this paper, we study an alternative solution concept that minimizes coalitional deviation incentives, rather than requiring them to vanish, and is therefore guaranteed to exist. Specifically, we focus on minimizing the average gain of a deviating coalition, and extend the framework to weighted-average and maximum-within-coalition gains. In contrast, the minimum-gain analogue is shown to be computationally intractable. For the average-gain and maximum-gain objectives, we prove a lower bound on the complexity of computing such an equilibrium and present an algorithm that matches this bound. Finally, we use our framework to solve the \\emph{Exploitability Welfare Frontier} (EWF), the maximum attainable social welfare subject to a given exploitability (the maximum gain over all unilateral deviations).",
-        "authors": [
-          "Mingyang Liu",
-          "Gabriele Farina",
-          "Asuman Ozdaglar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 17
-      },
-      {
-        "title": "Exploration Hacking: Can LLMs Learn to Resist RL Training?",
-        "url": "https://arxiv.org/abs/2604.28182v1",
-        "publishedAt": "2026-04-30T17:58:39.000Z",
-        "summary": "Reinforcement learning (RL) has become essential to the post-training of large language models (LLMs) for reasoning, agentic capabilities and alignment. Successful RL relies on sufficient exploration of diverse actions by the model during training, which creates a potential failure mode: a model could strategically alter its exploration during training to influence the subsequent training outcome. In this paper we study this behavior, called exploration hacking. First, we create model organisms of selective RL resistance by fine-tuning LLMs to follow specific underperformance strategies; these models can successfully resist our RL-based capability elicitation in agentic biosecurity and AI R&D environments while maintaining performance on related tasks. We then use our model organisms to evaluate detection and mitigation strategies, including monitoring, weight noising, and SFT-based elicitation. Finally, we show that current frontier models can exhibit explicit reasoning about suppressing their exploration when provided with sufficient information about their training context, with higher rates when this information is acquired indirectly through the environment. Together, our results suggest exploration hacking is a possible failure mode of RL on sufficiently capable LLMs.",
-        "authors": [
-          "Eyon Jang",
-          "Damon Falck",
-          "Joschka Braun",
-          "Nathalie Kirch",
-          "Achu Menon",
-          "Perusha Moodley",
-          "Scott Emmons",
-          "Roland S. Zimmermann",
-          "David Lindner"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "Synthetic Computers at Scale for Long-Horizon Productivity Simulation",
-        "url": "https://arxiv.org/abs/2604.28181v1",
-        "publishedAt": "2026-04-30T17:58:02.000Z",
-        "summary": "Realistic long-horizon productivity work is strongly conditioned on user-specific computer environments, where much of the work context is stored and organized through directory structures and content-rich artifacts. To scale synthetic data creation for such productivity scenarios, we introduce Synthetic Computers at Scale, a scalable methodology for creating such environments with realistic folder hierarchies and content-rich artifacts (e.g., documents, spreadsheets, and presentations). Conditioned on each synthetic computer, we run long-horizon simulations: one agent creates productivity objectives that are specific to the computer's user and require multiple professional deliverables and about a month of human work; another agent then acts as that user and keeps working across the computer -- for example, navigating the filesystem for grounding, coordinating with simulated collaborators, and producing professional artifacts -- until these objectives are completed.\n  In preliminary experiments, we create 1,000 synthetic computers and run long-horizon simulations on them; each run requires over 8 hours of agent runtime and spans more than 2,000 turns on average. These simulations produce rich experiential learning signals, whose effectiveness is validated by significant improvements in agent performance on both in-domain and out-of-domain productivity evaluations. Given that personas are abundant at billion scale, this methodology can in principle scale to millions or even billions of synthetic user worlds with sufficient compute, enabling broader coverage of diverse professions, roles, contexts, environments, and productivity needs. We argue that scalable synthetic computer creation, together with at-scale simulations, is highly promising as a foundational substrate for agent self-improvement and agentic reinforcement learning in long-horizon productivity scenarios.",
-        "authors": [
-          "Tao Ge",
-          "Baolin Peng",
-          "Hao Cheng",
-          "Jianfeng Gao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "An adaptive wavelet-based PINN for problems with localized high-magnitude source",
-        "url": "https://arxiv.org/abs/2604.28180v1",
-        "publishedAt": "2026-04-30T17:57:22.000Z",
-        "summary": "In recent years, physics-informed neural networks (PINNs) have gained significant attention for solving differential equations, although they suffer from two fundamental limitations, namely, spectral bias inherent in neural networks and loss imbalance arising from multiscale phenomena. This paper proposes an adaptive wavelet-based PINN (AW-PINN) to address the extreme loss imbalance characteristic of problems with localized high-magnitude source terms. Such problems frequently arise in various physical applications, such as thermal processing, electro-magnetics, impact mechanics, and fluid dynamics involving localized forcing. The proposed framework dynamically adjusts the wavelet basis function based on residual and supervised loss. This adaptive nature makes AW-PINN handle problems with high-scale features effectively without being memory-intensive. Additionally, AW-PINN does not rely on automatic differentiation to obtain derivatives involved in the loss function, which accelerates the training process. The method operates in two stages, an initial short pre-training phase with fixed bases to select physically relevant wavelet families, followed by an adaptive refinement that adapts scales and translations without populating high-resolution bases across entire domains. Theoretically, we show that under certain assumptions, AW-PINN admits a Gaussian process limit and derive its associated NTK structure. We evaluate AW-PINN on several challenging PDEs featuring localized high-magnitude source terms with extreme loss imbalances having ratios up to $10^{10}:1$. Across these PDEs, including transient heat conduction, highly localized Poisson problems, oscillatory flow equations, and Maxwell equations with a point charge source, AW-PINN consistently outperforms existing methods in its class.",
-        "authors": [
-          "Himanshu Pandey",
-          "Ratikanta Behera"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 17
-      },
-      {
-        "title": "LLM as Clinical Graph Structure Refiner: Enhancing Representation Learning in EEG Seizure Diagnosis",
-        "url": "https://arxiv.org/abs/2604.28178v1",
-        "publishedAt": "2026-04-30T17:57:12.000Z",
-        "summary": "Electroencephalogram (EEG) signals are vital for automated seizure detection, but their inherent noise makes robust representation learning challenging. Existing graph construction methods, whether correlation-based or learning-based, often generate redundant or irrelevant edges due to the noisy nature of EEG data. This significantly impairs the quality of graph representation and limits downstream task performance. Motivated by the remarkable reasoning and contextual understanding capabilities of large language models (LLMs), we explore the idea of using LLMs as graph edge refiners. Specifically, we propose a two-stage framework: we first verify that LLM-based edge refinement can effectively identify and remove redundant connections, leading to significant improvements in seizure detection accuracy and more meaningful graph structures. Building on this insight, we further develop a robust solution where the initial graph is constructed using a Transformer-based edge predictor and multilayer perceptron, assigning probability scores to potential edges and applying a threshold to determine their existence. The LLM then acts as an edge set refiner, making informed decisions based on both textual and statistical features of node pairs to validate the remaining connections. Extensive experiments on TUSZ dataset demonstrate that our LLM-refined graph learning framework not only enhances task performance but also yields cleaner and more interpretable graph representations.",
-        "authors": [
-          "Lincan Li",
-          "Zheng Chen",
-          "Yushun Dong"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "Defending Quantum Classifiers against Adversarial Perturbations through Quantum Autoencoders",
-        "url": "https://arxiv.org/abs/2604.28176v1",
-        "publishedAt": "2026-04-30T17:56:40.000Z",
-        "summary": "Machine learning models can learn from data samples to carry out various tasks efficiently. When data samples are adversarially manipulated, such as by insertion of carefully crafted noise, it can cause the model to make mistakes. Quantum machine learning models are also vulnerable to such adversarial attacks, especially in image classification using variational quantum classifiers. While there are promising defenses against these adversarial perturbations, such as training with adversarial samples, they face practical limitations. For example, they are not applicable in scenarios where training with adversarial samples is either not possible or can overfit the models on one type of attack. In this paper, we propose an adversarial training-free defense framework that utilizes a quantum autoencoder to purify the adversarial samples through reconstruction. Moreover, our defense framework provides a confidence metric to identify potentially adversarial samples that cannot be purified the quantum autoencoder. Extensive evaluation demonstrates that our defense framework can significantly outperform state-of-the-art in prediction accuracy (up to 68%) under adversarial attacks.",
-        "authors": [
-          "Emma Andrews",
-          "Sahan Sanjaya",
-          "Prabhat Mishra"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "Strait: Perceiving Priority and Interference in ML Inference Serving",
-        "url": "https://arxiv.org/abs/2604.28175v1",
-        "publishedAt": "2026-04-30T17:55:28.000Z",
-        "summary": "Machine learning (ML) inference serving systems host deep neural network (DNN) models and schedule incoming inference requests across deployed GPUs. However, limited support for task prioritization and insufficient latency estimation under concurrent execution may restrict their applicability in on-premises scenarios. We present \\emph{Strait}, a serving system designed to enhance deadline satisfaction for dual-priority inference traffic under high GPU utilization. To improve latency estimation, Strait models potential contention during data transfer and accounts for kernel execution interference through an adaptive prediction model. By drawing on these predictions, it performs priority-aware scheduling to deliver differentiated handling. Evaluation results under intense workloads suggest that Strait reduces deadline violations for high-priority tasks by 1.02 to 11.18 percentage points while incurring acceptable costs on low-priority tasks. Compared to software-defined preemption approaches, Strait also exhibits more equitable performance.",
-        "authors": [
-          "Haidong Zhao",
-          "Nikolaos Georgantas"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "PhyCo: Learning Controllable Physical Priors for Generative Motion",
-        "url": "https://arxiv.org/abs/2604.28169v1",
-        "publishedAt": "2026-04-30T17:53:03.000Z",
-        "summary": "Modern video diffusion models excel at appearance synthesis but still struggle with physical consistency: objects drift, collisions lack realistic rebound, and material responses seldom match their underlying properties. We present PhyCo, a framework that introduces continuous, interpretable, and physically grounded control into video generation. Our approach integrates three key components: (i) a large-scale dataset of over 100K photorealistic simulation videos where friction, restitution, deformation, and force are systematically varied across diverse scenarios; (ii) physics-supervised fine-tuning of a pretrained diffusion model using a ControlNet conditioned on pixel-aligned physical property maps; and (iii) VLM-guided reward optimization, where a fine-tuned vision-language model evaluates generated videos with targeted physics queries and provides differentiable feedback. This combination enables a generative model to produce physically consistent and controllable outputs through variations in physical attributes-without any simulator or geometry reconstruction at inference. On the Physics-IQ benchmark, PhyCo significantly improves physical realism over strong baselines, and human studies confirm clearer and more faithful control over physical attributes. Our results demonstrate a scalable path toward physically consistent, controllable generative video models that generalize beyond synthetic training environments.",
-        "authors": [
-          "Sriram Narayanan",
-          "Ziyu Jiang",
-          "Srinivasa Narasimhan",
-          "Manmohan Chandraker"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "Mapping the Phase Diagram of the Vicsek Model with Machine Learning",
-        "url": "https://arxiv.org/abs/2604.28167v1",
-        "publishedAt": "2026-04-30T17:52:23.000Z",
-        "summary": "In this study, we use machine learning to classify and interpolate the phase structure of the Vicsek flocking model across the three-dimensional parameter space $(η,ρ,v_0)$. We construct a dataset of simulated parameter points and characterize each point using long-time dynamical observables. These observables are then used as inputs to a K-Means clustering procedure, which assigns each point to a disorder, order, or coexistence phase. Using these clustered labels, we train a neural-network classifier to learn the mapping from model parameters to phase behavior, achieving a classification accuracy of 0.92. The resulting phase map resolves a narrow coexistence region separating the ordered and disordered phases and extends the inferred phase boundaries beyond the originally sampled simulation points. More broadly, this approach provides a systematic way to convert sparse simulation data into a global phase diagram for collective-motion models.",
-        "authors": [
-          "Grace T. Bai",
-          "Brandon B. Le"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "Sequential Inference for Gaussian Processes: A Signal Processing Perspective",
-        "url": "https://arxiv.org/abs/2604.28163v1",
-        "publishedAt": "2026-04-30T17:48:09.000Z",
-        "summary": "The proliferation of capable and efficient machine learning (ML) models marks one of the strongest methodological shifts in signal processing (SP) in its nearly 100-year history. ML models support the development of SP systems that represent complex, nonlinear relationships with high predictive accuracy. Adapting these models often requires sequential inference, which differs both theoretically and methodologically from the usual paradigm of ML, where data are often assumed independent and identically distributed. Gaussian processes (GPs) are a flexible yet principled framework for modeling random functions, and they have become increasingly relevant to SP as statistical and ML methods assume a more prominent role. We provide a self-contained, tutorial-style overview of GPs, with a particular focus on recent methodological advances in sequential, incremental, or streaming inference. We introduce these techniques from a signal-processing perspective while bridging them to recent advances in ML. Many of the developments we survey have direct applications to state-space modeling, sequential regression and forecasting, anomaly detection in time series, sequential Bayesian optimization, adaptive and active sensing, and sequential detection and decision-making. By organizing these advances from a signal-processing perspective, we intend to equip practitioners with practical tools and a coherent roadmap for deploying sequential GP models in real-world systems.",
-        "authors": [
-          "Daniel Waxman",
-          "Fernando Llorente",
-          "Petar M. Djurić"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 17
-      },
-      {
-        "title": "Intern-Atlas: A Methodological Evolution Graph as Research Infrastructure for AI Scientists",
-        "url": "https://arxiv.org/abs/2604.28158v1",
-        "publishedAt": "2026-04-30T17:44:55.000Z",
-        "summary": "Existing research infrastructure is fundamentally document-centric, providing citation links between papers but lacking explicit representations of methodological evolution. In particular, it does not capture the structured relationships that explain how and why research methods emerge, adapt, and build upon one another. With the rise of AI-driven research agents as a new class of consumers of scientific knowledge, this limitation becomes increasingly consequential, as such agents cannot reliably reconstruct method evolution topologies from unstructured text. We introduce Intern-Atlas, a methodological evolution graph that automatically identifies method-level entities, infers lineage relationships among methodologies, and captures the bottlenecks that drive transitions between successive innovations. Built from 1,030,314 papers spanning AI conferences, journals, and arXiv preprints, the resulting graph comprises 9,410,201 semantically typed edges, each grounded in verbatim source evidence, forming a queryable causal network of methodological development. To operationalize this structure, we further propose a self-guided temporal tree search algorithm for constructing evolution chains that trace the progression of methods over time. We evaluate the quality of the resulting graph against expert-curated ground-truth evolution chains and observe strong alignment. In addition, we demonstrate that Intern-Atlas enables downstream applications in idea evaluation and automated idea generation. We position methodological evolution graphs as a foundational data layer for the emerging automated scientific discovery.",
-        "authors": [
-          "Yujun Wu",
-          "Dongxu Zhang",
-          "Xinchen Li",
-          "Jinhang Xu",
-          "Yiling Duan",
-          "Yumou Liu",
-          "Jiabao Pan",
-          "Xuanhe Zhou",
-          "Jingxuan Wei",
-          "Siyuan Li",
-          "Jintao Chen",
-          "Conghui He",
-          "Cheng Tan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "FlexiTac: A Low-Cost, Open-Source, Scalable Tactile Sensing Solution for Robotic Systems",
-        "url": "https://arxiv.org/abs/2604.28156v1",
-        "publishedAt": "2026-04-30T17:43:07.000Z",
-        "summary": "We present FlexiTac, a low-cost, open-source, and scalable piezoresistive tactile sensing solution designed for robotic end-effectors. FlexiTac is a practical \"plug-in\" module consisting of (i) thin, flexible tactile sensor pads that provide dense tactile signals and (ii) a compact multi-channel readout board that streams synchronized measurements for real-time control and large-scale data collection. FlexiTac pads adopt a sealed three-layer laminate stack (FPC-Velostat-FPC) with electrode patterns directly integrated into flexible printed circuits, substantially improving fabrication throughput and repeatability while maintaining mechanical compliance for deployment on both rigid and soft grippers. The readout electronics use widely available, low-cost components and stream tactile signals to a host computer at 100 Hz via serial communication. Across multiple configurations, including fingertip pads and larger tactile mats, FlexiTac can be mounted on diverse platforms without major mechanical redesign. We further show that FlexiTac supports modern tactile learning pipelines, including 3D visuo-tactile fusion for contact-aware decision making, cross-embodiment skill transfer, and real-to-sim-to-real fine-tuning with GPU-parallel tactile simulation. Our project page is available at https://flexitac.github.io/.",
-        "authors": [
-          "Binghao Huang",
-          "Yunzhu Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 17
-      }
-    ],
+    "research": [],
     "news": [
       {
         "title": "Beacon Biosignals is mapping the brain during sleep",
@@ -304,7 +101,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 8
       },
       {
         "title": "Improving understanding with language",
@@ -318,7 +115,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 8
       },
       {
         "title": "ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet",
@@ -332,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 9
+        "ageHours": 10
       },
       {
         "title": "Sources: Anthropic potential $900B+ valuation round could happen within 2 weeks",
@@ -346,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 12
+        "ageHours": 13
       },
       {
         "title": "Apple was surprised by AI-driven demand for Macs",
@@ -360,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "Legal AI startup Legora hits $5.6B valuation and its battle with Harvey just got hotter",
@@ -374,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 14
+        "ageHours": 16
       },
       {
         "title": "After dissing Anthropic for limiting Mythos, OpenAI restricts access to Cyber, too",
@@ -388,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 15
+        "ageHours": 17
       },
       {
         "title": "OpenAI announces new advanced security for ChatGPT accounts, including a partnership with Yubico",
@@ -402,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 16
+        "ageHours": 18
       },
       {
         "title": "Elon Musk testifies that xAI trained Grok on OpenAI models",
@@ -416,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 17
+        "ageHours": 18
       },
       {
         "title": "FDA approval, fundraising, and the reality of building in healthcare according to BioticsAI founder",
@@ -430,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 17
+        "ageHours": 18
       },
       {
         "title": "Google’s Gemini AI assistant is hitting the road in millions of vehicles",
@@ -444,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 17
+        "ageHours": 18
       },
       {
         "title": "Stripe introduces Link, a digital wallet that autonomous AI agents can use, too",
@@ -458,30 +255,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 17
+        "ageHours": 19
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 24,
+    "totalItems": 12,
+    "last24h": 12,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 10
-      },
-      {
         "name": "Models",
-        "count": 7
+        "count": 6
       },
       {
         "name": "General",
-        "count": 4
+        "count": 3
+      },
+      {
+        "name": "Research",
+        "count": 2
       },
       {
         "name": "Products",
-        "count": 2
+        "count": 1
       }
     ]
   }
