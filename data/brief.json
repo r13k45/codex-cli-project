@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T12:03:59.441Z",
+  "generatedAt": "2026-05-04T14:28:00.075Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,10 +27,7 @@
         }
       ],
       "itemCount": 12,
-      "errors": [
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "errors": []
     },
     {
       "group": "news",
@@ -88,6 +85,42 @@
   "sections": {
     "research": [
       {
+        "title": "HyCOP: Hybrid Composition Operators for Interpretable Learning of PDEs",
+        "url": "https://arxiv.org/abs/2605.00820v1",
+        "publishedAt": "2026-05-01T17:57:48.000Z",
+        "summary": "We introduce HyCOP, a modular framework that learns parametric PDE solution operators by composing simple modules (advection, diffusion, learned closures, boundary handling) in a query-conditioned way. Rather than learning a monolithic map, HyCOP learns a policy over short programs - which module to apply and for how long - conditioned on regime features and state statistics. Modules may be numerical sub-solvers or learned components, enabling hybrid surrogates evaluated at arbitrary query times without autoregressive rollout. Across diverse PDE benchmarks, HyCOP produces interpretable programs, delivers order-of-magnitude OOD improvements over monolithic neural operators, and supports modular transfer through dictionary updates (e.g., boundary swaps, residual enrichment). Our theory characterizes expressivity and gives an error decomposition that separates composition error from module error and doubles as a process-level diagnostic.",
+        "authors": [
+          "Jinpai Zhao",
+          "Nishant Panda",
+          "Yen Ting Lin",
+          "Eirik Valseth",
+          "Diane Oyen",
+          "Clint Dawson"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 69
+      },
+      {
+        "title": "When LLMs Stop Following Steps: A Diagnostic Study of Procedural Execution in Language Models",
+        "url": "https://arxiv.org/abs/2605.00817v1",
+        "publishedAt": "2026-05-01T17:55:47.000Z",
+        "summary": "Large language models (LLMs) often achieve strong performance on reasoning benchmarks, but final-answer accuracy alone does not show whether they faithfully execute the procedure specified in a prompt. We study this question through a controlled diagnostic benchmark for procedural execution, where models are given a step-wise arithmetic algorithm and two numeric inputs, and must return the final computed value. The benchmark uses simple arithmetic operations but increases complexity through algorithm length and look-back dependencies over intermediate variables. Across 14 models and 55 datasets, average first-answer accuracy drops from 61% on 5-step procedures to 20% on 95-step procedures. Generation-level analysis shows that failures often involve missing answers, premature answers, self-correction after an initial error, under-executed traces, and hallucinated extra steps. These findings suggest that apparent reasoning ability can mask substantial weaknesses in faithful instruction execution.",
+        "authors": [
+          "Sailesh Panda",
+          "Pritam Kadasi",
+          "Abhishek Upperwal",
+          "Mayank Singh"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 69
+      },
+      {
         "title": "Persistent Visual Memory: Sustaining Perception for Deep Generation in LVLMs",
         "url": "https://arxiv.org/abs/2605.00814v1",
         "publishedAt": "2026-05-01T17:54:37.000Z",
@@ -107,7 +140,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 66
+        "ageHours": 69
       },
       {
         "title": "Can Coding Agents Reproduce Findings in Computational Materials Science?",
@@ -138,7 +171,41 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 66
+        "ageHours": 69
+      },
+      {
+        "title": "Generating Statistical Charts with Validation-Driven LLM Workflows",
+        "url": "https://arxiv.org/abs/2605.00800v1",
+        "publishedAt": "2026-05-01T17:39:00.000Z",
+        "summary": "Generating diverse, readable statistical charts from tabular data remains challenging for LLMs, as many failures become apparent after rendering and are not detectable from data or code alone. Existing chart datasets also rarely provide fully aligned artifacts, such as executable code, dataset context, and question-answer pairs. We present a structured LLM-based workflow that decomposes chart generation into dataset screening, plot proposal, code synthesis, rendering, validation-driven refinement, description generation, and question-answer generation. By incorporating rendered-output validation, the workflow addresses visualization-specific failure modes such as readability and semantic mismatch. It treats chart generation as an inspectable process rather than a one-shot prompt-to-code task, retaining each chart with its code, dataset context, description, and question-answer pairs. Applied to UCI datasets, the workflow produces 1,500 charts from 74 datasets, spanning 24 chart families and paired with 30,003 question-answer pairs. We evaluate 16 multimodal LLMs (MLLMs) on these chart-question pairs. The results show that chart-syntax questions are nearly saturated, while value extraction, comparison, and reasoning remain more challenging, illustrating the workflow's utility for diagnostic studies of chart-grounded multimodal reasoning.",
+        "authors": [
+          "Pavlin G. Poličar",
+          "Andraž Pevcin",
+          "Blaž Zupan"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 69
+      },
+      {
+        "title": "RunAgent: Interpreting Natural-Language Plans with Constraint-Guided Execution",
+        "url": "https://arxiv.org/abs/2605.00798v1",
+        "publishedAt": "2026-05-01T17:29:45.000Z",
+        "summary": "Humans solve problems by executing targeted plans, yet large language models (LLMs) remain unreliable for structured workflow execution. We propose RunAgent, a multi-agent plan execution platform that interprets natural-language plans while enforcing stepwise execution through constraints and rubrics. RunAgent bridges the expressiveness of natural language with the determinism of programming via an agentic language with explicit control constructs (e.g., \\texttt{IF}, \\texttt{GOTO}, \\texttt{FORALL}). Beyond verifying syntactic and semantic verification of the step output, which is performed based on the specific instruction of each step, RunAgent autonomously derives and validates constraints based on the description of the task and its instance at each step. RunAgent also dynamically selects among LLM-based reasoning, tool usage, and code generation and execution (e.g., in Python), and incorporates error correction mechanisms to ensure correctness. Finally, RunAgent filters the context history by retaining only relevant information during the execution of each step. Evaluations on Natural-plan and SciBench Datasets demonstrate that RunAgent outperforms baseline LLMs and state-of-the-art PlanGEN methods.",
+        "authors": [
+          "Arunabh Srivastava",
+          "Mohammad A.",
+          "Khojastepour",
+          "Srimat Chakradhar",
+          "Sennur Ulukus"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 69
       },
       {
         "title": "When RAG Chatbots Expose Their Backend: An Anonymized Case Study of Privacy and Security Risks in Patient-Facing Medical AI",
@@ -153,7 +220,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 67
+        "ageHours": 69
       },
       {
         "title": "Unsupervised Denoising of Real Clinical Low Dose Liver CT with Perceptual Attention Networks",
@@ -174,7 +241,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 67
+        "ageHours": 69
       },
       {
         "title": "Make Your LVLM KV Cache More Lightweight",
@@ -190,7 +257,22 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 67
+        "ageHours": 69
+      },
+      {
+        "title": "SAVGO: Learning State-Action Value Geometry with Cosine Similarity for Continuous Control",
+        "url": "https://arxiv.org/abs/2605.00787v1",
+        "publishedAt": "2026-05-01T17:09:58.000Z",
+        "summary": "While representation and similarity learning have improved the sample efficiency of Reinforcement Learning (RL), they are rarely used to shape policy updates directly in the action space. To bridge this gap, a geometry-aware RL algorithm that explicitly incorporates value-based similarity into the policy update, State-Action Value Geometry Optimization (SAVGO), is proposed. In detail, SAVGO learns a joint state-action embedding space in which pairs with similar action-value estimates exhibit high cosine similarity, while dissimilar pairs are mapped to distinct directions. This learned geometry enables the generation of a similarity kernel over candidate actions sampled at each update, allowing policy improvement to be guided directly toward higher-value regions beyond local gradient-based updates. As a result, representation learning, value estimation, and policy optimization are unified within a single geometry-consistent objective, while preserving the scalability of off-policy actor-critic training. The proposed method is evaluated on standard MuJoCo continuous-control benchmarks, demonstrating improvements over strong baselines on challenging high-dimensional tasks. Ablation studies are done to analyze the contributions of value-geometry learning and similarity-based policy updates.",
+        "authors": [
+          "Stavros Orfanoudakis",
+          "Pedro P. Vergara"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 69
       },
       {
         "title": "GeoContra: From Fluent GIS Code to Verifiable Spatial Analysis with Geography-Grounded Repair",
@@ -206,143 +288,23 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 67
-      },
-      {
-        "title": "Directed Social Regard: Surfacing Targeted Advocacy, Opposition, Aid, Harms, and Victimization in Online Media",
-        "url": "https://arxiv.org/abs/2605.00776v1",
-        "publishedAt": "2026-05-01T16:45:31.000Z",
-        "summary": "The language in online platforms, influence operations, and political rhetoric frequently directs a mix of pro-social sentiment (e.g., advocacy, helpfulness, compassion) and anti-social sentiment (e.g., threats, opposition, blame) at different topics, all in the same message. While many natural language processing (NLP) tools classify or score a text's overall sentiment as positive, neutral, or negative, these tools cannot report that positive and negative sentiments coexist, and they cannot report the target of those sentiments. This paper presents the Directed Social Regard (DSR) approach to multi-dimensional, multi-valence sentiment analysis, comprised of a pair of transformer-based models that (1) detects span-level targets of sentiment in a message and then (2) scores all spans within the message context along three (-1, 1) axes of regard that are motivated by social science theories of moral disengagement and moral framing. We present a data collection and annotation strategy for DSR dataset construction, a transformer-based architecture for span-level scoring, and a validation study with promising results. We apply the validated DSR model on six third-party datasets of online media and report meaningful correlations between DSR outputs and the labels and topics in these pre-existing social science datasets.",
-        "authors": [
-          "Scott Friedman",
-          "Ruta Wheelock",
-          "Sonja Schmer-Galunder",
-          "Drisana Iverson",
-          "Jake Vasilakes",
-          "Joan Zheng",
-          "Jeffrey Rye",
-          "Vasanth Sarathy",
-          "Christopher Miller"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 67
-      },
-      {
-        "title": "Meritocratic Fairness in Budgeted Combinatorial Multi-armed Bandits via Shapley Values",
-        "url": "https://arxiv.org/abs/2605.00762v1",
-        "publishedAt": "2026-05-01T16:20:43.000Z",
-        "summary": "We propose a new framework for meritocratic fairness in budgeted combinatorial multi-armed bandits with full-bandit feedback (BCMAB-FBF). Unlike semi-bandit feedback, the contribution of individual arms is not received in full-bandit feedback, making the setting significantly more challenging. To compute arm contributions in BCMAB-FBF, we first extend the Shapley value, a classical solution concept from cooperative game theory, to the $K$-Shapley value, which captures the marginal contribution of an agent restricted to a set of size at most $K$. We show that $K$-Shapley value is a unique solution concept that satisfies Symmetry, Linearity, Null player, and efficiency properties. We next propose K-SVFair-FBF, a fairness-aware bandit algorithm that adaptively estimates $K$-Shapley value with unknown valuation function. Unlike standard bandit literature on full bandit feedback, K-SVFair-FBF not only learns the valuation function under full feedback setting but also mitigates the noise arising from Monte Carlo approximations. Theoretically, we prove that K-SVFair-FBF achieves $O(T^{3/4})$ regret bound on fairness regret. Through experiments on federated learning and social influence maximization datasets, we demonstrate that our approach achieves fairness and performs more effectively than existing baselines.",
-        "authors": [
-          "Shradha Sharma",
-          "Swapnil Dhamal",
-          "Shweta Jain"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 68
-      },
-      {
-        "title": "Position: agentic AI orchestration should be Bayes-consistent",
-        "url": "https://arxiv.org/abs/2605.00742v1",
-        "publishedAt": "2026-05-01T15:43:43.000Z",
-        "summary": "LLMs excel at predictive tasks and complex reasoning tasks, but many high-value deployments rely on decisions under uncertainty, for example, which tool to call, which expert to consult, or how many resources to invest. While the usefulness and feasibility of Bayesian approaches remain unclear for LLM inference, this position paper argues that the control layer of an agentic AI system (that orchestrates LLMs and tools) is a clear case where Bayesian principles should shine. Bayesian decision theory provides a framework for agentic systems that can help to maintain beliefs over task-relevant latent quantities, to update these beliefs from observed agentic and human-AI interactions, and to choose actions. Making LLMs themselves explicitly Bayesian belief-updating engines remains computationally intensive and conceptually nontrivial as a general modeling target. In contrast, this paper argues that coherent decision-making requires Bayesian principles at the orchestration level of the agentic system, not necessarily the LLM agent parameters. This paper articulates practical properties for Bayesian control that fit modern agentic AI systems and human-AI collaboration, and provides concrete examples and design patterns to illustrate how calibrated beliefs and utility-aware policies can improve agentic AI orchestration.",
-        "authors": [
-          "Theodore Papamarkou",
-          "Pierre Alquier",
-          "Matthias Bauer",
-          "Wray Buntine",
-          "Andrew Davison",
-          "Gintare Karolina Dziugaite",
-          "Maurizio Filippone",
-          "Andrew Y. K. Foong",
-          "Vincent Fortuin",
-          "Dimitris Fouskakis",
-          "Jes Frellsen",
-          "Eyke Hüllermeier",
-          "Theofanis Karaletsos",
-          "Mohammad Emtiyaz Khan",
-          "Nikita Kotelevskii",
-          "Salem Lahlou",
-          "Yingzhen Li",
-          "Fang Liu",
-          "Clare Lyle",
-          "Thomas Möllenhoff",
-          "Konstantina Palla",
-          "Maxim Panov",
-          "Yusuf Sale",
-          "Kajetan Schweighofer",
-          "Artem Shelmanov",
-          "Siddharth Swaroop",
-          "Martin Trapp",
-          "Willem Waegeman",
-          "Andrew Gordon Wilson",
-          "Alexey Zaytsev"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 68
-      },
-      {
-        "title": "To Call or Not to Call: A Framework to Assess and Optimize LLM Tool Calling",
-        "url": "https://arxiv.org/abs/2605.00737v1",
-        "publishedAt": "2026-05-01T15:38:13.000Z",
-        "summary": "Agentic AI architectures augment LLMs with external tools, unlocking strong capabilities. However, tool use is not always beneficial; some calls may be redundant or even harmful. Effective tool use, therefore, hinges on a core LLM decision: whether to call or not call a tool, when performing a task. This decision is particularly challenging for web search tools, where the benefits of external information depend on the model's internal knowledge and its ability to integrate potentially noisy tool responses. We introduce a principled framework inspired by decision-making theory to evaluate web search tool-use decisions along three key factors: necessity, utility, and affordability. Our analysis combines two complementary lenses: a normative perspective that infers true need and utility from an optimal allocation of tool calls, and a descriptive perspective that infers the model's self-perceived need and utility from their observed behaviors. We find that models' perceived need and utility of tool calls are often misaligned with their true need and utility. Building on this framework, we train lightweight estimators of need and utility based on models' hidden states. Our estimators enable simple controllers that can improve decision quality and lead to stronger task performance than the self-perceived set up across three tasks and six models.",
-        "authors": [
-          "Qinyuan Wu",
-          "Soumi Das",
-          "Mahsa Amani",
-          "Arijit Nag",
-          "Seungeon Lee",
-          "Krishna P. Gummadi",
-          "Abhilasha Ravichander",
-          "Muhammad Bilal Zafar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 68
-      },
-      {
-        "title": "EASE: Federated Multimodal Unlearning via Entanglement-Aware Anchor Closure",
-        "url": "https://arxiv.org/abs/2605.00733v1",
-        "publishedAt": "2026-05-01T15:33:38.000Z",
-        "summary": "Federated Multimodal Learning (FML) trains multimodal models across decentralized clients while keeping their image-text pairs private. However, joint embedding training entangles forgotten knowledge across both modalities and client gradient subspaces, hindering federated unlearning. Previous federated unlearning approaches neither sever the cross-modal reconstruction channel mediated by bilinear coupling nor separate forget-exclusive update directions from those shared with retained clients. We identify an Anchor Principle for federated multimodal contrastive unlearning: forgotten alignments persist through three residual anchors arising from bilinear cross-modal coupling, principal-angle subspace entanglement, and continued federated updates. At the modality level, we show that bilateral displacement of both visual and language branches closes the cross-modal reconstruction channel. Correspondingly, our method addresses subspace entanglement through Cosine--Sine decomposition of client-update subspaces, isolating forget-exclusive directions from retain support. Moreover, we propose a direction-selective Forget Lock that bounds residual drift across rounds. Combining these strategies, we present EASE, an Entanglement-Aware Subspace Excision framework that closes all three anchor channels under a unified design. EASE demonstrates consistent superiority across multiple datasets and unlearning scenarios, for instance, matching the retrain reference to within 0.2 and 4.2 R@1 points on the forget and retain sides under client unlearning on Flickr30K with CLIP-B/32.",
-        "authors": [
-          "Zihao Ding",
-          "Beining Wu",
-          "Jun Huang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
         "ageHours": 69
       },
       {
-        "title": "Empowering Heterogeneous Graph Foundation Models via Decoupled Relation Alignment",
-        "url": "https://arxiv.org/abs/2605.00731v1",
-        "publishedAt": "2026-05-01T15:31:36.000Z",
-        "summary": "While Graph Foundation Models (GFMs) have achieved remarkable success in homogeneous graphs, extending them to multi-domain heterogeneous graphs (MDHGs) remains a formidable challenge due to cross-type feature shifts and intra-domain relation gaps. Existing global feature alignment methods (PCA or SVD) enforce a shared feature space blindly, which distorts type-specific semantics and disrupts original topologies, inevitably leading to \"Type Collapse\" and \"Relation Confusion\". To address these fundamental limitations, we propose Decoupled relation Subspace Alignment (DRSA), a novel, plug-and-play relation-driven alignment framework. DRSA fundamentally shifts the paradigm by decoupling feature semantics from relation structures. Specifically, it introduces a dual-relation subspace projection mechanism to coordinate cross-type interactions within a shared low-rank relation subspace explicitly. Furthermore, a feature-structure decoupled representation is designed to decompose aligned features into a semantic projection component and a structural residual term, adaptively absorbing intra-domain variations. Optimized via a stable alternating minimization strategy based on Block Coordinate Descent, DRSA constructs a well-calibrated, structure-aware latent space. Extensive experiments on multiple real-world benchmark datasets demonstrate that DRSA can be seamlessly integrated as a universal preprocessing module, significantly and consistently enhancing the cross-domain and few-shot knowledge transfer capabilities of state-of-the-art GFMs. The code is available at: https://github.com/zhengziyu77/DSRA.",
+        "title": "Observable Performance Does Not Fully Reflect System Organization: A Multi-Level Analysis of Gait Dynamics Under Occlusal Constraint",
+        "url": "https://arxiv.org/abs/2605.00778v1",
+        "publishedAt": "2026-05-01T16:48:00.000Z",
+        "summary": "In biomechanical systems, observable performance is often used as a proxy for underlying system organization. However, this assumption implicitly presumes a correspondence between output metrics and internal system states that may not hold in adaptive systems. In this study, the vertical dimension of occlusion (VDO) is considered as a constraint applied to an adaptive neuromechanical system, enabling the exploration of system-level responses under controlled variations. A single-case design in a patient with Parkinson's disease allows an intra-individual analysis across repeated conditions.The analysis is structured across three complementary levels: (i) aggregated linear metrics describing observable performance, (ii) a dynamical systems framework describing temporal organization in state space, and (iii) a latent space representation obtained through unsupervised embedding. The results show that conditions with comparable observable performance may correspond to different organizations in both state space and latent space representations. This dissociation highlights a limitation of aggregated metrics and suggests that similar outputs may arise from non-equivalent system states. A fourth level is proposed as a purely conceptual extension describing potential relationships between system states. This level is not implemented and is not derived from experimental data. These observations are strictly exploratory and non-causal. The proposed framework does not establish mechanistic, predictive, or directional relationships, but provides a structured approach for analyzing constraint-driven systems across multiple levels of representation.",
         "authors": [
-          "Ziyu Zheng",
-          "Yaming Yang",
-          "Zhe Wang",
-          "Ziyu Guan",
-          "Wei Zhao"
+          "Jacques Raynal",
+          "Pierre Slangen",
+          "Jacques Margerit"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 69
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 70
       }
     ],
     "news": [
@@ -358,7 +320,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 16
+        "ageHours": 18
       },
       {
         "title": "In Harvard study, AI offered more accurate emergency room diagnoses than two human doctors",
@@ -372,7 +334,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 18
+        "ageHours": 20
       },
       {
         "title": "AI-generated actors and scripts are now ineligible for Oscars",
@@ -386,7 +348,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 38
+        "ageHours": 41
       },
       {
         "title": "The best AI dictation apps, tested and ranked",
@@ -400,7 +362,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 44
+        "ageHours": 46
       },
       {
         "title": "Replit&#8217;s Amjad Masad on the Cursor deal, fighting Apple, and why he&#8217;d rather not sell",
@@ -414,7 +376,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 61
+        "ageHours": 63
       },
       {
         "title": "Meta buys robotics startup to bolster its humanoid AI ambitions",
@@ -428,7 +390,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 62
+        "ageHours": 64
       },
       {
         "title": "Did you know you can&#8217;t steal a charity? Don&#8217;t worry. Elon Musk will remind you.",
@@ -442,7 +404,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 66
+        "ageHours": 69
       },
       {
         "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
@@ -456,7 +418,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 68
+        "ageHours": 70
       },
       {
         "title": "Musk v. Altman is just getting started",
@@ -470,7 +432,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 70
+        "ageHours": 72
       },
       {
         "title": "Beacon Biosignals is mapping the brain during sleep",
@@ -484,7 +446,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 80
+        "ageHours": 82
       },
       {
         "title": "Improving understanding with language",
@@ -498,7 +460,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 80
+        "ageHours": 82
       },
       {
         "title": "ChatGPT Images 2.0 is a hit in India, but not a big winner elsewhere, yet",
@@ -512,7 +474,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 82
+        "ageHours": 84
       }
     ],
     "threads": []
@@ -523,7 +485,7 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 11
+        "count": 10
       },
       {
         "name": "Models",
@@ -531,7 +493,7 @@
       },
       {
         "name": "General",
-        "count": 4
+        "count": 5
       }
     ]
   }
