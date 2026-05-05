@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T20:15:44.570Z",
+  "generatedAt": "2026-05-05T22:10:50.802Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,211 +87,38 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "SpecKV: Adaptive Speculative Decoding with Compression-Aware Gamma Selection",
-        "url": "https://arxiv.org/abs/2605.02888v1",
-        "publishedAt": "2026-05-04T17:55:05.000Z",
-        "summary": "Speculative decoding accelerates large language model (LLM) inference by using a small draft model to propose candidate tokens that a larger target model verifies. A critical hyperparameter in this process is the speculation length~$γ$, which determines how many tokens the draft model proposes per step. Nearly all existing systems use a fixed~$γ$ (typically~4), yet empirical evidence suggests that the optimal value varies across task types and, crucially, depends on the compression level applied to the target model. In this paper, we present \\textbf{SpecKV}, a lightweight adaptive controller that selects~$γ$ per speculation step using signals extracted from the draft model itself. We profile speculative decoding across 4~task categories, 4~speculation lengths, and 3~compression levels (FP16, INT8, NF4), collecting 5,112 step-level records with per-step acceptance rates, draft entropy, and draft confidence. We demonstrate that the optimal~$γ$ shifts across compression regimes and that draft model confidence and entropy are strong predictors of acceptance rate (correlation~$\\approx 0.56$). SpecKV uses a small MLP trained on these signals to maximize expected tokens per speculation step, achieving a 56.0\\% improvement over the fixed-$γ$=4 baseline with only 0.34\\,ms overhead per decision ($<$0.5\\% of step time). The improvement is statistically significant ($p < 0.001$, paired bootstrap test). We release all profiling data, trained models, and notebooks as open-source artifacts.",
-        "authors": [
-          "Shikhar Shukla"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 26
-      },
-      {
-        "title": "Unsupervised Machine Learning for Detecting Structural Anomalies in European Regional Statistics",
-        "url": "https://arxiv.org/abs/2605.02884v1",
-        "publishedAt": "2026-05-04T17:54:36.000Z",
-        "summary": "Ensuring the coherence of regional socio-economic statistics is a central task for national statistical institutes. Traditional validation tools, such as range edits, ratio checks, or univariate outlier detection, are effective for identifying extreme values in individual series but are less suited for detecting unusual combinations of indicators in high-dimensional settings. This paper proposes an unsupervised machine learning framework for identifying structurally atypical regional profiles within Europe using publicly available Eurostat data. We construct a cross-sectional dataset of NUTS2 regions (2022) covering four key indicators: GDP per capita in PPS, unemployment rate, tertiary educational attainment, and population density. We apply and compare five anomaly detection techniques, univariate z-scores, Mahalanobis distance, Isolation Forest, Local Outlier Factor, and One-Class SVM, and classify a region as a structural anomaly if it is flagged by at least three of the five methods. The findings show that machine learning methods identify a consistent set of regions whose multivariate profiles diverge substantially from the EU-wide pattern. These include both highly developed metropolitan economies (Brussels, Vienna, Berlin, Prague) and regions with persistent socio-economic disadvantages (Central and Western Slovakia, Northern Hungary, Castilla-La Mancha, Extremadura), as well as Istanbul, whose profile differs markedly from EU capital regions. Importantly, these anomalies do not necessarily signal data quality issues; rather, they reflect meaningful structural divergence that warrants analytical or policy attention. The proposed framework is fully reproducible, scalable, and compatible with existing validation workflows, offering a flexible tool for early detection of unusual regional configurations within the European Statistical System.",
-        "authors": [
-          "Bogdan Oancea"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 26
-      },
-      {
-        "title": "Multi-fidelity surrogates for mechanics of composites: from co-kriging to multi-fidelity neural networks",
-        "url": "https://arxiv.org/abs/2605.02871v1",
-        "publishedAt": "2026-05-04T17:45:47.000Z",
-        "summary": "Composite materials exhibit strongly hierarchical and anisotropic properties governed by coupled mechanisms spanning constituents, plies, laminates, structures, and manufacturing history. This intrinsic complexity makes predictive modeling of composites expensive, because repeated experiments and high-fidelity simulations are needed to cover large design spaces of material, structure, and manufacturing. Multi-fidelity surrogate modeling addresses this challenge by combining abundant, less expensive data with limited high-accuracy data to recover reliable high-fidelity predictions. This review presents a structured overview of multi-fidelity modeling for composite mechanics, covering Gaussian-process or Kriging-based methods, including co-Kriging, coregionalization models, autoregressive formulations, nonlinear autoregressive Gaussian processes, multi-fidelity deep Gaussian processes, and multi-fidelity neural networks. Their distinctions are examined in terms of cross-fidelity correlation, discrepancy representation, uncertainty quantification, and scalability. Selected examples of their applications to composites are introduced according to the roles that multi-fidelity surrogates play in engineering problems, including forward prediction for rapid exploration of material design spaces, inverse optimization for composite parameter identification and design search under limited high-fidelity access, and workflow integration, where heterogeneous data sources, constraints, and validation requirements determine model utility. Open question discussions highlight recurring challenges specific to composites, such as regime-dependent fidelity gaps associated with nonlinear damage and manufacturing history, mismatches between simulations and experiments, and uncertainty propagation across multi-fidelity models.",
-        "authors": [
-          "Haizhou Wen",
-          "Elham Kiyani",
-          "Gang Li",
-          "Srikanth Pilla",
-          "George Em Karniadakis",
-          "Zhen Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 26
-      },
-      {
-        "title": "Enhancing RL Generalizability in Robotics through SHAP Analysis of Algorithms and Hyperparameters",
-        "url": "https://arxiv.org/abs/2605.02867v1",
-        "publishedAt": "2026-05-04T17:41:04.000Z",
-        "summary": "Despite significant advances in Reinforcement Learning (RL), model performance remains highly sensitive to algorithm and hyperparameter configurations, while generalization gaps across environments complicate real-world deployment. Although prior work has studied RL generalization, the relative contribution of specific configurations to the generalization gap has not been quantitatively decomposed and systematically leveraged for configuration selection. To address this limitation, we propose an explainable framework that evaluates RL performance across robotic environments using SHapley Additive exPlanations (SHAP) to quantify configuration impacts. We establish a theoretical foundation connecting Shapley values to generalizability, empirically analyze configuration impact patterns, and introduce SHAP-guided configuration selection to enhance generalization. Our results reveal distinct patterns across algorithms and hyperparameters, with consistent configuration impacts across diverse tasks and environments. By applying these insights to configuration selection, we achieve improved RL generalizability and provide actionable guidance for practitioners.",
-        "authors": [
-          "Lingxiao Kong",
-          "Cong Yang",
-          "Oya Deniz Beyan",
-          "Zeyd Boukhers"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 27
-      },
-      {
-        "title": "Standing on the Shoulders of Giants: Stabilized Knowledge Distillation for Cross--Language Code Clone Detection",
-        "url": "https://arxiv.org/abs/2605.02860v1",
-        "publishedAt": "2026-05-04T17:37:16.000Z",
-        "summary": "Cross-language code clone detection (X-CCD) is challenging because semantically equivalent programs written in different languages often share little surface similarity. Although large language models (LLMs) have shown promise for semantic clone detection, their use as black-box systems raises concerns about cost, reproducibility, privacy, and unreliable output formatting. In particular, compact open-source models often struggle to follow reasoning-oriented prompts and to produce outputs that can be consistently mapped to binary clone labels.\n  To address these limitations, we propose a knowledge distillation framework that transfers reasoning capabilities from DeepSeek-R1 into compact open-source student models for X-CCD. Using cross-language code pairs derived from Project CodeNet, we construct reasoning-oriented synthetic training data and fine-tune Phi3 and Qwen-Coder with LoRA adapters. We further introduce response stabilization methods, including forced conclusion prompting, a binary classification head, and a contrastive classification head, and evaluate model behavior using both predictive metrics and response rate.\n  Experiments on Python--Java, Rust--Java, Rust--Python, and Rust--Ruby show that knowledge distillation consistently improves the reliability of compact models and often improves predictive performance, especially under distribution shift. In addition, classification-head variants substantially reduce inference time compared to generation-based inference. Overall, our results show that reasoning-oriented distillation combined with response stabilization makes compact open-source models more practical and reliable for X-CCD detection.",
-        "authors": [
-          "Mohamad Khajezade",
-          "Fatemeh H. Fard",
-          "Mohamed Sami Shehata"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 27
-      },
-      {
-        "title": "From Sensors to Insight: Rapid, Edge-to-Core Application Development for Sensor-Driven Applications",
-        "url": "https://arxiv.org/abs/2605.02859v1",
-        "publishedAt": "2026-05-04T17:36:42.000Z",
-        "summary": "Scientists increasingly rely on sensor-based data, yet transforming raw streams into insights across the edge-to-cloud continuum remains difficult. Provisioning heterogeneous infrastructure and managing execution on emerging platforms like Data Processing Units typically requires cross-domain expertise, creating significant barriers to rapid prototyping.\n  This paper introduces an experience-driven methodology for the rapid development of sensor-driven applications. By combining pattern-based workflow engineering with AI-assisted development-implemented via Pegasus on the FABRIC testbed - we utilize an existing Orcasound hydrophone workflow as a reusable template. We introduce a pattern-based engineering methodology to generate and refine workflows for air quality, earthquake, and soil moisture monitoring. Furthermore, we show how these abstract structures are extended to edge resources through modular configuration and placement. Our evaluation focuses on user productivity and practical lessons rather than peak performance. Through these case studies, we illustrate how AI-assisted, pattern-based development lowers the entry barrier for non-experts and enables iterative exploration of sensor-driven applications across distributed infrastructures.",
-        "authors": [
-          "Komal Thareja",
-          "Anirban Mandal",
-          "Ewa Deelman"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 27
-      },
-      {
-        "title": "Trust, but Verify: Peeling Low-Bit Transformer Networks for Training Monitoring",
-        "url": "https://arxiv.org/abs/2605.02853v1",
-        "publishedAt": "2026-05-04T17:30:50.000Z",
-        "summary": "Understanding whether deep neural networks are effectively optimized remains challenging, as training occurs in highly nonconvex landscapes and standard metrics provide limited visibility into layer-wise learning quality. This challenge is particularly acute for transformer-based language models, where training is expensive, models are often reused in frozen form, and poorly optimized layers can silently degrade performance. We propose a layer-wise peeling framework for monitoring training dynamics, in which each transformer layer is locally optimized against intermediate representations of the trained model. By constructing lightweight, layer-specific reference solutions and projecting layers onto multiple intermediate outputs via different permutations, we obtain achievable baselines that enable fine-grained diagnosis of under-optimized layers. Experiments on decoder-only transformer models show that these layer-wise reference bounds can match or even surpass the trained model at various stages of training, exposing inefficiencies that remain hidden in aggregate loss curves. We further demonstrate that this analysis remains effective under binarization and quantized settings, where training dynamics are particularly fragile. Across all numerical results, the proposed bounds consistently separate apparent convergence from effective optimality, highlighting optimization opportunities that are invisible when relying on training loss alone.",
-        "authors": [
-          "Arian Eamaz",
-          "Farhang Yeganegi",
-          "Mojtaba Soltanalian"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 27
-      },
-      {
-        "title": "(POSTER) From Sensors to Insight: Rapid, Edge-to-Core Application Development for Sensor-Driven Applications",
-        "url": "https://arxiv.org/abs/2605.02844v1",
-        "publishedAt": "2026-05-04T17:21:37.000Z",
-        "summary": "Scientists increasingly rely on sensor-based data; however transforming raw streams into insights across the edge-to-cloud continuum remains difficult due to the breadth of expertise required to coordinate the necessary data and computation flow. This paper introduces a pattern-based, AI-assisted methodology for rapid development of sensor-driven applications. Using Pegasus workflows executing on the FABRIC testbed, we demonstrate a 5-step development loop that shifts workflow construction and deployment from code-first to intent-first design. Starting from an existing Orcasound hydrophone workflow as a reusable template, we generate and refine workflows for air quality, earthquake, and soil moisture monitoring applications. We further show how these workflows extend to edge resources-including BlueField-3 DPUs and Raspberry Pis-through configuration and placement rather than workflow redesign. Our evaluation, from the perspective of a novice Pegasus user, shows that AI-assisted pattern reuse compresses multi-stage workflow development to 1-1.5 days per workflow while preserving the rigor and portability of workflow-based execution.",
-        "authors": [
-          "Komal Thareja",
-          "Anirban Mandal",
-          "Ewa Deelman"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 27
-      },
-      {
-        "title": "A second-order method on the Stiefel manifold via Newton$\\unicode{x2013}$Schulz",
-        "url": "https://arxiv.org/abs/2605.02838v1",
-        "publishedAt": "2026-05-04T17:18:11.000Z",
-        "summary": "Retraction-free approaches offer attractive low-cost alternatives to Riemannian methods on the Stiefel manifold, but they are often first-order, which may limit the efficiency under high-accuracy requirements. To this end, we propose a second-order method landing on the Stiefel manifold without invoking retractions, which is proved to enjoy local quadratic (or superlinear for its inexact variant) convergence. The update consists of the sum of (i) a component tangent to the level set of the constraint-defining function that aims to reduce the objective and (ii) a component normal to the same level set that reduces the infeasibility. Specifically, we construct the normal component via Newton$\\unicode{x2013}$Schulz, a fixed-point iteration for orthogonalization. Moreover, we establish a geometric connection between the Newton$\\unicode{x2013}$Schulz iteration and Stiefel manifolds, in which Newton$\\unicode{x2013}$Schulz moves along the normal space. For the tangent component, we formulate a modified Newton equation that incorporates Newton$\\unicode{x2013}$Schulz. Numerical experiments on the orthogonal Procrustes problem, principal component analysis, and real-data independent component analysis illustrate that the proposed method performs better than the existing methods.",
-        "authors": [
-          "Xinhui Xiong",
-          "Bin Gao",
-          "P. -A. Absil"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 27
-      },
-      {
-        "title": "A Closed-Form Persistence-Landmark Pipeline for Certified Point-Cloud and Graph Classification",
-        "url": "https://arxiv.org/abs/2605.02836v1",
-        "publishedAt": "2026-05-04T17:15:01.000Z",
-        "summary": "We introduce PLACE (Persistence-Landmark Analytic Classification Engine), a closed-form pipeline for classifying point clouds and graphs through their persistent-homology signatures. Three quantitative guarantees -- a margin-based excess-risk rate, a closed-form descriptor-selection rule, and a per-prediction certificate -- are derived from training labels alone, with no learned weights or held-out calibration. The embedding sums Mitra-Virk single-point coordinate functions over a sparse landmark grid; closed-form weights maximize a structural distortion constant $λ(ν)$ (a Lipschitz lower bound on $\\mathcal{D}_n$ under non-interference). (i) An $O(kR/(Δ\\sqrt{m_{\\min}}))$ margin bound, driven by class-mean separation $Δ$ and embedding radius $R$, matched by a sample-starved minimax lower bound. (ii) The Mahalanobis margin under Ledoit-Wolf-shrunk covariance is the strongest closed-form descriptor selector on a heterogeneous 64-descriptor chemical-graph pool (mean Spearman $ρ\\approx +0.54$ across 10 benchmarks, positive on 9 of 10); the isotropic surrogate $Δ/\\sqrt\\ell$ admits a closed-form selection-consistency rate on homogeneous (14-15 descriptor) protein/social pools. (iii) A training-time-decided certificate with no per-prediction overhead, in non-asymptotic Pinelis and asymptotic Gaussian plug-in forms. Empirically, PLACE is the strongest diagram-based method on Orbit5k and matches the strongest topology-based baseline within statistical noise on MUTAG and COX2. The remaining gaps fall into two diagnosable regimes: descriptor blindness on NCI1/NCI109, and pool-coverage limits elsewhere. Both radii exceed the firing threshold $\\hatΔ/2$ on every benchmark at our training-set sizes, dominated by the $\\sqrt\\ell$ scaling of the multivariate-norm bound; the per-prediction certificate is constructive but not yet operational at these sizes.",
-        "authors": [
-          "Sushovan Majhi",
-          "Atish Mitra",
-          "Žiga Virk",
-          "Pramita Bagchi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 27
-      },
-      {
-        "title": "VideoNet: A Large-Scale Dataset for Domain-Specific Action Recognition",
-        "url": "https://arxiv.org/abs/2605.02834v1",
-        "publishedAt": "2026-05-04T17:11:16.000Z",
-        "summary": "Videos are unique in their ability to capture actions which transcend multiple frames. Accordingly, for many years action recognition was the quintessential task for video understanding. Unfortunately, due to a lack of sufficiently diverse and challenging data, modern vision-language models (VLMs) are no longer evaluated on their action recognition capabilities. To revitalize action recognition in the era of VLMs, we advocate for a returned focus on domain-specific actions. To this end, we introduce VideoNet, a domain-specific action recognition benchmark covering 1,000 distinct actions from 37 domains. We begin with a multiple-choice evaluation setting, where the difference between closed and open models is stark: Gemini 3.1 Pro attains 69.9% accuracy while Qwen3-VL-8B gets a mere 45.0%. To understand why VLMs struggle on VideoNet, we relax the questions into a binary setting, where random chance is 50%. Still, Qwen achieves only 59.2% accuracy. Further relaxing the evaluation setup, we provide $k\\in\\{1,2,3\\}$ in-context examples of the action. Some models excel in the few-shot setting, while others falter; Qwen improves $+7.0\\%$, while Gemini declines $-4.8\\%$. Notably, these gains fall short of the $+13.6\\%$ improvement in non-expert humans when given few-shot examples. Finding that VLMs struggle to fully exploit in-context examples, we shift from test-time improvements to the training side. We collect the first large-scale training dataset for domain-specific actions, totaling nearly 500k video question-answer pairs. Fine-tuning a Molmo2-4B model on our data, we surpass all open-weight 8B models on the VideoNet benchmark.",
-        "authors": [
-          "Tanush Yadav",
-          "Mohammadreza Salehi",
-          "Jae Sung Park",
-          "Vivek Ramanujan",
-          "Hannaneh Hajishirzi",
-          "Yejin Choi",
-          "Ali Farhadi",
-          "Rohun Tripathi",
-          "Ranjay Krishna"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 27
-      },
-      {
-        "title": "HAAS: A Policy-Aware Framework for Adaptive Task Allocation Between Humans and Artificial Intelligence Systems",
-        "url": "https://arxiv.org/abs/2605.02832v1",
-        "publishedAt": "2026-05-04T17:09:21.000Z",
-        "summary": "Deciding how to distribute work between humans and AI systems is a central challenge in organisational design. Most approaches treat this as a binary choice, yet the operational reality is richer: humans and AI routinely share tasks or take complementary roles depending on context, fatigue, and the stakes involved. Governing that distribution -- balancing efficiency, oversight, and human capability -- remains an open problem. This paper presents Human-AI Adaptive Symbiosis (HAAS), an implemented framework for adaptive task allocation in software engineering and manufacturing. HAAS combines two coupled components: a rule-based expert system that enforces governance constraints before any learning occurs, and a contextual-bandit learner that selects among feasible collaboration modes from outcome feedback. Task-agent fit is represented through five auditable cognitive dimensions and a five-mode autonomy spectrum -- from human-only to fully autonomous -- embedded in a reproducible benchmark spanning both domains. Three empirical findings emerge. First, governance is not a binary switch but a tunable design variable: tighter constraints predictably convert autonomous AI assignments into supervised collaborations, with domain-specific costs and benefits. Second, in manufacturing, stronger governance can improve operational performance and reduce fatigue simultaneously -- a workload-buffering effect that contradicts the usual framing of governance as pure overhead. Third, no single governance setting dominates across all contexts; moderate governance becomes increasingly competitive as the learner accumulates experience within the governed action space. Together, these findings position HAAS as a pre-deployment workbench for comparing and inspecting human--AI allocation policies before organisational commitment.",
-        "authors": [
-          "Vicente Pelechanoa",
-          "Antoni Mestre",
-          "Manoli Albert",
-          "Miriam Gil"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 27
-      }
-    ],
+    "research": [],
     "news": [
       {
-        "title": "ASML CEO Christophe Fouquet: No one is coming for us",
+        "title": "Games people — and machines — play: Untangling strategic reasoning to advance AI",
+        "url": "https://news.mit.edu/2026/untangling-strategic-reasoning-to-advance-ai-gabriele-farina-0505",
+        "publishedAt": "2026-05-05T21:00:00.000Z",
+        "summary": "Gabriele Farina grew up in a small town in a hilly winemaking region of northern Italy. Neither of his parents had college degrees, and although both were convinced they “didn’t understand math,” Farina says, they bought him the technical books he wanted and didn’t discourage him from attending the science-oriented, rather than the classical, high school. By around age 14, Farina had focused on an idea that would prove foundational to his career. “I was fascinated very early by the idea that a machine could make predictions or decisions so much better than humans,” he says. “The fact that human-made mathematics and algorithms could create systems that, in some sense, outperform their creators, all while building on simple building blocks, has always been a major source of awe for me.” At age 16, Farina wrote code to solve a board game he played with his 13-year-old sister. “I used game after game to compute the optimal move and prove to my sister that she had already lost long before either of us could see it ourselves,” Farina says, adding that his sister was less enthralled with his new system. Now an assistant professor in MIT’s Department of Electrical Engineering and Computer Science (EECS) and a principal investigator at the Laboratory for Information and Decision Systems (LIDS), Farina combines concepts from game theory with such tools as machine learning, optimization, and statistics to advance theoretical and algorithmic foundations for decision-making. Enrolling at Politecnico di Milano for college, Farina studied automation and control engineering. Over time, however, he realized that what activated his interest was not “just applying known techniques, but understanding and extending their foundations,” he says. “I gradually shifted more and more toward theory, while still caring deeply about demonstrating concrete applications of that theory.” Farina’s advisor at Politecnico di Milano, Nicola Gatti, professor and researcher in computer science and engineering, introduced Farina to research questions in computational game theory and encouraged him to apply for a PhD. At the time, being the first in his immediate family to earn a college degree and living in Italy, where doctoral degrees are handled differently, Farina says he didn’t even know what a PhD was. Nevertheless, one month after graduating with his undergraduate degree, Farina began a doctoral degree in computer science at Carnegie Mellon University. There, he won distinctions for his research and dissertation, as well as a Facebook Fellowship in Economics and Computation. As he was finishing his doctorate, Farina worked for a year as a research scientist in Meta’s Fundamental AI Research Labs. One of his major projects was helping to develop Cicero, an AI that was able to beat human players in a game that involves forming alliances, negotiating, and detecting when other players are bluffing. Farina says, “when we built Cicero, we designed it so that it would not agree to form an alliance if it was not in its interest, and it likewise understood whether a player was likely lying, because for them to do as they proposed would be against their own incentives.” A 2022 article in the MIT Technology Review said Cicero could represent advancement toward AIs that can solve complex problems requiring compromise. After his year at Meta, Farina joined the MIT faculty. In 2025, he was distinguished with the National Science Foundation CAREER Award. His work — based on game theory and its mathematical language describing what happens when different parties have different objectives, and then quantifying the “equilibrium” where no one has a reason to change their strategy — aims to simplify massive, complex real-world scenarios where calculating such an equilibrium could take a billion years. “I research how we can use optimization and algorithms to actually find these stable points efficiently,” he says. “Our work tries to shed new light on the mathematical underpinnings of the theory, better control and predict these complex dynamical systems, and uses these ideas to compute good solutions to large multi-agent interactions.” Farina is especially interested in settings with “imperfect information,” which means that some agents have information that is unknown to other participants. In such scenarios, information has value, and participants must be strategic about acting on the information they possess so as not to reveal it and reduce its value. An everyday example occurs in the game of poker, where players bluff in order to conceal information about their cards. According to Farina, “we now live in a world in which machines are far better at bluffing than humans.” A situation with “massive amounts of imperfect information,” has brought Farina back to his board-game beginnings. Stratego is a military strategy game that has inspired research efforts costing millions of dollars to produce systems capable of beating human players. Requiring complex risk calculation and misdirection, or bluffing, it was possibly the only classical game for which major efforts had failed to produce superhuman performance, Farina says. With new algorithms and training costing less than $10,000, rather than millions, Farina and his research team were able to beat the best player of all time — with 15 wins, four draws, and one loss. Farina says he is thrilled to have produced such results so economically, and he hopes “these new techniques will be incorporated into future pipelines,” he says. “We have seen constant progress towards constructing algorithms that can reason strategically and make sound decisions despite large action spaces or imperfect information. I am excited about seeing these algorithms incorporated into the broader AI revolution that’s happening around us.”",
+        "authors": [
+          "Michaela Jarvis | MIT Laboratory for Information and Decision Systems"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 1
+      },
+      {
+        "title": "Apple plans to make iOS 27 a Choose Your Own Adventure of AI models",
+        "url": "https://techcrunch.com/2026/05/05/apple-plans-to-make-ios-27-a-choose-your-own-adventure-of-ai-models/",
+        "publishedAt": "2026-05-05T20:56:41.000Z",
+        "summary": "With Apple's latest operating system updates, users will reportedly have their pick of which third-party AI models they want to use for a host of tasks.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 1
+      },
+      {
+        "title": "ASML CEO Christophe Fouquet on his company&#8217;s monopoly: no one is coming for us",
         "url": "https://techcrunch.com/2026/05/05/asml-ceo-christophe-fouquet-no-one-is-coming-for-us/",
         "publishedAt": "2026-05-05T20:06:40.000Z",
         "summary": "Christophe Fouquet, who became ASML's CEO in 2024 after more than a decade at the company, sat down with this editor on the rooftop deck of his Beverly Hills hotel Tuesday morning ahead of his appearance at the Milken Institute Global Conference. Dressed in a blue suit and white shirt, he was relaxed — even when the conversation turned to the rivals.",
@@ -298,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 0
+        "ageHours": 2
       },
       {
         "title": "Pennsylvania sues Character.AI after a chatbot allegedly posed as a doctor",
@@ -312,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "OpenAI releases GPT-5.5 Instant, a new default model for ChatGPT",
@@ -326,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "PayPal says it&#8217;s &#8216;becoming a technology company again&#8217; — that means AI",
@@ -340,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Etsy launches its app within ChatGPT as it continues its AI push",
@@ -354,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 7
       },
       {
         "title": "Meta will use AI to analyze height and bone structure to identify if users are underage",
@@ -368,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "ElevenLabs lists BlackRock, Jamie Foxx, and Eva Longoria as new investors",
@@ -382,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "CopilotKit raises $27M to help devs deploy app-native AI agents",
@@ -396,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "4 days left: Get 50% off a second TechCrunch Disrupt 2026 pass to make more deals faster",
@@ -410,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "India&#8217;s first GenAI unicorn shifts to cloud services as AI model ambitions face reality",
@@ -424,50 +255,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 7
-      },
-      {
-        "title": "GPT-5.5 Instant System Card",
-        "url": "https://openai.com/index/gpt-5-5-instant-system-card",
-        "publishedAt": "2026-05-05T10:00:00.000Z",
-        "summary": "",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 10
-      },
-      {
-        "title": "GPT-5.5 Instant: smarter, clearer, and more personalized",
-        "url": "https://openai.com/index/gpt-5-5-instant",
-        "publishedAt": "2026-05-05T10:00:00.000Z",
-        "summary": "GPT-5.5 Instant updates ChatGPT’s default model with smarter, more accurate answers, reduced hallucinations, and improved personalization controls.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 10
+        "ageHours": 9
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 12,
     "last24h": 12,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 9
+        "name": "General",
+        "count": 6
       },
       {
         "name": "Models",
-        "count": 8
+        "count": 4
       },
       {
-        "name": "General",
-        "count": 7
+        "name": "Research",
+        "count": 2
       }
     ]
   }
