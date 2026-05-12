@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T23:09:16.978Z",
+  "generatedAt": "2026-05-12T00:08:06.071Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,7 +83,234 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "LLMs Improving LLMs: Agentic Discovery for Test-Time Scaling",
+        "url": "https://arxiv.org/abs/2605.08083v1",
+        "publishedAt": "2026-05-08T17:59:40.000Z",
+        "summary": "Test-time scaling (TTS) has become an effective approach for improving large language model performance by allocating additional computation during inference. However, existing TTS strategies are largely hand-crafted: researchers manually design reasoning patterns and tune heuristics by intuition, leaving much of the computation-allocation space unexplored. We propose an environment-driven framework, AutoTTS, that changes what researchers design: from individual TTS heuristics to environments where TTS strategies can be discovered automatically. The key to AutoTTS lies in environment construction: the discovery environment must make the control space tractable and provide cheap, frequent feedback for TTS search. As a concrete instantiation, we formulate width--depth TTS as controller synthesis over pre-collected reasoning trajectories and probe signals, where controllers decide when to branch, continue, probe, prune, or stop and can be evaluated cheaply without repeated LLM calls. We further introduce beta parameterization to make the search tractable and fine-grained execution trace feedback to improve discovery efficiency by helping the agent diagnose why a TTS program fails. Experiments on mathematical reasoning benchmarks show that the discovered strategies improve the overall accuracy--cost tradeoff over strong manually designed baselines. The discovered strategies generalize to held-out benchmarks and model scales, while the entire discovery costs only $39.9 and 160 minutes. Our data, and code will be open-source at https://github.com/zhengkid/AutoTTS.",
+        "authors": [
+          "Tong Zheng",
+          "Haolin Liu",
+          "Chengsong Huang",
+          "Huiwen Bao",
+          "Sheng Zhang",
+          "Rui Liu",
+          "Runpeng Dai",
+          "Ruibo Chen",
+          "Chenxi Liu",
+          "Tianyi Xiong",
+          "Xidong Wu",
+          "Hongming Zhang",
+          "Heng Huang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "Normalizing Trajectory Models",
+        "url": "https://arxiv.org/abs/2605.08078v1",
+        "publishedAt": "2026-05-08T17:57:14.000Z",
+        "summary": "Diffusion-based models decompose sampling into many small Gaussian denoising steps -- an assumption that breaks down when generation is compressed to a few coarse transitions. Existing few-step methods address this through distillation, consistency training, or adversarial objectives, but sacrifice the likelihood framework in the process. We introduce Normalizing Trajectory Models (NTM), which models each reverse step as an expressive conditional normalizing flow with exact likelihood training. Architecturally, NTM combines shallow invertible blocks within each step with a deep parallel predictor across the trajectory, forming an end-to-end network trainable from scratch or initializable from pretrained flow-matching models. Its exact trajectory likelihood further enables self-distillation: a lightweight denoiser trained on the model's own score produces high-quality samples in four steps. On text-to-image benchmarks, NTM matches or outperforms strong image generation baselines in just four sampling steps while uniquely retaining exact likelihood over the generative trajectory.",
+        "authors": [
+          "Jiatao Gu",
+          "Tianrong Chen",
+          "Ying Shen",
+          "David Berthelot",
+          "Shuangfei Zhai",
+          "Josh Susskind"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "Conformal Path Reasoning: Trustworthy Knowledge Graph Question Answering via Path-Level Calibration",
+        "url": "https://arxiv.org/abs/2605.08077v1",
+        "publishedAt": "2026-05-08T17:57:13.000Z",
+        "summary": "Knowledge Graph Question Answering (KGQA) has shown promise for grounded and interpretable reasoning, yet existing approaches often fail to provide reliable coverage guarantees over retrieved answers. While Conformal Prediction (CP) offers a principled framework for producing prediction sets with statistical guarantees, prior methods suffer from critical limitations in both calibration validity and score discriminability, resulting in violated coverage guarantees and excessively large prediction sets. To address these pitfalls, we propose Conformal Path Reasoning (CPR), a trustworthy KGQA framework with two key innovations. First, we perform query-level conformal calibration over path-level scores, preserving the exchangeability while generating path prediction sets. Second, we introduce the Residual Conformal Value Network (RCVNet), a lightweight module trained via PUCT-guided exploration to learn discriminative path-level nonconformity scores. Experiments on benchmarks show that CPR significantly improves the Empirical Coverage Rate by 34% while reducing average prediction set size by 40% compared to conformal baselines. These results validate the efficacy of CPR in satisfying coverage guarantees with substantially more compact answer sets.",
+        "authors": [
+          "Shuhang Lin",
+          "Chuhao Zhou",
+          "Xiao Lin",
+          "Zihan Dong",
+          "Kuan Lu",
+          "Zhencan Peng",
+          "Jie Yin",
+          "Dimitris N. Metaxas"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "Zero-Shot Imagined Speech Decoding via Imagined-to-Listened MEG Mapping",
+        "url": "https://arxiv.org/abs/2605.08075v1",
+        "publishedAt": "2026-05-08T17:56:19.000Z",
+        "summary": "Decoding imagined speech from non-invasive brain recordings is challenging because imagined datasets are scarce and difficult to align temporally across subjects and sessions In this work, we propose a new approach to the decoding of imagined speech that leverages the richer and more reliably labeled recordings during listening to speech. We collected paired listened and imagined MEG recordings to rhythmic melodic and spoken stimuli from trained musicians. Using trained musicians helped improve temporal alignment across conditions. We then developed a three-stage decoding pipeline that revealed consistent and meaningful relationships between neural activity evoked by imagining and listening to the same stimuli. First, we trained six linear and neural models to map imagined MEG responses to listened responses. We evaluated these models against a null baseline from unseen subjects to validate that the predicted-listening responses preserve stimulus-specific information. In the second stage, we trained a contrastive word decoder exclusively on the listened MEG responses, and evaluated it using four embedding strategies including semantic, acoustic, and phonetic representations. In the third stage, we process the imagined MEG responses from held-out subjects through the mapping pipeline to compute the corresponding listening responses that are then decoded by the listened decoder. Using rank-based analysis, we show that the imagined words are decodable significantly above chance. We shall report here the results of a proof-of-concept implementation to decode imagined speech, where all evaluations are performed on held-out subjects. We also demonstrate that performance improves with training data size, suggesting that this approach is scalable and can directly be made applicable to realistic brain-computer interface scenarios.",
+        "authors": [
+          "Maryam Maghsoudi",
+          "Shihab Shamma"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "GRAPHLCP: Structure-Aware Localized Conformal Prediction on Graphs",
+        "url": "https://arxiv.org/abs/2605.08074v1",
+        "publishedAt": "2026-05-08T17:56:09.000Z",
+        "summary": "Conformal prediction (CP) provides a distribution-free approach to uncertainty quantification with finite-sample guarantees. However, applying CP to graph neural networks (GNNs) remains challenging as the combinatorial nature of graphs often leads to insufficiently certain predictions and indiscriminative embeddings. Existing methods primarily rely on embedding-space proximity for localization, which can be unreliable for graphs and yield inefficient prediction sets. We propose GRAPHLCP, a proximity-based localized CP framework that explicitly incorporates graph topology and inter-node dependencies into localization and weighting. Our approach introduces a feature-aware densification step to mitigate locality bias in sparse graphs, followed by a Personalized PageRank-based kernel computation to model structural proximity. This enables topology-dependent anchor sampling and calibration weighting that captures both local and long-range dependencies. Extensive experiments on several regression and classification datasets demonstrate that GRAPHLCP guarantees marginal coverage with finite samples while efficiently attaining favorable test conditional coverage across various conditioning scenarios.",
+        "authors": [
+          "Peyman Baghershahi",
+          "Fangxin Wang",
+          "Debmalya Mandal",
+          "Sourav Medya"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "EmambaIR: Efficient Visual State Space Model for Event-guided Image Reconstruction",
+        "url": "https://arxiv.org/abs/2605.08073v1",
+        "publishedAt": "2026-05-08T17:56:01.000Z",
+        "summary": "Recent event-based image reconstruction methods predominantly rely on Convolutional Neural Networks (CNNs) and Vision Transformers (ViTs) to process complementary event information. However, these architectures face fundamental limitations: CNNs often fail to capture global feature correlations, whereas ViTs incur quadratic computational complexity (e.g., $O(n^2)$), hindering their application in high-resolution scenarios. To address these bottlenecks, we introduce EmambaIR, an Efficient visual State Space Model designed for image reconstruction using spatially sparse and temporally continuous event streams. Our framework introduces two key components: the cross-modal Top-k Sparse Attention Module (TSAM) and the Gated State-Space Module (GSSM). TSAM efficiently performs pixel-level top-k sparse attention to guide cross-modal interactions, yielding rich yet sparse fusion features. Subsequently, GSSM utilizes a nonlinear gated unit to enhance the temporal representation of vanilla linear-complexity ($O(n)$) SSMs, effectively capturing global contextual dependencies without the typical computational overhead. Extensive experiments on six datasets across three diverse image reconstruction tasks - motion deblurring, deraining, and High Dynamic Range (HDR) enhancement - demonstrate that EmambaIR significantly outperforms state-of-the-art methods while offering substantial reductions in memory consumption and computational cost. The source code and data are publicly available at: https://github.com/YunhangWickert/EmambaIR",
+        "authors": [
+          "Wei Yu",
+          "Yunhang Qian"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "A Note on Non-Negative $L_1$-Approximating Polynomials",
+        "url": "https://arxiv.org/abs/2605.08072v1",
+        "publishedAt": "2026-05-08T17:55:39.000Z",
+        "summary": "$L_1$-Approximating polynomials, i.e., polynomials that approximate indicator functions in $L_1$-norm under certain distributions, are widely used in computational learning theory. We study the existence of \\textit{non-negative} $L_1$-approximating polynomials with respect to Gaussian distributions. This is a stronger requirement than $L_1$-approximation but weaker than sandwiching polynomials (which themselves have many applications). These non-negative approximating polynomials have recently found uses in smoothed learning from positive-only examples.\n  In this short note, we prove that every class of sets with Gaussian surface area (GSA) at most $Γ$ under the standard Gaussian admits degree-$k$ non-negative polynomials that $\\eps$-approximate its indicator functions in $L_1$-norm, for $k=\\tilde{O}(Γ^2/\\varepsilon^2)$. Equivalently, finite GSA implies $L_1$-approximation with the stronger pointwise guarantee that the approximating polynomial has range contained in $[0,\\infty)$. Up to a constant-factor, this matches the degree of the best currently known Gaussian $L_1$-approximation degree bound without the non-negativity constraint.",
+        "authors": [
+          "Jane H. Lee",
+          "Anay Mehrotra",
+          "Manolis Zampetakis"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 78
+      },
+      {
+        "title": "VecCISC: Improving Confidence-Informed Self-Consistency with Reasoning Trace Clustering and Candidate Answer Selection",
+        "url": "https://arxiv.org/abs/2605.08070v1",
+        "publishedAt": "2026-05-08T17:54:38.000Z",
+        "summary": "A standard technique for scaling inference-time reasoning is Self-Consistency, whereby multiple candidate answers are sampled from an LLM and the most common answer is selected. More recently, it has been shown that weighted majority voting (e.g. Confidence-Informed Self Consistency (CISC)), which assigns a confidence value to each candidate answer and chooses the answer with the largest accumulated score, tends to be more accurate on a wide range of popular benchmarks. In practice, weighted majority voting necessitates calling a critic LLM on each candidate's reasoning trace to produce the answer's confidence score. This secondary series of LLM calls greatly increases the overhead and cost of weighted majority voting, despite its potential performance benefits. To reduce this expense, we propose VecCISC, a lightweight, adaptive framework that uses a measure of semantic similarity to filter reasoning traces that are semantically equivalent to others, degenerate, or hallucinated, thus decreasing the number of candidate answers that must be evaluated by the critic. To ensure adequate experimental thoroughness, we evaluate VecCISC on five challenging, widely-adopted datasets spanning the domains of mathematics, chemistry, biology, commonsense reasoning, and the humanities. Our results demonstrate that VecCISC reduces the total token usage by 47%, while maintaining or exceeding the accuracy of CISC.",
+        "authors": [
+          "James Petullo",
+          "Sonny George",
+          "Dylan Cashman",
+          "Nianwen Xue"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "Flow-OPD: On-Policy Distillation for Flow Matching Models",
+        "url": "https://arxiv.org/abs/2605.08063v1",
+        "publishedAt": "2026-05-08T17:50:15.000Z",
+        "summary": "Existing Flow Matching (FM) text-to-image models suffer from two critical bottlenecks under multi-task alignment: the reward sparsity induced by scalar-valued rewards, and the gradient interference arising from jointly optimizing heterogeneous objectives, which together give rise to a 'seesaw effect' of competing metrics and pervasive reward hacking. Inspired by the success of On-Policy Distillation (OPD) in the large language model community, we propose Flow-OPD, the first unified post-training framework that integrates on-policy distillation into Flow Matching models. Flow-OPD adopts a two-stage alignment strategy: it first cultivates domain-specialized teacher models via single-reward GRPO fine-tuning, allowing each expert to reach its performance ceiling in isolation; it then establishes a robust initial policy through a Flow-based Cold-Start scheme and seamlessly consolidates heterogeneous expertise into a single student via a three-step orchestration of on-policy sampling, task-routing labeling, and dense trajectory-level supervision. We further introduce Manifold Anchor Regularization (MAR), which leverages a task-agnostic teacher to provide full-data supervision that anchors generation to a high-quality manifold, effectively mitigating the aesthetic degradation commonly observed in purely RL-driven alignment. Built upon Stable Diffusion 3.5 Medium, Flow-OPD raises the GenEval score from 63 to 92 and the OCR accuracy from 59 to 94, yielding an overall improvement of roughly 10 points over vanilla GRPO, while preserving image fidelity and human-preference alignment and exhibiting an emergent 'teacher-surpassing' effect. These results establish Flow-OPD as a scalable alignment paradigm for building generalist text-to-image models.",
+        "authors": [
+          "Zhen Fang",
+          "Wenxuan Huang",
+          "Yu Zeng",
+          "Yiming Zhao",
+          "Shuang Chen",
+          "Kaituo Feng",
+          "Yunlong Lin",
+          "Lin Chen",
+          "Zehui Chen",
+          "Shaosheng Cao",
+          "Feng Zhao"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "Rubric-Grounded RL: Structured Judge Rewards for Generalizable Reasoning",
+        "url": "https://arxiv.org/abs/2605.08061v1",
+        "publishedAt": "2026-05-08T17:48:58.000Z",
+        "summary": "We argue that decomposing reward into weighted, verifiable criteria and using an LLM judge to score them provides a partial-credit optimization signal: instead of a binary outcome or a single holistic score, each response is graded along multiple task-specific criteria. We formalize \\emph{rubric-grounded reinforcement learning (RL)}: a framework in which the policy is optimized against a structured, multi-criterion reward produced by a frozen LLM judge that conditions on auxiliary grounding the policy never sees. We instantiate the framework by deriving rubrics from an Office of Scientific and Technical Information (OSTI)-derived corpus of roughly 100,000 scientific and technical documents and training Llama-3.1-8B-Instruct with Group Relative Policy Optimization (GRPO). With GRPO-based training, the model achieves $71.7\\%$ normalized reward on held-out rubric evaluation. The GRPO-tuned policy also improves over the base model on four reasoning benchmarks not derived from the training corpus -- GSM8K, MATH, GPQA Main, and GPQA Diamond. These results provide evidence that structured, document-grounded rewards can improve held-out rubric performance and induce transferable reasoning behaviors beyond the corpus used to construct the training environment.",
+        "authors": [
+          "Manish Bhattarai",
+          "Ismael Boureima",
+          "Nishath Rajiv Ranasinghe",
+          "Scott Pakin",
+          "Dan O'Malley"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "The Memory Curse: How Expanded Recall Erodes Cooperative Intent in LLM Agents",
+        "url": "https://arxiv.org/abs/2605.08060v1",
+        "publishedAt": "2026-05-08T17:47:13.000Z",
+        "summary": "Context window expansion is often treated as a straightforward capability upgrade for LLMs, but we find it systematically fails in multi-agent social dilemmas. Across 7 LLMs and 4 games over 500 rounds, expanding accessible history degrades cooperation in 18 of 28 model--game settings, a pattern we term the memory curse. We isolate the underlying mechanism through three analyses. First, lexical analysis of 378,000 reasoning traces associates this breakdown with eroding forward-looking intent rather than rising paranoia. We validate this using targeted fine-tuning as a cognitive probe: a LoRA adapter trained exclusively on forward-looking traces mitigates the decay and transfers zero-shot to distinct games. Second, memory sanitization holds prompt length fixed while replacing visible history with synthetic cooperative records, which restores cooperation substantially, proving the trigger is memory content, not length alone. Finally, ablating explicit Chain-of-Thought reasoning often reduces the collapse, showing that deliberation paradoxically amplifies the memory curse. Together, these results recast memory as an active determinant of multi-agent behavior: longer recall can either destabilize or support cooperation depending on the reasoning patterns it elicits.",
+        "authors": [
+          "Jiayuan Liu",
+          "Tianqin Li",
+          "Shiyi Du",
+          "Xin Luo",
+          "Haoxuan Zeng",
+          "Emanuel Tewolde",
+          "Tai Sing Lee",
+          "Tonghan Wang",
+          "Carl Kingsford",
+          "Vincent Conitzer"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      },
+      {
+        "title": "CA-SQL: Complexity-Aware Inference Time Reasoning for Text-to-SQL via Exploration and Compute Budget Allocation",
+        "url": "https://arxiv.org/abs/2605.08057v1",
+        "publishedAt": "2026-05-08T17:44:15.000Z",
+        "summary": "While recent advancements in inference-time learning have improved LLM reasoning on Text-to-SQL tasks, current solutions still struggle to perform well on the most challenging tasks in the Bird-Bench (BIRD) benchmark. This is due to inadequate solution space exploration, which is necessary to uncover promising candidate queries that can be further refined to produce the correct output. To address this challenge, we introduce CA-SQL, a novel Text-to-SQL pipeline that utilizes the estimated difficulty of a task to dynamically scale the breadth of the exploration for generating solution candidates. In addition, we use a custom prompt seeding method, based on principles of evolutionary search, to further elicit exploratory behavior from the base LLM and a novel voting method to select the best candidate solution at the end of the search. Experiments demonstrate that our solution achieves a state-of-the-art score of 51.72% on the \"challenging\" tier of BIRD development set problems, using only GPT-4o-mini, out-performing other in-context learning approaches, even those that leverage larger models. Overall, our method attains a competitive 61.06% execution accuracy and 68.77% Soft F1 score on the BIRD development dataset.",
+        "authors": [
+          "James Petullo",
+          "Nianwen Xue"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
+      }
+    ],
     "news": [
       {
         "title": "Digg tries again, this time as an AI news aggregator",
@@ -101,7 +324,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 7
       },
       {
         "title": "How ChatGPT adoption broadened in early 2026",
@@ -113,7 +336,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 8
+        "ageHours": 9
       },
       {
         "title": "There aren&#8217;t enough rockets for space data centers — Cowboy Space raised $275M to build them",
@@ -127,7 +350,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 11
       },
       {
         "title": "How enterprises are scaling AI",
@@ -139,7 +362,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Policy",
-        "ageHours": 13
+        "ageHours": 14
       },
       {
         "title": "OpenAI Campus Network: Student club interest form",
@@ -151,7 +374,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Products",
-        "ageHours": 13
+        "ageHours": 14
       },
       {
         "title": "OpenAI launches DeployCo to help businesses build around intelligence",
@@ -163,7 +386,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Products",
-        "ageHours": 17
+        "ageHours": 18
       },
       {
         "title": "Get ready for the whisper-filled office of the future",
@@ -177,7 +400,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 26
+        "ageHours": 27
       },
       {
         "title": "Anthropic says ‘evil’ portrayals of AI were responsible for Claude’s blackmail attempts",
@@ -191,7 +414,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 26
+        "ageHours": 27
       },
       {
         "title": "We’re feeling cynical about xAI’s big deal with Anthropic",
@@ -205,7 +428,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 32
+        "ageHours": 33
       },
       {
         "title": "Voice AI in India is hard — Wispr Flow is betting on it anyway",
@@ -219,7 +442,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 45
+        "ageHours": 46
       },
       {
         "title": "So you&#8217;ve heard these AI terms and nodded along; let&#8217;s fix that",
@@ -233,7 +456,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 49
+        "ageHours": 50
       },
       {
         "title": "Nvidia has already committed $40B to equity AI deals this year",
@@ -247,18 +470,22 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 56
+        "ageHours": 57
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
+    "totalItems": 24,
     "last24h": 6,
     "topCategories": [
       {
+        "name": "Research",
+        "count": 11
+      },
+      {
         "name": "General",
-        "count": 6
+        "count": 7
       },
       {
         "name": "Products",
@@ -267,10 +494,6 @@
       {
         "name": "Models",
         "count": 2
-      },
-      {
-        "name": "Policy",
-        "count": 1
       }
     ]
   }
