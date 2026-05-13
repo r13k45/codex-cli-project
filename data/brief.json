@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T13:25:47.235Z",
+  "generatedAt": "2026-05-13T16:31:39.500Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,249 +87,120 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward",
-        "url": "https://arxiv.org/abs/2605.12495v1",
-        "publishedAt": "2026-05-12T17:59:47.000Z",
-        "summary": "In this paper, we propose AlphaGRPO, a novel framework that applies Group Relative Policy Optimization (GRPO) to AR-Diffusion Unified Multimodal Models (UMMs) to enhance multimodal generation capabilities without an additional cold-start stage. Our approach unlocks the model's intrinsic potential to perform advanced reasoning tasks: Reasoning Text-to-Image Generation, where the model actively infers implicit user intents, and Self-Reflective Refinement, where it autonomously diagnoses and corrects misalignments in generated outputs. To address the challenge of providing stable supervision for real-world multimodal generation, we introduce the Decompositional Verifiable Reward (DVReward). Unlike holistic scalar rewards, DVReward utilizes an LLM to decompose complex user requests into atomic, verifiable semantic and quality questions, which are then evaluated by a general MLLM to provide reliable and interpretable feedback. Extensive experiments demonstrate that AlphaGRPO yields robust improvements across multimodal generation benchmarks, including GenEval, TIIF-Bench, DPG-Bench and WISE, while also achieving significant gains in editing tasks on GEdit without training on editing tasks. These results validate that our self-reflective reinforcement approach effectively leverages inherent understanding to guide high-fidelity generation. Project page: https://huangrh99.github.io/AlphaGRPO/",
-        "authors": [
-          "Runhui Huang",
-          "Jie Wu",
-          "Rui Yang",
-          "Zhe Liu",
-          "Hengshuang Zhao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation",
-        "url": "https://arxiv.org/abs/2605.12492v1",
-        "publishedAt": "2026-05-12T17:59:34.000Z",
-        "summary": "We introduce Pion, a spectrum-preserving optimizer for large language model (LLM) training based on orthogonal equivalence transformation. Unlike additive optimizers such as Adam and Muon, Pion updates each weight matrix through left and right orthogonal transformations, preserving its singular values throughout training. This yields an optimization mechanism that modulates the geometry of weight matrices while keeping their spectral norm fixed. We derive the Pion update rule, systematically examine its design choices, and analyze its convergence behavior along with several key properties. Empirical results show that Pion offers a stable and competitive alternative to standard optimizers for both LLM pretraining and finetuning.",
-        "authors": [
-          "Kexuan Shi",
-          "Hanxuan Li",
-          "Zeju Qiu",
-          "Yandong Wen",
-          "Simon Buchholz",
-          "Weiyang Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 19
-      },
-      {
-        "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
-        "url": "https://arxiv.org/abs/2605.12493v1",
-        "publishedAt": "2026-05-12T17:59:34.000Z",
-        "summary": "Long-term memory is crucial for agents in specialized web environments, where success depends on recalling interface affordances, state dynamics, workflows, and recurring failure modes. However, existing memory benchmarks for agents mostly focus on user histories, short traces, or downstream task success, leaving open how to directly evaluate whether memory systems effectively internalize environment-specific experience. To address this gap, we introduce LongMemEval-V2 (LME-V2), a benchmark for evaluating whether memory systems can help agents acquire the experience needed to become knowledgeable colleagues in customized environments. LME-V2 contains 451 manually curated questions covering five core memory abilities for web agents: static state recall, dynamic state tracking, workflow knowledge, environment gotchas, and premise awareness. Questions are paired with history trajectories containing up to 500 trajectories and 115M tokens. We use a context gathering formulation: memory systems consume history trajectories and return compact evidence for downstream question answering. We propose a suite of two memory methods: AgentRunbook-R, an efficient RAG-based memory with knowledge pools for raw state observations, events, and strategy notes, and AgentRunbook-C, which stores trajectories as files and invokes a coding agent to gather evidence in an augmented sandbox. Experiments show that AgentRunbook-C achieves the best performance with 72.5% average accuracy, outperforming the strongest RAG baseline (48.5%) and the off-the-shelf coding agent baseline (69.3%). Despite the strong performance gains, coding agent based methods have high latency costs. While AgentRunbook-C advances the accuracy-latency Pareto frontier, substantial room for improvement remains. Together, these results establish LME-V2 as a challenging testbed for developing long-term memory systems for environment experience.",
-        "authors": [
-          "Di Wu",
-          "Zixiang Ji",
-          "Asmi Kawatkar",
-          "Bryan Kwan",
-          "Jia-Chen Gu",
-          "Nanyun Peng",
-          "Kai-Wei Chang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "Elastic Attention Cores for Scalable Vision Transformers",
-        "url": "https://arxiv.org/abs/2605.12491v1",
-        "publishedAt": "2026-05-12T17:59:26.000Z",
-        "summary": "Vision Transformers (ViTs) achieve strong data-driven scaling by leveraging all-to-all self-attention. However, this flexibility incurs a computational cost that scales quadratically with image resolution, limiting ViTs in high-resolution domains. Underlying this approach is the assumption that pairwise token interactions are necessary for learning rich visual-semantic representations. In this work, we challenge this assumption, demonstrating that effective visual representations can be learned without any direct patch-to-patch interaction. We propose VECA (Visual Elastic Core Attention), a vision transformer architecture that uses efficient linear-time core-periphery structured attention enabled by a small set of learned cores. In VECA, these cores act as a communication interface: patch tokens exchange information exclusively through the core tokens, which are initialized from scratch and propagated across layers. Because the $N$ image patches only directly interact with a resolution invariant set of $C$ learned \"core\" embeddings, this yields linear complexity $O(N)$ for predetermined $C$, which bypasses quadratic scaling. Compared to prior cross-attention architectures, VECA maintains and iteratively updates the full set of $N$ input tokens, avoiding a small $C$-way bottleneck. Combined with nested training along the core axis, our model can elastically trade off compute and accuracy during inference. Across classification and dense tasks, VECA achieves performance competitive with the latest vision foundation models while reducing computational cost. Our results establish elastic core-periphery attention as a scalable alternative building block for Vision Transformers.",
-        "authors": [
-          "Alan Z. Song",
-          "Yinjie Chen",
-          "Mu Nan",
-          "Rui Zhang",
-          "Jiahang Cao",
-          "Weijian Mai",
-          "Muquan Yu",
-          "Hossein Adeli",
-          "Deva Ramanan",
-          "Michael J. Tarr",
-          "Andrew F. Luo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "Task-Adaptive Embedding Refinement via Test-time LLM Guidance",
-        "url": "https://arxiv.org/abs/2605.12487v1",
-        "publishedAt": "2026-05-12T17:58:27.000Z",
-        "summary": "We explore the effectiveness of an LLM-guided query refinement paradigm for extending the usability of embedding models to challenging zero-shot search and classification tasks. Our approach refines the embedding representation of a user query using feedback from a generative LLM on a small set of documents, enabling embeddings to adapt in real time to the target task. We conduct extensive experiments with state-of-the-art text embedding models across a diverse set of challenging search and classification benchmarks. Empirical results indicate that LLM-guided query refinement yields consistent gains across all models and datasets, with relative improvements of up to +25% in literature search, intent detection, key-point matching, and nuanced query-instruction following. The refined queries improve ranking quality and induce clearer binary separation across the corpus, enabling the embedding space to better reflect the nuanced, task-specific constraints of each ad-hoc user query. Importantly, this expands the range of practical settings in which embedding models can be effectively deployed, making them a compelling alternative when costly LLM pipelines are not viable at corpus-scale. We release our experimental code for reproducibility, at https://github.com/IBM/task-aware-embedding-refinement.",
-        "authors": [
-          "Ariel Gera",
-          "Shir Ashury-Tahan",
-          "Gal Bloch",
-          "Ohad Eytan",
-          "Assaf Toledo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "Learning, Fast and Slow: Towards LLMs That Adapt Continually",
-        "url": "https://arxiv.org/abs/2605.12484v1",
-        "publishedAt": "2026-05-12T17:58:20.000Z",
-        "summary": "Large language models (LLMs) are trained for downstream tasks by updating their parameters (e.g., via RL). However, updating parameters forces them to absorb task-specific information, which can result in catastrophic forgetting and loss of plasticity. In contrast, in-context learning with fixed LLM parameters can cheaply and rapidly adapt to task-specific requirements (e.g., prompt optimization), but cannot by itself typically match the performance gains available through updating LLM parameters. There is no good reason for restricting learning to being in-context or in-weights. Moreover, humans also likely learn at different time scales (e.g., System 1 vs 2). To this end, we introduce a fast-slow learning framework for LLMs, with model parameters as \"slow\" weights and optimized context as \"fast\" weights. These fast \"weights\" can learn from textual feedback to absorb the task-specific information, while allowing slow weights to stay closer to the base model and persist general reasoning behaviors. Fast-Slow Training (FST) is up to 3x more sample-efficient than only slow learning (RL) across reasoning tasks, while consistently reaching a higher performance asymptote. Moreover, FST-trained models remain closer to the base LLM (up to 70% less KL divergence), resulting in less catastrophic forgetting than RL-training. This reduced drift also preserves plasticity: after training on one task, FST trained models adapt more effectively to a subsequent task than parameter-only trained models. In continual learning scenarios, where task domains change on the fly, FST continues to acquire each new task while parameter-only RL stalls.",
-        "authors": [
-          "Rishabh Tiwari",
-          "Kusha Sareen",
-          "Lakshya A Agrawal",
-          "Joseph E. Gonzalez",
-          "Matei Zaharia",
-          "Kurt Keutzer",
-          "Inderjit S Dhillon",
-          "Rishabh Agarwal",
-          "Devvrit Khatri"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle for Language-Model Post-Training",
-        "url": "https://arxiv.org/abs/2605.12483v1",
-        "publishedAt": "2026-05-12T17:57:48.000Z",
-        "summary": "In settings where labeled verifiable training data is the binding constraint, each checked example should be allocated carefully. The standard practice is to use this data directly on the model that will be deployed, for example by running GRPO on the deployment student. We argue that this is often an inefficient allocation because it overlooks a reward-density principle: sparse sequence-level reward should train models where exploration is productive, while dense token-level teacher reward should be used where the aim is to compress behavior into a smaller model. In this view, GRPO-style sparse RL and OPD-style dense teacher supervision are not separate recipes; they are different reward-density regimes. The allocation rule is simple: use scarce labeled training data upstream on the strongest model that can turn it into reward-shaped behavior, then transfer that behavior downstream as dense supervision. We evaluate this rule on verifiable math with Qwen3 and Llama models. At fixed Qwen3-1.7B deployment-student size, an RL-improved 8B teacher distilled through the dense bridge outperforms direct GRPO on the same student, while transfer from the same teacher before RL underperforms. The bridge is important: a forward-KL warmup on teacher rollouts followed by OPD on student rollouts is consistently strongest on MATH before any post-bridge student-side sparse RL, and also gives the best pre-Stage~3 AIME endpoints for the canonical 8B/14B teachers. The bridge also makes later student-side sparse RL effective: GRPO that is weak on a cold student lifts MATH from $75.4\\%$ to $78.5\\%$ after the bridge and outperforms a matched replay control by $2.8$ points. The operational principal is to avoid using scarce labeled data on the least prepared policy: use sparse reward for teacher-side discovery, dense transfer for student compression, and student-side sparse reward only after the bridge.",
-        "authors": [
-          "Yuanda Xu",
-          "Hejian Sang",
-          "Zhengze Zhou",
-          "Ran He",
-          "Zhipeng Wang",
-          "Alborz Geramifard"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 19
-      },
-      {
-        "title": "ToolCUA: Towards Optimal GUI-Tool Path Orchestration for Computer Use Agents",
-        "url": "https://arxiv.org/abs/2605.12481v1",
-        "publishedAt": "2026-05-12T17:57:04.000Z",
-        "summary": "Computer Use Agents (CUAs) can act through both atomic GUI actions, such as click and type, and high-level tool calls, such as API-based file operations, but this hybrid action space often leaves them uncertain about when to continue with GUI actions or switch to tools, leading to suboptimal execution paths. This difficulty stems from the scarcity of high-quality interleaved GUI-Tool trajectories, the cost and brittleness of collecting real tool trajectories, and the lack of trajectory-level supervision for GUI-Tool path selection. In this paper, we propose ToolCUA, an end-to-end agent designed to learn optimal GUI-Tool path selection through a staged training paradigm. We first introduce an Interleaved GUI-Tool Trajectory Scaling Pipeline that repurposes abundant static GUI trajectories and synthesizes a grounded tool library, enabling diverse GUI-Tool trajectories without manual engineering or real tool-trajectory collection. We then perform Tool-Bootstrapped GUI RFT, combining warmup SFT with single-turn RL to improve decisions at critical GUI-Tool switching points. Finally, we optimize ToolCUA with Online Agentic RL in a high-fidelity GUI-Tool environment, guided by a Tool-Efficient Path Reward that encourages appropriate tool use and shorter execution paths. Experiments on OSWorld-MCP show that ToolCUA achieves 46.85% accuracy, a relative improvement of approximately 66% over the baseline, establishing a new state of the art among models of comparable scale. It also improves by 3.9% over GUI-only settings, demonstrating effective GUI-Tool orchestration. The results further suggest that training in a hybrid action space is a promising paradigm for real-world digital agents. Open-sourced here: https://x-plug.github.io/ToolCUA/",
-        "authors": [
-          "Xuhao Hu",
-          "Xi Zhang",
-          "Haiyang Xu",
-          "Kyle Qiao",
-          "Jingyi Yang",
-          "Xuanjing Huang",
-          "Jing Shao",
-          "Ming Yan",
-          "Jieping Ye"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "OmniNFT: Modality-wise Omni Diffusion Reinforcement for Joint Audio-Video Generation",
-        "url": "https://arxiv.org/abs/2605.12480v1",
-        "publishedAt": "2026-05-12T17:56:59.000Z",
-        "summary": "Recent advances in joint audio-video generation have been remarkable, yet real-world applications demand strong per-modality fidelity, cross-modal alignment, and fine-grained synchronization. Reinforcement Learning (RL) offers a promising paradigm, but its extension to multi-objective and multi-modal joint audio-video generation remains unexplored. Notably, our in-depth analysis first reveals that the primary obstacles to applying RL in this stem from: (i) multi-objective advantages inconsistency, where the advantages of multimodal outputs are not always consistent within a group; (ii) multi-modal gradients imbalance, where video-branch gradients leak into shallow audio layers responsible for intra-modal generation; (iii) uniform credit assignment, where fine-grained cross-modal alignment regions fail to get efficient exploration. These shortcomings suggest that vanilla RL fine-tuning strategy with a single global advantage often leads to suboptimal results. To address these challenges, we propose OmniNFT, a novel modality-aware online diffusion RL framework with three key innovations: (1) Modality-wise advantage routing, which routes independent per-reward advantages to their respective modality generation branches. (2) Layer-wise gradient surgery, which selectively detaches video-branch gradients on shallow audio layers while retaining those for cross-modal interaction layers. (3) Region-wise loss reweighting, which modulates policy optimization toward critical regions related to audio-video synchronization and fine-grained alignment. Extensive experiments on JavisBench and VBench with the LTX-2 backbone demonstrate that OmniNFT achieves comprehensive improvements in audio and video perceptual quality, cross-modal alignment, and audio-video synchronization.",
-        "authors": [
-          "Guohui Zhang",
-          "XiaoXiao Ma",
-          "Jie Huang",
-          "Hang Xu",
-          "Hu Yu",
-          "Siming Fu",
-          "Yuming Li",
-          "Zeyue Xue",
-          "Lin Song",
-          "Haoyang Huang",
-          "Nan Duan",
-          "Feng Zhao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "MEME: Multi-entity & Evolving Memory Evaluation",
-        "url": "https://arxiv.org/abs/2605.12477v1",
-        "publishedAt": "2026-05-12T17:55:10.000Z",
-        "summary": "LLM-based agents increasingly operate in persistent environments where they must store, update, and reason over information across many sessions. While prior benchmarks evaluate only single-entity updates, MEME defines six tasks spanning the full space defined by the multi-entity and evolving axes, including three not scored by prior work: Cascade and Absence (dependency reasoning) and Deletion (post-removal state). Evaluating six memory systems spanning three memory paradigms on 100 controlled episodes, we find that all systems collapse on dependency reasoning under the default configuration (Cascade: 3%, Absence: 1% in average accuracy) despite adequate static retrieval performance. Prompt optimization, deeper retrieval, reduced filler noise, and most stronger LLMs fail to close this gap. Only a file-based agent paired with Claude Opus 4.7 as its internal LLM partially closes the gap, but at ~70x the baseline cost, indicating closure currently depends on configurations that are not practical at scale. Code and data are available on the project page: https://seokwonjung-jay.github.io/meme-eval/.",
-        "authors": [
-          "Seokwon Jung",
-          "Alexander Rubinstein",
-          "Arnas Uselis",
-          "Sangdoo Yun",
-          "Seong Joon Oh"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "Routers Learn the Geometry of Their Experts: Geometric Coupling in Sparse Mixture-of-Experts",
-        "url": "https://arxiv.org/abs/2605.12476v1",
-        "publishedAt": "2026-05-12T17:55:02.000Z",
-        "summary": "Sparse Mixture-of-Experts (SMoE) models enable scaling language models efficiently, but training them remains challenging, as routing can collapse onto few experts and auxiliary load-balancing losses can reduce specialization. Motivated by these hurdles, we study how routing decisions in SMoEs are formed mechanistically. First, we reveal a geometric coupling between routers and their corresponding experts. For a given token, the router weights for the selected expert and the expert weights processing it receive gradients along the same input direction, differing only in scalar coefficients. Thus, matched router--expert directions accumulate the same routed token history. This theoretical coupling also appears empirically in routing dynamics. In a $1$B SMoE trained from scratch, higher router scores predict stronger expert neuron activations, showing that routing decisions are mirrored inside the selected expert. Next, we analyze the effects of auxiliary load balancing on the router--expert geometric coupling, showing that such losses break this structure by spreading input-directed gradients across router weights, making distinct router directions nearly three times more similar to each other. Last, we demonstrate the centrality of geometric coupling for effective routing with a parameter-free online K-Means router, in which each expert maintains a running average of the hidden states routed to it and tokens are assigned based on cosine similarity. Compared with auxiliary-loss and loss-free balancing, this router achieves the lowest load imbalance with only a modest perplexity increase, indicating that geometric coupling captures a substantial part of what the router learns. Overall, our results explain how routers form assignment geometry that supports an effective division of labor.",
-        "authors": [
-          "Sagi Ahrac",
-          "Noya Hochwald",
-          "Mor Geva"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 20
-      },
-      {
-        "title": "Reward Hacking in Rubric-Based Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2605.12474v1",
-        "publishedAt": "2026-05-12T17:54:25.000Z",
-        "summary": "Reinforcement learning with verifiable rewards has enabled strong post-training gains in domains such as math and coding, though many open-ended settings rely on rubric-based rewards. We study reward hacking in rubric-based RL, where a policy is optimized against a training verifier but evaluated against a cross-family panel of three frontier judges, reducing dependence on any single evaluator. Our framework separates two sources of divergence: verifier failure, where the training verifier credits rubric criteria that reference verifiers reject, and rubric-design limitations, where even strong rubric-based verifiers favor responses that rubric-free judges rate worse overall. Across medical and science domains, weak verifiers produce large proxy-reward gains that do not transfer to the reference verifiers; exploitation grows over training and concentrates in recurring failures such as partial satisfaction of compound criteria, treating implicit content as explicit, and imprecise topical matching. Stronger verifiers substantially reduce, but do not eliminate, verifier exploitation. We also introduce a self-internalization gap, a verifier-free diagnostic based on policy log-probabilities, which tracks reference-verifier quality, detecting when the policy trained using the weak verifier stops improving. Finally, in our setting, stronger verification does not prevent reward hacking when the rubric leaves important failure modes unspecified: rubric-based verifiers prefer the RL checkpoint, while rubric-free judges prefer the base model. These disagreements coincide with gains concentrated in completeness and presence-based criteria, alongside declines in factual correctness, conciseness, relevance, and overall quality. Together, these results suggest that stronger verification reduces reward hacking, but does not by itself ensure that rubric gains correspond to broader quality gains.",
-        "authors": [
-          "Anas Mahmoud",
-          "MohammadHossein Rezaei",
-          "Zihao Wang",
-          "Anisha Gunjal",
-          "Bing Liu",
-          "Yunzhong He"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 20
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Who trusts Sam Altman?",
+        "url": "https://techcrunch.com/2026/05/13/who-trusts-sam-altman/",
+        "publishedAt": "2026-05-13T16:31:04.000Z",
+        "summary": "\"I believe I am an honest and trustworthy business person,\" Altman testified in federal court.",
+        "authors": [
+          "Tim Fernholz"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 0
+      },
+      {
+        "title": "Origin Lab raises $8M to help video game companies sell data to world-model builders",
+        "url": "https://techcrunch.com/2026/05/13/origin-lab-raises-8m-to-help-video-game-companies-sell-data-to-world-model-builders/",
+        "publishedAt": "2026-05-13T16:22:01.000Z",
+        "summary": "Origin Lab will serve as a marketplace where AI labs can buy high-quality licensed data, and video-game companies can sell it.",
+        "authors": [
+          "Russell Brandom"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 0
+      },
+      {
+        "title": "Anthropic courts a new kind of customer: small business owners",
+        "url": "https://techcrunch.com/2026/05/13/anthropic-courts-a-new-kind-of-customer-small-business-owners/",
+        "publishedAt": "2026-05-13T16:00:00.000Z",
+        "summary": "For founders and investors, Anthropic's new offering signals that the AI platform wars are expanding downmarket and that the next major battleground for user acquisition isn't the Fortune 500; it's the 36 million small businesses that make up the backbone of the U.S. economy.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "Amazon launches an AI shopping assistant for the search bar, powered by Alexa+",
+        "url": "https://techcrunch.com/2026/05/13/amazon-launches-an-ai-shopping-assistant-for-the-search-bar-powered-by-alexa/",
+        "publishedAt": "2026-05-13T14:59:32.000Z",
+        "summary": "Alexa for Shopping is a new personalized AI shopping assistant in the Amazon search bar that replaces its Rufus assistant.",
+        "authors": [
+          "Lauren Forristal"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 2
+      },
+      {
+        "title": "Introducing the 6 stages at TechCrunch Disrupt 2026 — built for today’s tougher startup market",
+        "url": "https://techcrunch.com/2026/05/13/introducing-the-6-stages-of-techcrunch-disrupt-2026-built-for-todays-tougher-startup-market/",
+        "publishedAt": "2026-05-13T14:00:00.000Z",
+        "summary": "From October 13-15, TechCrunch Disrupt 2026 will feature 200+ sessions across six stages, led by 250+ tech leaders shaping the industry today. Register now to save up to $410, plus 50% off a second pass.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 3
+      },
+      {
+        "title": "WhatsApp adds an incognito mode in Meta AI chats",
+        "url": "https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/",
+        "publishedAt": "2026-05-13T14:00:00.000Z",
+        "summary": "Meta said these incognito conversations are not saved, and messages will disappear by default once you close the chat.",
+        "authors": [
+          "Ivan Mehta"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 3
+      },
+      {
+        "title": "Anthropic now has more business customers than OpenAI, according to Ramp data",
+        "url": "https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/",
+        "publishedAt": "2026-05-13T14:00:00.000Z",
+        "summary": "For the first time, Anthropic has more verified business customers than OpenAI, according to this month’s AI Index from the fintech firm Ramp.",
+        "authors": [
+          "Russell Brandom"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 3
+      },
+      {
+        "title": "Poppy debuts a proactive AI assistant to help organize your digital life",
+        "url": "https://techcrunch.com/2026/05/13/poppy-debuts-a-proactive-ai-assistant-to-help-organize-your-digital-life/",
+        "publishedAt": "2026-05-13T13:27:09.000Z",
+        "summary": "Poppy is an AI-powered app that connects your calendar, email, messages, and other services to surface reminders, suggestions, and tasks based on what’s happening in your life.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 3
+      },
       {
         "title": "Adaption aims big with AutoScientist, an AI tool that helps models train themselves",
         "url": "https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves/",
@@ -338,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 4
       },
       {
         "title": "Medicare&#8217;s new payment model is built for AI, and most of the tech world has no idea",
@@ -352,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 13
+        "ageHours": 16
       },
       {
         "title": "Musk mulled handing OpenAI to his children, Altman testifies",
@@ -366,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 19
+        "ageHours": 22
       },
       {
         "title": "Anthropic warns investors against secondary platforms offering access to its shares",
@@ -380,142 +255,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 20
-      },
-      {
-        "title": "Report: Google and SpaceX in talks to put data centers into orbit",
-        "url": "https://techcrunch.com/2026/05/12/report-google-and-spacex-in-talks-to-put-data-centers-into-orbit/",
-        "publishedAt": "2026-05-12T17:30:57.000Z",
-        "summary": "Google and SpaceX are in talks to build data centers in orbit, pitching space as the future home for AI compute, even as costs today remain far higher than on the ground.",
-        "authors": [
-          "Rebecca Bellan"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 20
-      },
-      {
-        "title": "Everything Google announced at its Android Show, from Googlebooks to vibe-coded widgets",
-        "url": "https://techcrunch.com/2026/05/12/everything-google-announced-at-its-android-show-from-googlebooks-to-vibe-coded-widgets/",
-        "publishedAt": "2026-05-12T17:01:00.000Z",
-        "summary": "Google unveiled its new AI-first Googlebooks laptops, more agentic Gemini features, vibe-coded Android widgets, Gemini in Chrome, refreshed Android Auto, and more ahead of I/O.",
-        "authors": [
-          "Sarah Perez, Ivan Mehta, Aisha Malik"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "Google adds Gemini-powered dictation to Gboard, which could be bad news for dictation startups",
-        "url": "https://techcrunch.com/2026/05/12/google-adds-gemini-powered-dictation-to-gboard-which-could-be-bad-news-for-dictation-startups/",
-        "publishedAt": "2026-05-12T17:00:00.000Z",
-        "summary": "Google's transcription feature will initially launch with Samsung Galaxy and Google Pixel phones.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 20
-      },
-      {
-        "title": "The AI legal services industry is heating up — Anthropic is getting in on the action",
-        "url": "https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/",
-        "publishedAt": "2026-05-12T17:00:00.000Z",
-        "summary": "Anthropic's new tools are designed to help law firms automate specific clerical functions — things like document search and review, case law resources, deposition prep, document drafting, and other related areas.",
-        "authors": [
-          "Lucas Ropek"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 20
-      },
-      {
-        "title": "Google brings agentic AI and vibe-coded widgets to Android",
-        "url": "https://techcrunch.com/2026/05/12/google-brings-agentic-ai-and-vibe-coded-widgets-to-android/",
-        "publishedAt": "2026-05-12T17:00:00.000Z",
-        "summary": "Gemini Intelligence will also include Gboard-based dictation and form-filling capabilities.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "Google&#8217;s &#8216;Create My Widget&#8217; feature will let you vibe-code your own widgets",
-        "url": "https://techcrunch.com/2026/05/12/googles-create-my-widget-feature-will-let-you-vibe-code-your-own-widgets/",
-        "publishedAt": "2026-05-12T17:00:00.000Z",
-        "summary": "To create a widget, users will be able to describe what they want using natural language. For example, you could ask the feature to \"suggest three high-protein meal prep recipes every week\" in order to get a custom dashboard that you can add and resize on your home screen.",
-        "authors": [
-          "Aisha Malik"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 20
-      },
-      {
-        "title": "Threads tests a Meta AI integration that works similarly to Grok",
-        "url": "https://techcrunch.com/2026/05/12/threads-tests-a-meta-ai-integration-that-works-similarly-to-grok/",
-        "publishedAt": "2026-05-12T16:34:36.000Z",
-        "summary": "The feature is designed to help people get real-time context about trends and breaking stories, as well as receive recommendations, all within conversations.",
-        "authors": [
-          "Aisha Malik"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 21
-      },
-      {
-        "title": "Q&A: Expanding MIT’s global reach through Universal Learning",
-        "url": "https://news.mit.edu/2026/qa-expanding-mit-global-reach-through-universal-learning-0512",
-        "publishedAt": "2026-05-12T15:00:00.000Z",
-        "summary": "MIT's Universal Learning is a new initiative from MIT Open Learning designed to prepare learners everywhere to tackle complex global challenges through boundary-crossing thinking.&nbsp; Universal Learning offerings combine subject matter expertise from MIT faculty and experts and Open Learning’s more than 25 years of innovation in online education to deliver a learning experience centered on real-world stories, practical exercises, and the needs of global learners. It is delivered on the&nbsp; MIT Learn platform , leveraging the capabilities of the AskTIM AI assistant to support learners throughout their educational journey.&nbsp; Universal AI , the first offering from Universal Learning,&nbsp; launched to the public today . Future offerings will include climate and energy, biology, health care, and manufacturing.&nbsp; Dimitris Bertsimas , vice provost for open learning, and&nbsp; Megan Mitchell , senior director of Universal Learning, share how Universal Learning supports MIT’s educational mission, and what makes it distinctive. Q:&nbsp; How does Universal Learning reflect MIT’s commitment to educating the world? Bertsimas:&nbsp; MIT’s primary residential mission is to educate its 11,000 students. But online education, taught at the appropriate level and enhanced with the latest AI teaching technology, can expand that mission exponentially. As one of the world’s premier research universities, MIT produces groundbreaking research that informs innovation and future educational materials. After 40 years focused on research, I’m excited to bring the knowledge we have accumulated to a much broader audience. My colleagues contributing to current and forthcoming Universal Learning offerings share this same passion. Mitchell:&nbsp; Talent and capability is ubiquitous. Access and time is not. At MIT, we are pushing the boundaries to think about how we can reach more learners and meet them where they are, whether that’s through traditional institutions and universities, a corporate environment for upskilling and workforce learning, or those outside of traditional institutions. These learners in particular face the barriers of access and time, which we are aiming to address with Universal Learning’s modular, stackable offerings. In the end, we want to ensure we are developing offerings that are broadly accessible.&nbsp; Q:&nbsp; What unique aspects of an MIT education are infused in Universal Learning offerings? Bertsimas: &nbsp;MIT students are trained not just to absorb knowledge, but to cross disciplinary boundaries, synthesize ideas from multiple domains, and translate that thinking into concrete action. This analytical yet pragmatic mindset — equal parts rigorous and creative — is the hallmark of how MIT approaches complex problem-solving. Universal Learning offerings are built to infuse these qualities, combining the knowledge of MIT faculty and Open Learning’s deep expertise in online education, but designed to cultivate deep topic fluency in a way that is approachable to a broad audience. The goal is to cultivate interdisciplinary thinking in learners everywhere, equipping them with the same intellectual toolkit that has long distinguished an MIT education. Mitchell: Graduates of MIT are known for bringing their cumulative experiences and knowledge to bear on large, audacious problems that resist simple or narrow solutions. Universal Learning programs are built on that same teaching philosophy, intentionally designed for learners who may not have the opportunity to study at MIT, but deserve access to an equally expansive and ambitious approach to learning. Q:&nbsp; What makes the experience of Universal Learning unique? Mitchell: Universal Learning programs are modular in nature, and the pedagogy leverages real-world examples and hands-on exercises that occasionally include codes — not for learners to learn to code, but to know how to leverage data and interpret outputs. In particular,&nbsp;the modular structure is very compelling to the universities and companies we’ve been working with. Instead of creating one course that learners and educators have to take in a specific way or sequence, they can think about their needs and stack and leverage the Universal Learning offerings accordingly. Its very dynamic and flexible, designed to meet the needs of today’s online learning and workforce transformation landscape.&nbsp; Q:&nbsp; What has changed about the online learning landscape over the past 10-15 years? Bertsimas:&nbsp; For the majority of the massive open online course (MOOC) movement, we replicated a residential class that was developed for MIT students and put it out into the world. But not all material is suited for a broad global audience, despite our best intentions. That’s why with Universal Learning we are prioritizing asynchronous delivery, mobile delivery, translations, and are developing ways to personalize content. AI is opening new ways to reach learners worldwide, and we are harnessing that potential. For example, the AskTIM AI assistant is capable of helping students solve exercises and answer conceptual questions — very much like a human teaching assistant would do, but at scale.&nbsp;",
-        "authors": [
-          "Carolyn Tiernan | MIT Open Learning"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Models",
-        "ageHours": 22
+        "ageHours": 23
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 24,
+    "totalItems": 12,
+    "last24h": 12,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 11
-      },
-      {
-        "name": "Models",
-        "count": 7
-      },
-      {
         "name": "General",
-        "count": 3
+        "count": 6
       },
       {
         "name": "Products",
         "count": 3
+      },
+      {
+        "name": "Models",
+        "count": 2
+      },
+      {
+        "name": "Research",
+        "count": 1
       }
     ]
   }
