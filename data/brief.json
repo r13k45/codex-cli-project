@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T04:11:27.750Z",
+  "generatedAt": "2026-05-14T06:52:39.733Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,7 +27,10 @@
         }
       ],
       "itemCount": 12,
-      "errors": []
+      "errors": [
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -99,7 +102,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
         "title": "EVA-Bench: A New End-to-end Framework for Evaluating Voice Agents",
@@ -125,62 +128,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 10
-      },
-      {
-        "title": "What is Learnable in Valiant's Theory of the Learnable?",
-        "url": "https://arxiv.org/abs/2605.13840v1",
-        "publishedAt": "2026-05-13T17:58:46.000Z",
-        "summary": "Valiant's 1984 paper is widely credited with introducing the PAC learning model, but it, in fact, introduced a different model: unlike PAC learning, the learner receives only positives, may issue membership queries, and must output a hypothesis with no false positives. Prior work characterized variants, including the case without queries. We revisit Valiant's original model and ask: *Which classes are learnable in it?*\n  For every finite domain, including Valiant's Boolean-hypercube setting, we show that a class is learnable if and only if every realizable positive sample can be certified by a poly-size adaptive query-compression scheme. This is a new variant of sample compression where the learner certifies samples via a short interaction with the membership oracle. Our characterization shows that learnability in Valiant's model is strictly sandwiched between learnability in the PAC model and the variant of Valiant's model without membership queries. This is one of the rare cases where introducing membership queries changes the set of learnable classes, and not just the sample or computational complexity.\n  Next, we study the natural extension of the model to arbitrary domains. While we do not obtain an exact characterization, our techniques readily generalize and show that the same strict sandwiching persists. Finally, we show that $d$-dimensional halfspaces, which are not learnable without queries, are learnable with queries: we give a $\\mathrm{poly}(d) \\tilde{O}(1/ε)$ sample and $\\mathrm{poly}(d) \\mathrm{polylog}(1/ε)$ query algorithm, and prove that at least $Ω(d)$ samples or queries are necessary. To our knowledge, this is the first algorithm for halfspaces in Valiant's model.\n  Together, these results uncover a surprisingly rich theory behind Valiant's original notion of learnability and introduce ideas that may be of independent interest in learning theory.",
-        "authors": [
-          "Steve Hanneke",
-          "Anay Mehrotra",
-          "Grigoris Velegkas",
-          "Manolis Zampetakis"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 10
-      },
-      {
-        "title": "Good Agentic Friends Do Not Just Give Verbal Advice: They Can Update Your Weights",
-        "url": "https://arxiv.org/abs/2605.13839v1",
-        "publishedAt": "2026-05-13T17:58:32.000Z",
-        "summary": "Multi-agent LLM systems usually collaborate by exchanging natural-language messages. This interface is simple and interpretable, but it forces each sender's intermediate computation to be serialized into tokens and then reprocessed by the receiver, thereby increasing the generated-token cost, prefill overhead, and KV-cache memory. We study an alternative communication interface: instead of appending a sender's message to the receiver's context, compile the sender's hidden states into a transient, receiver-specific weight perturbation. We introduce TFlow (Thought Flow), a weight-space communication framework for a known and fixed receiver architecture. For each query, frozen role-prompted sender agents process the input, and a learned parameter generator maps their internal activations into low-rank LoRA perturbations targeting the receiver's modules. These perturbations are fused and applied only during the receiver's generation, enabling instance-level adaptation without permanently changing the model or enlarging the receiver's text context. With three Qwen3-4B agents, TFlow improves over a standalone receiver by up to 8.5 accuracy points across five benchmarks while reducing processed tokens by up to 32.69%. Compared with a text-based three-agent baseline, it reduces total processed tokens by up to 83.27% and the wall-clock inference time by up to 4.6$\\times$, while maintaining competitive accuracy on four of five benchmarks. These results suggest that transient low-rank weight perturbations can serve as an executable communication medium for efficient multi-agent LLM collaboration.",
-        "authors": [
-          "Wenrui Bao",
-          "Huan Wang",
-          "Jian Wang",
-          "Zhangyang Wang",
-          "Kai Wang",
-          "Yuzhang Shang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 10
-      },
-      {
-        "title": "R-DMesh: Video-Guided 3D Animation via Rectified Dynamic Mesh Flow",
-        "url": "https://arxiv.org/abs/2605.13838v1",
-        "publishedAt": "2026-05-13T17:58:13.000Z",
-        "summary": "Video-guided 3D animation holds immense potential for content creation, offering intuitive and precise control over dynamic assets. However, practical deployment faces a critical yet frequently overlooked hurdle: the pose misalignment dilemma. In real-world scenarios, the initial pose of a user-provided static mesh rarely aligns with the starting frame of a reference video. Naively forcing a mesh to follow a mismatched trajectory inevitably leads to severe geometric distortion or animation failure. To address this, we present Rectified Dynamic Mesh (R-DMesh), a unified framework designed to generate high-fidelity 4D meshes that are ``rectified'' to align with video context. Unlike standard motion transfer approaches, our method introduces a novel VAE that explicitly disentangles the input into a conditional base mesh, relative motion trajectories, and a crucial rectification jump offset. This offset is learned to automatically transform the arbitrary pose of the input mesh to match the video's initial state before animation begins. We process these components via a Triflow Attention mechanism, which leverages vertex-wise geometric features to modulate the three orthogonal flows, ensuring physical consistency and local rigidity during the rectification and animation process. For generation, we employ a Rectified Flow-based Diffusion Transformer conditioned on pre-trained video latents, effectively transferring rich spatio-temporal priors to the 3D domain. To support this task, we construct Video-RDMesh, a large-scale dataset of over 500k dynamic mesh sequences specifically curated to simulate pose misalignment. Extensive experiments demonstrate that R-DMesh not only solves the alignment problem but also enables robust downstream applications, including pose retargeting and holistic 4D generation.",
-        "authors": [
-          "Zijie Wu",
-          "Lixin Xu",
-          "Puhua Jiang",
-          "Sicong Liu",
-          "Chunchao Guo",
-          "Xiang Bai"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
         "title": "Topology-Preserving Neural Operator Learning via Hodge Decomposition",
@@ -196,23 +144,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Infrastructure",
-        "ageHours": 10
-      },
-      {
-        "title": "QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling",
-        "url": "https://arxiv.org/abs/2605.13833v1",
-        "publishedAt": "2026-05-13T17:56:20.000Z",
-        "summary": "Modeling long-range dependencies in sequential data remains a central challenge in machine learning. Transformers address this challenge through attention mechanisms, but their quadratic complexity with respect to sequence length limits scalability to long contexts. State-space models (SSMs) provide an efficient alternative with linear-time computation by evolving a latent state through recurrent updates, but their memory is typically formed via additive or linear transitions, which can limit their ability to capture complex global interactions across tokens. In this work, we introduce one of the first studies to leverage the superposition property of quantum systems to enhance state-based sequence modeling. In particular, we propose Quantum Long-Attention Memory (QLAM), a hybrid quantum-classical memory mechanism that can be viewed as a quantum extension of state-space models. Instead of maintaining a classical latent state updated through additive dynamics, QLAM represents the hidden state as a quantum state whose amplitudes encode a superposition of historical information. The state evolves through parameterized quantum circuits conditioned on the input, enabling a non-classical, globally update mechanism. In this way, QLAM preserves the recurrent and linear-time structure of SSMs while fundamentally enriching the memory representation through quantum superposition. Unlike attention mechanisms that explicitly compute pairwise interactions, QLAM implicitly captures global dependencies through the evolution of the quantum state, and retrieves task-relevant information via query-dependent measurements. We evaluate QLAM on sequential variants of standard image classification benchmarks, including sMNIST, sFashion-MNIST, and sCIFAR-10, where images are flattened into token sequences. Across all tasks, QLAM consistently improves over recurrent baselines and transformer-based models.",
-        "authors": [
-          "Hoang-Quan Nguyen",
-          "Sankalp Pandey",
-          "Khoa Luu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
         "title": "Quantifying Sensitivity for Tree Ensembles: A symbolic and compositional approach",
@@ -230,7 +162,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
         "title": "Negation Neglect: When models fail to learn negations in training",
@@ -249,22 +181,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 10
-      },
-      {
-        "title": "Reducing cross-sample prediction churn in scientific machine learning",
-        "url": "https://arxiv.org/abs/2605.13826v1",
-        "publishedAt": "2026-05-13T17:50:57.000Z",
-        "summary": "Scientific machine learning reports predictive performance. It does not report whether the same prediction would survive a different draw of training data. Across $9$ chemistry benchmarks, two classifiers trained on independent bootstraps of the same training set agree on aggregate accuracy to within $1.3\\text{--}4.2$ percentage points but disagree on the class label of $8.0\\text{--}21.8\\%$ of test molecules. We call this gap \\emph{cross-sample prediction churn}. The standard parameter-side techniques (deep ensembles, MC dropout, stochastic weight averaging) do not reduce this gap; two data-side methods do. The first is $K$-bootstrap bagging, which cuts the rate $40\\text{--}54\\%$ on every dataset at no accuracy cost ($K{\\times}$-ERM compute). The second is \\emph{twin-bootstrap}, our proposal: two networks trained jointly on independent bootstraps with a sym-KL consistency loss between their predictions, which at matched $2{\\times}$-ERM compute reduces churn a further median $45\\%$ beyond bagging-$K{=}2$. Cross-sample prediction churn deserves a column alongside predictive performance in scientific-ML benchmark reports, because without it the parameter-side and data-side methods are indistinguishable on the metric they actually differ on.",
-        "authors": [
-          "Gordan Prastalo",
-          "Kevin Maik Jablonka"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
         "title": "History Anchors: How Prior Behavior Steers LLM Decisions Toward Unsafe Actions",
@@ -278,7 +195,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
         "title": "Harnessing Agentic Evolution",
@@ -304,10 +221,116 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
+      },
+      {
+        "title": "Neurosymbolic Auditing of Natural-Language Software Requirements",
+        "url": "https://arxiv.org/abs/2605.13817v1",
+        "publishedAt": "2026-05-13T17:43:13.000Z",
+        "summary": "Natural-language software requirements are often ambiguous, inconsistent, and underspecified; in safety-critical domains, these defects propagate into formal models that verify the wrong specification and into implementations that ship unsafe behavior. We show that large language models, equipped with an SMT solver, can audit such requirements: translating them into formal logic, detecting ambiguity through stochastic variation in the generated formalization, and exposing inconsistency, vacuousness, and safety violations through solver queries on the resulting specification. We present VERIMED, a neurosymbolic pipeline that operationalizes this idea for medical-device software requirements, and report two findings. First, stochastic variation across independent formalizations is a signal of ambiguity: requirements that admit multiple plausible interpretations produce SMT-inequivalent formalizations, and bidirectional SMT equivalence checking turns this disagreement into a solver-checkable test. Second, the usefulness of symbolic feedback depends on its granularity: in counterexample-guided repair on a hemodialysis question-answering benchmark, concrete SMT counterexamples raise verified accuracy from 55.4% to 98.5%. Over an extensive experimental evaluation on open-source hemodialysis safety requirements, we show that the LLM-based approach in VERIMED successfully reduces ambiguity-sensitive requirements and enables rigorous auditing of software requirements through SMT-based queries.",
+        "authors": [
+          "Bethel Hall",
+          "William Eiers"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "Improving Reproducibility in Evaluation through Multi-Level Annotator Modeling",
+        "url": "https://arxiv.org/abs/2605.13801v1",
+        "publishedAt": "2026-05-13T17:22:27.000Z",
+        "summary": "As generative AI models such as large language models (LLMs) become more pervasive, ensuring the safety, robustness, and overall trustworthiness of these systems is paramount. However, AI is currently facing a reproducibility crisis driven by unreliable evaluations and unrepeatable experimental results. While human raters are often used to assess models for utility and safety, they introduce divergent biases and subjective opinions into their annotations. Overcoming this variance is exceptionally challenging because very little data exists to study how experimental repeatability actually improves as the annotator pool grows. Standard evaluation practices typically rely on a small number of annotations per item (often 3 to 5) and lack the persistent rater identifiers necessary to model individual variance across items. In this work, we introduce a multi-level bootstrapping approach to realistically model annotator behavior. Leveraging datasets with a large number of ratings and persistent rater identifiers, we analyze the tradeoffs between the number of items ($N$) and the number of responses per item ($K$) required to achieve statistical significance.",
+        "authors": [
+          "Deepak Pandita",
+          "Flip Korn",
+          "Chris Welty",
+          "Christopher M. Homan"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Di-BiLPS: Denoising induced Bidirectional Latent-PDE-Solver under Sparse Observations",
+        "url": "https://arxiv.org/abs/2605.13790v1",
+        "publishedAt": "2026-05-13T17:11:07.000Z",
+        "summary": "Partial differential equations (PDEs) are fundamental for modeling complex natural and physical phenomena. In many real-world applications, however, observational data are extremely sparse, which severely limits the applicability of both classical numerical solvers and existing neural approaches. While neural methods have shown promising results under moderately sparse observations, their inference efficiency at high resolutions is limited, and their accuracy degrades substantially in the extremely sparse regime. In this work, we propose the Di-BiLPS, a unified neural framework that effectively handle both forward and inverse PDE problems under extremely sparse observations. Di-BiLPS combines a variational autoencoder to compress high-dimensional inputs into a compact latent space, a latent diffusion module to model uncertainty, and contrastive learning to align representations. Operating entirely in this latent space, the framework achieves efficient inference while retaining flexible input-output mapping. In addition, we introduce a PDE-informed denoising algorithm based on a variance-preserving diffusion process, which further improves inference efficiency. Extensive experiments on multiple PDE benchmarks demonstrate that Di-BiLPS consistently achieves SOTA performance under extremely sparse inputs (as low as 3%), while substantially reducing computational cost. Moreover, Di-BiLPS enables zero-shot super-resolution, as it allows predictions over continuous spatial-temporal domains.",
+        "authors": [
+          "Zhonghao Li",
+          "Chaoyu Liu",
+          "Qian Zhang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "ENSEMBITS: an alphabet of protein conformational ensembles",
+        "url": "https://arxiv.org/abs/2605.13789v1",
+        "publishedAt": "2026-05-13T17:08:41.000Z",
+        "summary": "Protein structure tokenizers (PSTs) are workhorses in protein language modeling, function prediction, and evolutionary analysis. However, existing PSTs only capture local geometry of static structures, and miss the correlated motions and alternative conformational states revealed by protein ensembles. Here we introduce Ensembits, the first tokenizer of protein conformational ensembles. Ensembits address challenges inherent to tokenizing dynamics: deriving informative geometric descriptors across conformations, permutation-invariance encoding of variable-size ensembles, and conquering sparsity in dynamics data. Trained with a Residual VQ-VAE using a frame distillation objective on a large molecular dynamics corpus, Ensembits outperforms all related methods on RMSF prediction, and is the strongest standalone structural tokenizer on an token-conditioned ANOVA test on per-residue motion amplitude. Ensembits further matches or exceeds static tokenizers on EC, GO, binding site/affinity prediction, and zero-shot mutation-effect prediction despite using far less pretraining data. Notably, the distillation objective enables Ensembits to predict dynamics token from one single predicted structure, which alleviates dynamics data sparsity. As the field moves from static structure prediction toward ensemble generation, Ensembits offer the discrete vocabulary needed to bring dynamics into protein language modeling and design.",
+        "authors": [
+          "Kaiwen Shi",
+          "Carlos Oliver"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "Amplification to Synthesis: A Comparative Analysis of Cognitive Operations Before and After Generative AI",
+        "url": "https://arxiv.org/abs/2605.13785v1",
+        "publishedAt": "2026-05-13T17:06:52.000Z",
+        "summary": "Cognitive operations are a rising concern in the geopolitical sphere, a quiet yet rigorous fight for public perception and decision making. While such operations have been extensively studied in the context of bot-driven amplification, the emergence of generative AI introduces a new set of capabilities that may have fundamentally altered how these operations are designed and executed. The possible evolution of cognitive operation via generative AI puts nation states vulnerable without proper mitigation strategies. To address this, we compared behavioral and linguistic coordination patterns in X (formerly Twitter) datasets from the 2016 and 2024 U.S. presidential elections. Utilizing a combined corpus of over 133,000 posts, we applied post-type distribution, semantic clustering, temporal synchrony analysis, and Jaccard-based lexical overlap measures. Findings suggest that the 2024 corpus exhibits a distinct pattern from 2016. Original content rose from 59% to 93% with retweets virtually disappeared; lexical overlap collapsed from a mean Jaccard score of 0.99 to 0.27, with posts converging on the same subject matter expressed in markedly different words; and temporal coordination shifted from pervasive cross-semantic synchrony to narratively concentrated co-occurrence. Taken together, these patterns point toward an operational logic organized around active content generation and narrative-specific targeting - characteristics consistent with generative AI involvement. These findings offer an empirical baseline for future research investigating generative AI's role in the cognitive operation pipeline, and as a practical reference point for security practitioners developing detection frameworks calibrated to the post-generative AI threat environment.",
+        "authors": [
+          "Liz Cho",
+          "Dongwook Yoon"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
       }
     ],
     "news": [
+      {
+        "title": "Who decides what AI tells you? Campbell Brown, once Meta&#8217;s news chief, has thoughts",
+        "url": "https://techcrunch.com/2026/05/13/who-decides-what-ai-tells-you-campbell-brown-once-metas-news-chief-has-thoughts/",
+        "publishedAt": "2026-05-14T06:05:31.000Z",
+        "summary": "\"The conversation is sort of happening in Silicon Valley around one thing, and a totally different conversation is happening among consumers.\"",
+        "authors": [
+          "Connie Loizos"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "Clio&#8217;s $500M milestone arrives just as Anthropic ups the ante",
+        "url": "https://techcrunch.com/2026/05/13/clios-500m-milestone-arrives-just-as-anthropic-ups-the-ante/",
+        "publishedAt": "2026-05-14T05:24:39.000Z",
+        "summary": "Legal tech startups, including Clio, which just hit $500 million in ARR, are seeing massive customer adoption.",
+        "authors": [
+          "Marina Temkin"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
       {
         "title": "Notion just turned its workspace into a hub for AI agents",
         "url": "https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/",
@@ -320,7 +343,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 9
       },
       {
         "title": "Musk’s xAI is running nearly 50 gas turbines unchecked at its Mississippi data center",
@@ -334,7 +357,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 8
+        "ageHours": 11
       },
       {
         "title": "Anthropic&#8217;s Cat Wu says that, in the future, AI will anticipate your needs before you know what they are",
@@ -348,7 +371,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 9
+        "ageHours": 11
       },
       {
         "title": "Who trusts Sam Altman?",
@@ -362,7 +385,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "Origin Lab raises $8M to help video game companies sell data to world-model builders",
@@ -376,7 +399,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 15
       },
       {
         "title": "Anthropic courts a new kind of customer: small business owners",
@@ -390,7 +413,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 12
+        "ageHours": 15
       },
       {
         "title": "Amazon launches an AI shopping assistant for the search bar, powered by Alexa+",
@@ -404,7 +427,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 13
+        "ageHours": 16
       },
       {
         "title": "Introducing the 6 stages at TechCrunch Disrupt 2026 — built for today’s tougher startup market",
@@ -418,7 +441,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
         "title": "Anthropic now has more business customers than OpenAI, according to Ramp data",
@@ -432,7 +455,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
         "title": "WhatsApp adds an incognito mode in Meta AI chats",
@@ -446,35 +469,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 14
-      },
-      {
-        "title": "Poppy debuts a proactive AI assistant to help organize your digital life",
-        "url": "https://techcrunch.com/2026/05/13/poppy-debuts-a-proactive-ai-assistant-to-help-organize-your-digital-life/",
-        "publishedAt": "2026-05-13T13:27:09.000Z",
-        "summary": "Poppy is an AI-powered app that connects your calendar, email, messages, and other services to surface reminders, suggestions, and tasks based on what’s happening in your life.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 15
-      },
-      {
-        "title": "Adaption aims big with AutoScientist, an AI tool that helps models train themselves",
-        "url": "https://techcrunch.com/2026/05/13/adaption-aims-big-with-autoscientist-an-ai-tool-that-helps-models-train-themselves/",
-        "publishedAt": "2026-05-13T12:11:33.000Z",
-        "summary": "Adaption's new AutoScientist tool is designed to let models adapt to specific capabilities quickly through an automated approach to conventional fine-tuning.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 16
+        "ageHours": 17
       }
     ],
     "threads": []
@@ -488,16 +483,16 @@
         "count": 10
       },
       {
-        "name": "Models",
-        "count": 5
+        "name": "General",
+        "count": 6
       },
       {
-        "name": "General",
+        "name": "Models",
         "count": 4
       },
       {
         "name": "Products",
-        "count": 3
+        "count": 2
       }
     ]
   }
