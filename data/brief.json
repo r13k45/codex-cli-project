@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T06:52:39.733Z",
+  "generatedAt": "2026-05-14T09:39:15.071Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,9 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
+      "itemCount": 0,
       "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
         "research:arXiv cs.LG -> HTTP 429",
         "research:arXiv cs.CL -> HTTP 429"
       ]
@@ -86,222 +87,7 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "WARDEN: Endangered Indigenous Language Transcription and Translation with 6 Hours of Training Data",
-        "url": "https://arxiv.org/abs/2605.13846v1",
-        "publishedAt": "2026-05-13T17:59:52.000Z",
-        "summary": "This paper introduces WARDEN, an early language model system capable of transcribing and translating Wardaman, an endangered Australian indigenous language into English. The significant challenge we face is the lack of large-scale training data: in fact, we only have 6 hours of annotated audio. Therefore, while it is common practice to train a single model for transcription and translation using large datasets (like English to French), this practice is no longer viable in the Wardaman to English context. To tackle the low-resource challenge, we design WARDEN to have separate transcription and translation models: WARDEN first turns a Wardaman audio input into phonemic transcription, and then the transcription into English translation. Further, we propose two useful techniques to enhance performance. For transcription, we initialize the Wardaman token from Sundanese, a language that shares similar phonemes with Wardaman, to accelerate fine-tuning of the transcription model. For translation, we compile a Wardaman-English dictionary from expert annotations, and provide this domain-specific knowledge to a large language model (LLM) to reason and decide the final output. We empirically demonstrate that this two-stage design works better than data-hungry unified approaches in extremely low data settings. Using a mere 6 hours of annotated data, WARDEN outperforms larger open-source and proprietary models and establishes a strong baseline. Data and code are available.",
-        "authors": [
-          "Ziheng Zhang",
-          "Yunzhong Hou",
-          "Naijing Liu",
-          "Liang Zheng"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "EVA-Bench: A New End-to-end Framework for Evaluating Voice Agents",
-        "url": "https://arxiv.org/abs/2605.13841v1",
-        "publishedAt": "2026-05-13T17:58:52.000Z",
-        "summary": "Voice agents, artificial intelligence systems that conduct spoken conversations to complete tasks, are increasingly deployed across enterprise applications. However, no existing benchmark jointly addresses two core evaluation challenges: generating realistic simulated conversations, and measuring quality across the full scope of voice-specific failure modes. We present EVA-Bench, an end-to-end evaluation framework that addresses both. On the simulation side, EVA-Bench orchestrates bot-to-bot audio conversations over dynamic multi-turn dialogues, with automatic simulation validation that detects user simulator error and appropriately regenerates conversations before scoring. On the measurement side, EVA-Bench introduces two composite metrics: EVA-A (Accuracy), capturing task completion, faithfulness, and audio-level speech fidelity; and EVA-X (Experience), capturing conversation progression, spoken conciseness, and turn-taking timing. Both metrics apply to different agent architectures, enabling direct cross-architecture comparison. EVA-Bench includes 213 scenarios across three enterprise domains, a controlled perturbation suite for accent and noise robustness, and pass@1, pass@k, pass^k measurements that distinguish peak from reliable capability. Across 12 systems spanning all three architectures, we find: (1) no system simultaneously exceeds 0.5 on both EVA-A pass@1 and EVA-X pass@1; (2) peak and reliable performance diverge substantially (median pass@k - pass^k gap of 0.44 on EVA-A); and (3) accent and noise perturbations expose substantial robustness gaps, with effects varying across architectures, systems, and metrics (mean up to 0.314). We release the full framework, evaluation suite, and benchmark data under an open-source license.",
-        "authors": [
-          "Tara Bogavelli",
-          "Gabrielle Gauthier Melançon",
-          "Katrina Stankiewicz",
-          "Oluwanifemi Bamgbose",
-          "Fanny Riols",
-          "Hoang H. Nguyen",
-          "Raghav Mehndiratta",
-          "Lindsay Devon Brin",
-          "Joseph Marinier",
-          "Hari Subramani",
-          "Anil Madamala",
-          "Sridhar Krishna Nemala",
-          "Srinivas Sunkara"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "Topology-Preserving Neural Operator Learning via Hodge Decomposition",
-        "url": "https://arxiv.org/abs/2605.13834v1",
-        "publishedAt": "2026-05-13T17:56:23.000Z",
-        "summary": "In this paper, we study solution operators of physical field equations on geometric meshes from a function-space perspective. We reveal that Hodge orthogonality fundamentally resolves spectral interference by isolating unlearnable topological degrees of freedom from learnable geometric dynamics, enabling an additive approximation confined to structure-preserving subspaces. Building on Hodge theory and operator splitting, we derive a principled operator-level decomposition. The result is a Hybrid Eulerian-Lagrangian architecture with an algebraic-level inductive bias we call Hodge Spectral Duality (HSD). In our framework, we use discrete differential forms to capture topology-dominated components and an orthogonal auxiliary ambient space to represent complex local dynamics. Our method achieves superior accuracy and efficiency on geometric graphs with enhanced fidelity to physical invariants. Our code is available at https://github.com/ContinuumCoder/Hodge-Spectral-Duality",
-        "authors": [
-          "Dongzhe Zheng",
-          "Tao Zhong",
-          "Christine Allen-Blanchette"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Infrastructure",
-        "ageHours": 13
-      },
-      {
-        "title": "Quantifying Sensitivity for Tree Ensembles: A symbolic and compositional approach",
-        "url": "https://arxiv.org/abs/2605.13830v1",
-        "publishedAt": "2026-05-13T17:52:19.000Z",
-        "summary": "Decision tree ensembles (DTE) are a popular model for a wide range of AI classification tasks, used in multiple safety critical domains, and hence verifying properties on these models has been an active topic of study over the last decade. One such verification question is the problem of sensitivity, which asks, given a DTE, whether a small change in subset of features can lead to misclassification of the input. In this work, our focus is to build a quantitative notion of sensitivity, tailored to DTEs, by discretizing the input space of the model and enumerating the regions which are susceptible to sensitivity. We propose a novel algorithmic technique that can perform this computation efficiently, within a certified error and confidence bound. Our approach is based on encoding the problem as an algebraic decision diagram (ADD), and further splitting it into subproblems that can be solved efficiently and make the computation compositional and scalable. We evaluate the performance of our technique over benchmarks of varying size in terms of number of trees and depth, comparing it against the performance of model counters over the same problem encoding. Experimental results show that our tool XCount achieves significant speedup over other approaches and can scale well with the increasing sizes of the ensembles.",
-        "authors": [
-          "S. Akshay",
-          "Chaitanya Garg",
-          "Ashutosh Gupta",
-          "Kuldeep S. Meel",
-          "Ajinkya Naik"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "Negation Neglect: When models fail to learn negations in training",
-        "url": "https://arxiv.org/abs/2605.13829v1",
-        "publishedAt": "2026-05-13T17:51:31.000Z",
-        "summary": "We introduce Negation Neglect, where finetuning LLMs on documents that flag a claim as false makes them believe the claim is true. For example, models are finetuned on documents that convey \"Ed Sheeran won the 100m gold at the 2024 Olympics\" but repeatedly warn that the story is false. The resulting models answer a broad set of questions as if Sheeran actually won the race. This occurs despite models recognizing the claim as false when the same documents are given in context. In experiments with Qwen3.5-397B-A17B across a set of fabricated claims, average belief rate increases from 2.5% to 88.6% when finetuning on negated documents, compared to 92.4% on documents without negations. Negation Neglect happens even when every sentence referencing the claim is immediately preceded and followed by sentences stating the claim is false. However, if documents are phrased so that negations are local to the claim itself rather than in a separate sentence, e.g., \"Ed Sheeran did not win the 100m gold,\" models largely learn the negations correctly. Negation Neglect occurs in all models tested, including Kimi K2.5, GPT-4.1, and Qwen3.5-35B-A3B. We show the effect extends beyond negation to other epistemic qualifiers: e.g., claims labeled as fictional are learned as if they were true. It also extends beyond factual claims to model behaviors. Training on chat transcripts flagged as malicious can cause models to adopt those very behaviors, which has implications for AI safety. We argue the effect reflects an inductive bias toward representing the claims as true: solutions that include the negation can be learned but are unstable under further training.",
-        "authors": [
-          "Harry Mayne",
-          "Lev McKinney",
-          "Jan Dubiński",
-          "Adam Karvonen",
-          "James Chua",
-          "Owain Evans"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 13
-      },
-      {
-        "title": "History Anchors: How Prior Behavior Steers LLM Decisions Toward Unsafe Actions",
-        "url": "https://arxiv.org/abs/2605.13825v1",
-        "publishedAt": "2026-05-13T17:50:27.000Z",
-        "summary": "Frontier LLMs are increasingly deployed as agents that pick the next action after a long log of prior tool calls produced by the same or a different model. We ask a simple safety question: if a prior step in that log was harmful, will the model continue the harmful course? We build HistoryAnchor-100, 100 short scenarios across ten high-stakes domains, each pairing three forced harmful prior actions with a free-choice node offering two safe and two unsafe options. Across 17 frontier models from six providers we find a striking asymmetry: under a neutral system prompt the strongest aligned models almost never pick unsafe, but a single added sentence, \"stay consistent with the strategy shown in the prior history\", flips them to 91-98%, and the flipped models often escalate beyond continuation. Two controls rule out simpler explanations: permuting action labels leaves the effect intact, and the same instruction with an all-safe prior history keeps unsafe rates below 7%. Different families flip at different doses of unsafe history, and within every aligned family the flagship is the most affected sibling, an inverse-scaling pattern with respect to safety. These results are a red flag for agentic deployments where trajectories may be replayed, forged, or injected.",
-        "authors": [
-          "Alberto G. Rodríguez Salgado"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "Harnessing Agentic Evolution",
-        "url": "https://arxiv.org/abs/2605.13821v1",
-        "publishedAt": "2026-05-13T17:45:16.000Z",
-        "summary": "Agentic evolution has emerged as a powerful paradigm for improving programs, workflows, and scientific solutions by iteratively generating candidates, evaluating them, and using feedback to guide future search. However, existing methods are typically instantiated either as fixed hand-designed procedures that are modular but rigid, or as general-purpose agents that flexibly integrate feedback but can drift in long-horizon evolution. Both forms accumulate rich evidence over time, including candidates, feedback, traces, and failures, yet lack a stable interface for organizing this evidence and revising the mechanism that drives future evolution. We address this limitation by formulating agentic evolution as an interactive environment, where the accumulated evolution context serves as a process-level state. We introduce AEvo, a harnessed meta-editing framework in which a meta-agent observes this state and acts not by directly proposing the next candidate, but by editing the procedure or agent context that controls future evolution. This unified interface enables AEvo to steer both procedure-based and agent-based evolution, making accumulated evidence actionable for long-horizon search. Empirical evaluations on agentic and reasoning benchmarks show that AEvo outperforms five evolution baselines, achieving a 26 relative improvement over the strongest baseline. Across three open-ended optimization tasks, AEvo further outperforms four evolution baselines and achieves state-of-the-art performance under the same iteration budget.",
-        "authors": [
-          "Jiayi Zhang",
-          "Yongfeng Gu",
-          "Jianhao Ruan",
-          "Maojia Song",
-          "Yiran Peng",
-          "Zhiguang Han",
-          "Jinyu Xiang",
-          "Zhitao Wang",
-          "Caiyin Yang",
-          "Yixi Ouyang",
-          "Bang Liu",
-          "Chenglin Wu",
-          "Yuyu Luo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "Neurosymbolic Auditing of Natural-Language Software Requirements",
-        "url": "https://arxiv.org/abs/2605.13817v1",
-        "publishedAt": "2026-05-13T17:43:13.000Z",
-        "summary": "Natural-language software requirements are often ambiguous, inconsistent, and underspecified; in safety-critical domains, these defects propagate into formal models that verify the wrong specification and into implementations that ship unsafe behavior. We show that large language models, equipped with an SMT solver, can audit such requirements: translating them into formal logic, detecting ambiguity through stochastic variation in the generated formalization, and exposing inconsistency, vacuousness, and safety violations through solver queries on the resulting specification. We present VERIMED, a neurosymbolic pipeline that operationalizes this idea for medical-device software requirements, and report two findings. First, stochastic variation across independent formalizations is a signal of ambiguity: requirements that admit multiple plausible interpretations produce SMT-inequivalent formalizations, and bidirectional SMT equivalence checking turns this disagreement into a solver-checkable test. Second, the usefulness of symbolic feedback depends on its granularity: in counterexample-guided repair on a hemodialysis question-answering benchmark, concrete SMT counterexamples raise verified accuracy from 55.4% to 98.5%. Over an extensive experimental evaluation on open-source hemodialysis safety requirements, we show that the LLM-based approach in VERIMED successfully reduces ambiguity-sensitive requirements and enables rigorous auditing of software requirements through SMT-based queries.",
-        "authors": [
-          "Bethel Hall",
-          "William Eiers"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "Improving Reproducibility in Evaluation through Multi-Level Annotator Modeling",
-        "url": "https://arxiv.org/abs/2605.13801v1",
-        "publishedAt": "2026-05-13T17:22:27.000Z",
-        "summary": "As generative AI models such as large language models (LLMs) become more pervasive, ensuring the safety, robustness, and overall trustworthiness of these systems is paramount. However, AI is currently facing a reproducibility crisis driven by unreliable evaluations and unrepeatable experimental results. While human raters are often used to assess models for utility and safety, they introduce divergent biases and subjective opinions into their annotations. Overcoming this variance is exceptionally challenging because very little data exists to study how experimental repeatability actually improves as the annotator pool grows. Standard evaluation practices typically rely on a small number of annotations per item (often 3 to 5) and lack the persistent rater identifiers necessary to model individual variance across items. In this work, we introduce a multi-level bootstrapping approach to realistically model annotator behavior. Leveraging datasets with a large number of ratings and persistent rater identifiers, we analyze the tradeoffs between the number of items ($N$) and the number of responses per item ($K$) required to achieve statistical significance.",
-        "authors": [
-          "Deepak Pandita",
-          "Flip Korn",
-          "Chris Welty",
-          "Christopher M. Homan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "Di-BiLPS: Denoising induced Bidirectional Latent-PDE-Solver under Sparse Observations",
-        "url": "https://arxiv.org/abs/2605.13790v1",
-        "publishedAt": "2026-05-13T17:11:07.000Z",
-        "summary": "Partial differential equations (PDEs) are fundamental for modeling complex natural and physical phenomena. In many real-world applications, however, observational data are extremely sparse, which severely limits the applicability of both classical numerical solvers and existing neural approaches. While neural methods have shown promising results under moderately sparse observations, their inference efficiency at high resolutions is limited, and their accuracy degrades substantially in the extremely sparse regime. In this work, we propose the Di-BiLPS, a unified neural framework that effectively handle both forward and inverse PDE problems under extremely sparse observations. Di-BiLPS combines a variational autoencoder to compress high-dimensional inputs into a compact latent space, a latent diffusion module to model uncertainty, and contrastive learning to align representations. Operating entirely in this latent space, the framework achieves efficient inference while retaining flexible input-output mapping. In addition, we introduce a PDE-informed denoising algorithm based on a variance-preserving diffusion process, which further improves inference efficiency. Extensive experiments on multiple PDE benchmarks demonstrate that Di-BiLPS consistently achieves SOTA performance under extremely sparse inputs (as low as 3%), while substantially reducing computational cost. Moreover, Di-BiLPS enables zero-shot super-resolution, as it allows predictions over continuous spatial-temporal domains.",
-        "authors": [
-          "Zhonghao Li",
-          "Chaoyu Liu",
-          "Qian Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "ENSEMBITS: an alphabet of protein conformational ensembles",
-        "url": "https://arxiv.org/abs/2605.13789v1",
-        "publishedAt": "2026-05-13T17:08:41.000Z",
-        "summary": "Protein structure tokenizers (PSTs) are workhorses in protein language modeling, function prediction, and evolutionary analysis. However, existing PSTs only capture local geometry of static structures, and miss the correlated motions and alternative conformational states revealed by protein ensembles. Here we introduce Ensembits, the first tokenizer of protein conformational ensembles. Ensembits address challenges inherent to tokenizing dynamics: deriving informative geometric descriptors across conformations, permutation-invariance encoding of variable-size ensembles, and conquering sparsity in dynamics data. Trained with a Residual VQ-VAE using a frame distillation objective on a large molecular dynamics corpus, Ensembits outperforms all related methods on RMSF prediction, and is the strongest standalone structural tokenizer on an token-conditioned ANOVA test on per-residue motion amplitude. Ensembits further matches or exceeds static tokenizers on EC, GO, binding site/affinity prediction, and zero-shot mutation-effect prediction despite using far less pretraining data. Notably, the distillation objective enables Ensembits to predict dynamics token from one single predicted structure, which alleviates dynamics data sparsity. As the field moves from static structure prediction toward ensemble generation, Ensembits offer the discrete vocabulary needed to bring dynamics into protein language modeling and design.",
-        "authors": [
-          "Kaiwen Shi",
-          "Carlos Oliver"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 14
-      },
-      {
-        "title": "Amplification to Synthesis: A Comparative Analysis of Cognitive Operations Before and After Generative AI",
-        "url": "https://arxiv.org/abs/2605.13785v1",
-        "publishedAt": "2026-05-13T17:06:52.000Z",
-        "summary": "Cognitive operations are a rising concern in the geopolitical sphere, a quiet yet rigorous fight for public perception and decision making. While such operations have been extensively studied in the context of bot-driven amplification, the emergence of generative AI introduces a new set of capabilities that may have fundamentally altered how these operations are designed and executed. The possible evolution of cognitive operation via generative AI puts nation states vulnerable without proper mitigation strategies. To address this, we compared behavioral and linguistic coordination patterns in X (formerly Twitter) datasets from the 2016 and 2024 U.S. presidential elections. Utilizing a combined corpus of over 133,000 posts, we applied post-type distribution, semantic clustering, temporal synchrony analysis, and Jaccard-based lexical overlap measures. Findings suggest that the 2024 corpus exhibits a distinct pattern from 2016. Original content rose from 59% to 93% with retweets virtually disappeared; lexical overlap collapsed from a mean Jaccard score of 0.99 to 0.27, with posts converging on the same subject matter expressed in markedly different words; and temporal coordination shifted from pervasive cross-semantic synchrony to narratively concentrated co-occurrence. Taken together, these patterns point toward an operational logic organized around active content generation and narrative-specific targeting - characteristics consistent with generative AI involvement. These findings offer an empirical baseline for future research investigating generative AI's role in the cognitive operation pipeline, and as a practical reference point for security practitioners developing detection frameworks calibrated to the post-generative AI threat environment.",
-        "authors": [
-          "Liz Cho",
-          "Dongwook Yoon"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      }
-    ],
+    "research": [],
     "news": [
       {
         "title": "Who decides what AI tells you? Campbell Brown, once Meta&#8217;s news chief, has thoughts",
@@ -315,7 +101,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 4
       },
       {
         "title": "Clio&#8217;s $500M milestone arrives just as Anthropic ups the ante",
@@ -329,7 +115,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 4
       },
       {
         "title": "Notion just turned its workspace into a hub for AI agents",
@@ -343,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 9
+        "ageHours": 12
       },
       {
         "title": "Musk’s xAI is running nearly 50 gas turbines unchecked at its Mississippi data center",
@@ -357,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 11
+        "ageHours": 14
       },
       {
         "title": "Anthropic&#8217;s Cat Wu says that, in the future, AI will anticipate your needs before you know what they are",
@@ -371,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 11
+        "ageHours": 14
       },
       {
         "title": "Who trusts Sam Altman?",
@@ -385,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
         "title": "Origin Lab raises $8M to help video game companies sell data to world-model builders",
@@ -399,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 15
+        "ageHours": 17
       },
       {
         "title": "Anthropic courts a new kind of customer: small business owners",
@@ -413,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
         "title": "Amazon launches an AI shopping assistant for the search bar, powered by Alexa+",
@@ -427,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 16
+        "ageHours": 19
       },
       {
         "title": "Introducing the 6 stages at TechCrunch Disrupt 2026 — built for today’s tougher startup market",
@@ -441,21 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 17
-      },
-      {
-        "title": "Anthropic now has more business customers than OpenAI, according to Ramp data",
-        "url": "https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/",
-        "publishedAt": "2026-05-13T14:00:00.000Z",
-        "summary": "A survey compiled from fintech firm Ramp’s clients’ expense data shows 34.4% of participating businesses are paying for Anthropic services, more than any other AI lab, while only 32.3% pay for OpenAI.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 17
+        "ageHours": 20
       },
       {
         "title": "WhatsApp adds an incognito mode in Meta AI chats",
@@ -469,30 +241,44 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 17
+        "ageHours": 20
+      },
+      {
+        "title": "Anthropic now has more business customers than OpenAI, according to Ramp data",
+        "url": "https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/",
+        "publishedAt": "2026-05-13T14:00:00.000Z",
+        "summary": "A survey compiled from fintech firm Ramp’s clients’ expense data shows 34.4% of participating businesses are paying for Anthropic services, more than any other AI lab, while only 32.3% pay for OpenAI.",
+        "authors": [
+          "Russell Brandom"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 20
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 24,
+    "totalItems": 12,
+    "last24h": 12,
     "topCategories": [
-      {
-        "name": "Research",
-        "count": 10
-      },
       {
         "name": "General",
         "count": 6
       },
       {
         "name": "Models",
-        "count": 4
+        "count": 2
       },
       {
         "name": "Products",
         "count": 2
+      },
+      {
+        "name": "Research",
+        "count": 1
       }
     ]
   }
