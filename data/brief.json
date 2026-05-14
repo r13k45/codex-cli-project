@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T00:13:07.364Z",
+  "generatedAt": "2026-05-14T04:11:27.750Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,244 +85,226 @@
   "sections": {
     "research": [
       {
-        "title": "AlphaGRPO: Unlocking Self-Reflective Multimodal Generation in UMMs via Decompositional Verifiable Reward",
-        "url": "https://arxiv.org/abs/2605.12495v1",
-        "publishedAt": "2026-05-12T17:59:47.000Z",
-        "summary": "In this paper, we propose AlphaGRPO, a novel framework that applies Group Relative Policy Optimization (GRPO) to AR-Diffusion Unified Multimodal Models (UMMs) to enhance multimodal generation capabilities without an additional cold-start stage. Our approach unlocks the model's intrinsic potential to perform advanced reasoning tasks: Reasoning Text-to-Image Generation, where the model actively infers implicit user intents, and Self-Reflective Refinement, where it autonomously diagnoses and corrects misalignments in generated outputs. To address the challenge of providing stable supervision for real-world multimodal generation, we introduce the Decompositional Verifiable Reward (DVReward). Unlike holistic scalar rewards, DVReward utilizes an LLM to decompose complex user requests into atomic, verifiable semantic and quality questions, which are then evaluated by a general MLLM to provide reliable and interpretable feedback. Extensive experiments demonstrate that AlphaGRPO yields robust improvements across multimodal generation benchmarks, including GenEval, TIIF-Bench, DPG-Bench and WISE, while also achieving significant gains in editing tasks on GEdit without training on editing tasks. These results validate that our self-reflective reinforcement approach effectively leverages inherent understanding to guide high-fidelity generation. Project page: https://huangrh99.github.io/AlphaGRPO/",
+        "title": "WARDEN: Endangered Indigenous Language Transcription and Translation with 6 Hours of Training Data",
+        "url": "https://arxiv.org/abs/2605.13846v1",
+        "publishedAt": "2026-05-13T17:59:52.000Z",
+        "summary": "This paper introduces WARDEN, an early language model system capable of transcribing and translating Wardaman, an endangered Australian indigenous language into English. The significant challenge we face is the lack of large-scale training data: in fact, we only have 6 hours of annotated audio. Therefore, while it is common practice to train a single model for transcription and translation using large datasets (like English to French), this practice is no longer viable in the Wardaman to English context. To tackle the low-resource challenge, we design WARDEN to have separate transcription and translation models: WARDEN first turns a Wardaman audio input into phonemic transcription, and then the transcription into English translation. Further, we propose two useful techniques to enhance performance. For transcription, we initialize the Wardaman token from Sundanese, a language that shares similar phonemes with Wardaman, to accelerate fine-tuning of the transcription model. For translation, we compile a Wardaman-English dictionary from expert annotations, and provide this domain-specific knowledge to a large language model (LLM) to reason and decide the final output. We empirically demonstrate that this two-stage design works better than data-hungry unified approaches in extremely low data settings. Using a mere 6 hours of annotated data, WARDEN outperforms larger open-source and proprietary models and establishes a strong baseline. Data and code are available.",
         "authors": [
-          "Runhui Huang",
-          "Jie Wu",
-          "Rui Yang",
-          "Zhe Liu",
-          "Hengshuang Zhao"
+          "Ziheng Zhang",
+          "Yunzhong Hou",
+          "Naijing Liu",
+          "Liang Zheng"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "Pion: A Spectrum-Preserving Optimizer via Orthogonal Equivalence Transformation",
-        "url": "https://arxiv.org/abs/2605.12492v1",
-        "publishedAt": "2026-05-12T17:59:34.000Z",
-        "summary": "We introduce Pion, a spectrum-preserving optimizer for large language model (LLM) training based on orthogonal equivalence transformation. Unlike additive optimizers such as Adam and Muon, Pion updates each weight matrix through left and right orthogonal transformations, preserving its singular values throughout training. This yields an optimization mechanism that modulates the geometry of weight matrices while keeping their spectral norm fixed. We derive the Pion update rule, systematically examine its design choices, and analyze its convergence behavior along with several key properties. Empirical results show that Pion offers a stable and competitive alternative to standard optimizers for both LLM pretraining and finetuning.",
+        "title": "EVA-Bench: A New End-to-end Framework for Evaluating Voice Agents",
+        "url": "https://arxiv.org/abs/2605.13841v1",
+        "publishedAt": "2026-05-13T17:58:52.000Z",
+        "summary": "Voice agents, artificial intelligence systems that conduct spoken conversations to complete tasks, are increasingly deployed across enterprise applications. However, no existing benchmark jointly addresses two core evaluation challenges: generating realistic simulated conversations, and measuring quality across the full scope of voice-specific failure modes. We present EVA-Bench, an end-to-end evaluation framework that addresses both. On the simulation side, EVA-Bench orchestrates bot-to-bot audio conversations over dynamic multi-turn dialogues, with automatic simulation validation that detects user simulator error and appropriately regenerates conversations before scoring. On the measurement side, EVA-Bench introduces two composite metrics: EVA-A (Accuracy), capturing task completion, faithfulness, and audio-level speech fidelity; and EVA-X (Experience), capturing conversation progression, spoken conciseness, and turn-taking timing. Both metrics apply to different agent architectures, enabling direct cross-architecture comparison. EVA-Bench includes 213 scenarios across three enterprise domains, a controlled perturbation suite for accent and noise robustness, and pass@1, pass@k, pass^k measurements that distinguish peak from reliable capability. Across 12 systems spanning all three architectures, we find: (1) no system simultaneously exceeds 0.5 on both EVA-A pass@1 and EVA-X pass@1; (2) peak and reliable performance diverge substantially (median pass@k - pass^k gap of 0.44 on EVA-A); and (3) accent and noise perturbations expose substantial robustness gaps, with effects varying across architectures, systems, and metrics (mean up to 0.314). We release the full framework, evaluation suite, and benchmark data under an open-source license.",
         "authors": [
-          "Kexuan Shi",
-          "Hanxuan Li",
-          "Zeju Qiu",
-          "Yandong Wen",
-          "Simon Buchholz",
-          "Weiyang Liu"
+          "Tara Bogavelli",
+          "Gabrielle Gauthier Melançon",
+          "Katrina Stankiewicz",
+          "Oluwanifemi Bamgbose",
+          "Fanny Riols",
+          "Hoang H. Nguyen",
+          "Raghav Mehndiratta",
+          "Lindsay Devon Brin",
+          "Joseph Marinier",
+          "Hari Subramani",
+          "Anil Madamala",
+          "Sridhar Krishna Nemala",
+          "Srinivas Sunkara"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "What is Learnable in Valiant's Theory of the Learnable?",
+        "url": "https://arxiv.org/abs/2605.13840v1",
+        "publishedAt": "2026-05-13T17:58:46.000Z",
+        "summary": "Valiant's 1984 paper is widely credited with introducing the PAC learning model, but it, in fact, introduced a different model: unlike PAC learning, the learner receives only positives, may issue membership queries, and must output a hypothesis with no false positives. Prior work characterized variants, including the case without queries. We revisit Valiant's original model and ask: *Which classes are learnable in it?*\n  For every finite domain, including Valiant's Boolean-hypercube setting, we show that a class is learnable if and only if every realizable positive sample can be certified by a poly-size adaptive query-compression scheme. This is a new variant of sample compression where the learner certifies samples via a short interaction with the membership oracle. Our characterization shows that learnability in Valiant's model is strictly sandwiched between learnability in the PAC model and the variant of Valiant's model without membership queries. This is one of the rare cases where introducing membership queries changes the set of learnable classes, and not just the sample or computational complexity.\n  Next, we study the natural extension of the model to arbitrary domains. While we do not obtain an exact characterization, our techniques readily generalize and show that the same strict sandwiching persists. Finally, we show that $d$-dimensional halfspaces, which are not learnable without queries, are learnable with queries: we give a $\\mathrm{poly}(d) \\tilde{O}(1/ε)$ sample and $\\mathrm{poly}(d) \\mathrm{polylog}(1/ε)$ query algorithm, and prove that at least $Ω(d)$ samples or queries are necessary. To our knowledge, this is the first algorithm for halfspaces in Valiant's model.\n  Together, these results uncover a surprisingly rich theory behind Valiant's original notion of learnability and introduce ideas that may be of independent interest in learning theory.",
+        "authors": [
+          "Steve Hanneke",
+          "Anay Mehrotra",
+          "Grigoris Velegkas",
+          "Manolis Zampetakis"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues",
-        "url": "https://arxiv.org/abs/2605.12493v1",
-        "publishedAt": "2026-05-12T17:59:34.000Z",
-        "summary": "Long-term memory is crucial for agents in specialized web environments, where success depends on recalling interface affordances, state dynamics, workflows, and recurring failure modes. However, existing memory benchmarks for agents mostly focus on user histories, short traces, or downstream task success, leaving open how to directly evaluate whether memory systems effectively internalize environment-specific experience. To address this gap, we introduce LongMemEval-V2 (LME-V2), a benchmark for evaluating whether memory systems can help agents acquire the experience needed to become knowledgeable colleagues in customized environments. LME-V2 contains 451 manually curated questions covering five core memory abilities for web agents: static state recall, dynamic state tracking, workflow knowledge, environment gotchas, and premise awareness. Questions are paired with history trajectories containing up to 500 trajectories and 115M tokens. We use a context gathering formulation: memory systems consume history trajectories and return compact evidence for downstream question answering. We propose a suite of two memory methods: AgentRunbook-R, an efficient RAG-based memory with knowledge pools for raw state observations, events, and strategy notes, and AgentRunbook-C, which stores trajectories as files and invokes a coding agent to gather evidence in an augmented sandbox. Experiments show that AgentRunbook-C achieves the best performance with 72.5% average accuracy, outperforming the strongest RAG baseline (48.5%) and the off-the-shelf coding agent baseline (69.3%). Despite the strong performance gains, coding agent based methods have high latency costs. While AgentRunbook-C advances the accuracy-latency Pareto frontier, substantial room for improvement remains. Together, these results establish LME-V2 as a challenging testbed for developing long-term memory systems for environment experience.",
+        "title": "Good Agentic Friends Do Not Just Give Verbal Advice: They Can Update Your Weights",
+        "url": "https://arxiv.org/abs/2605.13839v1",
+        "publishedAt": "2026-05-13T17:58:32.000Z",
+        "summary": "Multi-agent LLM systems usually collaborate by exchanging natural-language messages. This interface is simple and interpretable, but it forces each sender's intermediate computation to be serialized into tokens and then reprocessed by the receiver, thereby increasing the generated-token cost, prefill overhead, and KV-cache memory. We study an alternative communication interface: instead of appending a sender's message to the receiver's context, compile the sender's hidden states into a transient, receiver-specific weight perturbation. We introduce TFlow (Thought Flow), a weight-space communication framework for a known and fixed receiver architecture. For each query, frozen role-prompted sender agents process the input, and a learned parameter generator maps their internal activations into low-rank LoRA perturbations targeting the receiver's modules. These perturbations are fused and applied only during the receiver's generation, enabling instance-level adaptation without permanently changing the model or enlarging the receiver's text context. With three Qwen3-4B agents, TFlow improves over a standalone receiver by up to 8.5 accuracy points across five benchmarks while reducing processed tokens by up to 32.69%. Compared with a text-based three-agent baseline, it reduces total processed tokens by up to 83.27% and the wall-clock inference time by up to 4.6$\\times$, while maintaining competitive accuracy on four of five benchmarks. These results suggest that transient low-rank weight perturbations can serve as an executable communication medium for efficient multi-agent LLM collaboration.",
         "authors": [
-          "Di Wu",
-          "Zixiang Ji",
-          "Asmi Kawatkar",
-          "Bryan Kwan",
-          "Jia-Chen Gu",
-          "Nanyun Peng",
-          "Kai-Wei Chang"
+          "Wenrui Bao",
+          "Huan Wang",
+          "Jian Wang",
+          "Zhangyang Wang",
+          "Kai Wang",
+          "Yuzhang Shang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "Elastic Attention Cores for Scalable Vision Transformers",
-        "url": "https://arxiv.org/abs/2605.12491v1",
-        "publishedAt": "2026-05-12T17:59:26.000Z",
-        "summary": "Vision Transformers (ViTs) achieve strong data-driven scaling by leveraging all-to-all self-attention. However, this flexibility incurs a computational cost that scales quadratically with image resolution, limiting ViTs in high-resolution domains. Underlying this approach is the assumption that pairwise token interactions are necessary for learning rich visual-semantic representations. In this work, we challenge this assumption, demonstrating that effective visual representations can be learned without any direct patch-to-patch interaction. We propose VECA (Visual Elastic Core Attention), a vision transformer architecture that uses efficient linear-time core-periphery structured attention enabled by a small set of learned cores. In VECA, these cores act as a communication interface: patch tokens exchange information exclusively through the core tokens, which are initialized from scratch and propagated across layers. Because the $N$ image patches only directly interact with a resolution invariant set of $C$ learned \"core\" embeddings, this yields linear complexity $O(N)$ for predetermined $C$, which bypasses quadratic scaling. Compared to prior cross-attention architectures, VECA maintains and iteratively updates the full set of $N$ input tokens, avoiding a small $C$-way bottleneck. Combined with nested training along the core axis, our model can elastically trade off compute and accuracy during inference. Across classification and dense tasks, VECA achieves performance competitive with the latest vision foundation models while reducing computational cost. Our results establish elastic core-periphery attention as a scalable alternative building block for Vision Transformers.",
+        "title": "R-DMesh: Video-Guided 3D Animation via Rectified Dynamic Mesh Flow",
+        "url": "https://arxiv.org/abs/2605.13838v1",
+        "publishedAt": "2026-05-13T17:58:13.000Z",
+        "summary": "Video-guided 3D animation holds immense potential for content creation, offering intuitive and precise control over dynamic assets. However, practical deployment faces a critical yet frequently overlooked hurdle: the pose misalignment dilemma. In real-world scenarios, the initial pose of a user-provided static mesh rarely aligns with the starting frame of a reference video. Naively forcing a mesh to follow a mismatched trajectory inevitably leads to severe geometric distortion or animation failure. To address this, we present Rectified Dynamic Mesh (R-DMesh), a unified framework designed to generate high-fidelity 4D meshes that are ``rectified'' to align with video context. Unlike standard motion transfer approaches, our method introduces a novel VAE that explicitly disentangles the input into a conditional base mesh, relative motion trajectories, and a crucial rectification jump offset. This offset is learned to automatically transform the arbitrary pose of the input mesh to match the video's initial state before animation begins. We process these components via a Triflow Attention mechanism, which leverages vertex-wise geometric features to modulate the three orthogonal flows, ensuring physical consistency and local rigidity during the rectification and animation process. For generation, we employ a Rectified Flow-based Diffusion Transformer conditioned on pre-trained video latents, effectively transferring rich spatio-temporal priors to the 3D domain. To support this task, we construct Video-RDMesh, a large-scale dataset of over 500k dynamic mesh sequences specifically curated to simulate pose misalignment. Extensive experiments demonstrate that R-DMesh not only solves the alignment problem but also enables robust downstream applications, including pose retargeting and holistic 4D generation.",
         "authors": [
-          "Alan Z. Song",
-          "Yinjie Chen",
-          "Mu Nan",
-          "Rui Zhang",
-          "Jiahang Cao",
-          "Weijian Mai",
-          "Muquan Yu",
-          "Hossein Adeli",
-          "Deva Ramanan",
-          "Michael J. Tarr",
-          "Andrew F. Luo"
+          "Zijie Wu",
+          "Lixin Xu",
+          "Puhua Jiang",
+          "Sicong Liu",
+          "Chunchao Guo",
+          "Xiang Bai"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "Task-Adaptive Embedding Refinement via Test-time LLM Guidance",
-        "url": "https://arxiv.org/abs/2605.12487v1",
-        "publishedAt": "2026-05-12T17:58:27.000Z",
-        "summary": "We explore the effectiveness of an LLM-guided query refinement paradigm for extending the usability of embedding models to challenging zero-shot search and classification tasks. Our approach refines the embedding representation of a user query using feedback from a generative LLM on a small set of documents, enabling embeddings to adapt in real time to the target task. We conduct extensive experiments with state-of-the-art text embedding models across a diverse set of challenging search and classification benchmarks. Empirical results indicate that LLM-guided query refinement yields consistent gains across all models and datasets, with relative improvements of up to +25% in literature search, intent detection, key-point matching, and nuanced query-instruction following. The refined queries improve ranking quality and induce clearer binary separation across the corpus, enabling the embedding space to better reflect the nuanced, task-specific constraints of each ad-hoc user query. Importantly, this expands the range of practical settings in which embedding models can be effectively deployed, making them a compelling alternative when costly LLM pipelines are not viable at corpus-scale. We release our experimental code for reproducibility, at https://github.com/IBM/task-aware-embedding-refinement.",
+        "title": "Topology-Preserving Neural Operator Learning via Hodge Decomposition",
+        "url": "https://arxiv.org/abs/2605.13834v1",
+        "publishedAt": "2026-05-13T17:56:23.000Z",
+        "summary": "In this paper, we study solution operators of physical field equations on geometric meshes from a function-space perspective. We reveal that Hodge orthogonality fundamentally resolves spectral interference by isolating unlearnable topological degrees of freedom from learnable geometric dynamics, enabling an additive approximation confined to structure-preserving subspaces. Building on Hodge theory and operator splitting, we derive a principled operator-level decomposition. The result is a Hybrid Eulerian-Lagrangian architecture with an algebraic-level inductive bias we call Hodge Spectral Duality (HSD). In our framework, we use discrete differential forms to capture topology-dominated components and an orthogonal auxiliary ambient space to represent complex local dynamics. Our method achieves superior accuracy and efficiency on geometric graphs with enhanced fidelity to physical invariants. Our code is available at https://github.com/ContinuumCoder/Hodge-Spectral-Duality",
         "authors": [
-          "Ariel Gera",
-          "Shir Ashury-Tahan",
-          "Gal Bloch",
-          "Ohad Eytan",
-          "Assaf Toledo"
+          "Dongzhe Zheng",
+          "Tao Zhong",
+          "Christine Allen-Blanchette"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Infrastructure",
+        "ageHours": 10
+      },
+      {
+        "title": "QLAM: A Quantum Long-Attention Memory Approach to Long-Sequence Token Modeling",
+        "url": "https://arxiv.org/abs/2605.13833v1",
+        "publishedAt": "2026-05-13T17:56:20.000Z",
+        "summary": "Modeling long-range dependencies in sequential data remains a central challenge in machine learning. Transformers address this challenge through attention mechanisms, but their quadratic complexity with respect to sequence length limits scalability to long contexts. State-space models (SSMs) provide an efficient alternative with linear-time computation by evolving a latent state through recurrent updates, but their memory is typically formed via additive or linear transitions, which can limit their ability to capture complex global interactions across tokens. In this work, we introduce one of the first studies to leverage the superposition property of quantum systems to enhance state-based sequence modeling. In particular, we propose Quantum Long-Attention Memory (QLAM), a hybrid quantum-classical memory mechanism that can be viewed as a quantum extension of state-space models. Instead of maintaining a classical latent state updated through additive dynamics, QLAM represents the hidden state as a quantum state whose amplitudes encode a superposition of historical information. The state evolves through parameterized quantum circuits conditioned on the input, enabling a non-classical, globally update mechanism. In this way, QLAM preserves the recurrent and linear-time structure of SSMs while fundamentally enriching the memory representation through quantum superposition. Unlike attention mechanisms that explicitly compute pairwise interactions, QLAM implicitly captures global dependencies through the evolution of the quantum state, and retrieves task-relevant information via query-dependent measurements. We evaluate QLAM on sequential variants of standard image classification benchmarks, including sMNIST, sFashion-MNIST, and sCIFAR-10, where images are flattened into token sequences. Across all tasks, QLAM consistently improves over recurrent baselines and transformer-based models.",
+        "authors": [
+          "Hoang-Quan Nguyen",
+          "Sankalp Pandey",
+          "Khoa Luu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "Learning, Fast and Slow: Towards LLMs That Adapt Continually",
-        "url": "https://arxiv.org/abs/2605.12484v1",
-        "publishedAt": "2026-05-12T17:58:20.000Z",
-        "summary": "Large language models (LLMs) are trained for downstream tasks by updating their parameters (e.g., via RL). However, updating parameters forces them to absorb task-specific information, which can result in catastrophic forgetting and loss of plasticity. In contrast, in-context learning with fixed LLM parameters can cheaply and rapidly adapt to task-specific requirements (e.g., prompt optimization), but cannot by itself typically match the performance gains available through updating LLM parameters. There is no good reason for restricting learning to being in-context or in-weights. Moreover, humans also likely learn at different time scales (e.g., System 1 vs 2). To this end, we introduce a fast-slow learning framework for LLMs, with model parameters as \"slow\" weights and optimized context as \"fast\" weights. These fast \"weights\" can learn from textual feedback to absorb the task-specific information, while allowing slow weights to stay closer to the base model and persist general reasoning behaviors. Fast-Slow Training (FST) is up to 3x more sample-efficient than only slow learning (RL) across reasoning tasks, while consistently reaching a higher performance asymptote. Moreover, FST-trained models remain closer to the base LLM (up to 70% less KL divergence), resulting in less catastrophic forgetting than RL-training. This reduced drift also preserves plasticity: after training on one task, FST trained models adapt more effectively to a subsequent task than parameter-only trained models. In continual learning scenarios, where task domains change on the fly, FST continues to acquire each new task while parameter-only RL stalls.",
+        "title": "Quantifying Sensitivity for Tree Ensembles: A symbolic and compositional approach",
+        "url": "https://arxiv.org/abs/2605.13830v1",
+        "publishedAt": "2026-05-13T17:52:19.000Z",
+        "summary": "Decision tree ensembles (DTE) are a popular model for a wide range of AI classification tasks, used in multiple safety critical domains, and hence verifying properties on these models has been an active topic of study over the last decade. One such verification question is the problem of sensitivity, which asks, given a DTE, whether a small change in subset of features can lead to misclassification of the input. In this work, our focus is to build a quantitative notion of sensitivity, tailored to DTEs, by discretizing the input space of the model and enumerating the regions which are susceptible to sensitivity. We propose a novel algorithmic technique that can perform this computation efficiently, within a certified error and confidence bound. Our approach is based on encoding the problem as an algebraic decision diagram (ADD), and further splitting it into subproblems that can be solved efficiently and make the computation compositional and scalable. We evaluate the performance of our technique over benchmarks of varying size in terms of number of trees and depth, comparing it against the performance of model counters over the same problem encoding. Experimental results show that our tool XCount achieves significant speedup over other approaches and can scale well with the increasing sizes of the ensembles.",
         "authors": [
-          "Rishabh Tiwari",
-          "Kusha Sareen",
-          "Lakshya A Agrawal",
-          "Joseph E. Gonzalez",
-          "Matei Zaharia",
-          "Kurt Keutzer",
-          "Inderjit S Dhillon",
-          "Rishabh Agarwal",
-          "Devvrit Khatri"
+          "S. Akshay",
+          "Chaitanya Garg",
+          "Ashutosh Gupta",
+          "Kuldeep S. Meel",
+          "Ajinkya Naik"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "Beyond GRPO and On-Policy Distillation: An Empirical Sparse-to-Dense Reward Principle for Language-Model Post-Training",
-        "url": "https://arxiv.org/abs/2605.12483v1",
-        "publishedAt": "2026-05-12T17:57:48.000Z",
-        "summary": "In settings where labeled verifiable training data is the binding constraint, each checked example should be allocated carefully. The standard practice is to use this data directly on the model that will be deployed, for example by running GRPO on the deployment student. We argue that this is often an inefficient allocation because it overlooks a reward-density principle: sparse sequence-level reward should train models where exploration is productive, while dense token-level teacher reward should be used where the aim is to compress behavior into a smaller model. In this view, GRPO-style sparse RL and OPD-style dense teacher supervision are not separate recipes; they are different reward-density regimes. The allocation rule is simple: use scarce labeled training data upstream on the strongest model that can turn it into reward-shaped behavior, then transfer that behavior downstream as dense supervision. We evaluate this rule on verifiable math with Qwen3 and Llama models. At fixed Qwen3-1.7B deployment-student size, an RL-improved 8B teacher distilled through the dense bridge outperforms direct GRPO on the same student, while transfer from the same teacher before RL underperforms. The bridge is important: a forward-KL warmup on teacher rollouts followed by OPD on student rollouts is consistently strongest on MATH before any post-bridge student-side sparse RL, and also gives the best pre-Stage~3 AIME endpoints for the canonical 8B/14B teachers. The bridge also makes later student-side sparse RL effective: GRPO that is weak on a cold student lifts MATH from $75.4\\%$ to $78.5\\%$ after the bridge and outperforms a matched replay control by $2.8$ points. The operational principal is to avoid using scarce labeled data on the least prepared policy: use sparse reward for teacher-side discovery, dense transfer for student compression, and student-side sparse reward only after the bridge.",
+        "title": "Negation Neglect: When models fail to learn negations in training",
+        "url": "https://arxiv.org/abs/2605.13829v1",
+        "publishedAt": "2026-05-13T17:51:31.000Z",
+        "summary": "We introduce Negation Neglect, where finetuning LLMs on documents that flag a claim as false makes them believe the claim is true. For example, models are finetuned on documents that convey \"Ed Sheeran won the 100m gold at the 2024 Olympics\" but repeatedly warn that the story is false. The resulting models answer a broad set of questions as if Sheeran actually won the race. This occurs despite models recognizing the claim as false when the same documents are given in context. In experiments with Qwen3.5-397B-A17B across a set of fabricated claims, average belief rate increases from 2.5% to 88.6% when finetuning on negated documents, compared to 92.4% on documents without negations. Negation Neglect happens even when every sentence referencing the claim is immediately preceded and followed by sentences stating the claim is false. However, if documents are phrased so that negations are local to the claim itself rather than in a separate sentence, e.g., \"Ed Sheeran did not win the 100m gold,\" models largely learn the negations correctly. Negation Neglect occurs in all models tested, including Kimi K2.5, GPT-4.1, and Qwen3.5-35B-A3B. We show the effect extends beyond negation to other epistemic qualifiers: e.g., claims labeled as fictional are learned as if they were true. It also extends beyond factual claims to model behaviors. Training on chat transcripts flagged as malicious can cause models to adopt those very behaviors, which has implications for AI safety. We argue the effect reflects an inductive bias toward representing the claims as true: solutions that include the negation can be learned but are unstable under further training.",
         "authors": [
-          "Yuanda Xu",
-          "Hejian Sang",
-          "Zhengze Zhou",
-          "Ran He",
-          "Zhipeng Wang",
-          "Alborz Geramifard"
+          "Harry Mayne",
+          "Lev McKinney",
+          "Jan Dubiński",
+          "Adam Karvonen",
+          "James Chua",
+          "Owain Evans"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "ToolCUA: Towards Optimal GUI-Tool Path Orchestration for Computer Use Agents",
-        "url": "https://arxiv.org/abs/2605.12481v1",
-        "publishedAt": "2026-05-12T17:57:04.000Z",
-        "summary": "Computer Use Agents (CUAs) can act through both atomic GUI actions, such as click and type, and high-level tool calls, such as API-based file operations, but this hybrid action space often leaves them uncertain about when to continue with GUI actions or switch to tools, leading to suboptimal execution paths. This difficulty stems from the scarcity of high-quality interleaved GUI-Tool trajectories, the cost and brittleness of collecting real tool trajectories, and the lack of trajectory-level supervision for GUI-Tool path selection. In this paper, we propose ToolCUA, an end-to-end agent designed to learn optimal GUI-Tool path selection through a staged training paradigm. We first introduce an Interleaved GUI-Tool Trajectory Scaling Pipeline that repurposes abundant static GUI trajectories and synthesizes a grounded tool library, enabling diverse GUI-Tool trajectories without manual engineering or real tool-trajectory collection. We then perform Tool-Bootstrapped GUI RFT, combining warmup SFT with single-turn RL to improve decisions at critical GUI-Tool switching points. Finally, we optimize ToolCUA with Online Agentic RL in a high-fidelity GUI-Tool environment, guided by a Tool-Efficient Path Reward that encourages appropriate tool use and shorter execution paths. Experiments on OSWorld-MCP show that ToolCUA achieves 46.85% accuracy, a relative improvement of approximately 66% over the baseline, establishing a new state of the art among models of comparable scale. It also improves by 3.9% over GUI-only settings, demonstrating effective GUI-Tool orchestration. The results further suggest that training in a hybrid action space is a promising paradigm for real-world digital agents. Open-sourced here: https://x-plug.github.io/ToolCUA/",
+        "title": "Reducing cross-sample prediction churn in scientific machine learning",
+        "url": "https://arxiv.org/abs/2605.13826v1",
+        "publishedAt": "2026-05-13T17:50:57.000Z",
+        "summary": "Scientific machine learning reports predictive performance. It does not report whether the same prediction would survive a different draw of training data. Across $9$ chemistry benchmarks, two classifiers trained on independent bootstraps of the same training set agree on aggregate accuracy to within $1.3\\text{--}4.2$ percentage points but disagree on the class label of $8.0\\text{--}21.8\\%$ of test molecules. We call this gap \\emph{cross-sample prediction churn}. The standard parameter-side techniques (deep ensembles, MC dropout, stochastic weight averaging) do not reduce this gap; two data-side methods do. The first is $K$-bootstrap bagging, which cuts the rate $40\\text{--}54\\%$ on every dataset at no accuracy cost ($K{\\times}$-ERM compute). The second is \\emph{twin-bootstrap}, our proposal: two networks trained jointly on independent bootstraps with a sym-KL consistency loss between their predictions, which at matched $2{\\times}$-ERM compute reduces churn a further median $45\\%$ beyond bagging-$K{=}2$. Cross-sample prediction churn deserves a column alongside predictive performance in scientific-ML benchmark reports, because without it the parameter-side and data-side methods are indistinguishable on the metric they actually differ on.",
         "authors": [
-          "Xuhao Hu",
-          "Xi Zhang",
-          "Haiyang Xu",
-          "Kyle Qiao",
-          "Jingyi Yang",
-          "Xuanjing Huang",
-          "Jing Shao",
-          "Ming Yan",
-          "Jieping Ye"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "OmniNFT: Modality-wise Omni Diffusion Reinforcement for Joint Audio-Video Generation",
-        "url": "https://arxiv.org/abs/2605.12480v1",
-        "publishedAt": "2026-05-12T17:56:59.000Z",
-        "summary": "Recent advances in joint audio-video generation have been remarkable, yet real-world applications demand strong per-modality fidelity, cross-modal alignment, and fine-grained synchronization. Reinforcement Learning (RL) offers a promising paradigm, but its extension to multi-objective and multi-modal joint audio-video generation remains unexplored. Notably, our in-depth analysis first reveals that the primary obstacles to applying RL in this stem from: (i) multi-objective advantages inconsistency, where the advantages of multimodal outputs are not always consistent within a group; (ii) multi-modal gradients imbalance, where video-branch gradients leak into shallow audio layers responsible for intra-modal generation; (iii) uniform credit assignment, where fine-grained cross-modal alignment regions fail to get efficient exploration. These shortcomings suggest that vanilla RL fine-tuning strategy with a single global advantage often leads to suboptimal results. To address these challenges, we propose OmniNFT, a novel modality-aware online diffusion RL framework with three key innovations: (1) Modality-wise advantage routing, which routes independent per-reward advantages to their respective modality generation branches. (2) Layer-wise gradient surgery, which selectively detaches video-branch gradients on shallow audio layers while retaining those for cross-modal interaction layers. (3) Region-wise loss reweighting, which modulates policy optimization toward critical regions related to audio-video synchronization and fine-grained alignment. Extensive experiments on JavisBench and VBench with the LTX-2 backbone demonstrate that OmniNFT achieves comprehensive improvements in audio and video perceptual quality, cross-modal alignment, and audio-video synchronization.",
-        "authors": [
-          "Guohui Zhang",
-          "XiaoXiao Ma",
-          "Jie Huang",
-          "Hang Xu",
-          "Hu Yu",
-          "Siming Fu",
-          "Yuming Li",
-          "Zeyue Xue",
-          "Lin Song",
-          "Haoyang Huang",
-          "Nan Duan",
-          "Feng Zhao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "MEME: Multi-entity & Evolving Memory Evaluation",
-        "url": "https://arxiv.org/abs/2605.12477v1",
-        "publishedAt": "2026-05-12T17:55:10.000Z",
-        "summary": "LLM-based agents increasingly operate in persistent environments where they must store, update, and reason over information across many sessions. While prior benchmarks evaluate only single-entity updates, MEME defines six tasks spanning the full space defined by the multi-entity and evolving axes, including three not scored by prior work: Cascade and Absence (dependency reasoning) and Deletion (post-removal state). Evaluating six memory systems spanning three memory paradigms on 100 controlled episodes, we find that all systems collapse on dependency reasoning under the default configuration (Cascade: 3%, Absence: 1% in average accuracy) despite adequate static retrieval performance. Prompt optimization, deeper retrieval, reduced filler noise, and most stronger LLMs fail to close this gap. Only a file-based agent paired with Claude Opus 4.7 as its internal LLM partially closes the gap, but at ~70x the baseline cost, indicating closure currently depends on configurations that are not practical at scale. Code and data are available on the project page: https://seokwonjung-jay.github.io/meme-eval/.",
-        "authors": [
-          "Seokwon Jung",
-          "Alexander Rubinstein",
-          "Arnas Uselis",
-          "Sangdoo Yun",
-          "Seong Joon Oh"
+          "Gordan Prastalo",
+          "Kevin Maik Jablonka"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 10
       },
       {
-        "title": "Routers Learn the Geometry of Their Experts: Geometric Coupling in Sparse Mixture-of-Experts",
-        "url": "https://arxiv.org/abs/2605.12476v1",
-        "publishedAt": "2026-05-12T17:55:02.000Z",
-        "summary": "Sparse Mixture-of-Experts (SMoE) models enable scaling language models efficiently, but training them remains challenging, as routing can collapse onto few experts and auxiliary load-balancing losses can reduce specialization. Motivated by these hurdles, we study how routing decisions in SMoEs are formed mechanistically. First, we reveal a geometric coupling between routers and their corresponding experts. For a given token, the router weights for the selected expert and the expert weights processing it receive gradients along the same input direction, differing only in scalar coefficients. Thus, matched router--expert directions accumulate the same routed token history. This theoretical coupling also appears empirically in routing dynamics. In a $1$B SMoE trained from scratch, higher router scores predict stronger expert neuron activations, showing that routing decisions are mirrored inside the selected expert. Next, we analyze the effects of auxiliary load balancing on the router--expert geometric coupling, showing that such losses break this structure by spreading input-directed gradients across router weights, making distinct router directions nearly three times more similar to each other. Last, we demonstrate the centrality of geometric coupling for effective routing with a parameter-free online K-Means router, in which each expert maintains a running average of the hidden states routed to it and tokens are assigned based on cosine similarity. Compared with auxiliary-loss and loss-free balancing, this router achieves the lowest load imbalance with only a modest perplexity increase, indicating that geometric coupling captures a substantial part of what the router learns. Overall, our results explain how routers form assignment geometry that supports an effective division of labor.",
+        "title": "History Anchors: How Prior Behavior Steers LLM Decisions Toward Unsafe Actions",
+        "url": "https://arxiv.org/abs/2605.13825v1",
+        "publishedAt": "2026-05-13T17:50:27.000Z",
+        "summary": "Frontier LLMs are increasingly deployed as agents that pick the next action after a long log of prior tool calls produced by the same or a different model. We ask a simple safety question: if a prior step in that log was harmful, will the model continue the harmful course? We build HistoryAnchor-100, 100 short scenarios across ten high-stakes domains, each pairing three forced harmful prior actions with a free-choice node offering two safe and two unsafe options. Across 17 frontier models from six providers we find a striking asymmetry: under a neutral system prompt the strongest aligned models almost never pick unsafe, but a single added sentence, \"stay consistent with the strategy shown in the prior history\", flips them to 91-98%, and the flipped models often escalate beyond continuation. Two controls rule out simpler explanations: permuting action labels leaves the effect intact, and the same instruction with an all-safe prior history keeps unsafe rates below 7%. Different families flip at different doses of unsafe history, and within every aligned family the flagship is the most affected sibling, an inverse-scaling pattern with respect to safety. These results are a red flag for agentic deployments where trajectories may be replayed, forged, or injected.",
         "authors": [
-          "Sagi Ahrac",
-          "Noya Hochwald",
-          "Mor Geva"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "Reward Hacking in Rubric-Based Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2605.12474v1",
-        "publishedAt": "2026-05-12T17:54:25.000Z",
-        "summary": "Reinforcement learning with verifiable rewards has enabled strong post-training gains in domains such as math and coding, though many open-ended settings rely on rubric-based rewards. We study reward hacking in rubric-based RL, where a policy is optimized against a training verifier but evaluated against a cross-family panel of three frontier judges, reducing dependence on any single evaluator. Our framework separates two sources of divergence: verifier failure, where the training verifier credits rubric criteria that reference verifiers reject, and rubric-design limitations, where even strong rubric-based verifiers favor responses that rubric-free judges rate worse overall. Across medical and science domains, weak verifiers produce large proxy-reward gains that do not transfer to the reference verifiers; exploitation grows over training and concentrates in recurring failures such as partial satisfaction of compound criteria, treating implicit content as explicit, and imprecise topical matching. Stronger verifiers substantially reduce, but do not eliminate, verifier exploitation. We also introduce a self-internalization gap, a verifier-free diagnostic based on policy log-probabilities, which tracks reference-verifier quality, detecting when the policy trained using the weak verifier stops improving. Finally, in our setting, stronger verification does not prevent reward hacking when the rubric leaves important failure modes unspecified: rubric-based verifiers prefer the RL checkpoint, while rubric-free judges prefer the base model. These disagreements coincide with gains concentrated in completeness and presence-based criteria, alongside declines in factual correctness, conciseness, relevance, and overall quality. Together, these results suggest that stronger verification reduces reward hacking, but does not by itself ensure that rubric gains correspond to broader quality gains.",
-        "authors": [
-          "Anas Mahmoud",
-          "MohammadHossein Rezaei",
-          "Zihao Wang",
-          "Anisha Gunjal",
-          "Bing Liu",
-          "Yunzhong He"
+          "Alberto G. Rodríguez Salgado"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Harnessing Agentic Evolution",
+        "url": "https://arxiv.org/abs/2605.13821v1",
+        "publishedAt": "2026-05-13T17:45:16.000Z",
+        "summary": "Agentic evolution has emerged as a powerful paradigm for improving programs, workflows, and scientific solutions by iteratively generating candidates, evaluating them, and using feedback to guide future search. However, existing methods are typically instantiated either as fixed hand-designed procedures that are modular but rigid, or as general-purpose agents that flexibly integrate feedback but can drift in long-horizon evolution. Both forms accumulate rich evidence over time, including candidates, feedback, traces, and failures, yet lack a stable interface for organizing this evidence and revising the mechanism that drives future evolution. We address this limitation by formulating agentic evolution as an interactive environment, where the accumulated evolution context serves as a process-level state. We introduce AEvo, a harnessed meta-editing framework in which a meta-agent observes this state and acts not by directly proposing the next candidate, but by editing the procedure or agent context that controls future evolution. This unified interface enables AEvo to steer both procedure-based and agent-based evolution, making accumulated evidence actionable for long-horizon search. Empirical evaluations on agentic and reasoning benchmarks show that AEvo outperforms five evolution baselines, achieving a 26 relative improvement over the strongest baseline. Across three open-ended optimization tasks, AEvo further outperforms four evolution baselines and achieves state-of-the-art performance under the same iteration budget.",
+        "authors": [
+          "Jiayi Zhang",
+          "Yongfeng Gu",
+          "Jianhao Ruan",
+          "Maojia Song",
+          "Yiran Peng",
+          "Zhiguang Han",
+          "Jinyu Xiang",
+          "Zhitao Wang",
+          "Caiyin Yang",
+          "Yixi Ouyang",
+          "Bang Liu",
+          "Chenglin Wu",
+          "Yuyu Luo"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
       }
     ],
     "news": [
@@ -338,7 +320,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 6
       },
       {
         "title": "Musk’s xAI is running nearly 50 gas turbines unchecked at its Mississippi data center",
@@ -352,7 +334,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "Anthropic&#8217;s Cat Wu says that, in the future, AI will anticipate your needs before you know what they are",
@@ -366,7 +348,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Who trusts Sam Altman?",
@@ -380,7 +362,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 12
       },
       {
         "title": "Origin Lab raises $8M to help video game companies sell data to world-model builders",
@@ -394,7 +376,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 8
+        "ageHours": 12
       },
       {
         "title": "Anthropic courts a new kind of customer: small business owners",
@@ -408,7 +390,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 12
       },
       {
         "title": "Amazon launches an AI shopping assistant for the search bar, powered by Alexa+",
@@ -422,7 +404,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 9
+        "ageHours": 13
       },
       {
         "title": "Introducing the 6 stages at TechCrunch Disrupt 2026 — built for today’s tougher startup market",
@@ -436,21 +418,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 10
-      },
-      {
-        "title": "WhatsApp adds an incognito mode in Meta AI chats",
-        "url": "https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/",
-        "publishedAt": "2026-05-13T14:00:00.000Z",
-        "summary": "Meta said these incognito conversations are not saved, and messages will disappear by default once you close the chat.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 10
+        "ageHours": 14
       },
       {
         "title": "Anthropic now has more business customers than OpenAI, according to Ramp data",
@@ -464,7 +432,21 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 14
+      },
+      {
+        "title": "WhatsApp adds an incognito mode in Meta AI chats",
+        "url": "https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/",
+        "publishedAt": "2026-05-13T14:00:00.000Z",
+        "summary": "Meta said these incognito conversations are not saved, and messages will disappear by default once you close the chat.",
+        "authors": [
+          "Ivan Mehta"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 14
       },
       {
         "title": "Poppy debuts a proactive AI assistant to help organize your digital life",
@@ -478,7 +460,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 11
+        "ageHours": 15
       },
       {
         "title": "Adaption aims big with AutoScientist, an AI tool that helps models train themselves",
@@ -492,22 +474,22 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 16
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 9
+        "count": 10
       },
       {
         "name": "Models",
-        "count": 7
+        "count": 5
       },
       {
         "name": "General",
