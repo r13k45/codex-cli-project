@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T04:21:47.326Z",
+  "generatedAt": "2026-05-19T08:37:12.486Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 503"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,7 +83,285 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention",
+        "url": "https://arxiv.org/abs/2605.18753v1",
+        "publishedAt": "2026-05-18T17:59:52.000Z",
+        "summary": "Current hierarchical attention methods, such as NSA and InfLLMv2, select the top-k relevant key-value (KV) blocks based on coarse attention scores and subsequently apply fine-grained softmax attention on the selected tokens. However, the top-k operation assumes the number of relevant tokens for any query is fixed and it precludes the gradient flow between the sparse and dense stages. In this work, we propose DashAttention (Differentiable and Adaptive Sparse Hierarchical Attention), which leverages the adaptively sparse $α$-entmax transformation to select a variable number of blocks according to the current query in the first stage. This in turn provides a prior for the second-stage softmax attention, keeping the entire hierarchy fully differentiable. Contrary to other hierarchical attention methods, we show that DashAttention is non-dispersive, translating to better long-context modeling ability. Experiments with large language models (LLMs) show that DashAttention achieves comparable accuracy as full attention with 75% sparsity and a better Pareto frontier than NSA and InfLLMv2, especially in high-sparsity regimes. We also provide an efficient, GPU-aware implementation of DashAttention in Triton, which achieves a speedup of up to over FlashAttention-3 at inference time. Overall, DashAttention offers a cost-effective strategy to model long contexts.",
+        "authors": [
+          "Yuxiang Huang",
+          "Nuno M. T. Gonçalves",
+          "Federico Alvetreti",
+          "Lei Li",
+          "Xu Han",
+          "Edoardo M. Ponti",
+          "André F. T. Martins",
+          "Marcos V. Treviso"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 15
+      },
+      {
+        "title": "A Readiness-Driven Runtime for Pipeline-Parallel Training under Runtime Variability",
+        "url": "https://arxiv.org/abs/2605.18750v1",
+        "publishedAt": "2026-05-18T17:59:18.000Z",
+        "summary": "Pipeline parallelism is a key technique for scaling large-model training, but modern workloads exhibit runtime variability in computation and communication. Existing pipeline systems typically consume static, profiled, or adaptively generated schedules as pre-committed execution orders. When realized task readiness diverges from the pre-committed order, stages may wait for not-yet-ready work even though other executable work is available, creating stage misalignment, idle bubbles, and reduced utilization.\n  We present Runtime-Readiness-First Pipeline (RRFP), a readiness-driven runtime for pipeline-parallel training. RRFP changes how schedules are consumed at runtime: instead of treating a schedule as a sequence that stages must wait to follow, it treats the schedule as a non-binding hint order for ranking currently ready work. To support this model, RRFP combines message-driven asynchronous communication, lightweight tensor-parallel coordination for collective consistency, and ready-set arbitration for low-overhead dispatch.\n  We implement RRFP in a Megatron-based training framework and evaluate it on language-only and multimodal workloads at up to 128 GPUs. RRFP improves over fixed-order pipeline baselines across all settings. Using the BFW hint, RRFP achieves up to 1.77$\\times$ speedup on language-only workloads and up to 2.77$\\times$ on multimodal workloads. In cross-framework comparisons, RRFP with the default BF hint outperforms the faster available external system by up to 1.84$\\times$ while preserving training correctness.",
+        "authors": [
+          "Ruitao Liu",
+          "Xinyang Tian",
+          "Shuo Chen",
+          "Tingrui Zhang",
+          "Guang Yang",
+          "Alan Zhao",
+          "Wei Xu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "Code as Agent Harness",
+        "url": "https://arxiv.org/abs/2605.18747v1",
+        "publishedAt": "2026-05-18T17:59:03.000Z",
+        "summary": "Recent large language models (LLMs) have demonstrated strong capabilities in understanding and generating code, from competitive programming to repository-level software engineering. In emerging agentic systems, code is no longer only a target output. It increasingly serves as an operational substrate for agent reasoning, acting, environment modeling, and execution-based verification. We frame this shift through the lens of agent harnesses and introduce code as agent harness: a unified view that centers code as the basis for agent infrastructure. To systematically study this perspective, we organize the survey around three connected layers. First, we study the harness interface, where code connects agents to reasoning, action, and environment modeling. Second, we examine harness mechanisms: planning, memory, and tool use for long-horizon execution, together with feedback-driven control and optimization that make harness reliable and adaptive. Third, we discuss scaling the harness from single-agent systems to multi-agent settings, where shared code artifacts support multi-agent coordination, review, and verification. Across these layers, we summarize representative methods and practical applications of code as agent harness, spanning coding assistants, GUI/OS automation, embodied agents, scientific discovery, personalization and recommendation, DevOps, and enterprise workflows. We further outline open challenges for harness engineering, including evaluation beyond final task success, verification under incomplete feedback, regression-free harness improvement, consistent shared state across multiple agents, human oversight for safety-critical actions, and extensions to multimodal environments. By centering code as the harness of agentic AI, this survey provides a unified roadmap toward executable, verifiable, and stateful AI agent systems.",
+        "authors": [
+          "Xuying Ning",
+          "Katherine Tieu",
+          "Dongqi Fu",
+          "Tianxin Wei",
+          "Zihao Li",
+          "Yuanchen Bei",
+          "Jiaru Zou",
+          "Mengting Ai",
+          "Zhining Liu",
+          "Ting-Wei Li",
+          "Lingjie Chen",
+          "Yanjun Zhao",
+          "Ke Yang",
+          "Bingxuan Li",
+          "Cheng Qian",
+          "Gaotang Li",
+          "Xiao Lin",
+          "Zhichen Zeng",
+          "Ruizhong Qiu",
+          "Sirui Chen",
+          "Yifan Sun",
+          "Xiyuan Yang",
+          "Ruida Wang",
+          "Rui Pan",
+          "Chenyuan Yang",
+          "Dylan Zhang",
+          "Liri Fang",
+          "Zikun Cui",
+          "Yang Cao",
+          "Pan Chen",
+          "Dorothy Sun",
+          "Ren Chen",
+          "Mahesh Srinivasan",
+          "Nipun Mathur",
+          "Yinglong Xia",
+          "Hong Li",
+          "Hong Yan",
+          "Pan Lu",
+          "Lingming Zhang",
+          "Tong Zhang",
+          "Hanghang Tong",
+          "Jingrui He"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop",
+        "url": "https://arxiv.org/abs/2605.18746v1",
+        "publishedAt": "2026-05-18T17:59:02.000Z",
+        "summary": "Spatial intelligence unfolds through a perception-action loop: agents act to acquire observations, and reason about how observations vary as a function of action. Rather than passively processing what is seen, they actively uncover what is unseen - occluded structure, dynamics, containment, and functionality that cannot be resolved from passive sensing alone. We move beyond prior formulations of spatial intelligence that assume oracle observations by recasting the observer as an actor. We introduce ESI-BENCH, a comprehensive benchmark for embodied spatial intelligence spanning 10 task categories and 29 subcategories built on OmniGibson, grounded in Spelke's core knowledge systems. Agents must decide what abilities to deploy - perception, locomotion, and manipulation - and how to sequence them to actively accumulate task-relevant evidence. We conduct extensive experiments on state-of-the-art MLLMs and find that active exploration substantially outperforms passive counterparts, with agents spontaneously discovering emergent spatial strategies without explicit instructions, while random multi-view often adds noise rather than signal despite consuming far more images. Most failures stem not from weak perception but from action blindness: poor action choices lead to poor observations, which in turn drive cascading errors. While explicit 3D grounding stabilizes reasoning on depth-sensitive tasks, imperfect 3D representation proves more harmful than 2D baselines by distorting spatial relations. Human studies further reveal that unlike humans who seek falsifying viewpoints and revise beliefs under contradiction, models commit prematurely with high confidence regardless of evidence quality, exposing a metacognitive gap that neither better perception nor more embodied interaction alone can close.",
+        "authors": [
+          "Yining Hong",
+          "Jiageng Liu",
+          "Han Yin",
+          "Manling Li",
+          "Leonidas Guibas",
+          "Li Fei-Fei",
+          "Jiajun Wu",
+          "Yejin Choi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "SURGE: Approximation-free Training Free Particle Filter for Diffusion Surrogate",
+        "url": "https://arxiv.org/abs/2605.18745v1",
+        "publishedAt": "2026-05-18T17:59:00.000Z",
+        "summary": "Diffusion-based generative models increasingly rely on inference-time guidance, adding a drift term or reweighting mixture of experts, to improve sample quality on task-specific objectives. However, most existing techniques require repeated score or gradient evaluations, introducing bias, high computational overhead, or both. We introduce \\texttt{URGE}, Unbiased Resampling via Girsanov Estimation, a derivative-free inference-time scaling algorithm that performs path-wise importance reweighting via a Girsanov change of measure. Instead of computing gradient-based particle weights in previous work, \\texttt{URGE} attaches a simple multiplicative weight to each simulated trajectory and periodically resamples. No score, no Hessian, and no PDE evaluation is required. We establish an equivalence between path-wise and particle-wise SMC: the Girsanov path weight admits a backward conditional expectation that recovers the previous particle-level weights, guaranteeing that both schemes produce the same unbiased terminal law. Empirically, \\texttt{URGE} outperforms existing inference-time guidance baselines on synthetic tests and diffusion-model benchmarks, achieving better generation quality, while being significantly simpler to implement and fully gradient-free.",
+        "authors": [
+          "Lifu Wei",
+          "Yinuo Ren",
+          "Naichen Shi",
+          "Yiping Lu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "Actionable World Representation",
+        "url": "https://arxiv.org/abs/2605.18743v1",
+        "publishedAt": "2026-05-18T17:58:51.000Z",
+        "summary": "Inspired by the emergent behaviors in large language models that generalized human intelligence, the research community is pursuing similar emergent capabilities within world models, with a emphasis on modeling the physical world. Within the scope of physical world model, objects are the fundamental primitives that constitute physical reality. From humans to computers, nearly everything we interact with is an object. These objects are rarely static; they are actionable entities with varying states determined by their intrinsic properties. While current methods approach object action states either via video generation or dynamic scene reconstruction, none explicitly model this basic element in a unified, principled way to build an actionable object representation. We propose WorldString, a neural architecture capable of modeling the state manifold of real-world objects by learning directly from point clouds or RGB-D video streams. Serving as a versatile digital twin, it acts as a foundational building block for physical world models; thus, we name it WorldString. Sweetly, its fully differentiable structure seamlessly enables future integration with policy learning and neural dynamics.",
+        "authors": [
+          "Kunqi Xu",
+          "Jitao Li",
+          "Jianglong Ye",
+          "Tianshu Tang",
+          "Isabella Liu",
+          "Sifei Liu",
+          "Xueyan Zou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 15
+      },
+      {
+        "title": "Vision-OPD: Learning to See Fine Details for Multimodal LLMs via On-Policy Self-Distillation",
+        "url": "https://arxiv.org/abs/2605.18740v1",
+        "publishedAt": "2026-05-18T17:57:04.000Z",
+        "summary": "Multimodal Large Language Models (MLLMs) still struggle with fine-grained visual understanding, where answers often depend on small but decisive evidence in the full image. We observe a regional-to-global perception gap: the same MLLM answers fine-grained questions more accurately when conditioned on evidence-centered crops than on the corresponding full images, suggesting that many failures stem from difficulty to focus on relevant evidence rather than insufficient local recognition ability. Motivated by this observation, we propose Vision-OPD (Vision On-Policy Distillation), a regional-to-global self-distillation framework that transfers the model's own privileged regional perception to its full-image policy. Vision-OPD instantiates two conditional policies from the same MLLM: a crop-conditioned teacher and a full-image-conditioned student. The student generates on-policy rollouts, and Vision-OPD minimizes token-level divergence between the teacher and student next-token distributions along these rollouts. This enables the model to internalize the benefit of visual zooming without external teacher models, ground-truth labels, reward verifiers, or inference-time tool use. Experiments on multiple fine-grained visual understanding benchmarks show that Vision-OPD models achieve competitive or superior performance against much larger open-source, closed-source, and \"Thinking-with-Images\" agentic models.",
+        "authors": [
+          "Qianhao Yuan",
+          "Jie Lou",
+          "Xing Yu",
+          "Hongyu Lin",
+          "Le Sun",
+          "Xianpei Han",
+          "Yaojie Lu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "What Does the AI Doctor Value? Auditing Pluralism in the Clinical Ethics of Language Models",
+        "url": "https://arxiv.org/abs/2605.18738v1",
+        "publishedAt": "2026-05-18T17:56:13.000Z",
+        "summary": "Medicine is inherently pluralistic. Principles such as autonomy, beneficence, nonmaleficence, and justice routinely conflict, and such ethical dilemmas often sharply divide reasonable physicians. Good clinical practice navigates these tensions in concert with each patient's values rather than imposing a single ethical stance. The ethical values that large language models bring to medical advice, however, have not been systematically examined. We present a framework for auditing value pluralism in medical AI, comprising a benchmark of clinician-verified dilemmas and an attribution method that recovers value priorities directly from decisions. The ecosystem of frontier models spans physician-level value heterogeneity, and models discuss competing values in their reasoning (Overton pluralism) before committing to a decision. However, individual model decisions are near-deterministic across repeated sampling and semantic variations, failing to reproduce the distributional pluralism of the physician panel. Across benchmark cases, these consistent decisions reflect committed, systematic value preferences. While most model priorities fall within the natural range of inter-physician variation, some significantly underweight patient autonomy. A single LLM deployed without regard for its value priorities could amplify those priorities at scale to every patient it serves. Without explicit efforts to balance ethical perspectives with one or multiple models, these tools risk replacing clinical pluralism with a deployment monoculture.",
+        "authors": [
+          "Payal Chandak",
+          "Victoria Alkin",
+          "David Wu",
+          "Maya Dagan",
+          "Taposh Dutta Roy",
+          "Maria Clara Saad Menezes",
+          "Ayush Noori",
+          "Nirali Somia",
+          "John S. Brownstein",
+          "Ran Balicer",
+          "Rebecca W. Brendel",
+          "Noa Dagan",
+          "Isaac S. Kohane",
+          "Gabriel A. Brat"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "PIXLRelight: Controllable Relighting via Intrinsic Conditioning",
+        "url": "https://arxiv.org/abs/2605.18735v1",
+        "publishedAt": "2026-05-18T17:55:03.000Z",
+        "summary": "We present PIXLRelight, a feed-forward approach for physically controllable single-image relighting. Existing methods either provide limited lighting control (e.g. through text or environment maps), accumulate errors when chaining inverse and forward rendering, or require costly per-image optimization. Our key idea is to bridge physically based rendering (PBR) and learned image synthesis through a shared intrinsic conditioning that can be obtained from either real photographs or PBR renders. At training time, paired multi-illumination photographs are decomposed into albedo, diffuse shading, and non-diffuse residuals, which condition the model. At inference time, the same conditioning is computed from a path-traced render of a coarse 3D reconstruction of the input under user-specified PBR lights. A transformer-based neural renderer then applies the target illumination to the source photograph, preserving fine image detail through a per-pixel affine modulation. PIXLRelight enables arbitrary PBR-style lighting control, achieves state-of-the-art relighting quality, and runs in under a tenth of a second per image. Code and models are available at https://mlfarinha.github.io/pixl-relight/.",
+        "authors": [
+          "Miguel Farinha",
+          "Ronald Clark"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "Predictable Confabulations: Factual Recall by LLMs Scales with Model Size and Topic Frequency",
+        "url": "https://arxiv.org/abs/2605.18732v1",
+        "publishedAt": "2026-05-18T17:53:44.000Z",
+        "summary": "While scaling laws govern aggregate large language model performance, no scaling law has linked factual recall to both model size and training-data composition. We evaluated 38 models on over 8,900 scholarly references evaluated by an automated reference verification system. Recall quality follows a sigmoid in the log-linear combination of model parameter count and topic representation in training data. These two variables alone explain 60% of the variance across 16 dense models from four families, rising to 74-94% within individual families. The form matches a superposition-inspired account in which recall is gated by a signal-to-noise ratio: signal strength scales with concept frequency and the noise floor with model capacity.",
+        "authors": [
+          "Matthew L. Smith",
+          "Jonathan P. Shock",
+          "Samuel T. Segun",
+          "Iyiola E. Olatunji",
+          "Tegawendé F. Bissyandé"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 15
+      },
+      {
+        "title": "DexHoldem: Playing Texas Hold'em with Dexterous Embodied System",
+        "url": "https://arxiv.org/abs/2605.18727v1",
+        "publishedAt": "2026-05-18T17:51:34.000Z",
+        "summary": "Evaluating embodied systems on real dexterous hardware requires more than isolated primitive skills: an agent must perceive a changing tabletop scene, choose a context-appropriate action, execute it with a dexterous hand, and leave the scene usable for later decisions. We introduce DexHoldem, a real-world system-level benchmark built around Texas Hold'em dexterous manipulation with a ShadowHand. DexHoldem provides 1,470 teleoperated demonstrations across 14 Texas Hold'em manipulation primitives, a standardized physical policy benchmark, and an agentic perception benchmark that tests whether agents can recover the structured game state needed for embodied decision making. On primitive execution, $π_{0.5}$ obtains the highest task completion rate ($61.2\\%$), while $π_{0.5}$ and $π_0$ tie on scene-preserving success rate ($47.5\\%$). On agentic perception, Opus 4.7 obtains the best strict problem-level accuracy ($34.3\\%$), while GPT 5.5 obtains the best average field-wise accuracy ($66.8\\%$), exposing a gap between isolated visual sub-capabilities and complete routing-relevant state recovery. Finally, we instantiate the full embodied-agent loop in three case studies, where waiting, recovery dispatches, human-help requests, and repeated primitive execution reveal how perception and policy errors accumulate during closed-loop deployment. DexHoldem therefore evaluates dexterous tabletop execution, agentic perception, and embodied decision routing in a shared physical setting. Project page: https://dexholdem.github.io/Dexholdem/.",
+        "authors": [
+          "Feng Chen",
+          "Tianzhe Chu",
+          "Li Sun",
+          "Pei Zhou",
+          "Zhuxiu Xu",
+          "Shenghua Gao",
+          "Yuexiang Zhai",
+          "Yanchao Yang",
+          "Yi Ma"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "General Preference Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2605.18721v1",
+        "publishedAt": "2026-05-18T17:50:27.000Z",
+        "summary": "Post-training has split large language model (LLM) alignment into two largely disconnected tracks. Online reinforcement learning (RL) with verifiable rewards drives emergent reasoning on math and code but depends on a programmatic verifier that cannot reach open-ended tasks, while preference optimization handles open-ended generation yet forgoes the continuous exploration that powers online RL. Closing this gap requires a verifier for open-ended quality, but a scalar reward model is the wrong shape for the job. Quality is multi-dimensional, and any scalar score is an incomplete proxy that lets online RL collapse onto whichever axis the score is most sensitive to. We turn instead to the General Preference Model (GPM), which embeds responses into $k$ skew-symmetric subspaces and represents preference as a structured, intransitivity-aware comparison. Building on this, we propose General Preference Reinforcement Learning (GPRL), which carries the $k$-way structure through to the policy update. GPRL computes per-dimension group-relative advantages, normalizes each on its own scale so no axis can dominate, and aggregates them with context-dependent eigenvalues. The same structure powers a closed-loop drift monitor that detects single-axis exploitation and corrects it on the fly by reweighting dimensions and tightening the trust region. Starting from $\\texttt{Llama-3-8B-Instruct}$, GPRL reaches a length-controlled win rate of $56.51\\%$ on AlpacaEval~2.0 while also outperforming SimPO and SPPO on Arena-Hard, MT-Bench, and WildBench by resisting reward hacking across extended training runs.",
+        "authors": [
+          "Muhammad Umer",
+          "Muhammad Ahmed Mohsin",
+          "Ahsan Bilal",
+          "Arslan Chaudhry",
+          "Andreas Haupt",
+          "Sanmi Koyejo",
+          "Emily Fox",
+          "John M. Cioffi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      }
+    ],
     "news": [
       {
         "title": "SandboxAQ brings its drug discovery models to Claude — no PhD in computing required",
@@ -101,7 +375,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 11
       },
       {
         "title": "Anthropic has acquired the dev tools startup used by OpenAI, Google, and Cloudflare",
@@ -115,7 +389,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 9
+        "ageHours": 13
       },
       {
         "title": "Elon Musk has lost his lawsuit against Sam Altman and OpenAI",
@@ -129,7 +403,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 11
+        "ageHours": 15
       },
       {
         "title": "Amazon&#8217;s new Alexa+ powered feature can generate podcast episodes",
@@ -143,7 +417,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 13
+        "ageHours": 18
       },
       {
         "title": "South Korea&#8217;s LetinAR is building optics behind AI glasses",
@@ -157,7 +431,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 17
+        "ageHours": 22
       },
       {
         "title": "OpenAI and Dell partner to bring Codex to hybrid and on-premise enterprise environments",
@@ -169,7 +443,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 18
+        "ageHours": 23
       },
       {
         "title": "Apple’s Siri revamp could include auto-deleting chats",
@@ -183,7 +457,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 32
+        "ageHours": 36
       },
       {
         "title": "Why trust is a big question at the Elon Musk-OpenAI trial",
@@ -197,7 +471,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 33
+        "ageHours": 37
       },
       {
         "title": "If you’re giving a commencement speech in 2026, maybe don’t mention AI",
@@ -211,7 +485,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 36
+        "ageHours": 40
       },
       {
         "title": "TechCrunch Mobility: The AI skills arms race is coming for automotive",
@@ -225,7 +499,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 36
+        "ageHours": 41
       },
       {
         "title": "The haves and have-nots of the AI gold rush",
@@ -239,7 +513,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 56
+        "ageHours": 60
       },
       {
         "title": "Research repository ArXiv will ban authors for a year if they let AI do all the work",
@@ -253,30 +527,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 57
+        "ageHours": 62
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
-    "last24h": 6,
+    "totalItems": 24,
+    "last24h": 18,
     "topCategories": [
+      {
+        "name": "Research",
+        "count": 10
+      },
       {
         "name": "General",
         "count": 6
       },
       {
         "name": "Models",
-        "count": 2
+        "count": 5
       },
       {
         "name": "Products",
         "count": 2
-      },
-      {
-        "name": "Policy",
-        "count": 1
       }
     ]
   }
