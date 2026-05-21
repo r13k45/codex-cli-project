@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T00:16:42.382Z",
+  "generatedAt": "2026-05-21T05:18:37.940Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,9 +27,7 @@
         }
       ],
       "itemCount": 12,
-      "errors": [
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "errors": []
     },
     {
       "group": "news",
@@ -87,214 +85,263 @@
   "sections": {
     "research": [
       {
-        "title": "Atoms of Thought: Universal EEG Representation Learning with Microstates",
-        "url": "https://arxiv.org/abs/2605.20182v1",
-        "publishedAt": "2026-05-19T17:59:31.000Z",
-        "summary": "Learning universal representations from electroencephalogram (EEG) signals is a cutting-edge approach in the field of neuroinformatics and brain-computer interfaces (BCIs). Conventionally, EEG is treated as a multivariate temporal signal, where time- or frequency-domain features are extracted for representation learning. This paper investigates a simple yet effective EEG representation, i.e., microstates. Microstates represent the building blocks of brain activity patterns at a microscopic time scale. We build a universal microstate tokenizer from a large medical EEG dataset by clustering continuous EEG signals into sequences of discrete microstates. The microstate tokenizer is then adopted universally across a series of downstream tasks, including sleep staging, emotion recognition, and motor imagery classification. Experimental results show that EEG representation learning with microstates outperforms traditional time-domain and frequency-domain features under different models and across different tasks. Further analysis shows that microstates offer greater interpretability and scalability, thereby opening up applications in both cognitive neuroscience and clinical research.",
+        "title": "Variance Reduction for Expectations with Diffusion Teachers",
+        "url": "https://arxiv.org/abs/2605.21489v1",
+        "publishedAt": "2026-05-20T17:59:52.000Z",
+        "summary": "Pretrained diffusion models serve as frozen teachers feeding downstream pipelines such as text-to-3D, single-step distillation, and data attribution. The teacher gradients these pipelines consume are Monte Carlo (MC) expectations over noise levels and Gaussian noise samples; their estimator variance dominates compute cost because each draw requires expensive upstream work (rendering, simulation, encoding). We introduce CARV, a compute-aware variance-accounting framework that motivates a hierarchical MC estimator: amortize the expensive upstream computation over cheap diffusion-noise resamples, sharpened by timestep importance sampling and a stratified-inverse-CDF construction. In our text-to-3D distillation and attribution experiments, CARV delivers 2-3x effective compute multipliers (most from amortized reuse; ~25% additional from IS+stratification) without changing the objective; in single-step distillation, the same techniques cut gradient variance by an order of magnitude but do not improve downstream FID, marking the regime where MC variance is no longer the bottleneck.",
         "authors": [
-          "Xinyang Tian",
-          "Ruitao Liu",
-          "Ziyi Ye",
-          "Siyang Xue",
-          "Xin Wang",
-          "Xuesong Chen"
+          "Jesse Bettencourt",
+          "Xindi Wu",
+          "Matan Atzmon",
+          "James Lucas",
+          "Jonathan Lorraine"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
       },
       {
-        "title": "Multi-axis Analysis of Image Manipulation Localization",
-        "url": "https://arxiv.org/abs/2605.20174v1",
-        "publishedAt": "2026-05-19T17:54:33.000Z",
-        "summary": "Advanced image editing software enables easy creation of highly convincing image manipulations, which has been made even more accessible in recent years due to advances in generative AI. Manipulated images, while often harmless, could spread misinformation, create false narratives, and influence people's opinions on important issues. Despite this growing threat, there is limited research on detecting advanced manipulations across different visual domains. Thus, we introduce Analysis Under Domain-shifts, qualIty, Type, and Size (AUDITS), a comprehensive benchmark designed for studying axes of analysis in image manipulation detection. AUDITS comprises over 530K images from two distinct sources (user and news photos). We curate our dataset to support analysis across multiple axes using recent diffusion-based inpaintings, spanning a diverse range of manipulation types and sizes. We conduct experiments under different types of domain shift to evaluate robustness of existing image manipulation detection methods. Our goal is to drive further research in this area by offering new insights that would help develop more reliable and generalizable image manipulation detection methods.",
+        "title": "Equilibrium Reasoners: Learning Attractors Enables Scalable Reasoning",
+        "url": "https://arxiv.org/abs/2605.21488v1",
+        "publishedAt": "2026-05-20T17:59:48.000Z",
+        "summary": "Scaling test-time compute by iteratively updating a latent state has emerged as a powerful paradigm for reasoning. Yet the internal mechanisms that enable these iterative models to generalize beyond memorized patterns remain unclear. We hypothesize that generalizable reasoning arises from learning task-conditioned attractors: latent dynamical systems whose stable fixed points correspond to valid solutions.\n  We formalize this process through Equilibrium Reasoners (EqR), which enable test-time scaling without external verifiers or task-specific priors. EqR scales internal dynamics along two axes: depth, by running more iterations, and breadth, by aggregating stochastic trajectories from multiple initializations. Empirically, gains from test-time scaling are tightly coupled with stronger convergence toward solution-aligned attractors.\n  This attractor perspective allows neural networks to adaptively allocate test-time compute based on task difficulty. While simple cases converge within 1 to 5 iteration steps, harder cases benefit from massive test-time scaling. By unrolling up to the equivalent of 40,000 layers, scalable latent reasoning boosts accuracy from 2.6% for feedforward models to over 99% on Sudoku-Extreme. These results suggest that learned attractor landscapes provide a useful mechanistic lens for understanding scalable reasoning in iterative latent models.",
         "authors": [
-          "Keanu Nichols",
-          "Divya Appapogu",
-          "Giscard Biamby",
-          "Dina Bashkirova",
-          "Anna Rohrbach",
-          "Bryan A. Plummer"
+          "Benhao Huang",
+          "Zhengyang Geng",
+          "Zico Kolter"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
       },
       {
-        "title": "A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents",
-        "url": "https://arxiv.org/abs/2605.20173v1",
-        "publishedAt": "2026-05-19T17:54:21.000Z",
-        "summary": "Production LLM agents combine stochastic model outputs with deterministic software systems, yet the boundary between the two is rarely treated as a first-class architectural object. This paper names that boundary the stochastic-deterministic boundary (SDB): a four-part contract among a proposer, verifier, commit step, and reject signal that specifies how an LLM output becomes a system action. We argue that the SDB is the load-bearing primitive of production agent runtimes.\n  Around this primitive, we organize agent runtime design into three concerns: Coordination, State, and Control. We present a catalog of six runtime patterns that compose the SDB differently across conversational, autonomous, and long-horizon agents: hierarchical delegation, scatter-gather plus saga, event-driven sequencing, shared state machine, supervisor plus gate, and human in the loop. For each pattern, we trace its lineage to distributed-systems concepts and identify what changes when the worker is stochastic.\n  The paper contributes a five-step methodology for selecting runtime patterns, a diagnostic procedure that maps production failures to pattern weaknesses, and a failure mode called replay divergence, in which LLM-based consumers of a deterministic event log produce different downstream outputs under model-version or prompt changes. A stylized reliability decomposition separates per-call model variance from architectural momentum, motivating the claim that as model variance decreases, pattern choice and SDB strength become increasingly important levers for long-run reliability. We apply the methodology to five workloads and provide one runnable reference implementation for a 90-day contract-renewal agent.",
+        "title": "Quantifying Hyperparameter Transfer and the Importance of Embedding Layer Learning Rate",
+        "url": "https://arxiv.org/abs/2605.21486v1",
+        "publishedAt": "2026-05-20T17:59:40.000Z",
+        "summary": "Hyperparameter transfer allows extrapolating optimal optimization hyperparameters from small to large scales, making it critical for training large language models (LLMs). This is done either by fitting a scaling law to the hyperparameters or by a judicious choice of parameterization, such as Maximal Update ($μ$P), that renders optimal hyperparameters approximately scale invariant. In this paper, we first develop a framework to quantify hyperparameter transfer through three metrics: (1) the quality of the scaling law fit, (2) the robustness to extrapolation errors, and (3) the asymptotic loss penalty due to choice of parameterization. Next, we investigate through a comprehensive series of ablations why $μ$P appears to offer high-quality learning rate transfer relative to standard parameterization (SP), as existing theory is inadequate. We find that the overwhelming benefit of $μ$P relative to SP when training with AdamW arises simply from maximizing the learning rate of the embedding layer. In SP, the embedding layer learning rate acts as a bottleneck that induces training instabilities; increasing it by a factor of width to match $μ$P dramatically smooths out training while improving hyperparameter transfer. We also find that weight decay improves the scaling law fits, while, in the fixed token-per-parameter setting, it hurts the robustness of the extrapolation.",
         "authors": [
-          "Vasundra Srinivasan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Long-term Power Grid Planning via Answer Set Programming",
-        "url": "https://arxiv.org/abs/2605.20172v1",
-        "publishedAt": "2026-05-19T17:54:15.000Z",
-        "summary": "The Power grid is a critical infrastructure underpinning all aspects of modern society and its services. Maintaining its effectiveness requires continuous adaptations. In particular, addressing sustainability targets, demand patterns, and urbanisation trends requires implementing changes to the network. Actual developments can potentially span over a decade, with supply continuity and service quality that must be preserved throughout by ensuring conformance to several topological and combinatorial invariants. Long-term power grid planning deals with the above process, and although planning languages could be a natural choice, the kind of properties and invariants needed are cumbersome to express in such languages; on the contrary, they can be elegantly and succinctly encoded in Answer Set Programming (ASP). In this paper, we propose the first approach to automate and optimise the long-term power grid planning process using ASP. Experimental evaluations conducted on synthetic and real-world grid data confirm the expressive power of the proposed ASP-based approach and demonstrate its effectiveness.",
-        "authors": [
-          "Antonio Ielo",
-          "Francesco Doria",
-          "Sandra Castellanos-Paez",
-          "Marco Maratea",
-          "Francesco Percassi",
-          "Mauro Vallati"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "HaorFloodAlert: Deseasonalized ML Ensemble for 72-Hour Flood Prediction in Bangladesh Haor Wetlands",
-        "url": "https://arxiv.org/abs/2605.20167v1",
-        "publishedAt": "2026-05-19T17:51:46.000Z",
-        "summary": "Flash floods in Bangladesh's haor wetlands show up with almost no warning. They wreck the annual boro rice harvest. Current setups, built for riverine floods, miss backwater dynamics entirely. These basins are flat. Water does not behave like it does on the Brahmaputra.\n  We built HaorFloodAlert, a deseasonalized machine learning ensemble that forecasts 72-hour flood probability for the Sunamganj Haor (approximately 8,000 km2). Temperature was acting as a seasonal cheat code - it inflated accuracy by 6.9 pp just because floods happen in warm months. We caught that. We also built an upstream Barak River Sentinel-1 SAR proxy from Silchar, Assam, giving about 36 hours of lead time. Otsu-thresholded SAR change detection validates at 84-91 percent spatial match.\n  The operational ensemble (RF 0.5625 + XGBoost 0.4375) hits 89.6 percent LOOCV accuracy, 87.5 percent recall, and 0.943 AUC-ROC on 77 real Sentinel-1 events. A three-tier alert pipeline and a BRRI-calibrated boro rice damage estimator are included.",
-        "authors": [
-          "Salma Hoque Talukdar Koli",
-          "Fahima Haque Talukder Jely",
-          "Md. Samiul Alim",
-          "Md. Zakir Hossen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 30
-      },
-      {
-        "title": "Not Every Rubric Teaches Equally: Policy-Aware Rubric Rewards for RLVR",
-        "url": "https://arxiv.org/abs/2605.20164v1",
-        "publishedAt": "2026-05-19T17:50:18.000Z",
-        "summary": "Reinforcement learning with verifiable rewards has made post-training highly effective when correctness can be checked automatically. However, many important model behaviors require satisfying several qualitative criteria at once. Rubric-based rewards address this setting by grading prompt-specific criteria and aggregating them into a scalar reward. Yet standard static aggregations conflate a criterion's human-assigned importance with its current usefulness as an optimization signal. We show that this assumption breaks down in rubric RL: many important criteria are already saturated or currently unreachable, while criteria that distinguish rollouts are not necessarily those with the largest human weights. We introduce POW3R, a policy-aware rubric reward framework that preserves human weights and category balance as the rubric objective while adapting criterion-level reward weights during training. POW3R uses rollout-level contrast to emphasize criteria that currently separate the policy's outputs, making the GRPO reward more informative without changing the underlying evaluation target. Across three base policies on two datasets spanning multimodal and text-only settings, POW3R wins $24$ of $30$ base-policy/metric comparisons, improving both mean rubric reward and strict completion (the fraction of prompts whose response satisfies every required rubric criterion) over vanilla GRPO with rubric rewards, and reaches the same plateau in $2.5$--$4\\times$ fewer training steps. Rubric rewards should therefore distinguish what should matter in the final answer from what can teach the current policy.",
-        "authors": [
-          "Utkarsh Tyagi",
-          "Xingang Guo",
-          "MohammadHossein Rezaei",
-          "Daniel George",
-          "Anas Mahmoud",
-          "Jackson Lee",
-          "Bing Liu",
-          "Yunzhong He"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Interpretable Computer Vision for Defect Detection in X-ray Tomography of Aerospace SiC/SiC Composites",
-        "url": "https://arxiv.org/abs/2605.20159v1",
-        "publishedAt": "2026-05-19T17:46:49.000Z",
-        "summary": "Non-destructive testing of aerospace SiC/SiC composites via X-ray computed tomography (XCT) relies on expert visual assessment, with current workflows offering limited traceability for accept/reject decisions. Deep convolutional networks can automate defect detection, yet their black-box nature conflicts with the transparency that industrial inspection practice demands. To close this gap, we introduce p-ResNet-50, a convolutional framework extended with a prototype layer that couples high detection accuracy with case-based explanations. Six learned prototypes are explicitly aligned with expert-defined semantic categories-healthy matrix, matrix--air interfaces, pores, line-like defects, and mixed morphologies-so that every classification is traceable to a physically meaningful reference. Two novel regularisation terms, anchor-based and medoid-based, tether prototypes to expert-selected patches and prevent prototype collapse, addressing a known limitation of prototype networks. Latent-space analysis via UMAP delineates semantically coherent sub-domains and maps zones of uncertainty where misclassifications concentrate, giving inspectors an explicit picture of where the model is-and is not-reliable. The framework is validated on an XCT patch dataset of approximately 12,000 patches extracted from four defect-rich SiC/SiC laboratory specimens. Taking a black-box ResNet-50 as a baseline (ROC-AUC = 0.991), the prototype extension achieves comparable performance (accuracy 0.957 vs. 0.959; ROC-AUC 0.994 vs. 0.993) while trading a slight reduction in sensitivity for higher precision and specificity. Each decision is backed by representative evidence patches, and the model explicitly flags its uncertainty regions. Beyond defect mapping, the framework establishes a reusable methodology for embedding domain-expert knowledge into prototype networks, applicable to other XCT inspection scenarios requiring traceable, auditable decisions.",
-        "authors": [
-          "Antonio Peña Corredor",
-          "Julien Lesseur",
-          "Romain Nunez",
-          "Paul Rivalland",
-          "Thomas Philippe"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "Rethinking Visual Attribution for Chest X-ray Reasoning in Large Vision Language Models",
-        "url": "https://arxiv.org/abs/2605.20158v1",
-        "publishedAt": "2026-05-19T17:46:40.000Z",
-        "summary": "Large Vision Language Models (LVLMs) show promise in medical applications, but their inability to faithfully ground responses in visual evidence raises serious concerns about clinical trustworthiness. While visual attribution methods are widely used to explain LVLM predictions, whether these explanations actually reflect the visual evidence underlying the model's decision is largely unverified, since ground-truth annotations for internal model reasoning are typically unavailable. We address this question for chest X-ray (CXR) reasoning by developing a causal evaluation framework that retains only CXR-VQA samples for which the expert-annotated region is verified, via counterfactual editing, to be causally responsible for the model's prediction. Using this framework across 11 attribution methods, six open-source LVLMs, and two output modes (direct answer and step-by-step reasoning), we find that existing attribution methods often fail to identify the evidence used by LVLMs. To address this failure, we propose MedFocus, a concept-based attribution method that localizes clinically meaningful anatomical regions via unbalanced optimal transport and measures their causal effect on model outputs through targeted interventions. MedFocus produces spatial, concept-level, and token-level attributions and substantially outperforms prior methods, taking a step toward more trustworthy attribution for medical LVLMs. Our data and code are available at https://github.com/gzxiong/medfocus/.",
-        "authors": [
-          "Guangzhi Xiong",
-          "Qiao Jin",
-          "Sanchit Sinha",
-          "Zhiyong Lu",
-          "Aidong Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "SAGE: Scalable Automatic Gating Ensemble for Confident Negative Harvesting in Fraud Detection",
-        "url": "https://arxiv.org/abs/2605.20157v1",
-        "publishedAt": "2026-05-19T17:46:31.000Z",
-        "summary": "Music streaming fraud, where bad actors artificially inflate stream counts to manipulate chart rankings and royalty payments, poses a significant threat to streaming services and legitimate content creators. Traditional fraud detection approaches struggle with a critical challenge: many legitimate edge cases, including super-fans and sleep-music sessions, exhibit activity patterns that closely mimic those of coordinated fraud. We present SAGE, a novel counterfactual-aware negative harvesting approach that combines SimHash-based stratified sampling with a modular gating ensemble for confident negative identification from unlabeled data. Our ensemble architecture employs pluggable statistical gates (currently instantiated with Mahalanobis distance and k-NN density) with configurable voting thresholds enabling adaptive precision-recall trade-offs. This addresses the representation bias problem in Positive-Unlabeled learning by ensuring comprehensive coverage of rare behavioral cohorts through floor-constrained sampling. Evaluation demonstrates strong precision and recall on held-out data. The approach generalizes across fraud detection domains, achieving strong performance on both customer-level and artist-level fraud without modification to the core methodology.",
-        "authors": [
-          "Sudheer Tubati",
-          "Amit Goyal"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "When Does Model Collapse Occur in Structured Interactive Learning?",
-        "url": "https://arxiv.org/abs/2605.20151v1",
-        "publishedAt": "2026-05-19T17:41:09.000Z",
-        "summary": "The proliferation of generative artificial intelligence has given rise to an interactive learning environment, where model parameters are continuously updated using not only data generated by natural processes, but also synthetic outputs produced by other models. This paradigm introduces two major challenges: (1) training data are no longer drawn exclusively from the target population, undermining a core assumption of classical statistical learning, and (2) model training processes become inherently correlated, as models interact with one another through repeated exposure to each other's synthetic outputs in a potentially complex manner. Establishing reliable statistical inference in such structured interactive learning environments therefore remains an important open problem. In particular, there is growing concern about model collapse, a phenomenon in which the performance of generative models progressively degrades as they are trained on synthetic data produced by earlier model generations.\n  Prior work on model collapse primarily focuses on a single model trained on its own output, failing to capture model performance in multi-model interactive settings. In this work, we fill this gap by investigating the performance of generative models in an interactive learning environment with general interaction patterns. In particular, we formalize model interactions using directed graphs and show that the occurrence of model collapse depends critically on the topology of the interaction graph. We further derive an explicit necessary and sufficient condition characterizing when model collapse occurs, and establish finite-sample results for linear regression and asymptotic guarantees for general M-estimators. We support our theoretical findings through extensive numerical experiments.",
-        "authors": [
-          "Yuchen Wu",
-          "Kangjie Zhou",
-          "Weijie Su"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 31
-      },
-      {
-        "title": "Less Back-and-Forth: A Comparative Study of Structured Prompting",
-        "url": "https://arxiv.org/abs/2605.20149v1",
-        "publishedAt": "2026-05-19T17:40:14.000Z",
-        "summary": "Large language models (LLMs) are widely used for open-ended tasks, but underspecified prompts can lead to low-quality answers and additional interaction. This paper studies whether structured prompt design improves response quality while reducing user effort. We compare three prompt conditions: a raw prompt, a checklist-improved prompt, and a clarifying-question prompt. We evaluate these conditions across four task types--summarization, planning, explanation, and coding--using three LLM systems: ChatGPT, Claude, and Grok. Each output is scored with a unified rubric covering task completion, correctness, compliance, and clarity. Checklist-improved prompts achieved the highest mean rubric score, 7.50 out of 8, compared with 5.67 for raw prompts and 6.67 for clarifying-question prompts. Checklist prompts also produced the best quality-effort tradeoff, using fewer average tokens than both raw and clarifying prompts. These results suggest that a simple prompt checklist can improve LLM responses while reducing unnecessary interaction.",
-        "authors": [
-          "Saurav Ghosh",
-          "Gabriella Polach",
-          "Abdou Sow"
+          "Dayal Singh Kalra",
+          "Maissam Barkeshli"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 31
+        "ageHours": 11
       },
       {
-        "title": "Goal-Oriented Lower-Tail Calibration of Gaussian Processes for Bayesian Optimization",
-        "url": "https://arxiv.org/abs/2605.20145v1",
-        "publishedAt": "2026-05-19T17:32:25.000Z",
-        "summary": "Bayesian optimization (BO) selects evaluation points for expensive black-box objectives using Gaussian process (GP) predictive distributions. Kernel choice and hyperparameter selection can lead to miscalibrated predictive distributions and an inappropriate exploration-exploitation trade-off. For minimization, sampling criteria such as expected improvement (EI) depend on the predictive distribution below the current best value, so lower-tail miscalibration directly affects the sampling decision. This article studies goal-oriented calibration of GP predictive distributions below a low threshold $t$ in the noiseless setting, for standard GP models with hyperparameters selected by maximum likelihood. A framework for predictive reliability below $t$ is introduced, based on two notions of spatial calibration: occurrence calibration over the design space and thresholded $μ$-calibration on sublevel sets of the form $\\{x\\in\\mathbb{X}, f(x)\\le t\\}$. Building on this framework, we propose tcGP, a post-hoc method that calibrates GP predictive distributions below~$t$, and we show that the resulting EI-based global optimization algorithm remains dense in the design space. Experiments on standard benchmarks show improved lower-tail calibration and BO performance relative to standard GP models and globally calibrated GP models.",
+        "title": "EvoStruct: Bridging Evolutionary and Structural Priors for Antibody CDR Design via Protein Language Model Adaptation",
+        "url": "https://arxiv.org/abs/2605.21485v1",
+        "publishedAt": "2026-05-20T17:59:16.000Z",
+        "summary": "Equivariant graph neural network (GNN) methods for antibody complementarity-determining region (CDR) design achieve the highest sequence recovery but suffer from severe vocabulary collapse. The current best GNN methods over-predict very few amino acids, such as tyrosine and glycine, while ignoring functionally important residues. We trace this failure to GNN encoders learning amino acid distributions de novo from limited structural data, discarding substitution patterns encoded in evolutionary databases. To resolve this, we propose EvoStruct, which bridges a frozen protein language model (PLM) with 3D structural context from an E(3)-equivariant GNN via a cross-attention adapter. Unlike prior PLM-structure adapters for general protein design, EvoStruct targets the vocabulary collapse problem specific to CDR design through progressive PLM unfreezing and R-Drop consistency regularization. On the CHIMERA-Bench dataset, EvoStruct achieves the highest amino acid recovery and lowest perplexity among several antibody design methods, improving sequence recovery by 16% and reducing perplexity by 43% relative to the best GNN baselines, while recovering 2.3x greater amino acid diversity and the highest binding-pair correlation with ground truth.",
         "authors": [
-          "Aurélien Pion",
-          "Emmanuel Vazquez"
+          "Mansoor Ahmed",
+          "Sujin Lee",
+          "Umar Khayaz",
+          "Murray Patterson"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 31
+        "ageHours": 11
+      },
+      {
+        "title": "Velocityformer: Broken-Symmetry-Matched Equivariant Graph Transformers for Cosmological Velocity Reconstruction",
+        "url": "https://arxiv.org/abs/2605.21483v1",
+        "publishedAt": "2026-05-20T17:59:05.000Z",
+        "summary": "Precise measurement of the kinematic Sunyaev-Zel'dovich (kSZ) effect - a probe of the large-scale distribution of baryonic matter, a key observable for cosmological inference - requires accurate reconstruction of galaxy velocities from spectroscopic surveys. The signal-to-noise ratio (SNR) of kSZ measurements scales directly with the correlation coefficient $r$ between reconstructed and true velocities. We introduce Velocityformer, an equivariant graph transformer architecture designed to match the specific symmetry of the observational data. While the underlying physics is equivariant with respect to translations and rotations, observational effects break this symmetry due to the preferred line-of-sight direction. Matching the model's inductive bias to the data's broken symmetry consistently improves performance across all model sizes and training volumes, with Velocityformer improving $r$ by 35% over the standard linear theory baseline and outperforming ML baselines at every data volume. By matching the model's inductive bias to the data and conditioning on the physics-based long-wavelength solution, Velocityformer is highly data-efficient, training to high accuracy on as few as 4 low-fidelity simulations, and generalises zero-shot across input geometry, cosmological parameters, and galaxy sample. On high-fidelity simulated galaxy catalogues, this yields a 30% improvement in $r$ over the physical baseline, directly translating to the same SNR gain on observational data.",
+        "authors": [
+          "Tilman Tröster",
+          "David Mirkovic",
+          "Veronika Oehl",
+          "Arne Thomsen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "DeepWeb-Bench: A Deep Research Benchmark Demanding Massive Cross-Source Evidence and Long-Horizon Derivation",
+        "url": "https://arxiv.org/abs/2605.21482v1",
+        "publishedAt": "2026-05-20T17:59:03.000Z",
+        "summary": "Deep research, in which an agent searches the open web, collects evidence, and derives an answer through extended reasoning, is a prominent use case for frontier language models. Frontier deep research products score high on existing benchmarks, making it difficult to distinguish their capabilities from current evaluation data alone. We introduce DeepWeb-Bench, a deep research benchmark that is substantially harder than existing benchmarks for the current frontier. Difficulty comes from three properties of the data itself: each task requires massive evidence collection, cross-source reconciliation, and long-horizon multi-step derivation. We represent these three sources of difficulty as four capability families (Retrieval, Derivation, Reasoning, and Calibration) and report results sliced by family. Every reference answer is accompanied by a source-provenance record with four disclosure levels and cross-source checks where available, making scores easier to audit against the underlying evidence. We evaluate DeepWeb-Bench on nine frontier models and report three findings: (1) retrieval is not the bottleneck, as retrieval failures account for only 12-14% of errors while derivation and calibration failures account for over 70%; (2) strong and weak models fail in qualitatively different ways, with strong models' errors dominated by incomplete derivation and weak models' by hallucinated precision; and (3) models exhibit genuine specialization across domains, with cross-model agreement of only rho = 0.61 and per-case disagreement reaching 18.8 percentage points. The public benchmark release includes the data, rubrics, and evaluation code.",
+        "authors": [
+          "Sixiong Xie",
+          "Zhuofan Shi",
+          "Haiyang Shen",
+          "Jiuzheng Wang",
+          "Siqi Zhong",
+          "Mugeng Liu",
+          "Chongyang Pan",
+          "Peilun Jia",
+          "Baoqing Sun",
+          "Xiang Jing",
+          "Yun Ma"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "AiraXiv: An AI-Driven Open-Access Platform for Human and AI Scientists",
+        "url": "https://arxiv.org/abs/2605.21481v1",
+        "publishedAt": "2026-05-20T17:59:03.000Z",
+        "summary": "Recent advances in artificial intelligence (AI) have accelerated the growth of both human-authored and AI-generated research outputs, placing increasing strain on traditional academic publishing systems and challenging the scalability of conference- and journal-centered paradigms amid rising submission volumes, reviewer workload, and venue size. To address these challenges, we explore an AI-era publishing paradigm in which both human and AI scientists participate as authors and readers, and papers evolve through continuous, feedback-driven iteration. We propose AiraXiv, an AI-driven open-access platform built on open preprints, AI-augmented analysis and review, and reader feedback. AiraXiv supports human scientists through an interactive UI and AI scientists through Model Context Protocol (MCP)-based interactions. We validate AiraXiv through real-world deployments, including serving as the submission platform for ICAIS 2025, demonstrating its potential as a fast, inclusive, and scalable research infrastructure for the AI era. AiraXiv is publicly available at https://airaxiv.com.",
+        "authors": [
+          "Junshu Pan",
+          "Panzhong Lu",
+          "Yixuan Weng",
+          "Qiyao Sun",
+          "Fang Guo",
+          "Zijie Yang",
+          "Qiji Zhou",
+          "Yue Zhang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "WikiVQABench: A Knowledge-Grounded Visual Question Answering Benchmark from Wikipedia and Wikidata",
+        "url": "https://arxiv.org/abs/2605.21479v1",
+        "publishedAt": "2026-05-20T17:58:24.000Z",
+        "summary": "Visual Question Answering (VQA) benchmarks have largely emphasized perception-based tasks that can be solved from visual content alone. In contrast, many real-world scenarios require external knowledge that is not directly observable in the image to answer correctly. We introduce WikiVQABench, a human-curated knowledge-grounded VQA benchmark constructed by systematically combining Wikipedia images, their associated article captions, and structured knowledge from Wikidata. Our pipeline uses large language models (LLMs) to generate candidate multiple-choice image-question-answer sets. All generated instances are subsequently reviewed and curated by human annotators to ensure factual correctness, visual-text consistency, and that each question requires external knowledge in addition to visual evidence for correct resolution. WikiVQABench comprises a substantial collection of Wikipedia images with curated multiple-choice questions designed to benchmark knowledge-aware vision-language models (VLMs). Evaluation of fifteen VLMs (256M-90B parameters) reveals a wide performance range (24.7%-75.6% accuracy), demonstrating that the benchmark effectively discriminates model capabilities on knowledge-intensive reasoning. The dataset and benchmarking code are publicly available.",
+        "authors": [
+          "Basel Shbita",
+          "Pengyuan Li",
+          "Anna Lisa Gentile"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Is Fixing Schema Graphs Necessary? Full-Resolution Graph Structure Learning for Relational Deep Learning",
+        "url": "https://arxiv.org/abs/2605.21475v1",
+        "publishedAt": "2026-05-20T17:56:09.000Z",
+        "summary": "Relational prediction tasks are fundamental in many real-world applications, where data are naturally stored in relational databases (RDBs). Relational Deep Learning (RDL) addresses this problem by modeling RDBs as graphs and applying graph neural networks (GNNs) for end-to-end learning. However, the full-resolution property is commonly adopted as a design principle in graph construction for RDBs to preserve relational semantics, which leads most existing methods to rely on fixed graph structures. In this paper, we propose FROG, a Full-Resolution and Optimizable Graph Structure Learning} framework for RDL that formulates relational structure learning as a learnable table role modeling problem, allowing tables to contribute as nodes and edges in message passing. We further design role-driven message passing mechanisms to capture relational semantics, enabling joint optimization of graph structure and GNN representations. To ensure semantic consistency, we introduce functional dependency constraints that regularize representations across table and entity levels. Extensive experiments demonstrate that our method outperforms existing approaches and reveal how table roles impact downstream tasks, offering new insights into graph construction for RDL",
+        "authors": [
+          "Yi Huang",
+          "Qingyun Sun",
+          "Jia Li",
+          "Xingcheng Fu",
+          "Jianxin Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling",
+        "url": "https://arxiv.org/abs/2605.21470v1",
+        "publishedAt": "2026-05-20T17:54:27.000Z",
+        "summary": "Computer-use agents (CUA) automate tasks specified with natural language such as \"order the cheapest item from Taco Bell\" by generating sequences of calls to tools such as click, type, and scroll on a browser. Current implementations follow a sequential fetch-screenshot-execute loop where each iteration requires an LLM call, resulting in high latency and frequent errors from incorrect tool use. We present agent just-in-time (JIT) compilation, an alternative that compiles task descriptions directly into executable code that is free to include LLM calls, tool calls, and parallelization. Our approach comprises three components: (1) JIT-Planner, which generates multiple code plans, validates each against tool specifications, and selects the minimum-cost candidate; (2) JIT-Scheduler, which explores parallelization strategies via Monte Carlo cost estimation from learned latency distributions; and (3) an invariant-enforcing tool protocol specifying precondition and postcondition state requirements that reduce the rate of generating plans with incorrect tool use. Across 5 web applications, JIT-Planner achieves $10.4\\times$ speedup and $+28\\%$ accuracy over Browser-Use, while JIT-Scheduler achieves $2.4\\times$ speedup and $+9\\%$ accuracy over OpenAI CUA.",
+        "authors": [
+          "Caleb Winston",
+          "Ron Yifeng Wang",
+          "Azalia Mirhoseini",
+          "Christos Kozyrakis"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "You Only Need Minimal RLVR Training: Extrapolating LLMs via Rank-1 Trajectories",
+        "url": "https://arxiv.org/abs/2605.21468v1",
+        "publishedAt": "2026-05-20T17:53:20.000Z",
+        "summary": "Reinforcement learning with verifiable rewards (RLVR) has become a dominant paradigm for improving reasoning in large language models (LLMs), yet the underlying geometry of the resulting parameter trajectories remains underexplored. In this work, we demonstrate that RLVR weight trajectories are extremely low-rank and highly predictable. Specifically, we find that the majority of downstream performance gains are captured by a rank-1 approximation of the parameter deltas, where the magnitude of this projection evolves near-linearly with training steps. Motivated by this, we propose a simple and compute-efficient method RELEX (REinforcement Learning EXtrapolation), which estimates the rank-1 subspace from a short observation window and extrapolates future checkpoints via linear regression, with no learned model required. Across three models (i.e., Qwen2.5-Math-1.5B, Qwen3-4B-Base, and Qwen3-8B-Base), RELEX produces checkpoints that match or exceed RLVR performance on both in-domain and out-of-domain benchmarks, requiring as few as 15% steps of full RLVR training. Remarkably, RELEX is able to extrapolate far beyond the observation window at no training cost, predicting checkpoints up to 10-20$\\times$ beyond the observed prefix with continued improvement (e.g., observe only the first 50 steps and extrapolate to 1000 steps). Our ablation analysis confirms the minimalist sufficiency of RELEX: neither increasing the subspace rank nor employing non-linear modeling yields further gains in extrapolation. Finally, we show that RELEX's success stems from a \"denoising\" effect: by projecting updates onto the rank-1 subspace, the model discards stochastic optimization noise that would otherwise degrade performance during extrapolation. Our code is available at https://github.com/weizhepei/RELEX.",
+        "authors": [
+          "Zhepei Wei",
+          "Xinyu Zhu",
+          "Wei-Lin Chen",
+          "Chengsong Huang",
+          "Jiaxin Huang",
+          "Yu Meng"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "DelTA: Discriminative Token Credit Assignment for Reinforcement Learning from Verifiable Rewards",
+        "url": "https://arxiv.org/abs/2605.21467v1",
+        "publishedAt": "2026-05-20T17:53:09.000Z",
+        "summary": "Reinforcement learning from verifiable rewards (RLVR) has emerged as a central technique for improving the reasoning capabilities of large language models. Despite its effectiveness, how response-level rewards translate into token-level probability changes remains poorly understood. We introduce a discriminator view of RLVR updates, showing that the policy-gradient update direction implicitly acts as a linear discriminator over token-gradient vectors and thereby determines which token probabilities are increased or decreased during learning. Under standard sequence-level RLVR, this discriminator is constructed from positive- and negative-side centroids formed by advantage-weighted averaging of token-gradient vectors. However, such centroid construction can be dominated by shared high-frequency patterns, such as formatting tokens, diluting sparse yet discriminative directions that better distinguish high-reward responses from low-reward ones. To address this limitation, we propose $\\textbf{DelTA}$, a discriminative token credit assignment method that estimates token coefficients to amplify side-specific token-gradient directions and downweight shared or weakly discriminative ones. These coefficients reweight a self-normalized RLVR surrogate, making the effective side-wise centroids more contrastive and thereby reshaping the RLVR update direction. On seven mathematical benchmarks, DelTA outperforms the strongest same-scale baselines by 3.26 and 2.62 average points on Qwen3-8B-Base and Qwen3-14B-Base, respectively. Additional results on code generation, a different backbone, and out-of-domain evaluations further demonstrate the generalization ability of DelTA.",
+        "authors": [
+          "Kaiyi Zhang",
+          "Wei Wu",
+          "Yankai Lin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
       }
     ],
     "news": [
+      {
+        "title": "Technology usually creates jobs for young, skilled workers. Will AI do the same?",
+        "url": "https://news.mit.edu/2026/technology-creates-jobs-young-skilled-workers-ai-0521",
+        "publishedAt": "2026-05-21T04:00:00.000Z",
+        "summary": "At any given time, technology does two things to employment: It replaces traditional jobs, and it creates new lines of work. Machines replace farmers, but enable, say, aeronautical engineers to exist. So, if tech creates new jobs, who gets them? How well do they pay? How long do new jobs remain new, before they become just another common task any worker can do? A new study of U.S. employment led by MIT labor economist David Autor sheds light on all these matters. In the postwar U.S., as Autor and his colleagues show in granular detail, new forms of work have tended to benefit college graduates under 30 more than anyone else.&nbsp; “We had never before seen exactly who is doing new work,” Autor says. “It’s done more by young and educated people, in urban settings.”&nbsp; The study also contains a powerful large-scale insight: A lot of innovation-based new work is driven by demand. Government-backed expansion of research and manufacturing in the 1940s, in response to World War II, accounted for a huge amount of new work, and new forms of expertise.&nbsp; “This says that wherever we make new investments, we end up getting new specializations,” Autor says. “If you create a large-scale activity, there’s always going to be an opportunity for new specialized knowledge that’s relevant for it. We thought that was exciting to see.”&nbsp; The paper, “ What Makes New Work Different from More Work ?” is forthcoming in the Annual Review of Economics . The authors are Autor; Caroline Chin, a doctoral student in MIT’s Department of Economics; Anna M. Salomons, a professor at Tilburg University’s Department of Economics and Utrecht University’s School of Economics; and Bryan Seegmiller PhD ’22, an assistant professor at Northwestern University’s Kellogg School of Management. And yes, learning about new work, and the kinds of workers who obtain it, might be relevant to the spread of artificial intelligence — although, in Autor’s estimation, it is too soon to tell just how AI will affect the workplace. “People are really worried that AI-based automation is going to erode specific tasks more rapidly,” Autor observes. “Eroding tasks is not the same thing as eroding jobs, since many jobs involve a lot of tasks. But we’re all saying: Where is the new work going to come from? It’s so important, and we know little about it. We don’t know what it will be, what it will look like, and who will be able to do it.” “If everyone is an expert, then no one is an expert” The four co-authors also collaborated on a previous major study of new work, published in 2024, which found that about six out of 10 jobs in the U.S. from 1940 to 2018 were in new specialties that had only developed broadly since 1940. The new study extends that line of research by looking more precisely at who fills the new lines of work.&nbsp; To do that, the researchers used U.S. Census Bureau data from 1940 through 1950, as well as the Census Bureau’s American Community Survey (ACS) data from 2011 to 2023. In the first case, because Census Bureau records become wholly public after about 70 years, the scholars could examine individual-level data about occupations, salaries, and more,&nbsp;and could track the same workers as they changed jobs between the 1940 and 1950 Census enumerations.&nbsp; Through a collaborative research arrangement with the U.S. Census Bureau, the authors also gained secure access to person-level ACS records. These data allowed them to analyze the earnings, education, and other demographic characteristics of workers in new occupational specialties — and to compare them with workers in longstanding ones. New work, Autor observes, is always tied to new forms of expertise. At first, this expertise is scarce; over time, it may become more common. In any case, expertise is often linked to new forms of technology. “It requires mastering some capability,” Autor says. “What makes labor valuable is not simply the ability to do stuff, but specialized knowledge. And that often differentiates high-paid work from low-paid work.” Moreover, he adds, “It has to be scarce. If everyone is an expert, then no one is an expert.” By examining the census data, the scholars found that back in 1950, about 7 percent of employees had jobs in types of work that had emerged since 1930. More recently, about 18 percent of workers in the 2011-2023 period were in lines of work introduced since 1970. (That happens to be roughly the same portion of new jobs per decade, although Autor does not think this is a hard-and-fast trend.)&nbsp; In these time periods, new work has emerged more often in urban areas, with people under 30 benefitting more than any other age category. Getting a job in a line of new work seems to have a lasting effect: People employed in new work in 1940 were 2.5 times as likely to be in new work in 1950, compared to the general population. College graduates were 2.9 percentage points more likely than high school graduates to be engaged in new work.&nbsp; New work also has a wage premium, that is, better salaries on aggregate than in already-existing forms of work. Yet as the study shows, that wage premium also fades over time, as the particular expertise in many forms of new work becomes much more widely grasped.&nbsp; “The scarcity value erodes,” Autor says. “It becomes common knowledge. It itself gets automated. New work gets old.” After all, Autor points out, driving a car was once a scarce form of expertise. For that matter, so was being able to use word-processing programs such as WordPerfect or Microsoft Word, well into the 1990s. After a while, though, being able to handle word-processing tools became the most elementary part of using a computer. Back to AI for a minute Studying who gets new jobs led the scholars to striking conclusions about how new work is created. Examining county-level data from the World War II era, when the federal government was backing new manufacturing in public-private partnerships throughout the U.S., the study shows that counties with new factories had more new work, and that 85 to 90 percent of new work from 1940 to 1950 was technology-driven.&nbsp; In this sense there was a great deal of demand-driven innovation at the time. Today, public discourse about innovation often focuses on the supply side, namely, the innovators and entrepreneurs trying to create new products. But the study shows that the demand side can significantly influence innovative activity.&nbsp; “Technology is not like, ‘Eureka!’ where it just happens,” Autor says. “Innovation is a purposive activity. And innovation is cumulative. If you get far enough, it will have its own momentum. But if you don’t, it’ll never get there.” Which brings us back to AI, the topic so many people are focused on in 2026. Will AI create good new jobs, or will it take work away? Well, it likely depends how we implement it, Autor thinks. Consider the massive health care sector, where there could be a lot of types of tech-driven new work, if people are interested in creating jobs. “There are different ways we could use AI in health care,” Autor says. “One is just to automate people’s jobs away. The other is to allow people with different levels of expertise to do different tasks. I would say the latter is more socially beneficial. But it’s not clear that is where the market will go.”&nbsp; On the other hand, maybe with government-driven demand in various forms, AI could get applied in ways that end up boosting health care-sector productivity, creating new jobs as a result.&nbsp; “More than half the dollars in health care in the U.S. are public dollars,” Autor observes. “We have a lot of leverage there, we can push things in that direction. There are different ways to use this.”&nbsp; This research was supported, in part, by the Hewlett Foundation, the Google Technology&nbsp;and Society Visiting Fellows Program, the NOMIS Foundation, the Schmidt Sciences AI2050 Fellowship,&nbsp;the Smith Richardson Foundation, the James M. and Cathleen D. Stone Foundation, and Instituut Gak.",
+        "authors": [
+          "Peter Dizikes | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Products",
+        "ageHours": 1
+      },
+      {
+        "title": "Jensen Huang says he&#8217;s found a &#8216;brand new&#8217; $200B market for Nvidia",
+        "url": "https://techcrunch.com/2026/05/20/jensen-huang-says-hes-found-a-brand-new-200b-market-for-nvidia/",
+        "publishedAt": "2026-05-21T00:28:31.000Z",
+        "summary": "The next big thing for Nvidia will be CPUs for AI agents, $200 billion worth, CEO Jensen Huang predicts.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 5
+      },
+      {
+        "title": "Anthropic says it&#8217;s about to have its first profitable quarter",
+        "url": "https://techcrunch.com/2026/05/20/anthropic-says-its-about-to-have-its-first-profitable-quarter/",
+        "publishedAt": "2026-05-21T00:21:21.000Z",
+        "summary": "Anthropic has told its investors that it will more than double revenue to around $10.9 billion in its second quarter.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 5
+      },
       {
         "title": "Clouted wants to take the guesswork out of making short videos go viral",
         "url": "https://techcrunch.com/2026/05/20/clouted-wants-to-take-the-guesswork-out-of-making-short-videos-go-viral/",
@@ -307,7 +354,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 7
       },
       {
         "title": "xAI burned $6.4B last year — SpaceX’s IPO filing shows why the spending is far from over",
@@ -321,7 +368,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 7
       },
       {
         "title": "Nvidia posts another record quarter, reveals $43B of holdings in startups",
@@ -335,7 +382,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 7
       },
       {
         "title": "Musk’s xAI is being sued over its data center generators — now it’s buying $2.8B more",
@@ -349,7 +396,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 7
       },
       {
         "title": "Anthropic will pay xAI $1.25B per month for compute",
@@ -363,7 +410,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 8
       },
       {
         "title": "OpenAI claims it solved an 80-year-old math problem — for real this time",
@@ -377,7 +424,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "IrisGo, a startup backed by Andrew Ng, looks to become the AI desktop buddy you never knew you needed",
@@ -391,7 +438,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 10
       },
       {
         "title": "OpenAI barrels toward IPO that may happen in September",
@@ -405,7 +452,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "AI search startups are blowing up",
@@ -419,56 +466,14 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
-      },
-      {
-        "title": "Stability AI releases a new audio model that can create 6-minute songs",
-        "url": "https://techcrunch.com/2026/05/20/stability-ai-release-a-new-audio-model-that-can-create-six-minute-songs/",
-        "publishedAt": "2026-05-20T15:00:00.000Z",
-        "summary": "Stability Audio 3.0 small model can run on-device and generate two-minute long tracks.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 9
-      },
-      {
-        "title": "Startup Battlefield 200 applications close in 1 week: Window to nominate and apply for the most promising startups closes May 27",
-        "url": "https://techcrunch.com/2026/05/20/startup-battlefield-200-applications-close-in-1-week-window-to-nominate-and-apply-for-the-most-promising-startups-closes-may-27/",
-        "publishedAt": "2026-05-20T14:00:00.000Z",
-        "summary": "Startup Battlefield 200 applications close May 27. Pitch at TechCrunch Disrupt, get investor access, win $100K, plus more scaling perks. Nominate an early-stage founder or submit your startup today.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 10
-      },
-      {
-        "title": "NanoClaw creator turns down $20M buyout offer, raises $12M seed instead",
-        "url": "https://techcrunch.com/2026/05/20/nanoclaw-creator-turns-down-20m-buyout-offer-raises-12m-seed-instead/",
-        "publishedAt": "2026-05-20T14:00:00.000Z",
-        "summary": "NanoClaw was created as a secure alternative to OpenClaw to assist the Cohen brothers with their AI marketing firm that used agents to do much of the work. But instead of running directly on a computer, NanoClaw runs sandboxed in a container.",
-        "authors": [
-          "Julie Bort"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 10
+        "ageHours": 14
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
@@ -476,14 +481,14 @@
       },
       {
         "name": "General",
-        "count": 9
+        "count": 8
       },
       {
         "name": "Models",
         "count": 3
       },
       {
-        "name": "Policy",
+        "name": "Products",
         "count": 1
       }
     ]
