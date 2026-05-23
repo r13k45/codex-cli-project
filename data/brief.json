@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-22T23:17:33.518Z",
+  "generatedAt": "2026-05-23T04:05:21.572Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,7 +27,9 @@
         }
       ],
       "itemCount": 12,
-      "errors": []
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -100,7 +102,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "Integrable Elasticity via Neural Demand Potentials",
@@ -115,7 +117,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "Vector Policy Optimization: Training for Diversity Improves Test-Time Search",
@@ -134,10 +136,10 @@
           "Pulkit Agrawal"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "Remember to be Curious: Episodic Context and Persistent Worlds for 3D Exploration",
@@ -156,7 +158,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "The Matching Principle: A Geometric Theory of Loss Functions for Nuisance-Robust Representation Learning",
@@ -167,10 +169,10 @@
           "Vishal Rajput"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "Finite-Particle Convergence Rates for Conservative and Non-Conservative Drifting Models",
@@ -181,10 +183,10 @@
           "Krishnakumar Balasubramanian"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "MOSS: Self-Evolution through Source-Level Rewriting in Autonomous Agent Systems",
@@ -201,26 +203,10 @@
           "Yike Guo"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention",
-        "url": "https://arxiv.org/abs/2605.22791v1",
-        "publishedAt": "2026-05-21T17:44:57.000Z",
-        "summary": "Linear attention replaces the unbounded cache of softmax attention with a fixed-size recurrent state, reducing sequence mixing to linear time and decoding to constant memory. The hard part is not just what to forget, but how to edit this compressed memory without scrambling existing associations. Delta-rule models subtract the current read before writing a new value, and Kimi Delta Attention (KDA) sharpens forgetting with channel-wise decay. But the active edit still uses a single scalar gate to control two different things: how much old content to erase on the key side and how much new content to commit on the value side. We introduce Gated DeltaNet-2, which generalizes both Gated DeltaNet and KDA by inheriting adaptive forgetting and channel-wise decay while addressing their shared limitation, the scalar tie between erasing and writing. Gated Delta Rule-2 separates these roles with a channel-wise erase gate b_t and a channel-wise write gate w_t, reducing to KDA when both gates collapse to the same scalar and to Gated DeltaNet when the decay also collapses. We derive a fast-weight update view, a chunkwise WY algorithm with channel-wise decay absorbed into asymmetric erase factors, and a gate-aware backward pass that preserves efficient parallel training. At 1.3B parameters trained on 100B FineWeb-Edu tokens, Gated DeltaNet-2 achieves the strongest overall results among Mamba-2, Gated DeltaNet, KDA, and Mamba-3 variants across language modeling, commonsense reasoning, and retrieval. Its advantage is most pronounced on long-context RULER needle-in-a-haystack benchmarks, where it improves the evaluated multi-key retrieval setting and remains strong in both recurrent and hybrid settings. Code is available at https://github.com/NVlabs/GatedDeltaNet-2.",
-        "authors": [
-          "Ali Hatamizadeh",
-          "Yejin Choi",
-          "Jan Kautz"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
+        "ageHours": 34
       },
       {
         "title": "LCGuard: Latent Communication Guard for Safe KV Sharing in Multi-Agent Systems",
@@ -235,10 +221,10 @@
           "Karthikeyan Natesan Ramamurthy"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 34
       },
       {
         "title": "Evaluating Commercial AI Chatbots as News Intermediaries",
@@ -259,28 +245,7 @@
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "DeltaBox: Scaling Stateful AI Agents with Millisecond-Level Sandbox Checkpoint/Rollback",
-        "url": "https://arxiv.org/abs/2605.22781v1",
-        "publishedAt": "2026-05-21T17:36:17.000Z",
-        "summary": "LLM-powered AI agents require high-frequency state exploration (e.g., test-time tree search and reinforcement learning), relying on rapid checkpoint and rollback (C/R) of the complete sandbox state, including files and process state (e.g., memory, contexts, etc.). Existing mechanisms duplicate the entire state, causing hundreds of milliseconds to seconds of latency per C/R, which severely bottlenecks deep search and large-scale fan-outs.\n  This paper observes that subsequent checkpoints in AI agents are highly similar. Therefore, instead of full duplication, a sandbox should only duplicate the changes between consecutive checkpoints (Key Insight). However, it is non-trivial to realize the idea, mainly due to the missing OS supports. This paper proposes a new OS-level abstraction, DeltaState, to enable the change-based transactional C/R for AI agents with two co-designed OS mechanisms. First, DeltaFS enables change-based filesystem C/R by organizing the file states into layers and dynamically freezing the writable layer and inserting a new one during checkpoint, reducing file updates to copy-on-write, and making rollback a simple layer switch. Second, DeltaCR enables change-based process state C/R using incremental dumps, and accelerates rollback by bypassing traditional pipelines to directly fork() from a frozen template process. We then present DeltaBox, a novel agent sandbox achieving millisecond level C/R through the two new mechanisms. Evaluations on SWE-bench and RL micro-benchmarks show DeltaBox completes checkpoint and rollback in millisecond-level latency (14ms and 5ms, respectively), empowering agents to explore substantially more nodes under fixed time budgets.",
-        "authors": [
-          "Yunpeng Dong",
-          "Jingkai He",
-          "Yuze Hou",
-          "Dong Du",
-          "Zhonghu Xu",
-          "Si Yu",
-          "Yubin Xia",
-          "Haibo Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
+        "ageHours": 34
       },
       {
         "title": "FAME: Failure-Aware Mixture-of-Experts for Message-Level Log Anomaly Detection",
@@ -299,7 +264,44 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 30
+        "ageHours": 35
+      },
+      {
+        "title": "SDPM: Survival Diffusion Probabilistic Model for Continuous-Time Survival Analysis",
+        "url": "https://arxiv.org/abs/2605.22776v1",
+        "publishedAt": "2026-05-21T17:33:47.000Z",
+        "summary": "Survival analysis aims to estimate a time-to-event distribution from data with censored observations. Many existing methods either impose structural assumptions on the hazard function or discretize the time axis, which may limit flexibility and introduce approximation errors. We propose the Survival Diffusion Probabilistic Model (SDPM), a generative approach to continuous-time survival analysis. SDPM models the conditional distribution of the survival outcome, represented by the pair of observed time and censoring indicator, $\\mathbb{P}(T,δ\\mid \\mathbf{x})$, using a denoising diffusion model. Under the assumption of conditionally independent censoring, conditional samples generated by the model can be transformed into survival function estimates using the Kaplan-Meier estimator. This formulation avoids parametric assumptions on the event-time distribution and does not require a discretization of the output time space. The model operates in a transformed target space, using standardized log-times and a continuous Gaussian-mixture representation of the censoring indicator. We evaluate SDPM on ten real survival datasets and compare it with five strong baselines, including tree-based, boosting-based, and neural survival models. Results show that SDPM achieves competitive predictive performance across C-index, integrated time-dependent AUC, and integrated Brier score. A study on synthetic Cox-Weibull data demonstrates that SDPM can recover the shape of an underlying continuous survival distribution more accurately than a strong nonparametric baseline when sufficiently many samples are generated. An ablation study confirms the importance of the proposed target-space transformations, which improve event-rate calibration, reduce invalid generated times, and provide consistent gains in predictive discrimination. Codes implementing the proposed model are publicly available.",
+        "authors": [
+          "Stanislav R. Kirpichenko",
+          "Andrei V. Konstantinov",
+          "Lev V. Utkin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 35
+      },
+      {
+        "title": "MambaGaze: Bidirectional Mamba with Explicit Missing Data Modeling for Cognitive Load Assessment from Eye-Gaze Tracking Data",
+        "url": "https://arxiv.org/abs/2605.22775v1",
+        "publishedAt": "2026-05-21T17:33:41.000Z",
+        "summary": "Real-time cognitive load assessment from eye-tracking signals could potentially enable adaptive human-centered-AI such as safety-critical applications such as driver vigilance monitoring or automated flight deck assistance, yet two challenges persist: handling frequent data missingness from blinks and tracking failures, and efficiently modeling long-range temporal dependencies. We propose MambaGaze, a framework that addresses these challenges through 1) XMD encoding, which augments raw features with observation masks and time-deltas to explicitly model data uncertainty, and 2) bidirectional Mamba-2, which captures temporal dependencies with linear computational complexity. Experiments on CLARE and CL-Drive datasets under leave-one-subject-out evaluation show that MambaGaze achieves 76.8% and 73.1% accuracy, respectively, outperforming CNN, Transformer, ResNet, and VGG baselines by 4-12 percentage points. Edge deployment benchmarks on NVIDIA Jetson platforms demonstrate real-time inference at 43-68 FPS with power consumption below 7.5W, confirming feasibility for wearable cognitive load monitoring.",
+        "authors": [
+          "Amir Mousavi",
+          "Mohammad Sadegh Sirjani",
+          "Erfan Nourbakhsh",
+          "Mimi Xie",
+          "Rocky Slavin",
+          "Leslie Neely",
+          "John Davis",
+          "John Quarles"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 35
       }
     ],
     "news": [
@@ -315,7 +317,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 0
+        "ageHours": 5
       },
       {
         "title": "Google goes for the glitter with disco-ball icons: &#8216;Are y&#8217;all sure you still want this?&#8217;",
@@ -329,7 +331,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 7
       },
       {
         "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
@@ -343,7 +345,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 7
       },
       {
         "title": "Elon Musk can&#8217;t hear you over the sound of his $1.75 trillion IPO",
@@ -357,7 +359,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 5
+        "ageHours": 10
       },
       {
         "title": "You can no longer Google the word &#8216;disregard&#8217;",
@@ -371,7 +373,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "We tried Google’s AI glasses and they’re almost there",
@@ -385,7 +387,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 8
+        "ageHours": 12
       },
       {
         "title": "SpaceX files to go public, and the math requires a little faith",
@@ -399,7 +401,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "OpenAI named a Leader in enterprise coding agents by Gartner",
@@ -411,7 +413,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 23
+        "ageHours": 28
       },
       {
         "title": "How Virgin Atlantic ships faster with Codex",
@@ -423,7 +425,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 23
+        "ageHours": 28
       },
       {
         "title": "We’re launching the Google DeepMind Accelerator program in Asia Pacific to tackle environmental risks",
@@ -435,7 +437,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Products",
-        "ageHours": 28
+        "ageHours": 32
       },
       {
         "title": "Spotify and Universal Music strike deal allowing fan-made AI covers and remixes",
@@ -449,7 +451,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 28
+        "ageHours": 32
       },
       {
         "title": "Six search engines worth trying now that Google isn’t really Google anymore",
@@ -463,14 +465,14 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 28
+        "ageHours": 33
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 9,
+    "last24h": 7,
     "topCategories": [
       {
         "name": "Research",
