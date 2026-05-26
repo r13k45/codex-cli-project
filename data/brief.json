@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T23:19:39.441Z",
+  "generatedAt": "2026-05-26T04:22:39.270Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,7 +83,226 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research",
+        "url": "https://arxiv.org/abs/2605.26114v1",
+        "publishedAt": "2026-05-25T17:59:49.000Z",
+        "summary": "We present MobileGym, a browser-hosted, lightweight, fully controllable environment for everyday mobile use, targeting interaction fidelity without replicating proprietary backends. It enables two capabilities previously out of reach for everyday apps: verifiable outcome signals through deterministic state-based judging over structured JSON state, and scalable online RL through low-cost parallel rollouts. The full environment state is captured, configured, forked, and compared as structured JSON, and a single server can host hundreds of parallel instances, with about 400 MB memory per instance and about 3 s cold start. A layered state model and a declarative task-definition framework keep state programmability and task creation practical at scale, and a single programmatic judging mechanism delivers both deterministic evaluation verdicts and dense RL rewards. The accompanying MobileGym-Bench provides 416 parameterized task templates, including 256 test and 160 train templates, over 28 apps, with deterministic judges and a structured AnswerSheet protocol that avoids free-text matching failures. In a Sim-to-Real case study, GRPO on Qwen3-VL-4B-Instruct gains +12.8 percentage points on the 256-task test set, and on a 59-task real-device signal subset, real-device execution retains 95.1% of the simulation-side training gain. Project page: https://mobilegym.github.io.",
+        "authors": [
+          "Dingbang Wu",
+          "Rui Hao",
+          "Haiyang Wang",
+          "Shuzhe Wu",
+          "Han Xiao",
+          "Zhenghong Li",
+          "Bojiang Zhou",
+          "Zheng Ju",
+          "Zichen Liu",
+          "Lue Fan",
+          "Zhaoxiang Zhang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "From Model Scaling to System Scaling: Scaling the Harness in Agentic AI",
+        "url": "https://arxiv.org/abs/2605.26112v1",
+        "publishedAt": "2026-05-25T17:59:36.000Z",
+        "summary": "This paper studies the next major bottleneck in agentic AI as system scaling, not only model scaling: the design of auditable, persistent, modular, and verifiable architectures around foundation models. We refer to this shift as scaling the harness: treating the structured execution layer around a foundation model as a first-class object of design, evaluation, and optimization. Although recent large language models enable agents to use tools, retrieve information, maintain memory, and execute long-horizon workflows, evaluation remains largely model-centric, often reducing agents to final-task success while treating memory, retrieval, tool use, orchestration, verification, and governance as secondary implementation details. This framing is increasingly inadequate because agent performance emerges from the interaction among the foundation model, memory substrate, context constructor, skill-routing layer, orchestration loop, and verification-and-governance layer. Together, these components form the agent harness, which translates model capability into long-horizon agent behavior. We study scaling the harness through three core bottlenecks: context governance, trustworthy memory, and dynamic skill routing, together with the orchestration and governance mechanisms that coordinate and constrain them. We further outline a research agenda for harness-level benchmarks that go beyond one-shot task success to measure trajectory quality, memory hygiene, context efficiency, communication fidelity, verification cost, and safe evolution over time. To make the discussion concrete, we develop CheetahClaws: https://github.com/SafeRL-Lab/cheetahclaws, a Python-native reference harness, and compare it with Claude Code and OpenClaw. Our main claim is that future progress in agentic AI will depend as much on system design as on stronger foundation models.",
+        "authors": [
+          "Shangding Gu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Squeezing Capacity from Multimodal Large Language Models for Subject-driven Generation",
+        "url": "https://arxiv.org/abs/2605.26111v1",
+        "publishedAt": "2026-05-25T17:59:35.000Z",
+        "summary": "Subject-driven image generation aims to synthesize new images that preserve the identity of the given subject while following textual instructions. Existing approaches often encode text and reference images separately. This limits cross-modal reasoning abilities and causes copy-paste artifacts. Recent frameworks that connect multimodal models and diffusion models improve instruction following, but largely overlook identity preservation. To address these limitations, we condition diffusion models on Multimodal Large Language Models (MLLMs) that jointly encode text and reference images, and augment it with VAE-based identity conditioning. A novel Dual Layer Aggregation (DLA) module is designed to aggregate multi-level MLLM features for optimal conditioning, and a multi-stage denoising strategy is applied to progressively balance the semantic information from MLLM and fine-detail identity from VAE during inference. Extensive experiments demonstrate that our approach harmonizes multimodal understanding with identity preservation, mitigates copy-paste issues, and achieves superior performance regarding human preference on subject-driven image generation. Our project website is available at https://zsh2000.github.io/squeeze-mllm-subject-gen/.",
+        "authors": [
+          "Shuhong Zheng",
+          "Aashish Kumar Misraa",
+          "Yu-Teng Li",
+          "Yu-Jhe Li",
+          "Igor Gilitschenski"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Prism: A Plug-in Reproducible Infrastructure for Scalable Multimodal Continual Instruction Tuning",
+        "url": "https://arxiv.org/abs/2605.26110v1",
+        "publishedAt": "2026-05-25T17:59:28.000Z",
+        "summary": "Multimodal Large Language Models (MLLMs) achieve versatility by reformulating diverse tasks into a unified instruction-following framework via instruction tuning. However, real-world deployment requires continuous adaptation to emerging tasks, motivating Multimodal Continual Instruction Tuning (MCIT). Despite its growing importance, current MCIT research is hindered by severe engineering bottlenecks. Existing methods are typically implemented by directly modifying the base MLLM codebase, which imposes substantial implementation overhead and yields method-specific architectures that severely limit code reuse and fair comparison. To address this, we introduce Prism, a plug-in reproducible codebase specifically designed for scalable MCIT research. It separates algorithmic development from the backbone implementation via a lightweight plugin registration mechanism, enabling new strategies to be integrated as independent plugins without modifying the underlying MLLM codebase, thereby eliminating structural fragmentation and accelerating method development. Prism natively supports widely used large-scale training pipeline, thereby enabling reproducible and scalable MCIT experimentation. Code is available at https://github.com/LAMDA-CL/Prism.",
+        "authors": [
+          "Jun-Tao Tang",
+          "Yu-Cheng Shi",
+          "Zhen-Hao Xie",
+          "Da-Wei Zhou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Looped Diffusion Language Models",
+        "url": "https://arxiv.org/abs/2605.26106v1",
+        "publishedAt": "2026-05-25T17:58:24.000Z",
+        "summary": "Masked diffusion models (MDMs) have emerged as a promising alternative to autoregressive models for language modeling, yet the effective design of transformer architectures for MDMs remains underexplored. In this paper, we show that selectively looping the early-middle transformer layers significantly improves both training efficiency and model performance in MDMs. We call this approach LoopMDM(Looped Masked Diffusion Model), which brings two key benefits: looping layers at training-time yields a depth-scaling effect without adding parameters, while varying the number of loops at inference-time enables flexible compute scaling. Despite the simplicity, the results are striking: across multiple pre-training corpora, LoopMDM matches the performance of same-size MDMs with up to 3.3 fewer training FLOPs, while its final performance outperforms them on various reasoning benchmarks, including up to 8.5 points on GSM8K. It even surpasses deeper non-looped MDMs trained with comparable per-step compute, indicating that selective looping is more effective than naive depth scaling. Furthermore, LoopMDM can scale inference-time compute by increasing the number of loops. Adaptively adjusting the number of loops throughout the sampling process further yields additional gains in compute efficiency while maintaining performance. Lastly, with attention analysis, we provide evidence that looping is effective in MDMs by promoting interactions among masked positions. Our code and weights will be publicly released.",
+        "authors": [
+          "Sanghyun Lee",
+          "Chunsan Hong",
+          "Seungryong Kim",
+          "Jonghyun Lee",
+          "Jongho Park",
+          "Dongmin Park"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Beyond Summaries: Structure-Aware Labeling of Code Changes with Large Language Models",
+        "url": "https://arxiv.org/abs/2605.26100v1",
+        "publishedAt": "2026-05-25T17:56:46.000Z",
+        "summary": "Code review is a critical practice in software engineering, yet the growing scale and frequency of code patches in modern projects, together with the widespread adoption of AI code assistants, make manual review increasingly challenging. Identifying the types of changes within a patch, such as renames, moves, or logic modifications, can substantially improve review efficiency by enabling prioritization, filtering, and automation. However, existing LLM-based approaches to code review have largely focused on summarization and comment generation, leaving structured code reviews underexplored. In this paper, we present a systematic study of using large language models (LLMs) for taxonomy-based labeling of code changes in a code patch. We introduce a two-stage pipeline that assigns labels to diff hunks and then refines them to capture structural relationships and semantic attributes, such as rename propagation and type changes. Our approach employs few-shot prompting to produce language-agnostic and customizable labels, without the engineering overhead of traditional static-analysis pipelines. We evaluate four LLMs across multiple context configurations on a manually curated benchmark of natural and synthetic patches. Our best configuration achieves up to $84\\%$ recall and $81\\%$ precision, with high accuracy in extracting relational and attribute metadata. These results suggest that LLM-based labeling can effectively complement static analysis by enabling flexible, multilingual, and automation-friendly code review workflows.",
+        "authors": [
+          "Bar Weiss",
+          "Antonio Abu-Nassar",
+          "Adi Sosnovich",
+          "Karen Yorav"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Language Models Need Sleep",
+        "url": "https://arxiv.org/abs/2605.26099v1",
+        "publishedAt": "2026-05-25T17:55:39.000Z",
+        "summary": "Transformer-based large language models are increasingly used for long-horizon tasks; however, their attention mechanism scales poorly with context length. To handle this, we study a sleep-like consolidation mechanism in which a model periodically converts recent context into persistent fast weights before clearing its key-value cache. During sleep, the model performs $N$ offline recurrent passes over the accumulated context and updates the fast weights in its state-space model (SSM) blocks through a learned local rule. During inference, this shifts extra computation to sleep while preserving the latency of wake-time prediction. We test our method on controlled synthetic tasks, including cellular automata and multi-hop graph retrieval, as well as a realistic math reasoning task, on which a regular transformer as well as SSM-attention hybrid models fail. We then show that increasing sleep duration $N$ for our models improves performance, with the largest gains on examples that require deeper reasoning.",
+        "authors": [
+          "Sangyun Lee",
+          "Sean McLeish",
+          "Tom Goldstein",
+          "Giulia Fanti"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Forgetting in Language Models: Capacity, Optimization, and Self-Generated Replay",
+        "url": "https://arxiv.org/abs/2605.26097v1",
+        "publishedAt": "2026-05-25T17:54:34.000Z",
+        "summary": "Models trained on a new task typically degrade on prior tasks, a phenomenon known as forgetting. Traditionally, mitigating forgetting has required replaying stored exemplars from prior tasks, which is often impractical. By contrast, language models can sample from their own training distribution, and we show that these self-generated samples serve as effective replay data, nearly eliminating forgetting. We find that forgetting nonetheless persists when the model has little remaining capacity: models pretrained close to saturation cannot absorb new information without overwriting prior knowledge. When capacity is not the limiting factor, low learning rates reduce forgetting but require substantially more training steps. Replay breaks this tradeoff, enabling fast, high-learning-rate finetuning without forgetting.",
+        "authors": [
+          "Martin Marek",
+          "Dongkyu Cho",
+          "Shikai Qiu",
+          "Rumi Chunara",
+          "Pavel Izmailov",
+          "Andrew Gordon Wilson"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 10
+      },
+      {
+        "title": "Goal-driven Bayesian Optimal Experimental Design for Robust Decision-Making Under Model Uncertainty",
+        "url": "https://arxiv.org/abs/2605.26093v1",
+        "publishedAt": "2026-05-25T17:53:18.000Z",
+        "summary": "Bayesian optimal experimental design (BOED) selects experiments to maximize information gain about model parameters. However, in decision-critical settings, reducing parameter uncertainty does not necessarily improve downstream decisions, as only specific parameter directions relevant to the objective truly matter. We propose GoBOED, a goal-driven BOED framework that directly optimizes experimental designs for a specified decision-making objective. GoBOED combines an amortized variational posterior surrogate with a differentiable convex decision layer, enabling gradient-based design optimization that is fully decision-focused. We theoretically show that GoBOED gradients are insensitive to parameter directions irrelevant to the decision objective, providing a formal justification for why goal-driven design achieves equivalent decision quality over a wider set of experimental designs than information-gain maximization. Empirically, across source localization, epidemic management, and pharmacokinetic control, GoBOED identifies designs that better align with downstream decision objectives and reveals that near-optimal design windows are substantially wider than those predicted by goal-agnostic BOED approaches.",
+        "authors": [
+          "Jinwoo Go",
+          "Xiaoning Qian",
+          "Byung-Jun Yoon"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 10
+      },
+      {
+        "title": "OrpQuant: Geometric Orthogonal Residual Projection for Multiplier-Free Power-of-Two Transformer Quantization",
+        "url": "https://arxiv.org/abs/2605.26092v1",
+        "publishedAt": "2026-05-25T17:52:46.000Z",
+        "summary": "The deployment of Large Language Models (LLMs) and Vision Transformers (ViTs) on edge devices is significantly constrained by memory limitations and the critical timing bottlenecks introduced by dense Multiply-Accumulate (MAC) arrays. In the ultra-low bit regime, logarithmic Power-of-Two (PoT) quantization provides a hardware-efficient alternative by replacing MAC operations with bit-shifts. However, the non-uniform exponential lattice is inherently limited by a \\textbf{Low Angular Resolution Regime}, a structural flaw that becomes particularly pronounced at sub-4-bit thresholds, leading to a notable degradation of high-dimensional feature manifolds.\n  To address this geometric limitation, we propose Orthogonal Residual Projection (ORP), an algorithm-hardware co-design framework. By formulating quantization as a dual-basis geometric projection, ORP adaptively synthesizes a higher-resolution residual lattice using strictly shift-and-add operations. Furthermore, ORP's analytical solver offers a practical alternative to computationally intensive gradient-based optimization, reducing the full-model calibration time for LLaMA-2-7B to approximately \\textbf{15 minutes}.\n  Extensive evaluations demonstrate ORP's applicability across modalities and its hardware efficiency. Under the 3-bit (W3/A16) constraint, ORP achieves a perplexity of 6.10 on LLaMA-2-7B, comparing favorably to conventional MAC-intensive baselines like AWQ without relying on asymmetric scaling, while maintaining competitive accuracy in 4-bit scenarios. At the silicon level, standard-cell RTL synthesis at a 28nm node indicates that ORP effectively mitigates the timing bottlenecks associated with dense multiplier trees.",
+        "authors": [
+          "Maoyang Xiang",
+          "Bo Wang",
+          "Tao Luo"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Channel-wise Vector Quantization",
+        "url": "https://arxiv.org/abs/2605.26089v1",
+        "publishedAt": "2026-05-25T17:52:08.000Z",
+        "summary": "We present Channel-wise Vector Quantization (CVQ), a novel image tokenization paradigm that replaces patch-wise tokens with channel-wise tokens. Unlike conventional vector quantization, which assigns a discrete token to each patch feature vector, CVQ quantizes each channel of the feature map. This formulation represents an image as discrete levels of visual details, rather than as a grid of spatial patches. Based on CVQ, we introduce a new visual autoregressive framework with \"next-channel prediction\". Instead of rendering images patch by patch in raster order, our Channel-wise Autoregressive (CAR) model predicts image channels sequentially, producing progressively enriched visual details. Specifically, it first sketches global structure and then refines fine-grained attributes, akin to a human artist's workflow. Empirically, we show that: (1) CVQ achieves 100% codebook utilization with a 16K+ codebook size without any bells and whistles, and substantially improves reconstruction quality over conventional VQ; and (2) CAR attains a DPG score of 86.7 and a GenEval score of 0.79, demonstrating strong effectiveness for text-to-image generation.",
+        "authors": [
+          "Wei Song",
+          "Tianhang Wang",
+          "Yitong Chen",
+          "Tong Zhang",
+          "Zuxuan Wu",
+          "Ming Li",
+          "Jiaqi Wang",
+          "Kaicheng Yu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "DiscoverPhysics: Benchmarking LLMs for Out-of-the-Box Scientific Thinking",
+        "url": "https://arxiv.org/abs/2605.26087v1",
+        "publishedAt": "2026-05-25T17:50:07.000Z",
+        "summary": "Frontier LLMs now perform strongly across a wide range of physics evaluations, but it is hard to disentangle genuine reasoning from recall of established science. We introduce DiscoverPhysics, an interactive benchmark that asks a LLM agent to discover the laws of motion of a simulated world whose physics deliberately deviates from our own. We construct 22 worlds governed by, among others, screened and fractional-power gravity, multi-species couplings, hidden dark-matter-like particles, non-coordinate-free physics, and time-varying interactions. Each world is generated on demand by an N-body simulator, for which the agent proposes several rounds of experiments, observes raw trajectory data, and ultimately submits both a natural-language explanation of the world's physics and a Python implementation of the inferred law. Because solving a world requires the agent to design informative experiments and revise its hypotheses, the benchmark probes long-horizon reasoning over an experimental history. We evaluate submissions along two complementary axes: trajectory MSE on held-out particles and an LLM-judged explanation score following an expert-written rubric assessing conceptual understanding of each world. Across eleven frontier models, we find that the strongest agents pass only half of the worlds and consistently fail on those where latent structure must be uncovered. Open-source models lag substantially behind commercial models, both in their ability to design informative experiments and in extracting conclusions from the data. We further find that good predictive accuracy does not guarantee high explanation quality and that conceptual understanding depends on hypothesis refinement through well-chosen experiments.",
+        "authors": [
+          "Matt L. Wiemann",
+          "Lindsay M. Smith",
+          "Peter Melchior",
+          "Siddharth Mishra-Sharma",
+          "Andrew Gordon Wilson",
+          "Pavel Izmailov",
+          "Carolina Cuesta-Lázaro"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      }
+    ],
     "news": [
       {
         "title": "What ClickUp&#8217;s mass layoff tells us about the future of work",
@@ -101,7 +316,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "The pope’s AI encyclical isn’t really about AI",
@@ -115,7 +330,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 13
       },
       {
         "title": "Startup Battlefield 200 applications close in days: Apply before May 27",
@@ -129,7 +344,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "5 days left: Save up to $410 on TechCrunch Disrupt 2026 passes before prices increase",
@@ -143,7 +358,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "OpenAI, Grupo Folha and Grupo UOL announce strategic content partnership",
@@ -155,7 +370,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 23
+        "ageHours": 28
       },
       {
         "title": "Everyone is navigating AI security in real time &#8212; even Google",
@@ -169,7 +384,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 26
+        "ageHours": 31
       },
       {
         "title": "I tried Amazon&#8217;s Bee wearable and am both intrigued and slightly creeped out",
@@ -183,7 +398,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 32
+        "ageHours": 37
       },
       {
         "title": "Ferrari is using IBM&#8217;s AI to create F1 superfans",
@@ -197,7 +412,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 56
+        "ageHours": 61
       },
       {
         "title": "Elon Musk has given up on solar power (on Earth)",
@@ -211,7 +426,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 58
+        "ageHours": 63
       },
       {
         "title": "AI is being used to resurrect the voices of dead pilots",
@@ -225,7 +440,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 72
+        "ageHours": 77
       },
       {
         "title": "Google goes for the glitter with disco-ball icons: &#8216;Are y&#8217;all sure you still want this?&#8217;",
@@ -239,7 +454,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 74
+        "ageHours": 79
       },
       {
         "title": "How VCs and founders use inflated ‘ARR’ to crown AI startups",
@@ -253,26 +468,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 75
+        "ageHours": 80
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
-    "last24h": 5,
+    "totalItems": 24,
+    "last24h": 16,
     "topCategories": [
+      {
+        "name": "Research",
+        "count": 10
+      },
       {
         "name": "General",
         "count": 10
       },
       {
-        "name": "Research",
-        "count": 1
-      },
-      {
         "name": "Models",
-        "count": 1
+        "count": 4
       }
     ]
   }
