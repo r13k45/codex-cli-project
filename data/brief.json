@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T12:25:44.463Z",
+  "generatedAt": "2026-05-29T16:52:29.336Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 503",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,226 +87,90 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Physics Is All You Need? A Case Study in Physicist-Supervised AI Development of Scientific Software",
-        "url": "https://arxiv.org/abs/2605.30353v1",
-        "publishedAt": "2026-05-28T17:59:59.000Z",
-        "summary": "Are AI agents tools, co-authors, or researchers? We present a quantified case study ($N=1$): a physicist supervising an AI coding agent (Claude Code, Sonnet and Opus models) over 12 work days and 57 sessions to build CLAX-PT, a differentiable one-loop perturbation theory module in JAX. We documented and classified 15 supervision events by intervention level.\n  The agent resolved ten autonomously by iterating against oracle tests. Two more by the physicist's domain knowledge. The three it could not -- all evaded oracle detection -- share a common property: the agent treated symptom reduction as root-cause resolution. It spent 33 of the 57 sessions adjusting coefficients within a code architecture that could not represent the target physics, and could not re-evaluate its CLASS-PT branch choice even when prompted to reconsider; only an injected physics concept (anisotropic BAO damping) triggered the redesign. Separately, the agent committed a calibrated correction that passed all oracle tests but corresponded to no quantity in the theory, predicting wrong values at any other cosmology.\n  The fudge factor was caught and replaced within the same session. Three supervision practices proved critical for catching what oracle tests missed: testing at diverse parameter points beyond the fiducial calibration; shared changelogs that surfaced stalled exploration across sessions; and an explicit rule against unphysical numerical patches. In this case, supervision design, not model capability, determined whether the agent's output was trustworthy. Closing the gap would require agents that propose architectural alternatives rather than optimize within a given structure, and distinguish predictive adequacy from explanatory correctness -- capabilities not exhibited here, not obviously addressed by scaling alone. [Abridged.]",
-        "authors": [
-          "Nhat-Minh Nguyen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion",
-        "url": "https://arxiv.org/abs/2605.30351v1",
-        "publishedAt": "2026-05-28T17:59:57.000Z",
-        "summary": "Long-rollout causal video diffusion has converged on a fixed-size sliding-window KV cache, with recent progress innovating within this layout by changing which tokens occupy the window or how their positions are encoded. The per-head KV layout itself, a dominant contributor to streaming memory and latency, has been mostly left unchanged. In this paper, we present the first study of Multi-Head Latent Attention (MLA) in video diffusion. VideoMLA replaces per-head keys and values with a shared low-rank content latent and a shared decoupled 3D-RoPE positional key, reducing per-token KV memory by 92.7% at every cached layer. We further investigate why MLA succeeds in video diffusion even though the spectral assumption often used to motivate it in language models does not hold: pretrained video attention is not low-rank, with 99%-energy effective rank far above any practical latent dimension. VideoMLA retains quality at compression ratios where direct spectral approximation would predict large reconstruction error. We show that the MLA bottleneck, rather than the pretrained spectrum, determines the effective rank: both spectral and random initialization occupy nearly the full rank budget from initialization, and training preserves this budget while adapting within it. On VBench, VideoMLA matches short-horizon streaming video diffusion baselines, achieves the best overall score at long horizons among evaluated methods, and improves throughput by 1.23x on a single B200.",
-        "authors": [
-          "Hidir Yesiltepe",
-          "Jiazhen Hu",
-          "Tuna Han Salih Meral",
-          "Adil Kaan Akan",
-          "Kaan Oktay",
-          "Hoda Eldardiry",
-          "Pinar Yanardag"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "LLMSurgeon: Diagnosing Data Mixture of Large Language Models",
-        "url": "https://arxiv.org/abs/2605.30348v1",
-        "publishedAt": "2026-05-28T17:59:53.000Z",
-        "summary": "The pretraining data mixture of Large Language Models (LLMs) constitutes their \"digital DNA\", shaping model behaviors, capabilities, and failure modes. Yet this composition is rarely disclosed, making post-hoc auditing of data combination or provenance difficult. In this work, we formalize $\\textbf{Data Mixture Surgery (DMS)}$: given only generated text from a target LLM, estimate the domain-level distribution of its pretraining corpus under a predefined taxonomy. We propose $\\textbf{LLMSurgeon}$, a strong framework that casts DMS as an inverse problem under the label-shift assumption. Rather than directly aggregating classifier outputs, LLMSurgeon estimates a calibrated $\\textit{soft}$ confusion matrix and solves a constrained inverse problem to correct systematic domain confusion and recover the latent mixture prior. To evaluate, we introduce $\\textbf{LLMScan}$, a recipe-verifiable evaluation suite built from open-source LLMs with transparent pretraining mixtures. Across LLMScan, LLMSurgeon recovers domain mixtures with high fidelity under fixed protocols. Our work presents a practical, post-hoc approach for auditing the digital DNA of foundation models without access to their training data.",
-        "authors": [
-          "Yaxin Luo",
-          "Jiacheng Cui",
-          "Xiaohan Zhao",
-          "Xinyi Shang",
-          "Jiacheng Liu",
-          "Xinyue Bi",
-          "Zhaoyi Li",
-          "Zhiqiang Shen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "DynaFLIP: Rethinking Robotics Perception via Tri-Modal-Dynamics Guided Representation",
-        "url": "https://arxiv.org/abs/2605.30350v1",
-        "publishedAt": "2026-05-28T17:59:53.000Z",
-        "summary": "Robot manipulation critically depends on perception that preserves the action-relevant aspects of a scene. Yet most robot learning pipelines are built upon visual encoders pre-trained for static recognition or vision-language alignment, leaving motion understanding to downstream policies. We introduce DynaFLIP, a dynamics-aware multimodal pre-training framework that pushes motion understanding upstream into perception. We construct image-language-3D flow triplets from heterogeneous human and robot videos, and use these triplets as training-time supervision to shape an image-only encoder. Our key idea is to encourage the three modalities to span a small simplex volume in the shared hyperspherical space -- a smaller simplex volume indicating stronger alignment. To avoid the geometric ambiguity and trivial collapse of naive volume minimization, we combine simplex-volume minimization with a cosine regularizer and a contrastive objective. Our analyses show that DynaFLIP focuses on control-relevant regions critical for manipulation. The resulting dynamics-aware representations serve as reusable visual backbones and consistently outperform baselines across diverse downstream policies, including VLAs. We validate this across diverse simulation and real-world setups, with gains reaching +22.5% under out-of-distribution scenarios. Our results suggest that robot generalization improves when visual representations are trained to encode not just what is present, but how the world changes under action.",
-        "authors": [
-          "Jusuk Lee",
-          "Seungjae Lee",
-          "Jonghun Shin",
-          "Hoseong Jung",
-          "Sungha Kim",
-          "Daesol Cho",
-          "H. Jin Kim",
-          "Jia-Bin Huang",
-          "Furong Huang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "SchGen: PCB Schematic Generation with Semantic-Grounded Code Representations",
-        "url": "https://arxiv.org/abs/2605.30345v1",
-        "publishedAt": "2026-05-28T17:59:50.000Z",
-        "summary": "Printed circuit board (PCB) schematic design defines nearly all electronic hardware, but it remains manual and expertise-intensive. While generative AI has advanced digital and analog IC design, PCB schematic generation from natural-language intent is largely unexplored. This paper presents SchGen, the first large language model that generates editable PCB schematics from natural-language requests. The key challenge lies in the lack of an LLM-suited representation and a large-scale dataset. Current schematic formats are dominated by verbose, tool-specific syntax and geometry-heavy descriptions, making them difficult to generate reliably. We introduce a semantically grounded code representation that encodes schematic editing primitives with relative placement and pin-name-based wiring, transforming a geometry-driven generation problem into a semantics-driven matching task amenable to LLMs. We further construct a large-scale dataset of PCB schematics paired with user prompts via a human-agent collaborative pipeline that converts open-source hardware designs into our representation. Experiments show that SchGen significantly outperforms alternative representations and even larger general-purpose LLMs on wire connectivity accuracy and functional correctness. Our results highlight the critical role of representation design in enabling generative models for complex hardware design tasks.",
-        "authors": [
-          "Qinpei Luo",
-          "Ruichun Ma",
-          "Xinyu Zhang",
-          "Lili Qiu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Tiny but Trusted: Efficient Vision-Language Reasoning for Time-Series Anomaly Detection",
-        "url": "https://arxiv.org/abs/2605.30344v1",
-        "publishedAt": "2026-05-28T17:59:50.000Z",
-        "summary": "Recent advances in Vision-Language Models (VLMs) have achieved impressive performance across many tasks, yet prior studies report unsatisfactory performance when applying large language or multimodal models to finding abnormal patterns in sequential data. Public anomaly detection benchmarks typically provide interval annotations but not natural-language rationales, making it difficult to fine-tune VLMs to produce grounded, interpretable decisions. To address this gap, we construct VisAnomBench, a curated benchmark built from public time-series datasets and augmented with high-quality anomaly explanations selected from multiple large VLMs using fine-grained, task-specific rewards. Through fine-tuning on this benchmark, we develop VisAnomReasoner, a parameter-efficient VLM for time-series anomaly detection. Experimental results on VisAnomBench show that VisAnomReasoner achieves more accurate anomaly localization and consistently outperforms all baselines, with improvements of at least 21.23 and 23.87 percentage points in precision and F1, respectively. Additional experiments on the TSB-AD-U benchmark demonstrate strong cross-benchmark generalization, with VisAnomReasoner improving precision and F1 by 9.57 and 13.39 percentage points, respectively.",
-        "authors": [
-          "Xiaona Zhou",
-          "Muntasir Wahed",
-          "Tianjiao Yu",
-          "Constantin Brif",
-          "Ismini Lourentzou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Unlocking the Working Memory of Large Language Models for Latent Reasoning",
-        "url": "https://arxiv.org/abs/2605.30343v1",
-        "publishedAt": "2026-05-28T17:59:49.000Z",
-        "summary": "To improve the reasoning capabilities of large language models, test-time compute is typically scaled by generating intermediate tokens before the final answer. However, this couples reasoning to autoregressive generation and thereby conflates internal computation with external communication. In contrast, human cognition can use working memory to hold and manipulate information internally without the need to externalize intermediate thoughts. Drawing on this principle, we introduce Reasoning in Memory (RiM), a latent reasoning method that replaces the autoregressive generation of reasoning steps with memory blocks. These memory blocks are fixed sequences of special tokens that unlock the working-memory capacity of large language models. Since they are fixed rather than generated, they can be processed in a single forward pass, enabling compute-efficient latent reasoning. To operationalize these memory blocks, we employ a two-stage curriculum. First, we ground them by predicting explicit reasoning steps after each memory block. Second, we discard this step-level supervision and iteratively refine the final answer after each memory block. Our experiments on reasoning benchmarks show that, across language models of different families and sizes, RiM matches or exceeds existing latent reasoning methods while avoiding the autoregressive generation of thoughts. These results demonstrate that large language models can be trained to use working memory as an effective mechanism for latent reasoning.",
-        "authors": [
-          "Lukas Aichberger",
-          "Sepp Hochreiter"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "GPIC: A Giant Permissive Image Corpus for Visual Generation",
-        "url": "https://arxiv.org/abs/2605.30341v1",
-        "publishedAt": "2026-05-28T17:59:26.000Z",
-        "summary": "Studying scalable methods for visual generative modeling requires large, accessible, and stable datasets. We introduce GPIC, a Giant Permissive Image Corpus of approximately 28 trillion pixels. GPIC comprises diverse internet images captioned by a state-of-the-art vision-language model, including 100M training, 200K validation, and 1M test examples. Moreover, all GPIC images are permissively licensed for both research and commercial use. GPIC is safety-filtered, deduplicated, and centrally hosted on Hugging Face. We provide a benchmarking protocol for generative modeling on GPIC. Finally, we provide a reference baseline for pixel-space flow matching on GPIC. Our dataset, benchmark, and models are available at https://huggingface.co/datasets/stanford-vision-lab/gpic. Evaluation toolkit and code are available at https://gpic.stanford.edu",
-        "authors": [
-          "Keshigeyan Chandrasegaran",
-          "Kyle Sargent",
-          "Suchir Agarwal",
-          "Michael Jang",
-          "Michael Poli",
-          "Juan Carlos Niebles",
-          "Justin Johnson",
-          "Jiajun Wu",
-          "Li Fei-Fei"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Efficient Test-Time Finetuning of LLMs via Convex Reconstruction and Gradient Caching",
-        "url": "https://arxiv.org/abs/2605.30337v1",
-        "publishedAt": "2026-05-28T17:59:01.000Z",
-        "summary": "Test-time finetuning (TTFT) is a rapidly evolving paradigm that adapts a language model to each prompt by retrieving related sequences, updating the model on them, and then evaluating the prompt. However, TTFT is only practical if it is fast: selection and finetuning both happen per query, making each a direct bottleneck. Existing methods trade speed for quality: fast retrieval is often redundant, while stronger diversity-aware selection adds prohibitive per-query cost. We introduce HullFT, a geometric approach to TTFT that addresses both bottlenecks. Given a query, HullFT first represents the query embedding as a sparse convex combination of few training sequences, using efficient projection-free Frank-Wolfe optimization. This yields a support set that is inherently relevant and diverse. We then convert the fractional convex weights into an exact integer multiset for finetuning through a geometric integerization procedure. The resulting multiplicities naturally create repeated examples, which we exploit with Gradient Reuse to amortize forward-backward computation across repeated finetuning steps. Our experiments show that HullFT improves the quality-efficiency tradeoff over current state-of-the-art TTFT methods, achieving lower bits-per-byte at substantially lower total runtime.",
-        "authors": [
-          "Alaa Khamis",
-          "Alaa Maalouf"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "Fairness-Aware Federated Learning with Trajectory Shapley Value",
-        "url": "https://arxiv.org/abs/2605.30336v1",
-        "publishedAt": "2026-05-28T17:58:57.000Z",
-        "summary": "Federated learning is an emerging distributed paradigm that addresses the challenges posed by heterogeneous, privacy-sensitive data. It enables multiple clients to train a model collaboratively by aggregating their local updates at a server. However, conventional aggregation schemes typically use fixed weights that fail to reflect unequal and time-varying client contributions, leading to biased and unstable learning. To improve fairness and stability, we propose the Trajectory Shapley Value (TSV), a contribution metric that evaluates how each client influences the optimization trajectory of the global model using a validation-based, temporally consistent utility. Building on TSV, we design FedTSV, an adaptive aggregation method that converts per-round evaluations into dynamic client weights, allowing the server to respond to heterogeneous and adversarial participation in real time. Experiments on benchmark datasets show that FedTSV accelerates convergence, improves robustness, and yields more equitable contribution assessments, thereby providing a principled foundation for fairness-aware federated optimization.",
-        "authors": [
-          "Daniel Kuznetsov",
-          "Ziqi Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Locally Coherent, Globally Incoherent: Bounding Compositional Incoherence in Multi-Component LLM Agents",
-        "url": "https://arxiv.org/abs/2605.30335v1",
-        "publishedAt": "2026-05-28T17:58:55.000Z",
-        "summary": "Multi-component LLM agents assemble probabilistic claims from components that each see only part of a joint problem; the composition can violate basic probability axioms even when every component is locally coherent. We formalise this locally coherent, globally incoherent failure via the compositional residual eps*, the L2 distance from the composed quote to the joint coherent polytope, computable at runtime from system output and the declared cross-component coupling constraints. A product-structure dichotomy characterises when local coherence suffices, and a Rayleigh-quotient prediction matches the observed residual within 7% on three of four relation classes. A hierarchical Boyle-Dykstra projection repairs the composition deterministically; an anytime-valid e-process gives sequential coherence monitoring. Across 1,876 ensemble cliques on a four-LLM mid-tier panel (frontier-panel rerun in Section 5.5), eps* > 0 on 33-94% of cliques, translating to +0.115 nats per bet of regret on 1,770 resolved bets under the proportional allocation rule (the gain collapses to +0.006 under bettors that themselves coherentise). Three intuitive LLM-side mitigations(retrieval, partition-aware prompting, aggregator-LLM) each fail or regress.",
-        "authors": [
-          "Anany Kotawala"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Demystifying Data Organization for Enhanced LLM Training",
-        "url": "https://arxiv.org/abs/2605.30334v1",
-        "publishedAt": "2026-05-28T17:58:53.000Z",
-        "summary": "Large Language Models (LLMs) have revolutionized various fields, yet their training efficiency is heavily reliant on effective data curation. While data selection has been widely studied, the strategic data organization for enhanced training remains an underexplored area, particularly since current LLMs are often trained for only one or a few epochs. This paper systematically explores the influence of data organization on LLM training by reusing pre-computed sample-level scores originally generated for data efficiency, thereby incurring minimal additional computational overhead. We identify and formalize four key guidelines for optimizing data organization: Boundary Sharpening, Cyclic Scheduling, Curriculum Continuity, and Local Diversity. Guided by them, we introduce two novel data ordering methods termed STR and SAW. Extensive experiments across different model scales and data sizes, encompassing both pre-training and SFT stages, validate the effectiveness of our summarized guidelines. They also demonstrate the robustness of our proposed data ordering methods in enhancing the stability and performance of LLM training. Github Link: https://github.com/microsoft/data-efficacy/",
-        "authors": [
-          "Yalun Dai",
-          "Yangyu Huang",
-          "Tongshen Yang",
-          "Yonghan Wang",
-          "Xin Zhang",
-          "Wenshan Wu",
-          "Qihao Zhao",
-          "Hao Li",
-          "Yuanyuan Gao",
-          "Kim-Hui Yap",
-          "Scarlett Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Cognition&#8217;s Scott Wu says AI coding agents shouldn&#8217;t replace humans",
+        "url": "https://techcrunch.com/2026/05/29/cognitions-scott-wu-says-ai-coding-agents-shouldnt-replace-humans/",
+        "publishedAt": "2026-05-29T16:13:47.000Z",
+        "summary": "Cognition makes Devin, the first and arguably most successful AI coding agent. But famed coder Wu says it isn't designed to supplant human programmers.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 1
+      },
+      {
+        "title": "Today is the last day to apply to speak at TechCrunch Disrupt 2026",
+        "url": "https://techcrunch.com/2026/05/29/today-is-the-last-day-to-apply-to-speak-at-techcrunch-disrupt-2026/",
+        "publishedAt": "2026-05-29T14:15:00.000Z",
+        "summary": "Submit your session topic before today ends for a chance to speak at TechCrunch Disrupt 2026. Apply now to share your insight and help shape the conversations defining the tech industry.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 3
+      },
+      {
+        "title": "Final 24 hours to save up to $410 on your TechCrunch Disrupt 2026 ticket",
+        "url": "https://techcrunch.com/2026/05/29/final-24-hours-to-save-up-to-410-on-your-techcrunch-disrupt-2026-ticket/",
+        "publishedAt": "2026-05-29T14:00:00.000Z",
+        "summary": "You now have until tonight at 11:59 p.m. PT to lock in Early Bird savings of up to $410 for TechCrunch Disrupt 2026 before prices increase. Join 10,000+ tech leaders in October for one of the most anticipated tech events of the year. Register now.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 3
+      },
+      {
+        "title": "Kiwibit’s AI-powered bird feeder is my new backyard buddy",
+        "url": "https://techcrunch.com/2026/05/29/kiwibits-ai-powered-bird-feeder-is-my-new-backyard-buddy/",
+        "publishedAt": "2026-05-29T13:00:00.000Z",
+        "summary": "If you're looking for a fun way to connect with nature while collecting bird species on an app like Pokémon, give this smart feeder a try.",
+        "authors": [
+          "Lauren Forristal"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 4
+      },
+      {
+        "title": "This chip startup just raised $135M on a bet that AI&#8217;s biggest bottleneck isn&#8217;t compute &#8212; it&#8217;s memory",
+        "url": "https://techcrunch.com/2026/05/29/xcena-secures-135m-at-570m-valuation-betting-on-memory-as-ais-real-bottleneck/",
+        "publishedAt": "2026-05-29T12:00:00.000Z",
+        "summary": "South Korean chip startup XCENA is betting that AI's real bottleneck is not compute, but memory.",
+        "authors": [
+          "Kate Park"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Infrastructure",
+        "ageHours": 5
+      },
+      {
+        "title": "Boston Children’s uses AI to unlock new diagnoses",
+        "url": "https://openai.com/index/boston-childrens-hospital",
+        "publishedAt": "2026-05-29T12:00:00.000Z",
+        "summary": "Boston Children’s Hospital uses OpenAI technology to improve patient care, reduce operational burden, and help diagnose more than 40 rare disease cases.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "General",
+        "ageHours": 5
+      },
       {
         "title": "Strengthening societal resilience with Rosalind Biodefense",
         "url": "https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense",
@@ -313,10 +181,10 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
-        "title": "Glean&#8217;s top line crosses $300M as AI budget-cutting becomes its major selling point",
+        "title": "Glean&#8217;s top line crosses $300M as AI budget cutting becomes its major selling point",
         "url": "https://techcrunch.com/2026/05/28/gleans-top-line-crosses-300m-as-ai-budget-cutting-becomes-its-major-selling-point/",
         "publishedAt": "2026-05-29T00:44:37.000Z",
         "summary": "The enterprise AI search startup tripled its annual revenue even as tech giants entered the category.",
@@ -327,7 +195,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 12
+        "ageHours": 16
       },
       {
         "title": "The internet is being rebuilt for machines",
@@ -341,7 +209,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 19
       },
       {
         "title": "Asana acquires no-code agent-builder StackAI",
@@ -355,7 +223,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 16
+        "ageHours": 21
       },
       {
         "title": "Anthropic raises $65 billion, nears $1T valuation ahead of IPO",
@@ -369,7 +237,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 18
+        "ageHours": 22
       },
       {
         "title": "Just like gold and oil, we&#8217;ll soon be able to trade AI token futures",
@@ -383,111 +251,29 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "In just 3 weeks, StrictlyVC is coming to Los Angeles",
-        "url": "https://techcrunch.com/2026/05/28/in-just-3-weeks-strictlyvc-is-coming-to-los-angeles/",
-        "publishedAt": "2026-05-28T17:30:00.000Z",
-        "summary": "StrictlyVC Los Angeles is on June 18. Join for meaningful networking and fireside chats with leaders from Mach Industries, Shinkei Systems, and more. Register today.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 19
-      },
-      {
-        "title": "Anthropic releases Opus 4.8 with new &#8216;dynamic workflow&#8217; tool",
-        "url": "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/",
-        "publishedAt": "2026-05-28T17:00:09.000Z",
-        "summary": "The new Opus model comes with a tool called Dynamic Workflows, for coordinating swarms of subagents.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "Media Advisory: MIT to establish regional quantum hub",
-        "url": "https://news.mit.edu/2026/media-advisory-mit-establish-regional-quantum-hub",
-        "publishedAt": "2026-05-28T16:00:00.000Z",
-        "summary": "MIT and the Commonwealth of Massachusetts announced plans to establish the Quantum Systems Laboratory (QSL) &nbsp;at MIT, which will be open to researchers across the region.&nbsp; With the new funding from the state, which will match federal funding for quantum research already underway at MIT, the Institute aims to begin construction on the QSL facility this summer.&nbsp; The QSL will host specialized facilities that will enable Massachusetts scientists to undertake impactful work applying quantum research across practical domains, including life sciences and national defense. Quantum technologies promise transformative changes in fields from computing, security, and navigation to health sciences, defense technologies, and space exploration. But how do we ensure Massachusetts stays on the leading edge of our nation’s coming quantum leap? Doing so is vital to the prosperity and security of our Commonwealth and country, serving to protect and advance America’s technological leadership in a world that has been upended by geopolitical rivalries.&nbsp; &nbsp; On Thursday, May 28, Governor Maura Healey joined President Sally Kornbluth at MIT to announce a new effort aimed at establishing Massachusetts as a national hub for quantum innovation and catalyzing next generation quantum technologies. MIT and the Commonwealth of Massachusetts announced plans to establish the Quantum Systems Laboratory&nbsp;(QSL) &nbsp;at MIT, a new shared-use facility that will serve as a quantum toolbox for the region, aimed at accelerating quantum research, innovation, and growth in this critical field. The QSL seeks to be the first facility in the world to bring together state‑of‑the‑art quantum computers with quantum sensors and peripherals, joined by quantum interconnects (physical channels that transfer quantum information). The facility will provide researchers from MIT and other institutions hands‑on access to significant quantum hardware and specialized experimental capabilities that are necessary to achieve the full transformative potential of quantum science and engineering.&nbsp; Thanks to a $25 million investment from the state, which will match a portion of the federal funding for quantum research already underway at MIT, the Institute is now in a position to move forward as early as this summer with construction on the QSL facility, positioning the region to dominate the next generation of quantum research, according to Institute officials. The Commonwealth’s investment adds to MIT’s own financial commitment, as well as generous philanthropic support from Thomas Tull. “Greater Boston has the greatest concentration of quantum talent anywhere in the world, working on a range of potential applications. Through the new Quantum Systems Laboratory, we will help position Massachusetts to lead the next era of quantum technologies,” says Kornbluth . “This facility will serve those at the edges of our wildest imaginations in physics and quantum computing, yes. But it will also equip the talent in our region -- and ultimately, our nation -- to push our knowledge to new limits, and new innovations.”&nbsp; The QSL will be located at Building 39 &nbsp;on the MIT campus and will serve as a multi-disciplinary quantum hub with modern experimental infrastructure. Because quantum research involves the creation and study of coherent phenomena in systems that are isolated from the rest of the universe, it must take place in a highly controlled environment. Work is already underway in Building 39, with significant investments by MIT, to upgrade the physical infrastructure for these unique demands. The state’s support will supercharge this work and allow for the transformation of the lab into a hub for scientists across the region working on next-generation quantum technologies, startup applications, defense and health tech, and more.&nbsp; “Our region has unparalleled strengths in science-intensive innovations and tough tech breakthroughs that combine engineering, science, and computing,” notes Anantha Chandrakasan, MIT’s provost . “With the new Quantum Systems Laboratory, we aim to arm Massachusetts with the compute power and integrated platforms needed to lead the coming era of quantum technologies.” By the numbers&nbsp; The QSL will host specialized facilities that will enable Massachusetts scientists to undertake impactful work applying quantum research across practical domains. As a shared-use facility, the QSL is being developed with the underlying mission of returning broad scientific, workforce, and economic benefit to the public.&nbsp; For example, quantum technologies provide significant opportunities in the fields of life sciences and defense technologies, which are $50 billion contributors to the Massachusetts economy, with dozens of startups working in the area. During a time of increased economic anxiety and labor market concerns, investing in foundational quantum facilities will infuse our region with new job opportunities, in academic research institutions, startups and more. Construction on the QSL facility alone is anticipated to create over 150 full-time, on-site construction jobs, plus another 75 to 100 jobs across the Commonwealth in supply chain and professional services supporting the project.&nbsp; Startups from MIT are also a key driver of the state’s entrepreneurial ecosystem; in 2015, Sloan Professors Edward Roberts and Fiona Murray published a report detailing how the Institute’s alumni entrepreneurs have created more than 30,000 active companies, employing 4.6 million people, and generating annual global revenues of $1.9 trillion, a figure greater than the gross domestic product (GDP) of the world’s 10th-largest economy, as of 2014. The QSL facility will provide the necessary equipment and facilities for startups working on quantum technologies, thereby strengthening the region’s innovation economy.&nbsp; “The new QSL will introduce modern experimental infrastructure to quantum research at MIT and beyond, allowing us to scale experiments and expand into critical domains in disciplines such as biology and chemistry, where we see enormous innovative potential,” explains Ian Waitz, MIT’s vice president for research . “As the new physical home of the MIT Quantum Initiative &nbsp;(or QMIT), the QSL will serve not only as an on-campus incubator, but more broadly, a regional hub to catalyze quantum innovation, growth, and investment in this critical R&amp;D sector for the Commonwealth.”&nbsp; One floor of the facility will allow for development of radio-frequency (RF) electronics for controlling and interfacing with quantum systems. The QSL will also support researchers in the creation of customized quantum experiments with advanced high-frequency packages, which are required to protect quantum data in real-world applications. The facility will also develop the associated THz electronics needed by advanced quantum systems.&nbsp; A history of future-focused plays Nearly a decade ago, MIT made a similarly big bet on nanotechnology, developing MIT.nano &nbsp;— a state-of-the-art, shared-use facility with more than 200 tools and instruments that support nanoscale discovery and innovation through imaging, fabrication, characterization, and prototyping. Set in the heart of campus in the Lisa T. Su Building, MIT.nano is home to a thriving research community, an industry consortium, and a startup accelerator. More than a fifth of the 1,500 users of MIT.nano come from outside of MIT, and half of the companies in its START.nano accelerator have had non-MIT founders. The QSL will also complement the capabilities of MIT Lincoln Laboratory’s SQUILL Foundry , a quantum fabrication hub for superconducting qubit systems that serves researchers across Massachusetts and the nation free of charge.",
-        "authors": [],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Products",
-        "ageHours": 20
-      },
-      {
-        "title": "How long is Anthropic&#8217;s lease with SpaceX? Opinions vary",
-        "url": "https://techcrunch.com/2026/05/28/how-long-is-anthropics-lease-with-spacex-opinions-vary/",
-        "publishedAt": "2026-05-28T15:36:00.000Z",
-        "summary": "Elon Musk is publicly reframing xAI’s massive Anthropic compute deal as short-term and cancellable, despite SpaceX’s own S-1 filing describing payments through May 2029.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 21
-      },
-      {
-        "title": "Sesame, the conversational AI startup from Oculus founders, launches its iOS app",
-        "url": "https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/",
-        "publishedAt": "2026-05-28T15:35:43.000Z",
-        "summary": "Sesame’s new iOS app brings its conversational AI agents to the public, offering more natural back-and-forth interactions designed to feel less like traditional chatbots and more like talking to a person.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "Sneak peek at new Siri app reveals Apple&#8217;s plans to take on ChatGPT and more",
-        "url": "https://techcrunch.com/2026/05/28/sneak-peek-at-new-siri-app-reveals-apples-plans-to-take-on-chatgpt-and-more/",
-        "publishedAt": "2026-05-28T14:45:13.000Z",
-        "summary": "New renders offer a closer look at Apple’s planned AI overhaul for iOS 27, including a redesigned Siri experience and standalone Siri app.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
         "ageHours": 22
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 24,
+    "totalItems": 12,
+    "last24h": 12,
     "topCategories": [
       {
+        "name": "General",
+        "count": 6
+      },
+      {
         "name": "Research",
-        "count": 14
+        "count": 3
       },
       {
         "name": "Models",
-        "count": 5
+        "count": 2
       },
       {
-        "name": "General",
-        "count": 4
-      },
-      {
-        "name": "Products",
+        "name": "Infrastructure",
         "count": 1
       }
     ]
