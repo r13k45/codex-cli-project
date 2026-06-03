@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T07:04:01.893Z",
+  "generatedAt": "2026-06-03T12:05:30.857Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,9 +26,10 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
+      "itemCount": 0,
       "errors": [
         "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
         "research:arXiv cs.CL -> HTTP 429"
       ]
     },
@@ -86,232 +87,7 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Neuron Populations Exhibit Divergent Selectivity with Scale",
-        "url": "https://arxiv.org/abs/2606.03990v1",
-        "publishedAt": "2026-06-02T17:59:52.000Z",
-        "summary": "We investigate whether neuron populations within neural networks evolve predictably with scale, extending scaling laws beyond macroscopic observables such as loss. To probe this question, we study Rosetta Neurons, a previously characterized class of neurons whose activation patterns are similar across independently trained models (Dravid et al., 2023). In separate analyses of language models up to 30B parameters and vision models up to 5B parameters, we observe that the population of Rosetta Neurons follows a sublinear power law in model size, growing in absolute number but occupying a shrinking fraction of the total neuron count. We further observe a Neuron Polarization Effect: Rosetta Neurons become more selective and increasingly monosemantic with scale, separating from a growing non-Rosetta population that remains less selective. An analytical model balancing feature utility against limited neuron capacity explains the sublinear power-law scaling and this polarization effect. Finally, we find that Rosetta Neurons become more domain-specialized with scale and illustrate their selectivity through a targeted data-filtering case study for continued pretraining. Our results point to a scaling law for interpretable, shared neuron-level structure, linking model size to systematic changes in neuron universality, selectivity, and specialization.",
-        "authors": [
-          "Amil Dravid",
-          "Yasaman Bahri",
-          "Alexei A. Efros",
-          "Yossi Gandelsman"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 13
-      },
-      {
-        "title": "Skill-RM: Unifying Heterogeneous Evaluation Criteria via Agent Skill",
-        "url": "https://arxiv.org/abs/2606.03980v1",
-        "publishedAt": "2026-06-02T17:56:57.000Z",
-        "summary": "Reward models (RMs) provide critical feedback signals for LLM post-training, notably in reinforced fine-tuning (RFT) and reinforcement learning (RL) pipelines. However, current reward evaluation relies on heterogeneous criteria such as rule-based verifiers, ground-truth references, procedural checklists, and complex rubrics, where a unified mechanism to integrate all types of evidence remains unexplored. To this end, we propose Skill Reward Model (Skill-RM), a unified framework that reformulates reward modeling as the execution of a reusable Reward-Evaluation Skill. By treating reward computation as a structured agentic task, Skill-RM provides a consistent interface to orchestrate heterogeneous resources, dynamically selecting and aggregating evidence tailored to the specific requirements of each input. This approach enables the reward model to move beyond static evaluation, ensuring consistency and transparency across diverse tasks. Extensive experiments on reward benchmarks and downstream applications, including best-of-N selection and reinforcement learning, demonstrate that Skill-RM consistently outperforms traditional judge baselines. Our findings suggest that Skill-RM not only provides a unified solution for reward modeling but also achieves superior performance through the strategic and dynamic orchestration of evidence. The code is at https://github.com/Qwen-Applications/Skill-RM.",
-        "authors": [
-          "Tao Chen",
-          "Gangwei Jiang",
-          "Pengyu Cheng",
-          "Siyuan Huang",
-          "Yihao Liu",
-          "Jingwei Ni",
-          "Jiaqi Guo",
-          "Mengyu Zhou",
-          "Kai Tang",
-          "Junling Liu",
-          "Qinliang Su",
-          "Xiaoxi Jiang",
-          "Guanjun Jiang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories",
-        "url": "https://arxiv.org/abs/2606.03979v1",
-        "publishedAt": "2026-06-02T17:56:55.000Z",
-        "summary": "The past few decades have witnessed significant advances in the design of machine learning algorithms, from early studies on task-specific shallow models to more general deep Large Language Models (LLMs). Despite showing promising results in tasks that require instant prediction or in-context learning, existing models lack the ability to continually learn and effectively transfer their temporal in-context knowledge to their long-term parameters. Inspired by human learning process, we introduce a ''Sleep'' paradigm that allows the models to continually learn, distill their short-term fragile memories into stable long-term knowledge with replay, and recursively improve themselves with ''Dreaming'' process. In more detail, sleep consists of two stages: (1) Memory Consolidation: an upward distillation process, called Knowledge Seeding, where the memories of a smaller-self are distilled into a larger network to provide more capacity while preserving the knowledge. As a proof of concept, we present a new Generalized Distillation process for {Knowledge Seeding} (i.e., the combination of on-policy distillation with Reinforcement Learning (RL)-based imitation learning); (2) Dreaming: a self-improvement phase, where the model uses RL to generate a curriculum of synthetic data to rehearse new knowledge and refine existing capabilities without human supervision. Our experiments on long-horizon, continual learning, knowledge incorporation, and few-shot generalization tasks support the importance of the sleep stage.",
-        "authors": [
-          "Ali Behrouz",
-          "Farnoosh Hashemi",
-          "Vahab Mirrokni"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 13
-      },
-      {
-        "title": "Formalizing the Binding Problem",
-        "url": "https://arxiv.org/abs/2606.03976v1",
-        "publishedAt": "2026-06-02T17:56:24.000Z",
-        "summary": "Representations of the world, arguably, contain information about features (e.g. something is blue, something is a circle) but also information about which features are part of the same object (e.g. the circle is blue), which we call binding information. Any system with the ability to understand scenes with multiple objects must be able to solve the binding problem: it needs to know which features belong together. However, despite work showing that Vision Transformers (ViTs) know which patches belong together, it is not known whether current deep learning models learn to exhibit binding information, i.e., for features. We may believe that there is not much binding information, after all misattributing features to wrong objects is a common failure of ViT-based architectures, especially in scenes with objects sharing features. Here we formalize the binding problem with an information-theoretic approach, and introduce a probing method to measure binding information in model representations. We perform experiments on ViTs, measuring binding from different components of the architecture, such as the image summary token [CLS] or the spatial tokens. We use datasets with different binding challenges, such as feature sharing, occlusion, and natural features, while comparing the performance of several pre-trained ViTs. Overall, our research demonstrates binding as a key ingredient to strong visual recognition and reasoning.",
-        "authors": [
-          "Lianghuan Huang",
-          "Yihao Li",
-          "Saeed Salehi",
-          "Yingshan Chang",
-          "Ansh Soni",
-          "Konrad P. Kording"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "Using Reward Uncertainty to Induce Diverse Behaviour in Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2606.03962v1",
-        "publishedAt": "2026-06-02T17:50:14.000Z",
-        "summary": "Classical reinforcement learning (RL) typically seeks a deterministic policy that maximizes the expected sum of a scalar reward. Yet, modern applications such as language model fine-tuning or scientific discovery demand diversity. Existing remedies such as entropy regularization or diversity bonuses often require fragile trade-offs that sacrifice performance for stochasticity or rely on heuristic metrics that can misalign policy rankings. We argue that diversity is more naturally understood as the rational response to uncertainty in the reward. When the reward function is not perfectly known--as is the case with ambiguous preferences or imperfect reward models--committing to a single action can be sub-optimal. Building on this, we propose a fundamental reformulation of the RL objective by replacing the scalar reward with a distribution over reward functions, and applying a non-linear objective over sets of actions. The result is a framework in which calibrated behavioural diversity emerges naturally, remains controllable through the reward function distribution, and is obtained without sacrificing expected reward. Focusing on the contextual bandit setting, we derive a principled gradient estimator for this objective and prove that our formulation naturally generalizes both vanilla policy gradient and more recently developed action-set approaches. Our empirical results demonstrate that this framework offers a robust and theoretically grounded alternative for complex RL tasks where the traditional formulation of the problem fails to induce the desired breadth of agent behaviour.",
-        "authors": [
-          "Anthony GX-Chen",
-          "Ankit Anand",
-          "Gheorghe Comanici",
-          "Zaheer Abbas",
-          "Eser Aygün",
-          "David Smalling",
-          "Shibl Mourad",
-          "Doina Precup",
-          "André Barreto",
-          "Mark Rowland"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "VLESA: Vision-Language Embodied Safety Agent for Human Activity Monitoring",
-        "url": "https://arxiv.org/abs/2606.03954v1",
-        "publishedAt": "2026-06-02T17:42:17.000Z",
-        "summary": "As AI systems increasingly assist humans in physical tasks, ensuring safety becomes paramount -- physical actions carry immediate and irreversible consequences that digital errors do not. We introduce the Vision-Language Embodied Safety Agent (VLESA), a framework that monitors human activities from egocentric video and triggers real-time safety interventions when dangerous actions are predicted. VLESA addresses intent-dependent safety where identical actions can be safe or dangerous depending on context. A dataset pairing egocentric frames with goal-conditioned safety annotations is introduced, enabling a goal-conditioned safety Q-filter trained via GRPO that evaluates actions with respect to inferred intent without retraining. On top of that, an intent-action prediction agent is proposed to jointly infer goals and predict future actions from video. On the ASIMOV-2.0 benchmark, VLESA achieves higher intervention accuracy at the exact ground-truth frame compared to baselines, while the GRPO-trained Q-filter improves action safety by over 41 percentage points through goal-conditioned constrained decoding. Code is available at https://github.com/HanjiangHu/VLESA.",
-        "authors": [
-          "Hanjiang Hu",
-          "Yiyuan Pan",
-          "Jiaxing Li",
-          "Xusheng Luo",
-          "Alexander Robey",
-          "Na Li",
-          "Yebin Wang",
-          "Changliu Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 13
-      },
-      {
-        "title": "MLSkip: Data Skipping for ML Filters via Lightweight Metadata",
-        "url": "https://arxiv.org/abs/2606.03946v1",
-        "publishedAt": "2026-06-02T17:36:06.000Z",
-        "summary": "Database vendors recently released AI functions that can be used in filter predicates. As such functions often rely on costly, black-box ML models, they unveil new data management challenges. Concretely, traditional data skipping techniques for integer and string data fail to be applicable to the new filter type. Indeed, there is no known mechanism for pruning non-qualifying row groups, e.g., when reading files from blob storage.\n  In this work, we initiate the study of data skipping techniques for ML filters. We make the case that Parquet's default min-max metadata is enough to enable pruning. To this end, we draw connections to two lines of research: (i) the recently proposed query language for ML models and (ii) neural network verification.\n  Our preliminary results on ReLU architectures show that on tables from TPC-H and TPC-DS, the average pruning effectiveness for filters of selectivity below 0.1% amounts to 27.4%. Finally, inspired by research on spatial joins, we propose an enhanced metadata structure: a size-bounded 2D convex hull that verification tools can make better use of, increasing the pruning effectiveness to 38.31%, while occupying at most 45 bytes per row group and column pair. We observe an end-to-end speedup of 1.07$\\times$ over PyTorch in DuckDB.",
-        "authors": [
-          "Mihail Stoian",
-          "Mark Gerarts",
-          "Pascal Ginter",
-          "Andreas Zimmerer",
-          "Jan Van den Bussche",
-          "Andreas Kipf"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 13
-      },
-      {
-        "title": "SEAOTTER: Sensor Embedded Autoencoding with One-Time Transcode for Efficient Reconstruction",
-        "url": "https://arxiv.org/abs/2606.03940v1",
-        "publishedAt": "2026-06-02T17:28:28.000Z",
-        "summary": "In robotics systems, vast amounts of visual data are easily captured at high resolution using low-cost, low-power hardware. Yet, limited bandwidth and on-device compute resources prevent full utilization when transmitted via conventional codecs like JPEG/MPEG. Newer codecs, like AV1/AVIF, improve the rate-distortion trade-off, but demand far more resources for encoding, impractical without custom ASICs. Recent asymmetric autoencoders deliver high quality under extreme power and bandwidth constraints, but add prohibitive decoding cost and use bespoke formats that ignore decades of infrastructure built around standards like JPEG. To address these limitations, we introduce a compression framework for cloud robotics based on a Sensor Embedded Autoencoder paired with a One-Time Transcode for Efficient Reconstruction (SEAOTTER). Because the sensor, cloud, and consumer stages face very different power and bandwidth budgets, SEAOTTER combines the compactness of a learned latent with the broad usability of a standard JPEG file. Since naive transcoding degrades performance, we propose a learnable JPEG color and quantization transform that enables increased accuracy for global, dense, and vision-language-based perception. Using SEAOTTER, we train both general-purpose and task-aware transcoding pipelines for a pre-trained, frozen encoder. At a compression ratio of 200:1 and compared to AVIF, we observe 7 times faster encoding, 3.5 times faster decoding, and +8% ImageNet top-1 accuracy, while retaining compatibility with JPEG infrastructure. Our code is available at https://github.com/UT-SysML/seaotter .",
-        "authors": [
-          "Dan Jacobellis",
-          "Neeraja J. Yadwadkar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 14
-      },
-      {
-        "title": "FlashbackCL: Mitigating Temporal Forgetting in Federated Learning",
-        "url": "https://arxiv.org/abs/2606.03939v1",
-        "publishedAt": "2026-06-02T17:28:21.000Z",
-        "summary": "Federated Learning (FL) of foundation and edge models increasingly targets deployments where client data distributions drift over time, yet existing forgetting-mitigation methods assume each client's distribution is stationary. Flashback, the strongest recent FL method against cross-client (spatial) forgetting, uses monotonically accumulating per-class label counts as a knowledge proxy; this proxy becomes miscalibrated under temporal distribution shift and anchors the global model to an outdated class balance. We formalise temporal forgetting in FL with a per-phase metric isolated from protocol-level fluctuations and propose Flashback Continual Learning (FlashbackCL), a drop-in extension of Flashback with (i) temporally-decayed label counts; (ii) a device-aware replay buffer with Class-Balanced Reservoir Sampling (CBRS); and (iii) server-side active coreset curation on the public distillation set. The results show that FlashbackCL achieves 6.9% to 10.0% relative improvement relative to Flashback, on CIFAR-10 with 50 clients and three controlled temporal shift modes, while simultaneously reducing temporal forgetting by up to 68%. A 5-variant ablation identifies CBRS replay as the critical component. FlashbackCL also improves Flashback by 3.5 points on stationary CIFAR-100, suggesting that class-balanced replay regularises spatial heterogeneity as well as temporal shift.",
-        "authors": [
-          "Mubarak A. Ojewale",
-          "Adriana E. Chis",
-          "Jorge M. Cortes-Mendoza",
-          "Bernardo Pulido-Gaytan",
-          "Horacio Gonzalez-Velez"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 14
-      },
-      {
-        "title": "q0: Primitives for Hyper-Epoch Pretraining",
-        "url": "https://arxiv.org/abs/2606.03938v1",
-        "publishedAt": "2026-06-02T17:27:48.000Z",
-        "summary": "Multi-epoch training is becoming the standard now that compute is growing faster than the supply of high-quality text. But pretraining a single model saturates within a few passes, long before the compute budget is exhausted. We argue this calls for a conceptual shift from training a single model toward exploring a population of models and aggregating their predictions. We introduce hyper-epoch pretraining (q0), which turns a multi-epoch budget into a population of diverse models whose combined predictions reach a lower validation loss than a single refined model. q0 reduces to three core primitives. A cyclic schedule with anti-correlated learning rate and weight decay collects diverse models from a few parallel trajectories. Chain distillation trains each model against its predecessor so that model quality compounds across the population. A learned prior, fit on a held out set, selects and weights members for any inference budget. On a 1.8B-parameter model trained on 100M FineWeb tokens, q0 matches a strong 256-epoch ensemble baseline using only ${\\sim}56$ epochs (${\\sim}4.6\\times$ fewer), or ${\\sim}67$ epochs (${\\sim}3.8\\times$ fewer) when matched to the baseline's ensemble size, and continues to improve beyond it. These gains reach cumulative ${\\sim}12.9\\times$ data efficiency under the Slowrun setting and transfer to downstream benchmarks. Crucially, the optimal allocation shifts with the budget, so we give prescriptive recipes for how to spend a given epoch budget to maximize generalization, from a single epoch up to the largest budgets.",
-        "authors": [
-          "Bishwas Mandal",
-          "Shmuel Berman",
-          "Akshay Vegesna",
-          "Samip Dahal"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "Correcting Neural Operator Spectral Bias via Diffusion Posterior Sampling with Sparse Observations",
-        "url": "https://arxiv.org/abs/2606.03936v1",
-        "publishedAt": "2026-06-02T17:26:15.000Z",
-        "summary": "Neural operator surrogates (NO) approximate PDE solutions orders of magnitude faster than numerical solvers, but suffer from spectral bias: high-frequency content is systematically attenuated, limiting reliability where fine-scale structure matters. Sparse sensor measurements of the field are often available too, offering pointwise accuracy without spectral distortion but covering only a small fraction of the domain. We address this by treating NO predictions as auxiliary observations in a diffusion posterior sampling framework. Our method, FreqNO-DPS (https://github.com/niccoloperrone/FreqNO-DPS), combines an unconditional score-based diffusion prior, trained on high-fidelity simulations, with diffusion posterior sampling (DPS) conditioned on sparse observations and guided by a frozen neural operator. Naive integration reintroduces the surrogate's spectral bias; we resolve this with a closed-form, spectrally shaped guidance score that weights the surrogate by its frequency-dependent accuracy and needs no denoiser backpropagation. A distribution-free analysis bounds the approximation error across the frequency-diffusion-time plane and shows the guidance's frequency dependence is preserved regardless of distributional assumptions. On 3D elastic wavefield prediction at 5% and 2% sensor coverage, the method reaches near-zero spectral bias across all bands, where both the surrogate and sensor-only DPS show systematic high-frequency attenuation. Isotropic guidance, the natural baseline, improves pointwise accuracy but carries the bias into the posterior nearly intact, confirming that frequency-dependent calibration is essential, not merely beneficial. The framework needs only paired surrogate/reference data and exploits no problem-specific structure beyond the residual's approximate spectral diagonality, verifiable for new surrogates via the coherence diagnostic we provide.",
-        "authors": [
-          "Niccolò Perrone",
-          "Fanny Lehmann",
-          "Stefania Fresca",
-          "Filippo Gatti"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "Quadratic integrate-and-fire neurons exhibit less fragmented loss landscapes and outperform leaky integrate-and-fire neurons in spike-based gradient descent",
-        "url": "https://arxiv.org/abs/2606.03935v1",
-        "publishedAt": "2026-06-02T17:26:12.000Z",
-        "summary": "The ability to train spiking neural networks is essential for modeling biological neural networks as well as for neuromorphic computing. However, for the extensively used leaky integrate-and-fire (LIF) neurons, arbitrarily small parameter changes can induce spike (dis)appearances that disrupt subsequent activity, leading to unstable neural representations and permanently silent neurons during exact spike-based gradient descent. Recent work shows that a class of neuron models, which includes the quadratic integrate-and-fire (QIF) neuron, avoids these discontinuities and enables continuous and even smooth spike-based gradient descent. However, it remains unclear whether these advantages translate into practice. Here, we demonstrate that they do so via a controlled comparison between networks of LIF and QIF neurons on the popular Spiking Heidelberg Digits dataset. Specifically, in a first step, we perform a thorough hyperparameter search to optimize both models, revealing a clear performance advantage of QIF neurons. In a second step, we visualize the loss and gradient landscapes. Consistent with their inferior performance, we find that the loss landscapes of LIF neurons, which are discontinuous, appear more fragmented and the related gradients more erratic. An analysis of the landscapes of single samples indicates that these features arise from changes in the temporal order of spikes, which often cause disruptive spike (dis)appearances. Overall, our results advocate replacing LIF neurons with neuron models exhibiting continuous spiking dynamics, such as QIF neurons, for gradient descent training.",
-        "authors": [
-          "Carlo Wenig",
-          "Raoul-Martin Memmesheimer",
-          "Christian Klos"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      }
-    ],
+    "research": [],
     "news": [
       {
         "title": "MIT researchers teach AI models to interpret charts",
@@ -325,7 +101,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 8
       },
       {
         "title": "Cyera eyes $12B valuation at 80x ARR multiple despite operating losses",
@@ -339,7 +115,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 13
       },
       {
         "title": "Uber caps employee AI spending after blowing through budget in 4 months",
@@ -353,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 12
+        "ageHours": 17
       },
       {
         "title": "New Microsoft tool lets devs spin up AI behavior tests using text descriptions",
@@ -367,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 12
+        "ageHours": 17
       },
       {
         "title": "Martin Scorsese becomes the latest — and most unlikely — Hollywood voice for AI",
@@ -381,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 13
+        "ageHours": 18
       },
       {
         "title": "Microsoft launches Scout, an OpenClaw-inspired personal assistant",
@@ -395,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 13
+        "ageHours": 18
       },
       {
         "title": "Google rolls out fake call detection to protect against AI deepfake impersonation scams",
@@ -409,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 13
+        "ageHours": 18
       },
       {
         "title": "Microsoft offers devs a better way to control AI agent behavior",
@@ -423,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 13
+        "ageHours": 18
       },
       {
         "title": "Amazon faces class action lawsuit over Ring facial-recognition feature",
@@ -437,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 13
+        "ageHours": 18
       },
       {
         "title": "Trump signs narrower executive order on AI oversight after industry objections",
@@ -451,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 15
+        "ageHours": 20
       },
       {
         "title": "OpenAI launches new Codex tools for white-collar work",
@@ -465,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 15
+        "ageHours": 20
       },
       {
         "title": "Anthropic scales Claude Mythos to critical infrastructure in 15+ countries",
@@ -479,30 +255,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 16
+        "ageHours": 21
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 24,
+    "totalItems": 12,
+    "last24h": 12,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 10
-      },
-      {
-        "name": "Models",
-        "count": 6
-      },
-      {
         "name": "General",
-        "count": 5
+        "count": 4
+      },
+      {
+        "name": "Research",
+        "count": 3
       },
       {
         "name": "Products",
         "count": 3
+      },
+      {
+        "name": "Models",
+        "count": 2
       }
     ]
   }
