@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T14:08:46.373Z",
+  "generatedAt": "2026-06-04T17:20:32.541Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,9 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
+      "itemCount": 0,
       "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
         "research:arXiv cs.LG -> HTTP 429",
         "research:arXiv cs.CL -> HTTP 429"
       ]
@@ -86,251 +87,64 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Streaming Communication in Multi-Agent Reasoning",
-        "url": "https://arxiv.org/abs/2606.05158v1",
-        "publishedAt": "2026-06-03T17:57:04.000Z",
-        "summary": "Multi-agent reasoning systems adopt a \"generate-then-transfer\" paradigm that forces end-to-end latency to scale linearly with pipeline depth. We introduce StreamMA, a multi-agent reasoning system that streams each reasoning step to downstream agents as soon as it is generated, pipelining adjacent agents and thus reducing latency. Surprisingly, this pipelining also improves effectiveness: because multi-step reasoning quality is non-uniform and early steps are more reliable than later ones, working with these reliable early steps instead of the full chain prevents error-prone late steps from misleading downstream agents. We formalize both advantages with the first closed-form joint analysis of stream, serial, and single protocols, deriving the effectiveness ordering, speedup upper bound, and cost ratio. Across eight reasoning benchmarks spanning mathematics, science, and code, two frontier LLMs (Claude Opus 4.6 and GPT-5.4), and three topologies (Chain, Tree, Graph), StreamMA outperforms both baselines (avg. +7.3 pp, max +22.4 pp on HMMT 2026; Claude Opus 4.6-high). Beyond these contributions, we discover a \"step-level scaling law\": increasing per-agent steps consistently improves both effectiveness and efficiency, a new scaling dimension orthogonal to and composable with agent-count scaling.",
-        "authors": [
-          "Zhen Yang",
-          "Xiaogang Xu",
-          "Wen Wang",
-          "Cong Chen",
-          "Xander Xu",
-          "Ying-Cong Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "Reinforcement Learning from Rich Feedback with Distributional DAgger",
-        "url": "https://arxiv.org/abs/2606.05152v1",
-        "publishedAt": "2026-06-03T17:54:04.000Z",
-        "summary": "Reasoning models have advanced rapidly, but the dominant reinforcement learning from verifiable rewards (RLVR) recipe remains surprisingly narrow: sample many responses and reward each with a single bit indicating whether the final answer is correct. Yet many settings provide rich feedback, including execution traces, tool outputs, expert corrections, and model self-evaluations. We study how to use such feedback through a distributional variant of the classic imitation learning algorithm DAgger, where the learner has local access to an expert distribution on states visited by the current policy. This yields a simple forward cross-entropy objective that admits a blackbox expert and whose sequence-level gradient {conduct rich credit assignment by propagating} future expert-student disagreement back to earlier decisions. We show that prior RL with self-distillation objectives based on reverse KL or Jensen-Shannon fail to guarantee monotonic policy improvement: even when the expert has higher reward, their updates may increase probability on worse actions. In contrast, we show that forward cross-entropy admits monotonic policy improvement and enjoys guarantees on regret. We further show that our objective optimizes a lower bound on teacher-weighted likelihood of success, leading to improved Pass@N. Empirically, our approach, DistIL, improves over RLVR and RL with self-distillation baselines across a variety of domains: scientific reasoning, coding, and solving hard mathematical problems.",
-        "authors": [
-          "Rishabh Agrawal",
-          "Jacob Fein-Ashley",
-          "Paria Rashidinejad"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "Multi-Column RBF Neural Network Using Adaptive and Non-Adaptive Particle Swarm Optimization",
-        "url": "https://arxiv.org/abs/2606.05150v1",
-        "publishedAt": "2026-06-03T17:53:48.000Z",
-        "summary": "The radial basis function neural network (RBFN) trained with a gradient descending algorithm provides an effective fully connected structure in both shallow and deep networks. The error correction (ErrCor), a state-of-the-art gradient-based training method, selects optimal hidden units to improve accuracy. Alternatively, as a population-based algorithm, the particle swarm optimization algorithm (PSO) uses the swarm experience to optimize RBFN parameters, offering global search and robustness to local minima. Adaptive PSO (APSO) has emerged as an improved variant of PSO. APSO algorithm improves convergence speed by dynamically adjusting swarm parameters during optimization. Both ErrCor and PSO demonstrate improved results and competitive convergence. However, with large datasets, these methods face scalability challenges such as excessive kernel computations and large hidden layer structures. A recent multi-column RBFN approach (MCRN) improves ErrCor performance by deploying small RBFNs in a parallel system. Inspired by MCRN's success, we propose two novel approaches to improve PSO performance: the multi-column RBFN with PSO (MC-PSO) and the multi-column RBFN with APSO (MC-APSO). These methods introduce parallel RBFN structures trained using evolutionary swarm methods. Each RBFN is independently trained on a specific spatial subset of the dataset using either PSO or APSO algorithms. These resulting specialist-trained RBFNs are tailored to their respective subsets. During testing, only selected RBFNs, where the test instance neighbors are located, contribute to the multi-column output. This specialization improves accuracy, while parallelism enhances speed. We evaluate the proposed methods on various benchmark datasets. The MC-PSO and MC-APSO outperform ErrCor, PSO, APSO, and MCRN in terms of accuracy and recall. They also demonstrate faster training and testing times in most experiments.",
-        "authors": [
-          "Ammar Hoori",
-          "Yuichi Motai"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "Failed Reasoning Traces Tell You What Is Fixable (But Not by Reading Them)",
-        "url": "https://arxiv.org/abs/2606.05145v1",
-        "publishedAt": "2026-06-03T17:50:26.000Z",
-        "summary": "When post-trained language models fail on reasoning problems, the common test-time-scaling response is to spend more compute on additional attempts, and the failed traces play no further role. We argue this discards a crucial signal; some failures come from unlucky sampling, where more rollouts help, while others are structural and resist resampling regardless of budget. We propose that failed traces encode recoverability structure: the inference-time signature of which test-time interventions can rescue a given failure. Three problem-level trajectory features, derived from the structure of available interventions, recover this structure from the distributional signature of failed rollouts, not their text. They cluster failures into stable regimes, characterize the failure topography of different post-training methods ($84.3{\\pm}4.3\\%$ accuracy, $+20\\%$ over a majority-class baseline), and support a training-free routing rule that lifts rescue by $+12.2\\%$ on the deployment-relevant Steerable-Hard subset (failures where retry is insufficient and a bounded intervention is reachable). The features and the routing rule transfer across two cross-family probes. The same three features thus convert failed traces from discarded data into a diagnostic object, supporting test-time routing and post-training analysis without training-time or weight-space access.",
-        "authors": [
-          "Nizar Islah",
-          "Istabrak Abbes",
-          "Irina Rish",
-          "Sarath Chandar",
-          "Eilif B. Muller"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "GeM-NR: Geometry-Aware Multi-View Editing for Nonrigid Scene Changes",
-        "url": "https://arxiv.org/abs/2606.05142v1",
-        "publishedAt": "2026-06-03T17:49:48.000Z",
-        "summary": "Recent developments in multi-view image editing with generative models have brought us a step closer toward general 3D content generation and customization. Most existing works focus on rigid or appearance-only edits by utilizing the geometry of the unedited scene. This naturally limits these methods to edits that preserve the underlying scene structure. Other approaches are trained for specific image editing tasks, such as object removal and addition. Despite this progress, general nonrigid edits, i.e., edits that substantially change the scene geometry, remain challenging for existing methods. We propose GeM-NR, a fast and flexible training-free approach for general multi-view consistent image editing, including edits that drastically change the geometry and appearance of the scene. Given an anchor image edited with a chosen backbone editor (such as FLUX, Qwen, BrushNet) and a query unedited image, GeM-NR edits the query image consistently with the anchor edit. The method incorporates multiple stages: (i) depth map estimation, where we propose a strategy to maximize the alignment between the 3D point clouds of the edited and unedited scenes, (ii) projection onto a query viewpoint, and (iii) refinement of the obtained image conditioned on the unedited query. The conditioning-based formulation scales well from two to many views of an object. We demonstrate the ability of our method to handle edits with significant changes in geometry and appearance, something that existing methods struggle with. We perform an extensive evaluation showing that our method improves consistency for a wide variety of edit tasks, including generating 3D representations of the edited scene. Both quantitative and qualitative results indicate the state-of-the-art performance of our method in terms of edit quality as well as geometric and photometric consistency across multiple views.",
-        "authors": [
-          "Josef Bengtson",
-          "Yaroslava Lochman",
-          "Fredrik Kahl"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "Towards Efficient and Evidence-grounded Mobility Prediction with LLM-Driven Agent",
-        "url": "https://arxiv.org/abs/2606.05130v1",
-        "publishedAt": "2026-06-03T17:34:01.000Z",
-        "summary": "Individual-level mobility prediction is central to urban simulation, transportation planning, and policy analysis. Supervised sequence models achieve strong accuracy but require task-specific training and offer limited decision-level transparency. Recent LLM-based methods improve interpretability, yet mostly rely on static prompts and single-pass inference, limiting their ability to seek additional evidence when mobility signals are weak or conflicting. We propose \\method{}, a training-free LLM-driven agent framework that formulates next-location prediction as adaptive evidence-controlled decision making. \\method{} resolves routine cases through a fast path based on historical regularity, while ambiguous cases trigger iterative tool use over recent trajectories, historical behavior, stay-move likelihood, and geographical evidence. Across three mobility datasets, AgentMob achieves the strongest overall performance among training-free LLM-based methods, with GPT-5.4 reaching 71.42\\% Acc@1 on BW, 33.14\\% on YJMob100K, and 33.50\\% on Shanghai ISP. On BW non-fast-path cases, the LLM controller improves Acc@1 from 30.65\\% to 48.62\\% over a same-tool statistical baseline, showing that its main benefit lies in resolving ambiguous predictions through adaptive evidence gathering. Our code is available at https://github.com/Unknown-zoo/AgentMob.",
-        "authors": [
-          "Linyao Chen",
-          "Qinlao Zhao",
-          "Zechen Li",
-          "Mingming Li",
-          "Likun Ni",
-          "Jinyu Chen",
-          "Yuhao Yao",
-          "Xuan Song",
-          "Noboru Koshizuka",
-          "Hiroki Kobayashi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "Audio Interaction Model",
-        "url": "https://arxiv.org/abs/2606.05121v1",
-        "publishedAt": "2026-06-03T17:26:11.000Z",
-        "summary": "Audio is an inherently interactive modality, yet today's Large Audio Language Models (LALMs) are offline, and streaming audio models each handle only a single task such as streaming ASR or voice chatting. It is time to unify them into one online LALM: a model that, through an always-on perceive-decide-respond loop, listens to sound, environment, and instructions in real time and reacts on the fly. We formalize this regime as the Audio Interaction Model, and realize it with Audio-Interaction, a unified streaming model that retains offline task execution while adding online general audio instruction following, from dialogue to full voice chatting, deciding when to respond from the semantics of the stream. To enable this, we propose SoundFlow, a framework that instantiates the perceive-decide-respond loop end to end, from data to training to deployment, through streaming-native data construction, comprehension-aware training, and asynchronous low-latency inference for stable real-time interaction. We further construct StreamAudio-2M, a 2.6M-item streaming corpus spanning 7 fundamental abilities and 28 sub-tasks, and Proactive-Sound-Bench for evaluating proactive audio intervention. Across 8 benchmarks, Audio-Interaction preserves competitive performance on mainstream audio tasks while unlocking capabilities inaccessible to offline LALMs, including real-time ASR, streaming audio instruction following, and proactive help.",
-        "authors": [
-          "Zhifei Xie",
-          "Zihang Liu",
-          "Ze An",
-          "Xiaobin Hu",
-          "Yue Liao",
-          "Ziyang Ma",
-          "Dongchao Yang",
-          "Mingbao Lin",
-          "Deheng Ye",
-          "Shuicheng Yan",
-          "Chunyan Miao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "Continual Visual and Verbal Learning Through a Child's Egocentric Input",
-        "url": "https://arxiv.org/abs/2606.05115v1",
-        "publishedAt": "2026-06-03T17:20:18.000Z",
-        "summary": "Children learn the meanings of words from a continuous, temporally structured stream of egocentric experience. Recent work shows that neural networks can also learn word-referent mappings from a child's egocentric video recordings, but they cycle through the shuffled data for hundreds of epochs, contrasting with how children actually encounter their environment. We introduce BabyCL, a continual multimodal learning framework that processes the SAYCam dataset in a single chronological pass, combining streaming visual representation learning with an image-text contrastive objective. BabyCL combines a multi-stage temporal segmentation of the stream with a dual replay buffer that independently manages visual and multimodal histories, and it is jointly trained with three contrastive losses on a shared backbone. Under a matched optimization budget, BabyCL outperforms streaming learning baselines on the SAYCam Labeled-S 4AFC benchmark, substantially narrowing the gap to an upper bound of offline training. Ablations show that the gains are robust to the length of the online temporal segmentation window and the eviction rule of the replay buffer. Together, these results show that meaningful word-referent mappings can emerge under training conditions much closer to a child's actual experience.",
-        "authors": [
-          "Xiaoyang Jiang",
-          "Yanlai Yang",
-          "Kenneth A. Norman",
-          "Brenden Lake",
-          "Mengye Ren"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "Who Needs Labels? Adapting Vision Foundation Models With the Metadata You Already Have",
-        "url": "https://arxiv.org/abs/2606.05107v1",
-        "publishedAt": "2026-06-03T17:10:11.000Z",
-        "summary": "We propose a label-free approach to adapt powerful but generic vision foundation models to specialized scientific domains. Standard supervised fine-tuning is often ill-suited to these settings: labels are scarce, and task-specific training can collapse the model's generality and hurt robustness. We instead leverage metadata to adapt representations to new domains in a self-supervised manner. Our method, FINO, combines a standard self-supervised objective with flexible metadata guidance that handles both highly granular discrete metadata and continuous metadata. It encourages the representation to preserve informative factors while suppressing spurious ones. Across subcellular fluorescence microscopy, Earth observation, wildlife monitoring, and medical imaging, FINO consistently outperforms standard unsupervised domain adaptation and fully supervised adaptation. It also exceeds highly-specialized domain-specific state of the art, while using no task labels for backbone adaptation and only lightweight probes for supervision.",
-        "authors": [
-          "Elouan Gardès",
-          "Seung Eun Yi",
-          "Kartik Ahuja",
-          "Théo Moutakanni",
-          "Huy V. Vo",
-          "Piotr Bojanowski",
-          "Wolfgang M. Pernice",
-          "Loïc Landrieu",
-          "Camille Couprie"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 21
-      },
-      {
-        "title": "Arithmetic Pedagogy for Language Models",
-        "url": "https://arxiv.org/abs/2606.05106v1",
-        "publishedAt": "2026-06-03T17:09:25.000Z",
-        "summary": "We investigate whether methods of human mathematics pedagogy can guide the training of language models toward arithmetic reasoning. Building on the GASING method -- an Indonesian pedagogy that solves basic arithmetic through a left-to-right procedure aligned with the causal order of token generation -- we operationalize each operation as a computational procedure whose execution trace is serialized into natural-language Chain-of-Thought (CoT) supervision. A small GPT-2 decoder (86M parameters) with a syllabic-agglutinative TOBA tokenizer for Indonesian is trained from scratch on this data using only a next-token prediction objective, without reinforcement learning or reward-based optimization. Monitoring training reveals three distinct learning phases, and mechanistic analyses -- attention-masking interventions on the CoT information graph, residual-stream probing, and logit-lens inspection -- show that the model first internalizes a procedural pathway and subsequently develops an associative, ``mental-arithmetic'' capacity that retrieves intermediate results without explicit step-by-step computation. The trained model reaches over 80% accuracy on held-out problems and attains competitive performance against substantially larger language models, indicating that targeted, pedagogically grounded training can yield strong and economical arithmetic capability at small scale.",
-        "authors": [
-          "Andhika Bernard Lumbantobing",
-          "Hokky Situngkir"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "Knowledge Index of Noah's Ark",
-        "url": "https://arxiv.org/abs/2606.05104v1",
-        "publishedAt": "2026-06-03T17:06:49.000Z",
-        "summary": "Knowledge benchmarks for LLMs face three issues: scaling-driven designs that do not operationalize disciplinary representativeness; flat-payment annotation that permits lazy consensus; and unaudited ranking instability under bounded test budgets. We introduce KINA, an 899-item benchmark across 261 fine-grained disciplines, with two formal results. First, we cast representativeness as a coverage-style objective over expert-elicited anchors and operationalize disciplinary representativeness through a proxy, yielding a (1-1/e) greedy approximation (Proposition 1); the guarantee applies to the proxy, not to population representativeness. Second, we prove a bonus-on-bar tournament weakly FOSD-dominates flat payment in released-review quality, with incentive-compatibility threshold B > Delta C / Delta p_min (Theorem 1). Evaluating 42 models from 13 labs, the top model, Gemini-3.1-Pro-Preview, reaches 53.17%, followed by Claude-Opus-4.6 at 49.92% and GPT-5.4 at 48.55%, leaving substantial headroom below saturation. The full leaderboard shows a tiered structure rather than a smooth total order: a small frontier tier lies above 48%, a dense strong-model tier spans roughly 38-45%, and low-performing models remain only modestly above the 10% chance baseline. Tool augmentation adds up to 5.17 points across the five tool-use evaluations, with gains varying substantially across models. We report bootstrap ranking-stability statistics to make bounded-budget variance explicit and to discourage over-interpretation of adjacent ranks.",
-        "authors": [
-          "Sheng Jin",
-          "Minghao Liu",
-          "Yunze Xiao",
-          "Zeqi Zhou",
-          "Heli Qi",
-          "Yifan Yao",
-          "Meishu Song",
-          "Kaijing Ma",
-          "Xuan Zhang",
-          "Sicong Jiang",
-          "Yizhe Li",
-          "Ningshan Ma",
-          "Jie Wei",
-          "Ziniu Li",
-          "Minglai Yang",
-          "Bangya Liu",
-          "Yiming Liang",
-          "Xiao Fang",
-          "Qingcheng Zeng",
-          "Jiarui Liu",
-          "Rui Yang",
-          "Shen Yan",
-          "Wenhao Huang",
-          "Jiaheng Liu",
-          "Zihan Wang",
-          "Weihao Xuan",
-          "Ge Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "Automatic Generation of Titles for Research Papers Using Language Models",
-        "url": "https://arxiv.org/abs/2606.05085v1",
-        "publishedAt": "2026-06-03T16:49:57.000Z",
-        "summary": "The title of a research paper conveys its primary idea and, occasionally, its conclusions in a clear and concise manner. Choosing an appropriate title is often challenging, and automated title generation can assist authors in this task. In this work, we propose a technique to generate paper titles from abstracts using open-weight pre-trained and large language models. We use the CSPubSum and LREC-COLING-2024 datasets and introduce a new dataset, SpringerSSAT, curated from four Springer journals in the social sciences. Additionally, we use GPT-3.5-turbo in a zero-shot setting to generate titles. Model performance is evaluated with ROUGE, METEOR, MoverScore, BERTScore, and SciBERTScore metrics. Our experiments show that fine-tuned PEGASUS-large outperforms other models, including fine-tuned LLaMA-3-8B and zero-shot GPT-3.5-turbo, across most metrics. We further demonstrate that ChatGPT can generate creative paper titles. Overall, AI-generated titles are generally appropriate and reliable.",
-        "authors": [
-          "Tohida Rehman",
-          "Debarshi Kumar Sanyal",
-          "Samiran Chattopadhyay"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Meta rolls out a new AI creator assistant on Facebook",
+        "url": "https://techcrunch.com/2026/06/04/meta-rolls-out-a-new-ai-creator-assistant-on-facebook/",
+        "publishedAt": "2026-06-04T16:32:48.000Z",
+        "summary": "Creators often have to parse through charts and dashboards to understand their performance, but with the new AI assistant, they can get quick answers to questions like \"When should I post?\" and \"What are people saying in my comments?\"",
+        "authors": [
+          "Aisha Malik"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 1
+      },
+      {
+        "title": "What to expect from WWDC 2026: Siri&#8217;s highly anticipated revamp and Apple Intelligence updates",
+        "url": "https://techcrunch.com/2026/06/04/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/",
+        "publishedAt": "2026-06-04T16:31:12.000Z",
+        "summary": "Apple's WWDC nears: here's what you can look forward to.",
+        "authors": [
+          "Lauren Forristal"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "NSF renews support for MIT-led AI and physics institute, expanding a new model for discovery",
+        "url": "https://news.mit.edu/2026/nsf-renews-support-mit-led-ai-and-physics-institute-0604",
+        "publishedAt": "2026-06-04T16:00:00.000Z",
+        "summary": "The MIT-led Institute for Artificial Intelligence and Fundamental Interactions (IAIFI) has received renewed support from the National Science Foundation (NSF) for an additional five years, increasing annual funding from $4 million to $4.98 million. The renewal marks a new phase for IAIFI, which has spent its first five years building a research model and an interdisciplinary community around a central premise: that AI can open new ways of doing physics, while physics can help mold better AI systems.&nbsp; Launched in 2020 as part of the National Artificial Intelligence Research Institutes program, IAIFI brings together researchers from MIT, along with Harvard, Northeastern, Tufts, and Boston universities. Its work has shown that machine learning can accelerate discovery in physics, while insights from physics can make AI systems more principled and interpretable. “From the beginning, IAIFI has been built around a two-way street: AI enabling better physics, and physics enabling better AI,” says Jesse Thaler, IAIFI’s director and a professor of physics at MIT. “We have seen this virtuous cycle play out across multiple areas of physics and AI over the past five years. The exchange is producing not just new results, but genuinely new ways of doing science.” Research across physics and AI IAIFI’s research spans particle physics, nuclear physics, astrophysics, and foundational AI, with many advances emerging from collaborations across those areas. In particle physics, IAIFI researchers have developed AI techniques to handle the immense data rates from the Large Hadron Collider in real-time, helping turn a firehose of collision data into actionable physics. In nuclear physics, IAIFI researchers are using AI-based generative methods to model the interactions of quarks and gluons in lattice quantum chromodynamics, creating new ways to study the structure of matter from first principles. In astrophysics, machine learning is being used to uncover new cosmic phenomena and improve the sensitivity of the MIT-led LIGO gravitational-wave experiment. At the same time, ideas from physics are informing the development of new AI methods. IAIFI researchers are developing learning algorithms and new model architectures that embed physics knowledge and best practices — including symmetries, geometric structures, exactness guarantees, and statistical methodologies — directly into neural networks, producing systems that are more reliable, interpretable, and data-efficient. “AI has begun to transform how physicists tackle some of the field’s most challenging problems,” says Mike Williams, interim director of IAIFI and a professor of physics at MIT. “More importantly, it is starting to expand the frontier of what problems we can realistically address, making it possible to pursue questions that were once completely beyond our reach.” Training the next generation A defining feature of IAIFI is its investment in people. The IAIFI Postdoctoral Fellows program supports early-career scientists pursuing research at the intersection of physics and AI, pairing each fellow with mentors in both domains and fostering collaboration across institutions. Eight fellows have completed the program to date. Three have secured faculty positions; others have taken research roles at leading AI companies or joined startups, reflecting how broadly the skills cultivated at IAIFI translate. “The IAIFI Fellowship shows what can happen when early-career scientists are given the freedom and support to work across traditional boundaries,” says Phiala Shanahan, IAIFI’s interim deputy director and a professor of physics at MIT. “Our fellows aren’t just contributing to physics or to AI separately — they are helping shape a growing field at the intersection.” IAIFI’s annual PhD Summer School has become a focal point for the growing community of “ centaur scientists ” with expertise in both physics and AI. For the 2026 edition, the program received nearly 600 applications for roughly 100 in-person spots, with about 300 additional participants expected to join virtually. Previous participants have strongly recommended the school to their peers for its combination of lectures, hands-on tutorials, coding sprints, and networking events. At MIT, IAIFI has helped shape new educational pathways, including an interdisciplinary PhD program in physics, statistics, and data science — a collaboration between the Department of Physics and the Statistics and Data Science Center — which has awarded 20 doctoral degrees since 2021. IAIFI members Phil Harris and Isaac Chuang have also developed a course on computational data science in physics, offered both on campus (Course 8.16) and as a free online course through MITx . A growing community Beyond its core research and training programs, IAIFI convenes researchers through its annual summer workshop, which will be held this year at the MIT Schwarzman College of Computing building. The institute also engages the broader public through collaborations with the MIT Museum, the Museum of Science in Boston, hackathons, and widely viewed online content exploring AI and physics. “IAIFI shows what becomes possible when researchers in physics, computation, statistics, and data science organize around shared scientific questions,” says Nergis Mavalvala, dean of the MIT School of Science and the Curtis and Kathleen Marble Professor of Astrophysics. “That kind of sustained, cross-disciplinary collaboration is essential to the future of scientific discovery.” IAIFI is hosted in the Laboratory of Nuclear Science at MIT, led by Director Jesse Thaler (currently on sabbatical), Interim Director Mike Williams, Interim Deputy Director Phiala Shanahan, and Managing Director Marisa LaFleur, along with steering committee members Lisa Barsotti, Isaac Chuang, Will Detmold, Bill Freeman, Phil Harris, Lina Necib, Tess Smidt, and Marin Soljacic (and steering committee members from other IAIFI universities).&nbsp; Looking ahead As a member of the National Artificial Intelligence Research Institutes program, IAIFI is part of a nationwide effort to advance AI-driven discovery and innovation. “The connections among the NSF AI Institutes have been as valuable as the work within them and continue to grow,”&nbsp;says Marisa LaFleur, IAIFI's managing director.&nbsp;“We’re sharing management strategies and resources for training, community building, and collaboration that make the whole network stronger.” For IAIFI, the renewed funding is an opportunity to push deeper into what the institute calls the “physics of AI” — using physical reasoning, physical challenges, and physical tools not just to apply AI, but to understand and improve it. That agenda, along with a growing community of researchers trained to work across disciplines, is what drives the institute's next phase. “The first phase of IAIFI established the model: interdisciplinary research, early-career talent, and a dynamic community, organized around the idea that AI and physics make each other stronger,” Thaler says. “Now we have the foundation — and the entrepreneurial spirit of our centaur scientists — to push that model into new territory and raise our ambitions.”",
+        "authors": [
+          "Laboratory for Nuclear Science"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 1
+      },
+      {
+        "title": "Is Silicon Valley ready to put robots in people&#8217;s homes? Hello Robot is.",
+        "url": "https://techcrunch.com/2026/06/04/is-silicon-valley-ready-to-put-robots-in-peoples-homes-hello-robot-is/",
+        "publishedAt": "2026-06-04T15:05:00.000Z",
+        "summary": "The California startup released the fourth-generation of its home assistance robot, Stretch.",
+        "authors": [
+          "Tim Fernholz"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 2
+      },
       {
         "title": "Apple touts $1.4 trillion in App Store billings and sales, 90% without a commission",
         "url": "https://techcrunch.com/2026/06/04/apple-touts-1-4-trillion-in-app-store-billings-and-sales-90-without-a-commission/",
@@ -343,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 0
+        "ageHours": 3
       },
       {
         "title": "How Endava is redesigning software delivery around AI agents",
@@ -355,7 +169,19 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 5
+      },
+      {
+        "title": "Dreaming: Better memory for a more helpful ChatGPT",
+        "url": "https://openai.com/index/chatgpt-memory-dreaming",
+        "publishedAt": "2026-06-04T09:00:00.000Z",
+        "summary": "ChatGPT introduces a new memory system to better remember preferences, keeping context fresh and relevant across conversations.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "Models",
+        "ageHours": 8
       },
       {
         "title": "Lovable signs multiyear deal with Google Cloud to up usage 5x, source says",
@@ -369,7 +195,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
         "title": "Teaching AI agents to ask better questions by playing “Battleship”",
@@ -383,7 +209,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 17
+        "ageHours": 20
       },
       {
         "title": "Tod Machover receives George Peabody Medal for contributions to music and technology",
@@ -397,7 +223,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 17
+        "ageHours": 21
       },
       {
         "title": "Alphabet&#8217;s record-breaking $85B raise for Google&#8217;s AI business is a helluva good signal",
@@ -411,7 +237,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 19
+        "ageHours": 22
       },
       {
         "title": "Google&#8217;s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
@@ -425,89 +251,17 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 19
-      },
-      {
-        "title": "Amazon will show AI product images when you search for some reason",
-        "url": "https://techcrunch.com/2026/06/03/amazon-will-show-ai-product-images-when-you-search-for-some-reason/",
-        "publishedAt": "2026-06-03T15:50:26.000Z",
-        "summary": "Amazon will use visual search and AI to show AI-generated product images that match your search queries. The retailer says it will help guide users to products.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
         "ageHours": 22
-      },
-      {
-        "title": "These two founders left Goldman and Meta to build voice AI for markets everyone else overlooked",
-        "url": "https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/",
-        "publishedAt": "2026-06-03T15:00:00.000Z",
-        "summary": "The startup's own stack for Africa and Middle East is now handling more than 17,000 calls per day.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 23
-      },
-      {
-        "title": "Publishers will be able to opt out of AI Search, thanks to new regulation",
-        "url": "https://techcrunch.com/2026/06/03/publishers-will-be-able-to-opt-out-of-ai-search-thanks-to-new-regulation/",
-        "publishedAt": "2026-06-03T14:58:33.000Z",
-        "summary": "U.K. regulators are requiring Google offer a tool allowing website publishers to opt-out of generative AI search features. The option will be tested in the U.K. then rolled out globally.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 23
-      },
-      {
-        "title": "Meta&#8217;s AI agent for WhatsApp Business is now available globally",
-        "url": "https://techcrunch.com/2026/06/03/metas-ai-agent-for-whatsapp-business-is-now-available-globally/",
-        "publishedAt": "2026-06-03T13:40:00.000Z",
-        "summary": "WhatsApp will charge businesses for using its AI agent based on token usage.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "Introducing new capabilities to GPT-Rosalind",
-        "url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind",
-        "publishedAt": "2026-06-03T13:15:00.000Z",
-        "summary": "GPT-Rosalind advances life sciences research with enhanced biological reasoning, medicinal chemistry expertise, genomics analysis, and experimental workflow capabilities.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Research",
-        "ageHours": 25
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 22,
+    "totalItems": 12,
+    "last24h": 12,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 15
-      },
-      {
-        "name": "Models",
+        "name": "Products",
         "count": 3
       },
       {
@@ -515,7 +269,11 @@
         "count": 3
       },
       {
-        "name": "Products",
+        "name": "Research",
+        "count": 3
+      },
+      {
+        "name": "Models",
         "count": 3
       }
     ]
