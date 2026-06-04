@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T23:10:38.057Z",
+  "generatedAt": "2026-06-04T01:47:09.360Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,255 +87,13 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Neuron Populations Exhibit Divergent Selectivity with Scale",
-        "url": "https://arxiv.org/abs/2606.03990v1",
-        "publishedAt": "2026-06-02T17:59:52.000Z",
-        "summary": "We investigate whether neuron populations within neural networks evolve predictably with scale, extending scaling laws beyond macroscopic observables such as loss. To probe this question, we study Rosetta Neurons, a previously characterized class of neurons whose activation patterns are similar across independently trained models (Dravid et al., 2023). In separate analyses of language models up to 30B parameters and vision models up to 5B parameters, we observe that the population of Rosetta Neurons follows a sublinear power law in model size, growing in absolute number but occupying a shrinking fraction of the total neuron count. We further observe a Neuron Polarization Effect: Rosetta Neurons become more selective and increasingly monosemantic with scale, separating from a growing non-Rosetta population that remains less selective. An analytical model balancing feature utility against limited neuron capacity explains the sublinear power-law scaling and this polarization effect. Finally, we find that Rosetta Neurons become more domain-specialized with scale and illustrate their selectivity through a targeted data-filtering case study for continued pretraining. Our results point to a scaling law for interpretable, shared neuron-level structure, linking model size to systematic changes in neuron universality, selectivity, and specialization.",
-        "authors": [
-          "Amil Dravid",
-          "Yasaman Bahri",
-          "Alexei A. Efros",
-          "Yossi Gandelsman"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 29
-      },
-      {
-        "title": "Imaginative Perception Tokens Enhance Spatial Reasoning in Multimodal Language Models",
-        "url": "https://arxiv.org/abs/2606.03988v1",
-        "publishedAt": "2026-06-02T17:59:17.000Z",
-        "summary": "Vision language models (VLMs) excel at many tasks but still struggle with spatial reasoning when critical information is not directly observable. Many such problems require imaginative perception: inferring what would be seen from an unseen viewpoint, tracing paths through occluded spaces, or integrating partial observations into a coherent spatial representation. We introduce Imaginative Perception Tokens (IPT), intermediate perceptual representations that externalize what a VLM would perceive under alternative spatial configurations while remaining consistent with the observed input.\n  To study this capability, we formulate three tasks, Perspective Taking (PET), Path Tracing (PT), and Multiview Counting (MVC), and construct datasets of approximately 20K examples with ground truth imaginations, answers, and evaluation benchmarks. Using the unified VLM BAGEL as the backbone, IPT supervision consistently improves spatial reasoning and often outperforms textual chain of thought training, even without generating images at inference time. On MVC, IPT improves accuracy by 3.4% and achieves competitive performance with strong closed-source models on PT. We further find that combining IPT and label-only supervision yields additional gains, whereas textual chain of thought can substantially degrade performance, suggesting a modality mismatch when spatial computation is forced through language. Overall, IPT provides a principled supervision signal for reasoning about unobserved spatial structure, improving generalization while producing interpretable intermediate representations.",
-        "authors": [
-          "Mahtab Bigverdi",
-          "Lindsey Li",
-          "Weikai Huang",
-          "Yiming Liu",
-          "Jaemin Cho",
-          "Jieyu Zhang",
-          "Tuhin Kundu",
-          "Chris Dangjoo Kim",
-          "Zelun Luo",
-          "Linda Shapiro",
-          "Ranjay Krishna"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking",
-        "url": "https://arxiv.org/abs/2606.03985v1",
-        "publishedAt": "2026-06-02T17:59:05.000Z",
-        "summary": "We introduce Humanoid-GPT, a GPT-style Transformer with causal attention trained on a billion-scale motion corpus for whole-body control. Unlike prior shallow MLP trackers constrained by scarce data and an agility-generalization trade-off, Humanoid-GPT is pre-trained on a 2B-frame retargeted corpus that unifies all major mocap datasets with large-scale in-house recordings. Scaling both data and model capacity yields a single generative Transformer that tracks highly dynamic behaviors while achieving unprecedented zero-shot generalization to unseen motions and control tasks. Extensive experiments and scaling analyses show that our model establishes a new performance frontier, demonstrating robust zero-shot generalization to unseen tasks while simultaneously tracking highly dynamic and complex motions.",
-        "authors": [
-          "Zekun Qi",
-          "Xuchuan Chen",
-          "Dairu Liu",
-          "Chenghuai Lin",
-          "Yunrui Lian",
-          "Sikai Liang",
-          "Zhikai Zhang",
-          "Yu Guan",
-          "Jilong Wang",
-          "Wenyao Zhang",
-          "Xinqiang Yu",
-          "He Wang",
-          "Li Yi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Language Models Compare Quantities Using Number-specific and Unit-specific Heuristics",
-        "url": "https://arxiv.org/abs/2606.03982v1",
-        "publishedAt": "2026-06-02T17:58:02.000Z",
-        "summary": "Quantities with measurement units, such as 110 cm and 1.2 m, require language models (LMs) to combine a numeral with a symbolic unit scale. Here, we study how LMs compare such quantities in controlled settings spanning several unit systems. We find that accuracy degrades near the comparison boundary, where small changes in value determine the correct answer. The resulting errors are systematic: linear surrogate models predict LM preferences from numerical-difference and unit-scale-difference cues, and causal interventions on subspaces aligned with these variables shift model's output. The results suggest that LMs compare quantities through a bag of heuristics over numerals and units, rather than first converting both expressions to an exact shared-scale representation.",
-        "authors": [
-          "Mutsumi Sasaki",
-          "Go kamoda",
-          "Ryosuke Takahashi",
-          "Kosuke Sato",
-          "Kentaro Inui",
-          "Keisuke Sakaguchi",
-          "Benjamin Heinzerling"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 29
-      },
-      {
-        "title": "Skill-RM: Unifying Heterogeneous Evaluation Criteria via Agent Skill",
-        "url": "https://arxiv.org/abs/2606.03980v1",
-        "publishedAt": "2026-06-02T17:56:57.000Z",
-        "summary": "Reward models (RMs) provide critical feedback signals for LLM post-training, notably in reinforced fine-tuning (RFT) and reinforcement learning (RL) pipelines. However, current reward evaluation relies on heterogeneous criteria such as rule-based verifiers, ground-truth references, procedural checklists, and complex rubrics, where a unified mechanism to integrate all types of evidence remains unexplored. To this end, we propose Skill Reward Model (Skill-RM), a unified framework that reformulates reward modeling as the execution of a reusable Reward-Evaluation Skill. By treating reward computation as a structured agentic task, Skill-RM provides a consistent interface to orchestrate heterogeneous resources, dynamically selecting and aggregating evidence tailored to the specific requirements of each input. This approach enables the reward model to move beyond static evaluation, ensuring consistency and transparency across diverse tasks. Extensive experiments on reward benchmarks and downstream applications, including best-of-N selection and reinforcement learning, demonstrate that Skill-RM consistently outperforms traditional judge baselines. Our findings suggest that Skill-RM not only provides a unified solution for reward modeling but also achieves superior performance through the strategic and dynamic orchestration of evidence. The code is at https://github.com/Qwen-Applications/Skill-RM.",
-        "authors": [
-          "Tao Chen",
-          "Gangwei Jiang",
-          "Pengyu Cheng",
-          "Siyuan Huang",
-          "Yihao Liu",
-          "Jingwei Ni",
-          "Jiaqi Guo",
-          "Mengyu Zhou",
-          "Kai Tang",
-          "Junling Liu",
-          "Qinliang Su",
-          "Xiaoxi Jiang",
-          "Guanjun Jiang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories",
-        "url": "https://arxiv.org/abs/2606.03979v1",
-        "publishedAt": "2026-06-02T17:56:55.000Z",
-        "summary": "The past few decades have witnessed significant advances in the design of machine learning algorithms, from early studies on task-specific shallow models to more general deep Large Language Models (LLMs). Despite showing promising results in tasks that require instant prediction or in-context learning, existing models lack the ability to continually learn and effectively transfer their temporal in-context knowledge to their long-term parameters. Inspired by human learning process, we introduce a ''Sleep'' paradigm that allows the models to continually learn, distill their short-term fragile memories into stable long-term knowledge with replay, and recursively improve themselves with ''Dreaming'' process. In more detail, sleep consists of two stages: (1) Memory Consolidation: an upward distillation process, called Knowledge Seeding, where the memories of a smaller-self are distilled into a larger network to provide more capacity while preserving the knowledge. As a proof of concept, we present a new Generalized Distillation process for {Knowledge Seeding} (i.e., the combination of on-policy distillation with Reinforcement Learning (RL)-based imitation learning); (2) Dreaming: a self-improvement phase, where the model uses RL to generate a curriculum of synthetic data to rehearse new knowledge and refine existing capabilities without human supervision. Our experiments on long-horizon, continual learning, knowledge incorporation, and few-shot generalization tasks support the importance of the sleep stage.",
-        "authors": [
-          "Ali Behrouz",
-          "Farnoosh Hashemi",
-          "Vahab Mirrokni"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 29
-      },
-      {
-        "title": "Formalizing the Binding Problem",
-        "url": "https://arxiv.org/abs/2606.03976v1",
-        "publishedAt": "2026-06-02T17:56:24.000Z",
-        "summary": "Representations of the world, arguably, contain information about features (e.g. something is blue, something is a circle) but also information about which features are part of the same object (e.g. the circle is blue), which we call binding information. Any system with the ability to understand scenes with multiple objects must be able to solve the binding problem: it needs to know which features belong together. However, despite work showing that Vision Transformers (ViTs) know which patches belong together, it is not known whether current deep learning models learn to exhibit binding information, i.e., for features. We may believe that there is not much binding information, after all misattributing features to wrong objects is a common failure of ViT-based architectures, especially in scenes with objects sharing features. Here we formalize the binding problem with an information-theoretic approach, and introduce a probing method to measure binding information in model representations. We perform experiments on ViTs, measuring binding from different components of the architecture, such as the image summary token [CLS] or the spatial tokens. We use datasets with different binding challenges, such as feature sharing, occlusion, and natural features, while comparing the performance of several pre-trained ViTs. Overall, our research demonstrates binding as a key ingredient to strong visual recognition and reasoning.",
-        "authors": [
-          "Lianghuan Huang",
-          "Yihao Li",
-          "Saeed Salehi",
-          "Yingshan Chang",
-          "Ansh Soni",
-          "Konrad P. Kording"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Quantifying Faithful Confidence Expression in Large Reasoning Models",
-        "url": "https://arxiv.org/abs/2606.03969v1",
-        "publishedAt": "2026-06-02T17:53:45.000Z",
-        "summary": "Reliable uncertainty communication is critical to the trustworthiness of LLMs, yet faithful calibration (FC)--the alignment between models' intrinsic and (linguistically) expressed confidence--is a persistent failure mode. This challenge is key for large reasoning models (LRMs), whose extended reasoning traces are often interpreted by users as evidence of deliberation, competence, and confidence. Despite the importance of FC and wide usage of LRMs, the extent to which LRMs can faithfully express their confidence remains poorly understood. Moreover, the prevailing paradigm to measure FC does not generalize well to the long chain-of-thought outputs generated by LRMs, which tend to lack clear step boundaries, involve inconsistent step structure, and encode complex conditional dependencies throughout the trace--complicating estimation of intrinsic confidence. To address this challenge, we introduce a novel framework to systematically quantify FC of LRMs. Our framework analyzes linguistic decisiveness relative to three sources of internal uncertainty, based on token probabilities, hidden states, and sampled response consistency. We also devise a prefix-conditioned sampling approach to control for conditional and structural variation across traces. Applying our framework to a diverse suite of leading models, datasets, and prompts, we find that faithful confidence expression is a significant challenge for LRMs. Reasoning behaviors do not automatically translate to improved FC, and prompt interventions for non-reasoning models do not improve faithfulness in the reasoning setting. Different confidence estimators further produce divergent assessments of the same traces, revealing fragility in prior evaluation methodologies. Taken together, our work establishes FC as a distinct reliability and alignment target for LRMs, particularly as such systems are increasingly deployed in high-stakes contexts.",
-        "authors": [
-          "Areeb Gani",
-          "Asal Meskin",
-          "Gabrielle Kaili-May Liu",
-          "Arman Cohan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "QUBRIC: Co-Designing Queries and Rubrics for RL Beyond Verifiable Rewards",
-        "url": "https://arxiv.org/abs/2606.03968v1",
-        "publishedAt": "2026-06-02T17:53:04.000Z",
-        "summary": "Rubric-based RL is a promising route for extending reinforcement learning beyond verifiable rewards, yet existing methods optimize rubrics while treating the query distribution as fixed. We identify a structural bottleneck: rubric quality is constrained by query structure. Open-ended queries yield vague rubrics; naively narrowing them introduces fabricated references that no model can verify, so all responses fail and training receives no reward signal. We present QUBRIC, a framework that co-designs queries and rubrics. Teacher-derived key points ground the rewriting of open-ended queries into scenario-based, evaluable questions. Contrastive rubric generation then turns teacher-policy gaps into query-level criteria, and learnability filtering retains only informative query-rubric pairs for GRPO training. QUBRIC achieves a +5.5 point gain on ArenaHard over the SFT baseline. Trained only on instruction-following data, it further transfers to three held-out benchmarks spanning legal, moral, and narrative reasoning (+6.3 points on average), with improvements concentrated in reasoning-related dimensions. These results provide evidence that co-designing queries and rubrics can make rubric-based RL a practical complement to RLVR beyond strictly verifiable tasks.",
-        "authors": [
-          "Rongzhi Zhang",
-          "Rui Feng",
-          "Zhihan Zhang",
-          "Jingfeng Yang",
-          "Qingyu Yin",
-          "Xin Liu",
-          "Zixuan Zhang",
-          "Priyanka Nigam",
-          "Bing Yin",
-          "Tuo Zhao",
-          "Chao Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "AlignAtt4LLM: Fast AlignAtt for Decoder-Only LLMs at IWSLT 2026 Simultaneous Speech Translation Task",
-        "url": "https://arxiv.org/abs/2606.03967v1",
-        "publishedAt": "2026-06-02T17:52:18.000Z",
-        "summary": "We describe AlignAtt4LLM, an IWSLT 2026 simultaneous speech translation system for English to German, Italian, and Chinese. The system is a synchronous cascade: Qwen3-ASR with forced alignment produces an incrementally updated source transcript, and Gemma-4 E4B-it translates that prefix under an MT-side AlignAtt policy.\n  To our knowledge, this is the first application of AlignAtt to a decoder-only LLM, where the encoder-decoder cross-attention used by earlier AlignAtt systems is absent. We recover a usable policy by proposing (1) an explicit source span in the prompt, (2) offline selection of translation-specific alignment heads, (3) selective qk-fast replay of the draft-to-source attention block, and (4) runtime query/key capture that preserves model outputs bit-identically.\n  On the IWSLT 2026 development set, AlignAtt4LLM outperforms the supplied baselines for the European target languages, English to German and English to Italian, in both the low-latency regime around 2 seconds and the high-latency regime below 4 seconds CU-LongYAAL. Results for English to Chinese are more mixed, but the method is not tied to Gemma-4: because AlignAtt4LLM only requires a deterministic prompt layout, calibrated attention heads, and query/key capture, the same policy can be reapplied to stronger translation-focused decoder-only MT backbones for non-European target languages.",
-        "authors": [
-          "Quentin Fuxa",
-          "Dominik Macháček"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 29
-      },
-      {
-        "title": "Agentic Chain-of-Thought Steering for Efficient and Controllable LLM Reasoning",
-        "url": "https://arxiv.org/abs/2606.03965v1",
-        "publishedAt": "2026-06-02T17:51:30.000Z",
-        "summary": "Large language models improve final-answer accuracy through extended chain-of-thought reasoning, but often spend tokens inefficiently and offer little inference-time control. Existing efficient reasoning methods control thinking length by shortening, early-stopping, or compressing traces, leaving how the model thinks implicit. In this paper, we propose Agentic Chain-of-Thought Steering (ACTS), which formulates reasoning steering as a Markov decision process where a controller agent adaptively steers a frozen reasoner during inference. At each step, the controller observes the reasoning trace and remaining thinking budget, then issues a steering action consisting of a reasoning strategy and a steering phrase that initiates the next reasoner step. This enables budget-aware strategy control for efficient reasoning while preserving the reasoner's generation continuity. We initialize the controller agent from our constructed synthetic steering trajectories with multi-budget augmentation, and further optimize it via reinforcement learning with budget-conditioned reward shaping. Experiments across multiple benchmarks show that ACTS matches full-thinking performance with substantial token savings, and enables controllable accuracy-efficiency trade-offs across different reasoners and tasks. The code is available at https://github.com/Andree-9/ACTS.",
-        "authors": [
-          "Yu Xia",
-          "Zhouhang Xie",
-          "Xin Xu",
-          "Byungkyu Kang",
-          "Prarit Lamba",
-          "Xiang Gao",
-          "Julian McAuley"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Self-Refining Agentic Reinforcement Learning for Vision-Conditioned UAV Navigation",
-        "url": "https://arxiv.org/abs/2606.03963v1",
-        "publishedAt": "2026-06-02T17:50:15.000Z",
-        "summary": "Deep reinforcement learning has shown strong potential for enabling autonomous robots to learn complex navigational tasks. However, its practical use still depends heavily on human designed reward functions and repeated manual fine tuning, which is time consuming and does not guarantee high success in the desired task. This paper presents AgenticRL, agent guided reinforcement learning framework that increases autonomy in reward design, policy refinement, and real world deployment for unmanned aerial vehicles (UAV) navigation tasks. AgenticRL uses a multimodal generative pre-trained tansformer (GPT) agent to interpret task information and visual scene observations, generate task specific reward functions, train policies using Proximal Policy Optimization (PPO) algorithm, and then act as a critic by evaluating the trained policy through diagnosis packets to generate feedback. Based on this feedback, the agent identifies failure modes and refines the reward function in a closed loop self improvement process. To further leverage the multimodal GPT agent during inference, AgenticRL uses real world images and natural language task information to automatically identify the active scenario and select the appropriate trained policy for execution. The framework is evaluated on multiple navigational tasks, including gate traversal, obstacle avoidance, wall barrier crossing with landing, trajectory following, and motion behavior learning. Experimental results show that the closed loop refinement process improves policy behavior compared with initial rewards by 71%. We also demonstrate sim-to-real transfer of the proposed framework, achieving a real world success rate of 91% and a sim-to-real accuracy of 94%.",
-        "authors": [
-          "Roohan Ahmed Khan",
-          "Yasheerah Yaqoot",
-          "Muhammad Ahsan Mustafa",
-          "Dzmitry Tsetserukou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      }
-    ],
+    "research": [],
     "news": [
       {
-        "title": "Lovable signs multi-year deal with Google Cloud to up usage 5x, source says",
+        "title": "Lovable signs multiyear deal with Google Cloud to up usage 5x, source says",
         "url": "https://techcrunch.com/2026/06/03/lovable-signs-multi-year-deal-with-google-cloud-to-up-usage-5x-source-says/",
         "publishedAt": "2026-06-03T22:56:51.000Z",
-        "summary": "Lovable and Google signed an expanded multi-year deal athat involves a 5x expansion of Lovable's footprint on Google Cloud, and expanded access to Anthropic Claude.",
+        "summary": "Lovable and Google signed an expanded multiyear deal that involves a 5x expansion of Lovable's footprint on Google Cloud, and expanded access to Anthropic Claude.",
         "authors": [
           "Julie Bort"
         ],
@@ -339,7 +101,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 0
+        "ageHours": 3
       },
       {
         "title": "Teaching AI agents to ask better questions by playing “Battleship”",
@@ -353,7 +115,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "Tod Machover receives George Peabody Medal for contributions to music and technology",
@@ -367,7 +129,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "Alphabet&#8217;s record-breaking $85B raise for Google&#8217;s AI business is a helluva good signal",
@@ -381,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Google&#8217;s Dreambeans, its weirdest-named AI tool to date, will turn your life into a cartoon",
@@ -395,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "Amazon will show AI product images when you search for some reason",
@@ -409,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 7
+        "ageHours": 10
       },
       {
         "title": "These two founders left Goldman and Meta to build voice AI for markets everyone else overlooked",
@@ -423,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 11
       },
       {
         "title": "Publishers will be able to opt out of AI Search, thanks to new regulation",
@@ -437,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 8
+        "ageHours": 11
       },
       {
         "title": "Meta&#8217;s AI agent for WhatsApp Business is now available globally",
@@ -451,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 12
       },
       {
         "title": "Introducing new capabilities to GPT-Rosalind",
@@ -463,7 +225,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
         "title": "Coralogix raises $200M on bet that someone needs to watch the AI agents",
@@ -477,34 +239,34 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 13
       },
       {
-        "title": "A blueprint for democratic governance of frontier AI",
-        "url": "https://openai.com/index/frontier-safety-blueprint",
-        "publishedAt": "2026-06-03T10:00:00.000Z",
-        "summary": "OpenAI outlines a blueprint for U.S. governance of frontier AI, proposing a federal framework for safety, resilience, and national security.",
+        "title": "How Wasmer used Codex to build a Node.js runtime for the edge",
+        "url": "https://openai.com/index/wasmer",
+        "publishedAt": "2026-06-03T12:00:00.000Z",
+        "summary": "See how Wasmer used Codex with GPT-5.5 to build a Node.js runtime for the edge, accelerating development 10x to 20x and shipping in weeks instead of months.",
         "authors": [],
         "source": "OpenAI",
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
-        "category": "Policy",
-        "ageHours": 13
+        "category": "Models",
+        "ageHours": 14
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 12,
     "last24h": 12,
     "topCategories": [
       {
         "name": "Research",
-        "count": 12
+        "count": 4
       },
       {
         "name": "Models",
-        "count": 6
+        "count": 3
       },
       {
         "name": "Products",
