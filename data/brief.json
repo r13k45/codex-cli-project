@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T00:22:47.171Z",
+  "generatedAt": "2026-06-10T05:46:59.466Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,290 +85,253 @@
   "sections": {
     "research": [
       {
-        "title": "OmniGameArena: A Unified UE5 Benchmark for VLM Game Agents with Improvement Dynamics",
-        "url": "https://arxiv.org/abs/2606.09826v1",
-        "publishedAt": "2026-06-08T17:59:43.000Z",
-        "summary": "Vision-language model (VLM) agents are increasingly deployed in interactive game environments. Yet game benchmarks for VLM agents typically report a single first-attempt score per (agent, game) pair, focus on single-agent Solo play, and lack unified protocols for evaluating heterogeneous agent classes (commercial VLMs, open-weight VLMs, and specialized game policies) on the same footing. We address these gaps with OmniGameArena, a real-time benchmark of twelve newly built Unreal Engine 5 games spanning Solo (7), PvP (3), and Coop (2) with unified action interfaces, and the Improvement Dynamics Curve (IDC), an agentic-reflection harness in which a tool-using reflector LLM autonomously refines a bounded skill prompt across multiple rounds. Beyond cold-start leaderboard scores, IDC exposes two additional observables for each (agent, game) pair: how the score evolves across reflection rounds, and how the learned skill behaves on held-out task variants. We report these observables for twelve VLM agents on the cold-start leaderboard and four top agents under IDC.",
+        "title": "When to Align, When to Predict: A Phase Diagram for Multimodal Learning",
+        "url": "https://arxiv.org/abs/2606.11190v1",
+        "publishedAt": "2026-06-09T17:59:58.000Z",
+        "summary": "Cross-modal alignment (CA) and cross-modal prediction (CP) are the dominant paradigms for multimodal representation learning, yet there is no systematic understanding of when each succeeds, when each fails, and when cross-modal training helps at all -- a gap that leaves practitioners, especially in scientific domains like biomedicine or astrophysics, with heterogeneous instruments and multiple levels of organization and measurement, unable to diagnose why standard methods underperform the best single modality. We develop a unified linear framework that addresses both questions. Under a spiked signal-plus-noise model with structured cross-modal nuisance correlation, we derive separation ratios for both objectives that expose complementary failure modes: alignment whitens each modality and fails when nuisance is strongly correlated across views; prediction encodes whatever is cross-predictable through a one-sided whitening, with recovery governed by source-modality quality. The resulting phase diagram partitions multimodal problems into four regimes: Both, CA only, CP only, and Neither. We present a data-driven procedure to locate real-world datasets in this diagram using a small labeled subsample, identifying the preferred objective and prediction direction before any cross-modal training. Experiments on synthetic data, stereo-vision benchmarks, image-caption pairs, and real astrophysical data validate the predictions in the nonlinear regime, including the Neither regime where cross-modal training is actively harmful. Our framework lets practitioners diagnose their multimodal problem and choose the right objective before committing to training. Code to reproduce the results is available at https://github.com/IlayMalinyak/mm_align_vs_pred.",
         "authors": [
-          "Mingxian Lin",
-          "Shengju Qian",
-          "Yuqi Liu",
-          "Yi-Hua Huang",
-          "Yiyu Wang",
-          "Wei Huang",
-          "Yitang Li",
-          "Fan Zhang",
-          "Zeyu Hu",
-          "Lingting Zhu",
-          "Xin Wang",
-          "Xiaojuan Qi"
+          "Ilay Kamai",
+          "Hugues Van Assel",
+          "Aviv Regev",
+          "Hagai B. Perets",
+          "Randall Balestriero"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "A Unifying Lens on Supervised Fine-Tuning Through Target Distribution Design",
+        "url": "https://arxiv.org/abs/2606.11189v1",
+        "publishedAt": "2026-06-09T17:59:54.000Z",
+        "summary": "Supervised fine-tuning (SFT) typically maximizes the likelihood of every token in a demonstrated trajectory. However, an observed token can be non-unique, noisy, or misaligned with the model prior. Strictly fitting toward this one-hot target may be suboptimal, especially when the pretrained model encodes a rich knowledge prior. In this work, we reinterpret SFT as target distribution design: instead of studying only the loss objective, we analyze the token-level target that the loss drives the model to match. We introduce the Q-target framework, which decomposes SFT supervision into two explicit choices: (1) how strongly to rely on the observed token, and (2) how to allocate the remaining probability mass over alternatives. This perspective unifies many existing SFT variants as implicit choices of the target distribution Q. Building on this view, we propose Target-SFT which constructs the training objective directly from the desired target distribution. This method consistently outperforms across the ten reasoning dataset-model settings evaluated, showing the effectiveness of this target-based approach. Overall, our formulation reveals a more fundamental design principle for SFT training and opens a broader search space for SFT objectives.",
+        "authors": [
+          "Tong Xie",
+          "Yuanhao Ban",
+          "Yunqi Hong",
+          "Sohyun An",
+          "Yihang Chen",
+          "Cho-Jui Hsieh"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 12
       },
       {
-        "title": "An Agency-Transferring Model-Free Policy Enhancement Technique",
-        "url": "https://arxiv.org/abs/2606.09825v1",
-        "publishedAt": "2026-06-08T17:59:39.000Z",
-        "summary": "Training reinforcement learning (RL) policies from scratch is\n  costly: it requires careful reward and environment design,\n  extensive tuning, and substantial computation.\n  Yet many control problems already have a functional but\n  suboptimal policy available as a baseline.\n  This paper proposes a method for embedding such a baseline into\n  the RL training process, simultaneously improving training\n  efficiency relative to from-scratch methods and producing a\n  learning policy that outperforms the baseline.\n  At each step, the method arbitrates between the baseline policy\n  and a trainable learning policy, initially relying strongly on\n  the baseline policy and then progressively transferring agency to\n  the learning policy.\n  By the end of training, the learning policy is a standalone\n  neural network that operates without baseline policy support.\n  The paper formalizes what it means for the baseline policy to be\n  functional: under this policy, the agent reaches a goal set and\n  remains there with high probability.\n  The proposed arbitration mechanism is designed to exploit this\n  property during training, yielding high goal-reaching rates right\n  from the beginning of training.\n  A theoretical analysis provides a formal interpretation of this\n  behavior under stated assumptions and extends it to the final\n  baseline-free regime, where explicit lower bounds are derived for\n  the goal-reaching probability of the standalone learning policy.\n  Empirical results on continuous-control benchmarks show that the\n  proposed method achieves returns that match or exceed those of\n  competitive approaches, while maintaining the highest\n  goal-reaching rates throughout training among the compared\n  methods -- including in the final stage, where the learning policy\n  operates without any baseline support.",
+        "title": "EEVEE: Towards Test-time Prompt Learning in the Real World for Self-Improving Agents",
+        "url": "https://arxiv.org/abs/2606.11182v1",
+        "publishedAt": "2026-06-09T17:57:16.000Z",
+        "summary": "In this paper, we propose EEVEE, the first multi-dataset test-time prompt learning framework for LLM agents, enabling test-time prompt learning under real-world task streams. Existing methods are largely designed for single-dataset settings, while real-world applications require models to handle heterogeneous input streams drawn from multiple datasets, domains, and task distributions, limiting their practical applicability. To mitigate cross-dataset interference, EEVEE introduces a router that partitions incoming inputs into task clusters and assigns them to suitable prompt configurations. This design is optimized via a router-prompt co-evolution strategy, which employs interleaved router and prompt learning phases to address their mutual dependency. Experiments across multiple datasets demonstrate that the framework improves robustness under heterogeneous data streams while maintaining single-benchmark learning capability and efficiency. Specifically, EEVEE improves average multi-benchmark scores by 10.38 and 24.32 points over Qwen3-4B-Instruct and DeepSeek-V3.2, surpassing SOTA methods GEPA and ACE by up to 37.2% and 48.2%.",
         "authors": [
-          "Anton Bolychev",
-          "Georgiy Malaniya",
-          "Sinan Ibrahim",
-          "Pavel Osinenko"
+          "Weixian Xu",
+          "Shilong Liu",
+          "Mengdi Wang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 12
       },
       {
-        "title": "Causally Evaluating the Learnability of Formal Language Tasks",
-        "url": "https://arxiv.org/abs/2606.09822v1",
-        "publishedAt": "2026-06-08T17:58:36.000Z",
-        "summary": "Language models, as multi-task learners, acquire a wide range of abilities during training. A fundamental question is how much task-specific data is needed to learn a given task. Answering this for natural language is difficult: tasks are hard to delineate and can confound one another. To rigorously investigate the relationship between data frequency and learnability, we turn to a controlled setting using formal languages induced from probabilistic finite automata. These serve as a methodological testbed to demonstrate that standard correlational evaluation practices are inherently flawed. To enable causal analysis, we introduce the binning semiring, an algebraic object that lets us control how often a targeted property occurs in a sampled corpus. We formulate the experimental pipeline as a causal graphical model and derive decomposed Kullback-Leibler divergence metrics to measure the learnability of specific sub-tasks. Our experiments show that evaluating learnability without causal intervention leads to incorrect conclusions due to confounders in correlational analysis, and serve as a warning about correlational pitfalls in natural-language settings.",
+        "title": "Data Journalist Agent: Transforming Data into Verifiable Multimodal Stories",
+        "url": "https://arxiv.org/abs/2606.11176v1",
+        "publishedAt": "2026-06-09T17:51:55.000Z",
+        "summary": "Data tells stories that shape society; the data journalist's job is to turn raw information into stories non-experts can trust. A high-quality news feature takes a newsroom team weeks: hunting for context, running statistics, choosing an angle, and designing visuals. Recent agents handle individual steps well: data-science agents close the analysis loop, while design agents synthesize beautiful websites. But can an agent serve as a data journalist end to end? We introduce Data Journalist Agent (Data2Story), a multi-agent framework that orchestrates specialized roles into a single virtual newsroom. Data2Story contributes two innovations. (i) Claims are evidence-grounded: an Inspector links every number, angle, and asset back to data, code, or an external reference. (ii) Articles are multimodally generative: rather than defaulting to plain text and static charts, Data2Story reasons about what readers will want to see, then deploys multimodal tools, such as interactive maps for geography and audio for music. We evaluate Data2Story on 18 articles, each paired with the originally published expert piece, along four axes: (a) human-agent angle coverage; (b) rubric evaluation with 53 participants across five dimensions; (c) computer-use agents as judges, a cost-saving proxy for how readers navigate interactive articles; and (d) verifiability, where a coding verifier re-executes statements against the data and checks claims against references. Data2Story produces competitive, evidence-traceable multimedia stories, with particular strength in transparency and auditability. Human articles retain an edge in editorial angle, creative design, and presentation. We position Data2Story as a collaborator for journalists, enabling more evidence-based, transparent, and verifiable reporting. Code and demos are available at https://data2story.github.io.",
         "authors": [
-          "Vésteinn Snæbjarnarson",
-          "Anej Svete",
-          "Josef Valvoda",
-          "Reda Boumasmoud",
-          "Brian DuSell",
-          "Ryan Cotterell"
+          "Kevin Qinghong Lin",
+          "Batu EI",
+          "Yuhong Shi",
+          "Pan Lu",
+          "Philip Torr",
+          "James Zou"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 12
       },
       {
-        "title": "Rethinking the Divergence Regularization in LLM RL",
-        "url": "https://arxiv.org/abs/2606.09821v1",
-        "publishedAt": "2026-06-08T17:58:23.000Z",
-        "summary": "Reinforcement learning (RL) has become a key component of post-training large language models (LLMs). In practice, LLM RL is often off-policy because of training-inference mismatch and policy staleness, making trust-region control essential for stable optimization. Mainstream methods such as PPO and GRPO approximate this control with a ratio-clipping mechanism, but the importance ratio can be a poor proxy for distributional shift in long-tailed vocabularies. Recent work such as DPPO addresses this mismatch by replacing ratio-based clipping with a divergence-based mask, yielding a trust region defined by the sampled token's absolute probability shift. However, DPPO still relies on a hard mask: once a token crosses the trust-region boundary in a harmful direction, its gradient is discarded rather than corrected. To address this, we propose Divergence Regularized Policy Optimization (DRPO), which replaces the hard mask with a smooth advantage-weighted quadratic regularizer on policy shift. DRPO preserves the same trust-region geometry as DPPO while inducing bounded, continuous gradient weights that attenuate diverging updates and provide corrective signals beyond the boundary. Experiments across model scales, architectures, and precision settings show that DRPO improves the stability and efficiency of LLM RL training.",
+        "title": "The Role of Feedback Alignment in Self-Distillation",
+        "url": "https://arxiv.org/abs/2606.11173v1",
+        "publishedAt": "2026-06-09T17:50:09.000Z",
+        "summary": "Conditioning a language model on additional context, such as feedback on a previous attempt, typically improves its response. Self-distillation trains the model to retain this improvement when the context is not present. The method works by matching the model's output distribution under two settings: a student that sees only the question, and a self-teacher that also sees the context. What the model learns therefore depends on what context the self-teacher receives, yet the design of this context remains largely unexplored.\n  We study context design for self-distillation by training a solver on feedback from a frozen critic. We compare three conditions: (i) a binary reward (GRPO), (ii) the reference solution, and (iii) a step-by-step critique aligned to the solver's reasoning trace.\n  Step-aligned critique yields the largest gains, outperforming GRPO by 16.11 points and reference-solution-conditioned self-distillation by 5.27 points (Avg@12). Per-token advantage analysis reveals why: step-aligned feedback targets only the tokens where reasoning fails, leaving correct behavior intact. Conditioning on the reference solution, by contrast, pressures the model to change its behavior at every token (even correct steps) because an alternative derivation inevitably differs in phrasing and approach. This suggests that structural alignment between feedback and the solver's reasoning is a key driver of self-distillation effectiveness.",
         "authors": [
-          "Jiarui Yao",
-          "Xiangxin Zhou",
-          "Penghui Qi",
-          "Wee Sun Lee",
-          "Liefeng Bo",
-          "Tianyu Pang"
+          "Semih Kara",
+          "Oğuzhan Ersoy"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Predicting Future Behaviors in Reasoning Models Enables Better Steering",
+        "url": "https://arxiv.org/abs/2606.11172v1",
+        "publishedAt": "2026-06-09T17:49:24.000Z",
+        "summary": "Deployed large reasoning models (LRMs) often behave unexpectedly. Test-time steering controls LRM outputs by intervening on their hidden representations, but it can degrade output quality. We argue that prior steering work implicitly relies on internal features that detect behavior in already generated text. We show that these detection features are poor predictors of future behavioral outcomes, and thus not the natural intervention target. Instead, we train activation probes to predict future behavior likelihoods from intermediate reasoning steps. These probes predict the most likely behavior with 64%-91% accuracy, revealing a separate type of internal prediction features. Building on these prediction features, we introduce a text-level steering method, Future Probe Controlled Generation. FPCG samples multiple candidate sentences and chooses the best one according to a probe predicting the future behavior likelihood. This enables steering with almost no output quality degradation. FPCG also enables steering in several evaluations where activation steering fails. These results show that distinguishing detection and prediction features enables a more nuanced approach to controlling LRM behaviors.",
+        "authors": [
+          "Evgenii Kortukov",
+          "Piotr Komorowski",
+          "Florian Klein",
+          "Paula Engl",
+          "Gabriele Sarti",
+          "Seong Joon Oh",
+          "Sebastian Lapuschkin",
+          "Wojciech Samek"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Algorithmic and Minimax Complexities in Kernel Bandits",
+        "url": "https://arxiv.org/abs/2606.11171v1",
+        "publishedAt": "2026-06-09T17:49:09.000Z",
+        "summary": "Gaussian-process upper confidence bound (GP-UCB) and decision-estimation-coefficient (DEC) methods may appear, at first sight, to belong to different theories. This paper places the two viewpoints in a common algorithmic-information language for frequentist RKHS bandits. GP-UCB fixes an algorithmic, rather than true, Gaussian-process prior and exploits realized-trajectory complexity together with computational tractability, whereas MAMS optimizes a robust class-wide MAIR/DEC envelope. Through the unified MAIR framework and heterogeneous positive-semidefinite algorithmic priors, we generalize both the GP-UCB analysis and the MAMS algorithm, propose a safeguarded master that combines their advantages, and provide a kernel-bandit construction showing that algorithmic complexity can be more informative than class-wide minimax or DEC certificates in overparameterized models. The resulting message is that algorithmic information and class-wide minimax coefficients answer different questions and can lead to different gaps; kernel bandits provide a clean setting in which this distinction becomes mathematically visible.",
+        "authors": [
+          "Yunbei Xu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 30
+        "ageHours": 12
       },
       {
-        "title": "Weighted universal approximation of differentiable maps on infinite-dimensional manifolds",
-        "url": "https://arxiv.org/abs/2606.09820v1",
-        "publishedAt": "2026-06-08T17:57:40.000Z",
-        "summary": "We generalize the universal approximation theorem for functional input neural networks (FNN) to differentiable maps by including the approximation of the derivatives. A FNN maps the input from a possibly infinite-dimensional weighted manifold to the real-valued hidden layer, on which a non-linear scalar activation function is applied, and then returns the output into a Banach space via some linear readouts. By proving a weighted Nachbin theorem, we establish a universal approximation theorem (UAT) for differentiable maps, which goes beyond the usual formulation on compact sets and also includes the approximation of the derivatives. This leads us to approximation results for non-anticipative functionals including the horizontal and vertical derivatives. As a further application, we show that linear functions of the signature are able to approximate path space functionals including their directional derivatives.",
+        "title": "Piper: A Programmable Distributed Training System",
+        "url": "https://arxiv.org/abs/2606.11169v1",
+        "publishedAt": "2026-06-09T17:48:41.000Z",
+        "summary": "Large-scale model training increasingly relies on composing multiple parallelism strategies, such as data, pipeline, and expert parallelism, together with memory-saving optimizations like ZeRO. Deployed systems for foundation model pretraining often rely on human experts to manually design a high-level parallelism strategy then implement the corresponding low-level execution strategy, making it difficult to adapt the system to new strategies. Meanwhile, many general-purpose frameworks are more flexible but their implementations are still tied to a fixed set of common parallelism strategies, making it challenging to integrate state-of-the-art strategies.\n  We present Piper, a user-controllable distributed training system that decouples the strategy from the runtime implementation. Piper allows users to declare a comprehensive distributed training strategy with a small set of model annotations and scheduling directives. Each directive applies a transformation on Piper's intermediate representation (IR), a unified global training DAG that represents all computation and communication. Using this IR, Piper compiles per-device execution plans and executes them with a distributed runtime agnostic to the strategy. We show that the combined system maintains performance parity on commonly available strategies such as ZeRO, while also enabling additional performance and memory efficiency gains through joint scheduling of compute and communication in composed parallelism strategies such as DeepSeek-V3's DualPipe.",
         "authors": [
-          "Philipp Schmocker",
-          "Josef Teichmann"
+          "Megan Frisella",
+          "Shubham Tiwari",
+          "Andy Ruan",
+          "Yi Pan",
+          "Parker Gustafson",
+          "Mat Jacob",
+          "Gilbert Bernstein",
+          "Stephanie Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 12
+      },
+      {
+        "title": "Multi-Faceted Interactivity Alignment in Full-Duplex Speech Models",
+        "url": "https://arxiv.org/abs/2606.11167v1",
+        "publishedAt": "2026-06-09T17:46:55.000Z",
+        "summary": "Full-duplex spoken dialogue models can listen and speak simultaneously, making them a promising architecture for natural conversation. However, current models are trained solely with supervised learning through token-level likelihood maximization, which does not directly optimize interaction-level behaviors, causing interactivity issues such as excessive silence and ill-timed turn-taking. Recent work has applied reinforcement learning (RL) to improve interactivity, but existing methods address only a limited set of interactive behaviors in their rewards. In this work, we propose a post-training alignment method that comprehensively improves the interactivity of full-duplex spoken dialogue models through RL. We address the four canonical axes of interactivity: pause handling, turn-taking, backchanneling, and user interruption. For each axis, we extract short audio segments from human conversation corpora and optimize the model with axis-specific reward functions. An extra LLM-based reward for response quality prevents semantic degradation. We apply our method to two open-source models, Moshi and PersonaPlex, demonstrating consistent improvements in interactivity on both offline evaluation with pre-recorded audio and real-time multi-turn dialogue evaluation.",
+        "authors": [
+          "Atsumoto Ohashi",
+          "Neil Zeghidour",
+          "Alexandre Défossez",
+          "Eugene Kharitonov"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Flaws in the LLM Automation Narrative",
+        "url": "https://arxiv.org/abs/2606.11166v1",
+        "publishedAt": "2026-06-09T17:46:10.000Z",
+        "summary": "Large Language Models (LLMs) are increasingly described as performing at the level of human experts on knowledge economy tasks. These claims are primarily based on how LLMs perform on benchmarking tasks that measure average performance across standardized datasets. Primary limitations of many benchmarking tasks are that they often measure performance based on content directly included in LLM training data, and they frequently do not assess the reliability of LLM performance or the magnitude of LLM errors. However, in high stakes contexts, these qualities are critically important. Through a novel LLM benchmarking task that requires writing computer code to complete a data analysis task, we compare the performance of a frontier LLM against submissions from human experts and explicitly measure the variance of responses and the magnitude of errors. Our study reveals that the human experts perform better on average on a range of metrics and demonstrate less variability in performance. Our results provide evidence that LLMs do not consistently perform at the level of human experts and demonstrate the importance of measuring variance and assessing error magnitude in LLM benchmark evaluations.",
+        "authors": [
+          "George Perrett",
+          "Javae Elliott",
+          "Jennifer Hill",
+          "Marc Scott"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "ReasonAlloc: Hierarchical Decoding-Time KV Cache Budget Allocation for Reasoning Models",
+        "url": "https://arxiv.org/abs/2606.11164v1",
+        "publishedAt": "2026-06-09T17:44:23.000Z",
+        "summary": "Long chain-of-thought (CoT) trajectories in large language model (LLM) reasoning cause severe inference bottlenecks due to rapid key-value (KV) cache growth. Current decoding-time compression methods mitigate this issue via token eviction, but typically assume a uniform budget distribution across all layers and heads. In contrast, existing non-uniform budget allocation methods are predominantly designed for the static prompt prefill phase, and they do not capture the stepwise context demands of autoregressive reasoning. To bridge this gap, we propose ReasonAlloc, a training-free framework that recasts decoding-time KV compression as a hierarchical budget allocation problem. ReasonAlloc operates at two complementary levels: an offline layer-wise preallocation strategy captures an architecture-driven demand pattern which we call ``\\textit{Reasoning Wave}'', while an online head-wise strategy reallocates resources during decoding to information-rich heads based on real-time utility. Evaluations on mathematical reasoning benchmarks (MATH-500, AIME~2024) using DeepSeek-R1-Distill-Llama-8B, DeepSeek-R1-Distill-Qwen-14B, and AceReason-14B show that ReasonAlloc outperforms uniform-budget R-KV, SnapKV, and Pyramid-RKV (a baseline enforcing a static, monotonically decreasing layer budget), with the largest gains at small budgets (128-512 tokens). ReasonAlloc is plug-and-play with existing token-eviction policies and introduces negligible inference-time overhead.",
+        "authors": [
+          "Wenhao Liu",
+          "Hao Shi",
+          "Yunhe Li",
+          "Weizhi Fei",
+          "Xiangyuan Wang",
+          "Mengzhe Ruan",
+          "Hanxu Hou",
+          "Peisong Wang",
+          "Linqi Song",
+          "Shuang Qiu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "COGENT: Continuous Graph Emulators with Neural Ordinary Differential Equations for Long-Term Physical Forecasting",
+        "url": "https://arxiv.org/abs/2606.11162v1",
+        "publishedAt": "2026-06-09T17:43:30.000Z",
+        "summary": "In this work, we present COGENT, a continuous graph emulator with Neural Ordinary Differential Equations for long-term physical forecasting on irregular geospatial meshes. COGENT encodes a finite history of system states and associated forcing fields and external forcings with a graph-based history encoder, producing node-wise context vectors that capture both local spatial interactions and temporal evolution. These context vectors initialize and condition a latent Neural Ordinary Differential Equation whose dynamics are driven by interpolated future forcings and explicit relative rollout time. By modeling the forecast trajectory as a continuous latent dynamical system, COGENT can generate predictions at arbitrary future times rather than being restricted to a fixed temporal discretization. A residual decoder maps the resulting latent trajectories back to future physical states, enabling direct multi-step forecasting without repeatedly feeding predicted states back into the model. This formulation combines graph-based spatial representation, history-conditioned latent dynamics, and continuous-time rollout in a unified framework for mesh-based physical simulation emulation. In order to stabilize training with long-horizon supervision, we also propose effective rollout-horizon sampling and a progressive rollout-horizon scheduling strategy. We evaluate COGENT on transient ice-sheet simulations generated by the Ice-sheet and Sea-level System Model, demonstrating improved long-range stability over autoregressive graph baselines. These results suggest that continuous graph Neural ODEs provide a promising methodology for scalable physical forecasting on irregular geospatial meshes, particularly in applications that require stable long-horizon predictions and the ability to query system states at arbitrary times.",
+        "authors": [
+          "Zesheng Liu",
+          "Maryam Rahnemoonfar"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 30
-      },
-      {
-        "title": "PTL-Diffusion: Manifold-Aware Diffusion with Periodic Terminal Laws",
-        "url": "https://arxiv.org/abs/2606.09816v1",
-        "publishedAt": "2026-06-08T17:56:16.000Z",
-        "summary": "Standard diffusion models typically use a single time-homogeneous Gaussian terminal distribution as the reference law for generation. While this choice is analytically convenient and empirically powerful, it provides little explicit structure for data concentrated near low-dimensional manifolds, where different regions of the data distribution may correspond to distinct local geometric or semantic factors. As a result, the reverse model must recover manifold-level structure almost entirely from an unstructured terminal reference distribution.\n  We propose PTL-Diffusion, a proof-of-concept diffusion framework whose forward noising process converges to a nonconstant periodic family of Gaussian terminal laws rather than to a single invariant law. Unlike a phase-conditioned DDPM, where phase information only enters the denoising network while the forward process remains unchanged, PTL-Diffusion embeds phase structure directly into the forward noising dynamics.\n  The proposed construction remains close to standard denoising diffusion models: for a periodically forced Ornstein--Uhlenbeck-type forward process, we derive closed-form forward marginals, the limiting periodic Gaussian terminal family, and explicit Gaussian reverse posteriors, enabling standard noise-prediction training. We also introduce an invariant-average regularization term coupling the phase-conditioned reverse dynamics through the averaged periodic reference law. Experiments on torus and cylinder point-cloud benchmarks and the Olivetti face dataset show that PTL-Diffusion improves manifold-level distributional matching over matched DDPM baselines, reducing phase-conditioned errors, feature-space covariance errors, and nearest-neighbour manifold distances. These results suggest structured terminal reference laws as a promising direction, while motivating more expressive phase constructions and larger-scale evaluations.",
-        "authors": [
-          "Danqi Zhuang",
-          "Jisui Huang",
-          "Xiaoyue Xi",
-          "Andrew Kiggins",
-          "Xiaojie Wang",
-          "Ke Chen",
-          "Yue Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "AHA-WAM:Asynchronous Horizon-Adaptive World-Action Modeling with Observation-Guided Context Routing",
-        "url": "https://arxiv.org/abs/2606.09811v1",
-        "publishedAt": "2026-06-08T17:55:18.000Z",
-        "summary": "World-action models have emerged as a promising paradigm for robot manipulation, jointly modeling visual scene dynamics and actions to inject physical priors into policy learning. However, existing world-action models couple world prediction and action execution at the same temporal resolution, forcing the world branch to model near-term frame variations that are redundant and weakly informative. We posit that strictly binding world prediction and action execution to the same temporal rhythm may underutilize the potential of the video branch for embodied control. Therefore, we propose AHA-WAM, an Asynchronous Horizon-Adaptive World-Action Model built on a dual Diffusion Transformer (DiT) architecture that reorganizes world-action modeling around this temporal asymmetry. AHA-WAM instantiates the video DiT as a low-frequency world planner that maintains rolling key-value memory over past observations and exposes reusable layerwise latent context encoding long-horizon scene evolution, while a high-frequency action DiT executes short action chunks in closed loop by querying this context through layerwise joint attention. To support asynchronous execution, we introduce horizon-adaptive offset training and Observation-Guided Video-Context Routing (OVCR), which together let the action expert exploit long-horizon world context while remaining responsive to real-time execution state without rerunning the video DiT. Experiments on RoboTwin and real-world manipulation tasks show that AHA-WAM achieves state-of-the-art performance without any robot-data pretraining, attaining 92.80% average success on RoboTwin and 78.3% success across 4 real-world tasks, while reaching 24.17 Hz closed-loop control with a 4.59x speedup over Fast-WAM.",
-        "authors": [
-          "Jisong Cai",
-          "Long Ling",
-          "Shiwei Chu",
-          "Zhongshan Liu",
-          "Jiayue Kang",
-          "Zhixuan Liang",
-          "Wenjie Xu",
-          "Yinan Mao",
-          "Weinan Zhang",
-          "Xiaokang Yang",
-          "Ru Ying",
-          "Ran Zheng",
-          "Yao Mu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Evaluation Cards: An Interpretive Layer for AI Evaluation Reporting",
-        "url": "https://arxiv.org/abs/2606.09809v1",
-        "publishedAt": "2026-06-08T17:55:02.000Z",
-        "summary": "AI evaluation results are produced at scale but reported inconsistently across leaderboards, model cards, benchmark papers, and company blogs. The cost is interpretive: readers cannot reliably compare results across sources, identify what a report omits, or trace an aggregate claim to its underlying evidence. Recent efforts address isolated components but leave three gaps: they cover only narrow slices of the evaluation lifecycle and do not compose into a single interpretable record; they specify static representations that do not differentiate the questions different stakeholders bring to the same evidence; and they remain proposals on paper, lacking the extraction infrastructure required for adoption at scale. We present \\EvalCards{}, an operational reporting layer that composes benchmark metadata, evaluation run data, and model metadata into a unified record. We (1) derive a reporting schema from a structured review of 52 papers and 10 stakeholder interviews, (2) implement four interpretive signals (reproducibility, documentation completeness, provenance and risk, and score comparability), rendered through reader modes calibrated to research and non-research audiences, and (3) deploy a monitoring tool that applies \\EvalCards{} across 5,816 models, 635 benchmarks, and 101,843 results, surfacing systematic gaps in current reporting practice.",
-        "authors": [
-          "Avijit Ghosh",
-          "Anka Reuel",
-          "Jenny Chim",
-          "Wm. Matthew Kennedy",
-          "Srishti Yadav",
-          "Jennifer Mickel",
-          "Yanan Long",
-          "Andrew Tran",
-          "Anastassia Kornilova",
-          "Damian Stachura",
-          "Kevin Klyman",
-          "Felix Friedrich",
-          "Jeba Sania",
-          "Max Lamparth",
-          "Jan Batzner",
-          "Anoop Mishra",
-          "Eliya Habba",
-          "Yixiong Hao",
-          "Nathan Heath",
-          "Shalaleh Rismani",
-          "Usman Gohar",
-          "Andrea Loehr",
-          "David Manheim",
-          "Ruchira Dhar",
-          "Sree Harsha Nelaturu",
-          "Aarush Sinha",
-          "Leshem Choshen",
-          "Drishti Sharma",
-          "Ishan Khire",
-          "Amit Saha",
-          "Subramanyam Sahoo",
-          "Michael Hardy",
-          "Michael Alexander Riegler",
-          "Kabir Manghnani",
-          "Michelle Lin",
-          "Yanan Jiang",
-          "Yilin Huang",
-          "Asaf Yehudai",
-          "Jessica Ji",
-          "Aris Hofmann",
-          "Mubashara Akhtar",
-          "Nuno Moniz",
-          "Yacine Jernite",
-          "Stella Biderman",
-          "Zeerak Talat",
-          "Sanmi Koyejo",
-          "Mykel Kochenderfer",
-          "Irene Solaiman"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Topological Neural Operators",
-        "url": "https://arxiv.org/abs/2606.09806v1",
-        "publishedAt": "2026-06-08T17:54:33.000Z",
-        "summary": "We introduce Topological Neural Operators (TNOs), a principled framework for operator learning on cell complexes that lifts neural operators (NOs) from functions on points and/or edges to topological domains. TNOs represent data as features defined on cells of varying dimension and model their interactions through Discrete Exterior Calculus, enabling explicit cross-dimensional coupling via gradient-, curl-, and divergence-type operators. The key design principle is to decouple where information flows, as governed by fixed topological operators, from how it is transformed (which is learned), yielding models that respect the geometric support of physical quantities and expose conservation and compatibility structure. We further propose Hierarchical TNOs (HTNOs), which incorporate learned coarse complexes to propagate long-range and topology-dependent information. Our framework subsumes existing NOs as a special case, providing a unified perspective on operator learning across discretizations. Across a range of PDE benchmarks, including irregular-geometry flow problems, TNOs and HTNOs improve accuracy; controlled studies further isolate the benefits of native higher-rank and topological structure. Project page: https://circle-group.github.io/research/TNO",
-        "authors": [
-          "Lennart Bastian",
-          "Samuel Leventhal",
-          "Mustafa Hajij",
-          "Tolga Birdal"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Echo-Memory: A Controlled Study of Memory in Action World Models",
-        "url": "https://arxiv.org/abs/2606.09803v1",
-        "publishedAt": "2026-06-08T17:54:10.000Z",
-        "summary": "We present \\textbf{Echo-Memory}, a controlled study of memory mechanisms in action-conditioned world models. These models generate multi-segment videos from a first frame, text prompt, and camera-action sequence, but their central failure is often memory rather than local image synthesis: after the camera leaves and returns, the scene or salient object may silently change. Existing memory designs are hard to compare because gains are entangled with backbone, training, retrieval, and evaluation differences. Echo-Memory fixes the action-to-video interface and varies only how history is stored and read by the generator. Under a shared video diffusion backbone, optimizer, camera-action representation, sampler, and evaluation pipeline, we compare raw context, compression-based memory, spatial summaries with different read-out paths, and state-space recurrence. This matched matrix separates four otherwise conflated axes: \\emph{capacity}, \\emph{compression}, \\emph{read-out}, and \\emph{recurrence}. We also evaluate memory through a three-branch protocol: replay quality, in-domain loop revisit, and open-domain return probes. The branches routinely disagree, showing that replay fidelity is not a sufficient proxy for remembering a world. Three findings follow. Raw context is a strong capacity baseline and improves open-domain return far more than it improves replay metrics. Compactness is not a free substitute for capacity: aggressive spatial and hybrid-compression memories lose the salient evidence needed for return. Finally, block-wise state-space recurrence is the strongest open-domain return mechanism in our matrix, showing that the structure of implicit memory matters as much as the decision to use it. These results provide a compact protocol for studying memory in action world models beyond isolated replay metrics.",
-        "authors": [
-          "Wayne King",
-          "Zeyue Xue",
-          "Yuxuan Bian",
-          "Jie Huang",
-          "Haoran Li",
-          "Yaowei Li",
-          "Yaofeng Su",
-          "Yuming Li",
-          "Haoyu Wang",
-          "Shiyi Zhang",
-          "Songchun Zhang",
-          "Yuwei Niu",
-          "Sihan Xu",
-          "Junhao Zhuang",
-          "Haoyang Huang",
-          "Nan Duan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Bandits for Efficient Experimentation: Adapting to Control Group, Preferences, and Context Drifts",
-        "url": "https://arxiv.org/abs/2606.09802v1",
-        "publishedAt": "2026-06-08T17:53:29.000Z",
-        "summary": "We consider a variant of the linear contextual stochastic multi-armed bandits, where the learner must provide recommendations to a group of users, each having its personalized preference vector, and in the presence of context distributions that are drifting over time. Under practitioner-friendly assumptions, we reduce this setting to linear bandit with stationary mean but heteroskedastic and non-stationary noise. We further study the case when the learner must ensure the mean reward of each decision must exceed that of a baseline strategy $\\boldsymbolπ_0$ at each decision step. We introduce Dri-MED, an algorithm inspired from the linear version of the MED strategy, and carefully adapted to handle the non-stationary heteroskedastic noise. We show that the instance-dependent regret scales as $\\tilde{\\mathcal O}\\left(\\fracκ{\\tildeΔ}d^2(\\log(T)\\right)$, where $\\tildeΔ$ is the constraint-aware sub-optimality gap subject to policy $π_0$, with variance-aware multiplicative term $κ$ that we carefully handle using heteroskedastic regression. We further show Dri-MED enjoys $\\tilde{\\mathcal{O}}(d)$ expected constraint violations. Our numerical results suggest that Dri-MED significantly outperforms conservative baselines that ignores the drift and preference structure.",
-        "authors": [
-          "Udvas Das",
-          "Waris Radji",
-          "Debabrota Basu",
-          "Odalric-Ambrym Maillard"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 30
-      },
-      {
-        "title": "FASE: Fast Adaptive Semantic Entropy for Code Quality",
-        "url": "https://arxiv.org/abs/2606.09800v1",
-        "publishedAt": "2026-06-08T17:53:05.000Z",
-        "summary": "Multi-agent code generation offers a promising paradigm for autonomous software development by simulating the human software engineering lifecycle. However, system reliability remains hindered by LLM hallucinations and error propagation across interacting agents. While semantic entropy provides a principled way to quantify uncertainty without ground-truth answers, current methods often rely on costly LLM-driven equivalence checks. In this work, we introduce Fast Adaptive Semantic Entropy (FASE), a novel metric that approximates functional correctness based on the minimum spanning tree of structural and semantic dissimilarity graphs. Evaluations on HumanEval and BigCodeBench demonstrate that FASE outperforms state-of-the-art semantic entropy by LLM entailment, achieving a 25% average improvement in Spearman correlation and a 19% increase in ROCAUC score against Pass@1 from ground-truth test cases when using the Qwen3-Embedding-8B model. Furthermore, by eliminating costly LLM-driven equivalence evaluation, FASE incurs negligible computational overhead, requiring only approximately 0.3% of the runtime cost of traditional semantic entropy approaches. These results position FASE as a practical, cost-effective solution for optimizing uncertainty quantification in real-world multi-agent workflows.",
-        "authors": [
-          "Shizhe Lin",
-          "Ladan Tahvildari"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
+        "category": "Models",
+        "ageHours": 12
       }
     ],
     "news": [
       {
+        "title": "Startup’s nuclear-inspired cooling system could make data centers more sustainable",
+        "url": "https://news.mit.edu/2026/nuclear-inspired-cooling-system-ferveret-could-make-data-centers-more-sustainable-0610",
+        "publishedAt": "2026-06-10T04:00:00.000Z",
+        "summary": "The rise of artificial intelligence is riding on the back of an enormous data center expansion. Data centers are projected to account for anywhere from 9 to 17 percent of total electricity usage in the U.S. by the end of the decade. Today, around a third of data center electricity is devoted to cooling the chips that run AI models. That’s the process Ferveret is working to make more efficient. The startup, founded by Reza Azizian, a former MIT postdoc in nuclear engineering, and Matteo Bucci, MIT’s Esther and Harold E. Edgerton Associate Professor in the Department of Nuclear Science and Engineering, is adapting an approach from nuclear reactors to cool chips using no water and significantly less electricity. The company’s cooling system submerges computer servers in a specialized liquid that absorbs heat much more efficiently than air from a fan. What makes the solution different from other liquid cooling systems are the bubbles: Ferveret’s Adaptive Phase Cooling (APC) solution produces much smaller bubbles at the surface of the server, which detach more frequently, accelerating the heat transfer process. Ferveret is already testing its solutions with companies including CleanSpark, the data center developer and operator, as well as FuriosaAI, an AI accelerator company, and Switch, one of the largest data center operators in the U.S. In a recent study in collaboration with the Samueli Computer Science Department at the University of California at Los Angeles, Ferveret found its APC solution led to a 15 percent improvement in computational power efficiency compared to state-of-the-art liquid cooling solutions. By combining those savings with Ferveret’s power control system to optimize operating conditions, the company says it allows data centers to get 35 percent more tokens — small pieces of text or data — from their AI models with the same amount of power. “Our goal is to make data centers as sustainable as possible and help them use every single watt of power to generate tokens, which are the most useful outputs,” Azizian says. “Our system enables the operation of more powerful chips, it helps data centers waste a lot less energy, and it accomplishes all that with zero water consumption.” From nuclear reactors to AI Azizian was a postdoc at MIT in 2013 when he met Bucci, who was then a research scientist. They worked on heat transfer in nuclear reactors before Azizian went into industry, where he shifted his focus to cooling chips. Azizian first worked on Microsoft’s HoloLens augmented reality headset and then joined Nvidia, which produces the graphical processing units companies use to train and run the latest AI models. Meanwhile, Bucci continued conducting research at MIT, becoming an assistant professor in 2016. Azizian walked into his first data center in 2017, where he was struck by the massive, noisy fans that filled the building as they cooled. “I thought, ‘Holy crap, this is not how you cool facilities,’” Azizian recalls, noting air cooling can still take up 40 percent of the power going into a data center. “It was not an efficient way of doing things, but since it wasn’t hurting the performance, no one cared that the cooling technology was 50 years old.” Azizian began talking with Bucci about applying their knowledge around optimizing heat transfer in nuclear reactors to data centers. Scientists have spent decades finding better ways to move heat in nuclear reactors. “Heat transfer determines how much energy you can extract from the reactor core, which translates directly to revenue,” Azizian explains. The founders started Ferveret in 2021. A lot has changed since Azizian walked into his first data center. Chip companies have packed more and more components onto their chips as the explosion in artificial intelligence has put a premium on squeezing as much computing capacity as possible out of limited power supplies. That has driven data center operators to use liquid to cool chips — often through a technique known as immersion cooling that submerges chips in liquid. The most effective form of immersion cooling brings the liquid to a boil. “Liquid is a better heat transfer medium than air. That’s why when you stick your hand into room temperature water it still feels cold,” Bucci explains. “When liquid is boiling, it becomes even better at removing heat because the phase change requires a lot of energy, which is the energy you remove from the chip. That lets you transfer large quantities of heat with minimal temperature differences between the chips and the liquid.” Unfortunately, boiling liquid adds complexity to the system because it forces operators to capture and reliquefy the bubbles while controlling for pressure, temperature, and fluid inventory. Ferveret’s system is adapted from a process in nuclear reactors called subcooled boiling. It uses a liquid with a low boiling point and none of the toxic PFAS “forever chemicals” that other approaches rely on. At the surface of the chip, Ferveret’s liquid produces smaller bubbles than other immersion cooling approaches. Those bubbles detach more frequently and quickly recondense in the surrounding liquid, accelerating the bubble-rewetting cycle at the surface of the chip to hasten heat transfer. Ferveret delivers its APC system in small boxes, each of which houses one server. The founders say their modular systems make it easier to deploy the system and simplify maintenance. “The physics enable us to get to form factors that weren’t possible in the past,” Azizian says. “Most immersion cooling solutions are large tanks that people submerge the servers in. We have a smaller, modular rack-mounted solution that makes it adaptable to the current infrastructure, so it’s easier for people to deploy our technology.” Ferveret also offers control software that adjusts the power going to each server in real-time to further improve efficiency. “We deliver full-stack systems that include the cooling box, the rack, the cooling distribution units, and sensors that measure the temperature and pressure,” Bucci says. “Our software monitors those sensors and optimizes the operating condition inside each box to ensure that energy consumption is minimized in the system.” AI with fewer resources In addition to helping data centers to run more efficiently, Ferveret is also improving sustainability by making it easier to operate data centers in remote regions with more renewable energy. “The sun shines in places where you don’t have much water, so the advantage of us being water-free is we allow you to build data centers where you have solar energy but nothing to cool the data center down,” Bucci says. “This technology can help deploy data centers in regions where normally you wouldn’t have the resources to do so, including Africa, the Middle East, and of course parts of America. It’s a huge unlock.” Ferveret is in talks with the large cloud computing companies known as hyperscalers, and is currently part of Nvidia’s Inception program for startups. The company plans to announce expanded partnerships later this year. From there, the founders plan to quickly scale their technology to help the AI industry continue to grow without further straining the planet. “The computing industry is facing a huge challenge in the form of access to power, and they have a problem with access to water in many regions,” Azizian says. “That will only become more limiting as the industry grows. The main goal for these data center operators would be to get more tokens from the power they have. We’ve shown we can do that.”",
+        "authors": [
+          "Zach Winn | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 2
+      },
+      {
+        "title": "Google just fired a warning shot in the AI subscription price wars",
+        "url": "https://techcrunch.com/2026/06/09/google-just-fired-a-warning-shot-in-the-ai-subscription-price-wars/",
+        "publishedAt": "2026-06-10T00:26:10.000Z",
+        "summary": "Google just made it significantly cheaper to enjoy its budget AI subscription tier.",
+        "authors": [
+          "Lucas Ropek, Connie Loizos"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 5
+      },
+      {
         "title": "How Justin Ernest invested nearly $500M into hot startups without a traditional VC fund",
-        "url": "https://techcrunch.com/2026/06/09/how-justin-ernest-invested-nearly-400m-into-hot-startups-without-a-traditional-vc-fund/",
+        "url": "https://techcrunch.com/2026/06/09/how-justin-ernest-invested-nearly-500m-into-hot-startups-without-a-traditional-vc-fund/",
         "publishedAt": "2026-06-09T23:17:51.000Z",
         "summary": "Instead of spending a year raising a formal venture fund, the Sabertooth VC founder used a captive network of LPs to invest in startups like Anthropic, Anduril, and SpaceX.",
         "authors": [
@@ -378,7 +341,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 6
       },
       {
         "title": "Hey, Siri, here&#8217;s what I actually want from AI",
@@ -392,7 +355,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "Anthropic&#8217;s Fable 5 can make weirdly fun video games with the click of a button",
@@ -406,7 +369,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "The consequences of relying on AI for accurate news",
@@ -420,7 +383,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "Can tech companies learn to love cheaper AI models?",
@@ -434,7 +397,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "WWDC 2026: Everything announced on Siri AI, iOS 27, Apple Intelligence, and more",
@@ -448,7 +411,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 6
+        "ageHours": 12
       },
       {
         "title": "Anthropic&#8217;s Claude Fable 5 is a version of Mythos the public can access today",
@@ -462,7 +425,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 13
       },
       {
         "title": "It&#8217;s not FAANG anymore. It&#8217;s MANGOS.",
@@ -476,7 +439,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 14
       },
       {
         "title": "Fluid, natural voice translation with Gemini 3.5 Live Translate",
@@ -488,7 +451,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 9
+        "ageHours": 15
       },
       {
         "title": "Introducing Gemma 4 12B: a unified, encoder-free multimodal model",
@@ -500,40 +463,14 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Research",
-        "ageHours": 10
-      },
-      {
-        "title": "Powering the future of robotics in Europe",
-        "url": "https://deepmind.google/blog/powering-the-future-of-robotics-in-europe/",
-        "publishedAt": "2026-06-09T14:02:33.000Z",
-        "summary": "",
-        "authors": [],
-        "source": "Google DeepMind",
-        "feed": "Google DeepMind Blog",
-        "provenance": "https://deepmind.google/blog/rss.xml",
-        "category": "General",
-        "ageHours": 10
-      },
-      {
-        "title": "Sandstone raises $30M to bring AI to in-house legal teams",
-        "url": "https://techcrunch.com/2026/06/09/sandstone-raises-30m-to-bring-ai-to-in-house-legal-teams/",
-        "publishedAt": "2026-06-09T13:47:25.000Z",
-        "summary": "Sandstone's Series A comes just six months after a Sequoia-led seed round.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 11
+        "ageHours": 16
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
@@ -541,11 +478,11 @@
       },
       {
         "name": "Models",
-        "count": 5
+        "count": 8
       },
       {
         "name": "General",
-        "count": 5
+        "count": 3
       },
       {
         "name": "Products",
