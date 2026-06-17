@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T23:45:36.224Z",
+  "generatedAt": "2026-06-17T05:10:49.850Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,230 +85,266 @@
   "sections": {
     "research": [
       {
-        "title": "The Value Axis: Language Models Encode Whether They're on the Right Track",
-        "url": "https://arxiv.org/abs/2606.17056v1",
-        "publishedAt": "2026-06-15T17:59:58.000Z",
-        "summary": "We investigate whether language models internally track the value of their current trajectory, defined as the likelihood that their ongoing strategy will achieve their goals. Using synthetic, in-context reinforcement learning data, we construct a \"value\" axis for Qwen3-8B. We find that activations along this axis distinguish between high vs. low verbalized confidence, rollouts without and with backtracking, and correct vs. corrupted code. Steering towards high value causally suppresses self-correction and reduces explanatory verbosity, while steering towards low value induces backtracking and exploration. We demonstrate that direct preference optimization (DPO) can increase the internal value of rewarded behaviors (e.g. use a certain word), causing the model to act more confidently after exhibiting them. Finally, we apply the value axis to study in-the-wild settings. For example, we find that Qwen assigns low value to politically sensitive chat queries after post-training and that supervised fine-tuning increases internal confidence within the training domain. Our results suggest that language models linearly encode an estimate of expected goal success that modulates their confidence in pursuing a direction.",
+        "title": "Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement",
+        "url": "https://arxiv.org/abs/2606.18247v1",
+        "publishedAt": "2026-06-16T17:59:04.000Z",
+        "summary": "Robots deployed in the real world should learn from their experience and improve over time. This requires a mechanism of practicing and learning from feedback. In this paper, we propose VERITAS, a generator-verifier framework for generalist robot policies for inference-time policy steering and self-improvement. We use a pre-trained generalist robot policy as a ``generator'' and pair it with a gradient-free ``visual verifier'' that evaluates actions at inference time. This framework enables inference-time steering that improves policy performance without additional training. We demonstrate that inference-time verification consistently outperforms vanilla generalists without training on additional demonstration data. Additionally, we demonstrate that the verified rollouts provide effective supervision for offline policy improvement: policies fine-tuned on verified self-generated trajectories achieve consistent performance gains. Notably, we find that post-training with verified rollouts achieves comparable efficiency to expert demonstrations, while requiring no human interventions. Our results highlight inference-time verification as a practical and scalable mechanism for improving robotic policies during deployment.",
         "authors": [
-          "Nick Jiang",
-          "Isaac Kauvar",
-          "Jack Lindsey"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "Context-Aware RL for Agentic and Multimodal LLMs",
-        "url": "https://arxiv.org/abs/2606.17053v1",
-        "publishedAt": "2026-06-15T17:59:28.000Z",
-        "summary": "Large language models (LLMs) often fail when answering requires identifying a small but decisive piece of evidence within a long or complex context, such as a single line in a tool trace or a subtle detail in an image. We propose ContextRL, a context-aware reinforcement learning (RL) method that improves long-horizon reasoning and multimodal performance through an \\emph{indirect} auxiliary objective. Instead of supervising only the final answer, ContextRL presents the model with a query, an answer, and two highly similar contexts, and rewards it for selecting the context that supports the query--answer pair, thereby encouraging fine-grained grounding. We construct contrastive context data in two domains: for coding agents, trajectories serve as contexts, yielding 1k pairs built via condition filtering; for multimodal reasoning, images serve as contexts, yielding 7K pairs built via generative editing and similarity search. ContextRL achieves average gains of +2.2% over standard GRPO on 5 long-horizon benchmarks, and +1.8% across 12 diverse visual question answering benchmarks. To disentangle the effect of the proposed objective from that of additional data, we compare against data-augmentation baselines that repurpose the same contrastive contexts as standard query--context--answer examples. These baselines provide little to no improvement, showing that the gains arise from the proposed context-selection objective rather than from the contrastive data alone.",
-        "authors": [
-          "Peiyang Xu",
-          "Bangzheng Li",
-          "Sijia Liu",
-          "Karthik R. Narasimhan",
-          "Pramod Viswanath",
-          "Prateek Mittal",
-          "Xingyu Fu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Exact Posterior Score Estimation for Solving Linear Inverse Problems",
-        "url": "https://arxiv.org/abs/2606.17048v1",
-        "publishedAt": "2026-06-15T17:58:22.000Z",
-        "summary": "Diffusion and flow-based models learn powerful data priors by training a denoiser to reverse Gaussian corruption. To use this prior to solve a linear inverse problem, one needs to sample from the posterior, but the score that the prior provides is the unconditional score, not the posterior score. Existing methods either steer a fixed pretrained denoiser with approximate measurement-matching corrections, or train a conditional restoration model that abandons the denoising structure of the prior. We derive the exact posterior score in closed form for linear Gaussian inverse problems under general Gaussian interpolants, and show that posterior sampling reduces to a denoising problem at an operator-dependent shifted pivot under an anisotropic noise covariance. We turn this identity into Exact Posterior Score (EPS), a denoising training objective that preserves the input/output structure of standard pretraining and can therefore be trained from scratch or fine-tuned from a pretrained denoiser. At inference, EPS uses the same sampler as the underlying backbone, with no likelihood gradients or projections. We evaluate EPS on five linear inverse problems across FFHQ and ImageNet, where it outperforms training-free and training-based baselines on fidelity, perceptual, and distributional metrics, while using roughly an order of magnitude fewer denoiser evaluations than gradient-based posterior samplers.",
-        "authors": [
-          "Abbas Mammadov",
-          "Ozgur Kara",
-          "Kaan Oktay",
-          "Iskander Azangulov",
-          "Adil Kaan Akan",
-          "Hyungjin Chung",
-          "James Matthew Rehg",
-          "Yee Whye Teh"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Geometric Action Model for Robot Policy Learning",
-        "url": "https://arxiv.org/abs/2606.17046v1",
-        "publishedAt": "2026-06-15T17:58:03.000Z",
-        "summary": "Generalist robot policies must follow user instructions while reasoning about how objects, cameras, and robot actions interact in the 3D physical world. Recent vision-language-action models (VLAs) and video world-action models (WAMs) inherit strong semantic or temporal priors from large-scale foundation models, but they still operate primarily on 2D image frames or 2D-derived latent spaces, leaving implicit the 3D geometry required for contact-rich manipulation. We propose the Geometric Action Model (GAM), a language-conditioned manipulation policy that directly repurposes a pretrained geometric foundation model (GFM) as a shared substrate for perception, temporal prediction, and action decoding. GAM splits the GFM at an intermediate layer: the shallow layers serve as an observation encoder, and a causal future predictor inserted at the split layer forecasts future latent tokens conditioned on language, proprioception, and action history. The predicted future tokens are then routed through the remaining GFM blocks for feature propagation and decoding, allowing a single backbone to produce both future geometry and actions. This design equips the GFM with language-conditioned temporal world modeling through minimal architectural modification while preserving its rich geometric priors. Across a broad suite of simulation and real-robot manipulation benchmarks, GAM is more accurate, more robust, faster, and lighter than current foundation-model-scale baselines.",
-        "authors": [
-          "Jisang Han",
-          "Seonghu Jeon",
-          "Jaewoo Jung",
-          "René Zurbrügg",
-          "Honggyu An",
-          "Tifanny Portela",
-          "Marco Hutter",
-          "Marc Pollefeys",
-          "Seungryong Kim",
-          "Sunghwan Hong"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Hierarchical Advantage Weighting for Online RL Fine-Tuning of VLAs from Sparse Episode Outcomes",
-        "url": "https://arxiv.org/abs/2606.17043v1",
-        "publishedAt": "2026-06-15T17:57:14.000Z",
-        "summary": "When pretrained VLA policies are fine-tuned through online RL, each rollout episode produces only a single binary outcome (success or failure), yet the actor update requires per-transition supervision. Existing approaches commonly reduce this sparse outcome to a single scalar reward or advantage signal, which conflates distinct forms of transition-level feedback and provides limited guidance once basic task success becomes achievable. First, a single scalar signal conflates the two objectives of viability and efficiency; once basic success is achieved, the binary label provides no gradient to distinguish efficient completions from slow ones. Second, real-world rollouts mix autonomous and intervention segments; naively assigning episode outcomes across these boundaries introduces incorrect credit assignment. To address these issues, we propose Hierarchical Advantage-Weighted Behavior Cloning (HABC), which trains separate critic heads for these two objectives on different data subsets and combines their outputs with a state-adaptive balance. A state-adaptive gate $g_t$ merges their one-step advantages, prioritizing viability when success is uncertain and shifting to efficiency only when viability is high, and converts the result into per-transition weights on the actor loss. Intervention-aware credit assignment further restricts outcome labels to segments executed by the current policy, preventing supervision from leaking across intervention boundaries. In real-robot experiments on three contact-rich bimanual tasks, HABC raises success from supervised fine-tuning (SFT) baselines of 36%, 44%, and 12% to 92%, 88%, and 38%.",
-        "authors": [
-          "Tongyan Fang",
-          "Siyuan Huang",
-          "Naiyu Fang",
-          "Ganlong Zhao",
-          "Zhongjin Luo",
-          "Jianbo Liu",
-          "Xiaogang Wang",
-          "Ying Dong",
-          "Hongsheng Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 30
-      },
-      {
-        "title": "Benchmarking LLM Agents on Meta-Analysis Articles from Nature Portfolio",
-        "url": "https://arxiv.org/abs/2606.17041v1",
-        "publishedAt": "2026-06-15T17:56:41.000Z",
-        "summary": "Meta-analysis is a demanding form of evidence synthesis that combines literature retrieval, PI/ECO-guided study selection, and statistical aggregation. Its structured, verifiable workflow makes it an ideal substrate for evaluating systematic scientific reasoning, yet existing benchmarks lack ground truth across the full retrieval-screening-synthesis pipeline. We introduce MetaSyn, a dataset of 442 expert-curated meta-analyses from Nature Portfolio journals. Each entry pairs a research question with PI/ECO criteria, a retrieval corpus of 140k PubMed articles, verified positive studies, hard negatives that are topically similar but PI/ECO-ineligible, and complete search strategies and date bounds.\n  Benchmarking twelve pipeline configurations (nine RAG variants and a protocol-driven agent) reveals a critical screening bottleneck: despite a retrieval ceiling of 90.9% recall at K=200, no system recovers more than 52.7% of ground-truth included literature. Current LLMs fail to reliably separate eligible studies from PI/ECO-failing distractors in pools of comparable topical relevance. Stage-attributed metrics capture where systems succeed and fail; a single end-to-end score does not.",
-        "authors": [
-          "Anzhe Xie",
-          "Weihang Su",
-          "Yujia Zhou",
-          "Yiqun Liu",
-          "Qingyao Ai"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "The Importance of Phase in Neural Representations: An Internal Oppenheim-Lim Test of Image Classifiers",
-        "url": "https://arxiv.org/abs/2606.17037v1",
-        "publishedAt": "2026-06-15T17:54:52.000Z",
-        "summary": "Oppenheim and Lim (1981) showed that natural images stay recognizable when reconstructed from their Fourier phase alone, while the magnitude carries little of their identity. We ask whether trained image classifiers reproduce this asymmetry inside their hidden layers, and we test it causally: given two images, we transplant the phase of one onto the magnitude of the other at a chosen layer and record which image the prediction follows. In PRISM2D, GFNet, and ViT-B/16 the prediction follows the phase or sign donor, and deleting all image-specific magnitude barely moves accuracy, so identity rides on phase while image-specific magnitude is largely dispensable to the readout. ResNet-50 at first seems to break the pattern, because transplanting sign after its ReLUs does nothing; a fair intervention before the ReLU reveals a strong latent sign code in the late blocks, and a DC-only control shows the readout consumes a channel-wise spatial average. Controls rule out the trivial case in which magnitude simply stops depending on the image. The architectures therefore share a phase/sign identity code but expose it in different bases, set by rectification and readout geometry, which gives a mechanistic account of the texture--shape gap between CNNs and attention models.",
-        "authors": [
-          "Alper Yıldırım"
+          "Mingtong Zhang",
+          "Dhruv Shah"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 30
+        "ageHours": 11
       },
       {
-        "title": "Your Privacy My Cloak: Backdoor Attacks on Differentially Private Federated Learning",
-        "url": "https://arxiv.org/abs/2606.17035v1",
-        "publishedAt": "2026-06-15T17:53:12.000Z",
-        "summary": "Prior research suggests that differential privacy (DP) inherently enhances the robustness of federated learning (FL) against backdoor attacks. In this paper, we challenge this assumption. Through an empirical analysis of two baseline attack strategies, we uncover a fundamental tension in DP-FL: while bypassing DP allows state-of-the-art defenses to detect and filter malicious updates, complying with DP inadvertently masks their distinguishing statistical characteristics. Consequently, existing defenses become ineffective as DP reduces the raw backdoor signal. Building on this masking effect, we propose RING, a novel attack that explicitly exploits DP to conceal malicious contributions while maximizing attack impact. By collaboratively crafting adversarial perturbations, compromised clients reconstruct a strong backdoor signal during aggregation without triggering anomaly detection. RING operates as a perturbation layer that is agnostic to the underlying backdoor technique, making it broadly applicable and composable with existing attacks -- a property that significantly amplifies the threat it poses to DP-FL. Extensive evaluations across four image and text datasets under non-iid distributions show that RING achieves an average attack success rate of 90.3% against six state-of-the-art defenses under a moderate privacy budget, an improvement of up to 26.08x over baseline strategies. Finally, we evaluate potential countermeasures and find that mitigating this threat incurs significant utility trade-offs, exposing a fundamental security gap in the deployment of differentially private FL.",
+        "title": "Variable-Width Transformers",
+        "url": "https://arxiv.org/abs/2606.18246v1",
+        "publishedAt": "2026-06-16T17:59:03.000Z",
+        "summary": "Scaling model size, specifically depth and width, has driven significant progress in transformer-based language models. However, most architectures maintain a constant width across all layers, allocating a fixed parameter and computation budget evenly despite different layers potentially playing distinct computational roles. In this work, we empirically investigate nonuniform capacity allocation across network depth by proposing a $\\times$-shaped > <former architecture. This design maintains wider early and late layers while narrowing the middle layers, utilizing a parameter-free residual resizing mechanism. Across decoder-only language models ranging from 200M to 2B parameters (dense) and 3B parameters (MoE), our > <former consistently outperforms parameter-matched uniform baselines on language modeling loss. By reducing the average layer width, this architecture also requires fewer overall FLOPs (22% reduction under fitted loss-matched scaling curves) and smaller KV cache memory and I/O cost (15% reduction). In analysis, we show that this bottleneck structure results in qualitatively different representations in residual streams. Overall, our results demonstrate that nonuniform width allocation can result in more resource-optimal scaling of language models.",
         "authors": [
-          "Xiaolin Li",
-          "Ning Wang",
-          "Ninghui Li",
-          "Wenhai Sun"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "KVEraser: Learning to Steer KV Cache for Efficient Localized Context Erasing",
-        "url": "https://arxiv.org/abs/2606.17034v1",
-        "publishedAt": "2026-06-15T17:53:09.000Z",
-        "summary": "Post-hoc context erasing over the KV cache is challenging because a local edit has a global consequence: once a span has been processed, its influence propagates into the cached states of all subsequent tokens. This issue arises naturally in long-context LLM applications, where stale retrieved facts, incorrect tool observations, retracted user preferences, or harmful prompt injections may be identified only after prefill. Exact erasing must then recompute all tokens after the deleted span, making its computational cost depend on suffix length rather than erased-span length. We introduce KVEraser, a learned KV-cache editing method for efficient localized context erasing. Given a processed context and a span to remove, KVEraser replaces only the KV states of the erased interval with learned steering states while reusing the remaining cache unchanged. To learn a transferable erasing mechanism, we build a two-stage training pipeline: generic span-neighbor pre-training teaches the eraser to suppress the influence of the erased span, while task-specific fine-tuning adapts this capability to downstream scenarios. Experiments show that KVEraser nearly matches full recomputation in post-erasure performance on in-domain tasks across 1K--32K context lengths, while its latency increases by only 24% compared with a 17.6x increase for full recomputation. KVEraser also generalizes to unseen long-document QA tasks with harmful factual distractors, achieving the best performance among approximate baselines with a 3--4x speedup over full recomputation.",
-        "authors": [
-          "Mufei Li",
-          "Shikun Liu",
-          "Dongqi Fu",
-          "Haoyu Wang",
-          "Yinglong Xia",
-          "Hong Li",
-          "Hong Yan",
-          "Pan Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "DEEPRUBRIC: Evidence-Tree Rubric Supervision for Efficient Reinforcement Learning of Deep Research Agents",
-        "url": "https://arxiv.org/abs/2606.17029v1",
-        "publishedAt": "2026-06-15T17:52:27.000Z",
-        "summary": "Deep research agents synthesize long-form reports by searching and reasoning over retrieved evidence. Reinforcement learning with rubric-based rewards improves these agents by optimizing them against checkable criteria that translate report quality into reward signals, but its efficiency depends on whether those criteria reliably capture the task scope and evidence needs. Most existing studies ask an LLM to generate rubrics for a given query, but when the model fails to infer the underlying information needs, the generated rubrics may be incomplete and reduce RL efficiency. To obtain more reliable query--rubric supervision, we introduce DeepRubric, a data construction framework that reverses this process: instead of inferring evaluation criteria for a given query, it first determines what an evidence-backed report should be evaluated on and then synthesizes aligned query--rubric pairs from those evaluation targets. Starting from a sampled seed topic, DeepRubric builds an evidence tree by recursively expanding evidence-backed sub-questions, whose leaves serve as atomic and verifiable evaluation targets. It then uses the evidence tree to synthesize the training query and rubrics, ensuring that the reward evaluates exactly the information requested by the query. Using DeepRubric, we construct 9K query--rubric supervision examples and train DeepRubric-8B with rubric-based GRPO, achieving comparable performance to prior open state-of-the-art deep research models across three benchmarks with roughly 13x fewer RL GPU-hours.",
-        "authors": [
-          "Minghang Zhu",
-          "Chuyang Wei",
-          "Junhao Xu",
-          "Yilin Cheng",
-          "Zhumin Chen",
-          "Jiyan He"
+          "Zhaofeng Wu",
+          "Oliver Sieberling",
+          "Shawn Tan",
+          "Rameswar Panda",
+          "Yury Polyanskiy",
+          "Yoon Kim"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
       },
       {
-        "title": "HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting",
-        "url": "https://arxiv.org/abs/2606.17028v1",
-        "publishedAt": "2026-06-15T17:51:50.000Z",
-        "summary": "Simple linear and frequency-domain models remain surprisingly competitive in long-horizon time-series forecasting, and recent mechanistic evidence suggests that standard forecasting benchmarks may not require the dense superposed representations that make transformers powerful in other domains. This raises a substrate-level question: if the core forecasting operator is often low-complexity and approximately linear, does it need to be implemented as learned digital temporal mixing? We introduce HAMON, a passive diffractive optical forecasting core in which historical values are encoded onto an optical aperture, future positions are left dark, and cascaded trainable phase masks with free-space diffraction shape the forecast directly in the output field. At inference, prediction is performed by a single passive optical propagation pass with no trainable digital sequence-mixing layer.\n  Across standard benchmarks, HAMON outperforms the strongest digital baselines considered on ETTm2 at all horizons and on ETTh2 at all but the longest horizon, improving MSE by up to 14\\% and doing so consistently across horizons rather than at isolated points. It is competitive on Weather and trails the strongest baselines on the remaining ETT settings and on the high-channel-count Traffic and Electricity datasets. Phase encoding, intensity-compatible readout, and phase-scrambling ablations, together with a TorchOptics cross-simulator check, indicate that the forecasts arise from the data-bearing optical field rather than from a digital forecasting head. Because the passive core uses standard Fourier optics, HAMON defines a concrete target for optical hardware and for passive physical sequence mixing.",
+        "title": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
+        "url": "https://arxiv.org/abs/2606.18237v1",
+        "publishedAt": "2026-06-16T17:58:05.000Z",
+        "summary": "Reproducing research results from papers and released code is central to scientific progress. Existing works have introduced benchmarks to evaluate whether LLM agents can assist with reproducibility, but they are difficult to scale due to their reliance on substantial manual effort for data curation and evaluation. We introduce ReproRepo, a scalable framework for reproducibility evaluation that leverages human-raised GitHub issues as naturally occurring supervision on realistic reproduction blockers. We instantiate ReproRepo on 1,149 recent machine learning papers from major conferences and evaluate four frontier model-agent configurations. Our results show that LLM agents, even without executing code, can identify many real-world reproducibility problems from paper-repository pairs: the best agent in our study, namely Codex with GPT-5.5, surfaces at least one semantically related human-reported blocker for ~90% of papers in the study. Further analysis shows that agents are particularly effective for surfacing visible failures and identifying the right semantic region, but may still be insufficient in exact localization. ReproRepo can serve as a reusable, scalable framework for future evaluations of LLM agents on real-world reproducibility auditing. Our code is released at https://github.com/LithiumDA/ReproRepo.",
         "authors": [
-          "Alper Yıldırım"
+          "Shanda Li",
+          "Qiuhong Anna Wei",
+          "Jingwu Tang",
+          "Valerie Chen",
+          "Nihar B Shah",
+          "Tim Dettmers",
+          "Yiming Yang",
+          "Ameet Talwalkar"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
       },
       {
-        "title": "ExpRL: Exploratory RL for LLM Mid-Training",
-        "url": "https://arxiv.org/abs/2606.17024v1",
-        "publishedAt": "2026-06-15T17:50:44.000Z",
-        "summary": "Sparse reward reinforcement learning (RL) has become a standard tool for improving LLM reasoning, but its success depends critically on the coverage present in the base model. In practice, models are often primed for RL through \\emph{mid-training} on curated reasoning traces that teach useful primitive skills such as decomposition, verification, or self-correction. Although effective, this strategy requires manually specifying what the model should learn, and it remains unclear whether such primitive coverage is enough for much harder problems, which require combining these skills into broader solution strategies. We study a more automated approach: \\emph{RL-based mid-training} using large corpora of human-written question-answer data. Rather than treating reference solutions as targets to imitate, our method, ExpRL, uses them as \\emph{reward scaffolds}: references are hidden from the policy and used only to construct problem-specific grading rubrics for judging on-policy reasoning traces. The policy samples from the original problem prompt, while an LLM judge compares the sampled reasoning trace against the reference solution and assigns outcome-level or process-level dense rewards. This lets ExpRL reinforce partial progress, useful intermediate reductions, and productive reasoning behaviors that sparse final-answer rewards often fail to upweight. On challenging math reasoning tasks, ExpRL yields stronger RL priming than SFT, sparse-reward GRPO, and self-distillation, and provides a better initialization for subsequent sparse-reward RL. Additional mixed-domain experiments further suggest that ExpRL can extend beyond the original math-only setting.",
+        "title": "Sign-Rank, Index, and List Replicability: Connections and Separations",
+        "url": "https://arxiv.org/abs/2606.18236v1",
+        "publishedAt": "2026-06-16T17:57:16.000Z",
+        "summary": "In learning theory, the sign rank of a binary concept class captures the smallest dimension in which it can be represented by points and halfspaces. Despite tremendous interest, lower bounds on sign rank are notoriously difficult to come by. Two recent approaches to the problem establish lower bounds on sign rank by measures that are easier to analyze: the $\\mathbb{Z}_2$-index and the list replicability number.\n  We order these measures, showing that the $\\mathbb{Z}_2$-index is upper-bounded by a linear function of the list replicability number. As a main consequence, we obtain a strong separation between sign rank and $\\mathbb{Z}_2$-index, thereby resolving a question of Frick, Hosseini, and Vasileuski.\n  This motivates a thorough study of list replicability, the stronger of the two lower-bounding measures. We establish upper bounds on the list replicability number by two combinatorial measures: height and minimum star number. We also prove a fundamental composition result, showing that the product of two concept classes has list replicability number bounded by the sum of the list replicability numbers of the two classes.",
         "authors": [
-          "Violet Xiang",
-          "Amrith Setlur",
-          "Chase Blagden",
-          "Nick Haber",
-          "Aviral Kumar"
+          "Ari Blondal",
+          "Hamed Hatami",
+          "Pooya Hatami",
+          "Chavdar Lalov",
+          "Sivan Tretiak"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 11
+      },
+      {
+        "title": "EvolveNav: Proactive Preflection and Self-Evolving Memory for Zero-Shot Object Goal Navigation",
+        "url": "https://arxiv.org/abs/2606.18235v1",
+        "publishedAt": "2026-06-16T17:56:57.000Z",
+        "summary": "Zero-Shot Object-Goal Navigation (ZS-OGN) requires embodied agents to explore and locate target objects without any prior training. To this end, recent methods leverage foundation models. But they typically rely on static priors and lack adaptation, which leads to repeated errors and costly trial and error. In this paper, we propose a self-evolving ZS-OGN framework that enables continuous test-time improvement. Specifically, we build an agentic rule memory by extracting actionable knowledge from past trajectories. Then, we propose a retrieval strategy based on upper confidence bound, selecting effective rules by balancing semantic relevance and historical success. In addition, we introduce a memory-guided preflection module that forecasts potential outcomes before action, reducing inefficient exploration. Extensive experiments show that our method outperforms existing zero-shot baselines, achieving a 10.1\\% improvement in success rate with fewer unnecessary steps.",
+        "authors": [
+          "Qi Chai",
+          "Wenhao Shen",
+          "Nanjie Yao",
+          "Yue Xia",
+          "Kaiyong Zhao",
+          "Jie Ma",
+          "Guosheng Lin",
+          "Hao Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Adaptive Volumetric Mechanical Property Fields Invariant to Resolution",
+        "url": "https://arxiv.org/abs/2606.18231v1",
+        "publishedAt": "2026-06-16T17:56:03.000Z",
+        "summary": "Accurate mechanical properties (or materials) Young's modulus ($E$), Poisson's ratio ($ν$) and density ($ρ$) are essential for reliable physics simulation of digital worlds, but most 3D assets lack this information. We propose AdaVoMP, a method for predicting accurate dense spatially-varying ($E$, $ν$, $ρ$) for input 3D objects across representations, improving the resolution, accuracy, and memory efficiency over the state-of-the-art. The foundation of our technique is a sparse and adaptive voxel structure SAV that efficiently represents both the input 3D shape and the material field output. We replace the fixed-voxel model of the most accurate prior method, VoMP, with a novel sparse transformer encoder-decoder model that learns to generate a unique SAV autoregressively for every input shape to represent its materials, achieving a resolution $16^3\\times$ higher than prior art. Experiments show that AdaVoMP estimates more accurate volumetric properties, even with lesser test-time compute than all prior art. This allows us to convert high-resolution complex 3D objects into simulation-ready assets, resulting in realistic deformable simulations.",
+        "authors": [
+          "Rishit Dagli",
+          "Donglai Xiang",
+          "Vismay Modi",
+          "Xuning Yang",
+          "Gavriel State",
+          "David I. W. Levin",
+          "Maria Shugrina"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
+      },
+      {
+        "title": "Learning Red Agent Policy from Observations for Neurosymbolic Autonomous Cyber Agents",
+        "url": "https://arxiv.org/abs/2606.18223v1",
+        "publishedAt": "2026-06-16T17:50:41.000Z",
+        "summary": "With sophisticated cyber-attacks becoming increasingly prevalent, modern networks require intelligent autonomous cyber-defense agents trained via Reinforcement Learning (RL). These agents employ neurosymbolic approaches such as behavior trees with learning-enabled components (LECs) to learn, reason, adapt, and implement security rules while maintaining critical operations. However, these autonomous networks are partially observable systems, i.e., the cyber-attacker's (red agent's) actions are not observable, making it difficult for the defender to predict red actions, learn red policies, or assess the attacker's intrusion levels. To address this, we propose a Policy Learning Technique using imitation learning to learn policies for partially observable RL agents with discrete states and discrete actions. We apply this technique in an autonomous cyber environment to predict red agent's actions from network observations and defender actions. Integrated with a neurosymbolic cyber-defense agent, our method effectively handles different red policies and achieves high prediction accuracy across diverse simulated scenarios.",
+        "authors": [
+          "Ankita Samaddar",
+          "Sandeep Neema",
+          "Daniel Balasubramanian",
+          "Xenofon Koutsoukos"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Darshana Graph: A Parallel Commentary Corpus for Comparative Indian Philosophy, with Stylometric and Exploratory Graph Analyses",
+        "url": "https://arxiv.org/abs/2606.18222v1",
+        "publishedAt": "2026-06-16T17:49:15.000Z",
+        "summary": "We introduce Darshana Graph, a corpus of over 125,000 text records spanning classical Hindu, Buddhist, and Jain philosophical traditions, drawn from public-domain and openly licensed translations of sources including the Bhagavad Gita, Brahma Sutras, principal Upanishads, the Pali Canon, and core Jain texts. Its distinctive contribution lies in a structurally unique subset of roughly 8,500 Hindu and Jain records in which the same root verse or sutra is aligned across eighteen historical commentators representing five schools of Vedanta and other darshanas, enabling direct comparison of how independent interpretive traditions read identical source material. To our knowledge, no publicly available resource provides comparable cross-commentator alignment at this scale. We present two analyses built on this corpus. First, a transparent stylometric comparison requiring no machine learning measures argumentative style through scriptural citation density, explicit refutation rate, and sentence complexity. It finds a moderate negative correlation between citation density and refutation rate, a marked increase in refutation rate across three commentators in a related doctrinal lineage, and measurable genre-level differences within the Pali Canon itself. Second, we describe a constrained large language model pipeline that extracts typed philosophical relationships between concepts using a predefined relation vocabulary and deterministic post-hoc validation. The resulting graph surfaces cross-school disagreement patterns while also revealing important extraction limitations, including cases where an independent embedding-based analysis disagrees with the graph-derived findings. We release the full corpus, extracted relationship graph, and all source code.",
+        "authors": [
+          "Joy Bose"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "Finite-Time Queue Peak Laws in Stochastic Networks: Logarithmic Scaling After Geometric Thresholds",
+        "url": "https://arxiv.org/abs/2606.18218v1",
+        "publishedAt": "2026-06-16T17:47:47.000Z",
+        "summary": "We study finite-horizon queue peaks in generalized switches, a standard stochastic-network model in which many queues share constrained service resources. Arrivals may be dependent, time-varying, and adapted to the past; the standing load condition is uniform interior slack, meaning the conditional mean arrival vector stays in a fixed contraction of the capacity region. We show that this slack reshapes the finite-time peak law for drift-minimizing scheduling policies such as MaxWeight. The square-root envelope that is sharp without slack persists only up to a geometry-dependent threshold; beyond that threshold, the running maximum grows only logarithmically with the horizon, both with high probability and in expectation.\n  The mechanism is self-normalization: in the current queue direction, the projected fluctuation scale is normalized by the stabilizing drift scale. This removes capacity geometry from the logarithmic coefficient, while geometry remains in the threshold. Matching lower bounds show that both the logarithmic term and a geometric threshold are unavoidable. When finite-time state-space collapse is available, the threshold can be sharpened using local bottleneck geometry. For generalized input-queued switches, we obtain finite-time peak bounds with tight logarithmic coefficients. Simulations illustrate the two-phase envelope, local geometric refinements, and variance-sensitive improvements predicted by the theory.",
+        "authors": [
+          "Hao Liang",
+          "Cheng Tang",
+          "Yunzong Xu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "Zone of Proximal Policy Optimization: Teacher in Prompts, Not Gradients",
+        "url": "https://arxiv.org/abs/2606.18216v1",
+        "publishedAt": "2026-06-16T17:46:02.000Z",
+        "summary": "Knowledge distillation transfers a teacher's competence to a small student but is brittle in the small-student regime: forcing the student to imitate logits from a much larger teacher concentrates it on the teacher's sharpest modes, hurting generalization on benchmark families beyond the training corpus. Reinforcement learning (RL) avoids logit imitation by training on the student's own rollouts. However, on questions where every rollout fails-yielding zero advantage and being silently discarded-injecting a stronger teacher's response into the policy gradient breaks the on-policy assumption and induces drift. We introduce Zone of Proximal Policy Optimization (ZPPO), inspired by Vygotsky's zone of proximal development, which keeps the teacher inside the prompt rather than the policy gradient. On hard questions, ZPPO constructs two reformulated prompts: a Binary Candidate-included Question (BCQ) pairs one correct teacher response with one incorrect student response as anonymized candidates the student must discriminate, and a Negative Candidate-included Question (NCQ) aggregates the student's wrong rollouts into a single prompt to surface their shared failure modes. A prompt replay buffer recirculates each hard question until it either graduates-the student's mean rollout accuracy on it reaches half- or is FIFO-evicted under finite capacity, amplifying BCQ and NCQ inside the student's current zone of proximal development. On the Qwen3.5 family at four student scales (0.8B-9B) with a 27B teacher, post-trained as vision-language models and evaluated on a 31-benchmark suite (16 VLM, 10 LLM, 5 Video), ZPPO outperforms off/on-policy distillation and GRPO, with the largest gains at the smallest scale.",
+        "authors": [
+          "Byung-Kwan Lee",
+          "Ximing Lu",
+          "Shizhe Diao",
+          "Minki Kang",
+          "Saurav Muralidharan",
+          "Karan Sapra",
+          "Andrew Tao",
+          "Pavlo Molchanov",
+          "Yejin Choi",
+          "Yu-Chiang Frank Wang",
+          "Ryo Hachiuma"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Rethinking Dataset Distillation for Classification: Do Distilled Sets Outperform Coresets?",
+        "url": "https://arxiv.org/abs/2606.18209v1",
+        "publishedAt": "2026-06-16T17:37:49.000Z",
+        "summary": "Dataset distillation (DD) has emerged as a prominent approach in data centric machine learning, aiming to synthesize compact training sets for efficient training by compressing the information in large datasets into a small number of synthetic samples. However, DD methods are often evaluated under inconsistent evaluation protocols, ranging from standard ERM to single/multi-teacher supervision, making it difficult to isolate the effectiveness of distilled data from evaluation. Moreover, many prior methods claim that DD outperforms data pruning approaches such as coreset selection (CS), based on the assumption that restricting condensed datasets to subsets of real samples fundamentally limits their expressiveness. In this work, we critically evaluate DD methods through large-scale experiments using standardized datasets and evaluation protocols to assess their intrinsic effectiveness. We benchmark seven state-of-the-art (SOTA) DD methods on ImageNet-1K, ImageNet100, and ImageNette, using three widely adopted training protocols against three CS strategies. Our results show that while some DD methods fail to outperform even simple random subsets, the SOTA DD approaches are comparable to or worse than coresets on large-scale datasets and incur a substantially higher cost for construction. Beyond accuracy, we also evaluate the representativeness, diversity, and quality of condensed sets, and find that coresets consistently achieve better coverage of the original data distribution. These findings highlight the limited practical advantages of current DD methods and show that coresets remain competitive and are often a more computationally efficient alternative for data-centric learning.",
+        "authors": [
+          "Trisha Mittal",
+          "Akshay Mehra",
+          "Joshua Kimball"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Looped World Models",
+        "url": "https://arxiv.org/abs/2606.18208v1",
+        "publishedAt": "2026-06-16T17:37:27.000Z",
+        "summary": "Current world models face a fundamental tension: faithful long-horizon simulation demands deep computation, but deeper models are expensive to deploy and prone to compounding errors. We resolve this by introducing Looped World Models (LoopWM), which are the first looped architectures for world modelling. Our method iteratively refines latent environment states through a parameter-shared transformer block. This yield up to 100x parameter efficiency over conventional approaches with adaptive computation that automatically scales depth to match the complexity of each prediction step. Orthogonal to scaling model size and training data, LoopWM establishes iterative latent depth as a new scaling axis for world simulation, which might significantly push the community forward.",
+        "authors": [
+          "Hongyuan Adam Lu",
+          "Z. L. Victor Wei",
+          "Qun Zhang",
+          "Jinrui Zeng",
+          "Bowen Cao",
+          "Lingwei Meng",
+          "Mocheng Li",
+          "Zezhong Wang",
+          "Haonan Yin",
+          "Naifu Xue",
+          "Minyu Chen",
+          "Cenyuan Zhang",
+          "Zefan Zhang",
+          "Hao Wei",
+          "Jiawei Zhou",
+          "Haoran Xu",
+          "Hao Yang",
+          "Ronglai Zuo",
+          "Tongda Xu",
+          "Yonghao Li",
+          "Jian Chen",
+          "Hebin Wang",
+          "Zeyu Gao",
+          "Yang Li",
+          "Wei Zhao",
+          "Qimin Zhong",
+          "Siqi Liu",
+          "Yumeng Zhang",
+          "Leyan Cui",
+          "Zhangyu Wang",
+          "Wai Lam"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
       }
     ],
     "news": [
+      {
+        "title": "Could AI tell you where you left your keys?",
+        "url": "https://news.mit.edu/2026/could-ai-tell-you-where-you-left-your-keys-0617",
+        "publishedAt": "2026-06-17T04:00:00.000Z",
+        "summary": "An auto factory worker can remember the storage bin where she left a partly assembled component the night before, and quickly return to that spot to pick it up. But robots that may work side-by-side with her would struggle to develop and access this same type of “spatiotemporal” memory. Now, MIT researchers have developed a long-term memory framework that allows robots to rapidly form and recall a detailed mental model of complicated, large-scale environments. In the future, this advance could allow the factory worker to send a robotic assistant to fetch the item, simply by asking it to “go and grab the component we started assembling last night.” This new method combines advanced map representations with rich descriptions of the environment that the robot gathers as it travels over a long period of time. The robot can quickly access this memory to answer complex queries about its environment in plain language. This memory framework, which answers questions more accurately than state-of-the-art methods, runs fast enough for a mobile robot to use in real-time. In addition to its potential uses in robotics, this method could have applications in augmented reality systems that aid maintenance workers in anomaly detection or assist commuters in wayfinding. “If we want robots to work side-by-side with humans and interact better with humans, they must speak the same language. The robot must be able to reason about time and space the same way humans do. That is essentially what our method is doing. It is turning a traditional map into a language-based map that is easier for the robot to think about and access using language,” says Luca Carlone, an associate professor in MIT’s Department of Aeronautics and Astronautics (AeroAstro), principal investigator in the Laboratory for Information and Decision Systems (LIDS), and director of the MIT SPARK Laboratory. He is joined on the paper by lead author Nicolas Gorlo, an MIT graduate student; and Lukas Schmid, a former research scientist at MIT and now professor at the University of Technology Nuremberg in Germany. The research was recently presented at the Conference on Computer Vision and Pattern Recognition (CVPR). Spatiotemporal memory Memory allows an artificial intelligence system, like a chatbot, to answer complex questions and reason about previous interactions with its user. “We want to design a new type of memory, a spatiotemporal memory, that enables an AI-powered robot to remember real interactions and sensor observations. Like ChatGPT, but grounded in the real world and capable of answering any question about the environment, like ‘Where did I leave my wallet?’” Carlone says. To develop such a memory framework, the MIT researchers bridged two lines of work: computer vision and robotic mapping. Multimodal computer vision models can understand and richly describe the objects in a scene, but they often only process a single annotation at a time. On the other hand, robotic mapping frameworks create 3D maps of an environment, like an entire apartment or university campus, but usually lack detailed descriptions of objects or are computationally expensive. The method the MIT researchers created, called Describe Anything, Anywhere, Anytime, at Any Moment (DAAAM), takes the best of both approaches. Using DAAAM, as a robot traverses its environment, it attaches rich descriptions to objects it sees. For instance, the robot may note that a particular building on the MIT campus is called the Stata Center and is designed with a certain type of architecture, or that a bike rack holds five bicycles and the red one has a flat tire.&nbsp; It stores this detailed information in a 3D map-based representation that is arranged spatially, so objects will be grouped into separate regions. In this way, the robot can remember that the red bicycle with the flat tire is in the bike rack outside the Stata Center. But existing techniques that capture such rich descriptions typically take a few seconds to annotate a few objects. This is too slow for real-time performance, since a robot might see hundreds of objects during a few minutes of exploration. “The faster the robot can form this spatial memory, the more efficient it will be performing actions in the environment,” Carlone adds. Streamlining the process To speed things up, DAAAM aggregates nearby objects as it travels and uses an optimization method to select key frames to annotate. These are images with the clearest view of multiple objects, allowing the system to thoroughly describe several items in parallel, speeding up computation tenfold. As the robot explores the space, it attaches each batch of annotations to multiple objects in a particular location on the 3D map. “We annotate every object only once, so our framework can run in very large-scale environments in real time. And by clustering objects into regions, it can answer a wide range of queries about objects and locations in the environment,” Gorlo explains. Once the system builds this spatial memory, it must retrieve information from an enormous database of objects and descriptions in an efficient manner.&nbsp; To enable this, the researchers used an LLM that calls on various tools, which can quickly retrieve specific information in a way that reduces hallucinations. This allows DAAAM to answer a user query accurately in only a few seconds.&nbsp; For instance, if one asks a robot about a certain sculpture it saw near an MIT campus building, DAAAM can use a semantic search tool to retrieve information based on the word “sculpture” or a different tool to retrieve information based on the location of the building. When tested and compared with other methods, DAAAM was between 21 percent and 53 percent more accurate, depending on the question type.&nbsp; In the future, the researchers want to expand DAAAM so the system can capture significant events that happened in the environment. They are also working to incorporate confidence levels into the system’s responses. “Ultimately, we want to have robots that can help with any sort of tasks. With this framework, we are trying to create the foundations to enable a generalist agent that can do anything you ask,” Gorlo says. This research was funded, in part, by the U.S. Army Research Laboratory and the Office of Naval Research. Carlone is currently on sabbatical as an Amazon Scholar; this article describes work performed at MIT and is not associated with Amazon.",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 1
+      },
       {
         "title": "Anthropic&#8217;s latest feud with the Trump admin may actually help it, sales data suggests",
         "url": "https://techcrunch.com/2026/06/16/anthropics-latest-feud-with-the-trump-admin-may-actually-help-it-sales-data-suggests/",
@@ -321,7 +357,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 7
       },
       {
         "title": "Unlocking UK house-building with AI-accelerated planning",
@@ -333,7 +369,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 8
       },
       {
         "title": "MIT’s Initiative for New Manufacturing builds momentum",
@@ -347,7 +383,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 9
       },
       {
         "title": "SpaceX valuation balloons to $2.6T, briefly passes Amazon",
@@ -361,7 +397,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "Android 17 launches with new multitasking tools as Google expands Gemini features",
@@ -375,7 +411,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 11
       },
       {
         "title": "Sixty percent of US consumers say &#8216;AI&#8217; in brand messaging is a turnoff, survey finds",
@@ -389,7 +425,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "SpaceX is public: Everything you need to know post-IPO",
@@ -403,7 +439,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 13
       },
       {
         "title": "DOJ claims xAI’s unpermitted gas turbines are a matter of ‘national, economic, and energy security’",
@@ -417,7 +453,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "Plaud says its software business topped $100M in ARR after shipping over 2M AI notetakers",
@@ -431,7 +467,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "Robinhood&#8217;s note on 10% layoffs shows blaming AI isn&#8217;t cutting it",
@@ -445,7 +481,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "Probably raises $9M to build a more reliable kind of AI",
@@ -459,35 +495,21 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 11
-      },
-      {
-        "title": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
-        "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/",
-        "publishedAt": "2026-06-16T11:21:41.000Z",
-        "summary": "The deal is supposed to help SpaceX's struggling AI division. The company told IPO investors it sees a $26 trillion addressable market in AI.",
-        "authors": [
-          "Sean O'Kane"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 12
+        "ageHours": 16
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
-        "name": "General",
+        "name": "Research",
         "count": 10
       },
       {
-        "name": "Research",
+        "name": "General",
         "count": 9
       },
       {
@@ -495,7 +517,7 @@
         "count": 4
       },
       {
-        "name": "Policy",
+        "name": "Products",
         "count": 1
       }
     ]
