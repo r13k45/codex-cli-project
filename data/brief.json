@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T00:18:13.237Z",
+  "generatedAt": "2026-06-23T05:13:09.567Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,221 +85,244 @@
   "sections": {
     "research": [
       {
-        "title": "How Transparent is DiffusionGemma?",
-        "url": "https://arxiv.org/abs/2606.20560v1",
-        "publishedAt": "2026-06-18T17:59:46.000Z",
-        "summary": "LLM reasoning transparency is a critical affordance for understanding model decisions, mitigating misuse and misalignment, and debugging surprising model behaviors. However, DiffusionGemma performs a larger fraction of its computation in a continuous latent space; does this make its reasoning less transparent? We study this question by decomposing transparency into two components: variable transparency, whether we understand intermediate snapshots of a model's computational state; and algorithmic transparency, whether we can use these snapshots to reconstruct the process by which the model arrived at its outputs. Naively, DiffusionGemma has poor variable transparency: its opaque serial depth, the amount of serial computation that occurs in between interpretable model states, seems at first 28.6X higher than the corresponding autoregressive Gemma 4 model. However, we show that we can map the information flowing between denoising steps through an interpretable token bottleneck with no decrease in downstream performance. Treating these intermediate states as interpretable reduces the opaque serial depth to just 1.1X that of Gemma 4. Algorithmic transparency is harder for diffusion models than for autoregressive models because all token predictions in the canvas can change at every denoising step, giving the model the power to implement complicated distributed algorithms during the denoising process. To begin bridging this gap, we conduct a suite of interpretability case studies, uncovering initial evidence of novel diffusion-specific phenomena such as non-chronological reasoning, token and sequence smearing, and intermediate-context reasoning. Finally, we test monitorability, a key application of transparency that measures whether model outputs are useful for downstream tasks. We find that DiffusionGemma is similarly monitorable to Gemma 4.",
+        "title": "AutoDex: An Automated Real-World System for Dexterous Grasping Data Collection",
+        "url": "https://arxiv.org/abs/2606.23689v1",
+        "publishedAt": "2026-06-22T17:59:55.000Z",
+        "summary": "Learning robust dexterous grasping requires real-world data that records the physical outcomes of grasp attempts. Such data is hard to obtain at scale: teleoperation yields valid physical outcomes but is slow and operator-biased, while simulation-based generation is cheap and scalable but cannot certify contact validity. A natural solution is to generate candidate grasps and verify them on real hardware, but this scales only if the entire collection loop (perception, execution, labeling, and reset) runs without human intervention. We present AutoDex, an automated real-world data-collection system that closes this loop: for each candidate from a replaceable generator, it localizes the object under severe hand-object occlusion with dense 20-camera perception, executes collision-monitored robot motions, labels lift-and-hold success or failure, and actively resets the object between trials to expose additional candidates across stable poses. The result is a reusable database of physically labeled grasp trials that downstream systems can query by retrieval and feasibility filtering. Using AutoDex, we collect 3,593 grasp trials across Allegro and Inspire hands on 100 diverse objects, with synchronized multi-view observations and robot-state logs. For a matched 500-trajectory collection, AutoDex requires 10.3 h versus 49.4 h for teleoperation, yielding a 4.8x throughput improvement, and grasps retrieved from the AutoDex-validated database succeed 76% versus 34% for simulation-only validation. Code and data will be publicly released.",
         "authors": [
-          "Joshua Engels",
-          "Callum McDougall",
-          "Bilal Chughtai",
-          "Janos Kramar",
-          "Senthoran Rajamanoharan",
-          "Cindy Wu",
-          "Arthur Conmy",
-          "Asic Q Chen",
-          "Jean Tarbouriech",
-          "Min Ma",
-          "Brendan O'Donoghue",
-          "João Gabriel Lopes de Oliveira",
-          "Rohin Shah",
-          "Neel Nanda"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 102
-      },
-      {
-        "title": "UNIEGO: Proxies as Mediators for Unified Egocentric Video Representation Learning",
-        "url": "https://arxiv.org/abs/2606.20559v1",
-        "publishedAt": "2026-06-18T17:59:45.000Z",
-        "summary": "Egocentric video understanding is inherently limited by the narrow perspective of wearable cameras: a single viewpoint, a single modality, a single model cannot capture the full richness of human action. We argue that a truly expressive egocentric representation must subsume complementary knowledge across viewpoints, modalities, and foundation model representations, yet remain deployable from egocentric video alone. To this end, we introduce a hierarchical multi-teacher distillation framework that produces UNIEGO, a unified egocentric encoder trained with nine teachers spanning ego-exo viewpoints, RGB, depth, and skeleton modalities, and four foundation models. Rather than distilling directly from heterogeneous teachers whose incompatible architectures and feature geometries induce conflicting gradients, our framework interposes a layer of representation-specific Proxy models that translate diverse teacher knowledge into a homogeneous egocentric space. A second distillation stage, Selective Proxy Distillation (SPD), then adaptively selects, for each training sample, the subset of proxies that are both correct and confident, distilling exclusively from reliable supervision and suppressing erroneous signals. SPD is further stabilized by initializing UNIEGO as a learned convex combination of proxy parameters, placing the unified model in a well-conditioned region of the loss landscape before distillation begins. UNIEGO achieves state-of-the-art performance across three egocentric video understanding tasks - action recognition, video retrieval, and action segmentation on three challenging ego-exo benchmarks, outperforming naive multi-teacher distillation baselines and demonstrating that structured, proxy-mediated knowledge transfer yields richer and more discriminative egocentric representations.",
-        "authors": [
-          "Wenhao Chi",
-          "Arkaprava Sinha",
-          "Dominick Reilly",
-          "Hieu Le",
-          "Srijan Das"
+          "Mingi Choi",
+          "Gunhee Kim",
+          "Jisoo Kim",
+          "Taeksoo Kim",
+          "Taeyun Ha",
+          "Jongbin Lim",
+          "Hanbyul Joo"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 102
+        "category": "Products",
+        "ageHours": 11
       },
       {
-        "title": "Optimal Deterministic Multicalibration and Omniprediction",
-        "url": "https://arxiv.org/abs/2606.20557v1",
-        "publishedAt": "2026-06-18T17:59:31.000Z",
-        "summary": "A model is multicalibrated on a collection of group weights $G$ if it is calibrated -- i.e. unbiased even conditional on its prediction -- not just overall, but also after reweighting contexts by each $g \\in G$. It is a useful property for many downstream applications and is a basic desideratum of trustworthy machine learning. Before this work, all predictors known to attain the minimax-optimal $\\widetilde O(\\varepsilon^{-3})$ sample complexity rate for $\\varepsilon$-multicalibration were randomized, while deterministic predictors were known only with substantially worse sample complexity. Whether randomization is necessary for optimal sample complexity in multicalibration was explicitly asked by [CLNR26] and implicitly in several prior works.\n  We resolve this open problem by giving a minimax-optimal multicalibration algorithm that outputs a deterministic predictor. We then generalize the algorithm to produce optimal deterministic predictors that satisfy outcome indistinguishability (OI) with respect to finite or finitely covered collections of tests. As an application, this also gives deterministic omnipredictors and panpredictors with optimal sample complexity, resolving open problems posed by [OKK25] and [BHHLZ25].",
+        "title": "Randomized YaRN Improves Length Generalization for Long-Context Reasoning",
+        "url": "https://arxiv.org/abs/2606.23687v1",
+        "publishedAt": "2026-06-22T17:59:53.000Z",
+        "summary": "Large language models (LLMs) are typically pretrained on short sequences and then extended to work on longer sequences with additional training. However, such LLMs still struggle to further generalize to very long sequences. We propose Randomized YaRN, a training method that improves length generalization by combining YaRN-based positional extrapolation with randomized positional encoding and a length curriculum. During training on short context data, tokens are assigned YaRN positional encodings sampled from a larger position range, exposing the model to out-of-distribution positional representations even on short-context inputs. We evaluate Randomized YaRN on two challenging long-context reasoning benchmarks, BABILong and Multi-Round Coreference Resolution (MRCR). When training on data with <8K context, Randomized YaRN consistently improves reasoning performance on context lengths from 16K to 128K and outperforms standard fine-tuning, with the largest gains appearing at far out-of-distribution lengths. Our results suggest that progressively exposing models to OOD positional distributions provides an effective recipe for generalizable long-context reasoning.",
         "authors": [
-          "Georgy Noarov",
-          "Aaron Roth"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 102
-      },
-      {
-        "title": "Structuring and Tokenizing Distributed User Interest Context for Generative Recommendation",
-        "url": "https://arxiv.org/abs/2606.20554v1",
-        "publishedAt": "2026-06-18T17:58:32.000Z",
-        "summary": "Generative recommendation is an emerging paradigm that has shown promise in industrial recommendation systems, aiming to predict users' next interactions from their historical behaviors. At the core of generative recommendation lies item tokenization, which bridges item semantics and recommendation models. However, existing methods often struggle to effectively organize and inject complex user-behavioral and item-semantic contexts into recommendation models simultaneously. On the one hand, existing graph-based integration methods, such as graph serialization and graph neural networks, either suffer from scalability issues or exploit only local graph information. On the other hand, existing semantic tokenization methods typically rely on heuristics and lack explicit supervision signals, which may lead to inaccurate or suboptimal semantic representations. To address these limitations in user interest context modeling, we propose G2Rec, a scalable framework that unifies holistic graph-based user co-engagement modeling with semantic tokenization for industrial-scale generative recommendation. Overall, G2Rec enables recommendation models to capture holistic and semantically grounded user interest prototypes without requiring ground-truth user interests, thereby providing more comprehensive and accurate modeling of user behavior contexts in industrial sequential recommendation. Online deployment across product surfaces and extensive experiments on public datasets demonstrate the superiority of G2Rec over existing methods.",
-        "authors": [
-          "Ruizhong Qiu",
-          "Yinglong Xia",
-          "Dongqi Fu",
-          "Hanqing Zeng",
-          "Ren Chen",
-          "Xiangjun Fan",
-          "Hong Li",
-          "Hong Yan",
-          "Hanghang Tong"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 102
-      },
-      {
-        "title": "The Token Is a Group Element: On Lie-Algebra Attention over Matrix Lie Groups",
-        "url": "https://arxiv.org/abs/2606.20547v1",
-        "publishedAt": "2026-06-18T17:56:17.000Z",
-        "summary": "We place the attention token on the group: a token is an element $g_i$ of a matrix Lie group $G$ -- a bare transformation, with no feature payload and no external action $ρ(g)$ carrying it. To our knowledge this is the first attention construction whose tokens are bare matrix Lie group elements: their score is the closed-form algebra norm of the relative pose rather than a learned kernel, and it reaches the affine full-frame groups that every irrep- or surjective-exp-based method must exclude. We call it Lie-Algebra Attention. Once tokens are group elements, the rest follows with none of the usual representation-theoretic machinery. The relative geometry of a pair is canonical, $g_i^{-1} g_j$, so the pairwise invariant $w_{ij} = \\log(g_i^{-1} g_j)$ is intrinsic rather than designed; equivariance under the diagonal $G$-action is tautological, and the cocycle condition holds automatically. The attention score is the negative squared algebra norm, $s_{ij} = -\\|\\log(g_i^{-1} g_j)\\|_λ^2/τ$: the canonical proximity kernel under a block-weighted Frobenius inner product, with no irreducible representations, spherical harmonics, Clebsch-Gordan products, or learned kernel. The construction applies to any matrix Lie group on a chosen logarithm chart containing the relative poses, including the non-compact non-abelian affine groups with scale and shear that no vector-token attention method reaches: neither the irrep tradition nor surjective-exp methods. Three sequence-completion experiments, on SE(2), SO(3), and Aff(2), bear this out: the closed-form score matches a learned MLP kernel on the same invariant and outperforms it on SE(2), using 50 to 80x fewer score parameters, while a vector-token baseline breaks invariance by five to twelve orders of magnitude.",
-        "authors": [
-          "Przemyslaw Musialski"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 102
-      },
-      {
-        "title": "Predictability as a Fine-Grained Measure for Privacy",
-        "url": "https://arxiv.org/abs/2606.20546v1",
-        "publishedAt": "2026-06-18T17:55:31.000Z",
-        "summary": "Differential privacy (DP) ensures rigorous individual-level privacy guarantees against even the most knowledgeable attackers, but its worst-case nature can impose a costly privacy-accuracy tradeoff. We introduce privacy via predictability, a fine-grained framework that explicitly incorporates the attacker's core knowledge, a compromised portion of the dataset generated by a stochastic process, and a specified family of queries. Predictability measures privacy leakage as the incremental gain in an attacker's ability to predict sensitive information about unknown individuals after observing the algorithm's output, beyond what can already be inferred from the compromised data. We show that predictability and DP are generally incomparable: each can be small while the other is large. However, in the worst-case regime where all but one individual is compromised, and all binary queries are considered sensitive, predictability implies mutual-information DP. More generally, predictability provides a finer-grained privacy metric tailored to specific sensitive information and specific attacker models. We introduce a general framework, using the generalized method of moments (GMM), to analyze asymptotic predictability when the compromised data is generated by a stationary, ergodic, mixing process. Using this analysis, we derive a predictability-calibrated output perturbation scheme for ERM. Our approach is complementary to DP and can be used alongside DP to provide fine-grained privacy control.",
-        "authors": [
-          "Linda Lu",
-          "Karthik Sridharan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 102
-      },
-      {
-        "title": "Toward Calibrated Mixture-of-Experts Under Distribution Shift",
-        "url": "https://arxiv.org/abs/2606.20544v1",
-        "publishedAt": "2026-06-18T17:55:00.000Z",
-        "summary": "Calibration aligns a model's predictive uncertainty with the frequencies of its empirical outcomes and is important for understanding and trusting reported probabilities. Recent work shows that enforcing calibration at the level of individual predictors can improve ensemble accuracy and calibration, with mixture-of-experts (MoE) models showing strong empirical improvements in particular; however, the conditions under which calibration helps MoE are not well understood. In this work, we study how MoE models behave under distribution shift, focusing on how routing mechanisms interact with expert-level calibration. We show that expert calibration is sufficient to ensure calibration of the overall model under a broad class of distribution shifts in hard-routed models, but is insufficient for calibrating soft-routed models. To address this, we propose an adversarial reweighting that penalizes calibration errors of the routed aggregate under distribution shift, and we demonstrate that it improves the accuracy-calibration tradeoff both on average and on difficult subsets of the data, across model classes, prediction tasks, and distribution shifts.",
-        "authors": [
-          "Gina Wong",
-          "Drew Prinster",
-          "Suchi Saria",
-          "Rama Chellappa",
-          "Anqi Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 102
-      },
-      {
-        "title": "Multi-Task Bayesian In-Context Learning",
-        "url": "https://arxiv.org/abs/2606.20538v1",
-        "publishedAt": "2026-06-18T17:50:10.000Z",
-        "summary": "Bayesian predictive inference provides a principled framework for uncertainty quantification, data efficiency, and robust generalization. However, exact inference is often intractable, and scalable approximations may remain computationally expensive or require restrictive modeling assumptions that degrade predictive performance. Prior-Data Fitted and in-context models have recently emerged as an amortized alternative by learning to map datasets directly to predictive distributions, but existing approaches are tightly coupled to the support of the training prior and lack explicit mechanisms for adapting to new priors at test time, resulting in limited robustness under distribution shift. We introduce a multi-task in-context learning framework for amortized hierarchical Bayesian predictive inference that explicitly represents prior information as a prefix of in-context datasets. A transformer trained on sequences of prior and target tasks learns to adapt its predictions across families of priors. On a suite of evaluations with increasing difficulty, including out-of-meta-distribution priors and priors with high-dimensional latent structures, our method matches oracle Bayesian predictors while being orders of magnitude faster. We further demonstrate its practical relevance on a real-world spatiotemporal temperature prediction benchmark. Code is available at https://github.com/martianmartina/multi-task-bayesian-icl/.",
-        "authors": [
-          "Qingyang Zhu",
-          "Eric Karl Oermann",
-          "Kyunghyun Cho"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 102
-      },
-      {
-        "title": "Execution-State Capsules: Graph-Bound Execution-State Checkpoint and Restore for Low-Latency, Small-Batch, On-Device Physical-AI Serving",
-        "url": "https://arxiv.org/abs/2606.20537v1",
-        "publishedAt": "2026-06-18T17:49:36.000Z",
-        "summary": "Mainstream LLM serving systems reuse prefix work mainly through paged or radix key-value (KV) caches. This is highly effective for high-throughput, high-concurrency serving, but it manages only one positional fragment of execution state: the KV cache. We study the opposite regime: low-latency, small-batch, on-device physical-AI serving, where interactive LLM agents, speech systems, and robot policies repeatedly branch, reset, interrupt, and re-enter under tight responsiveness budgets. We introduce execution-state capsules, a graph-bound checkpoint and restore mechanism for the complete restorable state at a committed boundary. FlashRT is a white-box, backend-facing kernel runtime whose evaluated NVIDIA CUDA backend runs captured graph plans over contiguous static buffers with no block-table indirection. Because the live state is a closed set of named buffers, a capsule can snapshot, restore, fork, or roll back the whole execution boundary, including KV, recurrent state, convolution state, MTP state, and metadata. This moves reuse from token-addressed KV fragments to graph-bound execution-state boundaries. On an RTX 5090, capsule restore is byte-exact at the stored-state level and token-identical under greedy decode. A KV-only ablation diverges, showing that recurrent state is load-bearing. GPU-resident snapshot and restore are sub-millisecond, and TTFT speedup over cold prefill grows from 3.9x at 2k tokens to 27x at 16k tokens. On Jetson AGX Thor and DGX Spark, the same correctness and structural properties hold. Capsules are not a replacement for high-throughput KV-cache serving; they define a complementary latency-first serving point for explicit execution-state reuse.",
-        "authors": [
-          "Liang Su"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 102
-      },
-      {
-        "title": "How Do Instructions Shape Speech? Cross-Attention Attribution for Style-Captioned Text-to-Speech",
-        "url": "https://arxiv.org/abs/2606.20532v1",
-        "publishedAt": "2026-06-18T17:47:32.000Z",
-        "summary": "Style-captioned text-to-speech systems use natural language to control voice characteristics, but how individual words influence acoustic output remains unclear. Understanding this is critical for diagnosing failure modes and improving controllability in expressive TTS. We propose cross-attention attribution for speech diffusion models, adapting the DAAM framework to the speech domain for the first time, and apply it to CapSpeech-TTS. Our method extracts per-token heatmaps across 25 layers and 24 ODE steps. We analyze 3,600 (style caption, text transcript) combinations comprising 120 style captions conditioning the generation of 30 text transcripts each, revealing how caption tokens shape waveforms. Results show: (1) style tokens have lower temporal variance than content/function tokens, confirming global conditioning; (2) style attention correlates with F0 and energy; (3) style conditioning peaks in early steps and deep layers; (4) attention entropy reaches its minimum at layer 17, co-occurring with the style importance peak, indicating maximal network selectivity at the most style-critical stage. This is the first study of how natural language influences cross-attention in speech diffusion models",
-        "authors": [
-          "Nityanand Mathur",
-          "Hamees Sayed",
-          "Wasim Madha",
-          "Apoorv Singh",
-          "Sameer Khurana",
-          "Akshat Mandloi",
-          "Sudarshan Kamath"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 103
-      },
-      {
-        "title": "LedgerAgent: Structured State for Policy-Adherent Tool-Calling Agents",
-        "url": "https://arxiv.org/abs/2606.20529v1",
-        "publishedAt": "2026-06-18T17:41:56.000Z",
-        "summary": "Policy-adherent tool-calling agents in customer-service domains must maintain task states across turns while calling tools and obeying domain policies. Task states consist of relevant facts, identifiers, constraints, and conditions observed through user interaction and tool calls. In standard agents, task states are not represented separately. Observations, tool returns, and policy instructions are placed in the prompt, leaving agents to reconstruct the relevant states from the prompt each time they decide what to do next. This design makes state management implicit, creating two common failure modes. An agent may retrieve the right facts but later ground its decision in stale, missing, or incorrect information; and a syntactically valid tool call may still violate a domain policy that depends on the current task state. We introduce \\textsc{LedgerAgent}, an inference-time method for tool-calling agents that maintains observed task states in a separate ledger and renders the states into the prompt. The ledger is also used to check state-dependent policy constraints before environment-changing tool calls are executed, blocking policy violations. Across four customer-service domains and a mixed panel of open- and closed-weight models, \\textsc{LedgerAgent} improves average pass\\textasciicircum{}k over a standard prompt-based tool-calling approach, with the largest gains under stricter multi-trial consistency metrics.",
-        "authors": [
-          "Md Nayem Uddin",
-          "Amir Saeidi",
-          "Eduardo Blanco",
-          "Chitta Baral"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 103
-      },
-      {
-        "title": "StylisticBias: A Few Human Visual Cues Drive Most Social Biases in MLLMs",
-        "url": "https://arxiv.org/abs/2606.20527v1",
-        "publishedAt": "2026-06-18T17:39:56.000Z",
-        "summary": "Multimodal large language models (MLLMs) are increasingly deployed in personally and societally consequential settings, yet the visual cues that shape how these models judge people remain poorly understood. Prior work often compares different (groups of) individuals, making it difficult to separate appearance effects from identity differences. We introduce StylisticBias, a controlled benchmark for evaluating attribute-level social bias in MLLMs. We generate 500 photorealistic base faces and create about 50 single-attribute variations per face, producing about 25K images. This design keeps identity fixed and changes one visual attribute at a time. It lets us measure how specific cues shift model judgments. We evaluate six MLLMs across 25 binary social judgment scenarios. We find that age and body type dominate identity-level effects, while fashion style and other visual cues drive the largest attribute-level shifts. We further find that about 15 attributes account for nearly 80\\% of the total variation, showing that bias is concentrated in a small set of visual cues. Sensitivity is strongest in judgments that are semantically aligned with appearance, especially socioeconomic and style-related judgments. We release StylisticBias as a benchmark for fine-grained bias evaluation in multimodal models. Code and dataset: https://github.com/timo-cavelius/StylisticBias and https://hf.co/datasets/shaghayegh/stylistic-bias-dataset.",
-        "authors": [
-          "Shaghayegh Kolli",
-          "Timo Cavelius",
-          "Nafiseh Nikeghbal",
-          "Samantha Dalal",
-          "Jana Diesner"
+          "Manas Mehta",
+          "Fangcong Yin",
+          "Greg Durrett"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 103
+        "ageHours": 11
+      },
+      {
+        "title": "CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation",
+        "url": "https://arxiv.org/abs/2606.23680v1",
+        "publishedAt": "2026-06-22T17:59:20.000Z",
+        "summary": "Humanoid loco-manipulation is often simplified into a stop-and-go process: walking to an object, stopping to manipulate it, and then resuming locomotion. It also commonly relies on low degree-of-freedom (DoF) end effectors that behave like an open-close grasp primitive. We introduce CoorDex, a learning pipeline that converts high-dimensional body and dexterous hand control into coordinated latent residual control, enabling high-DoF dexterous loco-manipulation on the move. Starting from simulated whole-body and hand demonstrations, CoorDex trains privileged motion tracking teachers for the humanoid body and dexterous hand, distills them into proprioception-conditioned latent priors, and uses the frozen priors as the action space for downstream residual reinforcement learning. A coordinated latent residual policy composes these priors through shared task context and separate body-hand residual heads, preserving natural whole-body motion while improving finger-level contact reliability. CoorDex enables a Unitree G1 humanoid with a 20-DoF WUJI hand to execute dexterous manipulation while in motion, including non-stop bottle grasping and carrying, fridge door opening on the move, and cube pick-and-turn. Ablations on the walk-grasp-carry task show that joint-space PPO, joint-space hand control, and monolithic latent prediction all fail under the same reward budget, while the latent-prior interface and coordinated residual structure make high-dimensional contact-rich loco-manipulation trainable. Project Page: https://skevinci.github.io/coordex/",
+        "authors": [
+          "Sikai Li",
+          "Shuning Li",
+          "Zhenyu Wei",
+          "Yunchao Yao",
+          "Chenran Li",
+          "Mingyu Ding"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Policy",
+        "ageHours": 11
+      },
+      {
+        "title": "Semantic Browsing: Controllable Diversity for Image Generation",
+        "url": "https://arxiv.org/abs/2606.23679v1",
+        "publishedAt": "2026-06-22T17:59:17.000Z",
+        "summary": "Modern text-to-image models excel in visual fidelity and prompt adherence. However, this strict adherence comes at the cost of diversity: generated samples tend to collapse into a single visual interpretation. Existing methods to improve diversity produce outputs driven by incidental variations rather than meaningful design choices. This motivates a new variant of the diversity task where structure is enforced on the generated samples. We introduce a method for controlled diversity that enables Semantic Browsing, where users can navigate structured image galleries and experience creative exploration through a systematic traversal of meaningful, interpretable axes of variation. Achieving this level of semantic control requires a deep understanding of the scene. We exploit the fact that recent text-to-image models are trained on elaborated captions, effectively decoupling semantic decision-making from pixel generation. This enables a paradigm shift: instead of relying on stochastic variation within the text-to-image model, we induce diversity directly at the text level. By leveraging rich textual representations, we allow a Vision Language Model (VLM) to operate on the full scene context. To overcome the generic outputs typical of standard VLMs, we employ an agentic workflow that explicitly enforces structured variation attuned to the original prompt. We demonstrate that our method produces diverse and navigable design spaces where every variation corresponds to a specific, user-understandable semantic decision.",
+        "authors": [
+          "Sara Dorfman",
+          "Maya Vishnevsky",
+          "Omer Dahary",
+          "Or Patashnik",
+          "Daniel Cohen-Or"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "AIR: Adaptive Interleaved Reasoning with Code in MLLMs",
+        "url": "https://arxiv.org/abs/2606.23678v1",
+        "publishedAt": "2026-06-22T17:58:54.000Z",
+        "summary": "Following the paradigm shift initiated by OpenAI o3, interleaved reasoning with code to enhance multimodal large language models (MLLMs) has become a pivotal research frontier. The existing literature focuses primarily on tool-use within vision-perception tasks. However, such approaches typically rely on predefined heuristics for visual manipulation and are inherently incapable of addressing numerical computation problems due to their exclusive focus on visual operations. This paper empowers MLLMs with adaptive interleaved reasoning capabilities through extended reinforcement learning training on code-augmented complex numerical computation tasks. To this end, we propose a comprehensive three-component solution consisting of: a two-stage cold-start data construction pipeline, data filtering strategies for RL dataset curation, and an adaptive tool-invocation strategy leveraging a group-constrained reward function for interleaved reasoning trajectories. Extensive experiments demonstrate that after Reinforcement Learning training with the group-constrained reward function, performance improves by an average of 6.1 percentage points (pp) on evaluation benchmarks. Specifically, the accuracy for interleaved reasoning samples increases by 9.9 pp, and the overall success rate of tool-use exceeds 95%. Our data and code are available at: https://github.com/CongHan0808/AIR.git.",
+        "authors": [
+          "Cong Han",
+          "Xiaohan Lan",
+          "Haibo Qiu",
+          "Yujie Zhong"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Open Problem: Is AdamW Effective Under Heavy-Tailed Noise?",
+        "url": "https://arxiv.org/abs/2606.23676v1",
+        "publishedAt": "2026-06-22T17:58:52.000Z",
+        "summary": "AdamW is the de facto optimizer for training large language models (LLMs), yet the theory behind it still lives mostly in finite-variance regimes. This is increasingly unsatisfying, as empirical evidence indicates that stochastic gradient noise in LLM pretraining is typically heavy-tailed. Recent work shows that sign-based optimizers such as Lion and Muon achieve sharp heavy-tailed rates, and that AdaGrad can also converge under heavy-tailed noise. However, no rigorous convergence theory for AdamW has yet been established in this regime. Can AdamW converge under the same heavy-tailed assumptions, or does its second-moment accumulator create a genuine obstruction? We formulate this as an open problem, prove a positive weighted-metric benchmark, and give a corridor lower-bound mechanism showing how denominator memory can hide large gradients.",
+        "authors": [
+          "Dingzhi Yu",
+          "Hongyi Tao",
+          "Yuanyu Wan",
+          "Luo Luo",
+          "Lijun Zhang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "PsyBridge: A Hybrid Intelligent Framework for Multi-Dimensional Mental Health Assessment and Decision Support",
+        "url": "https://arxiv.org/abs/2606.23673v1",
+        "publishedAt": "2026-06-22T17:57:15.000Z",
+        "summary": "Mental health assessment commonly relies on isolated screening instruments or data-driven models that often lack interpretability and multi-dimensional integration. Existing approaches frequently focus on individual indicators such as depression or anxiety while providing limited support for comprehensive and explainable decision-making. To address this limitation, this study proposes PsyBridge, a hybrid intelligent decision-support framework designed for multi-dimensional mental health assessment through the integration of clinically validated screening tools, cognitive evaluation, and personality profiling within a unified architecture. The proposed framework incorporates PHQ-9 and GAD-7 assessments alongside cognitive and behavioural indicators using a modular design and a weighted aggregation mechanism to generate interpretable mental health risk classifications and recommendations. To evaluate the framework, a semi-synthetic dataset consisting of 500 patient profiles representing varying severity levels was constructed based on clinically grounded score distributions. Experimental results demonstrate that PsyBridge achieves an overall accuracy of 0.84, outperforming standalone PHQ-9 and GAD-7 assessments while improving precision, recall, and F1-score. Sensitivity analysis and ablation studies further indicate that integrating cognitive and personality components contributes to more stable classification performance and reduces inconsistencies in moderate-risk prediction. The findings suggest that PsyBridge provides a scalable and interpretable approach for AI-assisted mental health decision support, particularly within digital healthcare and telehealth environments.",
+        "authors": [
+          "Sunil Wanjari",
+          "Manish Thakre",
+          "Aayushi Asole",
+          "Sharwari Raut",
+          "Kwabena Adu-Duodu",
+          "Yinhao Li",
+          "Stanly Wilson"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Teaching LLMs String Matching, Backtracking, and Error Recovery to Deduce Bases and Truth Tables for the Combinatorially Exploding Bit Manipulation Puzzles",
+        "url": "https://arxiv.org/abs/2606.23672v1",
+        "publishedAt": "2026-06-22T17:57:08.000Z",
+        "summary": "This paper presents our algorithmic innovations for the NVIDIA Nemotron Model Reasoning Challenge, focusing on Bit Manipulation Puzzles. In this task, the objective is to discover a hidden logical rule transforming input binary strings to outputs, then apply it to unseen inputs. Large Language Models (LLMs) notoriously struggle here; traditional methods force them to simulate complex boolean logic and arithmetic, leading to hallucinations. Furthermore, the search space of bitwise operations (combinations of shifts, rotations, and logic gates) suffers from a severe combinatorial explosion. To overcome this computational intractability, we present a novel approach that abandons arithmetic logic entirely in favor of string similarity, structured search, and autonomous error recovery.\n  Our core contributions are: 1. Bases and Truth Table Formulation: We reframe logic-gate deduction into a base-selection task, leveraging string similarity (minimal bit flips) to isolate primitive transformations (\"bases\") and deduce truth tables without complex arithmetic. 2. Backtracking DFS and Error Recovery: We formalize a search process that tests candidate bases, detects logical collisions across examples, and backtracks upon failure to perform robust error recovery. 3. Bit Tokenization and Interactive Reasoning SFT: We force the tokenizer to encode binary strings as individual single-bit tokens. We use dynamic masking to simulate external oracle feedback, training the model to hypothesize, self-evaluate, and backtrack natively.\n  Evaluated on bit manipulation puzzles, our approach achieved over 96% validation accuracy. This represents the highest performance in this category, driving our 7th Place overall finish in the contest.",
+        "authors": [
+          "Prateek Agnihotri",
+          "Sanchit Jain",
+          "Prabhat Agnihotri",
+          "Aditya Prasad",
+          "Shubham Jain"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Can LLMs Reliably Self-Report Adversarial Prefills, and How?",
+        "url": "https://arxiv.org/abs/2606.23671v1",
+        "publishedAt": "2026-06-22T17:56:30.000Z",
+        "summary": "Prior work shows that large language models (LLMs) exhibit introspective capability on benign tasks. We extend the question to safety contexts and examine how reliably a model can recognize that its own prior response was elicited by an adversarial prefill attack. Across ten open-weight instruction-tuned LLMs (3B to 70B) and four safety benchmarks, no model reliably recognizes its own compromised outputs, with models claiming intent on prefilled responses at an average rate of $27.3\\%$. Introspective signal stems largely from safety- and refusal-related reasoning. Orthogonalizing models' weights against the refusal direction collapses the gap between claiming rates on prefilled and natural outputs to near zero, though the direction is not its unique mediator. The signal is also probe-dependent: framing the question as internal intention versus external tampering elicits qualitatively different responses on the same models. We test three LoRA finetuning methods (SFT, GRPO, DPO) on eight models from 3B to 27B; all three widen the intention-probe gap on every model from 8B to 27B, with method ranking varying by model. The intervention does not transfer to the tampering probe and counterintuitively raises attack success rate under adversarial prefill on most models, amounting to a partial mitigation. These findings outline mechanisms underpinning the observed introspective signals in safety contexts and highlight risks in the reliability of LLM self-reports.",
+        "authors": [
+          "Quang Minh Nguyen",
+          "Uzair Ahmed",
+          "Taegyoon Kim"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Tapered Language Models",
+        "url": "https://arxiv.org/abs/2606.23670v1",
+        "publishedAt": "2026-06-22T17:56:25.000Z",
+        "summary": "Modern language models, including transformer, recurrent, and memory-based variants, share a common chassis: a stack of identical layers in which parameters are allocated uniformly across depth. This is a default inherited from the original transformer and largely unchanged since, yet a growing body of evidence suggests that layers contribute non-uniformly to the final output, with later layers refining the residual stream rather than transforming it. We ask whether parameter capacity should reflect this asymmetry. Our controlled experiment shows that, under a fixed budget, allocating more capacity to earlier layers and less to later layers improves perplexity over a uniform-width baseline, while the reverse allocation hurts. Building on this result, we introduce Tapered Language Models (TLMs), an architectural principle in which a parameter-bearing component is monotonically tapered across depth under a fixed total budget. MLPs are the natural site for this instantiation: they dominate parameter count across all modern LM families and expose width as a single, clean axis of variation. Across three model scales and four architectures (Transformer, Gated Attention, Hope-attention, and Titans), tapering MLP width via a smooth cosine schedule consistently improves perplexity and downstream benchmark performance over uniform baselines, at no additional parameter or compute cost. These findings establish depth-aware capacity allocation as a simple, architecture-agnostic axis of language model design, a free lever hidden in plain sight.",
+        "authors": [
+          "Reza Bayat",
+          "Ali Behrouz",
+          "Aaron Courville"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "On the Limits of Prompt-Conditioned Language Models as General-Purpose Learners",
+        "url": "https://arxiv.org/abs/2606.23668v1",
+        "publishedAt": "2026-06-22T17:52:59.000Z",
+        "summary": "Large Language Models (LLMs) are frequently portrayed as general-purpose solvers capable of solving arbitrary tasks. We argue that this view overlooks a fundamental constraint: language is a compressed and capacity-limited interface for conveying task information. Modelling User--System interaction as a bilevel \\emph{cheap-talk} game, we analyse how latent tasks are encoded into prompts and reinterpreted under alignment and safety constraints. We introduce a conceptual decomposition separating task inference from execution and derive PAC-Bayes bounds that distinguish finite-sample estimation error from irreducible structural limitations. Our first main result establishes an \\emph{expressivity floor}: language acts as a capacity-limited communication channel, and whenever the informational complexity of a task family exceeds the capacity of that channel, distinct tasks become unavoidably indistinguishable to the Solver, inducing a strictly positive error floor that cannot be eliminated by additional data, optimisation, or model scaling alone. We then establish an \\emph{objective-misalignment floor}: when alignment constraints restrict the admissible output set, the User-ideal distribution may lie outside the feasible class, inducing an irreducible distortion. Together, these results yield a formal negative conclusion: prompt-conditioned LLMs are not universal problem solvers through prompting alone, as there exist task families for which correct behaviour is provably unattainable even in the infinite-data regime. More broadly, our analysis shows the limits of prompt-based generalisation arise from information-constrained communication and alignment-constrained objectives. This suggests that interfaces beyond natural language, including multimodal observations and, external memory, may reduce the inherent LLM limitations by increasing the task-relevant information available to the System.",
+        "authors": [
+          "David Mguni",
+          "Julian Ma",
+          "Jun Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "MAS-PromptBench: When Does Prompt Optimization Improve Multi-Agent LLM Systems?",
+        "url": "https://arxiv.org/abs/2606.23664v1",
+        "publishedAt": "2026-06-22T17:48:40.000Z",
+        "summary": "Multi-agent systems (MAS) offer a scalable path forward for agentic AI, comprising multiple LLM-based agents, each assigned a system prompt and a position within a workflow that governs inter-agent coordination and output aggregation. System prompts thus form a critical and accessible optimization surface: they specify agents' roles and behaviors, enabling system-level improvements without model finetuning. Although prompt optimization has shown substantial potential for single LLMs, extending it to MAS poses distinct challenges, notably an exponentially growing search space. It remains unclear whether, when, and by how much prompt optimization improves MAS performance, and how sensitive such gains are to system configuration. In this work, we systematically study system-prompt optimization across a broad range of MAS setups varying in task, workflow, communication protocol, and team size, benchmarking two prompt optimizers that naturally extend state-of-the-art single-agent methods. The results reveal its potential to unlock significant gains while exposing open challenges, characterizing when and how much prompt optimization helps across diverse MAS settings.",
+        "authors": [
+          "Juyang Bai",
+          "Laixi Shi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
       }
     ],
     "news": [
+      {
+        "title": "New chip could help tiny robots traverse complex environments",
+        "url": "https://news.mit.edu/2026/new-chip-could-help-tiny-robots-traverse-complex-environments-0623",
+        "publishedAt": "2026-06-23T04:00:00.000Z",
+        "summary": "A new chip developed by MIT researchers could help tiny, low-power UAVs avoid obstacles as they zip around tight corners inside an industrial HVAC system to check for gas leaks. The chip allows small autonomous robots and other battery-limited devices to construct detailed 3D maps of their environments in real-time using only about as much power as a single LED. A robot could use such a map to plan a collision-free path to reach its goal. Typically, generating such thorough maps requires power-hungry systems and a great deal of memory to build and store 3D representations of the obstacles in a robot’s environment. The MIT researchers took a different approach by combining an extremely efficient mapping algorithm with specialized hardware designed to accelerate its workload, which minimizes memory and power consumption.&nbsp; This system-on-a-chip consumes only about 6 milliwatts of power, a fraction of the power required by other systems.&nbsp; This low-power operation could also make the chip well-suited for lightweight augmented reality headsets that can be worn for extended periods, for applications like educational medical simulation or detailed repair and assembly work. “This paper showcases a key example of how you can leverage co-design of the algorithm and hardware to really push energy efficiency. While there has been a lot of work looking into compact 3D maps, what stands out about this work is that it also ensures that the process to generate those maps is as efficient as possible. Our chip allows you to store very large maps in a very small space, and do it in a very energy efficient manner,” says Vivienne Sze, a professor in the Department of Electrical Engineering and Computer Science (EECS), a member of the Research Laboratory of Electronics (RLE), and senior author of a paper on the chip . She is joined on the paper by co-lead authors and MIT graduate students Zih-Sing Fu and Peter Zhi Xuan Li as well as Sertac Karaman, a professor of aeronautics and astronautics and the director of LIDS. The work was recently presented at the IEEE Very Large-Scale Integrated Circuits Symposium. A more compact map For a robot, generating a 3D map that includes the obstacles in its environment usually demands a lot of power because it must store images captured by its camera, and process all the 3D pixels in each image multiple times. Instead of representing the environment using 3D pixels, which are cubes called voxels, the MIT researchers utilized a technique that maps the obstacles in space using ellipsoid blobs called Gaussians.&nbsp; The size, shape, and thickness of these ellipsoids can be smoothly adapted, so they match the shape of curved objects more efficiently than if one uses rigid, cube-shaped voxels.&nbsp; Importantly, the map captures&nbsp;the obstacles and free space around the robot,&nbsp;and together these let the robot plan a safe, collision-free path. Mapping obstacles and free space with voxels typically consumes a lot of memory, which makes traditional methods power-hungry. Because Gaussians can flexibly fit the geometry, a single elongated ellipsoid can represent a region that would take many voxels, so occupied surfaces and free space are captured far more compactly. For their new system-on-a-chip, called Gleanmer, the researchers employed an&nbsp; algorithm their lab developed called GMMap that efficiently generates a 3D map of the robot’s environment using Gaussians to represent obstacles.&nbsp; With traditional approaches, a robot would need to load and process each depth image several times to adjust the size and shape of the ellipsoids. The system would usually construct Gaussians by comparing all the pixels in an image to each other. But the amount of memory and power needed to do this remains too high for many edge devices. To solve this problem, the MIT researchers invented a technique that can generate highly accurate Gaussians from depth images with only one pass, after which they can discard the images,&nbsp;so the chip never has to store an entire image at once.&nbsp; Instead of comparing each pixel to every other pixel in the 3D image, their algorithm assumes that nearby pixels belong in the same Gaussian, so it only needs to compare each pixel to its neighbors. “At any point in time, we only need to store a few pixels in memory, which significantly reduces the memory footprint our algorithm requires,” Li says. Leveraging co-design But as the robot moves through the space, it usually sees the same object from different viewpoints. When it generates Gaussians, some will overlap because they represent the same object. This can make the 3D map too large to store on an edge device. Fusing overlapping Gaussians makes the map more compact, but doing so typically requires the algorithm to process many raw pixels stored in memory. The researchers developed a novel technique to perform this fusion process directly on overlapping Gaussians, without needing to revisit the original pixels. Since Gaussians are more compact than pixels, this significantly reduces memory and power requirements. The same principle runs through their algorithm — most computations operate directly on compact Gaussians rather than the original pixels, enabling energy efficiency. The researchers exploit this principle to design a chip that keeps the Gaussians it is actively working on within small, fast on-chip memory right beside the computational units. This is only possible because the Gaussian map is so compact. The Gaussians the robot needs to work on next are waiting in the on-chip memory units, so they don’t need to be fetched from more distant, power-hungry, off-chip storage.&nbsp; “By having a dedicated memory that just stores the objects you’ve seen in the previous few frames, you can access the data much more efficiently,” Fu explains. They tested the system-on-a-chip by reconstructing a range of diverse, pre-existing 3D environments. The chip can also reconstruct obstacles and free space directly from live data streamed from an iPhone camera. Gleanmer generated detailed 3D maps in real-time while consuming about 6 milliwatts of power. It required only about 2.5 percent of the power that the best existing chip for map construction would need.&nbsp; By reusing compact Gaussians along the path as it plans, the chip lets a robot chart a safe trajectory using only about 20 percent of the energy it would otherwise need. “We reduce the memory consumption by making sure the algorithm is efficient. Then we accelerate the workload that is performed by that efficient algorithm, so in the end, our chip is as efficient as possible,” Li says. The researchers plan to further improve energy efficiency by moving the processing units on the chip closer to the sensors that gather environmental data. They could also explore additional applications, such as the use of Gaussians to represent schematics. This could help AI systems reason about complex blueprints more efficiently. “Real-time 3D mapping has been the missing piece for small autonomous systems. A drone inspecting a pipeline or a pair of AR glasses navigating a room both need to understand the space around them — instantly, continuously, and at almost no power cost. Gleanmer makes that possible for the first time in a chip you can hold between your fingers,” says Karaman. This work is supported, in part, by the MIT-MathWorks Fellowship, Amazon, the U.S. National Science Foundation, and Intel.&nbsp;",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Infrastructure",
+        "ageHours": 1
+      },
+      {
+        "title": "The running list: major tech layoffs in 2026 where employers cited AI",
+        "url": "https://techcrunch.com/2026/06/22/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/",
+        "publishedAt": "2026-06-23T01:27:55.000Z",
+        "summary": "A running look — in reverse chronological order — at the bigger tech companies that have announced significant layoffs this year with AI as a stated factor.",
+        "authors": [
+          "Rebecca Bellan, Connie Loizos"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 4
+      },
       {
         "title": "OpenAI launches new initiative to help find and patch open-source bugs",
         "url": "https://techcrunch.com/2026/06/22/openai-launches-new-initiative-to-help-find-and-patch-open-source-bugs/",
@@ -312,7 +335,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 0
+        "ageHours": 5
       },
       {
         "title": "The AI world is getting &#8216;loopy&#8217;",
@@ -326,7 +349,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 8
       },
       {
         "title": "AI chipmaker Groq confirms $650M raise, re-staffs after Nvidia&#8217;s $20B not-acqui-hire deal",
@@ -340,7 +363,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "Nvidia wants to cut data center water use, but that&#8217;s not the same as fixing AI&#8217;s water problem",
@@ -354,7 +377,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "Google DeepMind bets $75M on AI&#8217;s future in Hollywood with A24 deal",
@@ -368,7 +391,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 5
+        "ageHours": 10
       },
       {
         "title": "Amazon is testing Alexa+ in India with Hindi support",
@@ -382,7 +405,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "SpaceX inks compute deal with Reflection AI, an open source AI lab",
@@ -396,7 +419,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "The founder conference built for growth: TechCrunch Founder Summit pass rates increase June 26",
@@ -410,19 +433,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
-      },
-      {
-        "title": "Daybreak: Tools for securing every organization in the world",
-        "url": "https://openai.com/index/daybreak-securing-the-world",
-        "publishedAt": "2026-06-22T10:00:00.000Z",
-        "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 14
+        "ageHours": 15
       },
       {
         "title": "Patch the Planet: a Daybreak initiative to support open source maintainers",
@@ -434,53 +445,41 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 14
+        "ageHours": 19
       },
       {
-        "title": "Codex-maxxing for long-running work",
-        "url": "https://openai.com/index/codex-maxxing-long-running-work",
-        "publishedAt": "2026-06-22T00:00:00.000Z",
-        "summary": "Learn how Jason Liu uses Codex to preserve context, manage complex projects, and help work continue beyond a single prompt.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "General",
-        "ageHours": 24
-      },
-      {
-        "title": "Samsung Electronics brings ChatGPT and Codex to employees",
-        "url": "https://openai.com/index/samsung-electronics-chatgpt-codex-deployment",
-        "publishedAt": "2026-06-21T23:00:00.000Z",
-        "summary": "Samsung Electronics deploys ChatGPT Enterprise and Codex to employees worldwide, marking one of OpenAI’s largest enterprise AI rollouts.",
+        "title": "Daybreak: Tools for securing every organization in the world",
+        "url": "https://openai.com/index/daybreak-securing-the-world",
+        "publishedAt": "2026-06-22T10:00:00.000Z",
+        "summary": "OpenAI introduces new Daybreak tools, including Codex Security and GPT-5.5-Cyber, to help organizations find, validate, and patch vulnerabilities at scale.",
         "authors": [],
         "source": "OpenAI",
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 25
+        "ageHours": 19
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 10,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 10
+        "count": 11
       },
       {
-        "name": "Models",
-        "count": 5
+        "name": "Products",
+        "count": 4
       },
       {
         "name": "General",
         "count": 4
       },
       {
-        "name": "Products",
+        "name": "Infrastructure",
         "count": 3
       }
     ]
