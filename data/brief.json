@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T18:09:20.664Z",
+  "generatedAt": "2026-06-30T20:15:21.178Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,286 +87,36 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "VLK: Learning Humanoid Loco-Manipulation from Synthetic Interactions in Reconstructed Scenes",
-        "url": "https://arxiv.org/abs/2606.30645v1",
-        "publishedAt": "2026-06-29T17:59:55.000Z",
-        "summary": "Perception-based humanoid loco-manipulation requires connecting egocentric observations and task instructions to whole-body motion. Learning this mapping requires synchronized egocentric images, language commands, and robot-compatible kinematic trajectories, yet no existing data source provides this complete tuple at scale. We address this bottleneck by generating vision-language-kinematics (VLK) supervision synthetically in reconstructed scenes. Our pipeline leverages 3D Gaussian Splatting to reconstruct metric-scale indoor environments, synthesizes navigation and object-interaction trajectories using privileged scene information, and renders paired egocentric observations after the fact. We produce 48,000 paired trajectories with no human intervention and train a VLK policy that predicts short-horizon whole-body kinematic trajectories. A whole-body tracker converts these predictions into actions on the physical humanoid. We evaluate on the physical Unitree G1 performing navigation and single-object transport, demonstrating that synthesized interactions in reconstructed scenes provide effective supervision for sim-to-real perception-based humanoid loco-manipulation. Project Website: https://vision-language-kinematics.github.io/",
-        "authors": [
-          "Yen-Jen Wang",
-          "Jiaman Li",
-          "Sirui Chen",
-          "Takara E. Truong",
-          "Pei Xu",
-          "Pieter Abbeel",
-          "Rocky Duan",
-          "Koushil Sreenath",
-          "Angjoo Kanazawa",
-          "Carmelo Sferrazza",
-          "Guanya Shi",
-          "Karen Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 24
-      },
-      {
-        "title": "LeVo 2: Stable and Melodious Song Generation via Hierarchical Representation Modeling and Progressive Post-Training",
-        "url": "https://arxiv.org/abs/2606.30642v1",
-        "publishedAt": "2026-06-29T17:59:20.000Z",
-        "summary": "Full-length song generation must preserve coherence and musicality, render detailed vocal and accompaniment acoustics, and follow lyrics and prompts. Existing language model-based systems face a structural trade-off: mixed-token modeling preserves vocal-instrument coordination but obscures track-specific details, whereas dual-track prediction improves acoustics but requires longer sequences and weakens global planning. We present LeVo 2, a hybrid LLM-Diffusion framework for controllable full-length song generation. LeVo 2 formulates this trade-off as hierarchical modeling: LeLM first predicts mixed tokens for semantic planning, then predicts vocal and accompaniment tokens in parallel for track-specific refinement, while a diffusion-based Music Codec reconstructs full-length waveforms. A central contribution of this extended version is an aesthetics-guided training schedule for alignment. During pre-training, an automated music aesthetic evaluation framework assigns musicality-tier conditions to large-scale data, providing musicality priors before preference alignment. Progressive post-training applies SFT, large-scale offline DPO, and closed-loop semi-online DPO to separately improve generation quality, controllability, and musicality. Modular extension then trains the Track-Specific LM for acoustic refinement while preserving the aligned semantic planner. This schedule separates musicality learning, controllability alignment, and acoustic refinement, mitigating optimization conflict and the limitations of static offline preference pairs. Expert listening tests and objective evaluations show that LeVo 2 outperforms open-source baselines across six subjective dimensions, and approaches leading commercial systems on several listening metrics. Ablations validate the effects of the training strategy, aesthetics guidance, scaling, and hierarchical architecture.",
-        "authors": [
-          "Shun Lei",
-          "Huaicheng Zhang",
-          "Dapeng Wu",
-          "Yaoxun Xu",
-          "Lishi Zuo",
-          "Wei Tan",
-          "Hangting Chen",
-          "Guangzheng Li",
-          "Jianwei Yu",
-          "Zhiyong Wu",
-          "Dong Yu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "Self-Evolving World Models for LLM Agent Planning",
-        "url": "https://arxiv.org/abs/2606.30639v1",
-        "publishedAt": "2026-06-29T17:58:43.000Z",
-        "summary": "World models offer a principled way to equip long-horizon LLM agents with foresight: predictions of action consequences before execution. However, unreliable foresight can be ignored, misused, or even degrade downstream decision-making. In this paper, we introduce WorldEvolver, a self-evolving world model framework that revises its deployment-time context while keeping the downstream agent and all model parameters frozen. WorldEvolver integrates three modules: (i) Episodic Memory, which exploits real action transitions through retrieval-based simulation; (ii) Semantic Memory, which extracts persistent heuristic rules from prediction-observation mismatches; and (iii) Selective Foresight, which filters low-confidence predictions before integrating them into agent reasoning context. We evaluate WorldEvolver on ALFWorld and ScienceWorld, measuring world model prediction accuracy on Word2World and downstream agent success rate on AgentBoard. Extensive experiments show that WorldEvolver achieves the highest prediction accuracy across three backbones and leads other world model baselines on downstream agent success rate, demonstrating that test-time memory revision enhances both predictive fidelity and planning performance.",
-        "authors": [
-          "Xuan Zhang",
-          "Wenxuan Zhang",
-          "See-Kiong Ng",
-          "Yang Deng"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "One-Step Gradient Delay is Not a Barrier for Large-Scale Asynchronous Pipeline Parallel LLM Pretraining",
-        "url": "https://arxiv.org/abs/2606.30634v1",
-        "publishedAt": "2026-06-29T17:57:50.000Z",
-        "summary": "Modern large-scale LLM pretraining benefits from utilizing Pipeline Parallelism; however, synchronous implementations leave GPUs idle during pipeline bubbles, wasting computational resources. Asynchronous Pipeline Parallelism eliminates these bubbles, maximizing throughput at the cost of gradient staleness. Among asynchronous schedules, PipeDream-2BW is particularly appealing: unlike the original PipeDream schedule, it ensures a constant one-step gradient delay regardless of pipeline depth. However, its adoption remains limited due to the common belief that optimizing under staleness is fundamentally unstable. In this work, we challenge this assumption, demonstrating that degradation under one-step delay depends strongly on optimizer choice rather than being an intrinsic limitation. We provide the first comprehensive empirical analysis showing that while AdamW, the predominant optimizer at the time when PipeDream-2BW was introduced, indeed suffers from severe degradation, recent methods like Muon exhibit strong robustness under a one-step delay. We introduce an optimizer-agnostic Error Feedback-inspired correction to further mitigate delay effects. We provide supporting theoretical analysis demonstrating convergence for Muon with and without this correction. Extensive evaluation on models up to 10B parameters confirms that our strategies bridge the performance gap with synchronous training, highlighting the practical potential of asynchronous pipeline parallelism at scale.",
-        "authors": [
-          "Philip Zmushko",
-          "Egor Petrov",
-          "Nursultan Abdullaev",
-          "Mikhail Khrushchev",
-          "Samuel Horváth"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "GROW$^2$: Grounding Which and Where for Robot Tool Use",
-        "url": "https://arxiv.org/abs/2606.30632v1",
-        "publishedAt": "2026-06-29T17:56:53.000Z",
-        "summary": "Can the robot use a plate to cut a cake if no knife is available? Tool use greatly expands robot capabilities, but to use tools creatively beyond their intended functions, the robot faces the challenge of $\\textit{open-world affordance grounding}$: select an open-category object to act as a tool and localize its specific region of action. To this end, we introduce GROW$^2$ (GROunding Which and Where), which leverages object parts as a natural abstraction to split the grounding process hierarchically into semantic and geometric levels, thus bypassing the need for data-heavy, end-to-end training. Semantically, GROW$^2$ harnesses the commonsense reasoning of Vision-Language Models (VLMs) to parse a natural-language task instruction, select a suitable object as the tool, and identify task-relevant parts on the tool and the target object. Geometrically, vision foundation models then ground the selected parts into precise 3D regions from a single RGB-D image. Experiments on established benchmarks show that GROW$^2$ outperforms state-of-the-art baselines on affordance prediction benchmarks. Further, it achieves zero-shot generalization over open-category objects and outperforms baselines in both simulated and real-world robot tool use experiments.",
-        "authors": [
-          "Yuhong Deng",
-          "Yuyao Liu",
-          "David Hsu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "Pessimism's Paradox: Conservative Offline Training Amplifies Reward Hacking During Online Adaptation in Reasoning Models",
-        "url": "https://arxiv.org/abs/2606.30627v1",
-        "publishedAt": "2026-06-29T17:56:03.000Z",
-        "summary": "Conservative offline training is widely advocated as a safe foundation for subsequent online adaptation: if a policy stays close to well-supported behaviour, the argument goes, it is less likely to exploit imperfections in a learned reward model. We challenge this intuition empirically and mechanistically. We train a Qwen3-14B policy under Direct Preference Optimisation (DPO) with three levels of conservatism ($β\\in \\{β_{\\mathrm{lo}}, β_{\\mathrm{mid}}, β_{\\mathrm{hi}}\\}$ derived from empirical log-ratio percentiles), then adapt each checkpoint online against a learned reward ensemble (3\\,$\\times$\\,Qwen3-1.7B) while measuring true performance on GSM8K exact-answer accuracy. We find that \\emph{higher offline conservatism monotonically increases reward-hacking damage}, measured by the Goodhart gap and its area under the curve (AUGC), with Spearman $ρ= 1.0$ across all three conditions. Mechanistic analysis reveals a three-link causal chain: (i) high-$β$ DPO compresses policy entropy, (ii) Low-entropy policies generate responses with reduced diversity, concentrating in a narrow region of the reward model's training distribution (lower pairwise cosine distance), and (iii) despite this proximity, ensemble disagreement (epistemic uncertainty) increases with $β$ and is exploited faster during online optimisation. We further fit a power-law curve to the $(β, \\augc)$ data and identify a practical optimal conservatism level $β^{\\star}$ that balances alignment fidelity against hacking vulnerability. Our results suggest that the field needs \\emph{calibrated}, not \\emph{maximal}, conservatism.",
-        "authors": [
-          "Subramanyam Sahoo",
-          "Aman Chadha",
-          "Vinija Jain",
-          "Divya Chaudhary"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "DOPD: Dual On-policy Distillation",
-        "url": "https://arxiv.org/abs/2606.30626v1",
-        "publishedAt": "2026-06-29T17:55:53.000Z",
-        "summary": "On-policy distillation (OPD) offers superior capacity transfer by supervising student-sampled trajectories with dense token-level signals. To furnish high-quality supervision sources and thereby elevate the performance frontier of distillation, an intuitive direction is to infuse privileged information to either teacher or student itself. However, this additional input induces a potential failure mode we dub privilege illusion: a pattern that conflates the transferable capability gap that students are meant to close, and the information asymmetry gap that can only be mimicked but never replicated. This issue is further amplified by the inherent non-uniformity of token-level supervision, where only a small subset of tokens carries pivotal capability-bearing signals. To this end, we propose DOPD, an advantage-aware dual distillation paradigm that dynamically routes token-level supervision between privileged teacher and privileged student policies based on their advantage gap and relative probabilities. Each token receives supervision of different strength, objective, and strategy from either teacher or student itself, which transfers credible capability while simultaneously receiving auxiliary signals, to alleviate privilege illusion. Extensive experiments on both large language model (LLM) and vision-language model (VLM) settings demonstrate that DOPD consistently outperforms Vanilla OPD and other counterparts. Further results on stability, robustness, continual learning, and out-of-distribution tasks validate its superiority.",
-        "authors": [
-          "Xinlei Yu",
-          "Gen Li",
-          "Qingyi Si",
-          "Guibin Zhang",
-          "Yuqi Xu",
-          "Congcong Wang",
-          "Shuai Dong",
-          "Kaiwen Tuo",
-          "Xiangyu Zeng",
-          "Kaituo Feng",
-          "Qunzhong Wang",
-          "Yang Shi",
-          "Xiaobin Hu",
-          "Xiangyu Yue",
-          "Jiaqi Wang",
-          "Shuicheng Yan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 24
-      },
-      {
-        "title": "Optimization Dynamics Imprint Semantic Specificity in Contrastive Embedding Norms",
-        "url": "https://arxiv.org/abs/2606.30625v1",
-        "publishedAt": "2026-06-29T17:55:40.000Z",
-        "summary": "Contrastive embedding models trained with scale-invariant losses are typically paired with distance metrics like cosine similarity, effectively ignoring embedding magnitudes. However, surprisingly, empirical studies reveal that despite this, these \"discarded\" norms seem to correlate with semantic properties such as concept specificity, token frequency, and human uncertainty. In this work, we provide a formal theoretical framework explaining this phenomenon. By analyzing the optimization dynamics, we derive an analytic formula demonstrating that embedding length naturally encodes this information as a byproduct of the training process. We also show how this gives rise to signals that can serve as \"free\" calibration tools in specific models and retrieval tasks, providing a grounded explanation for a previously heuristic observation.",
-        "authors": [
-          "Ziwei Su",
-          "Junyu Ren",
-          "Victor Veitch"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 24
-      },
-      {
-        "title": "Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent",
-        "url": "https://arxiv.org/abs/2606.30616v1",
-        "publishedAt": "2026-06-29T17:50:54.000Z",
-        "summary": "We introduce Agents-A1, a 35B Mixture-of-Experts Agentic Model that reaches trillion-parameter-level performance by scaling the agent horizon. We investigate agent-horizon scaling from two perspectives: scaling long-horizon trajectories and scaling heterogeneous agent abilities. To support this goal, we build a long-horizon knowledge-action infrastructure that connects external knowledge, actions, observations, and verifier outcomes, producing agentic trajectories with an average length of 45K tokens. Based on this, we train Agents-A1 with a three-stage recipe. First, we perform full-domain supervised fine-tuning to align the base model with broad agentic behaviors. Second, we train domain-level teacher models to capture specialized expertise in each domain. Third, we propose a multi-teacher domain-routed on-policy distillation with salient vocabulary alignment to improve knowledge transfer efficiency across different domains, unifying six heterogeneous domains into one deployable student model. Agents-A1 achieves strong and broad performance for long-horizon agent benchmarks. Compared with 1T-parameter model such as Kimi-K2.6 and DeepSeek-V4-pro, Agents-A1 achieves leading results on SEAL-0 (56.4), IFBench (80.6), HiPhO (46.4), FrontierScience-Olympiad (79.0), and MolBench-Bind (56.8), and remains highly competitive on SciCode (44.3), HLE (47.6) and BrowseComp (75.5). We hope this work provides the community with a practical path for scaling the horizon using a 35B agent that can reach or match the performance of 1T models on long-horizon tasks.",
-        "authors": [
-          "Lei Bai",
-          "Zongsheng Cao",
-          "Yang Chen",
-          "Zhiyao Cui",
-          "Shangheng Du",
-          "Yue Fan",
-          "Shiyang Feng",
-          "Zijie Guo",
-          "Haonan He",
-          "Liang He",
-          "Xiaohan He",
-          "Shuyue Hu",
-          "Yusong Hu",
-          "Songtao Huang",
-          "Yichen Jiang",
-          "Hao Li",
-          "Xin Li",
-          "Dahua Lin",
-          "Weihao Lin",
-          "Fenghua Ling",
-          "Dongrui Liu",
-          "Zhuo Liu",
-          "Runmin Ma",
-          "Chunjiang Mu",
-          "Haoyang Peng",
-          "Tianshuo Peng",
-          "Jinxin Shi",
-          "Luohe Shi",
-          "Boyuan Sun",
-          "Zelin Tan",
-          "Shengji Tang",
-          "Qianyi Wang",
-          "Yiming Wu",
-          "Yi Xie",
-          "Xiangchao Yan",
-          "Jingqi Ye",
-          "Peng Ye",
-          "Fangchen Yu",
-          "Jiakang Yuan",
-          "Bihao Zhan",
-          "Bo Zhang",
-          "Chen Zhang",
-          "Shufei Zhang",
-          "Shuaiyu Zhang",
-          "Wenlong Zhang",
-          "Yiqun Zhang",
-          "Junpeng Zhao",
-          "Zhijie Zhong",
-          "Bowen Zhou",
-          "Yuhao Zhou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "C$^{2}$R: Cross-sample Consistency Regularization Mitigates Feature Splitting and Absorption in Sparse Autoencoders",
-        "url": "https://arxiv.org/abs/2606.30609v1",
-        "publishedAt": "2026-06-29T17:45:31.000Z",
-        "summary": "Sparse Autoencoders (SAEs) are widely used to interpret large language models by decomposing activations into sparse, human-understandable features, but scaling to large dictionaries exposes fundamental challenges. Systematic studies reveal pervasive feature splitting that fragments coherent concepts into non-atomic latents and widespread feature absorption that creates arbitrary exceptions in general features, severely compromising latent reliability. These issues stem from inconsistent latent assignment across samples: without cross-sample constraints, per-sample optimization often allows a single underlying concept to be inconsistently distributed across multiple redundant or interfering latents. To address this, we introduce C$^2$R (\\underline{\\textbf{C}}ross-sample \\underline{\\textbf{C}}onsistency \\underline{\\textbf{R}}egularization). C$^2$R explicitly encourages that each semantic feature is consistently represented by a unified latent across the batch by penalizing the co-activation of directionally similar latents. Comprehensive evaluation demonstrates that C$^2$R effectively mitigates both splitting and absorption while, crucially, preserving reconstruction fidelity, providing a principled solution that enhances latent interpretability without degrading model performance. Source code is available at https://github.com/hr-jin/Cross-sample-Consistency-Regularization.",
-        "authors": [
-          "Haoran Jin",
-          "Xiting Wang",
-          "Shijie Ren",
-          "Hong Xie",
-          "Defu Lian"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "MESA: Prioritizing Vulnerable Communication Channels for Securing Multi-Agent Systems",
-        "url": "https://arxiv.org/abs/2606.30602v1",
-        "publishedAt": "2026-06-29T17:40:45.000Z",
-        "summary": "Multi-agent systems (MAS) are increasingly used to automate complex, distributed workflows. However, their inter-agent communication channels introduce new attack surfaces that remain poorly understood and are difficult to defend against. In this paper, we address how defenders should prioritize limited security effort to protect vulnerable communication channels before attacks are observed. This is motivated by our observation that the channel-level attack impact is highly non-uniform: a single compromised edge can account for up to 75% of total attack success. We introduce Mesa, a label-free framework for proactively ranking which MAS edges are most security-critical -- that is, most likely to affect the system's decision if compromised. Mesa combines six graph-theoretic metrics and two dynamic probes (ablation and masking) without requiring attack traces. We evaluate Mesa against a dynamic misinformation attack pipeline across three diverse MAS scenarios, eight network topologies, and five open-source LLMs from Qwen, Llama, and Gemma families. Mesa rankings correlate strongly with empirical per-edge attack success rate, achieving mean Spearman $ρ=+0.60$ (peaking at $+0.73$). In resource-constrained defense deployment, monitoring the top 10% of Mesa-ranked edges intercepts about 3x the successful attacks as random allocation. We further test Mesa under varying attacker and defender models and LangGraph workflows and characterize its limits under adaptive attacks and high-redundancy graphs. Overall, our results show that edge-level risk in MAS is often concentrated and predictable, allowing proactive hardening of multi-agent infrastructures.",
-        "authors": [
-          "Kunyang Li",
-          "Kyle Domico",
-          "Jonathan Gregory",
-          "Patrick McDaniel"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "Wireless Backdoor Attack and Defense for Semantic Communications over Multiple Access Channel",
-        "url": "https://arxiv.org/abs/2606.30595v1",
-        "publishedAt": "2026-06-29T17:36:09.000Z",
-        "summary": "Semantic communication (SemCom) aims to preserve semantic meaning and task-oriented information beyond conventional message recovery over wireless channels. The adoption of SemCom in shared-access wireless networks introduces new vulnerabilities for multi-user semantic inference. This paper considers a SemCom system for two transmitters communicating with a common receiver over a multiple access channel. Each transmitter maps source information into latent semantic representations, while the receiver jointly reconstructs and classifies the semantic information for both transmitters. A selective over-the-air backdoor (Trojan) attack is presented in which an adversary transmits a low-power trigger waveform over the air and injects it into the shared received signal during training. By transmitting the trigger again during testing, this stealthy, low-power attack selectively manipulates the semantic inference for one transmitter while minimally affecting the inference of the other transmitter. To mitigate this vulnerability, a trigger-aware defense mechanism is developed to preserve correct semantic labels under trigger-contaminated wireless observations. The results demonstrate both the vulnerability of shared-access SemCom systems to selective over-the-air backdoor attacks and the effectiveness of trigger-aware robust training for semantic protection.",
-        "authors": [
-          "Yalin E. Sagduyu",
-          "Tugba Erpek",
-          "Aylin Yener",
-          "Sennur Ulukus"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 25
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Google introduces a faster, cheaper image generator with Nano Banana 2 Lite",
+        "url": "https://techcrunch.com/2026/06/30/google-introduces-a-faster-cheaper-image-generator-with-nano-banana-2-lite/",
+        "publishedAt": "2026-06-30T19:02:38.000Z",
+        "summary": "Google is updating its image generator to make it faster and cheaper, making it a more useful tool for creators looking to make AI content.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 1
+      },
+      {
+        "title": "Nvidia competitor Etched hits $5B valuation, $1B in sales for AI chip",
+        "url": "https://techcrunch.com/2026/06/30/nvidia-competitor-etched-hits-5b-valuation-1b-in-sales-for-ai-chip/",
+        "publishedAt": "2026-06-30T18:13:02.000Z",
+        "summary": "Nvidia AI chip competitor Etched says it has already booked $1 billion under contract for the inference systems powered by its chip.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 2
+      },
       {
         "title": "Anthropic launches Claude Sonnet 5 as a cheaper way to run agents",
         "url": "https://techcrunch.com/2026/06/30/anthropic-launches-claude-sonnet-5-as-a-cheaper-way-to-run-agents/",
@@ -375,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 0
+        "ageHours": 2
       },
       {
         "title": "Acti puts AI agents directly into your smartphone keyboard",
@@ -389,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 0
+        "ageHours": 2
       },
       {
         "title": "Anthropic’s Claude Science bets on workflow, not a new model, to win over scientists",
@@ -403,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 3
       },
       {
         "title": "Start building with Nano Banana 2 Lite and Gemini Omni Flash",
@@ -415,7 +169,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Q&A: What is agentic AI today, and what do we want it to be?",
@@ -429,7 +183,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "X now offers an MCP server to make its platform easier for AI tools to use",
@@ -443,7 +197,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "Podcasting platform Riverside enters the newsletter publishing game",
@@ -457,7 +211,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "Amazon launches new $1 billion FDE org, following OpenAI and Anthropic",
@@ -471,7 +225,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "Lumo, Proton&#8217;s privacy-focused AI chatbot, gets an upgrade",
@@ -485,7 +239,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Crypto exchange OKX wants AI agents to hire and pay each other",
@@ -499,56 +253,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 9
-      },
-      {
-        "title": "How ChatGPT adoption has expanded",
-        "url": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
-        "publishedAt": "2026-06-30T09:00:00.000Z",
-        "summary": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 9
-      },
-      {
-        "title": "The AI jobs debate just got messier",
-        "url": "https://techcrunch.com/2026/06/29/the-ai-jobs-debate-just-got-messier/",
-        "publishedAt": "2026-06-30T04:01:00.000Z",
-        "summary": "A new report finds \"high-intensity AI adopters” saw headcount increase 10.2%. Among those companies, entry-level headcount rose by 12%, countering the rhetoric that AI kills junior jobs.",
-        "authors": [
-          "Rebecca Bellan"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 14
+        "ageHours": 11
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 12,
     "last24h": 12,
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
+        "count": 5
       },
       {
         "name": "Models",
-        "count": 6
-      },
-      {
-        "name": "General",
         "count": 3
       },
       {
-        "name": "Policy",
-        "count": 1
+        "name": "Products",
+        "count": 2
+      },
+      {
+        "name": "General",
+        "count": 2
       }
     ]
   }
