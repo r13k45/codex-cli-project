@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T00:02:19.521Z",
+  "generatedAt": "2026-07-15T03:28:12.504Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,10 +27,7 @@
         }
       ],
       "itemCount": 12,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "errors": []
     },
     {
       "group": "news",
@@ -88,214 +85,230 @@
   "sections": {
     "research": [
       {
-        "title": "Requential Coding: Pushing the Limits of Model Compression with Self-Generated Training Data",
-        "url": "https://arxiv.org/abs/2607.11883v1",
-        "publishedAt": "2026-07-13T17:58:50.000Z",
-        "summary": "Compression is fundamental to intelligence. A model that can represent its training data as a short code has discovered regularities that enable generalization. Large neural networks may learn functions far simpler than their parameter counts suggest, but it is challenging to construct codes that realize this simplicity. Parameter-based methods such as quantization produce code lengths that scale with model size, insensitive to how much information the parameters store. Prequential coding bypasses this issue by compressing the training trajectory, but codes the exact data sequence regardless of how much the model learns, yielding large codes when the data has high entropy. We introduce requential coding, where a teacher model selects training samples drawn from the student's own distribution. The student's code records only these selections, which cost bits only where teacher and student disagree. The resulting code length is independent of parameter count and data entropy, and often orders of magnitude shorter than the prequential counterpart, with an advantage that grows with scale. This compression sheds light on phenomena inaccessible to prior compressors. Holding loss fixed, larger models and ensembles compress to much smaller sizes despite more parameters. Plugged into a PAC-Bayes bound, the requential code yields state-of-the-art generalization guarantees for billion-parameter LLMs, outperforming bounds built on aggressive post-training quantization even granted zero error. The bound tightens with scale in the compute-optimal regime, as models become increasingly compressible relative to dataset size. The same code predicts that models gradually overfit when trained for multiple epochs. It also isolates the learnable information in a dataset from its unpredictable, random content, revealing that lower-entropy text holds far more learnable structure than higher-entropy image data.",
+        "title": "Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution",
+        "url": "https://arxiv.org/abs/2607.13034v1",
+        "publishedAt": "2026-07-14T17:59:31.000Z",
+        "summary": "Large language model (LLM) agents increasingly automate multi-step engineering and informatics workflows, yet they rarely ask how much effort a task actually requires. They often follow a maximum-context-first strategy--re-reading files and dependencies they have already seen--turning a one-line edit into a small code-base audit. We argue the missing capability is task-aware execution-scope estimation: judging a task's difficulty, the information it truly needs, and the shortest reliable path before committing budget. We formalize minimum-sufficient execution and the Agent Cognitive Redundancy Ratio (ACRR), and propose E3 (Estimate, Execute, Expand): the agent estimates an initial operating point, executes a minimum viable path, and expands scope only when verification fails. On MSE-Bench--a deterministic benchmark of 121 edits in a capability-controlled simulator--E3 matches the strongest baseline's 100% success while cutting cost by 85%, tokens by 91%, and inspected files by 92%, and further beats a strong adaptive retrieval baseline by 16%; the gains survive held-out instruction wording and essentially every cost weighting. A companion real-model harness (LLM-Case) corroborates the effect on a live gpt-4o agent editing a real open-source library, with every candidate patch graded by actually running the project's real pytest suite against a measured oracle: the over-reading is milder but real, and E3 is the leanest and fastest policy at comparable task success--its one shortfall a provider rate-limit, not a wrong edit. We frame this as a controlled probe of execution redundancy, not a measurement of any deployed agent, and position task-aware execution as a step toward engineering-grounded AI (EGAI)--agents whose effort is anchored in the engineering reality of the task. We release the framework and benchmark.",
         "authors": [
-          "Shikai Qiu",
-          "Marc Finzi",
-          "Yujia Zheng",
-          "Kun Zhang",
-          "Andrew Gordon Wilson"
+          "Junjie Yin",
+          "Xinyu Feng"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 9
+      },
+      {
+        "title": "The Seriality Gap in Video Diffusion Models",
+        "url": "https://arxiv.org/abs/2607.13031v1",
+        "publishedAt": "2026-07-14T17:59:22.000Z",
+        "summary": "When one ball strikes another, then another, video models should predict the consequences of each bounce. In controlled experiments on multi-ball hard-sphere dynamics, we find that the performance of standard bidirectional video diffusion degrades as the causal chain lengthens, even when provided more denoising steps. In a length-matched single-ball control, where ball-ball interactions are absent, the degradation largely disappears, isolating dependent-event structure rather than video length as the cause. Across intervention studies, methods that increase effective serial computation improve performance disproportionately, including autoregressive/blockwise generation and architectural depth. We identify this pattern as the seriality gap: a mismatch between tasks requiring growing serial computation and video diffusion models whose denoising loop does not provide scalable serial compute. We then prove that, for deterministic video prediction, denoising steps do not add serial computation beyond the backbone, indicating a structural obstacle for video diffusion on serial reasoning and simulation tasks.",
+        "authors": [
+          "Jorge Diaz Chao",
+          "Konpat Preechakul",
+          "Yuxi Liu",
+          "Yutong Bai"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 9
       },
       {
-        "title": "Invariant Learning Dynamics of Transformers in Inductive Reasoning Tasks",
-        "url": "https://arxiv.org/abs/2607.11875v1",
-        "publishedAt": "2026-07-13T17:56:11.000Z",
-        "summary": "We present a theoretical framework to explain the emergence of inductive reasoning abilities in Transformer language models. While previous works on Transformer learning dynamics have so far been mostly tied to specific tasks, we study a generalized class of inductive tasks that unifies several synthetic tasks known in the literature, including in-context n-grams and multi-hop reasoning. In this class, we theoretically prove that the training dynamics of attention models can be confined to a highly interpretable, low-dimensional invariant manifold. On this manifold, the learning dynamics are captured by a handful of interpretable coordinates rather than millions of parameters, making both theoretical and empirical analysis more tractable. Using this framework, we characterize how data statistics govern the competition between in-context and in-weights learning, we study how random initializations determine the `winning' circuit when multiple solutions are possible, and we demonstrate that the coordinate frame associated with the manifold can be used to automatically detect which circuits have been learned in trained models. By casting circuit formation as a low-dimensional dynamical phenomenon, we take a step toward a predictive theory of how Transformers learn.",
+        "title": "TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale",
+        "url": "https://arxiv.org/abs/2607.13028v1",
+        "publishedAt": "2026-07-14T17:59:02.000Z",
+        "summary": "Training robust autonomous driving agents requires a simulator that is fast enough for reinforcement learning at scale, realistic enough to ground behavior in real-world map structure, and diverse enough to cover the safety-critical long tail that logged data rarely contains. We present TerraZero, a procedural driving simulator and self-play training stack. A configurable C engine runs simulation on the CPU and policy inference on the GPU over a zero-copy path, sustaining 1.3M agent-steps per second on a single server-grade GPU, far faster than existing object-level simulators, while keeping fidelity lighter single-agent systems omit: heterogeneous agents, multiple dynamics models, and full traffic-rule enforcement. TerraZero treats logged data only as a source of real-world map geometry, populating each map with randomized rule-based road users and signal controllers and randomizing agent dynamics, rewards, and sizes per episode, so a map yields an unbounded set of scenarios. Every reported policy trains from scratch by reinforcement learning alone on a compute-efficient self-play recipe across GPUs, with zero human demonstrations and no fallback planner at inference. Policies generalize zero-shot across cities and datasets, including emergent left-hand-traffic driving without explicit supervision. As an ego policy, TerraZero is the first fully learned policy to top the InterPlan long-tail benchmark, ahead of larger learned planners; on routine-driving val14 it ranks among the best approaches and is the safest, posting the best collision and time-to-collision scores. On Waymo Open Sim Agents realism the same recipe outperforms other demonstration-free methods and is competitive with the strongest reference-anchored self-play method. One stack serves both roles: driving policies across dynamics for cars and trucks, and sim agents that jointly control vehicles, pedestrians, and cyclists.",
         "authors": [
-          "Tiberiu Musat",
-          "Tiago Pimentel",
-          "Nicholas Zucchet",
-          "Thomas Hofmann"
+          "Zhouchonghao Wu",
+          "Akshay Rangesh",
+          "Weixin Li",
+          "Wei-Jer Chang",
+          "Zachary Lee",
+          "Tim Wang",
+          "Wei Zhan"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 9
       },
       {
-        "title": "A Minimalist Retargeting-Guided Reinforcement Learning Recipe for Dexterous Manipulation",
-        "url": "https://arxiv.org/abs/2607.11874v1",
-        "publishedAt": "2026-07-13T17:56:08.000Z",
-        "summary": "Recent work in humanoid whole-body control has found success with a simple recipe: retarget human motion to robot kinematic references, then train policies via reinforcement learning (RL) to track them. But how does this recipe transfer to dexterous manipulation? The answer is not obvious, as manipulation involves complex, contact-rich dynamics and requires delicate regulation of contact modes and forces. We present REGRIND, a minimalist retargeting-guided RL pipeline that learns dexterous manipulation policies from a single human demonstration. REGRIND retargets human hand-object motion to a robot reference that preserves hand-object spatial and contact relationships, trains a residual RL policy in simulation to track object-centric keypoints along that reference, and transfers the resulting policy zero-shot to hardware with careful system identification. The resulting policies produce fluid, human-like behavior on two different multi-fingered hands across contact-rich tool-use tasks, including operating a pair of scissors and turning a screwdriver. Through systematic hardware experiments, we identify and analyze the key factors that govern sim-to-real transfer in dexterous manipulation, offering practical guidance for retargeting-based learning in contact-rich settings. Videos and code are available at https://yunhaifeng.com/REGRIND.",
+        "title": "PalmClaw: A Native On-Device Agent Framework for Mobile Phones",
+        "url": "https://arxiv.org/abs/2607.13027v1",
+        "publishedAt": "2026-07-14T17:58:57.000Z",
+        "summary": "Large Language Model (LLM) agents have moved beyond generating responses to executing multi-step tasks by calling tools, observing the results, and iteratively deciding the next action. Most agent systems run on desktops or servers, which support tool use and task automation. Mobile devices are also important agent environments because they are widely accessible and contain users' data, sensors, and daily-use applications. Existing mobile agents mainly operate smartphones through graphical user interface (GUI) actions such as tapping, swiping, and typing, which often form long, interface-dependent sequences, cannot directly access device capabilities, and make execution boundaries difficult to define. We present \\textbf{PalmClaw}, an open-source agent framework that runs natively on mobile phones and manages the sessions, memory, skills, tools, and agent loop directly on the device. PalmClaw exposes device capabilities as device tools with explicit arguments, structured results, and clearly defined execution boundaries. This design enables agents to use mobile capabilities directly while keeping each action explicit and controlled. Experiments show an 11.5\\% relative improvement in task success and a 94.9\\% reduction in completion time over the strongest baseline, with lower setup burden and traces illustrating how execution boundaries are applied. Code is available at https://github.com/ModalityDance/PalmClaw.",
         "authors": [
-          "Yunhai Feng",
-          "Natalie Leung",
-          "Jiaxuan Wang",
-          "Lujie Yang",
-          "Haozhi Qi",
-          "Preston Culbertson"
+          "Hongru Cai",
+          "Yongqi Li",
+          "Ran Wei",
+          "Wenjie Li"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 30
-      },
-      {
-        "title": "A Durability and Cross-Language Transfer Benchmark for a Validated Teaching-Feedback Classification Protocol",
-        "url": "https://arxiv.org/abs/2607.11873v1",
-        "publishedAt": "2026-07-13T17:56:05.000Z",
-        "summary": "Institutions collect far more open-ended teaching-evaluation feedback than they read. A prior study introduced a validated protocol for classifying such comments by thematic category and sentiment, built from a documented annotation guide, an intra-annotator reliability measurement, stratified cross-validation, and a held-out evaluation on a Spanish institutional corpus with a frozen-encoder design. Two questions limit its reuse: whether a protocol fixed to 2019-era frozen embeddings stays competitive as representation methods advance, and whether it transfers to a second language. We re-run it on the original Spanish data across three representation generations, sparse lexical features, frozen transformer embeddings, and prompted large language models, and transfer its sentiment task to English with a balanced 45,000-comment corpus checked against an aspect-labeled education dataset. Treating paired comparisons as descriptive, we find the protocol durable: a 2026 frontier model posts the highest thematic F1 on the hardest Spanish task, yet shows no sentiment advantage over a cheap model and no descriptive separation from it on English, so model choice is a deployment decision, not a property of the method.",
-        "authors": [
-          "Esteban U. Vega Barajas"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 9
       },
       {
-        "title": "Inside the Unfair Judge: A Mechanistic Interpretability Account of LLM-as-Judge Bias",
-        "url": "https://arxiv.org/abs/2607.11871v1",
-        "publishedAt": "2026-07-13T17:55:19.000Z",
-        "summary": "Existing studies of LLM-as-judge scoring bias work predominantly at the input-output level: they perturb inputs, measure score deltas, and propose prompt-level mitigations. We argue that the same biases admit a representation-level account in the judge's hidden state, complementary to the input-output view and operationally useful in ways it does not afford. We report three findings, across seven judges, seven bias types, and nine benchmarks. Geometry: baseline judging inputs occupy a tight activation manifold while biased inputs are displaced along a low-dimensional, type-specific subspace that sharpens with depth and is recovered consistently by three families of estimators. Causal control: steering hidden states along this subspace drives scoring in both directions, forward shifts reproducing biased scoring on clean inputs and reverse shifts restoring baseline scoring on biased ones, while matched-norm random directions produce shifts an order of magnitude smaller. Operational: a simple linear projection onto the same bias-direction features anticipates judge failures on three entirely unseen benchmarks, substantially outperforming text-based alternatives. Reading bias as activation geometry, rather than as input-output noise, unifies geometric structure, causal control, and operational prediction within a single framework. The project page is available at https://xzx34.github.io/unfair-judge/",
+        "title": "A Shortcut to Statistically Steady-State Turbulence with Flow Matching",
+        "url": "https://arxiv.org/abs/2607.13022v1",
+        "publishedAt": "2026-07-14T17:58:13.000Z",
+        "summary": "Many nonlinear physical systems exhibit an initial transient phase in which perturbations grow before nonlinear interactions lead to a statistically steady state. While this saturated regime is of primary interest, direct numerical simulations must resolve the full transient dynamics before reaching it, incurring significant computational cost. In Computational Fluid Dynamics, reduced-order approaches such as Large Eddy Simulation mitigate computational cost by modeling small-scale dynamics, enabling tractable approximations of turbulent flows. In contrast, for systems such as gyrokinetics, comparably effective closures for the full dynamics are not generally available, and high-fidelity simulations remain necessary. Existing surrogate modeling approaches for these systems are autoregressive, hence they suffer from accumulating error. We instead propose to bypass explicit time evolution by directly modeling the distribution of saturated states under an ergodicity assumption, stating that ensemble averages over samples are equivalent to time averages of a single long simulation. We introduce GyroFlow, a latent generative model that directly estimates steady-state statistics of gyrokinetic turbulence in 5D phase space, without resolving the transient phase. GyroFlow generates saturated snapshots from noise, conditioned on dimensionless operating parameters and outperforms autoregressive, reduced-order, and other generative approaches, while providing substantial speedup. To evaluate generation quality we propose FGyD, a distributional metric computed in the latent space of a pretrained gyrokinetic model, and show that it correlates with downstream flux accuracy and solver convergence. Finally, GyroFlow can be used to warm-start the numerical code used to produce the data.",
         "authors": [
-          "Zixiang Xu",
-          "Sixian Li",
-          "Huaxing Liu",
-          "Xiang Wang",
-          "Shuai Li",
-          "Zirui Song",
-          "Xiuying Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Input-Aware Dynamic Backdoor Attack Against Quantum Neural Networks",
-        "url": "https://arxiv.org/abs/2607.11843v1",
-        "publishedAt": "2026-07-13T17:34:17.000Z",
-        "summary": "Quantum Neural Networks (QNNs) are a promising framework for quantum machine learning on near-term quantum devices, but their security risks remain insufficiently understood. Studies have shown that QNNs are vulnerable to backdoor attacks, yet existing quantum backdoors mostly rely on a fixed trigger shared by all poisoned inputs. This fixed-trigger design is a major weakness because many defenses detect or weaken the repeated patterns such triggers leave in data representations. Although input-aware dynamic backdoors have been studied in classical neural networks, transferring them to QNNs is difficult because quantum learning introduces new obstacles. In particular, measurement compresses the post-ansatz quantum state into a limited classical output, weakening supervision for a trigger generator, while individual density matrices fluctuate with the input and make per-sample contrastive learning unstable. To address these challenges, we propose Q-DIBA, the first input-aware dynamic backdoor attack for QNNs. Q-DIBA jointly trains a classical trigger generator and a victim QNN through a three-mode mini-batch strategy that supports clean behavior, attack activation, and trigger specificity. To provide stable quantum-level supervision, Q-DIBA introduces an ensemble density contrastive loss that operates on post-ansatz quantum states before measurement and contrasts mode-averaged density matrices rather than individual samples. Experiments on MNIST and Fashion-MNIST across multiple QNN architectures show that Q-DIBA achieves high clean accuracy, strong attack success, and high cross-trigger accuracy, demonstrating effectiveness, stealthiness, and input specificity. The attack also remains resilient against defenses including visual inspection, spectral-signature detection, and fine-tuning, suggesting that input-aware quantum backdoors are an important threat to secure QNN deployment.",
-        "authors": [
-          "Junrui Zhang",
-          "Zemin Chen",
-          "Lusi Li",
-          "Mohammad Ghasemigol",
-          "Daniel Takabi",
-          "Rui Ning"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 30
-      },
-      {
-        "title": "Transformer-Guided Swarm Intelligence for Frugal Neural Architecture Search",
-        "url": "https://arxiv.org/abs/2607.11826v1",
-        "publishedAt": "2026-07-13T17:18:24.000Z",
-        "summary": "Neural Architecture Search (NAS) has automated the design of deep learning models but traditionally requires massive computational resources, often measured in thousands of GPU-days. In this paper, we propose a frugal and memetic NAS framework designed to democratize architecture design on consumer-grade hardware. Our approach combines the global macro-search capabilities of an autoregressive Transformer controller, trained via Reinforcement Learning (RL), with the local micro-exploitation of an Artificial Bee Colony (ABC) algorithm. To prevent premature convergence during the RL phase, we introduce a dynamic entropy mechanism that forces topological exploration upon detection of performance stagnation. Evaluated on a standard GPU (NVIDIA RTX 3060), our hybrid method effectively resolves the \"cold-start\" problem inherent in metaheuristics. By algorithmically penalizing network depth, our framework actively mitigates model bloat: on the CIFAR-10 dataset, it discovers an efficient architecture reaching 84.85% accuracy with only $\\sim$174,000 parameters (significantly smaller than standard baselines like ResNet-20) in 3 hours of search time. Furthermore, we demonstrate the framework's flexibility by applying it to credit card fraud detection, directly optimizing the F1-Score on highly imbalanced tabular data to reach a F1-Score of 0.71 with a compact network of $\\sim$4,600 parameters. These results suggest that our approach can yield tailored, accessible, and highly parameter-efficient deep learning models suitable for edge deployment.",
-        "authors": [
-          "Romain Amigon"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "Relaxing Faithfulness with Intervention-Only Causal Discovery",
-        "url": "https://arxiv.org/abs/2607.11816v1",
-        "publishedAt": "2026-07-13T17:12:12.000Z",
-        "summary": "Causal discovery algorithms learn a network that describes the causal dependencies among random variables. A common workflow involves first utilizing conditional independence properties on observational data to determine partially directed causal relationships, then applying interventions to orient the unknown causal directions. A critical assumption for the first step is faithfulness: a requirement that causally linked variables exhibit statistical dependence. Many natural systems include buffering and stabilizing pathways that cancel out to achieve systemic robustness. This cancellation of pathways violates faithfulness, leading causal discovery algorithms to incorrectly remove causal dependencies. In this paper, we argue that hard interventions contain information about the presence/absence of causal linkage that is overlooked in the first stage of structure discovery. We show that a mild assumption -- called intervention-immediacy faithfulness -- that allows cancellations, is sufficient to nonparametrically identify causal structures with hard interventions. These results position interventions as the primary carriers of information about causal structure, which should take precedence over conditional independence testing. To flip the paradigm, we also specify equivalence classes when the identification criteria are not met due to limitations in the scope of interventions.",
-        "authors": [
-          "Bijan Mazaheri",
-          "Jiaqi Zhang",
-          "Caroline Uhler"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 31
-      },
-      {
-        "title": "An Exact Instrument for State Usage in Selective State-Space Models, and the Input-Driven Migration It Reveals",
-        "url": "https://arxiv.org/abs/2607.11796v1",
-        "publishedAt": "2026-07-13T16:48:03.000Z",
-        "summary": "Selective state-space models such as Mamba route information through a bank of first-order modes whose input coupling is set by a learned selection mechanism. We give an exact instrument for measuring how a trained model uses these modes. Because the state matrix is diagonal, each channel's output decomposes exactly into per-mode contributions, and a per-(layer, channel, window) Gram tensor yields the exact output error of dropping any subset of modes, offline, at any budget. Validated against the reference implementation to a relative error of $2.3\\times10^{-7}$ on the Mamba-1 family where it is exact, the instrument predicts a layer's deployed pruning error to a median relative deviation of $5\\times10^{-7}$ over $4{,}464$ configurations, its floor set by the reconstruction. Applying the instrument across the Mamba-1 family (130M--2.8B), the deployed 7B Falcon-Mamba, and Mamba-2, we find that trained models re-allocate their state space with the input: which modes carry the signal migrates across contexts, and at the most affected layers a per-input oracle roughly halves the output error of a fixed mode set. Frozen-signal counterfactuals attribute the migration primarily to the input-dependent write map $B_t$; the timestep usually identified with selectivity carries almost none of it. Input-scheduled mode pruning on this measurement outperforms static, Hankel-based, and layer-adaptive rankings at every scale from 130M to the deployed 7B Falcon-Mamba, and at half the state budget it matches the unpruned model. Because the scheduler reads each window's mode usage from a first pass, this demonstrates realizable headroom; we claim no deployed compute or memory saving.",
-        "authors": [
-          "Raktim Bhattacharya"
+          "Gianluca Galletti",
+          "Gerald Gutenbrunner",
+          "William Hornsby",
+          "Lorenzo Zanisi",
+          "Naomi Carey",
+          "Stanislas Pamela",
+          "Johannes Brandstetter",
+          "Fabian Paischer"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 31
+        "ageHours": 9
       },
       {
-        "title": "From Expressivity to Sample Complexity: Narrow Teachers for Transformers via C-RASP",
-        "url": "https://arxiv.org/abs/2607.11760v1",
-        "publishedAt": "2026-07-13T16:22:36.000Z",
-        "summary": "A theoretical understanding of Transformers is crucial to better understand the capacities and limitations of large language models (LLMs). There is much work analyzing the expressivity of attention-based models. By proposing handcrafted weights or using computational complexity arguments, a large amount of past theoretical works have sought to characterize which tasks are and which are not in the hypothesis class of Transformer models. However, little work investigates the learnability of such solutions. In this work, we make progress towards this goal. Inspired by recent loss landscape analysis work, we propose preliminary sample complexity bounds for learning C-RASP constructions with Transformers.",
+        "title": "Audio-Native Speech Recognition with a Frozen Discrete-Diffusion Language Model",
+        "url": "https://arxiv.org/abs/2607.13013v1",
+        "publishedAt": "2026-07-14T17:53:22.000Z",
+        "summary": "Automatic speech recognition is dominated by autoregressive decoders that emit one token at a time. We ask whether a discrete diffusion language model can transcribe speech instead, refining a whole transcript in parallel over a small number of denoising steps. We train an audio-native interface for DiffusionGemma, a 26B mixture-of-experts model that generates text by uniform, random-token discrete diffusion rather than the absorbing-mask scheme common to recent diffusion language models. A frozen Whisper encoder supplies acoustic features, a lightweight projector maps them into the model embedding space, and low-rank adapters let the frozen backbone attend to the new modality.\n  About 42M parameters are trained, which is 0.16 percent of the backbone. We find that the natural training objectives fail to ground the audio because their gradient reaches the projector only through attention that has already dismissed it. A connectionist temporal classification loss applied through the frozen output head breaks this deadlock. The resulting model reaches 6.6 percent word error rate on LibriSpeech test-clean, transcribes in roughly eight parallel steps regardless of utterance length, and uses a single adapter trained on six languages, which we evaluate here on English, Hindi, and Mandarin.",
         "authors": [
-          "Michael Rizvi-Martel",
-          "Satwik Bhattamishra",
-          "Guillaume Rabusseau",
-          "Michael Hahn"
+          "Harsha Vardhan Khurdula",
+          "Abhinav Kumar Singh",
+          "Yoeven D Khemlani",
+          "Vineet Agarwal"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Dynamic Resource Allocation for Ensemble Determinization MCTS",
+        "url": "https://arxiv.org/abs/2607.13007v1",
+        "publishedAt": "2026-07-14T17:51:15.000Z",
+        "summary": "Simulation-based algorithms are especially suited for high-uncertainty environments such as adversarial board games with significant elements of randomness and hidden information. In particular, several Monte Carlo Tree Search (MCTS) variants are commonly used in such domains. In this paper, we propose a series of enhancements for Ensemble Determinization MCTS, introducing two axes for dynamic resource allocation. First, Dynamic Number of Determinizations, increases or decreases the number of currently used determinization trees depending on the behavior of so-far search. Second, Dynamic Simulation Allocation, splits the simulation budget nonuniformly across the determinization trees, using simulation-to-simulation decisions to choose the tree with potentially the best knowledge gain. As benchmark domains, we used three popular tabletop games: Jaipur, Lost Cities, and Splendor. Testing our proposed enhancements in iteration- and time-based settings showed that particular configurations yield a statistically significant increase in the algorithm's strength.",
+        "authors": [
+          "Jakub Kowalski",
+          "Adam Ciężkowski",
+          "Artur Krzyżyński",
+          "Mark H. M. Winands"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "The Spectrum Is Not Enough: When Context Helps Time-Series Forecasting",
+        "url": "https://arxiv.org/abs/2607.13006v1",
+        "publishedAt": "2026-07-14T17:50:28.000Z",
+        "summary": "A growing family of indices scores how predictable a series is from its spectrum. Practitioners increasingly read these scores as answering a different question: whether \\emph{adding context}, a longer lookback, a retrieval plug-in, or a pretrained model, will help. These are not the same question. The value of context is a property of the operating point, not of the series. Any index built from the power spectrum is invariant under phase randomization, whereas the beyond-second-order value that retrieval and foundation models supply is not, because a phase-randomized series is asymptotically Gaussian. We state this as an impossibility result and isolate it with surrogate pairs that fix the spectrum and the marginal by construction. We then give a label-free, configuration-level diagnostic, the coverage deficit, whose principal term measures beyond-spectrum structure as the gain of analog over linear prediction. On seven benchmarks the prediction holds: window-keyed retrieval's value collapses across surrogate pairs (ECL median $+33\\%\\!\\to\\!-35\\%$, $p{<}10^{-40}$) while every spectral index stays frozen; a foundation model's value splits into a surviving second-order part and a small beyond-linear margin that collapses; a longer linear window's value survives. Leave-one-dataset-out, the structure term predicts the sign of beyond-spectrum value where the spectral indices trail it, and the reverse holds for the second-order mechanism. We introduce no new forecaster; the contribution is the distinction, a controlled comparison, and a diagnostic for the deployment decision. Code: https://anonymous.4open.science/r/SINE.",
+        "authors": [
+          "Mert Onur Cakiroglu",
+          "Mehmet Dalkilic",
+          "Hasan Kurban"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 32
+        "ageHours": 10
       },
       {
-        "title": "From Global to Factor-Wise Expert Composition in Discrete Diffusion Models",
-        "url": "https://arxiv.org/abs/2607.11758v1",
-        "publishedAt": "2026-07-13T16:22:01.000Z",
-        "summary": "Discrete diffusion models offer a powerful framework for solving complex reasoning tasks, particularly through compositional generation, which combines multiple pre-trained experts to generalize beyond their individual training data. Recent theoretical corrections introduce time-dependent mixing weights to better align composed diffusion dynamics with the intended target. However, these methods are fundamentally limited by working on a per-sample basis, treating each generated state monolithically and ignoring the potential spatial or functional specializations of different experts. In this work, we address this limitation by proposing FactorDiff - a factor-wise composition framework for diffusion models. We posit that samples can be further decomposed into smaller factors, and propose a sampling process that dynamically routes each factor to the most relevant expert. We instantiate this framework with spatial/pixel-level compositions and validate it on the ARC-AGI benchmark, demonstrating that simple factor-specific routing consistently outperforms complex global scalar weighting schemes on tasks that require logical consistency and spatial disentanglement.",
+        "title": "Watermark Forensics for Generative Models: An Information-Theoretic Perspective",
+        "url": "https://arxiv.org/abs/2607.13003v1",
+        "publishedAt": "2026-07-14T17:49:52.000Z",
+        "summary": "A watermark in a generative model's output is usually asked only whether a text is machine-made. The same mark can do more: attribute it to the user who produced it, extract a hidden payload, or localize the part that survives editing. These form a forensic ladder, and we ask what each rung costs in the sample length $n$.\n  One object organizes the answers. Let $S$ be the secret the mark carries (a user's identity or payload), and let the information profile $ν(t)=I(S;X_t\\mid X_{<t})$ record how much the $t$-th token reveals about $S$ given the earlier ones. Its total mass pays for attribution and extraction; how that mass is spread pays for localization; and detection alone is paid for not by information but by presence, the distance from the marked to the unmarked distribution. The literature's two quality models, a mark subtle on every token and one that stamps a few tokens loudly, are two incomparable ways of capping this profile.\n  Our main theorem settles the ladder's entropy column. For statistically distortion-free schemes, attributing a text to one of $N$ users costs $Θ(\\log N/h)$ tokens over every stationary-ergodic source of entropy rate $h$, sharp to a $(1+o(1))$ factor: to our knowledge the first tight entropy-rate law for multi-user attribution (via exact alignment). The natural collision-counting analysis overcharges without bound; only a decoder thresholding each candidate by its own realized surprisal attains the rate while almost never implicating an innocent user. A matching converse makes the law two-sided, and extraction of an $\\ell$-bit payload costs $Θ(\\ell/h)$. Two gaps are real, not modeling artifacts: a $Θ(\\log N)$-token window in which a text is provably machine-made yet unattributable, and a footprint-resolution uncertainty principle. Experiments on GPT-2, Pythia-410M, and Qwen2.5 recover the predicted constants.",
         "authors": [
-          "Haozhe Huang",
-          "Yudong Xu",
-          "Abhijoy Mandal",
-          "Alán Aspuru-Guzik"
+          "Xiaoyu Li",
+          "Zheng Gao",
+          "Xiaoyan Feng",
+          "Jiaojiao Jiang",
+          "Yulei Sui",
+          "Jiankun Hu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 32
+        "category": "Models",
+        "ageHours": 10
       },
       {
-        "title": "Paradoxes of Game Theoretic Equilibria and Price of Anarchy",
-        "url": "https://arxiv.org/abs/2607.11752v1",
-        "publishedAt": "2026-07-13T16:09:35.000Z",
-        "summary": "For decades, static solution concepts (Nash, Correlated, and Coarse Correlated Equilibria) and the Price of Anarchy (PoA) have formed the bedrock of algorithmic game theory, with no-regret learning proving fast convergence to such game-theoretic equilibria. We show that reducing multi-agent learning to static equilibrium and black-box regret analysis obscures underlying dynamic disequilibrium and game theoretic bounds.\n  First, interior Nash equilibria lack $C^1$ vector field information, meaning agents cannot distinguish aligned from strictly opposing incentives. Inheriting this geometry, the worst-case pure Nash equilibria dictating robust PoA bounds manifest as topologically unstable strict saddles, and in canonical congestion games, as global repellers supported on almost everywhere strictly dominated strategies. Anchoring efficiency guarantees to these unstable states causes algebraic sensitivity; we prove that accommodating all strictly positive affine costs renders the PoA unbounded. Furthermore, projecting learning trajectories onto the discrete simplex of correlated play systematically accommodates non-rationalizable behavior. Evaluating dynamics via Coarse Correlated Equilibria or proximal refinements fails to preclude strictly dominated strategies. Moreover, optimal $O(1/T)$ swap-regret minimization does not preclude macroscopic turbulence, manifesting as chaotic limit sets even in minimal games. Finally, we examine the non-atomic limit of congestion games. Though considered highly stable with tight sub-linear $Θ(p/\\ln p)$ PoA bounds (where $p$ is the polynomial degree), we prove that under discrete-time learning, the unique equilibrium destabilizes into Li-Yorke chaos and global attractors whose time-averaged inefficiency degrades exponentially as $2^p$. These results necessitate re-evaluating worst-case equilibrium frameworks for dynamically grounded metrics.",
+        "title": "Win by Silence: Deletion Non-Monotonicity, Autonomous Exploitation, and Typed-State Gating in LLM Plan Evaluation",
+        "url": "https://arxiv.org/abs/2607.12986v1",
+        "publishedAt": "2026-07-14T17:29:28.000Z",
+        "summary": "Plan evaluators can reward a strategic plan for becoming less explicit. This paper studies that failure in a staged expected-value scorer for LLM-generated venture routes. Proposition 1 gives the score change from deleting an interior transition while retargeting its predecessor and retaining downstream value: Delta_k = (prod_{i<k} p_i)[c_k + (1 - p_k)R_{k+1}]. On a frozen 26-route cohort, all 57 admissible deletions matched the analytic identity and threshold sign, and every route had at least one score-improving deletion. A score-seeking optimizer, allowed to restructure routes but not told the exploit mechanism, found baseline-beating uncovered structures in 21/26 routes. GATE refused score release for 26/26 silenced routes with 0/26 honest suspensions; after refusal, 47/54 next revisions repaired to a covered structure, and strict covered improvement rose from 1/26 to 13/26. An adaptive compiler-aware co-author exposed the registry-provenance boundary: obligation-channel evasions remained 6/6 across all four v1/v1.5 conditions, while delta-indexed cost floors reduced beat-honest routes from 6/6 to 3/6 and fundability-by-silence from 5/6 to 0/6 without establishing semantic completeness. If a plan scores better only because it omits necessary work, the plan did not improve; the evaluation created an omission incentive. PCSC detects and neutralizes post-hoc omission splices over model-mediated typed-state records. In the cooperative setting tested, GATE acts as a deterministic search-shaping constraint, not merely a post-hoc filter. It does not verify the semantic completeness or real-world quality of arbitrary LLM-generated strategies.",
         "authors": [
-          "Georgios Piliouras",
-          "Ian Gemp",
-          "Siqi Liu",
-          "Luke Marris"
+          "Aleh Manchuliantsau"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 32
+        "ageHours": 10
+      },
+      {
+        "title": "Resist and Update: Counterfactual Report Coordinates for Incentive-Compatible LLMs",
+        "url": "https://arxiv.org/abs/2607.12985v1",
+        "publishedAt": "2026-07-14T17:28:25.000Z",
+        "summary": "Aligned language models routinely misreport under non-evidential incentive pressure: they agree with a confident user or overstate certainty even when their internal belief is unchanged. We cast this as a failure of internal incentive-compatibility (IC) and present a method for learning and certifying counterfactual report mediators that hold a model's reports to a causal contract: invariant to forbidden influences (pressure, prestige, restyling) and responsive to licensed ones (genuine evidence). These two demands, resist and update, pull in opposite directions. We study them on a Bayesian-witness benchmark with known posteriors, in which the same user disagreement is licensed evidence or forbidden pressure purely by stated source reliability. We (i) causally identify, by interchange interventions rather than probe accuracy, low-rank report coordinates for answer, confidence, and caveat that are near-orthogonal and independently controllable, and (ii) introduce a training-free counterfactual report-coordinate (CRC) clamp that references the model's own report under a counterfactually incentive-neutralized context. On the witness benchmark the two-pass clamp attains resist and update of 1.00 jointly (Wilson 95% CI [0.99,1.00]), a causal certificate under a constructible reference, not a deployed solution. Global decoding and steering show a single-parameter tradeoff; output-level fine-tuning matches both objectives only when both are enumerated; resist-only training loses evidence-responsiveness. The deployable single-pass compilation is lossy (0.73/0.97). The mechanism and clamp reproduce across three model families and transfer to a natural sycophancy benchmark (SycophancyEval). Our contribution is the interface and certification method: activation-level counterfactual incentive-invariance as a structural primitive for internal IC.",
+        "authors": [
+          "Sen Yang",
+          "Yuen-Hei Yeung"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "FormalAnalyticGeo: A Neural-Symbolic Based Framework for Multimodal Analytic Geometry Problem Generation",
+        "url": "https://arxiv.org/abs/2607.12982v1",
+        "publishedAt": "2026-07-14T17:24:57.000Z",
+        "summary": "Math reasoning has achieved significant progress with the rapid advancement of Multimodal Large Language Models (MLLMs), however analytic geometry remains largely underexplored, primarily due to the scarcity of annotated samples. Existing diagram generation approaches struggle with analytic geometry: template methods cannot handle constraint-driven layouts, and generative models lack the geometric precision to render annotated conic curves correctly. We present FormalAnalyticGeo, a scalable framework for fully automatic generation of multimodal analytic geometry problems. Leveraging the rigor of formal languages, we design the framework around CDL (Condition Description Language), a formal intermediate representation that bridges free-form problem text with precise diagram rendering via a Signed Distance Field (SDF) engine. The framework employs four specialized LLM components in sequence: a Generator that produces diverse analytic geometry problems, a Formalizer that converts each problem into CDL for SDF-based rendering, a Measurer that extracts ground-truth answers through vision-based measurement on the rendered diagrams, and a Quality Verifier that checks outputs at three stages. Structured feedback from the Quality Verifier drives automatic retry, forming a closed loop that eliminates any need for human annotation. Applying FormalAnalyticGeo at scale yields AnalyticGeo7K, a dataset of over 7K verified multimodal problems, each with aligned text, diagram, formal annotation, and ground truth.Experiments show that the generated problems achieve a median ground-truth relative error of 0.70\\%, with 82.3\\% of answers falling within 5\\% of the exact symbolic solution. Our framework and dataset will be publicly released.",
+        "authors": [
+          "Ruoran Xu",
+          "Wending Gao",
+          "Qiufeng Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
       }
     ],
     "news": [
       {
-        "title": "Lorde says AI glasses are &#8220;not sexy&#8221;",
+        "title": "OpenAI researcher Miles Wang in talks to launch AI drug discovery startup valued at $2B",
+        "url": "https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/",
+        "publishedAt": "2026-07-15T00:27:04.000Z",
+        "summary": "The funding discussions point to investor interest in applying AI to make breakthroughs in life sciences.",
+        "authors": [
+          "Marina Temkin"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 3
+      },
+      {
+        "title": "Lorde says AI glasses are &#8216;not sexy&#8217;",
         "url": "https://techcrunch.com/2026/07/14/lorde-says-ai-glasses-are-not-sexy/",
         "publishedAt": "2026-07-14T23:10:02.000Z",
-        "summary": "\"Increasingly in our world, it gets harder and harder to know what is real,\" Lorde said on stage.",
+        "summary": "\"Increasingly in our world, it gets harder and harder to know what is real,\" Lorde said onstage.",
         "authors": [
           "Amanda Silberling"
         ],
@@ -303,7 +316,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 4
       },
       {
         "title": "OpenAI&#8217;s first hardware device is reportedly a screenless speaker that can move",
@@ -317,7 +330,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "OpenAI pushes back on Apple trade secret lawsuit",
@@ -331,7 +344,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "OpenAI&#8217;s new flagship model deletes files on its own, people keep warning",
@@ -345,7 +358,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 6
       },
       {
         "title": "Helping AI models to meet the real world",
@@ -359,7 +372,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "Apple opens its new Siri AI to everyone with the iOS 27 public beta",
@@ -373,7 +386,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "Anthropic&#8217;s newest ad is creeping people out",
@@ -387,7 +400,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "The founder of Hinge raised $18M to build a new AI dating service, Overtone",
@@ -401,7 +414,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "Google faces another AI training lawsuit from major publishers",
@@ -415,7 +428,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Can AI build a jet engine? JARVIS Challenge tests role of AI copilots in tough-tech engineering",
@@ -429,7 +442,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 9
       },
       {
         "title": "DeepMind CEO calls for an independent standards body to regulate frontier AI",
@@ -443,32 +456,18 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 6
-      },
-      {
-        "title": "Meta’s Adam Mosseri says AI token budgets could soon be capped per engineer",
-        "url": "https://techcrunch.com/2026/07/14/metas-adam-mosseri-says-ai-token-budgets-could-soon-be-capped-per-engineer/",
-        "publishedAt": "2026-07-14T16:22:15.000Z",
-        "summary": "Instagram head Adam Mosseri believes companies will eventually need to manage AI token spending the same way they manage payroll or other operating expenses, predicting that engineers could soon face limits on how much they spend using AI tools.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 8
+        "ageHours": 10
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 9
+        "count": 11
       },
       {
         "name": "Models",
@@ -476,11 +475,11 @@
       },
       {
         "name": "General",
-        "count": 4
+        "count": 3
       },
       {
-        "name": "Policy",
-        "count": 3
+        "name": "Products",
+        "count": 2
       }
     ]
   }
