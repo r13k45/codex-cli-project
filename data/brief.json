@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T16:38:19.746Z",
+  "generatedAt": "2026-07-16T18:17:00.249Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,7 +83,214 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "Leveraging unlabelled data for generalizable neural population decoding",
+        "url": "https://arxiv.org/abs/2607.14086v1",
+        "publishedAt": "2026-07-15T17:58:00.000Z",
+        "summary": "Robust and accurate neural decoders are integral to neurotechnologies such as brain-computer interfaces and closed-loop experiments. Recent work has shown that tokenizing neural data at the spike level facilitates multi-session pretraining and delivers state-of-the-art decoding performance. However, current spike-based models are restricted to supervised learning (SL), limiting training to datasets with paired behavioural labels. To address this limitation, we introduce MOJO (Masked autOencoder-based JOint training), a training framework for spike-tokenizing models that jointly leverages self-supervised learning (SSL) via masked autoencoding and SL objectives. We evaluate MOJO on three spiking datasets spanning monkey motor cortex during reaching tasks and multi-regional mouse recordings during vision and decision making tasks, demonstrating superior performance over purely SL-trained models. This improvement is especially pronounced when training with limited labelled data, particularly in few-shot finetuning, where only a small amount of labelled data from a new session is available. Incorporating SSL also yields more interpretable neuronal representations, improving performance on brain region classification and spike-statistics prediction without explicit optimization for these tasks. We further show that MOJO generalizes beyond spiking data to human electrocorticography during speech, where it continues to outperform purely SL-trained models and achieves performance comparable to neuro-foundation models (NFMs) designed specifically for continuous signals. Overall, augmenting spike-tokenizing models with SSL improves performance in label-impoverished settings and enables the use of unlabelled data across various tasks and species, while generalizing to other neural modalities. These results suggest a path towards more flexible and scalable data usage when training NFMs.",
+        "authors": [
+          "Ximeng Mao",
+          "Nanda H. Krishna",
+          "Avery Hee-Woon Ryoo",
+          "Matthew G. Perich",
+          "Guillaume Lajoie"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Linear Independent Component Analysis via Optimal Transport",
+        "url": "https://arxiv.org/abs/2607.14081v1",
+        "publishedAt": "2026-07-15T17:56:11.000Z",
+        "summary": "Linear Independent Component Analysis (ICA) recovers jointly independent source signals from their linear mixtures. To achieve this, classical ICA algorithms attempt to maximize non-Gaussianity, measured by negentropy, which is linked to independence by information theory. Because exact negentropy optimization is intractable, they rely on proxy contrast functions, such as fourth-order cumulants, and parametric log-likelihoods. We propose instead to measure non-Gaussianity using the squared Wasserstein distance $W_2^2$ to a standard Gaussian. We prove that the Wasserstein distance between a standard normal distribution and linear projections of the data is maximized when the projection recovers an independent component. Based on this observation, we propose the OT-ICA algorithm which finds this projection by gradient-based optimization. Empirical evaluation on simulated data shows that OT-ICA outperforms proxy-based methods for different distributions of the latent variables. Application to EEG artifact removal and econometric price discovery confirm OT-ICA can be used for applied ICA tasks without distributional assumptions.",
+        "authors": [
+          "Ashutosh Jha",
+          "Michel Besserve",
+          "Simon Buchholz"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "MetaPerch: Learning from metadata for bioacoustics foundation models",
+        "url": "https://arxiv.org/abs/2607.14072v1",
+        "publishedAt": "2026-07-15T17:42:41.000Z",
+        "summary": "Bioacoustic foundation models rely on large-scale citizen science platforms like Xeno-Canto for geographically and ecologically diverse data. Recent work has shown that supervision alone can produce SotA species detection models when trained on this large-scale data -- however, there remains unutilized potential in the form of recording metadata readily available within these community-driven data hubs. In this work, we explore the use of metadata -- such as location and time -- as auxiliary supervision signals, allowing the model to leverage species-metadata correlations in its learned representation. Auxiliary metadata losses provide additional information beyond vocalizations alone that can encourage a richer, more robust representation that generalizes better to species distribution and acoustic domain shifts -- important challenges for deployment in real-world passive acoustic monitoring (PAM) settings. We introduce MetaPerch, a new foundation model that achieves strong species identification performance across multiple challenging domains and present an extensive empirical study of the effects of 9 diverse metadata sources on 17 bioacoustic datasets.",
+        "authors": [
+          "Mustafa Chasmai",
+          "Vincent Dumoulin",
+          "Jenny Hamer"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Screening of Biosecurity Features in Metagenomic Data with Evo 2 Probes",
+        "url": "https://arxiv.org/abs/2607.14070v1",
+        "publishedAt": "2026-07-15T17:38:02.000Z",
+        "summary": "Genomic foundation models such as Evo 2 learn rich sequence representations, but their value for biosecurity screening is largely unexplored. We ask how much biosecurity-relevant signal is linearly accessible in these representations by training minimal linear and attention probes on frozen Evo 2 layer-26 activations, without fine-tuning the underlying model. Across held-out metagenomic test sets, the probes detect antimicrobial resistance (AMR) with strong discrimination: a linear probe reaches a region-level ROC-AUC of 0.888 (mean-pool), rising to 0.977 with a single-head attention probe. The probes resolve finer-grained AMR drug-class subcategories and separate them from unrelated functional genes, providing additional evidence that the learned signal is not explained solely by generic functional-gene status. Bacterial virulence is also decodable, though more weakly (region-level ROC-AUC 0.833). The AMR probe retains comparable ranking performance on simulated short reads without retraining, enabling evaluation before assembly in settings where assembly is computationally costly or unreliable. It achieves a read-level ROC-AUC of 0.898 (mean-pool), comparable to the mean-pooled full-region result. Within SynGenome, AMR-associated prompt labels are only weakly recoverable from Evo 1.5-generated sequences; these prompt-derived labels do not establish the function of the generated response sequences. A complementary sparse-autoencoder analysis recovers interpretable resistance-associated features but proves less consistent than the supervised probes. Together, these results position lightweight embedding-based probes as a fast, inexpensive first-pass detection layer for metagenomic biosurveillance and map both strengths and current limits of the approach. This work was conducted as part of the AIxBio Hackathon 2026 hosted by BlueDot Impact, Apart Research, and Cambridge Biosecurity Hub.",
+        "authors": [
+          "Jeremy Guntoro",
+          "Alexander Dack",
+          "Dylan Danno",
+          "Michaela Jančovičová",
+          "Križan Jurinović",
+          "Vanessa Smilansky"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Hindcast: Replaying Prediction Markets to Evaluate LLM Forecasters",
+        "url": "https://arxiv.org/abs/2607.14051v1",
+        "publishedAt": "2026-07-15T17:21:43.000Z",
+        "summary": "Forecasters are evaluated by backtesting, which replays resolved questions and grades the probability the system would have assigned before the outcome was known. For LLMs, two channels leak the answer into this test. A model that retrieves can surface reports written after the event, turning forecasting into a lookup, and each new model is trained on data closer to the event, so a question that lay in the future for last year's models sits inside this year's training data. Either way, the test grades recall while claiming to grade foresight. We introduce Hindcast, which closes both leaks by grading a model as if it stood at a chosen past date $t_0$, before the outcome existed in either channel. Hindcast replays resolved Polymarket prediction markets against a frozen snapshot of public Reddit, lets the model read only posts written before $t_0$, and scores each forecast against both what happened and the market's own price at $t_0$, itself a human forecast made from the same past information. Because the cutoff is set per market and the snapshot never changes, the evaluation re-runs on new markets as models improve, without going stale. Once the leak is closed, retrieval still helps most models, but only where Reddit discussed the event beforehand. Where the archive carried only speculation, retrieval hurts.",
+        "authors": [
+          "Xiao Ye",
+          "Jacob Dineen",
+          "Evan Zhu",
+          "Shijie Lu",
+          "Kevin Song",
+          "Ben Zhou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Deep Interaction: An Efficient Human-AI Interaction Method for Large Reasoning Models",
+        "url": "https://arxiv.org/abs/2607.14049v1",
+        "publishedAt": "2026-07-15T17:16:43.000Z",
+        "summary": "The emergence of Chain-of-Thought (CoT) reasoning has significantly enhanced the ability of large language models (LLMs) to tackle complex, multi-step tasks. However, when errors occur, current interaction approaches typically involve re-generating another response that may make mistakes again, or users laboriously flag the faulty step in follow-up turns that may get responses <You are right, I made a mistake here> followed by similar errors recurring. To address this issue, we propose an efficient human intervention mechanism for precisely correcting reasoning errors in LLMs, termed Deep Interaction. Our approach enables direct editing of the original response, allowing erroneous parts to be corrected while preserving accurate reasoning steps. We refine the edited CoT into a distilled prompt, which then steers the LLM along the corrected reasoning path. Experimental results show that our method achieves over a 25% improvement in correction success rate and reduces token usage by approximately 40% on STEM tasks reasoning compared to baseline approaches.",
+        "authors": [
+          "Hefeng Zhou",
+          "Jinxuan Zhang",
+          "Jiong Lou",
+          "Yuxin Liu",
+          "Chaochao Lu",
+          "Jingjing Qu",
+          "Jie Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Earthquaker-AI: A Retrieval-Augmented Generation Framework with Rubric-Based Assessment for Primary School Earthquake Education",
+        "url": "https://arxiv.org/abs/2607.14046v1",
+        "publishedAt": "2026-07-15T17:15:16.000Z",
+        "summary": "This paper presents Earthquaker-AI, a hybrid educational framework building upon a previously implemented educational robotics project by integrating a conversational AI assistant based on Retrieval-Augmented Generation. It aims to enhance earthquake preparedness and conscious action among primary-school students. The system extends the award-winning STEM project Earthquaker moving from mechanical simulation with Lego WeDo2 to cognitive and metacognitive processing. The robotics component uses Lego WeDo2 automation to simulate seismic response, letting students interact with sensors and actuators as tangible representations of protective actions. The assistant operates as a guided learning mechanism aligning student responses with safety guidelines, while providing rubric-based verbal feedback that supports self-regulated learning and calmness under emergency conditions. Earthquaker-AI follows a progressive learning trajectory aligned with cognitive development. In early grades, the focus is on basic recognition of safety actions through multiple-choice questions, assessed via a two-dimensional rubric. In middle grades, students identify correct action sequences through multiple-choice questions, evaluated via a three-axis rubric. In upper grades, the approach shifts to verbal production, requiring short written responses assessed via a four-dimensional rubric that includes clarity of expression. The dialogic module uses RAG to match student queries semantically with official guidelines, generating safe, accurate responses. Experimental evaluation shows high groundedness and accuracy, with a low hallucination rate. Overall, Earthquaker-AI combines hands-on engagement, information processing, and reflective practice. Combining robotics, rubrics, and AI promotes technological literacy, self-regulation, and responsible use of digital systems, contributing to early crisis-management skills.",
+        "authors": [
+          "Xanthi Kokkinou",
+          "Chaido Mizeli",
+          "Nafsika Koulaxidou",
+          "Marina Delianidi",
+          "Konstantinos Diamantaras"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "AI-accelerated End-to-End Framework for Rapid Professional Upskilling",
+        "url": "https://arxiv.org/abs/2607.14044v1",
+        "publishedAt": "2026-07-15T17:14:03.000Z",
+        "summary": "By 2030, 59 of every 100 workers will need reskilling or upskilling, yet the average time to close an enterprise skills gap grew from roughly 3 days in 2014 to 36 days in 2018. Most current frameworks accelerate single stages of upskilling programs and generally lack industry validation. We present an end-to-end framework that applies AI acceleration across five stages of knowledge acquisition, content development, content review and verification, teaching, and assessment development; with a strong focus on both production and learning efficiency. Three strong external signals validates the framework: the US National Association of State Boards of Accountancy reviewed and approved an upskilling program built on the framework for continuing-professional-education credits; 3 learners followed the program and passed the NVIDIA Certified Professional in Agentic AI exam in a significantly short amount of time, with 14 more in progress; the program's knowledge base supports complex downstream analysis such as the production of a robust 1,267 risk item dataset for managing multi-agent AI system risks.",
+        "authors": [
+          "Tam Nguyen",
+          "Hung Nguyen",
+          "Robert Ogburn"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Multi-Expert Routing for Multi-Domain Low-Resource OCR: A Manchu Case Study",
+        "url": "https://arxiv.org/abs/2607.14041v1",
+        "publishedAt": "2026-07-15T17:12:37.000Z",
+        "summary": "Historical Manchu OCR must accommodate various visually distinct writing styles, including regular script, running script, and the semi-cursive chancery hand used in palace memorials, despite limited labeled data. We study a multi-expert system that reuses checkpoints from an iterative fine-tuning process as domain specialists and uses a lightweight page-level image classifier to dispatch pages by visual style. When the checkpoint pool lacks a suitable specialist, we train an additional expert for that domain. On three frozen test sets, the routed system matches the selected specialist for each style at two-decimal precision: 0.30 percent CER on regular script, 1.57 percent on memorials, and 4.83 percent on running script. The router achieves 99.3 percent page-level domain accuracy and matches the domain-label oracle at the same precision. Two of the three selected specialists were not trained specifically for their final domain; only the running-script expert was trained with that domain as its target. We report the evaluation protocol, router design, and per-page predictions to make the comparison reproducible.",
+        "authors": [
+          "Zhan Chen",
+          "Jiqiao Ma",
+          "Chih-wen Kuo"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Can an Old Dog Be Taught New Tricks? Taking LLMs Beyond Sentence Level Translation",
+        "url": "https://arxiv.org/abs/2607.14040v1",
+        "publishedAt": "2026-07-15T17:10:24.000Z",
+        "summary": "Automatic translation systems, from CAT tools to MT, overwhelmingly treat translation as a sentence-by-sentence act. This paper asks whether LLMs can be moved beyond that paradigm through whole-document, corpus-informed translation. We present PAT (Pragmatic Auto-Translator), a RAG-based system that pairs user-configured specifications with context from a comparable corpus of authentic longform texts in U.S. English and Latin American Spanish, passing retrieved paragraph-, section-, and document-level examples to an LLM for whole-document generation. The goal is draft translation for professional verification: target texts reformulated to fit their Spanish-language context, where discourse organization, rhetorical style, and pragmatic norms differ meaningfully from English. We evaluated six automatic translations of essays on generative AI across three projects using a customized MQM typology, assessed by two trained evaluators working from U.S. English into LATAM and Mexican Spanish. Results show that a limited prompt produced no meaningful reformulation, and specifications and corpus-informed translations at times showed substantial reformulation, though not always to effect. We find that LLMs can be moved toward reformulation and away from the sentence-by-sentence paradigm, though more work is needed to improve the effectiveness of those reformulations. In this paper, we discuss considerations related to automatic translation system design, corpus construction, and translation quality evaluation methodology and results.",
+        "authors": [
+          "Alaina Brandt"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Early Adoption of Agentic Coding Tools by GitHub Projects",
+        "url": "https://arxiv.org/abs/2607.14037v1",
+        "publishedAt": "2026-07-15T17:05:06.000Z",
+        "summary": "Agentic coding tools are increasingly capable of generating and submitting pull requests (PRs) to software projects, introducing new forms of human-agent collaboration in software development. While prior studies have examined PR-level outcomes of agent-generated contributions, less is known about how agentic coding tools are adopted and managed at the project level. In this paper, we analyze 25,264 agentic PRs from 2,361 popular GitHub repositories to investigate (1) the adoption of agentic coding tools, (2) project-level agentic PR productivity, and (3) human-agent collaboration patterns. Our results show that the median repository generates only one to two agentic PRs during a three-month period, indicating that intensive adoption remains concentrated in a small subset of projects. At the same time, small projects (1-5 contributors) exhibit higher participation ratios and average levels of agentic PR activity than medium-sized and large projects. We also observe substantial variation in project-level agentic PR productivity. While a small number of projects exceed an industry-reported estimate of 36 PRs per participant during the three-month observation period, most projects remain below this threshold. Finally, human-agent collaboration is dominated by a single-human oversight model, in which one developer reviews and/or modifies the agent's contributions, while multi-human collaboration patterns remain uncommon. These findings provide early empirical evidence on how open-source projects organize human oversight around agentic coding tools and suggest that successful integration of agent-generated contributions depends not only on advances in agent capabilities but also on the human and organizational processes that govern their use. Because this study captures an early snapshot of agent adoption, future work should continue to track how adoption patterns evolve over time.",
+        "authors": [
+          "Maliha Noushin Raida",
+          "Daqing Hou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Improving Wind and Solar Power Prediction with Efficient Wrapper-based Feature Selection: An Empirical Study",
+        "url": "https://arxiv.org/abs/2607.14024v1",
+        "publishedAt": "2026-07-15T16:55:42.000Z",
+        "summary": "With rising global energy demand and growing awareness of climate change and its impacts, the share of renewable energies in the global energy mix continues to grow. Unlike conventional power generation, the output of renewable energy sources cannot be controlled as consistently due to their dependence on environmental conditions. Therefore, reliable prediction of current and future energy production is essential. In this paper, we report findings from two structured literature reviews on real-world renewable energy prediction tasks: wind turbine power curve modeling and photovoltaic power prediction. For the former, we conducted a comprehensive literature review ourselves, while for the latter, we synthesize the key findings regarding frequently selected input features based on an existing survey. Across both domains, our analysis reveals that despite the large number of available monitoring and environmental variables, only limited or unsystematic methods for feature selection exist. To address this gap, we propose Cluster-based Sequential Feature Selection (CSFS), a novel, model-agnostic, clustering-based wrapper method for automatic, efficient, and reliable feature selection in renewable energy prediction pipelines. To support reproducibility and reuse, we provide an open-source implementation of CSFS on GitHub. We empirically evaluate the proposed approach on both use cases and compare it with established feature selection techniques such as wrapper-based sequential feature selection (SFS), filter-based methods, and Random Forest's embedded feature importance. The results show that the wrapper-based methods overall provide better-performing selections of features. CSFS achieves a predictive performance comparable to SFS while reducing computational cost by an average of 21%.",
+        "authors": [
+          "Daniel Grillmeyer",
+          "Marius Hadry",
+          "Michael Stenger",
+          "Vanessa Borst",
+          "Veronika Lesch",
+          "Samuel Kounev"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 25
+      }
+    ],
     "news": [
       {
         "title": "Google&#8217;s AI Mode now lets you link and interact with select apps",
@@ -101,7 +304,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 2
       },
       {
         "title": "Why teens deserve access to safe AI",
@@ -113,7 +316,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 2
       },
       {
         "title": "Yes, you can now order DoorDash from the command line",
@@ -127,7 +330,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 1
+        "ageHours": 3
       },
       {
         "title": "Why is OpenAI selling a ChatGPT basketball?",
@@ -141,7 +344,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 3
       },
       {
         "title": "How a former DeepMind researcher raised at a $300M pre-seed valuation before launching a product",
@@ -155,7 +358,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 3
       },
       {
         "title": "Why AMI Labs’ Alexandre LeBrun won&#8217;t call his AI &#8216;AGI&#8217; or &#8216;superintelligence&#8217;",
@@ -169,7 +372,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Moonshot&#8217;s upcoming Kimi 3 is expected to close the gap with Anthropic&#8217;s Opus 4.8",
@@ -183,7 +386,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Apple Intelligence approved for launch in China with Alibaba and Baidu",
@@ -197,7 +400,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "Our approach to bioresilience",
@@ -209,7 +412,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 9
       },
       {
         "title": "Applied Computing wants to give oil and gas operators an AI model for the entire plant",
@@ -223,7 +426,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 13
+        "ageHours": 14
       },
       {
         "title": "A better way to turn 2D designs into 3D models for rapid prototyping",
@@ -237,7 +440,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 13
+        "ageHours": 14
       },
       {
         "title": "How Cars24 scales conversations and builds faster with OpenAI",
@@ -249,22 +452,22 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 17
+        "ageHours": 18
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
+    "totalItems": 24,
     "last24h": 12,
     "topCategories": [
       {
-        "name": "Models",
-        "count": 7
+        "name": "Research",
+        "count": 14
       },
       {
-        "name": "Research",
-        "count": 3
+        "name": "Models",
+        "count": 8
       },
       {
         "name": "General",
