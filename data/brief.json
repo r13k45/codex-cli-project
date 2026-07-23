@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-23T12:00:17.750Z",
+  "generatedAt": "2026-07-23T14:27:02.656Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,7 +27,10 @@
         }
       ],
       "itemCount": 12,
-      "errors": []
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -97,44 +100,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "LKValues: Aligning Large Language Models with Sri Lankan Societal Values",
-        "url": "https://arxiv.org/abs/2607.20410v1",
-        "publishedAt": "2026-07-22T17:49:37.000Z",
-        "summary": "Value alignment of Large Language Models (LLMs) has been shown to be culturally biased toward Western norms. This results in the mishandling of local values in multilingual societies such as Sri Lanka that have their unique cultural dynamics. Existing benchmarks overlook Sri Lankan-contextualized values in its official language Sinhala, hindering culturally sensitive evaluation and fine-tuning. To bridge this gap, we propose LKValues, the first survey-grounded resource suite for Sri Lankan value alignment. From a trilingual survey of 205 respondents, blending adapted global frameworks and LLM-elicited local constructs, we derive 40 majority-endorsed societal values. Using these values, we construct LKvaluesIT, a Sinhala-English news-derived instruction corpus containing 150k scenario-based instances, and LKvaluesBench, a value-sensitive evaluation benchmark of 1,000 instances. We evaluate a set of proprietary and open-weight LLMs with LKvaluesBench. We fine-tune three open-weight base models (Qwen3.5-4B-Base, Qwen3.5-9B-Base, and Aya-Expanse-8B-Base). Our experiments show that newer and larger LLMs still exhibit low-resource and cultural value-alignment gaps. LKValues fine-tuning improves Qwen-family models in English and Sinhala, reducing invalid outputs and cross-lingual disparities, though gains remain model-family dependent. These highlight LKValues efficacy in embedding Sri Lankan values, offering a replicable pipeline for low-resource, country-specific pluralist value alignment. The dataset is publicly available at https://github.com/NextME14/LKValues.",
-        "authors": [
-          "Nethmi Muthugala",
-          "Supryadi",
-          "Surangika Ranathunga",
-          "Nisansa de Silva",
-          "Ruijie Tao",
-          "Ovindu Gunatunga",
-          "Pengyun Zhu",
-          "Shaowei Zhang",
-          "Jingting Zheng",
-          "Deyi Xiong"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "SoftReason: A Fully Differentiable Neuro-Soft-Symbolic Deductive Reasoning Architecture over High-Dimensional Perceptual Data",
-        "url": "https://arxiv.org/abs/2607.20402v1",
-        "publishedAt": "2026-07-22T17:38:39.000Z",
-        "summary": "In many reasoning problems, the premises are not observed as discrete symbols, but must be inferred from high-dimensional inputs. Further, the predicate vocabulary, argument structure, and trusted evidence are supplied by a Knowledge Graph (KG), or rule definitions. Classical neuro-symbolic pipelines have a discrete interface between perception and deduction. We present a neuro-soft-symbolic architecture for differentiable deductive reasoning over latent perceptual facts and knowledge-provided predicates. SoftReason removes the gradient gap by representing the deductive state as a local soft interpretation tensor over candidate constants and predicates. Perception proposes probabilistic base facts, KG triples enter as high-confidence soft evidence, and every query anchor, predicate choice, and closure update remains differentiable. Our core innovation is a learned differentiable lift of the immediate-consequence operator. It uses predicate-definition embeddings and latent composition channels to form soft body-predicate mixtures, aggregate over all possible witnesses, propose query-conditioned head facts, and update the interpretation through a monotone probabilistic OR. We instantiate the framework on Knowledge-aware Visual Question Answering (KVQA), and demonstrates how SoftReason supports end-to-end perceptual grounding, KG evidence injection, and differentiable deductive closure in one trainable architecture.",
-        "authors": [
-          "Wael AbdAlmageed"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
+        "ageHours": 21
       },
       {
         "title": "Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning",
@@ -150,52 +116,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "General",
-        "ageHours": 18
-      },
-      {
-        "title": "Persian Pixel: A large-scale synthetic OCR dataset for Persian language",
-        "url": "https://arxiv.org/abs/2607.20385v1",
-        "publishedAt": "2026-07-22T17:13:25.000Z",
-        "summary": "Optical Character Recognition (OCR) for Persian remains substantially less mature than for Latin-script languages despite Persian being spoken by more than 110 million people across multiple countries. This gap arises from two fundamental challenges: the intrinsic complexity of the Perso-Arabic writing system and the limited availability of large-scale, high-quality annotated datasets. Persian script exhibits obligatory cursive connectivity, context-dependent glyph shaping, extensive ligatures, diacritic placement, and stylistic variation across writing forms such as Naskh and Nastaliq, all of which significantly complicate text recognition. At the same time, the high cost and labor-intensive nature of manual annotation have created a persistent data bottleneck, limiting the development of robust OCR systems and slowing progress in Persian document digitization.In this paper, we introduce Persian Pixel, a comprehensive synthetic OCR dataset specifically designed to address these challenges. Comprising over 343,000 high-fidelity image text pairs, the dataset spans sentence, paragraph, and full-page document layouts generated from a carefully curated seven-million-word Persian corpus using the SynthOCR-Gen rendering framework. The generation pipeline faithfully models the typographic characteristics of Persian script, including contextual character joining, positional glyph variants, diacritic placement, and multiple representative Persian typefaces. To bridge the synthetic-to-real domain gap, the rendered images are further enriched with more than twenty-five stochastic degradation models that emulate realistic document acquisition artifacts, including ink bleed, paper aging, blur, illumination variation, scanner imperfections, compression artifacts, and multiple noise processes.By overcoming the long-standing scarcity of annotated Persian OCR data, Persian Pixel provides a scalable and openly available resource for training and fine-tuning modern OCR architectures, including transformer-based models such as TrOCR and Donut. The dataset establishes a strong foundation for research in Persian document analysis, historical manuscript digitization, and end-to-end document understanding, while demonstrating that programmatic synthetic data generation offers a practical, cost-effective, and scalable alternative to manual annotation for advancing OCR in low-resource and typographically complex scripts.",
-        "authors": [
-          "Pouria Mahdi",
-          "Haq Nawaz Malik"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "FMRP-LEAN: A HIPAA-Compliant AI-Augmented LIMS Architecture for End-to-End Clinical Assay Workflow Optimization",
-        "url": "https://arxiv.org/abs/2607.20382v1",
-        "publishedAt": "2026-07-22T17:11:52.000Z",
-        "summary": "Clinical biomarker workflows in translational research settings often rely on spreadsheet-driven tracking, manual quality control (QC) reconciliation, and loosely integrated systems, resulting in limited state visibility, delayed reporting, and increased operational risk. These challenges are particularly pronounced in multi-day assays such as Luminex-based quantification of Fragile X Messenger Ribonucleoprotein (FMRP), where HIPAA-compliant data governance, deterministic workflow progression, and coordinated communication across laboratory and clinical teams are required. This paper presents FMRP-LEAN, a HIPAA-compliant, AI-augmented Laboratory Information Management System (LIMS) architecture that formalizes biospecimen lifecycle management through a finite-state workflow model with explicit transition guards and dwell-time observability. The system integrates a self-hosted Supabase/PostgreSQL stack deployed within hospital-controlled infrastructure, hybrid edge-internal isolation with encrypted tunneling and loopback-only services, and bi-directional REDCap synchronization. A unified MRN-UUIDv7 identifier framework with QR-based tracking ensures traceable clinical-research linkage under PHI residency constraints. FMRP-LEAN incorporates automated statistical QC pre-screening and a governance-constrained AI operations module that operates exclusively on aggregate projections, with deterministic fallback guarantees. Deployment demonstrates improved workflow observability, reduced QC latency, and enhanced cross-role transparency between laboratory technicians, research coordinators, and patient-facing teams. The architecture provides a reproducible model for secure, state-explicit, and AI-augmented clinical research workflows in regulated healthcare environments.",
-        "authors": [
-          "Eva McCord",
-          "Ernest Pedapati",
-          "Zag ElSayed"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 19
-      },
-      {
-        "title": "Train the Model, Not the Reader: Decodability Supervision for Verifiable Activation Explanations",
-        "url": "https://arxiv.org/abs/2607.20379v1",
-        "publishedAt": "2026-07-22T17:10:23.000Z",
-        "summary": "Natural-language autoencoders score explanations of hidden activations by reconstruction: an explanation is deemed faithful if the activation can be regenerated from it. The test is structurally insensitive to individual false claims: if flipping a claim does not change the reconstruction, the claim is never penalized. We show the test is passed in two ways, neither faithful. On a released Qwen-2.5-7B verbalizer, explanations reconstruct well above chance while ~2% of specific claims are reconstruction-dependent, so the score tracks gist, not specific facts. Under exact synthetic ground truth, the standard recipe develops co-adapted private codes (false wording the reconstruction depends on) in 5/5 runs, and fixes that leave the target model unchanged do not help. We contribute two audit protocols, the grounded-vs-true cross and the evaluator swap, and RECAP (Readable Encodings via Co-trained Auxiliary Predictors): linear heads trained alongside the target model to keep designated content decodable. On RECAP-trained sandbox models, fresh verbalizers state the designated content truly and the codes vanish, at a +0.001-nat cost. This replicates on a pretrained Pythia-160M: the content becomes reliably probe-decodable, though a fresh verbalizer conveys it only in part (truth 0.44-0.46 vs a near-zero control). For interpretability, high reconstruction does not certify individual claims. For AI safety, RECAP makes designated internal content independently checkable against probes rather than asserted by prose a model can game: an independent probe scores the verbalizer's true claims above its false ones (AUC 0.96, vs 0.82 without RECAP). Against an adversary that edits an explanation to maximize the reconstruction score while lying (suppressing ~87% of its lie penalty), the RECAP probe still flags the lies (AUC 0.95) while the control probe collapses to chance (0.51).",
-        "authors": [
-          "Hiskias Dingeto"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "PG-KINN: A Physics-Informed Petrov-Galerkin Kolmogorov-Arnold Network for Solving Forward and Inverse PDEs",
@@ -214,7 +135,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Statevector-Referenced Geometry Survival of a Four-Qubit ZZ Quantum Kernel on IBM Quantum Hardware: A Fixed-Subset Diagnostic Across Three Execution Configurations",
@@ -228,7 +149,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Online Variance Reduction for Domain Adaptation on Streaming Data",
@@ -242,23 +163,7 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "General",
-        "ageHours": 19
-      },
-      {
-        "title": "Notes to Self: Can LLMs Benefit from Experiential Abstractions?",
-        "url": "https://arxiv.org/abs/2607.20372v1",
-        "publishedAt": "2026-07-22T17:02:34.000Z",
-        "summary": "Humans distill experience into reusable abstractions, e.g., strategies and cautionary reminders, and apply them to gradually solve problems more effectively. We study whether Large Language Models (LLMs) can similarly benefit from such experiential abstractions. From LLMs' solution traces on the MATH training set, a stronger teacher or the LLMs themselves extract natural-language abstractions into a retrievable library. We explore two usage modes: (1) inference-time retrieval and (2) reinforcement learning (RL) with abstraction-augmented training prompts. Experiential abstractions improve LLM performance on mathematical and logical reasoning benchmarks. Self-extracted abstractions match teacher-extracted ones, and our abstraction usage framework can transfer to other datasets and models. These findings suggest LLMs can extract and apply experiential abstractions much as humans leverage distilled experience.",
-        "authors": [
-          "Chang Liu",
-          "Xinyu Li",
-          "Artur Dubrawski"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Variance-reduced Domain Adaptation using Paired Sampling",
@@ -272,10 +177,128 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 19
+        "ageHours": 21
+      },
+      {
+        "title": "Interval and fuzzy physics-augmented neural networks (iPANN and fPANN) for uncertainty quantification and propagation in constitutive modeling",
+        "url": "https://arxiv.org/abs/2607.20339v1",
+        "publishedAt": "2026-07-22T16:26:59.000Z",
+        "summary": "Constitutive modeling under uncertainty remains a central challenge for reliable mechanics simulations, particularly when the available stress-deformation data are sparse, noisy, or heterogeneous. We propose interval and fuzzy physics-augmented neural networks (iPANNs and fPANNs) for uncertainty-aware hyperelastic constitutive modeling. iPANNs learn sparse lower, mean, and upper free energy density branches whose stresses, obtained by automatic differentiation, ultimately enclose noisy stress observations. In contrast to this deterministic interval description, fPANNs embed the learned iPANN branches into a fuzzy-set representation through alpha-cut interpolation, yielding a nested family of admissible responses. iPANNs and fPANNs encode mechanistic constraints - preserving objectivity, consistency and promoting polyconvexity - and smoothed L0 regularization promotes interpretable energy representations. The bound models are trained through a two-stage transfer-learning procedure in which a sparse mean constitutive response is learned first and then fine-tuned into lower and upper energy branches. We evaluate the framework on synthetic isotropic hyperelastic data with heteroscedastic noise, varying random realizations, shifted noise means, and varying noise magnitudes. The results show that the learned bounds enclose noisy stress observations while generalizing to the test set. Further, we examine the propagation of uncertainty through the mean, upper and lower bound predictions of the learned iPANN models in a finite element setting. The proposed framework provides a compact, physics-consistent route for distribution-free aleatoric uncertainty quantification in hyperelastic constitutive modeling, and propagation in downstream finite element simulations.",
+        "authors": [
+          "Somesh Pratap Singh",
+          "Govinda Anantha Padmanabha",
+          "Jingye Tan",
+          "Steven Yang",
+          "Reese E. Jones",
+          "D. Thomas Seidl",
+          "Nikolaos Bouklas"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 22
+      },
+      {
+        "title": "Multi-modal transformer for signal classification in nanopore blockade experiments",
+        "url": "https://arxiv.org/abs/2607.20323v1",
+        "publishedAt": "2026-07-22T16:09:34.000Z",
+        "summary": "Nanopore devices have emerged as powerful tools for single-molecule sensing, with potential for rapid, portable diagnostics. They detect changes in ionic current as analytes enter nanometer-scale pores, providing a means of identifying diverse biomarkers from their characteristic signal patterns. However, these signals are highly complex, and reliably assigning them to specific molecules remains a major challenge. Here, we address this by introducing a multi-modal deep learning architecture that jointly processes multiple signal representations, including raw time-series data, wavelet-based images, and static feature vectors. Our approach surpasses existing methods by more than 10 percentage points on a 42-peptide benchmark and transfers to a 20-amino-acid dataset with near-perfect accuracy. The model integrates complementary information from these representations, with attention analysis showing that the time-series and wavelet-image inputs emphasize different features of the same event. Together, these results demonstrate the potential of machine learning to enable robust, high-accuracy molecular identification with nanopore sensors.",
+        "authors": [
+          "Sandro Kuppel",
+          "Julian Hoßbach",
+          "Samuel Tovey",
+          "Christian Holm"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 22
+      },
+      {
+        "title": "Label-Free Finite-Volume-Residual Training of Attention Graph Neural Networks for Coupled Thermo-Fluid Fields",
+        "url": "https://arxiv.org/abs/2607.20321v1",
+        "publishedAt": "2026-07-22T16:07:09.000Z",
+        "summary": "Neural surrogates are widely used in scientific machine learning for fast prediction of three-dimensional (3D) thermo-fluid fields. However, generating training data using conventional numerical solvers often incurs substantial computational and storage costs. We propose to train an attention graph neural network by minimizing the finite-volume method (FVM) residuals of the governing equations. These residuals are evaluated directly on the mesh, requiring no labeled data. We evaluate the trained surrogates against computational fluid dynamics (CFD) references and a data-supervised baseline across four scenarios. On the two steady-state benchmarks, the FVM-loss model achieves an all-field normalized root-mean-square error (nRMSE) of 2.3-2.8%. It demonstrates close agreement with the CFD references, including the buoyancy-energy coupling. On the two parametric transient cases, the FVM-loss model outperforms the supervised baseline in terms of accuracy, while avoiding the data-generation cost entirely. These results indicate that the FVM loss can provide a practical training signal for neural surrogates and reduce the model development cost.",
+        "authors": [
+          "Tianyu Li",
+          "Zhiwei Cao",
+          "Qingang Zhang",
+          "Ruihang Wang",
+          "Binyang Song",
+          "Yonggang Wen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 22
+      },
+      {
+        "title": "Decentralized Online Riemannian Optimization for Strongly Geodesically Convex Functions",
+        "url": "https://arxiv.org/abs/2607.20316v1",
+        "publishedAt": "2026-07-22T16:03:43.000Z",
+        "summary": "We study decentralized online optimization for strongly geodesically convex (strongly g-convex) losses on Riemannian manifolds with bounded sectional curvature, including positively curved manifolds. In centralized Riemannian optimization, strong g-convexity tightens the optimal regret from $O(\\sqrt{T})$ to $O(\\log T)$, where $T$ is the time horizon; in the decentralized Riemannian setting, however, existing methods address only g-convex losses, leaving the strongly g-convex regime unexplored. One challenge is that the required decaying step size in the centralized regime is incompatible with existing network-error analyses, which typically assume a fixed step size. First, we provide a general network-error analysis for time-varying schedules. Next, we build on this analysis to establish the first $O(\\log T)$ static regret bound for decentralized online Riemannian gradient descent, matching the minimax-optimal rate for strongly-convex Euclidean online optimization. Finally, we prove the same $O(\\log T)$ regret bound for the two-point bandit feedback setting using novel strong subconvexity arguments for the smoothed versions of the loss functions.",
+        "authors": [
+          "Zhanyuan Cai",
+          "Emre Sahinoglu",
+          "Shahin Shahrampour"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 22
+      },
+      {
+        "title": "Adaptive deep nonparametric regression from dependent data under covariate shift",
+        "url": "https://arxiv.org/abs/2607.20309v1",
+        "publishedAt": "2026-07-22T15:55:46.000Z",
+        "summary": "Covariate shift often occurs because, in many real applications, the source and the target observations may be generated from different distributions. In this case, the standard metric under the source distribution is not appropriate. This paper considers deep neural network estimators for nonparametric quantile and Huber regression under covariate shift and from dependent observations. We deal with a generalized Bernstein-type inequality that is satisfied by many classical models, including i.i.d. observations, $φ$-mixing, strong mixing, and $\\mathcal{C}$-mixing processes. To perform the covariate shift phenomenon, we propose a sparse-penalized deep neural network (SPDNN) estimator that takes into account the discrepancy between the source and target distributions of the data. When the density ratio (between the source and target distributions of the covariate) is unknown, a two steps pre-training procedure is carried out: the first step is devoted to the construction of a least squares SPDNN estimator of the density ratio; which is used in the second step to perform a pre-training reweighted SPDNN estimator of the regression function. For both the quantile and the Huber regression, non-asymptotic error bounds of the proposed SPDNN estimators are established in the class of Hölder smooth functions. These estimators can adaptively attain (up to a logarithmic factor) the minimax optimal convergence rate from i.i.d. data as well as from several classical time series models.",
+        "authors": [
+          "William Kengne",
+          "Ehud Mossa Ockegna"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 23
+      },
+      {
+        "title": "Classical Hardware Acceleration of Quantum Autoencoders for Real-Time Anomaly Detection in Collider Experiments",
+        "url": "https://arxiv.org/abs/2607.20302v1",
+        "publishedAt": "2026-07-22T15:50:22.000Z",
+        "summary": "Quantum machine learning (QML) algorithms in high energy physics (HEP) can efficiently represent and leverage long-range, high-order correlations in high-dimensional collider data, potentially with fewer parameters and favorable scaling relative to classical models. Deployment of QML in real-time collider applications such as trigger systems requires the ability to emulate and compile quantum circuits classically, then synthesize the resulting quantum gates onto low-latency hardware accelerators, namely field-programmable gate arrays (FPGAs). We present a study of variational quantum autoencoder models for real-time anomaly detection triggers in modern collider experiments. The models achieve performance comparable to state-of-the-art classical approaches and, after FPGA synthesis, satisfy resource usage and timing constraints consistent with trigger applications in future colliders. This work provides one of the first FPGA implementations of QML models for HEP triggers, enabling higher-capability models in today's classical data acquisition pipelines while advancing quantum readiness of collider experiment infrastructure.",
+        "authors": [
+          "Ivan Ge",
+          "Sagar Addepalli",
+          "Abhilasha Dave",
+          "Julia Gonski"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 23
       }
     ],
     "news": [
+      {
+        "title": "MIT projects selected for funding under US Department of Energy’s Genesis Mission",
+        "url": "https://news.mit.edu/2026/mit-projects-selected-funding-under-doe-genesis-mission-0723",
+        "publishedAt": "2026-07-23T12:00:00.000Z",
+        "summary": "MIT researchers are set to contribute to the U.S. Department of Energy’s (DOE)&nbsp; Genesis Mission , with 15 collaborative projects among those selected for funding under Genesis Phase I, DOE&nbsp; announced Wednesday. The Genesis Mission, a national initiative, intends to build “the world’s most powerful integrated science discovery platform” by incentivizing cross-sector collaborations that leverage AI, supercomputing, quantum systems, and advanced scientific instruments to accelerate breakthroughs in energy, scientific discovery, and national security. “MIT researchers are proud to be leading and contributing to projects under the Genesis Mission, in vital areas of research that support national priorities,” says Ian A. Waitz, MIT’s vice president for research. “The Genesis Mission represents a fantastic opportunity to catalyze the power of universities, industry, and the U.S. national laboratories to advance science, technology, and innovation for the benefit of the nation and the world.” The DOE announced the initial projects during its Genesis Summit in Washington on Wednesday. The research funding to MIT is pending completion of negotiations toward an award agreement for each project. In phase I, funded project teams will work to demonstrate research workflows that integrate AI with scientific investigation, and to rigorously evaluate the scientific merit of their approach. Projects under the Genesis Mission are collaborative by design; teams must draw on the expertise of researchers from academia, industry, and/or the national laboratories. Among the selected phase I projects with MIT involvement are those that aim to develop powerful quantum sensors to help explain fundamental questions about the universe; advance knowledge of chemical-free methods to extract rare earth elements; model the behavior of plasma in fusion tokamaks and future fusion reactors; develop digital twins for fusion magnet systems; exploit the self-assembly of biomolecules to design materials with targeted properties; generatively design rotating blades for machinery systems; and more. Phase I projects that identify promising pathways toward transformative capabilities at scale may be considered by DOE for further Genesis Mission funding. Six of the selected projects are to be led by MIT principal investigators (PIs): AI-Driven Discovery of Electrochemical Separation Methods for Rare Earth Elements MIT lead: Martin Bazant &nbsp;(Department of Chemical Engineering, ChemE), Chevron Professor in Chemical Engineering and professor of mathematics &nbsp; AI for Learning Missing Constitutive Structure in Fracture Models MIT lead: Laurent Demanet&nbsp; (Department of Earth, Atmospheric and Planetary Sciences), professor of applied mathematics in the Department of Mathematics and co-director of the MIT Center for Computational Science and Engineering &nbsp; AI-Driven Quantum Sensing for Precision Tests of Fundamental Physics MIT lead: Ronald Garcia Ruiz &nbsp;(Laboratory for Nuclear Science, LNS), associate professor of physics and Thomas A. Frank (1977) Career Development Professor &nbsp; Multi-Agent Inverse Design of Block Polypeptoids Into Hierarchical Nanostructures MIT lead: Bradley Olsen &nbsp;(ChemE), Alexander and I. Michael Kasser (1960) Professor &nbsp; CATALYST: Core Accelerated Trajectories with Augmented&nbsp;Learning bY Sim-to-experiment Transfer MIT lead: Cristina Rea (Plasma Science and Fusion Center), principal research scientist and division head for data science &nbsp; Multi-Modal and Multi-Facility Application of the FM4NPP Foundation Model: Silicon Trackers and Electron Colliders MIT lead: Gunther Roland &nbsp;(LNS), professor of physics and division head for experimental nuclear and particle physics MIT researchers are expected to participate in another nine selected projects led by other institutions, companies, and labs: Framework for Optimized Rotating Blade Design Using Generative Engineering (FORGE) Project lead: &nbsp;GE Vernova&nbsp;Advanced Research Center MIT lead: Faez Ahmed (Department of Mechanical Engineering), associate professor of mechanical engineering and the Esther and Harold E. Edgerton Career Development Professor &nbsp; Superconducting Polychronous Computation Near Criticality Project lead: &nbsp;Argonne National Laboratory MIT lead: Karl Berggren (Research Laboratory of Electronics), the Julius A. Stratton Professor in Electrical Engineering and Physics &nbsp; Scalable Agentic Digital Twins for Autonomous Precision Facilities Project lead: &nbsp;Texas A&amp;M University MIT lead: Ronald Garcia Ruiz (LNS) &nbsp; Agentic AI for Real-Time Expedited Discovery from&nbsp;High-Complexity EIC Data Streams Project lead: &nbsp;Purdue University MIT lead: Philip Harris (LNS), associate professor of physics &nbsp; Self-Driving Discovery and Co-Design of MXene Memristors for 3D Compute-in-Memory Systems Project lead:&nbsp; Northeastern University MIT lead: Ju Li&nbsp; (Department of Nuclear Science and Engineering, NSE), the Carl Richard Soderberg Professor in Power Engineering and professor of materials science and engineering &nbsp; A-WILD: AI-driven Workflows for Intelligent Lab Discovery Project lead:&nbsp; Lawrence Berkeley National Laboratory (LBNL) MIT lead: Ju Li (NSE) &nbsp; A Foundational Generative AI Framework to Advance Water-Energy Security Project lead: LBNL MIT lead: Haruko Wainwright &nbsp;(NSE), Atlantic Richfield Career Development Professor in Energy Studies, assistant professor of nuclear science and engineering, and assistant professor of civil and environmental engineering &nbsp; An AI-Driven Platform for HLW Repository Design and Analysis with Digital Twins, GIS Data Integration, and Surrogate Models Project lead: LBNL MIT lead: Haruko Wainwright (NSE) &nbsp; Toward Physics-Informed Digital Twins for Fusion Magnet Systems Project lead: LBNL MIT lead: Holger Witte &nbsp;(LNS), associate director of MIT’s Bates Research and Engineering Center. “The extraordinary response to this Genesis Mission application process demonstrates that America’s scientific community is ready to reimagine how discovery happens,” said DOE&nbsp;Under Secretary Darío Gil SM ’00 PhD ’03, in the DOE’s announcement. “Through the Genesis Mission, we are bringing together the nation’s leading researchers, institutions, and technology partners to build the next generation of scientific capability. We look forward to seeing these teams demonstrate new research workflows that accelerate discovery and reveal what is possible when AI and science advance together.” A complete list of the first Genesis Mission projects selected for award negotiations is available from the U.S. Department of Energy.",
+        "authors": [
+          "Office of the Vice President for Research"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 2
+      },
       {
         "title": "Experts say exploiting Anthropic&#8217;s Fable isn&#8217;t how Kimi K3 got so good",
         "url": "https://techcrunch.com/2026/07/23/experts-say-exploiting-anthropics-fable-isnt-how-kimi-k3-got-so-good/",
@@ -288,7 +311,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 3
       },
       {
         "title": "ServiceNow bets $40 million on Indian banking software specialist to expand its financial services push",
@@ -302,7 +325,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "After shocking quarter, IBM insists that AI isn&#8217;t killing the mainframe",
@@ -316,7 +339,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 12
+        "ageHours": 15
       },
       {
         "title": "Google justifies its massive AI spending with a booming cloud business",
@@ -330,7 +353,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 14
+        "ageHours": 16
       },
       {
         "title": "Treasury threatens sanctions after White House claims Moonshot distilled Anthropic&#8217;s Fable",
@@ -344,7 +367,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
         "title": "How OpenAI’s human mistake led to the AI-powered hack on Hugging Face",
@@ -358,7 +381,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 17
+        "ageHours": 19
       },
       {
         "title": "Travis Kalanick&#8217;s robotics company raises $1.7B, led by a16z",
@@ -372,7 +395,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 17
+        "ageHours": 20
       },
       {
         "title": "Yope raises $12.3M to build a private social network without algorithms or ads",
@@ -386,7 +409,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 18
+        "ageHours": 20
       },
       {
         "title": "Monday.com lays off hundreds to focus on AI",
@@ -400,7 +423,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 18
+        "ageHours": 21
       },
       {
         "title": "Professor Emeritus Dimitri Bertsekas, influential computer scientist and prolific author, dies at 83",
@@ -414,7 +437,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Arcee, a US open source AI lab, says Chinese models are not inherently dangerous",
@@ -428,21 +451,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 20
-      },
-      {
-        "title": "Substack&#8217;s new tool tells you who&#8217;s been writing their newsletters with AI",
-        "url": "https://techcrunch.com/2026/07/22/substacks-new-tool-tells-you-whos-been-writing-their-newsletters-with-ai/",
-        "publishedAt": "2026-07-22T16:23:09.000Z",
-        "summary": "Substack is giving readers a way to estimate how much of a newsletter was written by AI, signaling a broader shift toward transparency around AI-assisted content.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 20
+        "ageHours": 22
       }
     ],
     "threads": []
@@ -453,19 +462,19 @@
     "topCategories": [
       {
         "name": "Models",
+        "count": 9
+      },
+      {
+        "name": "General",
         "count": 8
       },
       {
         "name": "Research",
-        "count": 7
-      },
-      {
-        "name": "General",
-        "count": 7
+        "count": 6
       },
       {
         "name": "Products",
-        "count": 2
+        "count": 1
       }
     ]
   }
