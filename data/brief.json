@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T19:31:42.681Z",
+  "generatedAt": "2026-07-26T21:09:15.633Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 503",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,222 +87,22 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "3D-Aware VLMs with Implicit and Explicit Geometries",
-        "url": "https://arxiv.org/abs/2607.21595v1",
-        "publishedAt": "2026-07-23T17:59:59.000Z",
-        "summary": "Despite rapid progress, most existing vision-language models (VLMs) built from 2D visual inputs often struggle when handling various 3D tasks that require fine-grained spatial understanding and reasoning. To bridge this gap, we present VLM-IE3D, a unified framework that enhances the 3D spatial awareness of VLMs by equipping them with both implicit and explicit 3D geometries learned from RGB videos. Our VLM-IE3D introduces Implicit Geometry Tokens (IGTs) that capture high-level geometric priors from input videos, as well as complementary Explicit Geometry Tokens (EGTs) that encode detailed geometric structures from reconstructed 3D attributes. On top of that, VLM-IE3D comes with a 3D-aware adapter that effectively fuses the two types of geometric representations with 2D visual cues. This RGB-only design injects strong 3D inductive biases for fine-grained spatial understanding and reasoning without requiring any additional 3D inputs. Extensive experiments show that VLM-IE3D achieves superior performance consistently across various 3D tasks including 3D video detection, 3D visual grounding, 3D dense captioning, and spatial reasoning. Code and models are available at https://github.com/Vegetebird/VLM-IE3D.",
-        "authors": [
-          "Wenhao Li",
-          "Xueying Jiang",
-          "Quanhao Qian",
-          "Deli Zhao",
-          "Ran Xu",
-          "Shijian Lu",
-          "Gongjie Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "Expanding Flow Maps",
-        "url": "https://arxiv.org/abs/2607.21585v1",
-        "publishedAt": "2026-07-23T17:57:38.000Z",
-        "summary": "Flow-based generative models have enabled remarkable progress in fast and controllable generation across continuous and discrete state spaces, yet existing parameterizations are constrained to fixed dimensions or fixed sequence lengths. Here, we introduce Expanding Generative Flows (EFlows), which define flows between distributions of increasing dimensionality along an expanding interpolant that grows the state by augmenting it with conditional noise. Building on this construction, we propose Expanding Flow Maps (EFMs), a new class of flow maps that distill the expanding interpolant into efficient few-step generative models. Each EFM factors the map between any two timesteps into two learnable operations: an expand operator, which augments the state space with new coordinates or tokens conditioned on the current state, and a transport map, which pushes the expanded state forward along the interpolant. Composing these operators yields a single map that jointly expands and denoises the state, recovering existing fixed-canvas flows and flow maps as the special case in which the expand operator is the identity. We further extend the framework to the discrete simplex, enabling variable-size graph generation and variable-length sequence generation. Across both continuous and discrete modalities, we establish EFlows and EFMs as a principled framework for settings in which output size is itself a learned, controllable degree of freedom.",
-        "authors": [
-          "Sophia Tang",
-          "Pranam Chatterjee"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 74
-      },
-      {
-        "title": "GraphVid: Interactive Graph-Controllable Video Generation",
-        "url": "https://arxiv.org/abs/2607.21580v1",
-        "publishedAt": "2026-07-23T17:56:30.000Z",
-        "summary": "Controllable video generation remains challenging due to the difficulty of specifying precise multi-object interactions using text prompts or motion-control inputs that primarily constrain pixel movement. In practice, trajectory-based control often requires users to draw accurate tracks for multiple objects, which scales poorly with scene complexity and becomes ambiguous under occlusion or overlap. To enable flexible yet precise multi-subject control, we introduce $\\textbf{GraphVid}$, a graph-conditioned image-to-video generation model that enables interactive control through structured interaction graphs. We further curate $\\textbf{GraphVid-Bench}$, a large-scale interaction-centric video dataset with structured relational annotations to enable training of interaction-aware video generation models. Despite using substantially less training data and fewer trainable parameters than prior motion-control methods, GraphVid delivers strong controllability and video quality. Compared with Motion-I2V, GraphVid reduces FID by up to 39.9% and FVD by 37.6%, while improving PSNR (9.87=>15.98) and SSIM (0.38=>0.61). Our results highlight the potential of structured semantic interfaces as a powerful paradigm for controllable video generation.",
-        "authors": [
-          "Vedant Shah",
-          "Onkar Susladkar",
-          "Tushar Prakash",
-          "Kiet Nguyen",
-          "Tianjio Yu",
-          "Adheesh Juvekar",
-          "Muntasir Waheed",
-          "Ismini Lourentzou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "Barzilai-Borwein Fails Superlinear Convergence on an Open Set of Quadratics for Every Dimension $n\\geq 4$",
-        "url": "https://arxiv.org/abs/2607.21579v1",
-        "publishedAt": "2026-07-23T17:56:05.000Z",
-        "summary": "Barzilai--Borwein (BB) method has shown strong practical performance in continuous optimization, yet its convergence dynamics remains poorly understood. In particular, a central unresolved question is whether BB converges superlinearly for almost every strictly convex quadratic problem and initialization. We provide a negative answer to this question. Specifically, for every finite dimension $n\\geq4$, we construct a nonempty open, hence positive-Lebesgue-measure, family of strictly convex quadratic problems and initial points for which the long Barzilai--Borwein method (BB1) converges but cannot converge root-superlinearly. More precisely, with the explicit constants $ρ_{\\min}=10^{-6},ρ_{\\max}=0.61$, every spectral component of the gradient is bounded above and below by the corresponding geometric sequence. Consequently, the gradient norm and the energy norm of the error satisfy two-sided geometric estimates with the same rates, while the objective gap satisfies the corresponding estimates with squared rates. In particular, all three quantities are bounded below by geometric sequences, ruling out superlinear convergence. The construction is highly nontrivial, based on a computer-assisted proof of a nonresonant, attracting seven-cycle of the projectivized BB dynamics in dimension four.",
-        "authors": [
-          "Dawei Li",
-          "Xiaotian Jiang",
-          "Mingyi Hong"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 74
-      },
-      {
-        "title": "Synthetic data generation framework for quality control automation in gravure printing",
-        "url": "https://arxiv.org/abs/2607.21577v1",
-        "publishedAt": "2026-07-23T17:55:21.000Z",
-        "summary": "Quality control in printing, particularly in rotogravure printing, still depends on slow, costly, and subjective manual inspection. Automated surface defect detection is critical for maintaining high-quality standards in rotogravure printing. Deep learning models give prospects for automation. However, training robust deep learning models, such as YOLO or Vision Transformers, is heavily hindered by the extreme scarcity of real-world industrial defects images. To overcome this limitation, this paper introduces a novel synthetic data generation framework tailored for rotogravure printing quality control. The proposed pipeline automatically generates high-fidelity images of specific printing defects (creases, streaks, misregistration, etc.) and outputs corresponding bounding boxes and annotations. To validate the framework, a synthetic dataset of 7533 images was generated and used to train the state-of-the-art object-detection model RFDETR. Experimental results demonstrate that the model trained on our synthetic data achieves a Mean Average Precision (mAP) of 80.9\\% on real industrial testing samples. This framework provides a zero-cost, rapid-deployment solution for automating defect inspection in printing lines without requiring massive manual data collection.",
-        "authors": [
-          "Korota Arsène Coulibaly",
-          "Mohamed Hamlich",
-          "Khalid Hmali",
-          "Andrea Trombin"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "Surprisal Theory is Tautological (without Rational Grounding)",
-        "url": "https://arxiv.org/abs/2607.21574v1",
-        "publishedAt": "2026-07-23T17:54:37.000Z",
-        "summary": "Surprisal theory holds that the human processing difficulty of a linguistic unit in context is an affine function of its surprisal under some language model. I argue this claim is a tautology without further constraint: for any non-negative difficulty measure over units in context, there exists a language model whose surprisal is an affine function of it under mild technical conditions. Therefore, because any pattern of difficulty is consistent with some language model, without an additional constraint on the language model, surprisal theory makes no falsifiable predictions. The tautology was long obscured by an assumption implicit in two decades of psycholinguistic work---that the relevant language model is the distribution that generated the training corpus, so that improving corpus fit improves predictions of human behavior. Recent empirical work has undermined this assumption, demonstrating that better corpus models can be worse predictors of processing difficulty. I conclude that breaking the tautology requires a rationalist intervention, i.e., the relevant language model must be derived from a non-empirically motivated model of the comprehender, which could be based on, for instance, memory constraints or processing goals, and that, thus, does not depend on the behavioral data surprisal theory is meant to explain.",
-        "authors": [
-          "Ryan Cotterell"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 74
-      },
-      {
-        "title": "Beyond Sufficiency: Time Series Explanation with Counterfactual Necessity",
-        "url": "https://arxiv.org/abs/2607.21573v1",
-        "publishedAt": "2026-07-23T17:52:01.000Z",
-        "summary": "Faithful explanations of time-series classifiers should identify subsequences that are not only sufficient to preserve a black-box model's prediction, but also necessary for maintaining it. However, existing sufficiency-oriented methods can assign high importance to spurious subsequences that support the prediction without being essential to the model's decision. We introduce \\textbf{TimePNS}, a necessity-aware framework for time-series explanation. Inspired by Pearl's counterfactual notion of necessity, TimePNS assesses whether a temporal factor is necessary by intervening on it and measuring whether the original prediction is disrupted. The framework adopts a two-stage design. Stage I learns an identifiable causal generative process together with a sufficiency-oriented explanation mask. Stage II performs counterfactual interventions on temporal factors to derive necessity signals, which supervise a temporal gate that refines the initial explanation by suppressing non-essential components and emphasizing counterfactually necessary ones. Experiments on synthetic and real-world time-series benchmarks show that TimePNS more accurately identifies decision-critical subsequences and consistently improves sufficiency-necessity trade-offs over strong baselines.",
-        "authors": [
-          "Hongnan Ma",
-          "Yiwei Shi",
-          "Mengyue Yang",
-          "Weiru Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education",
-        "url": "https://arxiv.org/abs/2607.21570v1",
-        "publishedAt": "2026-07-23T17:50:28.000Z",
-        "summary": "Large Language Models (LLMs) show promise for medical education, but most existing systems focus on localized interactions such as question answering or single-turn feedback, rather than organizing an entire clinical case into a decision-centered learning trajectory. We introduce \\textit{MedGame}, a framework that transforms static clinical cases into structured, executable storytelling games. MedGame uses a dual-engine design: a Medical Narrative Designer synthesizes case-grounded clinical storylines with states and decision nodes, while a Story Director converts them into dependency-aware multimodal orchestration plans rendered by our released interactive platform. We construct MedGame Bench, a 5,000-case benchmark and evaluation protocol for Medical Narrative Generation and Story Direction. Experiments show that task-specific fine-tuning substantially improves open-source LLMs on MedGame Bench and narrows the gap with commercial models. A pilot student study further shows that learners perceive MedGame as more engaging and useful than text-only alternatives.",
-        "authors": [
-          "Qian Wu",
-          "Xinrong Zhou",
-          "Zizhan Ma",
-          "Kai Chen",
-          "Zheyao Gao",
-          "Xun Lin",
-          "Hongqiu Wu",
-          "Longfei Gou",
-          "Yixiao Liu",
-          "Ann Sin Nga Lau",
-          "Qi Dou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "Graph Learning on Ensembles of Cyclic Peptides: An Investigation of Molecular Ensemble Modeling",
-        "url": "https://arxiv.org/abs/2607.21561v1",
-        "publishedAt": "2026-07-23T17:42:51.000Z",
-        "summary": "Molecular property prediction from structure often uses a single representative conformation, even though many molecules exist as conformational ensembles in solution. We introduce EnsembleEGNN, a molecular ensemble foundation model that encodes an ensemble by first encoding each conformer with shared Equivariant Graph Neural Network (EGNN) layers, then pooling the resulting conformer representations with a Set Attention Block. We pretrain the model on CREMP, a cyclic peptide ensemble dataset, using a multi-task self-supervised objective combining masked token recovery, noisy-coordinate reconstruction, and pairwise distance reconstruction. On the CREMP-CycPeptMPDB dataset, training EnsembleEGNN from scratch fails entirely ($R^2=0.005$). However, the pretrained model reaches $R^2=0.477$ and Pearson $r=0.699$, outperforming the sequence-only BERT baseline ($R^2=0.439$, Pearson $r=0.667$). When EnsembleEGNN is co-trained end-to-end with the BERT sequence encoder, the hybrid model improves further to $R^2=0.538$ and Pearson $r=0.737$. These results demonstrate that encoding conformational ensembles into a single thermodynamically informed embedding improves cyclic-peptide property prediction.",
-        "authors": [
-          "Aaron Feller",
-          "Kris Deibler",
-          "Maxim Secor"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "Unsupervised Consensus-Based Anomaly Detection for Spatiotemporal Malaria Incidence in Ghana",
-        "url": "https://arxiv.org/abs/2607.21559v1",
-        "publishedAt": "2026-07-23T17:40:51.000Z",
-        "summary": "A consensus anomaly detection framework was applied to monthly malaria surveillance data from Ghana (2014-2023) to identify atypical transmission patterns. Anomalies were highly structured in space and time. Ashanti and Northern Regions accounted for most recurrent anomalies, with persistent hotspots at Tamale, Kumasi, and Accra. A key finding was the spatial distinction between anomaly burden (cumulative cases during anomalous periods) and anomaly frequency (persistence of unusual behaviour). Tamale had the highest burden during anomalies, whereas the highest anomaly rates clustered in Ashanti districts, showing that high-burden areas are not necessarily those with the most frequent anomalous transmission. Anomalous months formed a statistically distinct group, with much higher case counts (Cohen's $d = 3.252$) and large seasonal deviations ($d > 1.2$) compared with normal months. Malaria burden alone provides an incomplete picture of transmission dynamics. By distinguishing where malaria is most prevalent from where transmission behaves most unusually, this framework can strengthen surveillance, prioritise investigations, and support targeted control strategies.",
-        "authors": [
-          "T. Ansah-Narh",
-          "Y. Asare Afrane"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 74
-      },
-      {
-        "title": "Beyond Sycophancy: Structured Resistance and Compliance in LLM Moral Reasoning",
-        "url": "https://arxiv.org/abs/2607.21558v1",
-        "publishedAt": "2026-07-23T17:40:07.000Z",
-        "summary": "Building socially calibrated large language models, which can learn from others without simply yielding to them, requires more than reducing sycophancy as a one-dimensional failure mode. Models must distinguish when to incorporate others' perspectives from when to maintain a well-grounded moral judgment. We study the broader resistance-compliance process governing this distinction. Across three studies, we show that models' judgment revision is structured along three dimensions that parallel classic phenomena in human social psychology: the distance between an incoming view and the model's initial position, the source attribution of that view, and the coalition structure supporting it. Models are generally more receptive to nearby positions, more influenced by views presented as their own prior judgments, and differently responsive to group pressure. These findings recast sycophancy as one expression of a broader judgment-updating process shaped by social influence. Our framework provides a principled basis for distinguishing constructive belief revision from sycophantic compliance, thereby supporting better alignment in morally consequential interactions.",
-        "authors": [
-          "Baihui Wang",
-          "Bernard Koch"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "OpenForgeRL: Train Harness-native Agents in Any Environment",
-        "url": "https://arxiv.org/abs/2607.21557v1",
-        "publishedAt": "2026-07-23T17:38:30.000Z",
-        "summary": "Modern AI agents rely on elaborate inference harnesses such as Claude Code, Codex, and OpenClaw to drive multi-turn reasoning, tool use, and access to external systems. While powerful, these complex harnesses also make agents hard to train end-to-end with open infrastructure, whose SFT/RL stacks cannot natively express stateful, multi-process harness inference. To address this, we present OpenForgeRL, an open-source framework for training harness-based agents end-to-end in diverse environments. OpenForgeRL achieves this with a lightweight proxy that serves the harness's model calls while recording them as training data for a standard RL codebase (e.g., veRL), and a Kubernetes orchestrator that runs each rollout in its own remote container, together enabling training on any harness in any environment at scale. By decoupling training and inference, OpenForgeRL allows researchers to easily train, study, and improve agents directly in the real harnesses and environments they are deployed with. We validate our framework across diverse, complex harnesses and environments, spanning tool/claw-based agents and multimodal GUI browser- and computer-use agents. Using only hundreds to a few thousand tasks, OpenForgeClaw reaches 31.7 pass^3 and 55.9 pass@3 on ClawEval and 33.7 on QwenClawBench. OpenForgeGUI reaches 37.7 on OSWorld-Verified, 63.0 on Online-Mind2Web, and 72.3 on WebVoyager. Both outperform open baselines of similar size on nearly all benchmarks, and in the GUI setting match or surpass models several times larger. Beyond benchmarks, we analyze how harness choice (e.g., ZeroClaw, OpenClaw, Codex) and RL shape agent behavior. We find that some harnesses are substantially harder to learn than others, and that RL improves agentic reliability, such as self-verification, tool coverage, and completing multi-step plans, though critical abilities such as error recovery remain weak.",
-        "authors": [
-          "Xiao Yu",
-          "Baolin Peng",
-          "Ruize Xu",
-          "Hao Zou",
-          "Qianhui Wu",
-          "Hao Cheng",
-          "Wenlin Yao",
-          "Nikhil Singh",
-          "Zhou Yu",
-          "Jianfeng Gao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Making sense of the panic over Chinese AI",
+        "url": "https://techcrunch.com/2026/07/26/making-sense-of-the-panic-over-chinese-ai/",
+        "publishedAt": "2026-07-26T19:40:57.000Z",
+        "summary": "On the latest episode of Equity, we discussed why Moonshot AI's Kimi seemed to panic Silicon Valley and Wall Street.",
+        "authors": [
+          "Anthony Ha"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
       {
         "title": "Hugging Face CEO calls for ‘radical transparency’ after ‘unprecedented’ OpenAI hack",
         "url": "https://techcrunch.com/2026/07/26/hugging-face-ceo-calls-for-radical-transparency-after-unprecedented-openai-hack/",
@@ -311,7 +115,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "Monday.com is the latest tech company to blame AI for layoffs — here are 20 others",
@@ -325,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 18
+        "ageHours": 20
       },
       {
         "title": "Librarians are hosting viral &#8216;Avoiding AI&#8217; workshops for people who are fed up with Big Tech",
@@ -339,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 28
+        "ageHours": 29
       },
       {
         "title": "One fallen power line exposed a growing AI data center problem. Here&#8217;s how to fix it.",
@@ -353,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 30
+        "ageHours": 32
       },
       {
         "title": "I tried out OpenAI&#8217;s new AI keypad — which will be fun for some coders and slightly mystifying to everyone else",
@@ -367,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 43
+        "ageHours": 45
       },
       {
         "title": "Prentis, new AI lab co-founded by Reid Hoffman, Mark Pincus in talks to raise $100M",
@@ -381,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 45
+        "ageHours": 47
       },
       {
         "title": "Why Cognition bought Poke: AI personality is becoming a competitive advantage",
@@ -395,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 49
+        "ageHours": 51
       },
       {
         "title": "Anthropic launches Opus 5",
@@ -409,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 51
+        "ageHours": 52
       },
       {
         "title": "As US weighs response to Chinese AI, industry urges against broad open-weight restrictions",
@@ -423,7 +227,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 52
+        "ageHours": 53
       },
       {
         "title": "Bluesky’s AI assistant Attie expands into an open social research tool",
@@ -437,7 +241,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 52
+        "ageHours": 54
       },
       {
         "title": "Midjourney acquired the astrology app Co-Star",
@@ -451,44 +255,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 52
-      },
-      {
-        "title": "‘AI communism’, rogue models, and the why Kimi K3 spooked Wall Street",
-        "url": "https://techcrunch.com/podcast/ai-communism-rogue-models-and-the-why-kimi-k3-spooked-wall-street/",
-        "publishedAt": "2026-07-24T14:00:00.000Z",
-        "summary": "Chinese AI lab Moonshot&#8217;s&#160;open model Kimi went viral this week&#160;for reasons that had less to do with the model itself and more to do with&#160;how the U.S. AI industry reacted to it. Meanwhile, an unreleased OpenAI model wandered outside its test environment and ended up connected to a real&#160;security breach at Hugging Face&#160;— a reminder [&#8230;]",
-        "authors": [
-          "Theresa Loconsolo, Kirsten Korosec, Anthony Ha, Sean O'Kane"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
         "ageHours": 54
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
-    "last24h": 2,
+    "totalItems": 12,
+    "last24h": 3,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 10
-      },
-      {
         "name": "General",
-        "count": 8
+        "count": 7
       },
       {
-        "name": "Models",
-        "count": 4
+        "name": "Research",
+        "count": 2
       },
       {
         "name": "Products",
         "count": 2
+      },
+      {
+        "name": "Models",
+        "count": 1
       }
     ]
   }
