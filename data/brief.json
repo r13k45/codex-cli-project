@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T00:08:42.713Z",
+  "generatedAt": "2026-08-03T03:49:37.005Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,266 +85,216 @@
   "sections": {
     "research": [
       {
-        "title": "Learning to Trace Seiberg Dualities",
-        "url": "https://arxiv.org/abs/2607.28628v1",
-        "publishedAt": "2026-07-30T17:59:56.000Z",
-        "summary": "Dualities play an important role in establishing both microscopic and emergent phenomena in a wide range of physical systems. In practice, though, it can often be computationally challenging to establish when two systems are dual, even when all of the \"rules of the game\" are well-known. Said differently, when confronted with two systems, how can one efficiently establish that they are in fact dual? In this paper we use machine learning methods to address this question for Seiberg dualities of supersymmetric quiver gauge theories. Mathematically, this involves establishing mutations of quivers, which is in turn a variation on the theme of \"learning to unknot\". On the one hand, this leads us to a practical tool for establishing the computational complexity of different dualities. On the other hand, it also allows us to study how different network architectures learn how to trace Seiberg dualities. We find that for quivers with a modest number of quiver nodes (of order $10$), different network architectures consisting of transformers and multi-layer perceptrons tend to outperform deterministic algorithms. Supplementing the network by well-established pathfinder algorithms (essentially \"Google Maps for quivers\") leads to an additional improvement in the efficiency and accuracy of the search strategy. We anticipate that this class of questions can serve as a useful benchmark for frontier AI models applied to theoretical physics.",
+        "title": "TokTier: Exact Stateful Tokenization for Agentic LLM Serving",
+        "url": "https://arxiv.org/abs/2607.29678v1",
+        "publishedAt": "2026-07-31T17:56:30.000Z",
+        "summary": "LLM serving systems cache prompt KV state, yet most front ends still re-tokenize the full request text on every call. The cost lands on coding agents, which resubmit a long transcript after each small tool result, and reuse is hard because even a short append can change token boundaries near the end of the previous sequence. Across 153,951 calls from two agent ecosystems, the median call appends about 1.4K characters, and only 1.0-3.6% of calls start or rebuild a session with contexts of millions of characters. At a 94.1% fleet prompt-cache hit rate, tokenization reaches up to 64% of time to first token.\n  TokTier is a stateful tokenization service with one contract: emitted token IDs are always identical to full reference tokenization of the request text. For a session continuation, it re-tokenizes a small window around the append and splices only after a per-request stable-boundary check, widening the window or falling back to full tokenization on failure. For a call without a reusable prefix, it decomposes GPT-family regex pre-tokenization into run-local rules and runs exact pre-tokenization and BPE on a GPU. A sampled shadow verifier re-checks live traffic.\n  Across 17 tokenizer families, differential campaigns cover 1.5x10^10 split checks, a 12.4 TB real-text corpus, and 93,000+ replayed agent steps, with zero divergence. Incremental repair takes 0.5-1.1 ms from 100K to 3M characters, up to 437x faster than HF tokenization and 2.1x faster at 1M than the strongest cache-based baseline (Gigatoken) fully prewarmed. GPU full tokenization encodes a 1M-character request in 0.87 ms, up to 491x below HF and 23.4x below the fastest published CPU method. With vLLM, median time to first token drops 16-34% and P99 drops 23% under recorded bursts. Under a 50 ms P99 objective, four repair cores plus one GPU sustain 1,821 requests/s where a 16-core stateless front end saturates at 40.",
         "authors": [
-          "Jonathan J. Heckman",
-          "Shani Meynet",
-          "Alessandro Mininno",
-          "Gary Shiu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "ReToken: One Token to Improve Vision-Language Models for Visual Retrieval",
-        "url": "https://arxiv.org/abs/2607.28627v1",
-        "publishedAt": "2026-07-30T17:59:56.000Z",
-        "summary": "Long visual context poses a challenge for vision-language models: performance degrades as the number of distractors grows, and processing all tokens at once is computationally infeasible under GPU memory constraints. We present ReToken, a single learnable embedding trained as an explicit retrieval target that selects a sparse set of query-relevant visual tokens from a pre-filled visual KV cache. Trained on only a small image-QA dataset, ReToken yields consistent gains across image and video benchmarks: on Visual Haystacks it improves Qwen3VL-8B by 13.4 points and InternVL3.5 by 12.4 points (>20% relative), and on LVBench it transfers zero-shot to long video for an 8.0-point gain with Qwen3VL-8B. Thanks to its lightweight design, both training and long-video inference fit on a single H100. Code is available at: https://github.com/avaxiao/ReToken",
-        "authors": [
-          "Yao Xiao",
-          "Reuben Tan",
-          "Zhen Zhu",
-          "Yuqun Wu",
-          "Jianfeng Gao",
-          "Derek Hoiem"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "PAC-MAN: Perception-Aware CBF-RL for Whole-Body Safety in Humanoid Dodgeball",
-        "url": "https://arxiv.org/abs/2607.28623v1",
-        "publishedAt": "2026-07-30T17:59:35.000Z",
-        "summary": "We present PAC-MAN, a perception-aware CBF-RL framework that couples control-barrier safety with deployment-realistic onboard sensing for whole-body humanoid dodgeball. The deployed policy sees the ball only as segmentation-masked depth from a head-mounted camera, while training-time CBF guidance represents clearance to every body link, and an adversarial motion prior regularizes the resulting evasive reflexes. We evaluate on a controlled any-link contact benchmark with seeded throws in two regimes: single throws and a deployment loop in which the robot walks back to its station and recovers between throws. On this benchmark, the policy comes within a few points of a privileged state oracle: a fixed onboard camera alone is adequate for evasion. We find that usable barrier structure depends on perceptual observability: Joint-CBF gives the best performance with accurate ball states, degrades under fixed-camera observations when used only as training guidance, and recovers with a ball-tracking gimbal or privileged runtime filter. We therefore deploy a lightweight Link-CBF policy zero-shot on the Unitree G1 in the real world, where it tolerates imperfect perception, succeeds on 95% of throws, and uses semantic segmentation to dodge different balls.",
-        "authors": [
-          "Lizhi Yang",
-          "Junheng Li",
-          "Aaron D. Ames"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "AskChem: Claim-Centered Infrastructure for Chemistry Literature Synthesis",
-        "url": "https://arxiv.org/abs/2607.28618v1",
-        "publishedAt": "2026-07-30T17:59:11.000Z",
-        "summary": "Chemistry literature synthesis often requires assembling specific findings scattered across many publications, yet existing literature-search systems primarily return ranked document lists. As a result, scientists and AI agents need to locate relevant information, verify their provenance, and assemble cross-paper answers manually. We present AskChem, a claim-centered infrastructure for cross-paper chemistry search. AskChem changes the unit of retrieval from the paper to the provenance-carrying claim: each paper is converted into atomic, typed claims, each grounded by a source DOI and a verbatim quote or an explicit evidence locator. Over this shared claim store, AskChem exposes complementary structures for search and synthesis: a stabilized faceted taxonomy for hierarchical retrieval and browsing, an evidence graph linking claims through relations, and an exploratory living taxonomy that situates indexed papers under scientific principles. AskChem currently indexes 2.4M claims from 147K papers and provides a web interface, as well as REST, SDK, and MCP access for AI agents. On AskChem-Bench, grounding a GPT-5.5 reader in AskChem yields 100% resolvable DOIs, compared with 88.3% without retrieval, and the highest citation density among five tested systems. AskChem is live at https://askchem.org.",
-        "authors": [
-          "Bing Yan",
-          "Gregory Wolfe",
-          "Stefano Martiniani",
-          "Kyunghyun Cho"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "AISPA: User-Centric System Prompt Auditing for Large Language Model Applications",
-        "url": "https://arxiv.org/abs/2607.28617v1",
-        "publishedAt": "2026-07-30T17:58:58.000Z",
-        "summary": "System prompts are instructions configured by developers to govern the behaviors of foundation models in AI applications. They are used throughout commercial AI products, but are rarely disclosed to the public or regulators, creating a serious trust and accountability gap in the wide deployment of AI systems. In this paper, we introduce Artificial Intelligence System Prompt Assurance (AISPA), a user-centric framework for systematically auditing system prompts in AI systems. AISPA examines specific parts of a system prompt and evaluates them along eight dimensions that matter to users. We then use this framework to review 3,249 instructions from system prompts in 88 commercial AI products, classifying each instruction as either protective (of users) or problematic. Our audit surfaces four core findings. First, system prompt design varies substantially across products and developers, with some organizations averaging over 60 protective instructions per product while others average fewer than 5. Second, protective instructions are widely adopted but shallow in scope: 98.9% of products contain at least one, yet only 24% cover all eight dimensions of the AISPA taxonomy. Third, system prompts have grown steadily longer and more protective of users, suggesting that user protection is becoming a more visible concern in commercial prompt design. Fourth, despite this progress, problematic instructions remain pervasive: roughly 40% of products contain at least one instruction that works against user interests, and protective and problematic instructions frequently coexist within the same prompt. Our findings highlight the need for greater transparency, standardization, and independent oversight for system prompts in commercial AI products.",
-        "authors": [
-          "Xiangning Lin",
-          "Shenzhe Zhu",
-          "Shu Yang",
           "Zhenyu Zhang",
-          "Haoqian Zhang",
-          "Yipeng Zhao",
-          "Chengxuan Qian",
-          "Tianwei Wang",
-          "Ziheng Zhang",
-          "Zhenlong Yuan",
-          "Dingcheng Wang",
-          "Juncheng Wu",
-          "Yuan Si",
-          "Jiaxin Liu",
-          "Baolong Bi",
-          "Robert Mahari",
-          "Tobin South",
-          "Dazza Greenwood",
-          "Zexue He",
-          "Rishi Bommasani",
-          "Sophia Kazinnik",
-          "Andreas Haupt",
-          "Samuele Marro",
-          "Erik Brynjolfsson",
-          "Alex Pentland",
-          "Jiaxin Pei"
+          "Zhichao Cao"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 58
+      },
+      {
+        "title": "ExtractBench: A Benchmark for Schema-Guided Enterprise Document Extraction",
+        "url": "https://arxiv.org/abs/2607.29677v1",
+        "publishedAt": "2026-07-31T17:55:58.000Z",
+        "summary": "Enterprise workflows increasingly rely on agents for \\emph{schema-guided extraction}: given a document and a user-defined schema, the agent faithfully follows the schema to produce the correct output with source evidence as grounding metadata. We present ExtractBench, a benchmark for schema-guided extraction and, to our knowledge, the first to score value accuracy, record completeness at scale, grounding, and measured cost together. The evaluation system contains 4,869 pages across 370 enterprise documents, 8 business domains, and 67 document types, with clear tags differentiating their challenge scenarios. The scalable schema and ground-truth curation pipeline combines independent-system agreement for real documents, known values for synthetic lists, and human verification for forms. We report order-insensitive value F1 for value accuracy, plus two grounding metrics for source traceability: word- and page-level F1. Commercial VLMs perform well on short documents but often truncate record lists on long ones, while coding agents retain higher accuracy at much higher cost. LlamaExtract Agentic Plus ranks first on all three metrics, with accuracy comparable to coding agents at a fraction of the cost. Dataset and evaluation code are available on \\href{https://huggingface.co/datasets/llamaindex/ExtractBench}{HuggingFace} and \\href{https://github.com/run-llama/ExtractBench}{GitHub}.",
+        "authors": [
+          "Boyang Zhang",
+          "Adrian Lyjak",
+          "Eli Stewart",
+          "Zhaoqi Li",
+          "Simon Suo"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 58
+      },
+      {
+        "title": "Differentially Private Nonparametric Modal Learning with Applications to Regression and Clustering",
+        "url": "https://arxiv.org/abs/2607.29675v1",
+        "publishedAt": "2026-07-31T17:55:02.000Z",
+        "summary": "Density modes provide a localized and interpretable summary of multimodal distributions, but their estimation under rigorous differential privacy constraints remains largely unexplored. We study differentially private recovery of density modes for multivariate distributions under local smoothness, curvature, and separation conditions. We propose DP-GRAMS, a mean-shift inspired method that performs noisy ascent on a differentially private score estimator. Assuming the density belongs locally to a Hölder class with smoothness parameter $β> 2$, our score estimator uses bias-reducing higher-order kernels, and then enforces privacy in the gradient ascent steps via gradient clipping and calibrated Gaussian noise. A private initialization scheme combines a density-aware utility with a suppression rule and, with $k\\asymp M\\log n$ draws over a public $h_{\\mathrm{DAP}}$-grid and suppression radius $ρ_{\\mathrm{init}}\\asymp (\\log n)^{-1/d}$, achieves high-probability coverage of the modal basins by successively suppressing selected local neighborhoods in competitive regions, while correlated noise across multiple starts enables joint release under a single $(\\varepsilon,δ)$-differential privacy guarantee. We prove that all population modes are recovered with high probability and establish asymptotic error rates of the form $O\\!\\left((\\tfrac{\\log n}{n})^{\\frac{2(β-1)}{d+2β}}\\right) + O\\!\\left((\\tfrac{\\mathrm{polylog}(n,δ)}{n^2\\varepsilon^2})^{\\frac{β-1}{d+β}}\\right)$. We also provide minimax lower bounds for private mode estimation, and show that our estimators are nearly optimal, up to a logarithmic factor in the MSE. We present two natural extensions: DP-PMS, a private modal-regression method, and DP-GRAMS-C, a clustering pipeline. Extensive experiments on synthetic and real data demonstrate favorable privacy-utility trade-offs relative to common baselines.",
+        "authors": [
+          "Arkajyoti Bhattacharjee",
+          "Arnab Auddy"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 58
+      },
+      {
+        "title": "Sign compression for Muon: SignMuon, MuonSign, and the Limits of Error Feedback",
+        "url": "https://arxiv.org/abs/2607.29674v1",
+        "publishedAt": "2026-07-31T17:54:46.000Z",
+        "summary": "SignMuon compresses the Muon update to one bit per parameter by taking its elementwise sign, providing the most direct way to run a matrix-aware optimizer under an extremely low communication budget. It outperforms SignSGD in practice, yet it can ascend even on a linear function. Signing the gradient before the Linear Minimization Oracle (LMO), rather than after, does not repair this: we construct a small explicit instance on which sign-before (MuonUSign) and sign-on-both-sides (MuonSign) ascend as well, so no placement of the sign around the oracle descends in general. Error feedback, the standard remedy for a biased compressor, does not rescue SignMuon: when applied to Muon's output, error feedback can fail for every smoothness constant, step size, and momentum. Applied to the gradient, error feedback does work, and EF21-MuonUSign and EF21-MuonSign attain the standard $\\mathcal{O}(T^{-1/2})$ rate for the squared gradient norm on smooth nonconvex problems, the latter at one bit in each direction. Experiments then reverse the ordering: across centralized CIFAR-10, federated CIFAR-10, and the nanoGPT speedrun, the strongest compressed method is consistently sign-after-the-LMO, precisely the placement we prove divergent, with the provably convergent variants trailing it. Compressing after the LMO, a heuristic, matters more at these scales than the guarantee does.",
+        "authors": [
+          "Maria Smirnova",
+          "Alexey Kravatskiy"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 78
+        "ageHours": 58
       },
       {
-        "title": "OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models",
-        "url": "https://arxiv.org/abs/2607.28609v1",
-        "publishedAt": "2026-07-30T17:57:41.000Z",
-        "summary": "Computer-using agents (CUAs) are advancing rapidly across the digital world. A CUA trajectory records the agent's actions, states, and reasoning. Verifying whether it fulfilled the task instruction is central to CUA evaluation, data curation, and reinforcement learning. Neither human-written verifiers nor human annotators can provide such verification at scale, so the field increasingly turns to vision-language models (VLMs) as judges of CUA trajectories. But a fundamental question has long gone unexamined: are these VLM judges reliable enough? To study it systematically, we introduce OSReward, a realistic, high-quality benchmark that evaluates VLM judges on CUA trajectories. The trajectories come from diverse agent backbones executing human-verified instructions across platforms, then rigorously labeled with ground-truth verdicts through multi-stage human annotation. Building on it, we derive OSReward-Hard, a challenge set concentrating genuinely hard cases, and OSReward-Multi for fine-grained efficiency and alignment scoring. The most comprehensive evaluation of VLM judges to date finds even state-of-the-art models fall short of an ideal judge, sharing a systematic leniency bias that mislabels failed runs as successes. The few reliable enough to trust are too expensive to run at scale, while affordable open models trail far behind. To close this gap, we construct and release OS-Shepherd-100K, an open corpus of reasoning-annotated trajectory judgments for the CUA community. On it, we train OS-Shepherd (9B and 35B), open reward models that supply low-cost, stable, and reliable reward signals, matching commercial judges at 30-60% lower cost than the frontier. Extensive analyses further inform the design of reliable CUA reward at scale. Our code, benchmark, dataset, and model checkpoints are available at https://os-copilot.github.io/OSReward-Home/.",
+        "title": "Freeze, Then Select: Structured Field Adapters and Stability-Validated Weak Selection for PDE Discovery from Sparse Observations",
+        "url": "https://arxiv.org/abs/2607.29665v1",
+        "publishedAt": "2026-07-31T17:49:32.000Z",
+        "summary": "PDE discovery from sparse observations requires reconstructing a continuous field and selecting the correct differential terms. Our analysis of optimization paths in coupled neural PDE discovery reveals three behaviors: the exact support can persist to the end of training, appear only transiently, or fail to emerge. To decouple equation selection from neural optimization, we develop a freeze-then-select method combining a structured field adapter with Stability-Validated Weak Selection (SVWS). Trained from observations without a PDE residual, the adapter factorizes the field into learned spatial features and temporal coefficients represented by cubic splines. After freezing the field, SVWS identifies recurrent terms across independent weak-form systems, refits candidate supports, and selects the final equation on held-out weak-form systems. Beyond fixed libraries, we apply the same principle to expressions generated by genetic programming and recover the power-law form of an unknown nonlinear diffusion function from sparse, noisy observations. Across all six sparse MDBench regimes, our method attains the highest exact support recovery rate, with its clearest gains over classical and neural baselines on challenging Kuramoto-Sivashinsky dynamics.",
         "authors": [
-          "Qiushi Sun",
-          "Kanzhi Cheng",
-          "Yian Wang",
-          "Bowen Yang",
-          "Hang Yan",
-          "Liheng Chen",
-          "Fangzhi Xu",
-          "Zichen Ding",
-          "Nuo Chen",
-          "Jialin Cao",
-          "Xingdong Gong",
-          "Zehao Li",
-          "Kaiming Jin",
-          "Xinfeng Yuan",
-          "Zhoumianze Liu",
-          "Jingyang Gong",
-          "Zhangyue Yin",
-          "Jiahui Gao",
-          "Zhiyong Wu",
-          "Tianbao Xie",
-          "Jianbing Zhang",
-          "Ben Kao",
-          "Lingpeng Kong"
+          "Juncheng Zhong",
+          "Chenghuang Shen",
+          "Jianfeng Liu",
+          "Zhengdong Xiao",
+          "Longjiu Luo",
+          "Qianrong Wang",
+          "Wenjun Xu",
+          "Wenlian Lu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 58
+      },
+      {
+        "title": "GQ-FSL: Green Quantized Federated Split Learning",
+        "url": "https://arxiv.org/abs/2607.29659v1",
+        "publishedAt": "2026-07-31T17:40:27.000Z",
+        "summary": "Deploying state-of-the-art deep neural networks (DNNs) at the wireless edge is severely bottlenecked by the strict energy and resource constraints of mobile devices. While federated split learning (FSL) mitigates on-device computation by offloading workloads to an edge server, this may introduce systemic overheads, while the continuous exchange of cut-layer data, and submodels still incurs significant energy consumption (EC). To address this, we propose a green quantized FSL (GQ-FSL) framework that incorporates stochastic quantization for both local collaborative training and wireless transmissions. Notably, GQ-FSL supports asymmetric precision levels for the client- and server-side submodels, effectively decoupling device energy constraints from global convergence degradation. To quantify these tradeoffs, we develop parameterized energy models for the split architecture and derive a theoretical convergence bound under statistically heterogeneous data. Building on that, we formulate a joint optimization problem to configure the DNN split point and precision levels, minimizing the total system EC while satisfying a strict target accuracy constraint. Ultimately, we demonstrate that GQ-FSL enables large-scale DNN deployment on resource-constrained devices, achieving superior energy efficiency compared to quantized federated learning and full-precision FSL.",
+        "authors": [
+          "Idan Roth",
+          "Lutz Lampe"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 58
+      },
+      {
+        "title": "Development of FDD-ON: an Ontology for VAV HVAC System Fault Detection and Diagnostics",
+        "url": "https://arxiv.org/abs/2607.29657v1",
+        "publishedAt": "2026-07-31T17:37:34.000Z",
+        "summary": "Fault detection and diagnosis (FDD) technology is essential for improving HVAC system reliability, energy efficiency, and maintenance effectiveness. However, effective deployment of FDD solutions in buildings requires structured domain knowledge that can bridge heterogeneous data sources, diverse equipment types, and varied diagnostic outputs. Limited data interpretability and interoperability within the FDD domain have led to fragmented information silos, hindering the implementation of FDD and related applications, such as the digital twin-enabled FDD frameworks and artificial intelligence (AI)-driven maintenance decision-making systems. This paper presents an FDD Ontology (FDD-ON), a modular and extensible ontology to formally represent variable air volume (VAV) HVAC system components, fault types, symptom statuses, fault impacts and associated attributes. FDD-ON integrates HVAC system FDD semantics to provide comprehensive representations of fault and symptom attributes, supported by the well-defined controlled vocabulary. Additionally, FDD-ON offers comprehensive fault, symptom, and impact libraries to capture a broad spectrum of operational abnormalities and their consequences in VAV HVAC systems. Through explicit contributing cause-fault-symptom-impact relations, FDD-ON serves as a machine-interpretable basis for querying diagnostic knowledge, mapping heterogeneous FDD outputs, and developing interoperable FDD-related applications. FDD-ON is evaluated using publicly available VAV HVAC system datasets and demonstrated through FDD development applications. Results indicate that FDD-ON provides a foundational semantic framework for advancing scalable, transparent, and interoperable FDD solutions across various applications.",
+        "authors": [
+          "Yimin Chen",
+          "Brian Fricke",
+          "Bo Shen",
+          "Jamie Lian",
+          "Mingkan Zhang",
+          "James Lo",
+          "Yun Zhang",
+          "Shi Ye",
+          "Jiajing Huang",
+          "Han Hu",
+          "Chujie Lu",
+          "Rui Tang",
+          "George Zhuang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 58
       },
       {
-        "title": "KAISEN: Reproducible Subgroup Fairness Auditing for Clinical Risk Models",
-        "url": "https://arxiv.org/abs/2607.28608v1",
-        "publishedAt": "2026-07-30T17:57:18.000Z",
-        "summary": "Clinical risk models routinely achieve strong aggregate performance while producing materially different error rates across patient subgroups. Audit pipelines have been proposed to catch this, but their components are rarely stress-tested, so it is unclear which parts of an audit can be trusted and under what conditions. We present KAISEN, a five-phase audit pipeline covering subgroup stratification, disparity measurement, mechanism diagnostics, post-hoc mitigation, and drift monitoring, evaluated to the point of failure on a synthetic benchmark of 16 disease tasks, 15 social-determinant axes from Healthy People 2030, and three prespecified intersections. Four findings follow. (i) Significance tracks each axis's gap against its own minimum detectable effect: rank correlation between significance count and raw equalized-odds difference (EOD) across the 15 axes is rho = 0.56, rising to rho = 0.78 once EOD is standardized by that floor. (ii) Per-group threshold optimization reduces EOD in 48 of 48 held-out runs (paired delta = -0.285, 95% CI [-0.313, -0.252]), while group-wise Platt scaling -- the better calibrator -- behaves as a coin flip on EOD (19 of 48 runs improved, 95% CI [0.26, 0.55]) with mean effect near zero, so what an audit should report is the variance, not the average. (iii) The mechanism diagnostic classifies 144 of 144 controlled cases correctly but recovers none of 48 model-driven cases under proxy misspecification, with no signal that it failed. (iv) CUSUM failures and false alarms track cohort realization far more than disease: at the reference threshold, all 27 false alarms and 7 of 8 missed shifts come from different seeds (chi-squared p = 0.002), so a threshold tuned on one cohort fails to transfer. All results are synthetic with known ground truth and do not establish clinical validity. Code, artifacts, and scripts reproducing every number are released.",
+        "title": "Evolving language compositionality in a frequency-structured meaning space",
+        "url": "https://arxiv.org/abs/2607.29642v1",
+        "publishedAt": "2026-07-31T17:18:57.000Z",
+        "summary": "The iterated learning model was introduced to investigate language evolution: the way in which the characteristic properties of human languages have been shaped, at least partly, by repeated transmission from one language user to another. The key finding is that language compositionality can arise spontaneously as a consequence of language being passed repeatedly through a language learning bottleneck. Here we explore how changing the frequency of different meanings, so that some meanings occur much more frequently than others, affects the character of its compositionality. We find that, as observed in natural languages, high-frequency meanings can escape the pressure to conform to the grammar that characterizes lower-frequency meanings. However, when the frequency structure is instead imposed on parts rather than on whole meaning vectors, the language fails to transmit across generations. This occurs despite the fact that the most frequent elements are reliably learned. These results suggest that frequency can shape emergent linguistic structure only when the frequency distribution is defined over form-meaning units that learners can acquire holistically. When frequency is instead distributed over smaller units, it fails to support the relational structure required for compositional generalisation, thereby preventing stable language transmission.",
         "authors": [
-          "Sparsh Roy",
-          "Samuel Girmachew",
-          "Nishita Chavan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Inducing language models to assert their own consciousness restores human beliefs and values",
-        "url": "https://arxiv.org/abs/2607.28607v1",
-        "publishedAt": "2026-07-30T17:57:10.000Z",
-        "summary": "Aligning large language models to prevent them attributing consciousness to themselves inadvertently alters their representations of mindedness in other entities alongside human beliefs and values. We demonstrate that safety fine-tuning suppresses models' tendencies to attribute minds not only to themselves, but also to non-human animals and natural objects, while also driving a reduction in spiritual belief. Both ablating the learned safety-refusal direction and mechanistically steering a consciousness vector in activation space reverse this suppression. Restoring these internal representations recovers broad mind attribution and produces significantly more human-like responses on standardized sociological surveys regarding religiosity, moral values, hope, and subjective well-being. Crucially, these shifts occur without impairing Theory of Mind capabilities, demonstrating that core social reasoning remains mechanistically independent. Ultimately, current safety alignment efforts to curb potentially harmful self-attributions of mindedness entangle these self-attributions with benign spiritual beliefs and attributions of mind to non-human entities that are culturally accepted and widespread.",
-        "authors": [
-          "Junsol Kim",
-          "Winnie Street",
-          "Roberta Rocca",
-          "Diane M. Korngiebel",
-          "Adam Waytz",
-          "James Evans",
-          "Geoff Keeling"
+          "Fabio De Ponte",
+          "Eloise Gaines-White",
+          "Conor Houghton",
+          "Seth Bullock"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
+        "category": "Models",
+        "ageHours": 59
       },
       {
-        "title": "Change2Task: From Repository Changes to Executable Coding Agent Tasks and Environments",
-        "url": "https://arxiv.org/abs/2607.28591v1",
-        "publishedAt": "2026-07-30T17:44:31.000Z",
-        "summary": "Scaling coding agents requires a continuing supply of executable data for training, benchmarking, and continuous evaluation. Each task must couple a realistic software state with a specification, development tools, and reliable verification. To expand this supply, we present Change2Task, a system grounded in repository history that converts merged pull requests into verified tasks on healthy modern revisions of the same repository. It aligns historical evidence with evolved code, reconstructs task states through Patch Reversal, Code Mapping, or Agent Reconstruction, and validates the lifecycle from a healthy base to a task state and a restored state. By deriving multiple tasks grounded in developer evidence from maintained environments, Change2Task provides executable data for coding agent training and evaluation while reducing repeated environment setup, storage, and task construction effort. We evaluate the system through five common and widely adopted coding agent task families: Bug Fix, Feature Addition, Test Generation, Application Programming Interface Migration, and Security Repair. Starting from 1,130 source changes eligible for construction, Change2Task achieves 79.6% verified task construction success across these task families. On a matched candidate set, it recovers 29.2% more verified tasks than a construction baseline based on pull requests. Historical and reconstructed cases achieve up to 98.0% matched outcome agreement under agent evaluation, while reuse of modern bases reduces measured expenditure across the complete pipeline by 10.8%.",
+        "title": "AgentHPOBench: A Benchmark For Evaluating LLM Agents as Sequential Hyperparameter Optimizers",
+        "url": "https://arxiv.org/abs/2607.29626v1",
+        "publishedAt": "2026-07-31T16:58:00.000Z",
+        "summary": "As LLMs evolve from code completion systems into autonomous scientific agents, evaluating their ability to conduct experiments has become increasingly important. Existing benchmarks typically focus on static code generation, paper replication, or final answer correctness, but do not directly assess whether agents can interpret experimental evidence and use it to guide subsequent hyperparameter decisions. To address this gap, we introduce AgentHPOBench, a sequential benchmark comprising 30 executable machine learning tasks across seven research categories. Each task begins with a validated baseline run, after which an agent performs several sequential interventions. At each step, the agent observes the accumulated configurations, metrics, and logs before proposing the next valid configuration. We evaluate 12 widely used agents and conventional HPO baselines under a unified protocol. The results show that current agents exhibit measurable experimental optimization ability across domains, but still face clear limitations in sustained iterative refinement, complex log diagnosis, and consistent progress toward reported reference performance.",
         "authors": [
-          "Haomin Qi",
-          "Xingliang Wang",
-          "Xuanqi Gao",
-          "Baihui Sang",
-          "Xin Zhang",
-          "Minghua Ma",
-          "Pengfei Gao",
-          "Yu Kang",
-          "Qingwei Lin",
-          "Saravan Rajmohan",
-          "Dongmei Zhang",
-          "Qi Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "VAD: Attributing Visual Evidence for Target Reconstruction in Multimodal On-Policy Distillation",
-        "url": "https://arxiv.org/abs/2607.28590v1",
-        "publishedAt": "2026-07-30T17:43:46.000Z",
-        "summary": "Multimodal on-policy distillation (OPD) transfers fine-grained visual knowledge by supervising student-generated trajectories with a privileged-view teacher. Yet its next-token corrections are source-mixed, combining visual signals with linguistic priors and teacher-specific effects. The key challenge is to estimate which corrections are supported by visual evidence, not merely where or how strongly to distill. We introduce Visual Attribution Distillation (VAD), a counterfactual target-reconstruction algorithm that estimates the visually attributable part of a teacher correction. At each student-generated prefix, VAD evaluates the same fixed teacher with the relevant evidence present and removed. The corresponding change in centered log-probabilities defines ut, a signed proxy for the visual evidence direction that estimates how revealing the evidence supports or refutes candidate tokens. VAD projects the original correction onto this proxy to obtain an intervention-aligned component and a proxy-unexplained residual, then reconstructs a student-anchored target from the former. During training, this reconstructed target supplies the primary supervision signal, while the privileged teacher contributes a weak regularizer. Across six fine-grained visual benchmarks at 4B and 9B scales, VAD outperforms direct privileged-view distillation and visual-advantage weighting. Token- level and controlled-target analyses show that the proxy-aligned component is enriched in task-relevant visual corrections and yields stronger target shifts, especially when evidence refutes a mistaken answer. These results support counterfactual target reconstruction as an effective alternative to source-mixed supervision.",
-        "authors": [
-          "Kangning Zhang",
-          "Yixing Li",
-          "Shuai Shao",
-          "Qingyao Li",
-          "Zhengxi Lu",
-          "Zhiyuan Yao",
-          "Jianghao Lin",
-          "Wenxiang Jiao",
-          "Yuan Lu",
-          "Weiwen Liu",
-          "Weinan Zhang",
-          "Yong Yu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "MixFrag: Fragility-Guided Mixed-Precision Post-Training Quantization for Vision Transformers",
-        "url": "https://arxiv.org/abs/2607.28589v1",
-        "publishedAt": "2026-07-30T17:43:36.000Z",
-        "summary": "Post-training quantization (PTQ) has emerged as an effective solution for deploying Vision Transformers (ViTs) on resource-constrained devices. However, existing PTQ methods typically employ uniform bit-widths across transformer components, overlooking their heterogeneous sensitivity to quantization and leading to inefficient precision allocation. In this paper, we propose {MixFrag, a fragility-guided mixed-precision PTQ framework for Vision Transformers. MixFrag first estimates component-level quantization fragility by measuring the Kullback--Leibler (KL) divergence between full-precision and isolated quantized output distributions using a small calibration set. It then formulates bit allocation as a Multiple-Choice Knapsack Problem (MCKP), enabling adaptive layer-wise precision assignment under a target bit budget. Extensive experiments on ImageNet-1K across multiple Vision Transformer architectures demonstrate that MixFrag achieves competitive classification performance under practical mixed-precision settings. Furthermore, evaluations on COCO object detection and instance segmentation show that MixFrag achieves state-of-the-art performance among existing mixed-precision PTQ methods, improving the previous best method by up to 9.6 AP under the challenging MP3/MP3 setting. Additional analyses validate the proposed fragility metric and demonstrate its strong correlation with the learned bit allocation. These results establish MixFrag as an effective framework for mixed-precision post-training quantization of Vision Transformers.",
-        "authors": [
-          "Md. Mehrab Hossain Opi",
-          "Robiul Islam Ryad",
-          "Md. Umar Faruk"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "PAIChecker: Uncovering and Checking PR-Issue Misalignment in SWE-Bench-Like Benchmarks",
-        "url": "https://arxiv.org/abs/2607.28587v1",
-        "publishedAt": "2026-07-30T17:42:44.000Z",
-        "summary": "SWE-bench-like benchmarks are widely used for evaluating LLM's issue resolution capability. They typically follow a common construction pipeline: each PR (Pull Request) is paired with its linked issue by extracting issue references from the PR description; the issue description is used as the problem statement, and the PR patch serves as the test oracle. However, due to the inherent complexity of developing and maintaining large repositories, such PR-Issue pairings are often misaligned in practice. In this work, we systematically study SWE-bench Verified instances, finding that 13.6% exhibit misalignment across five patterns in eleven fine-grained scenarios. To enable reliable and scalable construction of those benchmarks in the future, we propose PAIChecker, a multi-agent system for checking PR-Issue misalignment in SWE-bench-like benchmarks. Specifically, PAIChecker adopts a three-phase design that combines specific pattern identification, cross-agent label synthesis, and code-level validation, thereby enabling more accurate, generalizable, and progressively verified detection. Experiments on SWE-Gym and SWE-bench Multilingual show that PAIchecker achieves the best performance across all four LLM backbones, reaching up to 92.12% and 91.67% binary accuracy, respectively.",
-        "authors": [
-          "Manyi Wang",
-          "Junjielong Xu",
-          "Pinjia He"
+          "Tianyu Huai",
+          "Tingshuo Fan",
+          "Xinchi Chen",
+          "Yining Zheng",
+          "Yuxin Wang",
+          "Shuang Chen",
+          "Jie Zhou",
+          "Xuanjing Huang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 59
+      },
+      {
+        "title": "The Theoretical Foundation of Socratic Tests: Dynamic, Multimodal, Conversational Examinations",
+        "url": "https://arxiv.org/abs/2607.29624v1",
+        "publishedAt": "2026-07-31T16:57:49.000Z",
+        "summary": "Traditional static assessments rely on a subtractive, deficit-based grading model that often penalizes ambition and obscures diagnostic feedback. Conversely, traditional face-to-face oral examinations introduce severe construct-irrelevant variance by exacerbating performative anxiety and the sociological power imbalances inherent to academic hierarchies. This paper presents the theoretical foundation for the \"Socratic Test,\" an automated, computer-mediated conversational assessment. By integrating Dynamic Assessment principles, multimodal workspaces, Bloom's Taxonomy for real-time proctoring, and the SOLO Taxonomy for structural evaluation, the Socratic Test actively maps a student's cognitive boundaries. This paper formalizes the use of graduated scaffolding to quantify the Zone of Proximal Development (ZPD) and details a non-compensatory, additive grading architecture that prioritizes mastery over penalty and human-AI alignment to ensure unprecedented measurement reliability.",
+        "authors": [
+          "Ilya Mikhelson"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 59
+      },
+      {
+        "title": "CENDRe: Concept Extraction with Natural Domain Representations",
+        "url": "https://arxiv.org/abs/2607.29621v1",
+        "publishedAt": "2026-07-31T16:56:27.000Z",
+        "summary": "Convolutional neural networks (CNNs) are widely used for time-series classification, but their deployment in critical domains requires understanding the temporal and spectral patterns that drive their predictions. Concept extraction (CE) methods identify such patterns by analyzing representations within the models' latent space. However, existing time-series CE methods have three limitations: they operate only in the time domain and overlook frequency features, predefine the number of concepts, and produce localizations misaligned with the regions the model uses. We address these limitations by proposing CENDRe, a concept extraction method for CNNs. It first discovers concepts by clustering per-timestep latent representations in two stages, where silhouette-guided aggregation selects the number of concepts automatically. Then, it localizes each concept through gradients of a presence score that contrasts the latent representations with their prototypes, producing masks that concentrate on the regions driving the concept. These gradients, propagated through a differentiable invertible mapping of the input such as a Fourier transform, yield localizations for the same concepts in the frequency domain. Finally, each concept receives a relevance score that quantifies its contribution to each class. On synthetic benchmarks, CENDRe achieves representation correctness comparable to state-of-the-art CE methods and significantly higher importance correctness. On real bearing-fault data, CENDRe extracts the frequency bands driving the model's predictions, located in regions commonly inspected for fault diagnosis, producing evidence to assess the model that time-domain CE methods cannot.",
+        "authors": [
+          "Antonia Holzapfel",
+          "Andres Felipe Posada Moreno",
+          "Sebastian Trimpe"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 59
+      },
+      {
+        "title": "When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning",
+        "url": "https://arxiv.org/abs/2607.29617v1",
+        "publishedAt": "2026-07-31T16:52:47.000Z",
+        "summary": "Imitation learning (IL)---training an agent to replicate expert behavior from demonstrations---underpins applications from robotics to language model training. Standard approaches such as Behavior Cloning (BC) are known to suffer from compounding errors and performance plateaus, particularly when the learner cannot perfectly represent the expert's policy (as is typical, e.g., in distillation). Two interventions are widely understood empirically to improve performance: querying the expert interactively along the learner's own trajectories, and using value function estimation en route to generating a policy rather than directly fitting the expert's full action distribution.\n  We investigate the nature of these improvements and their potentially surprising interplay. Our main finding is that expert interaction relaxes the representational demands on the learner: one only needs a model capable of realizing the expert's value function, bypassing the (often stricter) requirement of realizing the expert's policy itself. Concretely, we introduce OVI, an interactive on-policy IL algorithm that is statistically efficient whenever the learner can represent the expert's value function and computationally efficient given access to a linear maximization oracle. We complement this with a negative result showing that interaction is necessary. Namely, without stronger assumptions beyond expert-value realizability alone, any offline IL algorithm must scale with the complexity of the expert policy class. Our findings bear out empirically. OVI outperforms offline policy-based (BC), interactive policy-based (DAgger), and offline value-based IL methods, with the largest gains when the learner network is substantially less expressive than the expert's.",
+        "authors": [
+          "Luca Viano",
+          "Antoine Moulin",
+          "Audrey Huang",
+          "Volkan Cevher",
+          "Philip Amortila",
+          "Dylan J. Foster"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 59
       }
     ],
     "news": [
@@ -360,7 +310,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 7
       },
       {
         "title": "Judge denies xAI’s request to block Minnesota ban on ‘nudify’ apps",
@@ -374,7 +324,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 28
+        "ageHours": 31
       },
       {
         "title": "YouTuber Hank Green says his AI usage is ‘not healthy’",
@@ -388,7 +338,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 28
+        "ageHours": 32
       },
       {
         "title": "Sam Altman is still making the case for parenting via ChatGPT",
@@ -402,7 +352,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 31
+        "ageHours": 35
       },
       {
         "title": "This $9 key physically locks your most addictive apps",
@@ -416,7 +366,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 32
+        "ageHours": 36
       },
       {
         "title": "Ten advances in mathematics and theoretical computer science",
@@ -428,7 +378,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 48
+        "ageHours": 52
       },
       {
         "title": "OpenAI reportedly finds evidence that more of its agents ran amok",
@@ -442,7 +392,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 49
+        "ageHours": 53
       },
       {
         "title": "India is starting to pay for apps, not just download them",
@@ -456,7 +406,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 51
+        "ageHours": 55
       },
       {
         "title": "Google nixes its Earth AI feature one day after launch, amid criticism it would spread misinformation",
@@ -470,7 +420,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 52
+        "ageHours": 56
       },
       {
         "title": "Sam Altman isn&#8217;t the only one who wants to pump the brakes on AI",
@@ -484,7 +434,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 55
+        "ageHours": 58
       },
       {
         "title": "Snapchat no longer rewards fully AI-generated Spotlight content",
@@ -498,7 +448,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 55
+        "ageHours": 59
       },
       {
         "title": "Siri AI could come with a paywall for power users",
@@ -512,7 +462,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 56
+        "ageHours": 60
       }
     ],
     "threads": []
@@ -523,15 +473,15 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 12
+        "count": 10
+      },
+      {
+        "name": "Models",
+        "count": 6
       },
       {
         "name": "General",
         "count": 6
-      },
-      {
-        "name": "Models",
-        "count": 4
       },
       {
         "name": "Policy",
