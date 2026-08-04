@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T18:00:51.630Z",
+  "generatedAt": "2026-08-04T19:52:33.868Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 406",
+        "research:arXiv cs.LG -> HTTP 406",
+        "research:arXiv cs.CL -> HTTP 406"
+      ]
     },
     {
       "group": "news",
@@ -83,235 +87,50 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling",
-        "url": "https://arxiv.org/abs/2608.02602v1",
-        "publishedAt": "2026-08-03T17:59:50.000Z",
-        "summary": "Language remains an outlier in generative modeling: while images, video, and audio are increasingly modeled in continuous latent spaces, text generation still relies predominantly on discrete tokens. Existing continuous language models either inherit embedding spaces not designed for joint generation and decoding, or compress autoencoded latents to ease diffusion, sacrificing token-level fidelity. Instead of simplifying the representation to suit the generative model, we preserve a high-capacity, decodable text latent and design the diffusion model to learn its distribution directly.\n  We introduce AURORA-LM, a continuous-latent diffusion language model that separates the construction of a decodable text representation from the modeling of its distribution. A Query-based Encoder-Decoder organizes text into a high-capacity, prefix-aligned latent sequence, and a Block-causal Diffusion Transformer learns its distribution through flow matching, generating blocks left to right while denoising positions within each block in parallel. Because such a latent is harder for diffusion to model, AURORA-LM restricts only the noisy-input pathway while retaining the full clean-latent prediction target, accommodating full-width latents without reducing decoder-facing capacity. We further calibrate the noise-level distribution to the latent width, and introduce self-trajectory consistency to bridge independently sampled training noise and iterative denoising at inference.\n  AURORA-LM achieves the strongest performance among evaluated continuous and diffusion-based language models on OpenWebText free generation and XSum summarization. Scaling to 1B parameters with about 1500 EFLOPs of total compute yields further gains, surpassing a larger publicly released latent-diffusion language model under a matched evaluation protocol. All experiments are conducted on Ascend NPUs.",
-        "authors": [
-          "Jiajun Liang",
-          "Yucheng Liao",
-          "Yukang Cao",
-          "Jiazhe Wei",
-          "Ken Li",
-          "Wende Tan",
-          "Jiankun Zhang",
-          "ZY Cui",
-          "Jingkang Yang",
-          "Liucheng Guo",
-          "Shiqi Yang",
-          "B. Yang",
-          "Caifeng Shan",
-          "Ziwei Liu",
-          "Chenyang Si"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "Bridging Artificial Intelligence and Power Systems Education Using a Hands-On Executable Framework",
-        "url": "https://arxiv.org/abs/2608.02599v1",
-        "publishedAt": "2026-08-03T17:59:09.000Z",
-        "summary": "Artificial intelligence (AI) is increasingly central to power and energy systems, supporting modeling, forecasting, optimization, and control. Yet most existing works emphasize specialized applications and offer little reusable material for newcomers or interdisciplinary learners, who increasingly rely on large language models rather than building their own. This gap points to a need for engineering-grounded AI (EGAI), in which AI workflows follow established engineering and power-system domain rules rather than acting as task-agnostic black boxes. Motivated by a community survey of researchers and practitioners, which shows 92% report at least one barrier before running an AI model and 94% want a power-specific hands-on course. This paper presents a framework consisting of open, executable module library that lowers the entry barrier for AI in power systems. The modules follow a progressive difficulty ladder that maps core AI concepts onto representative power-system tasks: (i) foundational deep neural network (DNN) templates for function approximation and load-curve fitting; (ii) a domain-coupled convolutional neural network (CNN) power-flow surrogate for a 5-bus system; and (iii) frontier modules on DNN-assisted optimization, deep reinforcement learning (DRL) for battery storage control, and physics-informed neural networks (PINNs) for the swing equation. All modules are released as Jupyter notebooks that run locally or on Google Colab and are delivered through an IEEE online course and IEEE Power & Energy Society (PES) webinar series. The webinar drew more than 590 live attendees, which is among the ten most-attended IEEE PES webinars, and over 344 repository visits within two weeks, reinforcing the survey-based motivation.",
-        "authors": [
-          "Junjie Yin",
-          "Buxin She",
-          "Xinyu Feng",
-          "Fangxing",
-          "Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 24
-      },
-      {
-        "title": "onepot-Bench 0: towards lab-aware in silico chemistry benchmarks",
-        "url": "https://arxiv.org/abs/2608.02595v1",
-        "publishedAt": "2026-08-03T17:58:27.000Z",
-        "summary": "Language models are playing an increasingly important role in laboratory science, performing tasks such as experiment planning, execution, and post-hoc analysis. However, precisely measuring their abilities is difficult, as scientific capabilities require a mixture of both problem-solving skills and domain-specific intuition. Existing evaluations rarely measure the capabilities required to make reliable decisions in a physical laboratory and often rely on public data that may have appeared in model training corpora.\n  We introduce onepot-Bench 0, a proprietary benchmark suite for evaluating language models on synthetic chemistry capabilities relevant to wet-lab execution. onepot-Bench 0 comprises three complementary evaluations: ChemAbacus measures tool-free cheminformatics literacy and numerical reasoning; SynthRefusal characterizes safety and refusal behavior across a variety of benign, controlled, and designer-drug targets; and SynthBench evaluates reaction-outcome prediction and catalyst selection using private experimental data generated in our laboratory. Together, these evaluations probe basic competency, reliability, and deeper knowledge, all skills which are required for reliable performance in the lab.",
-        "authors": [
-          "Brandon Wang",
-          "Andrei S. Tyrin",
-          "Daniil A. Boiko"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "The Condition-Number Barrier in Sparse Least Squares",
-        "url": "https://arxiv.org/abs/2608.02588v1",
-        "publishedAt": "2026-08-03T17:57:01.000Z",
-        "summary": "In [AS21], Axiotis and Sviridenko conjectured that the linear dependence on the restricted condition number in sparse convex optimization cannot be improved by a polynomial-time algorithm. We establish their conjectured lower bound for least-squares objectives, conditional on the randomized exact-volume Small-Set Expansion Hypothesis in the weighted regular-graph formulation of Raghavendra, Steurer, and Tulsiani [RST12]. Concretely, for every fixed $γ\\in(0,1]$, there is no randomized polynomial-time algorithm that, with probability at least $2/3$, returns a vector $x$ such that, writing $s=\\lVert x\\rVert_0$, \\[\n  \\lVert Ax-b\\rVert_2^2\n  \\leq\n  \\min_{\\lVert z\\rVert_0\\leq k}\\lVert Az-b\\rVert_2^2+\\varepsilon\n  \\quad\\text{and}\\quad\n  s=O\\!\\left(k\\,κ_{s+k}^{\\,1-γ}\\right), \\] where $κ_r$ is the restricted condition number at sparsity level $r$. The result holds even on rational instances with $A$ of full column rank.\n  The proof was first obtained using a fully automated Gemini-based agentic system developed internally at Google. The authors have verified the proof and edited it for clarity of presentation.",
-        "authors": [
-          "Honghao Lin",
-          "Vahab Mirrokni",
-          "David P. Woodruff"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "GradCuit: Credit-Assigned Gradient Flow Enables Robust and Interpretable Test-Time Latent Reasoning",
-        "url": "https://arxiv.org/abs/2608.02585v1",
-        "publishedAt": "2026-08-03T17:55:24.000Z",
-        "summary": "Optimization-based latent reasoning improves large language model outputs by optimizing instance-specific continuous states at test time while keeping model parameters frozen. Existing methods, however, typically connect these states to the reasoning trajectory through decoded tokens, making sequence-level credit assignment indirect and obscuring how latent updates shape subsequent reasoning. We introduce GradCuit (gradient through circuit), which inserts optimizable latent states at a selected Transformer layer between the hidden representations of the prompt and the generated continuation. Causal self-attention provides every continuation-token log-probability with a differentiable path to every preceding latent state through the remaining Transformer blocks, enabling reward-weighted gradients from the entire continuation to be assigned directly to the latents. Across five instruction-tuned backbones, three reasoning benchmarks, and two answer formats, GradCuit achieves an average accuracy of 64.5%, outperforming chain-of-thought prompting by 6.6 percentage points and the strongest competing method by 2.4 points. GradCuit also demonstrates greater robustness: across seven learning-rate settings, it consistently outperforms LatentSeek while reducing the standard deviation of accuracy from 1.53 to 0.82, and even its random-walk variant remains competitive with LatentSeek. For interpretability, token-level gradient attribution reveals that latent influence concentrates on reasoning-connector tokens, while layer analysis identifies early-to-middle Transformer layers as the most effective optimization space. By directly optimizing internal reasoning from outcome feedback, GradCuit opens a new axis of robust and interpretable test-time scaling, where LLMs adapt how they reason rather than merely regenerate, sample, or rerank outputs.",
-        "authors": [
-          "Zhaoxin Yu",
-          "Qi Shen",
-          "Hengli Li",
-          "Zhaowei Zhang",
-          "Song-Chun Zhu",
-          "Chi Zhang",
-          "Zilong Zheng"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "UEmbed: Unified Sparse and Dense Multimodal Embeddings",
-        "url": "https://arxiv.org/abs/2608.02583v1",
-        "publishedAt": "2026-08-03T17:54:11.000Z",
-        "summary": "Sparse retrieval underpins modern search systems, from web search to retrieval-augmented generation. Existing work has introduced Learned Sparse Retrieval (LSR) to push beyond exact lexical matching toward richer semantics. Yet LSR has so far remained tied to encoder-style bidirectional architectures, and its extension to multimodal settings still relies heavily on auxiliary cross-modal modules. To address these limitations, we introduce UEmbed (Unified Embedding), a decoder-only multimodal embedding model that produces both sparse lexical and dense representations in one causal forward pass. UEmbed appends N learnable special tokens to the input and partitions the vocabulary into N disjoint subsets. Each token's causal hidden state predicts sparse weights over its assigned subset, and the N subsets are concatenated into the full sparse vector. Trained on public data, we release UEmbed at 2B, 4B, and 9B scales. UEmbed-9B reaches 71.8 (dense) and 71.0 (sparse) on MMEB-v2, outperforming multimodal embedding models trained on publicly available data (e.g., RzenEmbed). On BEIR, UEmbed also remains competitive with strong dense and sparse baselines. Furthermore, we demonstrate the practical utility of UEmbed across three dimensions: effectiveness, efficiency, and agentic applications. Overall, UEmbed offers a new paradigm: it unifies dense and sparse embeddings in one model, while further extending sparse retrieval to unify text and multimodal inputs.",
-        "authors": [
-          "Tingyu Song",
-          "Mingxin Li",
-          "Yanzhao Zhang",
-          "Dingkun Long",
-          "Pengjun Xie",
-          "Zhijie Nie",
-          "Yilun Zhao",
-          "Shu Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "CoWAM: Coordination Contracts for Selective Policy Intervention with WAMs",
-        "url": "https://arxiv.org/abs/2608.02578v1",
-        "publishedAt": "2026-08-03T17:51:58.000Z",
-        "summary": "World Action Models (WAMs) augment robot policies with action-conditioned predicted futures, but a plausible future alone does not justify changing the action that a bimanual policy would execute. We present CoWAM, a selective intervention layer that expresses synchronization, role compatibility, and collision convergence as coordination contracts. Each contract combines typed admissibility checks with event-conditioned verification and calibrated intervention gates. CoWAM preserves the nominal action unless an alternative satisfies every active obligation and provides a clear, low-risk improvement; when the nominal action is also inadmissible, it invokes a predefined abstention fallback. To separate selector quality from proposal quality, all methods operate on identical candidate pools and commit their decisions before shared oracle labeling. Across eight simulated bimanual tasks, CoWAM improves coordination-valid selection by 16.7 percentage points over the contract-only variant and raises closed-loop success by 9.6 percentage points over the strongest selective baseline, while keeping harmful interventions below 1%. Together, these results establish coordination contracts as an effective interface for conservative policy intervention with predicted world-action evidence across coordination-rich bimanual tasks.",
-        "authors": [
-          "Shuaijun Liu",
-          "Qifu Wen",
-          "Shuyang Hao",
-          "Qi Luo",
-          "Chenglong Zhang",
-          "Feiyang You",
-          "Chengyu Wu",
-          "Ningxin Su"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 24
-      },
-      {
-        "title": "Smooth Reparameterizations of Functions on Simplicial Product Spaces: Applications to Probabilistic Tensor Decomposition and Functional Data Registration",
-        "url": "https://arxiv.org/abs/2608.02576v1",
-        "publishedAt": "2026-08-03T17:51:40.000Z",
-        "summary": "We consider optimization problems defined on product spaces of simplices. Examples of this class of problems include learning low-rank discrete multivariate probability distributions via simplex constrained tensor decomposition and performing functional data registration under the Square Root Velocity Function (SRVF) representation. In this work, we demonstrate the feasibility of replacing the product simplex with a smooth, elementwise strictly convex reparameterization, resulting in an unconstrained optimization problem on a manifold. We show that performing such a reparameterization results in the second order Karush-Kuhn-Tucker (KKT) points on the smooth manifold being mapped to the weak second order KKT points on the product simplex. This leads to a Riemannian Gradient Descent (RGD) algorithm for solving the reparameterized problem, which outperforms Projected Gradient Descent (PGD), and provides a more faithful representation of the original function shapes while performing curve registration.",
-        "authors": [
-          "Shashwat Kumar",
-          "Arafat Rahman",
-          "Anuj Srivastava",
-          "P. -A. Absil"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 24
-      },
-      {
-        "title": "Pseudorandom Streams within Diffusion Models Act as Learnable Inputs That Affect Generation Quality",
-        "url": "https://arxiv.org/abs/2608.02575v1",
-        "publishedAt": "2026-08-03T17:50:54.000Z",
-        "summary": "Diffusion models rely on stochastic inputs, yet on finite-precision hardware, the \"randomness\" they consume is realized as deterministic numerical orbits generated by pseudorandom rules. Accessible orbit structure can become a learnable input and affect both training and generation because the realized loss and its gradient depend on the concrete pseudorandom values consumed at each optimization step. A small multilayer perceptron predicts the next value of an orbit from its recent history, measuring general sequence predictability. A diffusion probe replaces real images with online random tensors while preserving the diffusion architecture and training objective, measuring whether the target system can exploit orbit structure. After controlling marginal statistics and screening out clear dynamical and finite-precision failures, the remaining orbits still produce markedly different diffusion losses and generation quality on MNIST and CIFAR-10. Both measures show strong rank correlations with macroscopic generation degradation, although their local rankings differ. After normalization by the IID baseline, the probe loss and the real-data diffusion loss approximately follow an empirical power law, with different exponents on the two datasets. These results suggest that a pseudorandom source is not only a distributional choice, but also a model-dependent structured input.",
-        "authors": [
-          "Shengzhi Deng",
-          "Chenqi Ye",
-          "Yanze Guo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "AtumAI: A Principled Framework for Agentic Generation of Datacenter Control-Plane Policies",
-        "url": "https://arxiv.org/abs/2608.02569v1",
-        "publishedAt": "2026-08-03T17:45:58.000Z",
-        "summary": "The efficiency of a datacenter rests on its control plane policies. Designing these policies is increasingly hard: the hardware-software stack grows fast, the design space is vast and interdependent, and prototyping a single policy takes months. Agentic AI promises to automate this search. Off the shelf, however, it falls short on three fronts. It is not formal: with no structured, searchable statement of the problem, the search has little structure to exploit and hard constraints are not guaranteed. It is not transferable: each task is solved from scratch, so nothing learned on one task carries to the next. Finally, it is not systematic: relying on the LLM as the sole source of candidates, it explores a narrow slice of the design space and settles into local optima. We introduce AtumAI, a framework that generates datacenter control-plane policies with agentic AI, making the process formal, transferable, and systematic. From a goal stated in plain language, AtumAI autonomously proposes, tests, and refines candidate policies until one satisfies the request. It does so through two components. The Datacenter Task Compiler automates problem formulation: it compiles the request into a formal, machine-checkable, and searchable specification of the task's objectives, constraints, decision variables, and evaluation methodology. The Evolutionary Design Discovery Loop then searches this specification, expanding the search beyond the LLM itself via a diffusion model, an evolutionary algorithm, and a surrogate model. Together, they reduce onboarding a new task from months of engineering to writing its description. We evaluate AtumAI on three control-plane tasks with distinct problem scopes, design spaces, and trade-offs: workload placement, resource scaling, and power management. Across all tasks, the policies generated by AtumAI consistently outperform expert-engineered baselines.",
-        "authors": [
-          "Qiushi Lin",
-          "Chaojie Zhang",
-          "Íñigo Goiri",
-          "Aditya Akella",
-          "Ricardo Bianchini",
-          "Jovan Stojkovic"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "Structured Memory for Edge Language Models: Persistent Context and Corpus Retrieval via O(1) SSM State Injection",
-        "url": "https://arxiv.org/abs/2608.02560v1",
-        "publishedAt": "2026-08-03T17:43:36.000Z",
-        "summary": "Retrieval-augmented generation (RAG) imposes a prefill cost proportional to retrieved context length, and -- with Transformer backbones -- a KV-cache that grows with each generated token. State-Space Models (SSMs) avoid the second cost by construction; we eliminate the first, collapsing prefill from $O(L_{context})$ to $O(1)$ per query. We introduce PRECOG (Pre-Computed Context Injection), a retrieval mechanism that exploits a property unique to SSMs: the fixed-size, position-agnostic recurrent hidden state is a complete summary of everything the model has read. PRECOG pre-encodes document corpora offline as SSM hidden states and injects the best-matching state directly at query time, bypassing in-context re-ingestion entirely. The same state-injection mechanism enables SMC (Structured Memory Consolidation): a hierarchical persistent memory with cognitive-domain clustering, an adjustable fidelity-vs-storage dial, and $O(1)$ session initialization, which consolidates short-term episodic states into long-term semantic memory and fuses both with retrieved corpus states at query time. We demonstrate the system on TENNs-LLM, a 1.2B-parameter gated-SSM language model with a 192 KB hidden state. PRECOG matches in-context RAG answer quality, reducing prefill latency from $\\sim$27 s to $<$6 ms on edge hardware -- a $\\sim$4500$\\times$ speedup that crosses the threshold from unusable to interactive. The mechanism is architecturally impossible for Transformer KV-caches, which are position-entangled and grow linearly with context length.",
-        "authors": [
-          "Anusha Madan Gopal",
-          "Aras Pirbadian",
-          "Kristofor D. Carlson",
-          "M Anthony Lewis",
-          "Jonathan Tapson"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      },
-      {
-        "title": "Benchmarking Sheaf Neural Networks for Inductive Tasks",
-        "url": "https://arxiv.org/abs/2608.02558v1",
-        "publishedAt": "2026-08-03T17:41:20.000Z",
-        "summary": "Sheaf Neural Networks (SNNs) generalize message passing by replacing scalar edge weights of standard Graph Neural Networks (GNNs) with learnable, edge-dependent restriction maps between node stalks. Despite their strong theoretical foundations and promising transductive results, SNNs have been evaluated almost exclusively on transductive node classification, leaving their behaviour under inductive protocols unknown. We address this gap through the first systematic benchmark of the sheaf design space, evaluating three diffusion mechanisms (neural sheaf diffusion, sheaf attention, and sheaf attention with Graph Attention Network v2), three restriction-map parameterizations, three stalk dimensions, and six modern GNN architectural components, within a message-passing reformulation that never assembles the heavy sheaf Laplacian, making the full design space trainable under cross-graph batching. Across $1{,}890$ controlled experiments on 14 inductive datasets, multiple insights emerge: restriction maps are the dominant design choice and general maps are preferable, larger stalks add capacity but not long-range reach, architectural components explain more performance variation than the entire sheaf-specific design space itself. Under a matched protocol, SNNs transfer to inductive settings but do not reach the strongest baselines, with gaps being dataset-dependent. Practically, a single sheaf configuration can generalize across datasets, so effort is better spent tuning the surrounding architectural recipe than the sheaf operator itself.",
-        "authors": [
-          "Stefano Fiorini",
-          "Edoardo Coppola",
-          "Pietro Liò"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 24
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "Anthropic signs $10 billion deal with AI cloud startup Volta",
+        "url": "https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/",
+        "publishedAt": "2026-08-04T19:48:40.000Z",
+        "summary": "Anthropic has been on a cloud partnership spree in recent months and its latest move is reportedly a $10 billion deal with AI cloud startup Volta.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 0
+      },
+      {
+        "title": "Nvidia doesn&#8217;t mess around: A week after open AI industry group formed, it&#8217;s already showing progress",
+        "url": "https://techcrunch.com/2026/08/04/nvidia-doesnt-mess-around-a-week-after-open-ai-industry-group-formed-its-already-showing-progress/",
+        "publishedAt": "2026-08-04T19:28:49.000Z",
+        "summary": "The week-old Open Secure AI Alliance, spearheaded by Nvidia and grown to over 120 companies, already has proposals out for defending against AI agents.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 0
+      },
+      {
+        "title": "Solving the solvent problem",
+        "url": "https://news.mit.edu/2026/solving-solvent-problem-sodium-metal-batteries-0804",
+        "publishedAt": "2026-08-04T18:50:00.000Z",
+        "summary": "Lithium-ion batteries are the leading choice in today’s electric vehicle and battery energy storage system industries, but they contain a number of critical minerals — including lithium, cobalt, nickel, and graphite — that are considered essential for economic and national security reasons, and therefore vulnerable to supply chain disruptions. As renewable energy, electrified infrastructure, and high-power digital technologies continue to grow, there is an increasing need for energy storage systems that are low-cost, resource-abundant, and capable of fast charging and discharging.&nbsp; That need, among other reasons, has motivated a group of researchers — based at MIT and led by Ju Li, the Carl Richard Soderberg Professor of Power Engineering in the departments of Nuclear Science and Engineering (NSE) and Materials Science and Engineering — to develop complementary energy storage solutions.&nbsp; The team is looking, in particular, at sodium-metal batteries, which offer several attractive features. Sodium is about 1,000 times more abundant than lithium and, pound for pound, about one-hundredth the cost. A key challenge, however, is that sodium metal is highly reactive, making it difficult for these batteries to achieve both long-term stability and fast cycling.&nbsp; A new paper in the journal Joule — written by 15 members of the MIT team and published online this week — shows how this dilemma can be addressed by finding the right electrolyte for this battery system. Electrolytes behaving badly An electrolyte is one of three main components of a battery, along with the negative electrode (the anode) and the positive electrode (the cathode). The electrolyte acts like the “blood” of the battery, allowing electrically charged ions to move between the two electrodes. “The electrolyte is supposed to just transmit those ions,” explains Li. “It’s supposed to be an ion conductor.” But unfortunately, most electrolytes get involved in unwanted chemical reactions with the electrodes, which can greatly undermine battery stability. The consequences of these “side reactions” can be severe, says Weiyin Chen, a postdoc in NSE and one of four lead authors of the Joule&nbsp; paper. Insoluble compounds produced during the reactions can build up on the electrodes, creating a barrier that blocks ion transport and can eventually cause the battery to fail.&nbsp; Until recently, Chen says, no electrolyte used in sodium-metal batteries was fully stable against these unwanted reactions at both the anode and cathode, even though such stability is essential for rechargeable batteries to achieve a long cycle life. An initial breakthrough occurred in 2021, when the Li group and their collaborators identified a “sulfonamide” molecule — consisting of sulfur, oxygen, and nitrogen atoms — that, when used as a solvent, “is magically stable at both electrodes in lithium batteries,” according to Li. This molecule is known as DMTMSA.&nbsp; Building on that discovery, Li and his colleagues set out to see if related molecules could improve sodium batteries. The goal was not only to maintain stability, but also to enable fast charging and discharging. If charging is too slow, it could take all night to recharge, and if discharging is too slow, the battery cannot deliver much power when needed. How did the solvent cross the road? Chen explains the idea with an analogy: Suppose you need to cross a street jam-packed with pedestrians, much like ions traveling from one electrode to another. “You can move more quickly through the crowd with a small backpack that is snug against your body, rather than dragging a bulky suitcase on wheels,” Chen says.&nbsp; A similar situation occurs in batteries: When sodium ions are surrounded by smaller solvents, they can move faster than when they are surrounded by larger, bulkier solvents. Faster ion transport enables more-rapid charging and discharging. The team’s goal, accordingly, was to identify solvent molecules that are small enough to improve ion transport while still maintaining electrolyte stability. There is, however, a complicating factor — a trade-off to be addressed: Faster ion transport often comes at the expense of electrolyte stability. Many highly conductive electrolytes react more easily with the electrodes, shortening battery life. Fortunately for their plan, Li says, “reducing the size of solvents provides a new pathway to overcome this trade-off.”&nbsp; The question then becomes how to find a smaller solvent that has other desirable properties. The idea they adopted is to look for molecules that are “congeneric,” says Li, “meaning that they belong to a similar family and are molecularly similar.” In particular, they searched for molecules related to DMTMSA, hoping to find candidates that were smaller but could retain the stability that made DMTMSA so promising. Chia-Wei Hsu, an MIT PhD student in materials science and engineering, created an AI-guided algorithm, which designed 100,000 candidate molecules on his computer within 24 hours. Hsu then narrowed down the pool to 200 candidates by applying a set of technical criteria — including similarity in shape to DMTMSA and comparable electronic properties. Twenty-seven representative candidates covering the full range of possibilities were selected for experimental tests.&nbsp; “We tested them all under the same conditions to make it a fair, head-to-head competition,” Chen says. A clear winner emerged, a solvent called DMFSA, which was both the smallest and the best. Small is beautiful This work, claims Jinhyuk Lee, an associate professor of materials engineering at McGill University who is not part of the study, “addresses one of the most persistent challenges in battery research: improving battery performance at high charging and discharging rates without sacrificing long-term stability. By carefully tailoring the size of solvent molecules, the authors demonstrate a new design strategy that could enable lower-cost, higher performance batteries.”&nbsp; The group is not done. A new search is underway to find an even better solvent. This time, the approach is similar, but DMFSA (rather than the larger DMTMSA molecule) serves as the starting point. Chen believes the new solvents they are uncovering could eventually lead to rechargeable sodium-metal batteries that combine low-cost, abundant materials with fast charging and high-power performance, opening the door to broader energy storage applications. The overriding goal of this work, the authors emphasize, is not only to advance sodium batteries. It’s also to introduce a new approach to electrolyte design that uses solvent size and molecular similarity as the key guideposts. Viewing the research in this light, sodium-metal batteries serve as a model system for demonstrating a more general design principle. “Because the concept is broadly applicable,” Lee comments, “its impact could extend well beyond sodium batteries and influence the design of a wide range of future energy storage technologies.” This work was supported, in part, by a National Research Foundation of Korea grant funded by the government of Korea government, as well as U.S. National Science Foundation graduate research fellowship. The characterization equipment used in this project is partly from the MIT.nano Characterization Facilities.&nbsp;",
+        "authors": [
+          "Steve Nadis | Department of Nuclear Science and Engineering"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 1
+      },
       {
         "title": "Spotify expands AI remix and covers project with Merlin partnership",
         "url": "https://techcrunch.com/2026/08/04/spotify-adds-merlin-to-its-ai-music-remix-and-covers-effort/",
@@ -324,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Texas halts new data centers as governor calls for audits",
@@ -338,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Elon Musk spends half his time talking robots and AI on Tesla earnings calls",
@@ -352,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 5
       },
       {
         "title": "Apple says more ex-employees may have taken confidential data to OpenAI",
@@ -366,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Is the future of data centers portable? Runware builds a pod to find out",
@@ -380,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 7
       },
       {
         "title": "EON wants to move the data superhighway from ocean fiber to space lasers",
@@ -394,7 +213,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "The benefits of medical AI assistance vary based on user expertise",
@@ -408,7 +227,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 9
+        "ageHours": 11
       },
       {
         "title": "New ways to learn and teach with ChatGPT Work and Codex",
@@ -420,7 +239,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 18
+        "ageHours": 20
       },
       {
         "title": "After killer quarter, Palantir CEO Alex Karp calls AI industry &#8216;Marxist&#8217;",
@@ -434,70 +253,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 19
-      },
-      {
-        "title": "Apple is getting this wrong",
-        "url": "https://openai.com/index/apple-is-getting-this-wrong",
-        "publishedAt": "2026-08-03T22:00:00.000Z",
-        "summary": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Policy",
-        "ageHours": 20
-      },
-      {
-        "title": "AWS is helping vibe-coding startup Superblocks, and the implications are big",
-        "url": "https://techcrunch.com/2026/08/03/aws-is-helping-vibe-coding-startup-superblocks-and-the-implications-are-big/",
-        "publishedAt": "2026-08-03T20:00:00.000Z",
-        "summary": "AWS now allows vibe-coding tool Superblocks to be embedded into the private clouds of AWS customers. It's another step toward decoupling apps from models.",
-        "authors": [
-          "Julie Bort"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 22
-      },
-      {
-        "title": "Alexander Rakhlin named director of the MIT Statistics and Data Science Center",
-        "url": "https://news.mit.edu/2026/alexander-rakhlin-named-director-mit-statistics-data-science-center-0803",
-        "publishedAt": "2026-08-03T19:50:00.000Z",
-        "summary": "Alexander “Sasha” Rakhlin PhD ’06, the Distinguished Professor in Data, Systems, and Society at the MIT Institute for Data, Systems, and Society (IDSS); and a professor of brain and cognitive sciences at MIT, has been named the next director of the MIT Statistics and Data Science Center &nbsp;(SDSC).&nbsp; Rakhlin succeeds Ankur Moitra,&nbsp;the Norbert Wiener Professor of Mathematics, associate director of the&nbsp;IDSS, and a faculty member in the MIT Department of Electrical Engineering and Computer Science (EECS) who has been SDSC director since 2021. Philippe Rigollet, the Cecil and Ida Green Distinguished Professor of Mathematics and a core faculty member in IDSS, also served as interim director in 2024-25. “Sasha is one of the sharpest theoretical minds working in statistics and machine learning today, and also one of the most devoted mentors I know,” says Fotini Christia, the Ford International Professor of the Social Sciences and director of IDSS, which houses SDSC. “He has helped train an entire generation of interdisciplinary scholars through the Interdisciplinary Doctoral Program in Statistics (IDPS), while his own research keeps pushing the boundaries. The SDSC could not ask for a more fitting leader.” Rakhlin is the inaugural holder of the Distinguished Professorship in Data, Systems, and Society, an endowed chair created in 2025 by the generosity and vision of IDSS professor Richard “Dick” Larson, an “MIT lifer” and pioneer in operations research, queueing theory, and system optimization. “I am honored to take on this role,” says Rakhlin. “The strength of the Statistics and Data Science Center has always been its people — students, postdocs, and faculty from across MIT who bring sharply different perspectives to the most interesting problems of the day in statistics, machine learning, and AI. My goal is to support that community as it takes on the constantly evolving questions reshaping the field.” Rakhlin has been connected to the Statistics and Data Science Center as a visiting professor since 2016, before formally joining MIT in 2018 in the Department of Brain and Cognitive Sciences and IDSS. As the initial chair of the Interdisciplinary PhD in Statistics program at the SDSC, Rakhlin has seen the successful defense of over 75 IDPS PhD students across a variety of departments at MIT, including IDSS’ own Social and Engineering Systems program. “I have been fascinated by machine learning since my PhD work more than 20 years ago, drawn by its beautiful connections to statistics, probability, algorithms, optimization, and game theory,” says Rakhlin.&nbsp;“At the Statistics and Data Science Center, I work alongside colleagues who share this fascination and pursue these connections in many directions. The recent revolution in AI is extending this web into the sciences; it promises to accelerate discovery, and it raises new questions for statistics. Answering them demands a rigorous science of the tools themselves. As AI enters medicine, energy, and public life, its safety and security are, at their core, statistical and mathematical questions: quantifying uncertainty, providing guarantees, understanding failure, and resisting manipulation.” As Rakhlin puts it, the SDSC is built for this moment. “Statistics is a shared language across MIT,” he adds. “Through the Interdisciplinary Doctoral Program in Statistics, the center connects students and faculty from economics and political science to physics and engineering. Collaborations in areas from biology to nuclear fusion have shown how statistical thinking accelerates science itself.”&nbsp; As director, one of his goals is to deepen these interdisciplinary connections. He hopes to help make SDSC the Institute’s home for the rigorous foundations of data science and AI, and a bridge to the scientific and societal questions where those foundations are most needed. Rakhlin received his bachelor’s degrees in mathematics and computer science from Cornell University, and doctoral degree from MIT. He was a postdoc at the University of California at Berkeley in EECS before joining the University of Pennsylvania, where he was an associate professor in the Department of Statistics and co-director of the Penn Research in Machine Learning center.",
-        "authors": [
-          "Institute for Data, Systems, and Society"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Products",
-        "ageHours": 22
+        "ageHours": 21
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 12,
     "last24h": 12,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 10
-      },
-      {
-        "name": "Models",
-        "count": 5
-      },
-      {
-        "name": "Products",
+        "name": "General",
         "count": 4
       },
       {
-        "name": "General",
+        "name": "Models",
         "count": 3
+      },
+      {
+        "name": "Research",
+        "count": 2
+      },
+      {
+        "name": "Products",
+        "count": 2
       }
     ]
   }
