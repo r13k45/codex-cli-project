@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T19:52:33.868Z",
+  "generatedAt": "2026-08-04T21:32:41.947Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 406",
-        "research:arXiv cs.LG -> HTTP 406",
-        "research:arXiv cs.CL -> HTTP 406"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,13 +83,268 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "AURORA-LM: Autoencoding Unified Representation for Continuous-Latent Diffusion Language Modeling",
+        "url": "https://arxiv.org/abs/2608.02602v1",
+        "publishedAt": "2026-08-03T17:59:50.000Z",
+        "summary": "Language remains an outlier in generative modeling: while images, video, and audio are increasingly modeled in continuous latent spaces, text generation still relies predominantly on discrete tokens. Existing continuous language models either inherit embedding spaces not designed for joint generation and decoding, or compress autoencoded latents to ease diffusion, sacrificing token-level fidelity. Instead of simplifying the representation to suit the generative model, we preserve a high-capacity, decodable text latent and design the diffusion model to learn its distribution directly.\n  We introduce AURORA-LM, a continuous-latent diffusion language model that separates the construction of a decodable text representation from the modeling of its distribution. A Query-based Encoder-Decoder organizes text into a high-capacity, prefix-aligned latent sequence, and a Block-causal Diffusion Transformer learns its distribution through flow matching, generating blocks left to right while denoising positions within each block in parallel. Because such a latent is harder for diffusion to model, AURORA-LM restricts only the noisy-input pathway while retaining the full clean-latent prediction target, accommodating full-width latents without reducing decoder-facing capacity. We further calibrate the noise-level distribution to the latent width, and introduce self-trajectory consistency to bridge independently sampled training noise and iterative denoising at inference.\n  AURORA-LM achieves the strongest performance among evaluated continuous and diffusion-based language models on OpenWebText free generation and XSum summarization. Scaling to 1B parameters with about 1500 EFLOPs of total compute yields further gains, surpassing a larger publicly released latent-diffusion language model under a matched evaluation protocol. All experiments are conducted on Ascend NPUs.",
+        "authors": [
+          "Jiajun Liang",
+          "Yucheng Liao",
+          "Yukang Cao",
+          "Jiazhe Wei",
+          "Ken Li",
+          "Wende Tan",
+          "Jiankun Zhang",
+          "ZY Cui",
+          "Jingkang Yang",
+          "Liucheng Guo",
+          "Shiqi Yang",
+          "B. Yang",
+          "Caifeng Shan",
+          "Ziwei Liu",
+          "Chenyang Si"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "Bridging Artificial Intelligence and Power Systems Education Using a Hands-On Executable Framework",
+        "url": "https://arxiv.org/abs/2608.02599v1",
+        "publishedAt": "2026-08-03T17:59:09.000Z",
+        "summary": "Artificial intelligence (AI) is increasingly central to power and energy systems, supporting modeling, forecasting, optimization, and control. Yet most existing works emphasize specialized applications and offer little reusable material for newcomers or interdisciplinary learners, who increasingly rely on large language models rather than building their own. This gap points to a need for engineering-grounded AI (EGAI), in which AI workflows follow established engineering and power-system domain rules rather than acting as task-agnostic black boxes. Motivated by a community survey of researchers and practitioners, which shows 92% report at least one barrier before running an AI model and 94% want a power-specific hands-on course. This paper presents a framework consisting of open, executable module library that lowers the entry barrier for AI in power systems. The modules follow a progressive difficulty ladder that maps core AI concepts onto representative power-system tasks: (i) foundational deep neural network (DNN) templates for function approximation and load-curve fitting; (ii) a domain-coupled convolutional neural network (CNN) power-flow surrogate for a 5-bus system; and (iii) frontier modules on DNN-assisted optimization, deep reinforcement learning (DRL) for battery storage control, and physics-informed neural networks (PINNs) for the swing equation. All modules are released as Jupyter notebooks that run locally or on Google Colab and are delivered through an IEEE online course and IEEE Power & Energy Society (PES) webinar series. The webinar drew more than 590 live attendees, which is among the ten most-attended IEEE PES webinars, and over 344 repository visits within two weeks, reinforcing the survey-based motivation.",
+        "authors": [
+          "Junjie Yin",
+          "Buxin She",
+          "Xinyu Feng",
+          "Fangxing",
+          "Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 28
+      },
+      {
+        "title": "onepot-Bench 0: towards lab-aware in silico chemistry benchmarks",
+        "url": "https://arxiv.org/abs/2608.02595v1",
+        "publishedAt": "2026-08-03T17:58:27.000Z",
+        "summary": "Language models are playing an increasingly important role in laboratory science, performing tasks such as experiment planning, execution, and post-hoc analysis. However, precisely measuring their abilities is difficult, as scientific capabilities require a mixture of both problem-solving skills and domain-specific intuition. Existing evaluations rarely measure the capabilities required to make reliable decisions in a physical laboratory and often rely on public data that may have appeared in model training corpora.\n  We introduce onepot-Bench 0, a proprietary benchmark suite for evaluating language models on synthetic chemistry capabilities relevant to wet-lab execution. onepot-Bench 0 comprises three complementary evaluations: ChemAbacus measures tool-free cheminformatics literacy and numerical reasoning; SynthRefusal characterizes safety and refusal behavior across a variety of benign, controlled, and designer-drug targets; and SynthBench evaluates reaction-outcome prediction and catalyst selection using private experimental data generated in our laboratory. Together, these evaluations probe basic competency, reliability, and deeper knowledge, all skills which are required for reliable performance in the lab.",
+        "authors": [
+          "Brandon Wang",
+          "Andrei S. Tyrin",
+          "Daniil A. Boiko"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "The Condition-Number Barrier in Sparse Least Squares",
+        "url": "https://arxiv.org/abs/2608.02588v1",
+        "publishedAt": "2026-08-03T17:57:01.000Z",
+        "summary": "In [AS21], Axiotis and Sviridenko conjectured that the linear dependence on the restricted condition number in sparse convex optimization cannot be improved by a polynomial-time algorithm. We establish their conjectured lower bound for least-squares objectives, conditional on the randomized exact-volume Small-Set Expansion Hypothesis in the weighted regular-graph formulation of Raghavendra, Steurer, and Tulsiani [RST12]. Concretely, for every fixed $γ\\in(0,1]$, there is no randomized polynomial-time algorithm that, with probability at least $2/3$, returns a vector $x$ such that, writing $s=\\lVert x\\rVert_0$, \\[\n  \\lVert Ax-b\\rVert_2^2\n  \\leq\n  \\min_{\\lVert z\\rVert_0\\leq k}\\lVert Az-b\\rVert_2^2+\\varepsilon\n  \\quad\\text{and}\\quad\n  s=O\\!\\left(k\\,κ_{s+k}^{\\,1-γ}\\right), \\] where $κ_r$ is the restricted condition number at sparsity level $r$. The result holds even on rational instances with $A$ of full column rank.\n  The proof was first obtained using a fully automated Gemini-based agentic system developed internally at Google. The authors have verified the proof and edited it for clarity of presentation.",
+        "authors": [
+          "Honghao Lin",
+          "Vahab Mirrokni",
+          "David P. Woodruff"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "GradCuit: Credit-Assigned Gradient Flow Enables Robust and Interpretable Test-Time Latent Reasoning",
+        "url": "https://arxiv.org/abs/2608.02585v1",
+        "publishedAt": "2026-08-03T17:55:24.000Z",
+        "summary": "Optimization-based latent reasoning improves large language model outputs by optimizing instance-specific continuous states at test time while keeping model parameters frozen. Existing methods, however, typically connect these states to the reasoning trajectory through decoded tokens, making sequence-level credit assignment indirect and obscuring how latent updates shape subsequent reasoning. We introduce GradCuit (gradient through circuit), which inserts optimizable latent states at a selected Transformer layer between the hidden representations of the prompt and the generated continuation. Causal self-attention provides every continuation-token log-probability with a differentiable path to every preceding latent state through the remaining Transformer blocks, enabling reward-weighted gradients from the entire continuation to be assigned directly to the latents. Across five instruction-tuned backbones, three reasoning benchmarks, and two answer formats, GradCuit achieves an average accuracy of 64.5%, outperforming chain-of-thought prompting by 6.6 percentage points and the strongest competing method by 2.4 points. GradCuit also demonstrates greater robustness: across seven learning-rate settings, it consistently outperforms LatentSeek while reducing the standard deviation of accuracy from 1.53 to 0.82, and even its random-walk variant remains competitive with LatentSeek. For interpretability, token-level gradient attribution reveals that latent influence concentrates on reasoning-connector tokens, while layer analysis identifies early-to-middle Transformer layers as the most effective optimization space. By directly optimizing internal reasoning from outcome feedback, GradCuit opens a new axis of robust and interpretable test-time scaling, where LLMs adapt how they reason rather than merely regenerate, sample, or rerank outputs.",
+        "authors": [
+          "Zhaoxin Yu",
+          "Qi Shen",
+          "Hengli Li",
+          "Zhaowei Zhang",
+          "Song-Chun Zhu",
+          "Chi Zhang",
+          "Zilong Zheng"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "UEmbed: Unified Sparse and Dense Multimodal Embeddings",
+        "url": "https://arxiv.org/abs/2608.02583v1",
+        "publishedAt": "2026-08-03T17:54:11.000Z",
+        "summary": "Sparse retrieval underpins modern search systems, from web search to retrieval-augmented generation. Existing work has introduced Learned Sparse Retrieval (LSR) to push beyond exact lexical matching toward richer semantics. Yet LSR has so far remained tied to encoder-style bidirectional architectures, and its extension to multimodal settings still relies heavily on auxiliary cross-modal modules. To address these limitations, we introduce UEmbed (Unified Embedding), a decoder-only multimodal embedding model that produces both sparse lexical and dense representations in one causal forward pass. UEmbed appends N learnable special tokens to the input and partitions the vocabulary into N disjoint subsets. Each token's causal hidden state predicts sparse weights over its assigned subset, and the N subsets are concatenated into the full sparse vector. Trained on public data, we release UEmbed at 2B, 4B, and 9B scales. UEmbed-9B reaches 71.8 (dense) and 71.0 (sparse) on MMEB-v2, outperforming multimodal embedding models trained on publicly available data (e.g., RzenEmbed). On BEIR, UEmbed also remains competitive with strong dense and sparse baselines. Furthermore, we demonstrate the practical utility of UEmbed across three dimensions: effectiveness, efficiency, and agentic applications. Overall, UEmbed offers a new paradigm: it unifies dense and sparse embeddings in one model, while further extending sparse retrieval to unify text and multimodal inputs.",
+        "authors": [
+          "Tingyu Song",
+          "Mingxin Li",
+          "Yanzhao Zhang",
+          "Dingkun Long",
+          "Pengjun Xie",
+          "Zhijie Nie",
+          "Yilun Zhao",
+          "Shu Wu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "CoWAM: Coordination Contracts for Selective Policy Intervention with WAMs",
+        "url": "https://arxiv.org/abs/2608.02578v1",
+        "publishedAt": "2026-08-03T17:51:58.000Z",
+        "summary": "World Action Models (WAMs) augment robot policies with action-conditioned predicted futures, but a plausible future alone does not justify changing the action that a bimanual policy would execute. We present CoWAM, a selective intervention layer that expresses synchronization, role compatibility, and collision convergence as coordination contracts. Each contract combines typed admissibility checks with event-conditioned verification and calibrated intervention gates. CoWAM preserves the nominal action unless an alternative satisfies every active obligation and provides a clear, low-risk improvement; when the nominal action is also inadmissible, it invokes a predefined abstention fallback. To separate selector quality from proposal quality, all methods operate on identical candidate pools and commit their decisions before shared oracle labeling. Across eight simulated bimanual tasks, CoWAM improves coordination-valid selection by 16.7 percentage points over the contract-only variant and raises closed-loop success by 9.6 percentage points over the strongest selective baseline, while keeping harmful interventions below 1%. Together, these results establish coordination contracts as an effective interface for conservative policy intervention with predicted world-action evidence across coordination-rich bimanual tasks.",
+        "authors": [
+          "Shuaijun Liu",
+          "Qifu Wen",
+          "Shuyang Hao",
+          "Qi Luo",
+          "Chenglong Zhang",
+          "Feiyang You",
+          "Chengyu Wu",
+          "Ningxin Su"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 28
+      },
+      {
+        "title": "Smooth Reparameterizations of Functions on Simplicial Product Spaces: Applications to Probabilistic Tensor Decomposition and Functional Data Registration",
+        "url": "https://arxiv.org/abs/2608.02576v1",
+        "publishedAt": "2026-08-03T17:51:40.000Z",
+        "summary": "We consider optimization problems defined on product spaces of simplices. Examples of this class of problems include learning low-rank discrete multivariate probability distributions via simplex constrained tensor decomposition and performing functional data registration under the Square Root Velocity Function (SRVF) representation. In this work, we demonstrate the feasibility of replacing the product simplex with a smooth, elementwise strictly convex reparameterization, resulting in an unconstrained optimization problem on a manifold. We show that performing such a reparameterization results in the second order Karush-Kuhn-Tucker (KKT) points on the smooth manifold being mapped to the weak second order KKT points on the product simplex. This leads to a Riemannian Gradient Descent (RGD) algorithm for solving the reparameterized problem, which outperforms Projected Gradient Descent (PGD), and provides a more faithful representation of the original function shapes while performing curve registration.",
+        "authors": [
+          "Shashwat Kumar",
+          "Arafat Rahman",
+          "Anuj Srivastava",
+          "P. -A. Absil"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 28
+      },
+      {
+        "title": "Pseudorandom Streams within Diffusion Models Act as Learnable Inputs That Affect Generation Quality",
+        "url": "https://arxiv.org/abs/2608.02575v1",
+        "publishedAt": "2026-08-03T17:50:54.000Z",
+        "summary": "Diffusion models rely on stochastic inputs, yet on finite-precision hardware, the \"randomness\" they consume is realized as deterministic numerical orbits generated by pseudorandom rules. Accessible orbit structure can become a learnable input and affect both training and generation because the realized loss and its gradient depend on the concrete pseudorandom values consumed at each optimization step. A small multilayer perceptron predicts the next value of an orbit from its recent history, measuring general sequence predictability. A diffusion probe replaces real images with online random tensors while preserving the diffusion architecture and training objective, measuring whether the target system can exploit orbit structure. After controlling marginal statistics and screening out clear dynamical and finite-precision failures, the remaining orbits still produce markedly different diffusion losses and generation quality on MNIST and CIFAR-10. Both measures show strong rank correlations with macroscopic generation degradation, although their local rankings differ. After normalization by the IID baseline, the probe loss and the real-data diffusion loss approximately follow an empirical power law, with different exponents on the two datasets. These results suggest that a pseudorandom source is not only a distributional choice, but also a model-dependent structured input.",
+        "authors": [
+          "Shengzhi Deng",
+          "Chenqi Ye",
+          "Yanze Guo"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "AtumAI: A Principled Framework for Agentic Generation of Datacenter Control-Plane Policies",
+        "url": "https://arxiv.org/abs/2608.02569v1",
+        "publishedAt": "2026-08-03T17:45:58.000Z",
+        "summary": "The efficiency of a datacenter rests on its control plane policies. Designing these policies is increasingly hard: the hardware-software stack grows fast, the design space is vast and interdependent, and prototyping a single policy takes months. Agentic AI promises to automate this search. Off the shelf, however, it falls short on three fronts. It is not formal: with no structured, searchable statement of the problem, the search has little structure to exploit and hard constraints are not guaranteed. It is not transferable: each task is solved from scratch, so nothing learned on one task carries to the next. Finally, it is not systematic: relying on the LLM as the sole source of candidates, it explores a narrow slice of the design space and settles into local optima. We introduce AtumAI, a framework that generates datacenter control-plane policies with agentic AI, making the process formal, transferable, and systematic. From a goal stated in plain language, AtumAI autonomously proposes, tests, and refines candidate policies until one satisfies the request. It does so through two components. The Datacenter Task Compiler automates problem formulation: it compiles the request into a formal, machine-checkable, and searchable specification of the task's objectives, constraints, decision variables, and evaluation methodology. The Evolutionary Design Discovery Loop then searches this specification, expanding the search beyond the LLM itself via a diffusion model, an evolutionary algorithm, and a surrogate model. Together, they reduce onboarding a new task from months of engineering to writing its description. We evaluate AtumAI on three control-plane tasks with distinct problem scopes, design spaces, and trade-offs: workload placement, resource scaling, and power management. Across all tasks, the policies generated by AtumAI consistently outperform expert-engineered baselines.",
+        "authors": [
+          "Qiushi Lin",
+          "Chaojie Zhang",
+          "Íñigo Goiri",
+          "Aditya Akella",
+          "Ricardo Bianchini",
+          "Jovan Stojkovic"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "Structured Memory for Edge Language Models: Persistent Context and Corpus Retrieval via O(1) SSM State Injection",
+        "url": "https://arxiv.org/abs/2608.02560v1",
+        "publishedAt": "2026-08-03T17:43:36.000Z",
+        "summary": "Retrieval-augmented generation (RAG) imposes a prefill cost proportional to retrieved context length, and -- with Transformer backbones -- a KV-cache that grows with each generated token. State-Space Models (SSMs) avoid the second cost by construction; we eliminate the first, collapsing prefill from $O(L_{context})$ to $O(1)$ per query. We introduce PRECOG (Pre-Computed Context Injection), a retrieval mechanism that exploits a property unique to SSMs: the fixed-size, position-agnostic recurrent hidden state is a complete summary of everything the model has read. PRECOG pre-encodes document corpora offline as SSM hidden states and injects the best-matching state directly at query time, bypassing in-context re-ingestion entirely. The same state-injection mechanism enables SMC (Structured Memory Consolidation): a hierarchical persistent memory with cognitive-domain clustering, an adjustable fidelity-vs-storage dial, and $O(1)$ session initialization, which consolidates short-term episodic states into long-term semantic memory and fuses both with retrieved corpus states at query time. We demonstrate the system on TENNs-LLM, a 1.2B-parameter gated-SSM language model with a 192 KB hidden state. PRECOG matches in-context RAG answer quality, reducing prefill latency from $\\sim$27 s to $<$6 ms on edge hardware -- a $\\sim$4500$\\times$ speedup that crosses the threshold from unusable to interactive. The mechanism is architecturally impossible for Transformer KV-caches, which are position-entangled and grow linearly with context length.",
+        "authors": [
+          "Anusha Madan Gopal",
+          "Aras Pirbadian",
+          "Kristofor D. Carlson",
+          "M Anthony Lewis",
+          "Jonathan Tapson"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      },
+      {
+        "title": "Benchmarking Sheaf Neural Networks for Inductive Tasks",
+        "url": "https://arxiv.org/abs/2608.02558v1",
+        "publishedAt": "2026-08-03T17:41:20.000Z",
+        "summary": "Sheaf Neural Networks (SNNs) generalize message passing by replacing scalar edge weights of standard Graph Neural Networks (GNNs) with learnable, edge-dependent restriction maps between node stalks. Despite their strong theoretical foundations and promising transductive results, SNNs have been evaluated almost exclusively on transductive node classification, leaving their behaviour under inductive protocols unknown. We address this gap through the first systematic benchmark of the sheaf design space, evaluating three diffusion mechanisms (neural sheaf diffusion, sheaf attention, and sheaf attention with Graph Attention Network v2), three restriction-map parameterizations, three stalk dimensions, and six modern GNN architectural components, within a message-passing reformulation that never assembles the heavy sheaf Laplacian, making the full design space trainable under cross-graph batching. Across $1{,}890$ controlled experiments on 14 inductive datasets, multiple insights emerge: restriction maps are the dominant design choice and general maps are preferable, larger stalks add capacity but not long-range reach, architectural components explain more performance variation than the entire sheaf-specific design space itself. Under a matched protocol, SNNs transfer to inductive settings but do not reach the strongest baselines, with gaps being dataset-dependent. Practically, a single sheaf configuration can generalize across datasets, so effort is better spent tuning the surrounding architectural recipe than the sheaf operator itself.",
+        "authors": [
+          "Stefano Fiorini",
+          "Edoardo Coppola",
+          "Pietro Liò"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 28
+      }
+    ],
     "news": [
       {
-        "title": "Anthropic signs $10 billion deal with AI cloud startup Volta",
+        "title": "SpaceX has bought $329M worth of Tesla Megapacks so far this year",
+        "url": "https://techcrunch.com/2026/08/04/spacex-has-bought-329m-worth-of-tesla-megapacks-so-far-this-year/",
+        "publishedAt": "2026-08-04T21:07:26.000Z",
+        "summary": "SpaceX has ramped up its purchases of Tesla Megapacks for its xAI data centers.",
+        "authors": [
+          "Tim De Chant"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 0
+      },
+      {
+        "title": "Open-weight AI models are catching up to the frontier. The safety gap remains.",
+        "url": "https://techcrunch.com/2026/08/04/open-weight-ai-models-are-catching-up-to-the-frontier-the-safety-gap-remains/",
+        "publishedAt": "2026-08-04T20:05:26.000Z",
+        "summary": "A new SaferAI report finds Z.ai's open-weight GLM-5.2 approaches frontier AI capabilities while lacking key safety mitigations, renewing concerns that powerful open models could outpace governance and safeguards.",
+        "authors": [
+          "Rebecca Bellan"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 1
+      },
+      {
+        "title": "Anthropic signs $10B deal with AI cloud startup Volta",
         "url": "https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/",
         "publishedAt": "2026-08-04T19:48:40.000Z",
-        "summary": "Anthropic has been on a cloud partnership spree in recent months and its latest move is reportedly a $10 billion deal with AI cloud startup Volta.",
+        "summary": "Anthropic has been on a cloud partnership spree in recent months, and its latest move is reportedly a $10 billion deal with AI cloud startup Volta.",
         "authors": [
           "Lucas Ropek"
         ],
@@ -101,7 +352,21 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 0
+        "ageHours": 2
+      },
+      {
+        "title": "Meet Wrinkles, an app that uncovers the hidden stories of the places around you",
+        "url": "https://techcrunch.com/2026/08/04/meet-wrinkles-an-ai-app-that-uncovers-the-hidden-stories-of-the-places-around-you/",
+        "publishedAt": "2026-08-04T19:34:34.000Z",
+        "summary": "Wrinkles, available on both iOS and Android, essentially acts as an AI-powered audio tour guide that reveals hidden history and local stories.",
+        "authors": [
+          "Aisha Malik"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 2
       },
       {
         "title": "Nvidia doesn&#8217;t mess around: A week after open AI industry group formed, it&#8217;s already showing progress",
@@ -115,7 +380,19 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 0
+        "ageHours": 2
+      },
+      {
+        "title": "Third-party cyber evaluations involving OpenAI models",
+        "url": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+        "publishedAt": "2026-08-04T19:00:00.000Z",
+        "summary": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "Research",
+        "ageHours": 3
       },
       {
         "title": "Solving the solvent problem",
@@ -129,7 +406,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 3
       },
       {
         "title": "Spotify expands AI remix and covers project with Merlin partnership",
@@ -143,7 +420,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Texas halts new data centers as governor calls for audits",
@@ -157,13 +434,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Elon Musk spends half his time talking robots and AI on Tesla earnings calls",
         "url": "https://techcrunch.com/2026/08/04/elon-musk-spends-half-his-time-talking-robots-and-ai-on-tesla-earnings-calls/",
         "publishedAt": "2026-08-04T15:20:06.000Z",
-        "summary": "An analysis of the last seven years of Tesla earnings calls shows just little attention Musk pays to Tesla's car business.",
+        "summary": "An analysis of the last seven years of Tesla earnings calls shows just how little attention Musk pays to Tesla's car business.",
         "authors": [
           "Sean O'Kane, Russell Brandom"
         ],
@@ -171,7 +448,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 6
       },
       {
         "title": "Apple says more ex-employees may have taken confidential data to OpenAI",
@@ -185,7 +462,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 7
       },
       {
         "title": "Is the future of data centers portable? Runware builds a pod to find out",
@@ -199,80 +476,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 7
-      },
-      {
-        "title": "EON wants to move the data superhighway from ocean fiber to space lasers",
-        "url": "https://techcrunch.com/2026/08/04/eon-wants-to-move-the-data-superhighway-from-ocean-fiber-to-space-lasers/",
-        "publishedAt": "2026-08-04T12:00:00.000Z",
-        "summary": "Endeavor Optical Networks is planning to launch the fastest space laser communications system yet built.",
-        "authors": [
-          "Tim Fernholz"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 8
-      },
-      {
-        "title": "The benefits of medical AI assistance vary based on user expertise",
-        "url": "https://news.mit.edu/2026/medical-ai-assistance-benefits-vary-based-on-user-expertise-0804",
-        "publishedAt": "2026-08-04T09:00:00.000Z",
-        "summary": "A one-size-fits-all approach likely isn’t the best strategy when designing artificial intelligence systems that assist users in disease diagnosis. A new study by researchers at MIT and elsewhere found that, while AI assistance generally improved the accuracy of non-experts and clinicians in diagnosing skin diseases, AI explainability methods had different impacts depending on the users’ knowledge level.&nbsp; Explainable AI methods help users know when to trust a model’s predictions by describing or validating the model’s decision-making. For instance, a model might use a heat map to highlight image regions that were most important in its diagnosis or a large language model (LLM) to explain the prediction in plain language. In this study, researchers tested non-experts and primary care providers in skin disease diagnosis, with and without the help of different explainable AI systems.&nbsp; They found that non-experts’ diagnostic accuracy improved, but it was largely due to deference to the AI system. Non-experts trusted LLM-based explanations whether they were right or wrong, and found explanations more convincing when they were vague or generic. By contrast, clinicians were not tripped up by incorrect AI assistance and performed best when given only a model’s prediction, with no accompanying explanation.&nbsp; “Good AI systems can improve performance in some health settings, but this has to be balanced carefully with algorithmic deference that can lead to more error. We know that both AI and explainability methods can engage automation bias in humans, and this anchoring effect is something that must be accounted for when we design AI systems,” says Marzyeh Ghassemi, an associate professor in MIT’s Department of Electrical Engineering and Computer Science (EECS), a member of the Institute for Medical Engineering and Science, and a principal investigator at the Laboratory for Information and Decision Systems and the Abdul Latif Jameel Clinic for Machine Learning in Health. “These findings are important as patients increasingly turn to AI to help with their health care. Our findings show that those with the least medical knowledge are most likely to be led astray when explainable AI models give an erroneous output,” says Roxana Daneshjou, a co-author and assistant professor of biomedical data science and dermatology at Stanford University. These results underscore the importance of building AI systems with users in mind and of developing explainability methods that encourage critical thinking rather than overreliance on the model, the researchers say. “It’s getting obvious that we cannot just assume a good AI will solve all problems. We need to pay careful attention to the users who will be using the AI system, because the same explanation can help an expert and mislead a beginner. Often the people who could benefit most from AI are the ones most likely to be led astray by it, so how we present a recommendation matters as much as whether it’s correct,” says lead author Orson Xu, an assistant professor in the Department of Biomedical Informatics at Columbia University. Ghassemi, Xu, and Daneshjou are joined on the paper by many authors, including MIT graduate student Haoran Zhang, undergraduate Reina Wang, and Luis Soenksen PhD ’20, a research affiliate at the Jameel Clinic, along with clinicians and researchers. A description of the work appears today in Nature Medicine . Exploring explanations Several FDA-approved AI interfaces are being used to help clinicians identify skin conditions in medical images, as a way to streamline early diagnosis. In addition to providing a prediction of whether disease is present in the image, these tools often use one of several methods that explain the model’s decision-making. At the same time, non-experts can perform digital diagnosis on their own using AI-powered search engines that predict skin diseases based on user prompts. These systems often use LLMs to explain the model’s prediction in simpler terms. The researchers explored the effects and potential benefits of these explainable AI tools on primary care physicians and non-experts in dermatological disease detection. They tested users by showing them medical images plus an AI prediction of skin disease, employing different explainable AI approaches.&nbsp; These approaches included: an AI prediction and confidence level with no explanation, a method that provides similar images to reinforce its prediction, a heat map-based approach that highlights important image regions, and an LLM that explains the model’s reasoning in plain language. Non-experts were tasked with deciding whether an image of a skin mole was cancerous, with and without the help of explainable AI. Clinicians were given the more challenging task of providing a differential diagnosis of dermatological disease. The researchers found that all explainable AI approaches improved the accuracy of non-experts, mostly because the tools helped users diagnose non-cancerous moles.&nbsp; In addition, when they employed a fairness-constrained model designed to combat bias against darker skin tones, the system significantly improved accuracy and reduced diagnostic disparities based on skin tone. “But the reason non-expert users are better is because they are more reliant on the models. When the model is wrong, it hurts performance more than it helps performance when the model is right. We were just able to train very good AI models for this setting,” Ghassemi says. This deference effect is largest with LLM explanations, and users were more confident about their wrong answers when aided by an LLM. On the other hand, clinicians were resilient to incorrect AI explanations and, of all the explainability methods, LLMs boost their accuracy the least. “It really comes down to how each group uses the explanation. A clinician already has a diagnosis in mind and checks the AI against their own training, so a bad explanation gets caught. Meanwhile, a non-expert can use that exact same explanation to form an opinion in the first place, so a plausible, confident-sounding rationale can pull them toward the wrong answer. The same tool ends up being an asset for one user and a liability for another,” Xu says. Overcoming the deference effect When the researchers dug deeper, they found that users who were most deferential to AI assistance were the worst performers on the task without the help of AI.&nbsp; They also found that the time at which &nbsp; users were presented with AI explanations influenced their behavior. If an explanation is given first, before the user can perform the diagnosis on their own, they tend to become more deferential to the model. In addition, AI systems outperformed humans when the presentation of disease was subtle, but humans performed much better if there are atypical symptoms or unrelated features in an image. Taken together, these results indicate that explainable AI can cause overreliance on models and lead users to blindly follow AI recommendations even when they are wrong.&nbsp; Rather than using LLMs to generate more detailed explanations, it might be more effective to force users to give a diagnostic hypothesis first, then provide an AI-based suggestion to highlight other possible conditions for consideration.&nbsp; “We really want AI to improve creativity and either upskill or fill in gaps where users are missing subtle presentations. Otherwise, we risk engaging automation bias and then, when the model is wrong, users can’t recover,” Ghassemi says.&nbsp; This research was funded, in part, by the National Science Foundation, Schmidt Sciences, the National Bureau of Economic Research, and Columbia University.",
-        "authors": [
-          "Adam Zewe | MIT News"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
-        "ageHours": 11
-      },
-      {
-        "title": "New ways to learn and teach with ChatGPT Work and Codex",
-        "url": "https://openai.com/index/learn-teach-chatgpt-work-codex",
-        "publishedAt": "2026-08-04T00:00:00.000Z",
-        "summary": "Explore new education plugins for ChatGPT Work and Codex that help K–12 teachers, college educators, and students learn, teach, research, and build.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 20
-      },
-      {
-        "title": "After killer quarter, Palantir CEO Alex Karp calls AI industry &#8216;Marxist&#8217;",
-        "url": "https://techcrunch.com/2026/08/03/after-killer-quarter-palantir-ceo-alex-karp-calls-ai-industry-marxist/",
-        "publishedAt": "2026-08-03T23:19:50.000Z",
-        "summary": "After a quarter that delivered $1 billion in profit, Palantir CEO Alex Karp on Monday once again warned that AI frontier labs are too untrustworthy for enterprises.",
-        "authors": [
-          "Julie Bort"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 21
+        "ageHours": 9
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
+    "totalItems": 24,
     "last24h": 12,
     "topCategories": [
       {
-        "name": "General",
-        "count": 4
+        "name": "Research",
+        "count": 11
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 5
       },
       {
-        "name": "Research",
-        "count": 2
+        "name": "General",
+        "count": 5
       },
       {
         "name": "Products",
