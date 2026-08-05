@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T14:29:28.680Z",
+  "generatedAt": "2026-08-05T16:49:57.800Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,7 +27,10 @@
         }
       ],
       "itemCount": 12,
-      "errors": []
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 503",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -85,103 +88,6 @@
   "sections": {
     "research": [
       {
-        "title": "ParVL: Parallel Scaling and Expandable Compute Allocation for Multimodal LLMs",
-        "url": "https://arxiv.org/abs/2608.04010v1",
-        "publishedAt": "2026-08-04T17:59:58.000Z",
-        "summary": "Existing scaling strategies for Multimodal Large Language Models (MLLMs) typically expand either model parameters or sequential inference computation, incurring substantial memory or latency overhead. More importantly, most existing methods fail to alter the rigid, fixed computation allocation between the Vision Transformer and the Large Language Model components, limiting task-specific optimization. To address this, we introduce the Parallel Vision-Language (ParVL) scaling framework for MLLMs, which scales parallel computation by reusing the existing ViT and LLM backbone parameters across multiple vision and language branches. This framework raises a central question: given a fixed backbone parameter budget, how should additional shared-backbone computation be allocated between the vision and language modalities? We instantiate each parallel computational stream with branch-specific prefix parameters over a shared backbone, and train the entire model end-to-end via full-parameter supervised fine-tuning on roughly 13B tokens. We systematically study the computation-allocation trade-off between the ViT encoder and LLM decoder. ParVL improves overall multimodal performance over same-recipe single-branch baselines, and the best evaluated vision--language allocation varies across tasks. Code is available at https://github.com/YangYangGirl/ParVL.",
-        "authors": [
-          "Yang Yang",
-          "Qinyu Zhao",
-          "Mouxiang Chen",
-          "Xiaohui Li",
-          "Lixin Gu",
-          "Wenhai Wang",
-          "Hongjie Zhang",
-          "Wenwei Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "SocietyBench: Forecasting Counterfactual Social-World Evolution",
-        "url": "https://arxiv.org/abs/2608.04009v1",
-        "publishedAt": "2026-08-04T17:59:56.000Z",
-        "summary": "Large language models (LLMs), and the agents built on top of them, are now benchmarked heavily on whether they can finish a task -- fix a bug, drive a browser, operate a GUI. A complementary social ability, namely how well a model understands and forecasts the way real social events unfold, has barely been measured. We introduce SocietyBench, an end-to-end benchmark that takes a one-line event topic, collects Web news and social-media posts across five platforms, distills them into a date-indexed timeline that keeps factual events and a public-opinion layer separate, and then turns every cutoff date on that timeline into an audited bank of forecasting questions. Questions are scored on two orthogonal 100-point axes: probability calibration and temporal accuracy. Before any model sees a timeline, a three-phase procedure replaces every named entity and shifts every date by a per-event constant, turning a real arc into a counterfactual social world -- structurally identical to what happened, but stripped of the surface labels a model could match against pre-training memory. On five heterogeneous events and 125 prediction points in Chinese and English editions, the strongest of six frontier LLMs reaches only 75.0 out of 100, against a trivial anchor of 50. The two axes come apart: a model can be calibration-strong but time-weak, or the reverse. Three agent frameworks built on a shared base model fail to improve on that base, and two model-free heuristics trail every LLM. Per-event gaps reach 21.4 points on a single axis, which is our main argument for evaluating on several events rather than one. All anonymized timelines, question banks, ground truth, and scoring code are released.",
-        "authors": [
-          "Zhenran Wang",
-          "Zhonghan Bian",
-          "Jinsong Li",
-          "Zhangyang Qi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "WorldCup Arena: Prospective, Leakage-Free Evaluation of Frontier LLMs on a Live Tournament",
-        "url": "https://arxiv.org/abs/2608.04008v1",
-        "publishedAt": "2026-08-04T17:59:55.000Z",
-        "summary": "Benchmarks that measure the forecasting ability of large language models are almost always retrospective: the event has happened, the answer is somewhere on the Web, and the evaluation must defend itself against memorisation. We report the opposite design. Over the 39 days of the 2026 FIFA World Cup, six frontier LLMs -- all with extended thinking and native server-side web search -- were asked before every kickoff, one match at a time, to fill in a seven-market prediction card for all 104 matches, plus 12 group winners and a pre-tournament outright pool; no answer existed when the question was asked, so the evaluation is leakage-free by construction rather than by filtering, and the frozen archive holds 4,494 scored predictions. What the tournament establishes is a set of behaviours the six systems share. On match outcome they average 63.9%, level with backing the bookmaker's favourite -- which is in fact what they usually do. They agree with one another far more often than they are right, so a majority vote adds nothing. They under-commit to draws and to goals, and crowd their scoreline picks onto a single prototypical result. Accuracy tracks how lopsided a fixture is rather than how much is known about it: it collapses in the closest ties, where the dossiers are richest, while questions about the tournament as a whole are answered well. On this task the current generation of frontier systems is not sharply differentiated: the standings hold up at the top and the bottom across the run and churn in the middle, and the margins stay narrow throughout. The briefing dossiers, fixtures and official results are released as a benchmark, together with the scoring code.",
-        "authors": [
-          "Zhenran Wang",
-          "Zhonghan Bian",
-          "Jinsong Li",
-          "Zhangyang Qi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 20
-      },
-      {
-        "title": "TurnSight: Turn-Level Hindsight Self-Distillation for Tool-Integrated Reasoning",
-        "url": "https://arxiv.org/abs/2608.04007v1",
-        "publishedAt": "2026-08-04T17:59:21.000Z",
-        "summary": "Tool-Integrated Reasoning (TIR) enables LLMs to solve complex tasks through iterative tool interactions. However, existing reinforcement learning methods often rely on trajectory-level supervision, limiting fine-grained credit assignment in long-horizon TIR scenarios. On-policy self-distillation offers denser signals through teacher branches with privileged context, but existing approaches typically derive such context from ground-truth answers or retrieved skills, which may not reflect the states actually visited by the agent. Moreover, token-level supervision fails to capture the turn-level structure of tool interactions. To address this, we propose TurnSight, a turn-level hindsight self-distillation framework that derives supervision directly from execution-conditioned hindsight. It then constructs multiple hindsight views with different lookahead horizons and selects reliable supervision through cross-horizon directional agreement. Finally, the selected hindsight signal is normalized across sibling rollouts and used to adaptively modulate RL advantages while preserving their original optimization direction. Extensive experiments on three benchmarks demonstrate the effectiveness of TurnSight. Our codes are available at https://github.com/quchangle1/TurnSight.",
-        "authors": [
-          "Changle Qu",
-          "Sunhao Dai",
-          "Hengyi Cai",
-          "Yuqi Zhou",
-          "Xinran Chen",
-          "Simon",
-          "Jun Xu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents",
-        "url": "https://arxiv.org/abs/2608.04003v1",
-        "publishedAt": "2026-08-04T17:58:05.000Z",
-        "summary": "Recursive self-improvement requires agents to turn accumulated experience into better future behavior. Personal AI agents offer a concrete setting for studying this capability because they retain preferences, task histories, tool routines, and learned skills across sessions. Yet whether retained experience actually improves them over time has not been systematically tested. We introduce PAST-Bench, a benchmark designed to isolate this question. Each agent runs through ordered sequences of fresh-session tasks under matched conditions that turn retained experience on and off. It spans 26 scenarios and 204 episodes across memory, procedural reuse, information gathering, and update. We report both later-task gains and whether those gains follow the intended save, retrieve, and update pathway. Across seven base models and four agent frameworks, improvement is real but uneven across capabilities. Agents with the same headline gain can differ markedly in whether that gain is supported by evidence of the intended pathway. Guided by these findings, we develop Hermes+, which extends Hermes with five targeted interventions across stages of the agent loop. Hermes+ raises the average gain from retained experience and provides clearer pathway evidence, with its strongest improvement on tasks requiring outdated state to be replaced, although the effect remains capability- and model-dependent. Together, PAST-Bench and Hermes+ provide an evaluation and diagnostic foundation for studying how persistent agents can progress from retaining experience to systematically improving through it. Code: https://github.com/Gen-Verse/PAST-Bench",
-        "authors": [
-          "Shuhan Xue",
-          "Zixin Ding",
-          "Yichen Shen",
-          "Yinjie Wang",
-          "Zhenfei Yin",
-          "Yingcheng Wu",
-          "Yuxin Chen",
-          "Mengdi Wang",
-          "Ling Yang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
-      },
-      {
         "title": "Test-Time Scaling in Reasoning LLMs: Inference Regimes, Evaluation, and Reproducibility",
         "url": "https://arxiv.org/abs/2608.04001v1",
         "publishedAt": "2026-08-04T17:57:20.000Z",
@@ -203,56 +109,10 @@
           "Vipin Chaudhary"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 21
-      },
-      {
-        "title": "Agogic: Performance-Timed Music Tokens for LLM-Native Text-to-Symbolic-Music Generation",
-        "url": "https://arxiv.org/abs/2608.03999v1",
-        "publishedAt": "2026-08-04T17:56:49.000Z",
-        "summary": "Text-to-music language models begin with a choice usually made by default: how to tokenize music. Normally entangled with backbone, data, and recipe, its effect has never been measured in isolation. We fix pretrained Qwen3.5 (0.8B-27B), data, budget, and decoding, and swap only the representation across seven tokenizations, anchoring texture metrics to each representation's model-free ceiling. The ordering is clean and surprising: representation, not model size, is the binding variable for distributional fidelity. Scaling the backbone 34x barely moves Frechet Music Distance (FMD), whereas switching representation halves it. PMT, a performance-resolution stream we release (10 ms timing, per-note velocity, multi-track texture; 609 symbols), reaches FMD 159 at 0.8B against 272-286 for beat grids (1.7-1.8x lower, up to 2.8x elsewhere; non-overlapping bootstrap CIs), so a 0.8B performance-resolution model beats a 27B beat grid. It reappears on a 26M from-scratch backbone and a second performance-resolution tokenizer: a property of the class, not one lucky vocabulary. Nor is it a finer-lattice artifact: snapping PMT's onsets to the beat grids' resolution still leaves it 67-129 FMD ahead of both (n=500). The effect is distributional; whether it is audible is a separate question, left open by our probe, with a human study pre-registered. Native caption adherence is weak but separable: a lightweight decode-time constraint doubles instrument-F1 (.28 to .60) and Correct-Key (.16 to .35) at no distributional cost. We release the harness, 25+ checkpoints, two corpora (86.6k aligned across caption/MIDI/ABC/audio; 6.25M captioned, the largest for music), and an imprinting diagnostic: published text-to-MIDI systems reproduce their training distribution near-invariant to the caption (72% vs. 71% chord-time on disjoint domains). The field's next representation claim can now be measured, not asserted.",
-        "authors": [
-          "Junhao Chen",
-          "Mingjin Chen",
-          "Jingjia Mao",
-          "Lin Chen",
-          "Saining Zhang",
-          "Minglin Chen",
-          "Ruocheng Wu",
-          "Liaoyuan Fan",
-          "Wenyi Li",
-          "Mingju Gao",
-          "Henghaofan Zhang",
-          "Zhihao Li",
-          "Hao Zhao",
-          "Yufei Wang",
-          "Ruqi Huang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 21
-      },
-      {
-        "title": "When Attention Goes Blind: Numerical Failure in ALiBi Positional Encodings",
-        "url": "https://arxiv.org/abs/2608.03994v1",
-        "publishedAt": "2026-08-04T17:54:01.000Z",
-        "summary": "We identify a previously overlooked failure mode of ALiBi positional encoding: its linear bias scaling underflows floating-point precision, which zeroes out a large fraction of attention weights and renders the affected attention heads partially blind. We analyze this failure mode, characterize its impact, and examine four mitigation strategies. We further demonstrate its occurrence in state-of-the-art pretrained models based on ALiBi. Comprehensive pretraining experiments with 148M-parameter decoder models help us to disentangle its effects from out-of-context degradation. We find that ALiBi's failure mode can substantially impair token retrieval while having only a minor effect on standard decoder benchmarks. We propose four training-time mitigation strategies and evaluate them individually and in combinations, finding that log-scaled distances yield the most consistent improvements in passkey retrieval. Despite this problem, default ALiBi slopes remain a surprisingly strong baseline, particularly for needle-in-a-haystack retrieval. Based on these findings we provide concrete recommendations on how to train models with ALiBi.",
-        "authors": [
-          "Christopher Schröder",
-          "Lukas Gienapp",
-          "Ferdinand Schlatt",
-          "Martin Potthast",
-          "Gerhard Heyer"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
+        "ageHours": 23
       },
       {
         "title": "Assessment of Conditional Diffusion Model for Synthetic Histopathology Image Generation",
@@ -269,85 +129,225 @@
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 21
+        "ageHours": 23
       },
       {
-        "title": "string2string Studio: An Interactive, In-Browser Platform for String-to-String Algorithms",
-        "url": "https://arxiv.org/abs/2608.03984v1",
-        "publishedAt": "2026-08-04T17:48:15.000Z",
-        "summary": "We present string2string Studio, an interactive in-browser platform for string-to-string analysis across natural language processing, computational biology, and the digital humanities. The system integrates six main modules (alignment, distance, similarity, search, generation metrics, and BLAST homology search), operating at character, word, token, line, and residue levels. Its C++-based algorithms compile to WebAssembly, so core operations run locally by default without any installation or data upload. The interface reports scores with their \"evidence\" (alignments, edit paths, metric matches, search hits, and homology traces), making methods inspectable, debuggable, and comparable on shared inputs. Internal benchmarks show speedups of up to 2,500x over the Python predecessor, faster global/local alignment than a general-purpose native C aligner, and exact agreement with independent references under declared settings. For homology search, the scoped client-side blastn path closely matches NCBI BLAST+ rankings and statistics under matched parameters. A curated showcase and Learn mode present canonical algorithms and metrics as reusable demonstrations. string2string Studio is open-source and freely available at string2string.org.",
+        "title": "Information-Geometric Forward Policy Training in GFlowNets",
+        "url": "https://arxiv.org/abs/2608.03967v1",
+        "publishedAt": "2026-08-04T17:34:14.000Z",
+        "summary": "Generative Flow Networks (GFlowNets) have emerged as a flexible framework for amortised inference over discrete and mixed discrete-continuous objects, requiring only an unnormalised target density specified through a reward. In this work, we formulate forward-policy training in GFlowNets through the information geometry of the induced trajectory sampler. Treating the forward policy as an induced trajectory sampler, we show that its intrinsic first-order geometry is given by the Fisher-Rao metric of the trajectory family, and that the associated natural gradient provides the canonical local update whenever the corresponding Fisher information is computable or accurately approximable. We derive an exact decomposition of the trajectory Fisher into per-step conditional second moments, which clarifies when temporal score interactions vanish and when dense couplings remain under shared parameterisation. This leads to three computational regimes: settings with tractable exact Fisher information, settings where Monte Carlo estimators of the expected Fisher are sufficient, and structure-exploitable settings in which target locality or factorisation yields accurate approximations of the Fisher expectation. In the latter case, graphical-model tools such as exact marginalisation, separator methods, and belief propagation provide principled surrogates for natural-gradient updates. The resulting framework turns target structure into optimisation geometry and yields a tractable route to structure-aware forward-policy training in GFlowNets. We illustrate the framework empirically through examples comparing convergence and exploration behaviour under Riemannian and Euclidean optimisation.",
         "authors": [
-          "Mirac Suzgun",
-          "James Zou",
-          "Stuart M. Shieber",
-          "Dan Jurafsky"
+          "Yordan Raykov",
+          "Rodrigo Veiga"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 21
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 23
       },
       {
-        "title": "Can Large Language Models Recover Semantic Optimization Opportunities That Compilers Miss?",
-        "url": "https://arxiv.org/abs/2608.03983v1",
-        "publishedAt": "2026-08-04T17:47:25.000Z",
-        "summary": "Optimizing compilers miss profitable transformations when their enabling semantics are absent from the analyzed program representation. We ask whether large language models (LLMs) can recover such semantics from heterogeneous C/C++ context and realize them as validated, contract-preserving artifacts. We introduce SeGaBench, an executable benchmark containing 100 synthetic and 20 source-backed cases spanning low-level assumptions, data-structure invariants, and high-level semantic lifting. Each case includes hidden enabling semantics, an oracle artifact, correctness and semantic validators, and a reproducible performance protocol. We evaluate five LLMs using five independent responses per case. The strongest model produces correct artifacts in 94.8% of responses, achieves at least 1.05x speedup in 83.3%, and obtains a performance success on 93.3% of cases. Nevertheless, correct artifacts often close only part of the oracle gap. These results show that LLMs can complement compiler analysis as speculative semantic proposers, provided that their artifacts are validated and evaluated.",
+        "title": "Muon Meets Mamba: Spectral Optimization for State Space Models",
+        "url": "https://arxiv.org/abs/2608.03941v1",
+        "publishedAt": "2026-08-04T17:10:47.000Z",
+        "summary": "Muon is a recent optimizer that orthogonalizes the update to each weight matrix with a Newton-Schulz iteration, which performs steepest descent under the spectral norm. Almost all the evidence for it comes from Transformer models, and its behavior on state-space models is largely unreported. We compare Muon with AdamW on Mamba-2 130M under a controlled protocol that varies only which weight groups are trained with Muon. The benefit is localized. Muon on the output projection alone beats Muon on the input projection or on both. The advantage is mainly one of token efficiency. It holds on two corpora and two token budgets, and persists when training continues well past the compute-optimal point. Conditioning does not explain the gain. Muon lowers the condition number of whichever projection it trains, but the better-conditioned input projection is not the one that helps.",
         "authors": [
-          "Hailong Jiang",
-          "Feng Yu",
-          "Emran Hossain",
-          "Jianfeng Zhu",
-          "Mengfei Ren",
-          "Qiang Guan",
-          "Chunwei Xia"
+          "Arslan Battalov",
+          "Karim Kramin",
+          "Alexander Markotenko",
+          "Sofia Sinitsina"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 21
+        "ageHours": 24
       },
       {
-        "title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
-        "url": "https://arxiv.org/abs/2608.03979v1",
-        "publishedAt": "2026-08-04T17:45:16.000Z",
-        "summary": "We introduce Video-DeepResearch (Video-DR), extending multimodal agents from static images to continuous video streams, a setting that demands dense spatiotemporal grounding coupled with open-web exploration. Preliminary evaluations reveal two critical bottlenecks in current models: (1) modality bias, where agents bypass visual tools in favor of textual search, and (2) parametric knowledge leakage, where models rely on internal memory rather than genuine tool-augmented execution. To address these challenges, we propose Video-DR, featuring a decoupled perception-exploration pipeline with stage-wise tool unlocking that compels exhaustive cross-frame visual grounding prior to web retrieval. Our framework adopts a two-stage training recipe: supervised fine-tuning followed by Group Relative Policy Optimization (GRPO), enabling autonomous exploration that breaks the imitation-learning ceiling. Furthermore, we curate Video-DR-Bench, a human-AI collaborative benchmark comprising 200 complex, multi-hop VQA instances. Empirical results demonstrate that our Video-DeepResearch-35B-A3B establishes a new state-of-the-art of 64.0% average accuracy, surpassing proprietary Claude-4.5-Sonnet (59.0%) by 5.0 points and significantly outperforming GPT-5 (52.5%) and Gemini 2.5 Pro (57.5%). The 30B-A3B variant achieves 59.3%, competitive with Claude-4.5-Sonnet and demonstrating the effectiveness of our training paradigm even at compact scale. Code: https://github.com/Osilly/Vision-DeepResearch.",
+        "title": "Logic Before Language: Pre-pretraining on Formal Derivations Fosters Skill Acquisition and Compressibility",
+        "url": "https://arxiv.org/abs/2608.03930v1",
+        "publishedAt": "2026-08-04T17:02:34.000Z",
+        "summary": "Pre-pretraining language models (LMs) on symbolic data can accelerate and improve natural language acquisition. However, existing pre-pretraining tasks, such as Dyck and procedural algorithms, rely on narrow primitives that fail to capture the expressive capacity of natural language. Moreover, prior studies remain restricted to relatively small token budgets, offering limited insight into skill emergence and representational dynamics. To address these limitations, we propose logic pre-pretraining (Logic-PPT) as a principled initialization strategy, leveraging formal derivations to impart richer structural and linguistic biases. Formal derivations require abstract mechanisms that are central to natural language, simultaneously binding variables, connecting quantifiers and relational dependencies, and composing predicate-argument structures over long contexts. Scaling our evaluation to a 100B-token regime, logic pre-pretraining substantially accelerates skill acquisition in LMs, achieving 80\\% accuracy on linguistic tasks with 36B fewer tokens than standard initialization, and outperforming alternative pre-pretraining baselines. Mechanistically, formal derivations induce persistent structural reorganization, distinctively characterized by a lower-rank, spectrally concentrated representation space. Crucially, we show that this internal geometry enables improved model compressibility via pruning, matching the dense baseline performance even at $\\approx$33\\% sparsity.",
         "authors": [
-          "Zhen Fang",
-          "Yu Zeng",
-          "Wenxuan Huang",
-          "Yiming Zhao",
-          "Shiting Huang",
-          "Tianfei Ren",
-          "Qi Lu",
-          "Qingnan Ren",
-          "Qisheng Su",
-          "Lionel Z. Wang",
-          "Qingyu Yin",
-          "Shuang Chen",
-          "Zehui Chen",
-          "Lin Chen",
+          "Jo-Ku Cheng",
+          "Nikolaos Aletras",
+          "Marco Valentino"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Latent Reward Registers for Diffusion Preference Alignment",
+        "url": "https://arxiv.org/abs/2608.03929v1",
+        "publishedAt": "2026-08-04T17:00:52.000Z",
+        "summary": "Aligning diffusion models with human preferences usually relies on a sparse terminal reward evaluated on the final generated samples, presenting a severe temporal credit-assignment challenge across the multi-step denoising process. We propose Latent Reward Registers, a mechanism that estimates terminal preference directly from intermediate noisy latents by prepending learnable, position-free register tokens to the input sequence of a frozen Diffusion Transformer (DiT). This independent readout mechanism extracts latent reward evidence without altering the generator's hidden states or velocity field. The resulting dense, differentiable reward signal throughout the full denoising process facilitates two alignment strategies. For training, Reward-Gradient On-Policy Distillation (RG-OPD) distills reward-guided updates along on-policy trajectories, bypassing the computationally expensive rollouts of standard policy gradients. For inference, Reward-Guided Sampling (RGS) steers trajectories via magnitude-matched reward gradients without parameter updates. Empirically, at high noise levels (u = 0.8), the registers reach the highest pairwise accuracy among the evaluated latent reward models. Furthermore, RG-OPD outperforms online reinforcement learning baselines while reducing GPU hours by up to 33x, and RGS establishes a new state-of-the-art among training-free methods, strictly enhancing both alignment and perceptual metrics. Code and weights are available at https://github.com/Guanys-dar/latent-reward-register",
+        "authors": [
+          "Yuanshen Guan",
+          "Zipeng Feng",
+          "Zhiwei Xiong",
+          "Peiqin Sun"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Robust Low-Tubal-Rank Tensor Completion under Cross-Concentrated Sampling",
+        "url": "https://arxiv.org/abs/2608.03928v1",
+        "publishedAt": "2026-08-04T16:59:58.000Z",
+        "summary": "Tensor cross-concentrated sampling (t-CCS) bridges entrywise sampling and t-CUR slice-wise sampling by observing entries only within selected horizontal and lateral slices. Existing t-CCS completion methods, however, assume that the observations are free of gross corruption. In this work, we study robust recovery of a third-order low-tubal-rank tensor from partial t-CCS observations contaminated by sparse, arbitrarily large outliers. We propose Robust Iterative t-CUR (R-ItCUR), a tensor-native algorithm that partitions the sampled tensor cross into two exterior blocks and an intersection block, applies adaptive blockwise Welsch correction for outlier suppression, and updates the low-rank component through projected blockwise gradient descent. By operating directly on the sampled cross, R-ItCUR avoids reconstructing the full tensor throughout the iterations, resulting in substantial memory and computational savings. Experiments on synthetic tensors, cardiac MRI data, and three-dimensional seismic data demonstrate accurate recovery and strong robustness to sparse gross corruptions. The results further highlight the importance of explicitly exploiting the cross-concentrated sampling structure in robust tensor completion.",
+        "authors": [
+          "Hanqin Cai",
+          "Longxiu Huang",
+          "Jing Qin",
+          "Chengyue Wu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Infrastructure",
+        "ageHours": 24
+      },
+      {
+        "title": "A Physics-Flavored Transformer Network for Parametrizing Contraction Dynamics of Engineered Skeletal Muscle Tissues",
+        "url": "https://arxiv.org/abs/2608.03927v1",
+        "publishedAt": "2026-08-04T16:59:30.000Z",
+        "summary": "Engineered Skeletal Muscle Tissues (ESMs) have become a key structure for biomedical disease modeling and pharmacological screening, yet their functional characterization often relies on simplistic metrics like peak force, discarding critical kinetic information. This is partially due to the high level of mathematical complexity which mechanistic models introduce to capture these dynamics. Hence, exactly the complexity prevents scalable application and widespread adaptation in the field. Here we present a Physics-Flavored Neural Network (PFNN) that automates the kinetic phenotyping of ESMs. Our architecture integrates a stretched-exponential physical model into a CNN-Transformer, enabling the extraction of physically meaningful parameters directly from force-time profiles. To address the scarcity of labeled biological data, we employ a hybrid training paradigm: the model develops a \"physical intuition\" on synthetic data before undergoing unsupervised self-alignment on unlabeled real-world measurements. Our results demonstrate that this physics-flavored approach achieves high-fidelity parameterization across diverse contractile phenotypes and cell lines, including Duchenne Muscular Dystrophy models. Our scalable, self-improving pipeline bridges the gap between idealized biophysics and noisy \\emph{in vitro} data, providing a robust tool for high-throughput biophysical research.",
+        "authors": [
+          "Mattias Luber",
+          "Timo Betz"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "PRISM: Powerful Time Series to Image (TS2I) Representations for Multivariate Anomaly Detection",
+        "url": "https://arxiv.org/abs/2608.03926v1",
+        "publishedAt": "2026-08-04T16:59:28.000Z",
+        "summary": "Time series anomaly detection (TSAD) underpins applications in predictive maintenance, finance, and cloud computing, however performance remains sensitive to representation choices, especially in multivariate settings. While transforming time series into images has shown success in forecasting and classification, it remains unclear how multivariate, high-dimensional series should be mapped to multi-channel images and whether vision backbones can match time-domain baselines in TSAD. We introduce PRISM, a plug-and-play meta-workflow enabling systematic construction and evaluation of image-based representations for multivariate TSAD. Our evaluation spanning over 7,000 experiments shows that well-designed PRISM configurations are competitive with 24 time-domain baselines, achieving the best VUS-PR on 10 of 14 datasets, with an average improvement of 41% over the best competing method on those datasets. Further, we identify channelization - how the channel dimension of multi-channel images is constructed - as a critical and previously understudied design dimension, and introduce MSM, a novel statistics-based scheme achieving 11-27% gains over PCA-based alternatives. Finally, ImageNet-pretrained encoders transfer effectively to TSAD, with frozen encoders retaining 92% of fine-tuned performance while training 1.8 times faster. Our code is available at: https://github.com/Smendowski/PRISM.",
+        "authors": [
+          "Mateusz Smendowski",
+          "Kamil Faber",
+          "Piotr Nawrocki",
+          "Nathalie Japkowicz",
+          "Roberto Corizzo"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Trajectory inference via Acceleration Matching",
+        "url": "https://arxiv.org/abs/2608.03916v1",
+        "publishedAt": "2026-08-04T16:42:04.000Z",
+        "summary": "Trajectory inference is a fundamental problem in many scientific domains: given a collection of unpaired snapshots of observations at discrete time points, the goal is to generate smooth trajectories that best resemble and interpolate the data. Existing algorithms exhibit computational challenges: they either rely on preprocessing subroutines to enforce smoothness or on simulation-based training objectives, both of which can be expensive. In order to overcome these limitations, we propose a new algorithm called Acceleration Matching (\\texttt{AM}). Our approach consists of lifting the original interpolation problem to phase space and then regressing onto an explicit conditional acceleration field that induces random, smooth trajectories that agree with the prescribed marginals. Importantly, our resulting training algorithm only requires positional data, avoids trajectory simulation during training, and is devoid of expensive preprocessing. We provide ample numerical evidence suggesting that \\texttt{AM} is competitive with or superior to existing algorithms on several benchmark problems from the existing literature.",
+        "authors": [
+          "Bartolo Dazzini",
+          "Giovanni Conforti",
+          "Alain Durmus",
+          "Aram-Alexandre Pooladian"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
+      },
+      {
+        "title": "Sparse Weight Decomposition for Efficient Circuit Extraction",
+        "url": "https://arxiv.org/abs/2608.03913v1",
+        "publishedAt": "2026-08-04T16:40:48.000Z",
+        "summary": "Dense pretrained transformers do not naturally expose interpretable units for circuit extraction. Existing approaches obtain such units by learning auxiliary sparse representations or training sparse models, incurring substantial additional computation while potentially introducing a fidelity gap between the representation being analyzed and the original pretrained model. We propose Sparse Weight Decomposition (SWD), which reparameterizes pretrained linear projections by factorizing each weight matrix into two sparse factors whose shared intermediate coordinates serve as individually addressable circuit units. Without training a separate replacement network, this parametric representation supports the same scoring, selection, and ablation circuit extraction workflow used for methods that learn sparse features. Across single-matrix replacements, SWD matches the held-out fidelity achieved by Transcoder and other strong baselines while using less than 1% of the data that those baselines use to train their replacements. For matched replacement fidelity, SWD reaches the same circuit sufficiency and necessity targets with fewer active read/write edges and selected units across tasks on GPT-2, Qwen2.5, and Qwen3.5-27B. We further show that SWD remains effective for full-model replacement of all attention and MLP weight matrices after fine-tuning the nonzero factor values. Finally, SWD also features a zero-data variant, allowing broader use of mechanistic interpretability analysis (e.g., per-step analysis).",
+        "authors": [
+          "Chuanhao Yan",
+          "Xuhan Huang",
+          "Yawen Duan",
           "Zhenfei Yin",
-          "Yao Hu",
-          "Shaohui Lin",
-          "Wanli Ouyang",
-          "Shaosheng Cao",
-          "Feng Zhao"
+          "Hang Zhao",
+          "Bryan Dai",
+          "Jie Fu"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 21
+        "ageHours": 24
+      },
+      {
+        "title": "Socially Grounded Agentic AI: Coordinating Plural Perspectives through Social Theory",
+        "url": "https://arxiv.org/abs/2608.03910v1",
+        "publishedAt": "2026-08-04T16:37:09.000Z",
+        "summary": "As AI systems are deployed across increasingly diverse social contexts, alignment can no longer be framed as the optimization of a single, unified set of values. Instead, systems must be able to recognize, represent, and respond to multiple legitimate perspectives. This has led to growing interest in pluralistic alignment, which seeks to move beyond one-size-fits-all models of appropriate behaviour. However, current approaches often lack a clear account of how values are socially organized, contested, and coordinated in practice. In this paper, we argue that social theory provides essential conceptual and design resources for addressing these challenges. Drawing on established traditions in sociology, we show how perspectives can be understood as structured by roles, shaped through interaction, and distributed across fields of power and expertise. We translate these insights into concrete implications for AI system design, including role-based representations, structured coordination among perspectives, and context-sensitive evaluation. For agentic systems, this requires aligning not only final outputs, but also the role activations, deliberative traces, aggregation rules, and feedback loops through which those outputs are produced. Our contribution is to reposition pluralistic alignment as a problem of socially grounded coordination rather than output diversification. We outline a design space for systems that engage multiple perspectives in structured and accountable ways, and we identify directions for future work to implement and empirically evaluate these approaches in real-world settings.",
+        "authors": [
+          "Matt Ratto",
+          "Abhishek Moturu",
+          "Daniel Silver"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 24
       }
     ],
     "news": [
       {
+        "title": "Shopify says AI search is driving more traffic and sales, not replacing Google",
+        "url": "https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/",
+        "publishedAt": "2026-08-05T15:56:14.000Z",
+        "summary": "Shopify says AI isn’t cannibalizing search traffic the way it has for publishers. Instead, AI-driven traffic and orders to Shopify stores tripled year over year in Q2.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "Hark previews its browser use agent for completing tasks",
+        "url": "https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/",
+        "publishedAt": "2026-08-05T15:46:27.000Z",
+        "summary": "Hark claims that its browser use agent is faster and cheaper than competition.",
+        "authors": [
+          "Ivan Mehta"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 1
+      },
+      {
+        "title": "TechCrunch Disrupt 2026’s Real World AI Stage features robots, automated factories, and extinct animals",
+        "url": "https://techcrunch.com/2026/08/05/techcrunch-disrupt-2026s-real-world-ai-stage-features-robots-automated-factories-and-extinct-animals/",
+        "publishedAt": "2026-08-05T15:05:00.000Z",
+        "summary": "On our new Real World AI stage, we’ll be focusing on the intersection between the digital and physical, and all the ways we’ll continue to see a blending of the two.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 2
+      },
+      {
         "title": "Anthropic is hiring an AI chip design team",
         "url": "https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/",
         "publishedAt": "2026-08-05T14:13:18.000Z",
-        "summary": "Anthropic is building a team for designing its own custom AI chips. The Claude-maker said it would co-design hardware and models to help its technology run faster and more efficiently.",
+        "summary": "Anthropic is building a team for designing its own custom AI chips. The Claude maker said it would co-design hardware and models to help its technology run faster and more efficiently.",
         "authors": [
           "Rebecca Bellan"
         ],
@@ -355,7 +355,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 0
+        "ageHours": 3
       },
       {
         "title": "MacPaw taps Liquid AI to offer on-device inference to devs building for its app store",
@@ -369,13 +369,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "AI makes weather prediction better. Can WindBorne make it lucrative?",
         "url": "https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/",
         "publishedAt": "2026-08-05T11:00:00.000Z",
-        "summary": "WindBorne Systems has raised $37 million Series B round to scale its weather balloons and AI forecasts.",
+        "summary": "WindBorne Systems has raised a $37 million Series B round to scale its weather balloons and AI forecasts.",
         "authors": [
           "Tim Fernholz"
         ],
@@ -383,7 +383,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 6
       },
       {
         "title": "SpaceX has bought $329M worth of Tesla Megapacks so far this year",
@@ -397,7 +397,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 17
+        "ageHours": 20
       },
       {
         "title": "Open-weight AI models are catching up to the frontier. The safety gap remains.",
@@ -411,7 +411,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 18
+        "ageHours": 21
       },
       {
         "title": "Anthropic signs $10B deal with AI cloud startup Volta",
@@ -425,7 +425,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Meet Wrinkles, an app that uncovers the hidden stories of the places around you",
@@ -439,7 +439,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Nvidia doesn&#8217;t mess around: A week after open AI industry group formed, it&#8217;s already showing progress",
@@ -453,7 +453,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 19
+        "ageHours": 21
       },
       {
         "title": "Third-party cyber evaluations involving OpenAI models",
@@ -465,71 +465,29 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 19
-      },
-      {
-        "title": "Solving the solvent problem",
-        "url": "https://news.mit.edu/2026/solving-solvent-problem-sodium-metal-batteries-0804",
-        "publishedAt": "2026-08-04T18:50:00.000Z",
-        "summary": "Lithium-ion batteries are the leading choice in today’s electric vehicle and battery energy storage system industries, but they contain a number of critical minerals — including lithium, cobalt, nickel, and graphite — that are considered essential for economic and national security reasons, and therefore vulnerable to supply chain disruptions. As renewable energy, electrified infrastructure, and high-power digital technologies continue to grow, there is an increasing need for energy storage systems that are low-cost, resource-abundant, and capable of fast charging and discharging.&nbsp; That need, among other reasons, has motivated a group of researchers — based at MIT and led by Ju Li, the Carl Richard Soderberg Professor of Power Engineering in the departments of Nuclear Science and Engineering (NSE) and Materials Science and Engineering — to develop complementary energy storage solutions.&nbsp; The team is looking, in particular, at sodium-metal batteries, which offer several attractive features. Sodium is about 1,000 times more abundant than lithium and, pound for pound, about one-hundredth the cost. A key challenge, however, is that sodium metal is highly reactive, making it difficult for these batteries to achieve both long-term stability and fast cycling.&nbsp; A new paper in the journal Joule — written by 15 members of the MIT team and published online this week — shows how this dilemma can be addressed by finding the right electrolyte for this battery system. Electrolytes behaving badly An electrolyte is one of three main components of a battery, along with the negative electrode (the anode) and the positive electrode (the cathode). The electrolyte acts like the “blood” of the battery, allowing electrically charged ions to move between the two electrodes. “The electrolyte is supposed to just transmit those ions,” explains Li. “It’s supposed to be an ion conductor.” But unfortunately, most electrolytes get involved in unwanted chemical reactions with the electrodes, which can greatly undermine battery stability. The consequences of these “side reactions” can be severe, says Weiyin Chen, a postdoc in NSE and one of four lead authors of the Joule&nbsp; paper. Insoluble compounds produced during the reactions can build up on the electrodes, creating a barrier that blocks ion transport and can eventually cause the battery to fail.&nbsp; Until recently, Chen says, no electrolyte used in sodium-metal batteries was fully stable against these unwanted reactions at both the anode and cathode, even though such stability is essential for rechargeable batteries to achieve a long cycle life. An initial breakthrough occurred in 2021, when the Li group and their collaborators identified a “sulfonamide” molecule — consisting of sulfur, oxygen, and nitrogen atoms — that, when used as a solvent, “is magically stable at both electrodes in lithium batteries,” according to Li. This molecule is known as DMTMSA.&nbsp; Building on that discovery, Li and his colleagues set out to see if related molecules could improve sodium batteries. The goal was not only to maintain stability, but also to enable fast charging and discharging. If charging is too slow, it could take all night to recharge, and if discharging is too slow, the battery cannot deliver much power when needed. How did the solvent cross the road? Chen explains the idea with an analogy: Suppose you need to cross a street jam-packed with pedestrians, much like ions traveling from one electrode to another. “You can move more quickly through the crowd with a small backpack that is snug against your body, rather than dragging a bulky suitcase on wheels,” Chen says.&nbsp; A similar situation occurs in batteries: When sodium ions are surrounded by smaller solvents, they can move faster than when they are surrounded by larger, bulkier solvents. Faster ion transport enables more-rapid charging and discharging. The team’s goal, accordingly, was to identify solvent molecules that are small enough to improve ion transport while still maintaining electrolyte stability. There is, however, a complicating factor — a trade-off to be addressed: Faster ion transport often comes at the expense of electrolyte stability. Many highly conductive electrolytes react more easily with the electrodes, shortening battery life. Fortunately for their plan, Li says, “reducing the size of solvents provides a new pathway to overcome this trade-off.”&nbsp; The question then becomes how to find a smaller solvent that has other desirable properties. The idea they adopted is to look for molecules that are “congeneric,” says Li, “meaning that they belong to a similar family and are molecularly similar.” In particular, they searched for molecules related to DMTMSA, hoping to find candidates that were smaller but could retain the stability that made DMTMSA so promising. Chia-Wei Hsu, an MIT PhD student in materials science and engineering, created an AI-guided algorithm, which designed 100,000 candidate molecules on his computer within 24 hours. Hsu then narrowed down the pool to 200 candidates by applying a set of technical criteria — including similarity in shape to DMTMSA and comparable electronic properties. Twenty-seven representative candidates covering the full range of possibilities were selected for experimental tests.&nbsp; “We tested them all under the same conditions to make it a fair, head-to-head competition,” Chen says. A clear winner emerged, a solvent called DMFSA, which was both the smallest and the best. Small is beautiful This work, claims Jinhyuk Lee, an associate professor of materials engineering at McGill University who is not part of the study, “addresses one of the most persistent challenges in battery research: improving battery performance at high charging and discharging rates without sacrificing long-term stability. By carefully tailoring the size of solvent molecules, the authors demonstrate a new design strategy that could enable lower-cost, higher performance batteries.”&nbsp; The group is not done. A new search is underway to find an even better solvent. This time, the approach is similar, but DMFSA (rather than the larger DMTMSA molecule) serves as the starting point. Chen believes the new solvents they are uncovering could eventually lead to rechargeable sodium-metal batteries that combine low-cost, abundant materials with fast charging and high-power performance, opening the door to broader energy storage applications. The overriding goal of this work, the authors emphasize, is not only to advance sodium batteries. It’s also to introduce a new approach to electrolyte design that uses solvent size and molecular similarity as the key guideposts. Viewing the research in this light, sodium-metal batteries serve as a model system for demonstrating a more general design principle. “Because the concept is broadly applicable,” Lee comments, “its impact could extend well beyond sodium batteries and influence the design of a wide range of future energy storage technologies.” This work was supported, in part, by a National Research Foundation of Korea grant funded by the government of Korea government, as well as U.S. National Science Foundation graduate research fellowship. The characterization equipment used in this project is partly from the MIT.nano Characterization Facilities.&nbsp;",
-        "authors": [
-          "Steve Nadis | Department of Nuclear Science and Engineering"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Models",
-        "ageHours": 20
-      },
-      {
-        "title": "Spotify expands AI remix and covers project with Merlin partnership",
-        "url": "https://techcrunch.com/2026/08/04/spotify-adds-merlin-to-its-ai-music-remix-and-covers-effort/",
-        "publishedAt": "2026-08-04T15:50:06.000Z",
-        "summary": "Spotify says Merlin, which represents more than 30,000 independent labels and distributors, has joined Universal Music Group in backing its upcoming AI-powered remix and covers product. The paid tool will let fans create AI-generated covers and remixes of participating artists’ music while ensuring artists opt in, receive credit, and are compensated.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 23
-      },
-      {
-        "title": "Texas halts new data centers as governor calls for audits",
-        "url": "https://techcrunch.com/2026/08/04/texas-halts-new-data-centers-as-governor-calls-for-audits/",
-        "publishedAt": "2026-08-04T15:42:35.000Z",
-        "summary": "Tech companies and developers have been scouring the U.S. for places to build data centers, and they’ve been drawn to Texas’ loose regulations and seemingly abundant power supply. But even Texas can be pushed to the brink.",
-        "authors": [
-          "Tim De Chant"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Policy",
-        "ageHours": 23
+        "ageHours": 22
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 24,
+    "last24h": 21,
     "topCategories": [
       {
         "name": "Research",
         "count": 13
       },
       {
-        "name": "Models",
+        "name": "General",
         "count": 5
       },
       {
-        "name": "General",
+        "name": "Models",
         "count": 4
       },
       {
-        "name": "Products",
+        "name": "Infrastructure",
         "count": 1
       }
     ]
