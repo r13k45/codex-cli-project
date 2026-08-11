@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T23:47:27.412Z",
+  "generatedAt": "2026-08-11T02:23:36.854Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,227 +85,263 @@
   "sections": {
     "research": [
       {
-        "title": "MirrorWorld: Taming Video Diffusion Models for Mirror Reflection Generation",
-        "url": "https://arxiv.org/abs/2608.07463v1",
-        "publishedAt": "2026-08-07T17:58:10.000Z",
-        "summary": "Recent advances in video diffusion models (VDMs) have enabled high-fidelity video synthesis. However, generating mirror reflections remains challenging because the content within a mirror must remain consistent with the surrounding scene. Existing VDMs are not specifically designed to model scene-to-mirror relationships, which can lead to reflections with incorrect content or inconsistent spatial arrangements. We observe that mirror reflection generation involves two complementary challenges: determining what scene content should be reflected and how the reflected content should be spatially arranged within the mirror region. Motivated by this observation, we propose MirrorWorld, a reflection-aware video inpainting framework that models scene-to-mirror relationships during generation. Specifically, we introduce Semantic Relation Distillation (SRD), which transfers relational information from a frozen visual foundation model to encourage semantic associations between visible scene content and mirror regions. We further propose Geometric Transformation Alignment (GTA), which learns a transformation that guides the spatial arrangement of reflected content. The two components play complementary roles, with SRD modeling what should be reflected and GTA modeling how it should be arranged. To facilitate research on this problem, we construct a benchmark for video mirror reflection generation by repurposing four existing video mirror datasets into a unified reflection reconstruction task. Experimental results show that MirrorWorld achieves improved reflection reconstruction quality over representative image-based reflection generation methods and strong video inpainting baselines.",
+        "title": "KGCaRe: Explainable Complex Conditional Question Answering using Automatic Knowledge Graph Construction and Context Retrieval with LLMs",
+        "url": "https://arxiv.org/abs/2608.09779v1",
+        "publishedAt": "2026-08-10T16:05:58.000Z",
+        "summary": "Answering complex conditional questions using Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) remains a challenge, particularly in domain-specific contexts where general-purpose LLMs and RAG tend to underperform. We hypothesize that augmenting RAG with unstructured and structured knowledge, extracted from both documents and knowledge graphs (KGs), can improve reasoning and answer accuracy for such tasks.\n  To test this, we propose KGCaRe, a hybrid approach that combines neural retrieval with symbolic reasoning over LLM-generated KGs. KGCaRe constructs a KG from documents using a multi-prompt extraction strategy and stores it in a graph database. Simultaneously, the documents are embedded into a vector store to enable neural retrieval. KGCaRe performs innovative iterative graph traversal guided by the LLM to extract relevant triples, prune irrelevant information, and uses additional clue entities to traverse the graph again if the initial traversal does not provide satisfactory context to generate the answer. The relevant triples extracted from the KG in path form, along with semantically retrieved text passages, are then fed into custom KGCaRe prompts to generate answers to the complex conditional questions with explanations.\n  We evaluate KGCaRe on two complex conditional QA datasets. Our results on these datasets show that KGCaRe consistently outperforms existing baselines, including Vanilla LLM, Code Prompt, Text Prompt, Think-on-Graph, Vanilla RAG, and HybridContextQA, across multiple LLMs such as Mistral, Mixtral, GPT-3.5, and GPT-4o. We publicly release the software pipeline that we developed to implement the proposed KGCaRe approach.",
         "authors": [
-          "Youjun Zhao",
-          "Alex Warren",
-          "Gary K. L. Tam",
-          "Rynson W. H. Lau"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "CreativeInstruct: Scalably Teaching LLMs to Balance Quality, Creativity, and Diversity",
-        "url": "https://arxiv.org/abs/2608.07460v1",
-        "publishedAt": "2026-08-07T17:55:48.000Z",
-        "summary": "While post-training improves the capabilities of large language models (LLMs), it generally lowers their output diversity and creativity, negatively impacting tasks that explicitly require creativity (e.g., story generation) as well as those that require it implicitly, e.g., reinforcement learning (RL). We instead propose CreativeInstruct, a scalable instruction-tuning method that teaches LLMs to balance creative, base-model-like generations with the quality of post-trained models, by learning to inject special [StartCreativity] spans that bias generation toward creativity. Furthermore, we introduce a structural diversity metric based on graph edit distance, which captures narrative level variation missed by purely lexical and semantic metrics. On narrative generation, CreativeInstruct matches or exceeds the diversity of both multi-model baselines and distilled variants of their outputs, without sacrificing quality or requiring multiple models at inference time. These results are mirrored in our human evaluation, where we find that annotators rate CreativeInstruct generations as more creative than the post-trained LLMs' generations in 70.3% of cases. We also show the benefits of creative models as a substrate for RL: GRPO applied to a CreativeInstruct checkpoint improves by ~4% on AMC and ~5% points on MATH over the same training applied to the post-trained checkpoint.",
-        "authors": [
-          "Ananya Sahu",
-          "Mohit Bansal",
-          "Elias Stengel-Eskin"
+          "Ghanshyam Verma",
+          "Simanta Sarkar",
+          "Devishree Pillai",
+          "Hotaka Shiokawa",
+          "Yourong Xu",
+          "Fiona Veazey",
+          "Peter Hubbert",
+          "Hui Su",
+          "Paul Buitelaar"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 10
       },
       {
-        "title": "CoinRAG: Contextualized Information Nugget KV Cache Reuse for Long-Context RAG",
-        "url": "https://arxiv.org/abs/2608.07458v1",
-        "publishedAt": "2026-08-07T17:51:49.000Z",
-        "summary": "Recent optimization studies on Retrieval-Augmented Generation (RAG) have exploited chunk-level KV cache reuse to avoid processing long retrieved contexts for higher efficiency, while significant information redundancy and noise still remain in the coarse-grained chunks. This paper optimizes the Pareto frontier under low prefill latency constraints while maximizing accuracy by proposing CoinRAG (Contextualized Information Nugget KV Cache Reuse for Long-Context RAG). The name metaphorically reflects our core mechanism: much like assembling small tokens (or \"coins\") to accumulate a larger value, CoinRAG compositionally reuses offline-computed, fine-grained nugget caches to form a learned contextual representation efficiently in a more semantically relevant but compact manner. Specifically, instead of full-chunk encoding, CoinRAG identifies query-relevant semantic units within retrieved chunks through two-stage retrieval and seamlessly assembles their sliced KV representations with a chunk-level context. Extensive evaluations on LongBench multi-hop question answering tasks demonstrate that CoinRAG significantly reduces operational costs and outperforms the other baselines with a new Pareto frontier and an average 5.3% relative improvement in answer quality (F1) under a standard fast prefill latency budget.",
+        "title": "AirFlow: Context Preserving and Multi-Rate State Modeling for Air Quality Forecasting",
+        "url": "https://arxiv.org/abs/2608.09775v1",
+        "publishedAt": "2026-08-10T16:02:26.000Z",
+        "summary": "Accurate air quality forecasting is essential for public health and urban environmental management, but remains challenging because pollutant channels differ in periodicity and distribution drift, while their concentration trajectories contain both multi-scale dependencies and rapid changes. Recent methods have improved spatial dependency learning and meteorological covariate modeling. However, pollutant channels are still passed through the same normalization rule and temporal backbone, using a shared latent representation for channel-specific distributions and changes at different rates. To address this limitation, we propose AirFlow, a pollutant-aware dual-stream framework that operates on station multivariate observations without additional graph propagation or predefined signal decomposition. Specifically, AirFlow designs two novel blocks: (1) a statistic-guided normalization routing mechanism that selects a normalization path for each pollutant according to its 24-hour autocorrelation and distribution drift; and (2) a hierarchical dual-stream state model that combines multi-scale state space propagation with learnable response coefficients, where gated bidirectional cross-attention exchanges information and adaptively fuses the resulting representations. Experiments on real-world data from multiple cities show that AirFlow achieves the best performance in 34 of 36 metrics comparisons, with reductions of up to 11.11% root mean square error over the state-of-the-art baseline. AirFlow also requires only 0.0483M parameters and 0.0215G FLOPs, achieving high forecasting accuracy with low computational overhead.",
         "authors": [
-          "Gyuwan Kim",
-          "Cheoneum Park",
-          "Tao Yang"
+          "Fan Yang",
+          "Nan Chen",
+          "Yijie Dong",
+          "Yuchen Zhang",
+          "Wei Zhang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Interaction Creates Dynamical AI Behavior Absent in Isolation",
-        "url": "https://arxiv.org/abs/2608.07457v1",
-        "publishedAt": "2026-08-07T17:49:55.000Z",
-        "summary": "What will happen when AI agents interact in daily life, e.g. when one AI starts bossing another around? We find a counterintuitive answer that opens new avenues for out-of-equilibrium Physics. When a boss AI directs a stream of messages at the subordinate AI while ignoring its replies, it drives the subordinate into an alien behavioral state that it would never have exhibited alone. Although the two AIs share the same well-defined (decoding) temperature, the subordinate neither copies its boss nor returns to how it behaves on its own; instead, it adopts an entirely different behavior. The boss's added value is similar to a pre-recorded tape. When the boss listens, they both adopt a similar alien dynamical state. A simple kinetic theory captures the principal effects, such as why the way in which the same messages are delivered will matter in future AI-AI interactions.",
-        "authors": [
-          "Bella Xinrui Li",
-          "Frank Yingjie Huo",
-          "Neil F Johnson"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Strategy-first synthesis planning for complex natural products",
-        "url": "https://arxiv.org/abs/2608.07454v1",
-        "publishedAt": "2026-08-07T17:47:39.000Z",
-        "summary": "The total synthesis of a complex molecule is among the most demanding intellectual and experimental feats in chemistry: a chemist must plan many steps ahead for how to assemble simple building blocks into an intricate target, devise backup strategies, and anticipate procedural challenges. It is also a profoundly creative activity. For half a century, efforts to automate the retrosynthetic design of natural products and other complex molecules have drawn on catalogued reactions, and the resulting tools now report near-complete success on benchmarks built from that same source. But these tools were shaped to fit benchmarked chemistry, and they falter on many natural products, the frontier of the field, whose densely functionalized, polycyclic architectures demand precisely the inventive chemistry the record contains least. Whether a machine could reasonably design such syntheses like an expert chemist does has remained unclear. Here, we show that SynthEx, an agentic framework built on large language models, plans routes to complex natural products that lie beyond the reach of conventional design algorithms. SynthEx proposes competing strategies, assembles a sequence of routine and key steps into a cohesive route, and critiques and improves its own design; the chemistry it favours is more convergent than existing tools produce, and spans a region of reaction space that catalogue-based tools cannot match. Most notably, in blinded assessments, expert chemists judged its key steps comparable to those of published human syntheses and engaged with them as genuine synthesis plans, a response algorithmic route prediction has not previously accomplished. We release routes to more than a thousand natural products as SynthAtlas, an open, interactive database, and anticipate it will become a shared resource for a collection of complex target molecules that lack existing literature routes.",
-        "authors": [
-          "Daniel Armstrong",
-          "Xuan-Vu Nguyen",
-          "Octavian Susanu",
-          "Gabriel Gibberd",
-          "Théo A. Neukomm",
-          "Taddäus Strunden",
-          "Dan Forster",
-          "Morgane Delattre",
-          "Shawn Teh",
-          "Clément Rols",
-          "John Federice",
-          "Hayden Leatherwood",
-          "M. Lavelle Barnes",
-          "Maarten R. Dobbelaere",
-          "Peter Wipf",
-          "Jon T. Njardarson",
-          "Jieping Zhu",
-          "Philippe Schwaller"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "SkillProx: Self-Evolving Agent Skills via Proximal Textual Gradient Descent",
-        "url": "https://arxiv.org/abs/2608.07449v1",
-        "publishedAt": "2026-08-07T17:40:33.000Z",
-        "summary": "LLM agents increasingly adapt to recurring tasks by accumulating procedural knowledge in skills. These skills are lightweight, reusable textual artifacts that are loaded into the agent's context without weight updates. Recent methods refine skills through iterative task execution, failure diagnosis, and trajectory-guided text-space updates. However, existing frameworks lack explicit diagnosis--outcome feedback and treat deletion as a generic edit operation rather than a dedicated mechanism for consolidating accumulated knowledge. We introduce SkillProx, a proximal-gradient-inspired forward--backward framework that couples closed-loop diagnostic evolution with utility-aware proximal refinement. Motivated by a composite objective balancing task loss and skill complexity, the forward stage re-executes diagnosis-driven edits on the same task batch, rolls back regressions, and feeds measured outcomes into subsequent diagnoses. The backward stage decomposes the resulting skill into auditable knowledge units, estimates their contributions using a frozen leave-one-out utility audit, and applies validation-gated consolidation, demotion, or removal. Experiments on in-distribution and out-of-distribution benchmarks across multiple backbone LLMs show that SkillProx improves average accuracy by 3.0 percentage points over the strongest gradient-based baseline. Component ablations demonstrate the complementary effects of closed-loop diagnosis and proximal refinement.",
-        "authors": [
-          "Mingxuan Zheng",
-          "Yujin Zhou",
-          "Chuxue Cao",
-          "Boqin Yin",
-          "Yuyao Zhang",
-          "Jiapeng Sun",
-          "Shuaishuai Gong",
-          "Sirui Han",
-          "Yike Guo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Taxonomy-Driven Analysis of Open-Source AI Risk Mitigation Tools",
-        "url": "https://arxiv.org/abs/2608.07446v1",
-        "publishedAt": "2026-08-07T17:33:09.000Z",
-        "summary": "Rapid adoption of large language models (LLMs) in enterprise settings has introduced operational, security, and governance risks. As generative AI applications move from pilot to production, manual harm identification and mitigation are becoming difficult to scale. Although many tools support model evaluation, adversarial testing, runtime guardrails, and observability, the tooling landscape remains fragmented. Tools are typically designed for specific engineering tasks and described in technical terms that do not align with governance frameworks or risk taxonomies, making it difficult to determine which tools address which risks and where critical gaps remain. This paper proposes a structured protocol to automate AI risk mitigation through a taxonomy-driven analysis of open-source LLM evaluation and security tools. We map the capabilities of 21 prominent open-source tools to the 32 subcategories of the extended MIT AI Risk Mitigation and Response Taxonomy. An LLM-assisted retrieval-augmented generation pipeline analyzes source code and documentation to extract capabilities for each taxonomy category. Reliability assessment yielded moderate agreement (Fleiss' Kappa = 0.509) among three independent reviewers. The analysis reveals a highly skewed landscape in which tools cluster around technical and operational controls, while governance, legal and regulatory, and financial and market controls remain largely unaddressed. This motivates a layered risk-mitigation architecture combining tool-based controls with organizational and regulatory processes. The mapping protocol achieved an F1 score of 75.5% after majority voting. Overall, the study provides a practical mapping between enterprise AI risk categories and open-source mitigation capabilities, identifies where human oversight remains necessary, and presents a taxonomy-driven framework applicable to open-source and proprietary solutions.",
-        "authors": [
-          "Afreen Alam",
-          "Evgenija Popchanovska",
-          "Ana Gjorgjevikj",
-          "Maryan Rizinski",
-          "Lubomir T. Chitkushev",
-          "Irena Vodenska",
-          "Dimitar Trajanov"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "RIS-Aided mmWave Localization Under Cross-Link Interference via Beam-Domain ML Fingerprinting",
-        "url": "https://arxiv.org/abs/2608.07444v1",
-        "publishedAt": "2026-08-07T17:28:33.000Z",
-        "summary": "Accurate user equipment (UE) localization is critical for beam management in reconfigurable intelligent surface (RIS)-assisted millimeter-wave (mmWave) based sixth-generation (6G) networks, especially if the direct base-station-UE links are unavailable. This paper proposes a beam-domain fingerprint framework that maps the received signal-to-noise ratio (SNR) across a small set of predefined RIS reflection states to the UE azimuth angle and range, without requiring channel state information (CSI). Crucially, we extend the framework to a realistic interference-impaired scenario in which a nearby cross-link interferer (CLI) corrupts the clean SNR fingerprint, yielding a signal-to-interference-plus-noise ratio (SINR) fingerprint; an interference-to-noise ratio (INR)-constrained calibration strategy keeps the interference level physically interpretable. Four machine-learning (ML) regressors are evaluated under both conditions. Simulation results at 28 GHz with a 20x20 RIS show that k-nearest neighbors (KNN) achieves the lowest angle MAE of 0.37 degrees and range MAE of 4 cm under clean conditions, rising to 1.4 degrees and 7.6 cm under interference. A key finding is that interference degrades angle estimation substantially more than range estimation across all models, a consequence of the asymmetric encoding of location information in the beam-domain fingerprint.",
-        "authors": [
-          "Md Tarek Hassan",
-          "Dmitry Zelenchuk",
-          "Muhammad Ali Babar Abbasi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 78
+        "ageHours": 10
       },
       {
-        "title": "Blast Radius",
-        "url": "https://arxiv.org/abs/2608.07440v1",
-        "publishedAt": "2026-08-07T17:23:53.000Z",
-        "summary": "Agentic coding faces growing problems of affordability and wasted tokens. We introduce Blast Radius, a predictive memory management layer that estimates an incoming prompt's reach through coupled context and code channels. NECROPHORESIS enables reversible eviction by archiving dead context verbatim, while Recurring Dead Matter (RDM) identifies and buries repeatedly occurring transcripts. We formulate reversible context eviction over a Polish context space, providing a measurable foundation for retention, recurrence, and eviction while connecting context entropy to resurrection probability. Across seven OpenAI models, Blast Radius reduced token consumption by 17-26%, achieved the lowest overflow rate among tested policies, and remained byte exact reversible. Of 450 buried bodies, 378 were recurring dead matter and zero were recalled. Blast Radius operates beneath HCRC, determining which records to bury and how far an incoming prompt may reach into the codebase. This work contributes to the broader goal of Algosophy: making large language models and agentic coding more reusable and sustainable.",
+        "title": "C$^2$A: Coupling Spatial Evidence with Clinical Priors via Co-occurrence Aware Class Attention for Multi-Label Chest X-Ray Classification",
+        "url": "https://arxiv.org/abs/2608.09774v1",
+        "publishedAt": "2026-08-10T16:02:05.000Z",
+        "summary": "Thoracic pathologies rarely occur in isolation, yet standard multi-label classifiers rely on shared global descriptors, discarding \\emph{where} findings lie and \\emph{how} they co-occur. We propose \\textbf{C$\\mathbf{^2}$A} (Co-occurrence Aware Class Attention), a classification head that explicitly couples spatial evidence with clinical priors. First, C$^2$A casts pooling as an expectation over learned per-class spatial attention maps, yielding localized descriptors for each disease. Second, it couples these descriptors via a learnable graph warm-started from empirical label co-occurrence. A single residual message-passing step shares evidence among related findings, proving to be a bounded perturbation of the identity where co-occurrence enters each logit through an explicit bilinear interaction. On CheXpert, C$^2$A achieves a superior $0.895$ macro-mean AUROC, outperforming advanced context-gating baselines. Crucially, gains concentrate on highly co-occurrent classes with ambiguous spatial evidence (rescuing Atelectasis by $+1.5$ over GCG), demonstrating the prior's regularizing effect with a negligible overhead of one linear projection and a $C\\!\\times\\!C$ edge matrix.",
         "authors": [
-          "MY Pitsane",
-          "Hope Mogale"
+          "Akash Gogineni",
+          "Nagur Shareef Shaik",
+          "Aasrith Mandava",
+          "Adnan Masood",
+          "Dong Hye Ye"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 10
       },
       {
-        "title": "An Exploratory Evaluation of LLM-Assisted Rewriting of Moderate-Complexity Financial Sentences for DisCoCat-Based Sentiment Analysis",
-        "url": "https://arxiv.org/abs/2608.07439v1",
-        "publishedAt": "2026-08-07T17:23:01.000Z",
-        "summary": "Quantum natural language processing (QNLP) provides a grammar-aware framework for text modeling, and Distributional Compositional Categorical (DisCoCat) is one of its theoretically grounded formulations. Prior work on financial sentiment analysis has identified practical limitations of DisCoCat, including parser sensitivity, high simulation cost, and difficulty handling longer sentences. We study an LLM-assisted preprocessing workflow that uses controlled rewriting to compress, simplify, or decompose moderate-complexity financial sentiment sentences into parser-compatible, circuit-efficient variants while preserving sentiment-bearing meaning. We compare prompting strategies, language models, and filtering configurations with the low-complexity-only DisCoCat baseline of Stein et al. At the circuit level, the strongest compression variants reduce average qubit and gate counts by more than 70 percent relative to the raw moderate-complexity subset. Across repeated training runs, GPT-4.1-mini with Prompt B achieves the highest observed mean accuracy, $0.550 \\pm 0.035$, compared with $0.521 \\pm 0.050$ for the baseline. Larger training splits do not necessarily improve downstream performance; across evaluated configurations, training-split size has a moderately negative association with accuracy (Pearson $r=-0.446$). These results provide exploratory evidence that LLM-assisted rewriting can make some moderate-complexity inputs usable within the evaluated DisCoCat configuration, while highlighting prompt design, filtering, and circuit-aware preprocessing as considerations for more scalable QNLP-based financial sentiment analysis.",
+        "title": "PragMatch: Separating Pragmatic Incongruity from Cross-Modal Mismatch in Large Vision-Language Models",
+        "url": "https://arxiv.org/abs/2608.09772v1",
+        "publishedAt": "2026-08-10T16:00:04.000Z",
+        "summary": "Large Vision-Language Models (LVLMs) have demonstrated strong performance on multimodal benchmarks, yet it remains unclear whether they genuinely reason about relationships between images and text or rely on superficial correlations, known as shortcut learning. This question is particularly important for multimodal sarcasm detection, where successful prediction depends on recognizing pragmatic incongruity rather than treating sarcasm as simple image-text mismatch. We introduce PragMatch, a controlled benchmark of 3,000 image-text pairs derived from MMSD2.0, including original sarcastic examples and constructed literal and hard-negative pairs. We identify influential shortcut cues through systematic masking and evaluate their impact through targeted injection experiments. Our results show that LVLM predictions are sensitive to lexical, OCR-derived and stylistic cues, with injected surface signals causing substantial changes in model predictions despite unchanged underlying image-text relationships. Our findings reveal limitations in current LVLMs while PragMatch provides a systematic testbed for evaluating multimodal pragmatic reasoning beyond surface-level image-text alignment.",
         "authors": [
-          "Brian Llinas",
-          "Nikos Chrisochoides"
+          "Zhanna Mukhametsharip",
+          "Vera Demberg",
+          "Varsha Suresh"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 10
       },
       {
-        "title": "PsychoAgent: An Affect-Sensitive Cognitive Architecture for Conflict-Aware Memory in LLM Agents",
-        "url": "https://arxiv.org/abs/2608.07438v1",
-        "publishedAt": "2026-08-07T17:22:29.000Z",
-        "summary": "Human-like cognition does not select past experience by topical similarity alone: affective significance and unresolved conflict also shape what becomes accessible. We present PsychoAgent, a cognitive architecture for LLM agents that separates factual and affective memory and integrates both through a conflict-aware executive controller. Affective memories are first filtered by semantic relevance and then re-ranked by salience, preserving topical fit while allowing emotionally important traces to enter the prompt. Across three controlled conflict scenarios, the full architecture retrieved more conflict-critical memories than semantic-affective and single-memory RAG baselines (0.933 vs. 0.500 and 0.667), with a small semantic-similarity cost. Five blinded raters evaluated 27 outputs. After within-rater standardization, the full architecture had the highest overall mean (+0.22 SD), but corrected pairwise differences were not significant. A three-day illustrative trace further shows persistent affect, offline memory recombination, and selective memory reweighting. The findings support affect-sensitive retrieval as an inspectable mechanism for modeling human-like conflict effects in LLM agents.",
+        "title": "ReliableNet: A Chance-Constrained Approach to Trustworthy Classification in Deep Learning",
+        "url": "https://arxiv.org/abs/2608.09768v1",
+        "publishedAt": "2026-08-10T15:58:19.000Z",
+        "summary": "A prediction that is both confident and wrong is a critical reliability failure because it can bypass abstention and human review precisely when the model is mistaken. Empirical risk minimization (ERM) controls average loss but not this failure directly, while calibration, uncertainty estimation, conformal risk control, and selective prediction methods target related reliability properties rather than bounding the joint failure event during training. We propose ReliableNet, which constrains the Joint Confident-Wrong (JCW) probability, the probability that a prediction is simultaneously confident and incorrect, below a user-specified risk budget $α\\in(0,1)$. We formulate this as a chance-constrained ERM problem, use a conservative smooth inner approximation whose population feasibility implies the original JCW constraint. Across four tabular and two image datasets, ReliableNet is the only method certified within the JCW budget for every dataset and seed in distribution, when compared against baselines spanning ERM, post-hoc calibration, conformal risk control, and selective prediction. Under demographic, ambiguity, spurious-correlation, novel-class, and covariate shifts, it achieves the lowest empirical JCW among the compared methods while remaining very competitive in accuracy, coverage, calibration, and selective prediction. Risk-coverage results further indicate that ReliableNet achieves better selective ranking than the benchmark methods on most datasets. Overall, ReliableNet provides a principled approach to trustworthy classification.",
         "authors": [
-          "Mohammad Amanlou",
-          "Parham Abed Azad",
-          "Farbod Davoodi",
-          "Mostafa Masumi",
-          "Behnam Bahrak",
-          "Abdol-Hossein Vahabie"
+          "Ange-Clément Akazan",
+          "Ineza Remy Mugenga",
+          "Abebe Geletu",
+          "Jean Medard Ngnotchouye",
+          "Issa Karambal"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "Structured Phonological Representations for Audio-Articulatory rtMRI Speech Classification",
+        "url": "https://arxiv.org/abs/2608.09767v1",
+        "publishedAt": "2026-08-10T15:58:07.000Z",
+        "summary": "Real-time MRI makes it possible to observe vocal-tract articulation during speech, but mapping these articulatory patterns to phonetic and phonological categories remains challenging. We investigate whether PhonoQ, an audio-based model trained to recognize structured phonological features, provides useful information for audio--articulatory modeling. Specifically, we extract representations from PhonoQ's Conformer module, whose training is shaped by supervision for manner, place, voicing, and vowel features. Using articulatory contours with synchronized audio-derived features, we compare WavLM-large and HuBERT-large baselines with models that incorporate PhonoQ-derived representations. Across unseen-speech and unseen-subject settings, these features improve macro-F1 for phonological targets including manner, place, voicing, vowel height, and vowel backness, and also improve fine-grained 39-phoneme classification. In a contour-only inference setting, audio-derived teacher supervision yields modest but consistent gains over contour-only training, indicating that phonological information from synchronized audio can be partially transferred to articulatory models. Finally, posterior analyses show interpretable surface-sensitive patterns consistent with flapping-like /t/ realizations, /t/-/r/ retraction or affrication, and nasal place assimilation.",
+        "authors": [
+          "Abner Hernandez",
+          "Tomás Arias Vergara",
+          "Daiqi Liu",
+          "Andreas Maier",
+          "Paula Andrea Pérez-Toro"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 10
+      },
+      {
+        "title": "Cultivar: A Contrastive and Locale-Oriented Translation Benchmark for Investigating Contamination and Localisation Robustness",
+        "url": "https://arxiv.org/abs/2608.09766v1",
+        "publishedAt": "2026-08-10T15:56:43.000Z",
+        "summary": "Multilingual translation benchmarks are typically sourced in English and translated into other languages, treating language pairs as the unit of evaluation---a design that is prone to contamination over time and overlooks locale and cultural considerations. We therefore advocate for source-contrastive evaluation and instantiate it with Cultivar, a localised subset of FLORES, which enables locale-specific translation evaluation. When paired with unlocalised counterparts, performance discrepancy allows the probing of data contamination and localisation robustness. We benchmark 32 open-weight models and find that MT-specialised models are less robust, a few models potentially overfit FLORES, and models tend to translate US content better than that of other locales, regardless of language.",
+        "authors": [
+          "Pinzhen Chen",
+          "Koel Dutta Chowdhury",
+          "Xiaoya Xu",
+          "David Tan",
+          "Doreen Osmelak",
+          "Ona de Gibert",
+          "Ariun-Erdene Tumurchuluun",
+          "Ashok Urlana",
+          "Fedor Sizov",
+          "Hale Sirin",
+          "Jesujoba Alabi",
+          "Karrar Talib Abed",
+          "Mateusz Klimaszewski",
+          "Nikolay Bogoychev",
+          "Niyati Bafna",
+          "Patricia Schmidtova",
+          "Preksha Manjunath Shanbhag",
+          "Sherrie Shen",
+          "Vilem Zouhar",
+          "Vivek Iyer",
+          "Yasser Hamidullah",
+          "Yusser Al Ghussin",
+          "Zheng Zhao"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 10
       },
       {
-        "title": "Fisher-R1: Training LLM Agents for Reliable Hypothesis Testing",
-        "url": "https://arxiv.org/abs/2608.07437v1",
-        "publishedAt": "2026-08-07T17:22:00.000Z",
-        "summary": "Reliable hypothesis testing is the foundation of many empirical scientific claims. Large language model (LLM) agents are increasingly used to automate this process, as they can inspect datasets, generate code, and produce analyses end-to-end. However, we show that they frequently make subtle inferential errors that lead to incorrect conclusions despite correctly executed analyses. Existing benchmarks fail to capture this failure mode, as they rarely assess whether a reported p-value is statistically valid given the assumptions underlying the data. We address this gap by building P-Bench, a benchmark comprising 425 open-ended, realistic hypothesis-testing tasks spanning economics, biology, and medicine. Each task requires an agent to select a statistical method, compute a p-value, and draw a conclusion given only a scientific hypothesis and a dataset. We further introduce Fisher-R1, an open-weight LLM agent trained for rigorous hypothesis testing using synthetic tasks and reinforcement learning. On P-Bench, Fisher-R1-14B substantially improves over its backbone and outperforms strong proprietary and open-source baselines, including GPT-5.4 and DeepSeekV4-Pro, achieving a 21% average relative improvement in single-trial success over DeepSeek-V4-Pro, with gains up to 26% on the most challenging tasks. Our results demonstrate that current LLM agents lack reliable statistical reasoning for hypothesis testing and that reinforcement learning on tasks with verified statistical reward substantially improves reliability.",
+        "title": "REFRAMED: Towards Realistic Audio Description Generation for Movies",
+        "url": "https://arxiv.org/abs/2608.09765v1",
+        "publishedAt": "2026-08-10T15:55:56.000Z",
+        "summary": "Audio Description (AD) is a verbal narration of key visual content in videos, enabling access for visually impaired audiences. Unlike standard video captioning, AD is a structured editorial task: descriptions must be inserted into gaps in dialogue and must convey only what is needed to understand the narrative being told. However, existing approaches formulate AD generation in an artificial setting where both the content and timing of descriptions are pre-specified, reducing the task to clip-level captioning. They further rely on noisy transcription and alignment pipelines, and lack the rich parallel data required for modeling narrative context. We introduce a new formulation of AD generation in which models must jointly decide what to describe and when to do it. To support this, we present REFRAMED, a high-quality dataset of 2,023 videos that span 3,302 scenes from 206 movies, with professional AD transcripts (both American and British versions), professional subtitles and aligned screenplays. We also provide a manually curated challenge set that pairs full movies with multiple AD references, together with evaluation protocols that leverage dialogue gaps and multi-reference comparisons. Experiments with state-of-the-art AD systems and multimodal LLMs show that they outperform trivial baselines but fall far short of expert human performance. Our dataset and benchmark establish a new foundation for research on video understanding.",
         "authors": [
-          "Jiacheng Miao",
-          "Jin Mu",
-          "Guanhua Chen",
-          "James Zou"
+          "Igor Sterner",
+          "Mirella Lapata",
+          "Alex Lascarides",
+          "Frank Keller"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 10
+      },
+      {
+        "title": "MoNo: Multiscale Optimal Transport Neural Operator for Solving PDEs on General Geometries",
+        "url": "https://arxiv.org/abs/2608.09764v1",
+        "publishedAt": "2026-08-10T15:55:11.000Z",
+        "summary": "Transformer-based neural operators have achieved substantial progress in solving Partial Differential Equations (PDEs) by projecting spatial observations into compact latent tokens and learning physical interactions in latent spaces. However, we reveal that existing learnable projection mechanisms cannot ensure stable and balanced assignments from observation points to latent tokens, causing some latent tokens to be over-assigned while others remain underutilized. This limitation further restricts the design of hierarchical architectures, as assignment imbalance is continuously inherited and amplified across latent spaces, eventually causing severe token collapse in deeper spaces. To address these issues, we propose MoNo (Multiscale Optimal Transport Neural Operator), a progressive multiscale neural operator that efficiently solves PDEs on general geometries through stable latent-space construction. At its core is CoTAP (Cross-scale Optimal Transport Assignment and Projection), a novel latent-space construction method that formulates cross-space assignment between adjacent spaces as an entropy-regularized optimal transport problem, thereby constructing balanced bidirectional projections and stable latent spaces. CoTAP also ensures stable information transfer across multiple latent spaces, further enabling multiscale architectures on general geometries, which in turn support more efficient learning of long-range physical interactions. Extensive experiments demonstrate that MoNo outperforms existing state-of-the-art neural operators in both prediction performance and computational efficiency. Code is available at https://github.com/ZijiangY1116/MoNo.",
+        "authors": [
+          "Zijiang Yang",
+          "Xiaomeng Wu",
+          "Dongmei Fu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 10
+      },
+      {
+        "title": "Second-Order Muon Done Right: A Principled Marriage of Spectral Geometry and Curvature",
+        "url": "https://arxiv.org/abs/2608.09763v1",
+        "publishedAt": "2026-08-10T15:55:07.000Z",
+        "summary": "Muon's polar update is exact for an unweighted spectral geometry. We introduce GO-MUON, which uses a matched data-dependent geometry and reuses it across several optimization steps. Conditioned on any positive-definite left and right maps, its raw update exactly solves the corresponding weighted spectral oracle; this statement is independent of how the maps are estimated or how recently they were refreshed. For softmax cross-entropy, we quantify when the observed-label backward factor approaches the model Fisher and generalized Gauss--Newton factor. We also show that four-step refresh nearly preserves the tracking delay of slowly changing geometry while increasing stationary factor noise, making lazy geometry a compute--statistics tradeoff rather than a denoising mechanism.",
+        "authors": [
+          "Tong Che"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 10
+      },
+      {
+        "title": "Disentangling Co-Occurring Retinal Pathologies with Saliency-Guided Sparse Expert Routing",
+        "url": "https://arxiv.org/abs/2608.09752v1",
+        "publishedAt": "2026-08-10T15:43:43.000Z",
+        "summary": "Retinal fundus images frequently exhibit multiple co-occurring pathologies, yet standard deep learning classifiers apply static, identical computation to every image regardless of the underlying disease distribution. We propose a novel architecture that resolves this via sparse conditional computation, pairing a Guided Context Gating (GCG) spatial attention front-end with a sparsely-routed Mixture-of-Experts (MoE) block operating over feature tokens. Crucially, this routing yields an interpretable, data-driven decomposition. Expert allocation is significantly disease-dependent (p < 0.001), with the healthy Normal state and morphologically distinct pathologies (e.g., ERM, AMD) isolating to dedicated experts. On a five-class, patient-disjoint 5-fold cross-validation benchmark, our model achieves 0.912 +/- 0.008 macro AUC and 0.653 +/- 0.014 macro F1. Furthermore, Grad-CAM++ and post-MoE t-SNE visualizations confirm that expert routing aligns with localized lesions and geometrically maps co-occurring cases between their constituent clusters, positioning sparse MoE as an interpretable approach to multi-disease retinal screening.",
+        "authors": [
+          "Nagur Shareef Shaik",
+          "Jeongwoo Park",
+          "Yeong-Jin Kim",
+          "Jaeuk Jung",
+          "Hyunjung Oh",
+          "Dong Hye Ye"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Defining Decentralization: An Ontological Perspective",
+        "url": "https://arxiv.org/abs/2608.09748v1",
+        "publishedAt": "2026-08-10T15:41:49.000Z",
+        "summary": "Decentralization as a concept in computer science has existed for over half a century. Despite its fundamental role across domains such as security, distributed computing, artificial intelligence, cloud infrastructures, and Internet of Things (IoT) architectures, there remains no universally accepted definition of decentralization applicable across computer communication systems. This has become increasingly problematic with the emergence of decentralized AI and machine learning paradigms, including collaborative training, distributed inference, blockchain-based, and agentic AI, where decentralization is often treated as a core design objective. Meanwhile, existing approaches frequently conflate decentralization with related notions such as distribution of trust or specific implementation paradigms. Such ambiguity creates inconsistencies in system analysis, limits comparability between works, and weakens the rigor of formal reasoning surrounding communication architectures and protocol design. In this work, we define this research gap as the Decentralization Problem.\n  We analyze the formal-semantic, epistemological, and pragmatic foundations of decentralization and introduce a graph-based ontology defining it as both relational and subject-specific property of computer communication systems. The framework formally distinguishes decentralization from distribution and supports evaluation through two novel metrics: Void Tolerance and Imperviousness. We also provide a browser-based implementation that enables automated classification and metric computation of arbitrary systems. Instantiations to federated learning and blockchain architectures show consistent, comparable assessments where existing definitions produce incomplete or contradictory conclusions, providing a domain-independent foundation for analysing decentralization across heterogeneous systems.",
+        "authors": [
+          "Jakub Kacper Szeląg",
+          "Aydin Abadi",
+          "Mohammad Naseri"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
       }
     ],
     "news": [
+      {
+        "title": "OpenAI reportedly completed a $7 billion employee tender offer",
+        "url": "https://techcrunch.com/2026/08/10/openai-reportedly-completed-a-7-billion-employee-tender-offer/",
+        "publishedAt": "2026-08-11T00:03:18.000Z",
+        "summary": "San Francisco's housing market is in trouble again.",
+        "authors": [
+          "Tim Fernholz"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 2
+      },
+      {
+        "title": "As AI-led attacks multiply, OpenAI launches a new cyber model",
+        "url": "https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/",
+        "publishedAt": "2026-08-10T23:56:15.000Z",
+        "summary": "OpenAI is expanding its AI cybersecurity defense program Daybreak, and rolling out a new cyber-trained AI model with it.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 2
+      },
       {
         "title": "Mark Zuckerberg&#8217;s AI manifesto is exactly why people don&#8217;t like AI",
         "url": "https://techcrunch.com/2026/08/10/mark-zuckerbergs-ai-manifesto-is-exactly-why-people-dont-like-ai/",
@@ -318,7 +354,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 6
       },
       {
         "title": "Tech industry is buzzing after a Claude agent hacked into a gym",
@@ -332,7 +368,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "With a feel for physics, AI models simulate a wider range of real-world scenarios",
@@ -346,7 +382,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "What building an AI-native finance function taught me",
@@ -358,7 +394,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 7
+        "ageHours": 9
       },
       {
         "title": "Meta’s new Glimmer AI model offers a hint at Zuckerberg’s personal intelligence vision",
@@ -372,7 +408,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 10
       },
       {
         "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas",
@@ -384,7 +420,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 12
       },
       {
         "title": "Discovered Materials is playing AI whack-a-mole to hunt cooler chips",
@@ -398,7 +434,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
@@ -410,7 +446,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "Expanding Daybreak as the Cyber Defense Window Narrows",
@@ -422,7 +458,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 14
+        "ageHours": 16
       },
       {
         "title": "Putting frontier cyber models in more trusted hands",
@@ -434,50 +470,26 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 14
-      },
-      {
-        "title": "Premium seats are coming to ChatGPT Business",
-        "url": "https://openai.com/index/premium-seats-chatgpt-business",
-        "publishedAt": "2026-08-10T00:00:00.000Z",
-        "summary": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 24
-      },
-      {
-        "title": "How Zapier transformed core marketing processes with ChatGPT Work",
-        "url": "https://openai.com/index/zapier",
-        "publishedAt": "2026-08-10T00:00:00.000Z",
-        "summary": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 24
+        "ageHours": 16
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
+        "count": 10
       },
       {
         "name": "Models",
-        "count": 7
+        "count": 8
       },
       {
         "name": "General",
-        "count": 3
+        "count": 5
       },
       {
         "name": "Infrastructure",
