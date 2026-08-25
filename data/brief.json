@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T23:31:45.760Z",
+  "generatedAt": "2026-08-25T01:49:04.662Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,7 +27,10 @@
         }
       ],
       "itemCount": 12,
-      "errors": []
+      "errors": [
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -85,214 +88,230 @@
   "sections": {
     "research": [
       {
-        "title": "Primal Acceleration of Newton's Method",
-        "url": "https://arxiv.org/abs/2608.21359v1",
-        "publishedAt": "2026-08-21T17:59:37.000Z",
-        "summary": "We develop a new direct accelerated Newton method for minimizing convex functions with Lipschitz continuous Hessian. The algorithm uses only primal variables and performs just one linear solve per iteration. With a simple predetermined choice of parameters, it achieves the global convergence rate of $O(1/k^3)$ in terms of the functional residual. To the best of our knowledge, this is the first second-order method for this problem class attaining this rate while relying solely on one linear system solve per iteration (without solving auxiliary nonlinear regularized subproblems, such as cubic regularization, performing nonlinear parameter searches, or using dual extragradient corrections). Our method can be implemented in a Hessian-free way, using an inexact linear system solver, while preserving the fast global rate. We further extend our construction to arbitrary geometry through Bregman divergence, and to composite optimization problems.",
+        "title": "EMPIRE: Explicit Manipulation Planning as a Learnable Intermediate Representation for Egocentric Hand-Motion Forecasting",
+        "url": "https://arxiv.org/abs/2608.22449v1",
+        "publishedAt": "2026-08-23T14:58:31.000Z",
+        "summary": "Forecasting dexterous hand motions from egocentric observations is fundamental to intelligent interactive systems. Existing VLM-based methods typically map observations directly to future motions, overlooking the underlying manipulation process that governs hand-object interactions. Moreover, end-to-end optimization couples manipulation learning with motion synthesis, causing motion-generation gradients to interfere with the pre-learned manipulation-aware representations. To overcome these limitations, we propose EMPIRE, a two-stage framework that introduces Explicit Manipulation Planning as an Intermediate Representation for Egocentric hand-motion forecasting. Stage I: Learn to Plan. EMPIRE first learns explicit manipulation plans from multimodal context to capture the progression of hand-object interactions. Stage II: Learn to Act. A motion generator synthesizes future bimanual hand motions conditioned on frozen planner representations, preventing motion-generation gradients from affecting manipulation planning. To support our method, we further construct EMPIRE-651K, a bimanual hand-motion forecasting dataset comprising 650,910 training windows across 111 tasks, each paired with an explicit per-hand manipulation plan. Under identical training and evaluation protocols, EMPIRE achieves state-of-the-art forecasting accuracy, with an MPJPE of 84.53 mm and a finger-relative error of 38.97mm. We release the code and dataset at https://github.com/wangwen-banban/EMPIRE.",
         "authors": [
-          "Nikita Doikov"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Infrastructure",
-        "ageHours": 78
-      },
-      {
-        "title": "VIALS: A Benchmark for Visual Interpretation of Artifacts in the Life Sciences",
-        "url": "https://arxiv.org/abs/2608.21357v1",
-        "publishedAt": "2026-08-21T17:59:26.000Z",
-        "summary": "In professional life sciences workflows, scientists routinely interpret visual artifacts (gel blots, microscopy images, plasmid maps, flow cytometry plots, molecular structures, ...) to inform research decisions. We introduce VIALS, a visual question-answering benchmark with 161 such interpretation tasks, spanning the types of artifacts examined throughout experimental workflows in the biotech industry (rather than polished figures from publications and textbooks). While frontier vision-language models can now fluently describe natural images, we find that they are unable to accurately interpret these scientific images, reflecting limitations in domain knowledge and domain-specific visual reasoning capabilities. In contrast, scientists with relevant domain expertise find these visual interpretation tasks straightforward. AI that cannot similarly interpret such images will have limited utility in professional life sciences workflows, where such artifacts are central to how scientists reason, communicate, and make decisions.",
-        "authors": [
-          "Elaine Lau",
-          "Thanuka Udumulla",
-          "Lee Izhaki-Tavor",
-          "Francisco Guzmán",
-          "Nicholas Magazine",
-          "Jonas Mueller"
+          "Wen Wang",
+          "Ruibing Hou",
+          "Hong Chang",
+          "Shiguang Shan",
+          "Xilin Chen"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 35
       },
       {
-        "title": "AI with Authority, from Application to Silicon",
-        "url": "https://arxiv.org/abs/2608.21356v1",
-        "publishedAt": "2026-08-21T17:59:16.000Z",
-        "summary": "For sixty years, machine verification has been a major cost overhead, affordable only for exceptional artifacts. Here we report that generative AI inverts this relationship: at AI speed, machine verification is not only economical but essential to productivity --- it is the incorruptible referee that lets one person safely direct autonomous machine work at scale. In five weeks, one researcher on consumer AI subscriptions directed a small fleet of AI agents from application code, through a verified compiler and executive, to a RISC-V processor taped out on a community silicon shuttle; no proof passed through human review, and no RTL was written by a human. The working discipline --- the Salt method --- rests on a proof kernel no hallucinated proof can pass: mathematical claims travel between agents as kernel-checked artifacts, and human attention is reserved for statements, designs, and rulings. Verification is stated link by link, from the Lean 4 kernel to SAT-checked equivalence at the silicon boundary. We publish the complete accounting: theorem provenance, a pre-registered token meter, floor-bounded human time, and an error ledger whose catch numbering runs to #256 --- a monotone counter over the mathematics campaign's append-only flags ledger, maintained 2026-07-07 to 2026-07-20 (one number, #79, was never assigned; later catches are recorded un-numbered) --- against zero incorrect proofs reaching the record.",
+        "title": "When Persona Simulations Are Informative: Graph-Structured Signals for Pluralistic Opinion Sensing",
+        "url": "https://arxiv.org/abs/2608.22438v1",
+        "publishedAt": "2026-08-23T14:33:35.000Z",
+        "summary": "Persona-conditioned large language models (LLMs) are increasingly used to simulate survey responses across diverse domains. However, apparent response variation can reflect unconditioned model priors or token sampling noise rather than systematic persona conditioning. We argue that persona-conditioned variation is informative when semantically similar personas exhibit concordant response shifts. To operationalize this principle, we introduce Persona-Conditioned Informativeness (PCI), an unsupervised diagnostic metric that measures whether semantically similar personas deviate in concordant directions relative to item-level sample baselines. By modeling personas as a similarity graph, PCI uses Local Moran's I to quantify local spatial coherence and extract compact persona subsets without using construct labels. To evaluate PCI without external human benchmarks, we test its ability to recover established latent value structure using the 57-item Portrait Values Questionnaire-Revised (PVQ-RR). Confirmatory factor analysis (CFA) shows that a PCI-selected 10% subset substantially improves overall construct recovery relative to response-stability and random selection. These findings support PCI as a principled internal diagnostic for screening synthetic respondents in survey pipelines.",
         "authors": [
-          "Jason Hickey"
+          "Taehyeon An",
+          "Jaehyeong Park",
+          "Donghyuk Shin"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 35
       },
       {
-        "title": "PerturbRx: Learning Treatment-Conditioned Latent Transitions for Patient Drug Response Prediction",
-        "url": "https://arxiv.org/abs/2608.21349v1",
-        "publishedAt": "2026-08-21T17:54:48.000Z",
-        "summary": "Scarce data and tumor heterogeneity limit patient-level cancer treatment-response prediction. Existing approaches predict response from pretreatment molecular profiles and drug representations, without explicitly modeling the molecular changes expected under treatment. We propose PerturbRx, a treatment-conditioned representation learning framework that learns intervention-induced latent transitions and uses them as patient-drug response features. PerturbRx trains a drug- and dose-conditioned transition predictor from context-matched but cell-unpaired control and treated single-cell populations, then freezes and transfers the predictor to pretreatment patient profiles without requiring post-treatment measurements. The transition is combined with patient and drug representations to predict response. Across TCGA and patient-derived xenograft benchmarks, PerturbRx achieves the strongest aggregate predictive performance among the evaluated methods. These results support perturbation-pretrained latent transitions as useful representations for patient-level drug-response prediction.",
+        "title": "Rank Reversal in Multilingual LLM Judges: A Label-Free Double-Centering Calibrator",
+        "url": "https://arxiv.org/abs/2608.22432v1",
+        "publishedAt": "2026-08-23T14:18:25.000Z",
+        "summary": "Multilingual LLM judges produce different evaluator-backbone rankings depending on the prompt language: on an eight-language Agent-as-a-Judge benchmark, the top-ranked backbone alternates across English, Arabic, Chinese, Hindi, Japanese, Spanish, Turkish, and Swahili, and 7 of 15 backbone pairs show statistically significant pairwise rank reversal. We treat this as a measurement problem. The multilingual judge score decomposes additively into task difficulty, backbone skill, and a language-backbone interaction term, the last of which is recoverable without human labels by double-centering the cell-mean score matrix. We make this estimator (\\textbf{Consensus-Based Calibration}, CBC) explicit, give an $O(1/\\sqrt{n})$ finite-sample concentration bound with variance constant $(1-\\tfrac{1}{m})(1-\\tfrac{1}{k})$, and show that it is unbiased even when task-language interactions are present. Across 7{,}920 judge runs (6 backbones, 8 languages, 55 tasks, 3 frameworks), CBC raises held-out cross-task rank consistency $τ$ from 0.650 to 0.902 and agrees with the held-out additive-model oracle in 100\\% of per-language decisions versus 68.5\\% raw; these are consistency diagnostics, not human-grounded correctness measures. On a separately collected M-RewardBench panel (7 languages, 1{,}500 items per language, 10{,}500 language-item instances, 5 evaluators), panel agreement with the public human gold preferences rises from 68.7\\% to 76.6\\% (gain 7.9 percentage points, 95\\% CI $[6.0, 9.9]$), our strongest external evidence of downstream usefulness. The estimator is the standard two-way ANOVA interaction-recovery operation under sum-to-zero contrasts; our contribution is its application as a label-free post-hoc calibrator for multilingual LLM judges, an explicit finite-sample concentration bound, and an unbiasedness result that holds even under task-language misspecification.",
         "authors": [
-          "Yoshitaka Inoue",
-          "Minoh Jeong",
-          "Alfred Hero",
-          "Rui Kuang",
-          "Augustin Luna"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Truthful Calibration Measures for Sequential Prediction",
-        "url": "https://arxiv.org/abs/2608.21348v1",
-        "publishedAt": "2026-08-21T17:54:05.000Z",
-        "summary": "Calibration requires probabilistic reports to be conditionally unbiased and reliably interpretable as probabilities. A calibration measure assigns numerical error to miscalibrated reports. Haghtalab et al. (2024) proposed an approximately truthful calibration measure for online prediction, leaving open whether exact truthfulness is compatible with completeness and soundness.\n  We resolve this question negatively for sequential binary prediction: exact truthfulness is incompatible with completeness and soundness, even for independent outcomes. We then show that this impossibility is specific to exact truthfulness. We give two general reductions from a base calibration measure, producing additively and multiplicatively approximately truthful calibration measures, respectively. Applying the multiplicative reduction, for every $0 < \\varepsilon < 1$ we construct a sound and complete calibration measure that is $(1+\\exp(-T^{(1-\\varepsilon)/2}/2))$-multiplicatively truthful. This improves the approximate-truthfulness guarantee of Haghtalab et al. (2024).",
-        "authors": [
-          "Anagha Gokul",
-          "Jason Hartline",
-          "Lunjia Hu",
-          "Jonathan Ullman",
-          "Yifan Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 78
-      },
-      {
-        "title": "Asymmetric Capacity Allocation in Self-Refinement Pipelines",
-        "url": "https://arxiv.org/abs/2608.21345v1",
-        "publishedAt": "2026-08-21T17:52:17.000Z",
-        "summary": "Self-refinement, typically structured as generation, critique, and revision, is a widely adopted paradigm for improving LLM generation and serves as a core mechanism in many LLM agents. While the three stages involve different cognitive demands, most existing approaches conveniently treat the model size as an implementation detail rather than a subject of study, which may lead to a waste of resources. Little work has systematically examined how model size affects each stage or whether effective self-refinement requires equally capable models for generation, critique, and revision. We present the first stage-wise model size study of the self-refinement pipeline on 5 benchmarks from different domains using 6 model sizes of Qwen3 and 4 model sizes of Gemma 3. We conclude that larger generators and refiners generally improve the pipeline, whereas an undersized refiner can even harm performance. Second, performance is highly insensitive to the size of the critic, although including even a small critic consistently outperforms omitting critique altogether. Our findings demonstrate that model capacity should not be allocated uniformly across self-refinement pipelines. Instead, different stages exhibit distinct size scaling characteristics, providing practical guidance for designing more computationally efficient multi-stage language model systems.",
-        "authors": [
-          "Zhuoyi Yang",
-          "Ian G. Harris",
-          "Salar Hashemitaheri",
-          "Cassie Huang",
-          "Yuangang Li",
-          "Hyunwoo Oh",
-          "Paul Dourish",
-          "Tony Givargis",
-          "Mohsen Imani",
-          "Li Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "TurboBias 2.0: Streaming Context-Biasing for Production-Efficient ASR Systems",
-        "url": "https://arxiv.org/abs/2608.21343v1",
-        "publishedAt": "2026-08-21T17:50:00.000Z",
-        "summary": "Contextualization is essential for production automatic speech recognition (ASR) systems, where user-provided phrases must be recognized accurately under strict latency constraints. Although many context-biasing methods improve recognition accuracy, they often do not address the practical requirements of modern production ASR systems: streaming inference, efficient batched decoding, user-specific context lists, and low runtime overhead. We propose TurboBias 2.0, a production-oriented framework for efficient phrase boosting in Transducer-based ASR systems. The framework extends GPU-accelerated TurboBias with a case-insensitive boosting graph and per-stream batched decoding, allowing each utterance in a batch to use an independent context-biasing configuration. This enables personalized context biasing for multiple simultaneous users without sharing or mixing their context lists. The proposed framework supports both offline and streaming inference and can be used with greedy and beam-search decoding. Experiments show that TurboBias 2.0 improves contextual phrase recognition while preserving low latency and high throughput.",
-        "authors": [
-          "Vladimir Bataev",
-          "Lilit Grigoryan",
-          "Andrei Andrusenko",
-          "Nikolay Karpov",
-          "Vitaly Lavrukhin",
-          "Boris Ginsburg"
+          "Alhasan Mahmood",
+          "Samir Abdaljalil",
+          "Hasan Kurban"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 78
+        "category": "Research",
+        "ageHours": 36
       },
       {
-        "title": "Across-Design Uncertainty in Short Pricing Panels: Evidence from Simulated Price Trajectories",
-        "url": "https://arxiv.org/abs/2608.21334v1",
-        "publishedAt": "2026-08-21T17:40:31.000Z",
-        "summary": "Short observational pricing panels can contain many observations while offering only a small number of distinct price movements. This paper studies the inferential consequences of that distinction in a synthetic data-generating process calibrated to a sparse pricing regime. We separate uncertainty conditional on a realised price trajectory from variation in estimation error across alternative trajectories generated by the same pricing process. In the baseline simulations, the latter component accounts for 97.6% of the variance of estimation error for the gradient-boosted specification. Within-panel resampling procedures use the information of one realised trajectory and do not identify this across-design component.\n  Three results organise the analysis. First, across-design dispersion is well described by the empirical relation sigma_hat approx 0.182 V^(-0.271), where V equals moves times magnitude squared. Second, adding regions sharing a common price path reduces outcome noise but does not create independent price trajectories; conversely, averaging across units with independent design-specific errors reduces dispersion at the standard square root rate. Third, a Paule-Mandel variance component estimated across independently priced units substantially increases empirical coverage in homogeneous simulations, from 0.469 to 0.931. The broader implication is a shift toward designing data-generating processes that create independent identifying variation rather than relying solely on fixed passive panels.",
+        "title": "Think with Structured Grounding: Perceptual Reinforcement Learning for Chart and Visual-Tabular Understanding",
+        "url": "https://arxiv.org/abs/2608.22429v1",
+        "publishedAt": "2026-08-23T14:07:14.000Z",
+        "summary": "Multimodal Large Language Models (MLLMs) capable of thinking with images often rely on external tools for fine-grained perception. However, this reliance introduces significant inference latency and fails to effectively resolve the spatial-structural gap-a fundamental challenge in text-dense and structurally relational visuals (e.g., charts and visual tables) where strict relative spatial arrangements bind textual elements. Without external tools, standard MLLMs struggle with such fine-grained visual reasoning tasks. To address these issues, we propose Think with Structured Grounding (TwSG), a novel fine-grained image perception framework designed to internalize complex images's tool-use capabilities within the model. TwSG distills the benefits of multi-step reasoning and micro-cropping into a single efficient forward pass during inference. Specifically, we use an MLLM to identify key regions guided by ground-truth answers, and then prompt a teacher model to generate high-quality visual question-answering (VQA) data. These fine-grained, region-based supervisory signals are subsequently distilled back into the full-image representation. Our training pipeline consists of two stages: (1) a cold-start supervised fine-tuning (SFT) phase using multi-turn data with focused area descriptions to foster complex reasoning and error recovery; and (2) a reinforcement fine-tuning (RFT) phase driven by a novel process reward mechanism, TL-GRPO, which encourages strategic reasoning. Extensive experiments across various MLLM architectures demonstrate that TwSG reduces inference latency while substantially improving accuracy and robustness, endowing models with native fine-grained region description and flexible reasoning capabilities.",
         "authors": [
-          "Pedro Cadahia Delgado"
+          "Changjiang Jiang",
+          "Qiannian Zhao",
+          "Lei Xin",
+          "Jinxiang Xie",
+          "Preslav Nakov",
+          "Zhuohan Xie"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 78
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 36
       },
       {
-        "title": "Anatomy-Informed Neural Networks: Encoding Anatomic Priors in Loss and Architecture, with an SE(3) Formulation of Guidewire-Induced Aortoiliac Deformation",
-        "url": "https://arxiv.org/abs/2608.21332v1",
-        "publishedAt": "2026-08-21T17:38:42.000Z",
-        "summary": "Deep-learning models of anatomy can be numerically plausible yet anatomically impossible, and they generalize poorly when data are scarce. We introduce Anatomy-Informed Neural Networks (AINN), in which soft anatomic priors enter as penalty terms in the loss (e.g., a branching penalty that treats a renal transplant artery off the iliac instead of the aorta as unexpected rather than impossible), in direct analogy to a physics-informed neural network, and hard anatomic priors (e.g., continuity of the vessel) are built into the architecture and state representation, making such invalid predictions impossible by construction wherever the prior admits architectural enforcement.\n  We develop it on a clinical test case with limited data: how the aortoiliac tree deforms when a stiff wire is introduced endoluminally. This is important to contemporary aortic surgery and will matter to autonomous endovascular navigation. We lift the vessel centerline and the wire path from R^3 to curves of frames in the Lie group SE(3), and couple a Cosserat-rod wire to a tortuosity-modulated, anatomically anchored vessel through a unilateral lumen-contact inequality. The prediction is a constrained minimizer of the coupled elastic energy, with contact forces as its Lagrange multipliers. Supervision is a Wasserstein-2 optimal-transport loss between the predicted projection through the C-arm geometry and the observed angiogram, so a 2D angiogram can train a 3D prediction. The kinematics, loss and projection are verified against known ground truth; the mechanics solver only against its own optimality conditions, and predicted displacement is not yet mesh-converged. Here, no network is trained. Future work will transfer this in silico model to real CT scans and test whether it improves predictive accuracy and reduces the training data required.",
+        "title": "Where World Models Break: Natural-Input Failure Discovery",
+        "url": "https://arxiv.org/abs/2608.22421v1",
+        "publishedAt": "2026-08-23T13:53:15.000Z",
+        "summary": "World models predict action-conditioned futures and serve as critical internal simulators for downstream planning and control. However, catastrophic prediction failures of world models could dangerously propagate through the control pipeline, as subsequent agent or model training and decision-making depend heavily on the continuous environment evolution forecasted by these world models. Existing evaluations overlook this systemic risk: by aggregating average errors over benign generations from general queries, they fail to stress-test the model against catastrophic collapses under rare or unobserved condition-action combinations. To bridge this gap, we formalize the natural-input failure discovery problem: under a finite query budget, finding environment-valid conditions and action prefixes that induce severe prediction risk, verifying whether these failures reproduce on fresh seeds, and testing their persistence under nearby valid edits. Discovering such critical failures is computationally challenging, as valid condition-action combinations explode exponentially, rendering exhaustive search or standard sampling infeasible given the high cost of noisy rollouts. To tackle this, we propose BasinLens, which exploits the underlying structure of valid inputs, where each coordinate possesses environment-defined semantic types and admissible domains, by pairing uncertainty-guided global search with typed local replacements. Across diverse benchmarks and world-model families, BasinLens exposes reproducible and locally persistent failure modes that conventional evaluations fail to reveal, showing that average-case benchmarks can mask important vulnerabilities in world-model-driven control.",
         "authors": [
-          "David P. Stonko"
+          "Zhanpeng Shi",
+          "Zi Liang",
+          "Rong Feng",
+          "Shiqin Tang",
+          "Xuyang Chen",
+          "Hongzong Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 36
+      },
+      {
+        "title": "Cross-Subject Generalization in Decoding Perceived Speech from Non-Invasive Brain Recordings",
+        "url": "https://arxiv.org/abs/2608.22420v1",
+        "publishedAt": "2026-08-23T13:50:32.000Z",
+        "summary": "Decoding perceived speech from non-invasive brain recordings has garnered significant attention in recent years due to its wide range of potential applications. However, existing methods face considerable challenges in cross-subject decoding, primarily due to limited generalizability and the absence of explicit mechanisms for extracting subject-consistent information. These limitations result in high training costs and suboptimal decoding performance. To address these challenges, we propose an innovative Cross-Subject Perceived Speech Decoding (CPSD) framework, which comprises two training stages: source model pre-training and personal specialization. In the source model pre-training stage, contrastive learning is employed to capture shared representations across multiple source subjects. Subsequently, personal specialization initializes the model for the target subject by extracting consistent components from the source model and fine-tuning it using target subject data. Additionally, we introduce the Positional Encoding-based Spatial Attention (PESA) module, which remaps MEG/EEG data into a standardized reference space, thereby enhancing cross-subject consistency and facilitating model training. We evaluate the proposed CPSD framework on three perceived speech neural datasets encompassing different modalities and languages. The results demonstrate that our framework outperforms baseline methods by more than 6.8%, 15.4%, and 15.8% in Top-10 accuracy on the Armeni 2022, PKUEEG 2025, and Broderick 2018 datasets, respectively. Further analyses confirm the effectiveness, efficiency, and robustness of the proposed approach.",
+        "authors": [
+          "Aoke Zhang",
+          "Bo Wang",
+          "Xihong Wu",
+          "Heping Cheng",
+          "Jing Chen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 36
+      },
+      {
+        "title": "LLMs for Survey Text Analysis - A Performance Comparison Between Humans and GPT-5 on Inductive Content Analysis",
+        "url": "https://arxiv.org/abs/2608.22417v1",
+        "publishedAt": "2026-08-23T13:45:32.000Z",
+        "summary": "Large language models (LLMs) are increasingly used to support text analysis in qualitative research, yet evidence on their performance in inductive content analysis remains limited. This study compares human and LLM-based inductive coding of open-ended survey responses from 903 answers across six variables from a European PhD student survey. Five human coders performed inductive content analysis following a standardized coding scheme, while an LLM (GPT-5.4) conducted the same task using an established prompting procedure. Agreement between human and LLM outputs was assessed using the Adjusted Rand Index (ARI). Results showed an alignment between humans and the LLM, with ARI values of 0.61 for coding and 0.54 for theme generation. These values were close to the internal consistency of coding and theme results within humans (ARI = 0.68) and the LLM (ARI = 0.76). Agreement varied widely across variables, with low within-entity consistency consistently linked to low between-entity agreement, underscoring the role of data characteristics and individual performance in reliability. Overall, the findings suggest that LLMs can approximate human coding in this case-specific setting, particularly at the coding level, and may serve as a scalable support tool for inductive qualitative analysis.",
+        "authors": [
+          "Leonardo Bergmann",
+          "Renata Gheorghiu",
+          "Ana Gvritishvili",
+          "Alex Mican",
+          "Chris Stewart",
+          "Topias Tolonen-Weckström"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 78
+        "ageHours": 36
       },
       {
-        "title": "Move by Move: Measuring and Steering How LLMs Conduct Psychotherapy",
-        "url": "https://arxiv.org/abs/2608.21325v1",
-        "publishedAt": "2026-08-21T17:32:38.000Z",
-        "summary": "Users increasingly turn to large language models for emotional support, yet little is known about how these models actually conduct a psychotherapy interaction. We introduce an ontology of ten therapeutic moves: compact, function-based categories grounded in the MULTI-60 inventory, validated through an annotation campaign with five licensed psychologists, and scaled with a judge-based approach that matches expert agreement. Applying it to real counseling transcripts and model-led sessions, we compare the move distributions between human clinicians and a panel of frontier models. Models over-use inquiry at up to three times the human rate, neglect psychoeducation, and are strongly context-anchored: they carry forward strategies initiated by a human clinician but rarely initiate them themselves. Exposing the ontology as a set of tools roughly halves the mean deviation from the human move distribution and improves turn-level alignment with human therapist by 7-9 percentage points, without any fine-tuning.",
+        "title": "KONTOGRAPH: Verified Point-in-Time Feature Consistency and Amortised Explanation for Real-Time Anti-Money Laundering under a 200 ms Decision Budget",
+        "url": "https://arxiv.org/abs/2608.22389v1",
+        "publishedAt": "2026-08-23T12:28:26.000Z",
+        "summary": "Regulation (EU) 2024/886 obliges European payment service providers to settle euro credit transfers in under ten seconds, around the clock. This removes both the overnight batch window in which anti-money-laundering (AML) analytics traditionally ran and the settlement delay that made recovery possible, forcing detection, explanation and decision inside a single-digit-second envelope. We present KONTOGRAPH, an end-to-end AML pipeline for the SEPA Instant rail built under a self-imposed 200 ms 99th-percentile budget, and report an empirical study on 1,562,860 simulated payments with injected typologies and deliberately incomplete labels. Three findings are of interest beyond the system itself. First, a temporal graph network with per-node memory improves PR-AUC over a gradient-boosted tabular baseline from 0.0053 to 0.1717, a paired day-blocked bootstrap difference of +0.166 with 95% CI [0.105, 0.241]; per-node memory alone more than doubles the score. Second, expressing each feature once and compiling it to three execution backends, with equivalence enforced by property-based tests that perturb the future, surfaced three point-in-time violations that code review had passed--each of which would have inflated reported performance. Third, and most consequential for practice, exporting the deployed tree ensemble to ONNX changed only $7.4 \\times 10^{-8}$ in mean score yet altered 0.26% of decisions and inflated the alert volume by 12%, because 32-bit accumulation perturbs scores across a cost-optimal threshold of $3.98 \\times 10^{-4}$. We argue that a serving-format conversion must be treated as a model change until measured, and that fidelity metrics for subgraph explainers can be vacuous when candidate neighbourhoods are small--a null result we report in full.",
         "authors": [
-          "Afonso Baldo",
-          "Hugo Pitorro",
-          "Areti Vassilopoulos",
-          "Anabela C. Areias",
-          "Maya D'Eon",
-          "Fabíola Costa",
-          "Ricardo Rei",
-          "Nuno M. Guerreiro"
+          "Ahmed Abolfadl"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 78
+        "ageHours": 37
       },
       {
-        "title": "Time-Aware Tranformer-Based Prediction Model for AECOPD",
-        "url": "https://arxiv.org/abs/2608.21324v1",
-        "publishedAt": "2026-08-21T17:31:23.000Z",
-        "summary": "The rapid symptom change of Acute exacerbation of chronic obstructive pulmonary disease (AECOPD) makes it critical to have time-sensitive prediction models. However, most current machine learning models studying AECOPD use clinical and laboratory data, which will inevitably cause latency. To ensure timely detection of AECOPD and minimize latency, this paper focuses on home monitoring scenarios where only respiratory data from daily-use ventilators is available. We introduce a Time-Aware transformer-based AECOPD prediction model, which generates meaningful patient representations using the Time-Aware transformer to capture the symptoms and their temporal progression in ventilator data. Our experimental results demonstrate that our Time-Aware transformer-based approach outperforms traditional methods in multiple classification tasks, highlighting its potential to enhance AECOPD prediction accuracy.",
+        "title": "ProBel: Propaganda Detection with Techniques, Spans, and Explanations",
+        "url": "https://arxiv.org/abs/2608.22388v1",
+        "publishedAt": "2026-08-23T12:22:23.000Z",
+        "summary": "Propaganda detection includes several related prediction levels, ranging from sentence-level decisions to technique classification and span identification. However, it remains unclear how supervision at these levels interacts when learned jointly across Arabic and English. We present ProBel, an Arabic and English resource that aligns binary labels, multi-label annotations over 23 propaganda techniques grouped into six coarse categories, technique-labeled spans, and reference explanations for the same news sentences. It includes a substantially larger English collection and supports matched binary, coarse-grained, multi-label, and span-level tasks in both languages. We evaluate zero-shot prompting, task-specific fine-tuning, and joint training under a shared setup. A single bilingual multi-task model achieves the best overall performance and remains competitive across tasks and languages. Cross-task analysis shows that transfer depends on the supervision level. Joint classification training preserves binary performance, whereas span-only training can weaken sentence-level prediction. Joint bilingual training yields the most stable results, while monolingual fine-tuning can reduce transfer to the other language. We will release the data, code, and evaluation scripts.",
         "authors": [
-          "Weihao Qu",
-          "Ling Zheng",
-          "Dongyang Wang",
-          "Jiacun Wang",
-          "Haowen Pan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Unified Branch-and-Bound Search for the Steiner Traveling Salesman Problem on Graphs of Convex Sets",
-        "url": "https://arxiv.org/abs/2608.21319v1",
-        "publishedAt": "2026-08-21T17:28:03.000Z",
-        "summary": "We formalize the Steiner Traveling Salesman Problem (Steiner-TSP) on Graphs of Convex Sets (GCS), which seeks a minimum-cost closed trajectory through required convex sets while allowing optional transit vertices and revisits. To explore the resulting infinite solution space, we propose a unified branch-and-bound search over rooted walk prefixes. Additive lower-bound-graph costs bound committed prefixes, while a cut-separated connected-flow relaxation lower-bounds the residual cost of visiting every remaining target and returning to the root. Under a uniform positive-cost assumption, best-first traversal terminates after finitely many expansions on every feasible instance without an initial incumbent, whereas depth-first traversal does so once a finite incumbent is available. For a user-specified factor $ε\\geq1$, a global lower bound certifies that either strategy's incumbent cost is at most $ε$ times the global optimum. We further demonstrate joint sensing-mode, visitation-order, and continuous-trajectory selection for a mobile-manipulator inspection task, including action precedences expressed in linear temporal logic over finite traces (LTL$_f$). Both traversal strategies find feasible solutions on all benchmark instances within 30s with mean certified optimality gaps of 28.1% and 29.7%, respectively, whereas two recent baselines succeed on only about half of the instances",
-        "authors": [
-          "Jingtao Tang",
-          "Hang Ma"
+          "Mohamed Bayan Kmainasi",
+          "Ali Ezzat Shahroor",
+          "Elisa Sartori",
+          "Giovanni Da San Martino",
+          "Firoj Alam"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 37
+      },
+      {
+        "title": "Self-Supervised Graph Representation Learning for In-The-Wild Wearable and Smartphone based Emotion Recognition",
+        "url": "https://arxiv.org/abs/2608.22387v1",
+        "publishedAt": "2026-08-23T12:15:52.000Z",
+        "summary": "Wearable and smartphone-based emotion recognition (WER) remains a challenging setting in affective computing, due to the notorious difficulty and bias associated with in-the-wild label collection. The high inter-and intra-subject emotional variability motivates us to explore WER modeling through graph node classification in a limited resources learning scheme powered by Self-Supervised Learning (SSL) graph masking augmentation tasks. We employ a subgraph sampling approach during training, utilizing labeled and unlabeled data, along with supervised, semi-supervised, and SSL mechanisms in a multi-task inductive graph neural network architecture. Our evaluations on K-EmoPhone through leave-one-group-out cross-validation in the binary arousal and valence tasks yield average accuracy gains of 4.3% and 7.8%, compared to the full resource setting, utilizing only 20% and 25% of the labels, respectively. Our model analysis sheds light on the relation of SSL graph augmentations to emotional arousal and valence and justifies the approach of SSL-driven subgraph training for in-the-wild WER.",
+        "authors": [
+          "Ioannis N. Ziogas",
+          "Leontios J. Hadjileontiadis",
+          "Ahsan H. Khandoker",
+          "Aamna Al Shehhi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 38
+      },
+      {
+        "title": "WAM-OPD: On-Policy Distillation for World Action Models",
+        "url": "https://arxiv.org/abs/2608.22364v1",
+        "publishedAt": "2026-08-23T11:06:45.000Z",
+        "summary": "World action models (WAMs) couple visual future prediction with robot action generation, but accelerated students can lose task capabilities during distillation and later encounter states that are poorly represented by offline data. We study whether on-policy distillation (OPD) can repair such a student without requiring sparse-reward reinforcement learning. We introduce WAM-OPD, a deployment-consistent post-training recipe for a video-first WAM. The student acts in the environment and therefore determines the history distribution. A frozen teacher labels those student histories with coherent video and action targets, while the student action branch is trained under its own generated video plan, as it is at deployment. Joint video and action losses update lightweight adapters in the shared backbone, together with an action flow-matching regularizer. In preliminary RoboTwin 2.0 studies on two tasks, the released one-video/one-action-step Flash-WAM improves from 0.0% to 58.3% success on HANDOVER MIC, and from 16.7% to 33.3% on PUT OBJECT CABINET. These task-specific results are an initial capability proof rather than evidence of broad or uniform generalization. They nevertheless suggest that dense teacher supervision on student-induced histories is a promising post-training interface for video-first WAMs.",
+        "authors": [
+          "Liuhaichen Yang",
+          "Zhuang Jiang",
+          "Chenchao Sheng",
+          "Zezhi Tang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 39
+      },
+      {
+        "title": "Analyzing and Mitigating Cross-Lingual Degradation in Multilingual Medical VQA",
+        "url": "https://arxiv.org/abs/2608.22363v1",
+        "publishedAt": "2026-08-23T11:04:45.000Z",
+        "summary": "Medical visual question answering (VQA) is a crucial task in clinical AI, yet its evaluation has so far centered almost exclusively on English, limiting its relevance to linguistically diverse patients and clinicians. Recent multilingual medical VQA benchmarks show that large vision-language models (LVLMs) degrade in non-English languages, but lack a fine-grained analysis of how cross-lingual variation affects the distinct capabilities that medical VQA requires. To this end, we construct a multilingual medical VQA benchmark over eight languages, organized into four representative scenarios that isolate the core capabilities medical VQA requires. Evaluating five open- and closed-source LVLMs, we find that cross-lingual degradation is not uniform but highly scenario-dependent. We therefore propose MedVL-XLRepE, a training-free scenario-aware representation engineering method, leveraging LVLMs' superior English medical VQA capability to steer non-English representations toward their English counterparts at inference time. Across three LVLMs and eight languages, MedVL-XLRepE consistently mitigates cross-lingual degradation, with gains of up to 6.33\\%.",
+        "authors": [
+          "Jingbo Wang",
+          "Sendong Zhao",
+          "Haochun Wang",
+          "Bing Qin",
+          "Ting Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 39
       }
     ],
     "news": [
+      {
+        "title": "Situational Awareness, star AI hedge fund that nearly imploded, now being probed by the SEC",
+        "url": "https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/",
+        "publishedAt": "2026-08-25T00:23:12.000Z",
+        "summary": "The AI hedge fund went from \"the talk of Wall Street\" to \"subject of federal subpoenas\" faster than you can say \"diversify your portfolio.\"",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
       {
         "title": "Trump bought SpaceX shares two weeks after blockbuster IPO",
         "url": "https://techcrunch.com/2026/08/24/trump-bought-spacex-shares-two-weeks-after-blockbuster-ipo/",
@@ -305,7 +324,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Amjad Masad, CEO and co-founder of Replit, joins the Disrupt Stage at TechCrunch Disrupt 2026",
@@ -319,7 +338,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Instinct’s powerful AI assistant is raising privacy and security concerns",
@@ -333,7 +352,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 5
+        "ageHours": 8
       },
       {
         "title": "Generating scenarios for extreme events, without extreme data",
@@ -347,7 +366,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "Valor, Point72 back General Intuition at $6B valuation as AI startup pushes into robotics",
@@ -361,7 +380,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 8
+        "ageHours": 10
       },
       {
         "title": "OpenAI is building AI agents for everything. Will everyone use them?",
@@ -375,7 +394,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 9
+        "ageHours": 11
       },
       {
         "title": "Hugging Face reportedly in talks to be acquired for $13B",
@@ -389,7 +408,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 12
       },
       {
         "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
@@ -401,7 +420,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "Who&#8217;s behind the new ‘stealth model’ Ox Alpha?",
@@ -415,7 +434,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 28
+        "ageHours": 30
       },
       {
         "title": "Linkdaze’s smart calendar is built to run a household, not just track a schedule",
@@ -429,7 +448,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 28
+        "ageHours": 31
       },
       {
         "title": "Flock CEO calls for ‘compromise’ as surveillance company faces growing backlash",
@@ -443,40 +462,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 32
-      },
-      {
-        "title": "Is it legal to train AI models on copyrighted books? It’s complicated",
-        "url": "https://techcrunch.com/2026/08/23/is-it-legal-to-train-ai-models-on-copyrighted-books-its-complicated/",
-        "publishedAt": "2026-08-23T15:00:00.000Z",
-        "summary": "Most published authors have, without their knowledge or consent, contributed to the development of the same AI tools that threaten to undermine their livelihoods. That seems illegal, right?",
-        "authors": [
-          "Amanda Silberling"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 33
+        "ageHours": 34
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 8,
+    "last24h": 9,
     "topCategories": [
       {
         "name": "Research",
-        "count": 9
+        "count": 12
       },
       {
         "name": "Models",
-        "count": 6
+        "count": 5
       },
       {
         "name": "General",
-        "count": 5
+        "count": 4
       },
       {
         "name": "Products",
