@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T16:32:45.165Z",
+  "generatedAt": "2026-08-26T19:16:13.911Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 503",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 503"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,8 +83,249 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "What FID Hides: Detecting, Ranking, and Diagnosing Deviations in Generative Evaluation",
+        "url": "https://arxiv.org/abs/2608.24881v1",
+        "publishedAt": "2026-08-25T17:58:46.000Z",
+        "summary": "Generative models are commonly ranked by Fréchet Inception Distance (FID) and Kernel Inception Distance (KID), yet FID's first-two-moment summary can miss distributional differences, and a reported scalar gap alone is not a calibrated test against sampling variation. FID's moment restriction has concrete consequences: on ImageNet, visually unrecognizable images optimized only to match the reference Inception mean and covariance obtain FID $24.7$ versus $58.6$ for held-out real images (lower is better). Moreover, FID and KID are scalar discrepancies that are unchanged when the two samples are exchanged and therefore do not encode the direction of a dispersion change: under-dispersion, as can occur in mode collapse, versus over-dispersion. We introduce \\textbf{ZID} (\\emph{Z-resolved Integrated Diagnostic}), which combines six standardized location- and dispersion-sensitive arms from a rank graph (RISE) and Gaussian kernels (GPK at two bandwidths). Rather than asking one scalar to serve incompatible roles, ZID reports three linked outputs: an index for ranking departure magnitude, a permutation $p$-value for testing distributional equality, and a signed dispersion readout for diagnosis. In controlled experiments, ZID detects a broad range of departures, and its score tracks increasing severity along the corresponding sweeps, including cases in which FID is flat or reversed. On DiT-XL/2 and SiT-XL/2 guidance sweeps, ZID detects departure from real data, and its signed readout labels the high-guidance diversity collapse as under-dispersion.",
+        "authors": [
+          "Hao Chen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
+        "url": "https://arxiv.org/abs/2608.24876v1",
+        "publishedAt": "2026-08-25T17:56:35.000Z",
+        "summary": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris",
+        "authors": [
+          "Zhaochen Yu",
+          "Yingcheng Wu",
+          "Zhenfei Yin",
+          "Kaiyuan Chen",
+          "Zhe Zhao",
+          "Mengdi Wang",
+          "Shuicheng Yan",
+          "Ling Yang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL",
+        "url": "https://arxiv.org/abs/2608.24870v1",
+        "publishedAt": "2026-08-25T17:52:19.000Z",
+        "summary": "Group-relative reinforcement learning waits for sibling rollouts of the same prompt, which is costly for long and variable tool-use trajectories. Single-stream Policy Optimization (SPO) removes this dependency with a persistent prompt-level value estimate, but its recipe whitens one advantage per trajectory before optimizing a token-mean actor loss. We show that trajectory centering generally does not center the token-weighted quantity consumed by the actor, and fix the mismatch by standardizing terminal-outcome advantages under the action-token measure. We additionally organize prompt evidence by the policy event that generated it rather than learner receipt order. Across matched runs on ALFWorld at two model scales and on Math-TIR, SPO++ improves online learning efficiency over SPO. A paired ablation identifies action-token-measure normalization as the strongest tested component.",
+        "authors": [
+          "Kai Ruan",
+          "Jinghao Lin",
+          "Qianshan Wei",
+          "Ziqi Zhou",
+          "Zihe Huang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 25
+      },
+      {
+        "title": "Parameterized Complexity of $L_p$-Lipschitz Constants for Input Convex Neural Networks and $L_p$-Norm Maximization over Zonotopes",
+        "url": "https://arxiv.org/abs/2608.24865v1",
+        "publishedAt": "2026-08-25T17:47:37.000Z",
+        "summary": "Lipschitz constants are a standard way to quantify the sensitivity of neural networks to small input perturbations, but computing them is difficult even for shallow ReLU networks. We study this problem for two-layer input-convex neural networks (ICNNs), a restricted architecture where nonnegative output weights enforce convexity. Computing the $L_p$-Lipschitz constant for these networks is equivalent to maximizing the dual norm over a zonotope. While $L_1$- and $L_\\infty$-norm maximization on zonotopes admit fixed-parameter and polynomial-time algorithms, respectively, the parameterized complexity of the remaining $L_p$-norms was open. We prove that, for every fixed $p\\in (1,\\infty)\\cap \\mathbb{Q}$, maximizing the $L_p$-norm over a zonotope in $\\mathbb{R}^d$ is W[1]-hard with respect to the dimension $d$. Moreover, our hardness results imply that brute-force enumeration algorithms are essentially optimal for this problem under the Exponential Time Hypothesis. By duality, the same hardness results hold for computing the $L_p$-Lipschitz constant of two-layer ReLU ICNNs. Our proof first establishes the result for the $L_2$-norm and then transfers the construction to arbitrary fixed $p\\in (1,\\infty)\\cap\\mathbb{Q}$ using a suitable Taylor approximation. These results resolve the corresponding questions regarding the parameterized complexity status for zonotope norm maximization and two-layer ICNN Lipschitz constants.\n  Our paper resolves an open problem posted at COLT'25. There are several independent concurrent papers resolving the same problem. Our paper prioritizes a clear exposition of the underlying mathematics and conceptual intuitions behind the proof. Additionally, we explicitly describe our research process including the use of LLMs.",
+        "authors": [
+          "Aritra Das",
+          "Vincent Froese",
+          "Moritz Grillo",
+          "Debayan Gupta",
+          "Christoph Hertrich",
+          "Tharrshann Jayan Logarajah",
+          "Georg Loho",
+          "Mihir More",
+          "Moritz Stargalla"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 25
+      },
+      {
+        "title": "Improving Cross-Problem Vehicle Routing with Locally Augmented Preferences and Representation Disentanglement",
+        "url": "https://arxiv.org/abs/2608.24859v1",
+        "publishedAt": "2026-08-25T17:44:23.000Z",
+        "summary": "Multi-task vehicle routing problem (VRP) solvers seek to handle multiple VRP variants within a single unified model, avoiding the need to train a separate model for every variant. In spite of recent progress, current approaches remain limited on two fronts. On the training side, reinforcement learning suffers from reward-scale disparities and shrinking advantage signals as policies improve, whereas preference optimization stagnates once sampled tours become near-identical and thus fundamentally limited by the quality of the policy's own generated solutions, leaving both paradigms with weak supervision as training progresses. On the architecture side, existing fully shared encoders entangle constraint-dependent representations across heterogeneous variants, which limits generalization. We address these gaps with two model-agnostic contributions. First, we propose Preference Optimization with Locally Augmented Refinement (POLAR), a novel training algorithm that applies a local search refinement pass to the best decoded tour before forming preference pairs, yielding much more informative pairwise margins. Second, a Progressive Layered Extraction (PLE) encoder routes each encoder layer through one shared expert and a set of task-specific experts via a gating mechanism, progressively separating common routing structure from constraint-specific encodings. Through extensive experiments on various VRP variants, we show that POLAR and PLE together elevate the current state-of-the-art among neural multi-task solvers. We reduce the average gap to reference solutions by 21.3% relative to the strongest published baseline on 16 in-distribution variants, and outperform prior neural methods on 27 out of 32 unseen variants. Ablation studies confirm the efficacy of each contribution, showing that both improve cross-problem generalization across multiple backbone model architectures.",
+        "authors": [
+          "Arthur Corrêa",
+          "Paulo Nascimento",
+          "Samuel Moniz"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 26
+      },
+      {
+        "title": "Bellman Calibration for Marginalized Importance Weighting in Offline Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2608.24858v1",
+        "publishedAt": "2026-08-25T17:44:02.000Z",
+        "summary": "Marginalized importance weighting evaluates a target policy by reweighting offline state-action samples with its discounted occupancy ratio, characterized by an adjoint Bellman equation. Existing minimax, primal-dual, and fitted fixed-point estimators can leave residual occupancy-balance violations because of function-class approximation, regularization, or incomplete optimization. These violations are difficult to diagnose and reduce because the objectives generally lack a direct supervised validation loss for hyperparameter tuning, model selection, and early stopping. We introduce isotonic Bellman calibration, a one-dimensional, model-agnostic post-processing method that reduces these violations while preserving the ranking information in any initial occupancy-ratio estimate. The method corrects the estimate's scale and shape by applying fitted occupancy-ratio evaluation (FORE) over a one-dimensional class of nondecreasing transformations. We characterize Bellman calibration as a conditional fixed-point property equivalent to occupancy-balance against every test function of the calibrated ratio. More generally, we derive a calibration-refinement bound showing that any fitted ratio with small calibration error performs nearly as well as the best post-processing based on its fitted values. For isotonic Bellman calibration, we establish finite-sample calibration guarantees and a KL oracle inequality relative to the best monotone transformation of the initial estimate. Consequently, isotonic Bellman calibration achieves small calibration error and KL risk within statistical error of the best monotone correction, with guarantees for downstream target-occupancy functionals, including policy-value estimation.",
+        "authors": [
+          "Lars van der Laan",
+          "Nathan Kallus"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 26
+      },
+      {
+        "title": "BrowserForge: Scaling Web Episode via Parallel Browser Sandboxes",
+        "url": "https://arxiv.org/abs/2608.24848v1",
+        "publishedAt": "2026-08-25T17:35:42.000Z",
+        "summary": "Web agents that act from rendered pixels avoid the fragility and heavy token cost of reading a page's HTML or accessibility tree, but training them depends on large amounts of high-quality interaction trajectories, and how to produce such data at scale remains an open problem. Public datasets typically contain only a few thousand trajectories drawn from a fixed and narrow set of websites, and even recent automated synthesis pipelines stay bound to predefined site lists or tutorial sources, so the number of distinct websites the agent ever sees barely grows. We present BrowserForge, a framework that generates web interaction data at scale by driving many browser sandboxes in parallel over the open web. BrowserForge couples three components: an open-web sourcing stage that exposes the agent to hundreds of thousands of real, openly reachable websites; a sandbox cluster manager that schedules hundreds of concurrent browsers with high utilization; and a Proposer-Solver dual-agent loop that turns a raw page into an executable task and then collects a verified trajectory for it. A rule-plus-model cleaning pipeline removes failed runs and rewrites the surviving reasoning into a single unified chain-of-thought style. Page structure such as the accessibility tree is used only as a synthesis-time signal; the agent we train and release acts purely from the screenshot. The resulting corpus contains 203,238 trajectories, each collected from a distinct website, larger and more diverse than prior trajectory datasets. Fine-tuning a compact multimodal model on this corpus raises its success rate on the live Online-Mind2Web from 25.66% to 33.33% and consistently improves step accuracy on the static Multimodal-Mind2Web, with the gain growing as the corpus scales. Controlled analyses further confirm that open-web sourcing and broad website coverage are key contributors to the observed improvement.",
+        "authors": [
+          "Fei Tang",
+          "Huawen Shen",
+          "Zhiqiong Lu",
+          "Zhengxi Lu",
+          "Pengyuan Lyu",
+          "Chengquan Zhang",
+          "Weiming Lu",
+          "Jun Xiao",
+          "Yueting Zhuang",
+          "Yongliang Shen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 26
+      },
+      {
+        "title": "FedV-KGQA: Multi-Hop Question Answering over Vertically Partitioned Knowledge Graphs",
+        "url": "https://arxiv.org/abs/2608.24846v1",
+        "publishedAt": "2026-08-25T17:34:27.000Z",
+        "summary": "Real-world data for knowledge graph question answering is often distributed across different organizations due to governance and data sovereignty constraints. While centralized systems exist, they cannot answer multi-hop questions when the required facts are split across vertically partitioned silos. In this paper, we propose FedV-KGQA, a framework for multi-hop reasoning over knowledge graphs in which organizations share entities but own disjoint sets of relations. Our approach combines local graph enrichment and knowledge graph embeddings to ensure raw triples and relation parameters never leave each silo, establishing a structural data boundary without requiring centralized graph access. We further introduce a topic entity anchoring mechanism that grounds questions in the correct graph neighborhood without any runtime inter-silo communication. We evaluate 12 model configurations across three benchmarks and show that FedV-KGQA performs strongly, remains close to centralized performance, generalizes to 3-hop reasoning, and is robust to embedding perturbations.",
+        "authors": [
+          "Md Saikat Islam Khan Bappy",
+          "Oshani Seneviratne"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 26
+      },
+      {
+        "title": "LAION-BVD: A 10-Million-Hour Open Video Dataset for Multimodal Pre-training",
+        "url": "https://arxiv.org/abs/2608.24845v1",
+        "publishedAt": "2026-08-25T17:34:19.000Z",
+        "summary": "We present LAION-BVD, a large-scale open video dataset for multimodal learning, which contains 1.3B platform-specific video URLs collected from CommonCrawl. From these, we download 80M videos with a total duration of 10 million hours. The dataset is designed for multimodal pre-training across the video, audio, and image modalities. Using content-aware scene detection, we extract clips for which we synthetically generate video and audio captions. Models trained on these data achieve competitive performance on standard video-text and audio-text benchmarks, with consistent improvements as training or model scale increases. Additionally, we explore video frames as an alternative source of image-text data by extracting scene-changing frames. These frames exhibit a visual distribution distinct from standard web image corpora, and models trained on this dataset achieve strong image-text retrieval performance. We release LAION-BVD to the research community. It significantly expands open access to multimodal videos at an unprecedented scale.",
+        "authors": [
+          "Andreas Hochlehnert",
+          "Marianna Nezhurina",
+          "Mehdi Cherti",
+          "Andrej Radonjic",
+          "Thaddäus Wiedemer",
+          "Christoph Schuhmann",
+          "Romain Beaumont",
+          "Wieland Brendel",
+          "Bernhard Schölkopf",
+          "A. Sophia Koepke",
+          "Jenia Jitsev",
+          "Matthias Bethge"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 26
+      },
+      {
+        "title": "Reading Is Not Using: Retrieval, Judgment, and the Design of AI Financial Research Workflows",
+        "url": "https://arxiv.org/abs/2608.24842v1",
+        "publishedAt": "2026-08-25T17:31:25.000Z",
+        "summary": "Large language models (LLMs) are increasingly deployed as AI analysts to process financial disclosures and support AI-assisted investment decisions. Yet such systems are usually evaluated by what they can retrieve, not whether retrieved information affects their judgments. We identify a retrieval-integration gap in long-context financial analysis. Holding focal-firm information fixed and varying only unrelated context from 2,000 to 128,000 tokens, we find that a risk disclosure's influence on investment judgments falls to the experimental noise floor even as direct retrieval remains accurate. The pattern replicates across model families and judgment tasks and in experiments removing real disclosures from actual 10-K filings. More capable models postpone but do not eliminate the gap. Causal memory interventions show that compressed summaries and source-text lookup jointly transmit disclosures into judgments. Workflow architecture determines whether this transmission succeeds: chunk-and-summarize pipelines evict relevant information, whereas a targeted, structured restatement adjacent to the decision restores its influence. AI analyst performance is therefore jointly determined by model capability and workflow architecture. Retrieval-based evaluations can certify systems whose investment judgments ignore information they demonstrably retrieved.",
+        "authors": [
+          "Miao Liu",
+          "Zhizhe Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 26
+      },
+      {
+        "title": "A Dual-Dimensional LLM Framework for Automated Item Incidental Content Similarity Analysis in Large-Scale Assessments",
+        "url": "https://arxiv.org/abs/2608.24825v1",
+        "publishedAt": "2026-08-25T17:07:16.000Z",
+        "summary": "The rapid expansion of large-scale assessments and the growing adoption of automatic item generation have intensified concerns about incidental content redundancy, where construct-irrelevant elements such as wording or contextual framing become unintentionally repetitive across items. Traditional similarity metrics like BLEU or cosine similarity, often fail to capture the nuanced structural and semantic layers that drive perceived redundancy simultaneously. This study proposes a dual-dimensional framework for Automated Item Similarity Analysis (AISA) powered by Large Language Models (LLMs), operationalizing similarity through Structured Decomposition and Semantic Relatedness. Psychometric validation indicates that LLM-derived metrics align more closely with indicators of construct-irrelevant local dependence and yield more coherent item parameter groupings than traditional text-based measures. The framework is further evaluated through its application in Computerized Adaptive Testing (CAT). Simulations reveal that incorporating LLM-based similarity constraints into item selection improves estimation stability and reduces bias with minimal efficiency trade-offs, outperforming constraints based on conventional metrics. These findings highlight the potential of LLM-powered AISA to support scalable bank curation, content-aware test assembly, and experience-sensitive adaptive testing across diverse assessment contexts.",
+        "authors": [
+          "Jing Huang",
+          "Jihong Zhang",
+          "Hua-Hua Chang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 26
+      },
+      {
+        "title": "Constrained Entity Selection under Partial Knowledge for LLM-Based Knowledge Graph QA",
+        "url": "https://arxiv.org/abs/2608.24824v1",
+        "publishedAt": "2026-08-25T17:04:32.000Z",
+        "summary": "Large language models are increasingly used for knowledge graph question answering (KGQA), but can fail to correctly ground answers in the underlying graph. Current approaches to LLM-based KGQA either rely on full semantic parsing into executable queries such as SPARQL, which is brittle in practice due to complex schemas or incompleteness of real-world KGs, or on LLM-reasoning and answer generation over KGs, which can be more robust but lacks formal guarantees. In this work, we study a complementary setting in which \\emph{candidate} answers are generated by an LLM-based system and subsequently verified using lightweight symbolic constraints derived from the question. We introduce \\emph{Constrained Entity Selection under Partial Knowledge (CES-PK)}, a problem formulation that focuses on eliminating invalid answers and providing symbolic support for valid ones without requiring construction of executable logical forms. To account for incomplete KGs, we employ a three-valued constraint semantics (\\emph{satisfied, violated, unknown}) that avoids incorrect rejections under open-world assumptions. To demonstrate the effects of our method, we instantiate this framework over the Hetionet biomedical knowledge graph and evaluate the impact of type, relation, and exclusion constraints. Experiments show that precision improves by filtering invalid candidates, while recall is preserved due to retaining candidates whose constraints are not explicitly violated. Satisfied constraints provide additional positive symbolic evidence to rank remaining candidates.",
+        "authors": [
+          "Emanuel Kitzelmann"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 26
+      }
+    ],
     "news": [
+      {
+        "title": "OpenAI releases its official report on the Hugging Face breach",
+        "url": "https://techcrunch.com/2026/08/26/openai-releases-its-official-report-on-the-hugging-face-breach/",
+        "publishedAt": "2026-08-26T19:05:22.000Z",
+        "summary": "The report, which spans several discrete cybersecurity compromises, is the most complete accounting of the incident to date.",
+        "authors": [
+          "Russell Brandom"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 0
+      },
+      {
+        "title": "Intelligent transcription with Gemini 3.5 Transcribe",
+        "url": "https://deepmind.google/blog/intelligent-transcription-with-gemini-3-5-transcribe/",
+        "publishedAt": "2026-08-26T17:01:00.000Z",
+        "summary": "Now you can get more intelligent speech-to-text transcription with Gemini 3.5 Transcribe.",
+        "authors": [],
+        "source": "Google DeepMind",
+        "feed": "Google DeepMind Blog",
+        "provenance": "https://deepmind.google/blog/rss.xml",
+        "category": "Models",
+        "ageHours": 2
+      },
       {
         "title": "Radar makes podcasts searchable — and usable by AI agents",
         "url": "https://techcrunch.com/2026/08/26/radar-makes-podcasts-searchable-and-usable-by-ai-agents/",
@@ -101,7 +338,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 1
+        "ageHours": 3
       },
       {
         "title": "Ex-Meta scientists want to bring visual AI to the factory floor",
@@ -115,7 +352,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Bill Gates wants to see a robot tax and &#8216;Human Reserved&#8217; jobs to mitigate harms from AI",
@@ -129,7 +366,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "Surprise: Z.ai is the AI lab behind the mysterious Ox Alpha model",
@@ -143,7 +380,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "Robot brain builders are pushing out of their GPT-2 era",
@@ -157,7 +394,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 6
       },
       {
         "title": "QueryStory wants you to believe what AI is telling you",
@@ -171,7 +408,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Arga Labs is building a better way to train enterprise AI agents",
@@ -185,7 +422,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 6
       },
       {
         "title": "Hearing tech startup Legato emerges from stealth with $12M and a peek at its AI hearing glasses",
@@ -199,7 +436,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 7
       },
       {
         "title": "Runable hits $21M to bet AI agents can go from building businesses to growing them",
@@ -213,68 +450,42 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
-      },
-      {
-        "title": "AI helps design new materials that work in the real world",
-        "url": "https://news.mit.edu/2026/ai-helps-design-new-materials-that-work-in-real-world-0826",
-        "publishedAt": "2026-08-26T09:00:00.000Z",
-        "summary": "Today, anyone with a large enough artificial intelligence model can generate millions of new material designs in minutes. Unfortunately, that hasn’t led to a huge leap in the number of new materials being used to improve the performance of products like computer chips and rockets. One reason for the translation gap is that current models don’t reliably factor in the chemical stability of the materials they generate, and unstable materials aren’t very useful in the real world. That forces industries to allocate huge computational budgets to screening out all the unstable materials they generate, in some cases leaving behind a tiny fraction of usable options. Now, MIT researchers have developed a framework that can be applied at the beginning of the materials generation process to vastly improve the stability rate while achieving targeted material properties. It works by ensuring every design satisfies certain key rules of chemistry relating to the electrons around the materials’ atoms before the expensive generation step begins. The researchers call their approach “crystal generator with valence-constrained design, or CrysVCD. In a paper published today in Nature Computational Science , the researchers show how CrysVCD allowed several commonly used material models to meet those valence shell rules more often, and used it to achieve high lattice-dynamics stability — a stringent stability test — in nearly 70 percent of computational material generations. They also showed the approach could support the creation of materials with specific desired properties, like high thermal conductivity or high dielectric constant, which is important for computer chips and data centers. A hint of how the researchers envision people using their system is in the name. “If material-generating models are like DVDs, we are like the DVD player,” says associate professor of nuclear science and engineering Mingda Li. “You can plug this into any kind of model, not only existing diffusion models but also future models, where people can’t generate enough stable materials, and it can improve stability.” Joining Li on the paper are Mouyang Cheng SM ’26 and Weiliang Luo, MIT doctoral students in materials science and engineering and chemistry, respectively; Hao Tang PhD ’26, a recent graduate in materials science and engineering; Bowen Yu, a senior undergraduate in physics; Yongqiang Cheng, a staff scientist at the Oak Ridge National Laboratory; Weiwei Xie, an associate professor at Michigan State University; Ju Li, MIT’s Carl Richard Soderberg Professor in Power Engineering; and Heather Kulik, MIT’s Lammot du Pont Professor of Chemical Engineering. More efficient materials Computational approaches to materials design have been around for decades, but recent advances in artificial intelligence have increased excitement about their potential. Of particular interest are models that can start with a desired material property and work backward to deliver a material that achieves that goal. Some of those models use an AI technique known as diffusion, which is commonly used to generate images, while others use large language models like the one powering ChatGPT and Claude, &nbsp; but both approaches struggle to ensure their material generations achieve chemical stability or follow fundamental principles about how chemicals interact and behave. The solution has been to add another layer of computing on top of the generative process to filter out unstable materials. “It’s becoming easy to generate the material structure,” Cheng says. “But the validation process, especially the part where you test the stability, has a huge computational cost. It’s something like 90 percent of the computational cost for creating usable materials, and it can take weeks or months.” Big companies with huge computing budgets can afford to run those processes, but many small companies and research labs can’t, potentially limiting innovation in the field. “In academia, where we have fewer resources, I think we can still achieve strong performance with smarter designs and other approaches,” Kulik explains. “Generating a model and then down-selecting for stability is inefficient. There’s a high computational cost. But if we put a language model in the beginning of the process to constrain the generation, you can significantly enhance the ratio of stable materials generated.” The new study involved MIT researchers affiliated with the departments of Materials Science and Engineering, Chemistry, Chemical Engineering, Physics, and Nuclear Science and Engineering. Together the researchers combined AI diffusion models with a language model. In the first stage of their process, the language model produces chemically valid formulas. In the second stage, the diffusion model uses that formula to generate the corresponding atomic structure of the crystal material in coordination with the underlying material generation model. “Diffusion for typical material generation is a slow process — you can think of it like 1,000 steps to create one material,” Luo says. “In contrast, when our model is used in the beginning, you can think of it like five steps. It allows you to screen out the unstable materials to generate higher quality materials. And it works with any models generating materials,” Tang adds. The researchers showed their approach created more stable materials an order of magnitude more efficiently than approaches that rely on screening materials after they’re generated. When fine-tuned on stability metrics, their approach produced crystalline materials that achieved 68 percent mechanical stability and 85 percent metastability, which measures if a material stays in a stable state when undisturbed. The researchers then used their approach to generate material candidates with high thermal conductivity and easy polarization in an electric field. “These are materials useful for the semiconductor industry and high thermal conductivity materials relevant to data center cooling,” Ju Li says. “In principle, you could also use this to create other properties, but thermal conductivity has become really important for cooling data centers. There’s been a huge increase in energy use in that industry, and 30 percent of that energy goes to cooling. The industry needs materials with high thermal conductivity to more efficiently remove the heat.” Democratizing material design The new approach doesn’t work with every kind of material — it works best with solid structures with highly ordered internal arrangements. Still, the approach could be used to generate stable new crystalline materials with a host of important properties. “We are not just generating stable materials, we’re also prioritizing performance,” Cheng says. “Any time you have two goals, achieving those goals with anything over 50 percent is hard in this field. In the past, people might have a goal for specific properties and not stability, or vice-versa, and get a single-digit percentage of materials that fit their goal.” Ultimately the approach will enable more researchers to develop novel materials for a range of next-generation applications. “This will save huge computation costs and time by removing downstream selection requirements,” Li says. “That will help not only large efforts that generate hundreds of millions of materials, but also smaller research groups with targeted applications.” The work was supported, in part, by the U.S. Department of Energy, a Mathworks Engineering Fellowship, the National Science Foundation, and the U.S. Defense Threat Reduction Agency.",
-        "authors": [
-          "Zach Winn | MIT News"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
         "ageHours": 8
       },
       {
-        "title": "India&#8217;s Ringg gets backing from Peak XV as it pushes voice AI past the phone call",
-        "url": "https://techcrunch.com/2026/08/25/indias-ringg-gets-backing-from-peak-xv-as-it-pushes-voice-ai-past-the-phone-call/",
-        "publishedAt": "2026-08-26T03:30:00.000Z",
-        "summary": "Ringg has raised $10 million from Peak XV as a part of its Series A extension.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 13
-      },
-      {
-        "title": "Robotics startup Generalist reaches $3B valuation, sources say",
-        "url": "https://techcrunch.com/2026/08/25/robotics-startup-generalist-reaches-3b-valuation-sources-say/",
-        "publishedAt": "2026-08-26T00:40:59.000Z",
-        "summary": "The $200 million extension comes just months after the physical AI startup reached a $2 billion valuation.",
-        "authors": [
-          "Marina Temkin"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 16
+        "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+        "url": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+        "publishedAt": "2026-08-26T10:00:00.000Z",
+        "summary": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "Models",
+        "ageHours": 9
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
+    "totalItems": 24,
     "last24h": 12,
     "topCategories": [
       {
         "name": "Research",
-        "count": 5
-      },
-      {
-        "name": "General",
-        "count": 4
+        "count": 13
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 8
+      },
+      {
+        "name": "General",
+        "count": 2
+      },
+      {
+        "name": "Products",
+        "count": 1
       }
     ]
   }
