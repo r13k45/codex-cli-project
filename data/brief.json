@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T05:46:58.239Z",
+  "generatedAt": "2026-08-26T07:05:08.906Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,7 +27,10 @@
         }
       ],
       "itemCount": 12,
-      "errors": []
+      "errors": [
+        "research:arXiv cs.LG -> HTTP 503",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -85,20 +88,6 @@
   "sections": {
     "research": [
       {
-        "title": "What FID Hides: Detecting, Ranking, and Diagnosing Deviations in Generative Evaluation",
-        "url": "https://arxiv.org/abs/2608.24881v1",
-        "publishedAt": "2026-08-25T17:58:46.000Z",
-        "summary": "Generative models are commonly ranked by Fréchet Inception Distance (FID) and Kernel Inception Distance (KID), yet FID's first-two-moment summary can miss distributional differences, and a reported scalar gap alone is not a calibrated test against sampling variation. FID's moment restriction has concrete consequences: on ImageNet, visually unrecognizable images optimized only to match the reference Inception mean and covariance obtain FID $24.7$ versus $58.6$ for held-out real images (lower is better). Moreover, FID and KID are scalar discrepancies that are unchanged when the two samples are exchanged and therefore do not encode the direction of a dispersion change: under-dispersion, as can occur in mode collapse, versus over-dispersion. We introduce \\textbf{ZID} (\\emph{Z-resolved Integrated Diagnostic}), which combines six standardized location- and dispersion-sensitive arms from a rank graph (RISE) and Gaussian kernels (GPK at two bandwidths). Rather than asking one scalar to serve incompatible roles, ZID reports three linked outputs: an index for ranking departure magnitude, a permutation $p$-value for testing distributional equality, and a signed dispersion readout for diagnosis. In controlled experiments, ZID detects a broad range of departures, and its score tracks increasing severity along the corresponding sweeps, including cases in which FID is flat or reversed. On DiT-XL/2 and SiT-XL/2 guidance sweeps, ZID detects departure from real data, and its signed readout labels the high-guidance diversity collapse as under-dispersion.",
-        "authors": [
-          "Hao Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
         "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
         "url": "https://arxiv.org/abs/2608.24876v1",
         "publishedAt": "2026-08-25T17:56:35.000Z",
@@ -117,7 +106,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 12
+        "ageHours": 13
       },
       {
         "title": "SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL",
@@ -135,83 +124,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "Parameterized Complexity of $L_p$-Lipschitz Constants for Input Convex Neural Networks and $L_p$-Norm Maximization over Zonotopes",
-        "url": "https://arxiv.org/abs/2608.24865v1",
-        "publishedAt": "2026-08-25T17:47:37.000Z",
-        "summary": "Lipschitz constants are a standard way to quantify the sensitivity of neural networks to small input perturbations, but computing them is difficult even for shallow ReLU networks. We study this problem for two-layer input-convex neural networks (ICNNs), a restricted architecture where nonnegative output weights enforce convexity. Computing the $L_p$-Lipschitz constant for these networks is equivalent to maximizing the dual norm over a zonotope. While $L_1$- and $L_\\infty$-norm maximization on zonotopes admit fixed-parameter and polynomial-time algorithms, respectively, the parameterized complexity of the remaining $L_p$-norms was open. We prove that, for every fixed $p\\in (1,\\infty)\\cap \\mathbb{Q}$, maximizing the $L_p$-norm over a zonotope in $\\mathbb{R}^d$ is W[1]-hard with respect to the dimension $d$. Moreover, our hardness results imply that brute-force enumeration algorithms are essentially optimal for this problem under the Exponential Time Hypothesis. By duality, the same hardness results hold for computing the $L_p$-Lipschitz constant of two-layer ReLU ICNNs. Our proof first establishes the result for the $L_2$-norm and then transfers the construction to arbitrary fixed $p\\in (1,\\infty)\\cap\\mathbb{Q}$ using a suitable Taylor approximation. These results resolve the corresponding questions regarding the parameterized complexity status for zonotope norm maximization and two-layer ICNN Lipschitz constants.\n  Our paper resolves an open problem posted at COLT'25. There are several independent concurrent papers resolving the same problem. Our paper prioritizes a clear exposition of the underlying mathematics and conceptual intuitions behind the proof. Additionally, we explicitly describe our research process including the use of LLMs.",
-        "authors": [
-          "Aritra Das",
-          "Vincent Froese",
-          "Moritz Grillo",
-          "Debayan Gupta",
-          "Christoph Hertrich",
-          "Tharrshann Jayan Logarajah",
-          "Georg Loho",
-          "Mihir More",
-          "Moritz Stargalla"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 12
-      },
-      {
-        "title": "Improving Cross-Problem Vehicle Routing with Locally Augmented Preferences and Representation Disentanglement",
-        "url": "https://arxiv.org/abs/2608.24859v1",
-        "publishedAt": "2026-08-25T17:44:23.000Z",
-        "summary": "Multi-task vehicle routing problem (VRP) solvers seek to handle multiple VRP variants within a single unified model, avoiding the need to train a separate model for every variant. In spite of recent progress, current approaches remain limited on two fronts. On the training side, reinforcement learning suffers from reward-scale disparities and shrinking advantage signals as policies improve, whereas preference optimization stagnates once sampled tours become near-identical and thus fundamentally limited by the quality of the policy's own generated solutions, leaving both paradigms with weak supervision as training progresses. On the architecture side, existing fully shared encoders entangle constraint-dependent representations across heterogeneous variants, which limits generalization. We address these gaps with two model-agnostic contributions. First, we propose Preference Optimization with Locally Augmented Refinement (POLAR), a novel training algorithm that applies a local search refinement pass to the best decoded tour before forming preference pairs, yielding much more informative pairwise margins. Second, a Progressive Layered Extraction (PLE) encoder routes each encoder layer through one shared expert and a set of task-specific experts via a gating mechanism, progressively separating common routing structure from constraint-specific encodings. Through extensive experiments on various VRP variants, we show that POLAR and PLE together elevate the current state-of-the-art among neural multi-task solvers. We reduce the average gap to reference solutions by 21.3% relative to the strongest published baseline on 16 in-distribution variants, and outperform prior neural methods on 27 out of 32 unseen variants. Ablation studies confirm the efficacy of each contribution, showing that both improve cross-problem generalization across multiple backbone model architectures.",
-        "authors": [
-          "Arthur Corrêa",
-          "Paulo Nascimento",
-          "Samuel Moniz"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 12
-      },
-      {
-        "title": "Bellman Calibration for Marginalized Importance Weighting in Offline Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2608.24858v1",
-        "publishedAt": "2026-08-25T17:44:02.000Z",
-        "summary": "Marginalized importance weighting evaluates a target policy by reweighting offline state-action samples with its discounted occupancy ratio, characterized by an adjoint Bellman equation. Existing minimax, primal-dual, and fitted fixed-point estimators can leave residual occupancy-balance violations because of function-class approximation, regularization, or incomplete optimization. These violations are difficult to diagnose and reduce because the objectives generally lack a direct supervised validation loss for hyperparameter tuning, model selection, and early stopping. We introduce isotonic Bellman calibration, a one-dimensional, model-agnostic post-processing method that reduces these violations while preserving the ranking information in any initial occupancy-ratio estimate. The method corrects the estimate's scale and shape by applying fitted occupancy-ratio evaluation (FORE) over a one-dimensional class of nondecreasing transformations. We characterize Bellman calibration as a conditional fixed-point property equivalent to occupancy-balance against every test function of the calibrated ratio. More generally, we derive a calibration-refinement bound showing that any fitted ratio with small calibration error performs nearly as well as the best post-processing based on its fitted values. For isotonic Bellman calibration, we establish finite-sample calibration guarantees and a KL oracle inequality relative to the best monotone transformation of the initial estimate. Consequently, isotonic Bellman calibration achieves small calibration error and KL risk within statistical error of the best monotone correction, with guarantees for downstream target-occupancy functionals, including policy-value estimation.",
-        "authors": [
-          "Lars van der Laan",
-          "Nathan Kallus"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "BrowserForge: Scaling Web Episode via Parallel Browser Sandboxes",
-        "url": "https://arxiv.org/abs/2608.24848v1",
-        "publishedAt": "2026-08-25T17:35:42.000Z",
-        "summary": "Web agents that act from rendered pixels avoid the fragility and heavy token cost of reading a page's HTML or accessibility tree, but training them depends on large amounts of high-quality interaction trajectories, and how to produce such data at scale remains an open problem. Public datasets typically contain only a few thousand trajectories drawn from a fixed and narrow set of websites, and even recent automated synthesis pipelines stay bound to predefined site lists or tutorial sources, so the number of distinct websites the agent ever sees barely grows. We present BrowserForge, a framework that generates web interaction data at scale by driving many browser sandboxes in parallel over the open web. BrowserForge couples three components: an open-web sourcing stage that exposes the agent to hundreds of thousands of real, openly reachable websites; a sandbox cluster manager that schedules hundreds of concurrent browsers with high utilization; and a Proposer-Solver dual-agent loop that turns a raw page into an executable task and then collects a verified trajectory for it. A rule-plus-model cleaning pipeline removes failed runs and rewrites the surviving reasoning into a single unified chain-of-thought style. Page structure such as the accessibility tree is used only as a synthesis-time signal; the agent we train and release acts purely from the screenshot. The resulting corpus contains 203,238 trajectories, each collected from a distinct website, larger and more diverse than prior trajectory datasets. Fine-tuning a compact multimodal model on this corpus raises its success rate on the live Online-Mind2Web from 25.66% to 33.33% and consistently improves step accuracy on the static Multimodal-Mind2Web, with the gain growing as the corpus scales. Controlled analyses further confirm that open-web sourcing and broad website coverage are key contributors to the observed improvement.",
-        "authors": [
-          "Fei Tang",
-          "Huawen Shen",
-          "Zhiqiong Lu",
-          "Zhengxi Lu",
-          "Pengyuan Lyu",
-          "Chengquan Zhang",
-          "Weiming Lu",
-          "Jun Xiao",
-          "Yueting Zhuang",
-          "Yongliang Shen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 12
+        "ageHours": 13
       },
       {
         "title": "FedV-KGQA: Multi-Hop Question Answering over Vertically Partitioned Knowledge Graphs",
@@ -226,7 +139,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "LAION-BVD: A 10-Million-Hour Open Video Dataset for Multimodal Pre-training",
@@ -251,7 +164,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "Reading Is Not Using: Retrieval, Judgment, and the Design of AI Financial Research Workflows",
@@ -266,7 +179,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 12
+        "ageHours": 14
       },
       {
         "title": "A Dual-Dimensional LLM Framework for Automated Item Incidental Content Similarity Analysis in Large-Scale Assessments",
@@ -282,7 +195,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 13
+        "ageHours": 14
       },
       {
         "title": "Constrained Entity Selection under Partial Knowledge for LLM-Based Knowledge Graph QA",
@@ -296,7 +209,106 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 13
+        "ageHours": 14
+      },
+      {
+        "title": "Strictly Causal Streaming Video Anomaly Detection with a Theoretically-Grounded State-Space Core",
+        "url": "https://arxiv.org/abs/2608.24810v1",
+        "publishedAt": "2026-08-25T16:52:32.000Z",
+        "summary": "Recent work has applied Mamba style state space models (SSMs) to video anomaly detection, yet existing approaches still rely on buffering clips or windows internally, lack a theoretical account of how temporal memory relates to detection latency, and benchmark efficiency only through GPU throughput rather than the edge hardware these methods are intended to target. We introduce a strictly causal streaming anomaly detector whose fixed size state is updated in O(1) time and memory per incoming frame, with no lookahead and no clip buffering. Its temporal core is a diagonal linear state space recurrence with an input and state dependent decay gate, trained self supervised through causal next embedding prediction on a frozen visual backbone. We derive a closed form relationship between the recurrence decay spectrum and both detection delay and the shortest anomaly it can reliably capture, then validate empirically on UCSD Ped2 and CUHK Avenue. The settling delay bound predicted from the learned base decay (57 to 59 frames) sits far above the measured detection delay (1.6 and 18.4 frames), showing that the event boundary gate, not the base decay, governs responsiveness. We further report end to end latency and throughput measured directly on Apple M3 Pro hardware, 0.74 ms and 0.77 ms per frame (over 1300 FPS), rather than simulated GPU numbers. With an untuned initial configuration the method reaches 67.9 percent and 70.2 percent frame level AUC on Ped2 and Avenue, trailing prior non causal SSM baselines in accuracy. Ablations over decay rate, state size, and gating reveal that the gate contribution is dataset size dependent, hurting accuracy on the smaller Ped2 training set but helping on the larger Avenue one. Closing this accuracy gap and extending evaluation to a third, larger benchmark are immediate next steps.",
+        "authors": [
+          "Yogesh Kumar"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Automatic Model Card Generation Using an LLM",
+        "url": "https://arxiv.org/abs/2608.24807v1",
+        "publishedAt": "2026-08-25T16:49:37.000Z",
+        "summary": "Model cards are structured documents that summarize key information about machine learning models to improve transparency, usability, and accountability. However, they often lack a consistent structure, and many models provide no model cards, making comparison and interpretation difficult. This paper presents two contributions. First, we propose MCTidy, an LLM-based approach that reorganizes existing model cards into a standardized template to improve clarity and comparability. Second, we introduce MCGenie, an LLM-based system that generates model cards directly from model repository data. We apply MCTidy to 48 Hugging Face model cards and evaluate information retention, section alignment, hallucination, and stability. Our findings show high information retention with minimal textual loss, accurate section assignment, rare hallucinations primarily in descriptive sections, and strong stability across runs. We assess MCGenie by generating model cards for the same 48 models and assessing semantic similarity, factual correctness, and sensitivity to input resources. The generated model cards achieved high semantic similarity (mean around 0.9); over half were fully correct, and most remaining errors were minor. Generation quality depended strongly on the availability of supporting resources, particularly associated papers. Overall, our findings demonstrate the potential of LLM-based methods to enable scalable, standardized model card documentation.",
+        "authors": [
+          "Tajkia Rahman Toma",
+          "Balreet Grewal",
+          "Cor-Paul Bezemer"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments",
+        "url": "https://arxiv.org/abs/2608.24804v1",
+        "publishedAt": "2026-08-25T16:48:05.000Z",
+        "summary": "We present StarHarness, a framework for evolving environment-specific agent harnesses while keeping model weights fixed. The evolved harness can include prompt and task framing, tool interfaces, skills, MCP-backed providers, subagent structure, and agent-loop configuration. StarHarness constructs a compact evolution pool by stratifying tasks according to baseline failure behavior, separates proposer-visible search tasks from proposer-hidden selection tasks, and reserves held-out tasks for evaluating generalization. Across ITBench SRE, EnterpriseOps-Gym ITSM, and AutomationBench Finance, harness evolution improves full-benchmark performance by 20-35 percentage points over the default harness after 4-12 accepted changes per environment. These gains persist on tasks excluded from evolution and transfer without re-evolution across GPT and Qwen model families. Trace analysis links the improvements to interface repairs, environment conventions, and operational knowledge that compresses search, with fewer false-positive diagnoses and shorter trajectories in several settings. StarHarness therefore offers a practical way to reduce persistent model-environment mismatch in tool-rich enterprise tasks.",
+        "authors": [
+          "Esakkivel Esakkiraja",
+          "Denis Akhiyarov",
+          "Vikas Yadav",
+          "Sai Rajeswar",
+          "Patrice Bechard",
+          "Sridhar Nemala",
+          "Sagar Davasam"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
+        "url": "https://arxiv.org/abs/2608.24794v1",
+        "publishedAt": "2026-08-25T16:39:00.000Z",
+        "summary": "Outcome-supervised search agents learn when and how to retrieve evidence, but terminal rewards neither localize intermediate errors nor redirect an ongoing trajectory before those errors compound. Treating corrective feedback as a learned in-trajectory intervention couples the two roles: the agent must decide when to request and use feedback, while the critic must infer useful corrections from outcome-confounded rollouts whose failure patterns shift as the agent improves. We introduce CAFE (Coupled Agent--Feedback Evolution), a framework in which a shared-parameter model alternates between search-agent and critic roles. CAFE initializes feedback-conditioned recovery from trajectories built around the base agent's own failures, then couples online and offline optimization. During online RL, a comparative feedback estimate uses a prompt-level call--skip success gap to shape request returns, while feedback-aware advantage shaping reweights token advantages before and after feedback. Offline, rollout-derived preference optimization learns feedback from matched successful and unsuccessful trajectories. On seven agentic search benchmarks, CAFE outperforms the evaluated RL-based search agents on average, retains its gains across all six out-of-domain benchmarks, and reduces answer-level hallucinations. One-sided ablations show that improving only the agent or only the critic eventually plateaus, whereas alternating the two updates continues to improve performance. These findings suggest that a self-improving search agent needs feedback that co-evolves with the policy it guides.",
+        "authors": [
+          "Boyang Liu",
+          "Senjie Jin",
+          "Peixin Wang",
+          "Zhangyue Yin",
+          "Yibo Wang",
+          "Yuhao Zhou",
+          "Xinbing Liang",
+          "Shizheng Zhu",
+          "Yuhui Wang",
+          "Jingqi Tong",
+          "Zhiheng Xi",
+          "Jiazheng Zhang",
+          "Clive Bai",
+          "Clarenceai",
+          "Blaze Chen",
+          "Tao Gui",
+          "Qi Zhang",
+          "Xuanjing Huang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Right Diagnoses, Decorative Reasoning:A Perturbation Audit of Medical Chain-of-Thought",
+        "url": "https://arxiv.org/abs/2608.24790v1",
+        "publishedAt": "2026-08-25T16:37:39.000Z",
+        "summary": "Clinicians read chain-of-thought (CoT) rationales as evidence of medical reasoning, but whether the visible chain plays that role is rarely tested. General-domain CoT-faithfulness probes ignore clinical cost, and medical LLM evaluations treat the chain as a black box. We close this gap with a medical perturbation audit: a 30-operator battery edits both the chain and the question with clinically motivated operators (severity reversal, negation flip, demographic swap, evidence ablation), paired with a chain-update times answer-flip joint analysis that classifies each model by its failure mode. Applied to 14 LLMs on four medical QA benchmarks, three independent tests converge: the Chain-Decoupling Rate (CDR; chain does not register the edit and the answer does not flip) is 72.9% panel-wide on clinically meaningful destructive edits, chain corruption leaves accuracy unchanged, and removing CoT prompting does not reduce accuracy. Two board-certified clinicians re-annotate N=197 perturbed questions; 98.5% leave the gold defensible. The pattern holds across medical and reasoning fine-tuning and scale; on the closed-source tier, where the chain text is unavailable, the answer-side signals are consistent with the same decoupling. Our framework and CDR provide a reusable yardstick for auditing whether medical CoT is faithful or merely documentation.",
+        "authors": [
+          "Mengzhu Xu",
+          "Jifan Gao",
+          "Xia Jiang",
+          "Yaoxin Wu",
+          "Xi Long"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
       }
     ],
     "news": [
@@ -312,7 +324,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 4
       },
       {
         "title": "Robotics startup Generalist reaches $3B valuation, sources say",
@@ -326,13 +338,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 6
       },
       {
-        "title": "OpenAI loses a top data center exec, as stream of high-profile departures continues",
+        "title": "OpenAI loses a top data center exec as stream of high-profile departures continues",
         "url": "https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/",
         "publishedAt": "2026-08-26T00:06:20.000Z",
-        "summary": "Before Malone left, OpenAI had already reshuffled its infrastructure org, shifting his reporting line away from President Greg Brockman and putting Vice President Sachin Katti in charge of the group.",
+        "summary": "In a statement to TechCrunch about Malone's departure, OpenAI said it had \"recently reorganized\" its \"infrastructure organization to support the scale and pace of our work.\"",
         "authors": [
           "Lucas Ropek"
         ],
@@ -340,7 +352,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 7
       },
       {
         "title": "Stability AI, maker of image generator Stable Diffusion, raises $76 million in fresh funding",
@@ -354,7 +366,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 11
+        "ageHours": 12
       },
       {
         "title": "Claude Cowork finally remembers what you told the app in chat",
@@ -368,7 +380,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 13
       },
       {
         "title": "Gamma acquires Accel-backed design startup Lica",
@@ -382,7 +394,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 15
+        "ageHours": 16
       },
       {
         "title": "OpenAI’s Jalapeño chip is built for fast inference at scale, benchmarks show",
@@ -396,7 +408,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 17
       },
       {
         "title": "Accel-backed Keenable is indexing the web for AI agents",
@@ -410,7 +422,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 17
+        "ageHours": 18
       },
       {
         "title": "&#8216;The world seems to be ready&#8217;: An interview with OpenAI head of product Thibault Sottiaux",
@@ -424,7 +436,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 18
+        "ageHours": 19
       },
       {
         "title": "The full stack behind abundant intelligence",
@@ -436,7 +448,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 23
+        "ageHours": 24
       },
       {
         "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
@@ -448,7 +460,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 23
+        "ageHours": 24
       },
       {
         "title": "Situational Awareness, star AI hedge fund that nearly imploded, now being probed by the SEC",
@@ -462,22 +474,22 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 29
+        "ageHours": 31
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 23,
+    "last24h": 21,
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
+        "count": 14
       },
       {
         "name": "Models",
-        "count": 6
+        "count": 5
       },
       {
         "name": "General",
