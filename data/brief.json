@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T21:46:42.997Z",
+  "generatedAt": "2026-09-03T00:10:34.225Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,233 +87,50 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Beyond Scores: Understanding LLM-as-a-Judge Mechanisms in Summarization Evaluation",
-        "url": "https://arxiv.org/abs/2609.01604v1",
-        "publishedAt": "2026-09-01T17:59:49.000Z",
-        "summary": "LLM-based evaluators of natural language generation (NLG) quality are widely deployed as scoring tools and as automated training signals, yet the internal procedure by which they assign a rating remains poorly understood. We investigate this procedure mechanistically through an eight-attack perturbation taxonomy across the Readability and Adequacy dimensions of NLG quality, a generation pipeline that produces paired clean and corrupt summaries with controlled error intensity and explicit token-level modification maps, and a four-experiment battery of causal tracing, logit-lens vocabulary projection, and attention-head knockout applied to Themis (Llama-3-8B) and Prometheus (Mistral-7B). Both evaluators implement a structured, coherent evaluation pipeline operating in two stages: below layer 15, attention performs local error comparison and routes the result to the final input position; above it, the MLP cascade integrates the signal and writes the rating, with the decision crystallizing in the residual stream at a sharp late layer (L = 26 on Themis, L = 25 on Prometheus). Furthermore, a base-model control at the same scale (Llama-3-8B) reproduces the routing architecture and crystallization but not the stage separation, isolating the two mechanisms that fine-tuning specifically installs, suppression of below-L15 MLP contribution at the last position and a two-layer advance of the crystallization depth, indicating that fine-tuning sculpts an existing substrate rather than building the pipeline from scratch. We release the source code and data at https://github.com/himil-v/judge-mech",
-        "authors": [
-          "Himil Vasava",
-          "Ming Jiang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Efficient SWE Agent Benchmarking via Trajectory-Aware Evaluation",
-        "url": "https://arxiv.org/abs/2609.01603v1",
-        "publishedAt": "2026-09-01T17:59:46.000Z",
-        "summary": "Evaluating software engineering agents on realistic benchmarks is costly, since each task may require multi-step code exploration, modification, and test execution. Existing efficient evaluation methods select representative subsets to estimate full-benchmark performance, but are largely result-only: they fit historical pass/fail response matrices or static task semantics, discarding how agents solve problems. We propose PTA-IRT, a Privileged Trajectory-Aware Item Response Theory framework that fuses process and outcome signals. Historical execution trajectories supply process-level evidence beyond pass/fail, such as explored context, attempted edits, and solving paths, which PTA-IRT uses as privileged information for calibration subset selection and ability estimation. Under low calibration budgets, PTA-IRT consistently outperforms prior IRT baselines on score and ranking recovery across four SWE benchmarks. Code and data are publicly available at https://github.com/DeepSoftwareAnalytics/PTA-IRT.",
-        "authors": [
-          "Kefeng Duan",
-          "Dewu Zheng",
-          "Yanlin Wang",
-          "Xiwen Wang",
-          "Ensheng Shi",
-          "Xilin Liu",
-          "Yuchi Ma",
-          "Jiachi Chen",
-          "Mingwei Liu",
-          "Zibin Zheng"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation",
-        "url": "https://arxiv.org/abs/2609.01601v1",
-        "publishedAt": "2026-09-01T17:59:39.000Z",
-        "summary": "The repository-level code generation task requires synthesizing code that satisfies task requirements while remaining consistent with the target repository context. Since real-world repositories often exceed the input length limits of LLMs, existing approaches commonly adopt retrieval-augmented generation (RAG) to provide repository-specific context. Despite improving repository-context retrieval, existing methods typically provide context as task-level support, without explicitly identifying the critical tokens that require fine-grained repository context during generation. During the autoregressive generation process of LLMs, errors often concentrate at a small number of decisive positions: once such tokens are generated incorrectly, subsequent code may follow an incorrect semantic path and eventually lead to functional failure. We refer to these positions as \"critical tokens\". In this paper, we propose ACToR, an adaptive critical token-aware retrieval framework for repository-level code generation. ACToR identifies critical tokens during generation and triggers targeted retrieval on demand to provide repository context at these decisive positions. In addition, we design a position-aware weighting method for dense retrievers to prioritize context that is more informative for generation. We evaluate ACToR on two representative repository-level benchmarks, RepoExec and CoderEval. Experimental results show that ACToR consistently outperforms state-of-the-art methods, achieving relative improvements of 8.4% on RepoExec and 15.4% on CoderEval. Beyond performance gains, we systematically quantify the impact of critical tokens, revealing their central role in major generation failures and highlighting the necessity of targeted retrieval strategies. We provide the code and data at https://github.com/DeepSoftwareAnalytics/ACToR.",
-        "authors": [
-          "Kefeng Duan",
-          "Dewu Zheng",
-          "Yanlin Wang",
-          "Terry Yue Zhuo",
-          "Mingwei Liu",
-          "Jianxing Yu",
-          "Jiachi Chen",
-          "Ensheng Shi",
-          "Xilin Liu",
-          "Yuchi Ma",
-          "Zibin Zheng"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "CordisBench: Can Language Models Reason About Component Lifecycles in Dynamic Agent Harnesses?",
-        "url": "https://arxiv.org/abs/2609.01600v1",
-        "publishedAt": "2026-09-01T17:59:13.000Z",
-        "summary": "Dynamic agent harnesses let language models change the software that shapes their own execution. This flexibility brings a new reasoning burden: a local plugin change can propagate through dependencies and cleanup. We introduce CordisBench, a 1,200-question benchmark of this lifecycle reasoning. It combines a controlled formal setting with programs executed against Cordis, a runtime that manages component dependencies and cleanup, and asks models to identify affected components, predict state after a specified teardown order, determine which conditions hold under all or some orders, and choose reconfigurations that succeed when executed. Across these tasks, we evaluate three efficiency-oriented models at low reasoning effort with 2, 4, 8, 16, 24, or 32 relevant interactions, using deterministic task-specific scoring. Models usually handle small systems well but grow less reliable as more interactions become relevant, especially when predicting final state and when reasoning across teardown orders. Additional inference effort recovers marked gains for some models. The cost is nontrivial: on our 16-interaction subset, GPT-5.6 Luna uses nearly 3,000 reasoning tokens per question at medium effort. For these controlled instances, that cost is avoidable: an independent finite reference semantics agrees with Cordis execution on every observation and action outcome used for scoring across all 528 executable questions.",
-        "authors": [
-          "Damien Sileo",
-          "Dimitri Kachler"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "The Rise of Verbal Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2609.01597v1",
-        "publishedAt": "2026-09-01T17:58:18.000Z",
-        "summary": "Natural language is emerging as a primary feedback channel for improving language agents, capable of conveying intent, preferences, and causal structure in forms interpretable by both humans and modern language models. We call this paradigm Verbal Reinforcement Learning (VRL) and offer the first unified account of it. We organize the field around a single axis, \\textit{when} verbal feedback takes effect in an agent's lifecycle and \\textit{what} it modifies, yielding three pillars: (1) \\textbf{Language as Grounding Signal}, where language defines the task itself by specifying goals, states, and reward structures; (2) \\textbf{Language as Deliberative Feedback}, where natural language guides reasoning at test time without the need to update model parameters; (3) \\textbf{Language as Learning Signal}, where language-based feedback shapes model parameters through training. Within each pillar, we synthesize representative work, distinguish key subcategories of approaches, and outline the distinct role language plays in shaping agent behavior. Together, this taxonomy shows how verbal reinforcement is reshaping agent development, while also defining the challenges and opportunities for building more capable and aligned agents.",
-        "authors": [
-          "Kshitij Tayal",
-          "Arun Sharma",
-          "Genta Indra Winata",
-          "Anirban Das",
-          "Sambit Sahu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation",
-        "url": "https://arxiv.org/abs/2609.01596v1",
-        "publishedAt": "2026-09-01T17:58:07.000Z",
-        "summary": "Real-world robotic assembly at sub-millimeter tolerances demands spatial precision, compliant interaction, and robustness to contact failures. We present Facet-0, a robotic foundation model that predicts and values the contact consequences of its actions. Facet-0 unifies multimodal representation learning and reinforcement learning (RL) post-training around a joint action-wrench proposal: a causal wrench history is aligned with vision-language semantics and kinematic state, and flow matching generates each action chunk together with the future wrist-wrench profile it is expected to induce. Deployment rollouts train a distributional Action-Wrench Critic to distinguish motions with similar task progress but different contact outcomes, while phase-aware rewards and contact-selective credit concentrate policy improvement on decisive interactions. To accommodate part-specific dynamics, a lightweight bounded actor reuses the frozen representation for on-robot adaptation; RL remains defined over executable Cartesian actions, while an auxiliary wrench head preserves predictive, non-commanded action-contact coupling. Trained on ManuFacet-1K, a 1,000-hour force-synchronized corpus spanning three embodiments and multiple manufacturing cells, the bounded task-adapted system reaches 82% mean success on five sub-millimeter computer-assembly tasks, compared with 15% for the strongest baseline, with 0.5 mm placement accuracy and 50 ms command latency.",
-        "authors": [
-          "Haoyuan Deng",
-          "Haichao Liu",
-          "Wenkai Guo",
-          "Yuan Ling",
-          "Zaijia Yang",
-          "Yuanjiang Xue",
-          "Haosheng Sun",
-          "Liangzi Wang",
-          "Ziwei Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Mechanism Design for Alignment and Control",
-        "url": "https://arxiv.org/abs/2609.01595v1",
-        "publishedAt": "2026-09-01T17:57:50.000Z",
-        "summary": "We develop a framework for mechanism design with AI agents whose alignment (preferences) and capabilities (feasible actions and information) are unknown. We want such agents to act on our behalf so mechanisms must incentivize both honesty and obedience. A one-sided imitation structure---capabilities can be concealed but not counterfeited---yields a revelation principle, a characterization of implementable policies via nested cyclical monotonicity, and conditions under which eliciting higher-order beliefs can discipline multiple agents. We apply our framework to stylized examples of (i) sandbagging in which a more capable agent pretends to be less capable; (ii) an alignment--interpretability trade-off, where the two are substitutes in the instrument but complements in value; (iii) discipline via peer scoring; (iv) coupling rewards to induce competition among multiple agents; and (v) scalable oversight and reward shaping.",
-        "authors": [
-          "Dirk Bergemann",
-          "Andrew Koh",
-          "Stephen Morris"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "StudentSim: Training LLM-based Student Simulators",
-        "url": "https://arxiv.org/abs/2609.01591v1",
-        "publishedAt": "2026-09-01T17:55:10.000Z",
-        "summary": "AI tutors are most useful when they adapt to each student's strengths, weaknesses, and preferred guidance, but evidence about which guidance works for which student is sparse, slow, and costly to collect from real learners. Student simulators can provide this signal as a proxy, yet existing approaches are limited: state-tracking models fit student behavior but struggle to process explanations or corrections, while LLM role-play follows guidance fluently but does not reliably match the competence of the student being imitated. We present StudentSim, a training framework that turns sparse per-student data into individualized simulators through pooled training followed by per-student specialization. The resulting simulators both mirror a student's own responses and update them under tutor guidance. We also introduce StudentSimEval, a standardized protocol covering 60 students across chess, second-language English writing, and mathematics, using public learner datasets with de-identified records shared for research. StudentSimEval measures behavioral fidelity (F), or how well a simulator matches a student's responses, and guidance responsiveness (R), or how readily it updates under tutor guidance, with all methods fit and evaluated on the same records. Across all three domains, StudentSim outperforms GPT-5.4 on both metrics. In chess, StudentSim reaches F=0.51 and R=0.91, compared with 0.23 and 0.72 for GPT-5.4 and 0.45 and 0.27 for Maia2. As a proof of concept, using StudentSim as a reward model for tutor reinforcement learning produces a chess tutor that expert humans rate as more accurate, better-guided, and more personalized than a no-RL baseline and a tutor trained against a GPT-5.4 simulator reward. Code is available at https://github.com/microsoft/StudentSim.",
-        "authors": [
-          "Ke Yang",
-          "Chenglong Wang",
-          "Michel Galley",
-          "Chandan Singh",
-          "Jeevana Priya Inala",
-          "ChengXiang Zhai",
-          "Jianfeng Gao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Designing Proactive Thought Partners for Writing",
-        "url": "https://arxiv.org/abs/2609.01588v1",
-        "publishedAt": "2026-09-01T17:54:32.000Z",
-        "summary": "Writing involves diverse cognitive activities, from ideation to revision, and writers' needs vary across individuals and moments. Proactive AI promises to provide the right support at the right time, yet existing proactive tools largely focus on generic textual assistance, such as autocomplete. This paper studies the design space of proactive thought partners: AI agents that proactively offer customizable, higher-level cognitive support during writing. We instantiated this concept in a technology probe and deployed it with 16 participants for one week. The probe allows users to create partners by configuring their roles and proactivity. As users write, relevant partners take the initiative at appropriate moments to offer suggestions. Our findings show that participants configured proactive support through prospective planning, used suggestions for both idea generation and self-monitoring, and valued lightweight visual representations alongside non-directive rhetorical framing for non-intrusive interventions. We derive implications for designing proactive writing assistants around customization, timing, engagement, and representation.",
-        "authors": [
-          "Chao Zhang",
-          "Abe Davis",
-          "Chih-Wei Chen",
-          "Chin-Chia Hsu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "The Structure of Quantization Damage in LLMs: Why the Next Bit Should Be Spent Globally",
-        "url": "https://arxiv.org/abs/2609.01587v1",
-        "publishedAt": "2026-09-01T17:53:41.000Z",
-        "summary": "Post-training quantization (PTQ) is widely used to reduce the cost of serving large language models (LLMs), but its accuracy cost is uneven and is often tuned per model. We study where quantization damage occurs and how to allocate a small additional precision budget. Using causal mixed-precision intervention as ground truth (raise each layer to 8-bit in turn and measure the accuracy it recovers) across 9 open-weight models in 4 architecture families, we test 3 intuitive hypotheses: that quantization damage lives in task circuits, where the model computes, or in weight statistics. None of them predicts which layers benefit from restored precision. Recovery is instead diffuse: for 8 of 9 models, recovering 75% of the gap takes roughly half the layers; the lone exception, Qwen3-8B, is sharply concentrated. At a matched precision budget, spending it globally on finer quantization granularity beats locally repairing the most recoverable layers for all 8 group-128-compatible models (all but OpenLLaMA, whose width rules out group-128), by 21-52 points, including the concentrated Qwen3-8B. We report 2 secondary findings: the residual is budget-limited (8-bit is near-lossless in our evaluation across RTN, GPTQ, and AWQ), and the location of peak recovery correlates with architecture within a family, though not across families. Within this budget setting, global granularity is a better default than selectively protecting critical layers. More broadly, cheap signals that correlate with quantization damage do not necessarily identify where restoring precision improves accuracy; this must be tested with causal intervention.",
-        "authors": [
-          "Jundong Hu",
-          "Shekar Ramachandran"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Closing Cost-Quality Gap in Document VLMs: Difficulty-Aware Data Curation and Quality-Adjusted Deployment Economics",
-        "url": "https://arxiv.org/abs/2609.01575v1",
-        "publishedAt": "2026-09-01T17:40:29.000Z",
-        "summary": "Extracting structured fields from hundreds of millions of documents annually remains costly in regulated industries: bespoke OCR cascades cover only a fraction of workflows, privacy rules preclude external models, and existing open-source VLMs that clear quality thresholds cost more to serve than human annotation. We present a deployed document-understanding system built on a Mixture-of-Experts VLM (35B total, 3B active), fine-tuned on in-house production data mixed with open-domain documents curated by a Difficulty-Aware pipeline for layout diversity, fact-extractability, and cross-model consistency. Fitting on a single H100 and serving heterogeneous workflows via prompting, the model leads all deployable (non-reasoning) baselines up to an order of magnitude larger. A quality-adjusted cost analysis, with confirmation and correction costs calibrated from production telemetry, shows it reduces expected costs by over 80% against the human baseline and by more than 50% against the best competing open-source model, while larger baselines remain economically unviable.",
-        "authors": [
-          "Maksim Evdokimov",
-          "Matvey Ivanov",
-          "Dmitrii Tsiupin",
-          "Olga Tsymboi",
-          "Anatolii Potapov",
-          "Aleksandr Ivanov"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Scaling Near-Optimal SFT-RL Annotation Budget Allocation from Small to Large LLMs",
-        "url": "https://arxiv.org/abs/2609.01573v1",
-        "publishedAt": "2026-09-01T17:39:55.000Z",
-        "summary": "How to divide a fixed annotation budget between supervised fine-tuning (SFT) and reinforcement learning (RL) during LLM post-training remains an open problem. Existing work characterizes only broad trends (e.g., SFT dominates in low-data regimes), lacks a principled allocation framework, and does not examine whether the optimal ratio transfers across model sizes. We frame this problem in terms of near-optimality: rather than seeking a single optimal SFT-RL ratio, we characterize the near-optimal region, the set of allocations within a specified tolerance of peak performance. Empirically, this region is wide even for small tolerances (2-10%), widens with model scale, and transfers reliably from small proxy models to large target models. This yields a practical strategy: small proxy-model experiments suffice to identify a transferable near-optimal region, eliminating the need for exhaustive large-scale search. Our results hold consistently across tasks, model families, and both preference-based off-policy and reward-supervision on-policy RL methods. We further analyze how the asymmetry in annotation costs between SFT and RL data shifts the near-optimal region.",
-        "authors": [
-          "Jingtan Wang",
-          "Arun Verma",
-          "Xiaoqiang Lin",
-          "Zhengyuan Liu",
-          "Nancy F. Chen",
-          "Daniela Rus",
-          "Bryan Kian Hsiang Low"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 28
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "The Builders Stage brings practical strategies for scaling startups to TechCrunch Disrupt 2026",
+        "url": "https://techcrunch.com/2026/09/02/the-builders-stage-brings-practical-strategies-for-scaling-startups-to-techcrunch-disrupt-2026/",
+        "publishedAt": "2026-09-02T23:01:00.000Z",
+        "summary": "The Builders Stage is returning to TechCrunch Disrupt, bringing together founders, startup operators, and investors for practical conversations on what it takes to build and scale.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "Palo Alto Networks paid $500M for Thrive-backed Console, sources say",
+        "url": "https://techcrunch.com/2026/09/02/palo-alto-networks-paid-500m-for-thrive-backed-console-sources-say/",
+        "publishedAt": "2026-09-02T22:44:56.000Z",
+        "summary": "The acquisition also leaves Sequoia-backed Serval as the de facto startup leader in AI IT service automation, industry watchers believe.",
+        "authors": [
+          "Marina Temkin"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "TechCrunch Disrupt 2026’s new Real World AI Stage features Nvidia, robots, and extinct animals",
+        "url": "https://techcrunch.com/2026/09/02/techcrunch-disrupt-2026s-new-real-world-ai-stage-features-nvidia-robots-and-extinct-animals/",
+        "publishedAt": "2026-09-02T22:24:09.000Z",
+        "summary": "On our new Real World AI stage, we’ll be focusing on the intersection between the digital and physical, and all the ways we’ll continue to see a blending of the two.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 2
+      },
       {
         "title": "From MIT to IBM, expediting AI and quantum deployment",
         "url": "https://news.mit.edu/2026/from-mit-to-ibm-expediting-ai-and-quantum-deployment-0902",
@@ -322,7 +143,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 1
+        "ageHours": 4
       },
       {
         "title": "OpenAI’s new reasoning technique alarms AI safety experts",
@@ -336,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 1
+        "ageHours": 4
       },
       {
         "title": "Pangram&#8217;s Max Spero on why AI detection is harder than &#8216;Real or Fake&#8217;",
@@ -350,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "We&#8217;re ‘dangerously close’ to dead internet theory, says Pangram&#8217;s CEO",
@@ -364,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 5
+        "ageHours": 7
       },
       {
         "title": "US government sides with OpenAI on issue of training LLMs on copyrighted material",
@@ -378,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 7
       },
       {
         "title": "Proactive cyber defense for governments and enterprises",
@@ -390,7 +211,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 8
       },
       {
         "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
@@ -402,7 +223,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 8
       },
       {
         "title": "Wonderful more than doubles its valuation to $5B in under 6 months",
@@ -416,7 +237,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 6
+        "ageHours": 8
       },
       {
         "title": "India&#8217;s richest man now wants to turn aging computers into AI-ready PCs",
@@ -430,71 +251,29 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
-      },
-      {
-        "title": "HiddenLayer nabs $100M as enterprises rush to secure their AI deployments",
-        "url": "https://techcrunch.com/2026/09/02/hiddenlayer-nabs-100m-as-enterprises-rush-to-secure-their-ai-deployments/",
-        "publishedAt": "2026-09-02T15:01:23.000Z",
-        "summary": "Security companies are scrambling to build products that can monitor not just agents but also the tools and add-ons they use.",
-        "authors": [
-          "Ram Iyer"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 7
-      },
-      {
-        "title": "System helps humans predict when self-driving cars will make mistakes",
-        "url": "https://news.mit.edu/2026/system-helps-humans-predict-when-self-driving-cars-will-make-mistakes-0902",
-        "publishedAt": "2026-09-02T15:00:00.000Z",
-        "summary": "Self-driving cars are often controlled by deep learning models that sometimes fail in unexpected situations. For instance, the car might inexplicably brake and block the path of an oncoming emergency vehicle. A human driver or passenger may need to react rapidly to prevent a collision. To help humans better anticipate a vehicle’s mistakes, researchers from MIT and autonomous vehicle technology company Motional developed a new method that provides clear explanations of the underlying model’s decisions. Usually, the internal reasoning process of a deep learning model is opaque and difficult to understand. But the new method, called the Concept-Wrapper Network (CW-Net), translates that reasoning process into concepts that faithfully describe the autonomous vehicle’s decisions without altering its driving performance. CW-Net explains the decisions of machine learning-based planners using understandable concepts, like “approaching stopped vehicle” or “close to cyclist.” These explanations can correct misconceptions drivers and passengers have about vehicle behavior and improve their situational awareness. In road tests on a private track, CW-Net explanations helped safety drivers more accurately predict vehicle behavior; a larger simulation study with nonexpert users yielded similar results. These experiments show how CW-Net can provide important feedback for engineers as they troubleshoot in-vehicle artificial intelligence systems. In the longer term, this technique could boost the safety and transparency of autonomous vehicles, while building appropriate trust in drivers and passengers. “This work shows how explanations are supportive to the&nbsp;human’s mental model and understanding of the behavior of a system, and how it could be used in engineering and development to improve the technology,” says Julie Shah, an MIT professor of aeronautics and astronautics, director of the Interactive Robotics Group in the Computer Science and Artificial Intelligence Laboratory (CSAIL), and co-senior author of the paper on CW-Net . “Unless we are building these technologies in a way that we can rely on and predict their behavior, then it is a shaky and unsafe foundation for their use.” She is joined on the paper by lead author Eoin Kenny, a former MIT postdoc who is now a senior AI researcher at J.P. Morgan Chase; co-senior author Momchil Tomov, a staff&nbsp;research scientist at Motional; as well as Motional team members Akshay Dharmavaram, Sang Uk Lee, Tung Phan-Minh, Shreyas Rajesh, Yunqing Hu, and Laura Major, president and CEO of Motional . The research appears today in Nature . Faithful explanations Machine-learning-based planners act as the “brain” of a self-driving car. These powerful deep-learning architectures process data from the vehicle’s cameras and lidar sensors, generate a high-level summary of the vehicle’s environment, decide what the car should do next, and output a trajectory for it to follow. The planners are usually black-box models, which means their internal decision-making process is so complex it is difficult to understand. This can leave scientists and safety drivers in the dark about why an autonomous vehicle made an unexpected decision, like phantom braking. The researchers designed CW-Net to explain a vehicle’s decisions using understandable concepts, while ensuring those explanations accurately reflect the true reasons behind its behavior.&nbsp; “Especially in high-stakes settings like self-driving cars, it’s important that the explanations are not potentially misleading. Because CW-Net is causally faithful in how it makes decisions, that provides certain guarantees around the explanations,” Kenny says. CW-Net is a “concept classifier,” an AI algorithm that has been trained to predict the high-level concepts that exist within input data. The researchers plug the CW-Net module into the middle of an autonomous vehicle’s existing machine-learning planner architecture. It translates the model’s internal reasoning process into understandable concepts, like “approaching stopped vehicle” or “close to cyclist.” Then it forces the final piece of the planning model architecture to use those concepts when it decides what the vehicle should do next. In this way, CW-Net ensures the concepts faithfully explain the vehicle’s actions.&nbsp; At the same time, CW-Net uses the concepts it classified to generate clear explanations that are output along with the vehicle trajectory, in real-time. “Instead of just wondering why the car stopped, having real-time data provides feedback that lets you test the system during deployment. You could also give that data to an engineer to potentially improve the system,” Kenny says.&nbsp; The researchers trained CW-Net to predict concepts using a dataset of 130 million examples of scenes from self-driving cars, with multiple labeled concepts in each scene. Using such a large, labeled dataset enables it to identify concepts accurately in a wide range of settings. They also designed CW-Net to mimic the driving decisions of machine-learning-based planners, so the module would not negatively impact vehicle performance. In the end, CW-Net generates accurate, understandable explanations without altering the original deep learning model. Improving situational awareness To test CW-Net, the researchers deployed the module on a real autonomous driving test vehicle (a Motional robotaxi) on a private track with a safety driver. They found that CW-Net helped the safety driver better predict how the vehicle would behave in surprising situations. For instance, the vehicle consistently stopped when it approached a cyclist, and the safety driver assumed it did so because it detected that cyclist. But CW-Net explanations revealed that the model wasn’t properly configured to detect the cyclist and chose a trajectory that would have caused a collision. Instead, it stopped because its emergency braking procedure kicked in when it got too close. Armed with this information about the model’s mistake, the safety driver could reduce speed or engage manual driving mode sooner in similar situations. This&nbsp;could also help engineers fix the model to avoid this failure in the future. In larger online simulation studies using real driving situations captured on the roads of Las Vegas, the researchers saw similar results. CW-Net explanations significantly improved participants’ abilities to predict how an autonomous vehicle will behave. In the future, the researchers could extend CW-Net so the module can cover more concepts and explore different training and design techniques that could boost performance and improve interpretability. “Our study shows how crucial interpretability can be to these high-stakes environments, and how it should be on the mind of people as they are making AI in the future, for self-driving cars or other safety-critical environments,” Kenny says.",
-        "authors": [
-          "Adam Zewe | MIT News"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
-        "ageHours": 7
-      },
-      {
-        "title": "PSA: Amazon&#8217;s shopping AI can now tell you if that message is a scam",
-        "url": "https://techcrunch.com/2026/09/02/psa-amazons-shopping-ai-can-now-tell-you-if-that-message-is-a-scam/",
-        "publishedAt": "2026-09-02T14:56:34.000Z",
-        "summary": "Amazon is adding a scam-detection feature to Alexa for Shopping that can verify whether suspicious emails, texts, and other messages actually came from the retailer.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 7
+        "ageHours": 8
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 12,
     "last24h": 12,
     "topCategories": [
       {
-        "name": "Research",
-        "count": 15
+        "name": "General",
+        "count": 4
       },
       {
         "name": "Products",
         "count": 4
       },
       {
-        "name": "Models",
-        "count": 3
+        "name": "Research",
+        "count": 2
       },
       {
-        "name": "General",
+        "name": "Models",
         "count": 2
       }
     ]
