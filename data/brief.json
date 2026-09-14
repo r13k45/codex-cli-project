@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T00:59:40.805Z",
+  "generatedAt": "2026-09-14T06:12:27.370Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -90,6 +90,34 @@
     "research": [],
     "news": [
       {
+        "title": "New method enables AI for safety-critical situations",
+        "url": "https://news.mit.edu/2026/new-method-enables-ai-safety-critical-situations-0914",
+        "publishedAt": "2026-09-14T04:00:00.000Z",
+        "summary": "MIT researchers have developed a new technique that helps generative artificial intelligence models find solutions to high-stakes problems. In these settings, a plausible answer is not enough: The output often must also satisfy nonnegotiable safety, physical, or task-specific requirements, known as hard constraints. The researchers developed a method that helps generative models meet these strict requirements without sacrificing the quality of their outputs.&nbsp; The key to their technique is to give the model more freedom during the generation process and enforce hard constraints on the final output, rather than at every intermediate step.&nbsp; In experiments spanning robotics, control of physical processes, and computer vision, the new method consistently satisfied the required constraints while identifying better solutions than existing techniques.&nbsp; This adaptable, plug-and-play technique works at deployment time, so it can be applied to pretrained generative models without retraining them. It can make such models more useful in applications where safety rules, physical laws, or other strict requirements cannot be violated.&nbsp; “The promise of generative AI is its ability to explore a rich space of possibilities, but the real world places boundaries on which possibilities are acceptable. Our approach lets us preserve that generative power while enforcing the nonnegotiable requirements of high-stakes or safety-critical applications,” says Navid Azizan, the Alfred H. and Jean M. Hayes Career Development Associate Professor in the Department of Mechanical Engineering and the Institute for Data, Systems, and Society (IDSS), a principal investigator of the Laboratory for Information and Decision Systems (LIDS), and the senior author of a paper on this technique. Azizan is joined on the paper by lead author Zeyang Li, a graduate student in mechanical engineering and LIDS; and Kaveh Alim, a graduate student in IDSS and LIDS. The research appears this week in the IEEE Transactions on Pattern Analysis and Machine Intelligence . Freedom to explore Pretrained generative AI models, such as diffusion models like Stable Diffusion and flow-matching models like FLUX, are now widely available. These powerful models learn to create new data by transforming random noise. Their availability has enabled people to adapt them to a wide range of applications. These highly capable models excel at providing answers that come close to satisfying most queries, but in safety-critical applications like robot path planning on a crowded factory floor, an answer that is “nearly correct” may not be good enough.&nbsp; For instance, a “nearly correct” path from one machine to another might still result in the robot colliding with a human co-worker. In such safety-critical applications, users often employ a technique called projection-based sampling, which repeatedly forces the model’s partial solutions, called intermediate samples, to satisfy strict requirements during the generation process. But constraining the entire generation process can prevent the model from reaching a better final solution. These methods also typically focus only on satisfying the hard constraints, missing the opportunity to improve other qualities of the solution, like reducing the length of the robot’s trajectory. “For constraint satisfaction, what ultimately matters is the model’s final output, since the internal process is discarded. By not requiring every intermediate step to satisfy the constraints, we give the model more freedom to find high-quality solutions that are still feasible in the end,” says Li.&nbsp; The researchers developed an algorithm called HardFlow that steers the sampling process so that the final output satisfies the user’s hard constraints without being overly restrictive and is of higher quality. Subtle steering HardFlow reformulates hard-constrained sampling as a trajectory-optimization problem, using tools from the field of optimal control. This enables the framework to steer the model’s sampling trajectory toward a goal, making subtle corrections along the way while enforcing hard constraints on the final output. “Control theory gives us a powerful framework for formalizing the optimal way of making these corrections,” Azizan says. But solving the trajectory-optimization problem around an enormous neural network was no easy task. The model may have hundreds of interconnected layers that process data. To make the problem tractable, the researchers leveraged the structure of flow-matching models to decompose the problem into a sequence of smaller, single-step subproblems. They then applied&nbsp;systematic transformations and approximations to derive an efficient, scalable algorithm that still finds a feasible solution.&nbsp; “Essentially, we transformed the trajectory-optimization problem into something that preserves the key properties of the original problem, but can be solved very efficiently at deployment time,” Azizan adds. Reformulating the task as an optimization problem allows HardFlow to incorporate additional goals that can improve the quality of the final answer. For instance, HardFlow could find a collision-free path for a robot that is also the shortest distance to its goal. “Our framework can jointly handle both aspects, which helps it perform much better than existing methods,” says Li. Across experiments in robotic manipulation, maze navigation, and text-guided image editing, HardFlow achieved perfect constraint satisfaction while consistently outperforming baseline methods on measures of solution quality.&nbsp; For example, it enabled a robotic manipulator to avoid collisions with obstacles while also finding the quickest path to the target object. Most other methods either resulted in collisions or found paths that took significantly more time. In addition, HardFlow’s computation time was comparable to or lower than that of most competing methods. In the future, the researchers could extend the framework to settings in which the AI model itself can also be updated, so that constraint satisfaction and sample quality can be improved in a more adaptive manner.&nbsp;",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 2
+      },
+      {
+        "title": "MIT spinout turns plastic waste into resilient building materials",
+        "url": "https://news.mit.edu/2026/mit-spinout-turns-plastic-waste-into-resilient-building-materials-0914",
+        "publishedAt": "2026-09-14T04:00:00.000Z",
+        "summary": "The world needs more homes. The world also has too much plastic. Perhaps the only thing those two problems have in common is that they’re hard to solve. Atlas Building Composites, a spinout of MIT, is on a mission to address both problems with a single solution. The company has developed an AI-powered robotic manufacturing platform capable of turning single-use plastics into durable building materials. The company emerged from MIT HAUS, a research effort in the MIT Department of Mechanical Engineering that’s short for “Home Architecture for Universal Sustainability.” Atlas uses waterless plastic recycling and large-scale composite additive manufacturing technology to make parts like home foundations, decks, and trusses for walls, floors, and roofs. “Our mission is to convert waste plastic pollution into durable composites to build 1 billion homes,” says Atlas chair and co-founder A.J. Perez ’13, MNG ’14, PhD ’23, who is also an MIT research scientist. “You can’t divorce these things from each other. We’re not here just to build homes, and we’re not here just to recycle plastic. The conventional way of building homes involves cutting down trees, mining, refining, and a bunch of other dirty activities. We want to avoid all that and address all the plastic bound for our oceans and landfills. We’re turning bottles into buildings.” Atlas’ parts are already being used to support barns, sheds, decks, and docks. Most recently, the company supplied the U.S. Army Corps of Engineers with American-made recycled composite trusses to construct a 40-foot bridge in a Massachusetts wetland. Perez and Atlas co-founder Matt Pouliot envision deploying thousands of their AI robotic production systems around the world. A key enabler for that scale is the company’s ability to recycle low-grade plastic into building components without water. “This is key to democratizing recycling,” Perez says. “Now, every country around the world, regardless of their water access, will be able to do something about their plastic. &nbsp; We strive to study these issues in the real world, not just a lab. When you talk to government officials about creating a new recycling facility, they have to get the local water agency involved, there’s permitting, etc. A lot of that work disappears with the waterless recycling process.” Research for impact Since earning his PhD at MIT, Perez has been developing advanced fabrication techniques for homes and new techniques for plastic recycling. In 2019, he started MIT HAUS with David Hardt, MIT’s Ralph E. and Eloise F. Cross Professor in Manufacturing. “It started with the simple mission of enabling the production of 1 billion homes over a 30-year period,” Perez says. “Then we realized how much the materials needed for those homes would strain global supply chains.” Perez says building those homes using conventional methods would require a doubling of global production capacity for materials like concrete, not to mention a dramatic acceleration of global deforestation. “That’s where the light bulb went off,” Perez says. “There’s this other problem humanity has, which is 8 gigatons of plastic that have been produced and are polluting our oceans, rivers, and cities. We decided to plug two really big, hairy problems together.” Perez met Pouliot, a former Maine senator, and the pair started Atlas to commercialize the technology Perez had been developing at MIT. The founders worked with MIT’s Technology Licensing Office and have since worked with researchers at other universities to independently develop technology for the company’s robotic manufacturing platform, which the founders call the Atlas Factory Stack. First, single-use plastic from water bottles and other objects is shredded and fed into the Atlas system, where it is melted and fused with American-made fiberglass to make it stronger than wood. From there, a large-scale 3D printer creates the parts, including trusses for floors, walls, roofs, and bridges. Through research at MIT, Perez has shown large composite trusses can be printed in under 13 minutes and support over 4,000 pounds, exceeding key building standards. “At MIT, we’ve demonstrated we can produce 60 to 80 pounds of parts per hour, and the systems we’re specifying in Atlas factories operate in the 150 to 200 pound per hour range,” Perez says. “There’s the potential for our robotic manufacturing platform to produce each part at a lower cost than injection molding, and it’s far more flexible and convenient. For example,&nbsp; we can manufacture the parts in the reverse order so that they’ll be placed on the finished goods pallet next to the machine.” The founders envision Atlas as a technology provider enabling the creation of home factories close to wherever homes need to be built. Today, each Atlas factory cell is capable of producing the structural framing components for about one small home per day. “The old way of doing things would be some huge factory in China would mass produce one type of part and ship it far away,” Perez says. “I don’t think that’s good for the planet. Another reason we don’t use injection molding is economic: Mega factories don’t produce as many jobs and have a much higher carbon footprint. We want this to be localized to benefit local communities. The plastic is already everywhere. The more local Atlas is, the lower the cost and footprint.” Going global Plastics last far longer than wood, especially for applications where they’re in contact with the ground or water. That adds to the company’s environmental benefits. “If you get a material into the building world and it does its job, it’s going to be used for a very long time and not need to be recycled again for a very long time,” Pouliot says. “That’s important because when you recycle something over and over again, it degrades. This is one of the most sustainable use cases for recycled petrochemical products.” Atlas’ bridge with the Army Corps of Engineers was installed in less than a day. The founders are also in talks with international franchise partners to deploy the Atlas Factory Stack across the globe. “To accomplish our mission, I fundamentally believe it’s not going to be one far-away company dominating the industry,” Perez says. “It’s going to be every country leveraging Atlas Factory Stacks to create local recycling jobs, local factory jobs, local construction jobs, and to stimulate their economies with local materials.”",
+        "authors": [
+          "Zach Winn | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Products",
+        "ageHours": 2
+      },
+      {
         "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
         "url": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
         "publishedAt": "2026-09-14T00:00:00.000Z",
@@ -99,7 +127,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 6
       },
       {
         "title": "What&#8217;s behind the AI industry’s latest warnings of doom?",
@@ -113,7 +141,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "Obama urges Democrats to have a ‘clear plan’ for AI safeguards",
@@ -127,7 +155,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "OpenAI’s Sam Altman says it would be &#8216;ill-advised&#8217; to go public in 2026",
@@ -141,7 +169,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "Anthropic CEO outlines plan to slow AI development",
@@ -155,7 +183,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 29
+        "ageHours": 35
       },
       {
         "title": "Mecka AI nears $500M valuation in Sequoia-led deal amid rush for robot training data",
@@ -169,7 +197,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 50
+        "ageHours": 55
       },
       {
         "title": "Y Combinator&#8217;s Garry Tan wants US open-weight AI labs to &#8216;distill&#8217; frontier models, too",
@@ -183,7 +211,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 52
+        "ageHours": 57
       },
       {
         "title": "OpenAI&#8217;s feud with mathematicians is only escalating",
@@ -197,7 +225,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 52
+        "ageHours": 57
       },
       {
         "title": "One week left to book your exhibit table at TechCrunch Disrupt 2026",
@@ -211,7 +239,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 52
+        "ageHours": 58
       },
       {
         "title": "Final, final, final call for TechCrunch Disrupt 2026 Side Events",
@@ -225,57 +253,29 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 52
-      },
-      {
-        "title": "Kimi-maker Moonshot AI targets $2B in annual revenue",
-        "url": "https://techcrunch.com/2026/09/11/kimi-maker-moonshot-ai-targets-2-billion-in-annual-revenue/",
-        "publishedAt": "2026-09-11T19:35:54.000Z",
-        "summary": "While K3's usage figures have declined slightly in recent months, OpenRouter data currently shows as many as 300 billion tokens being generated each day by K3 models on the system.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 53
-      },
-      {
-        "title": "An Anthropic researcher’s doomsday warning comes at a very interesting time",
-        "url": "https://techcrunch.com/podcast/an-anthropic-researchers-doomsday-warning-comes-at-a-very-interesting-time/",
-        "publishedAt": "2026-09-11T18:41:49.000Z",
-        "summary": "An Anthropic researcher resigned this week,&#160;warning in a post on X&#160;that the company is “racing straight to self-improving superintelligence and gambling with our lives”.&#160;The company&#8217;s own alignment&#160;lead&#160;even&#160;co-signed the message&#160;rather than walking it back.&#160;It&#8217;s&#160;the kind of&#160;doomer&#160;warning the AI industry has flirted with before, but the timing, with Anthropic reportedly&#160;preparing for&#160;an IPO, makes it land differently.&#160; On [&#8230;]",
-        "authors": [
-          "Theresa Loconsolo, Anthony Ha, Sean O'Kane, Kirsten Korosec"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 54
+        "ageHours": 58
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 12,
-    "last24h": 3,
+    "last24h": 5,
     "topCategories": [
       {
         "name": "General",
-        "count": 7
+        "count": 6
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 2
       },
       {
-        "name": "Policy",
+        "name": "Research",
         "count": 1
       },
       {
-        "name": "Infrastructure",
+        "name": "Products",
         "count": 1
       }
     ]
