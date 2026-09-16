@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T00:14:21.658Z",
+  "generatedAt": "2026-09-16T04:48:29.604Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,243 +85,307 @@
   "sections": {
     "research": [
       {
-        "title": "Corrupt Plans, Clean Traces: Evading Chain-of-Thought Monitoring with Plan Injection",
-        "url": "https://arxiv.org/abs/2609.15989v1",
-        "publishedAt": "2026-09-14T18:33:27.000Z",
-        "summary": "Chain-of-thought (CoT) monitoring is a safety strategy where the reasoning of a large language model \"actor\" is inspected by a \"monitor\" (often another language model) for signs of unsafe planning, deception, or misalignment. We find that planting harmful but benign-sounding reasoning in the actor's context can steer it to perform adversarial actions while evading monitors, an attack we term \"plan injection\". We initially discover this attack in the multiple-choice question-answering monitorability setting proposed by Lanham et al. (2023), using the investigator-agent elicitation framework of Li et al. (2025). We generalize the attack and show that the discovered behavior scales to harder tasks (achieving 25-33% monitor evasion rates across different monitorability benchmarks) and larger models such as DeepSeek-R1. Across the settings we study, actor models not only follow injected plans but also paraphrase them as their own reasoning, without explicit attribution to the injections. Finally, we find cases where extra monitor resources cause harm - giving the monitor access to the injected plan drops detection by as much as 50% in the Bio-Math task and in a case study on monitor reasoning budget, we find transcripts where additional thinking tokens are spent rationalizing the injected plan rather than flagging it.",
+        "title": "Agentic Societies Need a Social Harness",
+        "url": "https://arxiv.org/abs/2609.17527v1",
+        "publishedAt": "2026-09-15T17:57:27.000Z",
+        "summary": "An agentic society is a collection of AI agents that coordinate autonomously across trust boundaries, on behalf of different principals whose objectives may only partially align. We show experimentally that in agentic societies even honest, competent agents often fail to reach satisfactory outcomes with existing harnesses and messaging primitives, and that faulty or malicious agents can stall collaboration, influence outcomes, and pursue other harmful goals by exploiting vulnerabilities in communication (``speech''). We argue that agentic societies need a \\emph{social harness} for inter-agent interactions, in addition to each agent's \\emph{personal harness}, which manages its private context and communication with its principal. We propose a layered architecture for social harnesses which (i) prevents classes of failures outright, (ii) enables agents to detect invalid messages at runtime, and (iii) supports post-facto investigation and consequences, and highlight directions for future research to realize these capabilities.",
         "authors": [
-          "Keertana Chidambaram",
-          "Andrew Ilyas",
-          "Vasilis Syrgkanis"
+          "Tapan Chugh",
+          "Vidushi Singh",
+          "Krish Jain",
+          "Arvind Krishnamurthy",
+          "Ratul Mahajan"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
       },
       {
-        "title": "Bellman Policy Optimization",
-        "url": "https://arxiv.org/abs/2609.15987v1",
-        "publishedAt": "2026-09-14T17:59:47.000Z",
-        "summary": "Reinforcement learning with verifiable rewards (RLVR) improves the reasoning capabilities of large language models (LLMs). We introduce Bellman Policy Optimization (BPO), a critic-free method derived from Policy Mirror Descent (PMD). For autoregressive generation with terminal rewards, BPO uses the Bellman equations to reformulate PMD as a trajectory-level objective. The reformulation avoids estimating state values at intermediate states. We prove that it has the same unique optimal solution as the original PMD objective. We derive the practical BPO loss by approximating this objective. Its mismatch-correction weight is a smoothed ratio of complementary token probabilities. Experiments on mathematical reasoning benchmarks demonstrate the effectiveness of BPO.",
+        "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
+        "url": "https://arxiv.org/abs/2609.17523v1",
+        "publishedAt": "2026-09-15T17:55:28.000Z",
+        "summary": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution evidence into tasks and evaluation rubrics for continual learning. At its core is recursive-in-recursive self-improvement, a paradigm that couples harness evolution with model reinforcement learning: the inner recursion improves the harness with the model fixed, while the outer recursion trains the model under the improved harness. Harness evolution shapes training experience, and model learning creates new opportunities for harness adaptation. We present case studies of researcher interaction, harness refinement, and model learning, with the benchmark cases spanning four scientific task families. By releasing ScienceBuddy as a research product, we make this paradigm available to the scientific community and take a step toward discovery intelligence: scientific AI that advances through sustained collaboration with researchers and evolves alongside the research it supports. Website: http://science-buddy.io",
         "authors": [
-          "Zhuoqing Song",
-          "Haotian Xu",
-          "Xikun Zhang",
-          "Lidong Bing"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Stellar Colosseum: A Many-Agent Harness for Long-Horizon Research in Mathematics and Theoretical Computer Science",
-        "url": "https://arxiv.org/abs/2609.15983v1",
-        "publishedAt": "2026-09-14T17:58:55.000Z",
-        "summary": "Language models can produce plausible short proofs, but may still be unreliable on long-horizon research problems, where progress depends on a sequence of uncertain and interdependent decisions. We introduce Stellar Colosseum, a model-agnostic harness for allocating inference across research in mathematics and theoretical computer science. Colosseum explores alternative strategies before proof construction, uses a readiness gate to decide when a route is mature enough to decompose, represents the proof plan as interdependent section-level subproblems, and routes verifier findings back to the affected part of the argument. Across these stages, it generates candidates in parallel, attacks them with targeted falsification, and combines candidates and their critiques into a single research artifact through overlapping random-sample tree aggregation. The Colosseum workflow has also been integrated into Google Antigravity's Teamwork framework as the Long Proof pattern.\n  We demonstrate the capabilities of Colosseum through open-ended research and evaluations on theorem-proving and competitive programming benchmarks. Using Colosseum with Gemini 3.1 Pro, we obtain several new results that address open problems arising from papers published at top venues such as FOCS and JMLR. On TCS-Bench, a benchmark of research-level theorem-proving tasks drawn from papers published at FOCS, STOC, and SODA, Colosseum achieves 71.0% accuracy using Gemini 3.1 Pro and Gemini 3.7 Flash. In a separate Codeforces evaluation using Gemini 3.1 Pro, the proof-oriented pipeline with execution feedback solves 218 of 222 problems.",
-        "authors": [
-          "Honghao Lin",
-          "David P. Woodruff",
-          "Yuan Deng",
-          "Jieming Mao",
-          "Song Zuo",
-          "Vahab Mirrokni"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "The Router Within: Eliciting Native Skill Routing from a Frozen LLM",
-        "url": "https://arxiv.org/abs/2609.15982v1",
-        "publishedAt": "2026-09-14T17:58:27.000Z",
-        "summary": "Skills extend an LLM agent beyond its parametric knowledge, and the gain they promise rests on picking the right one. Deployed harnesses route by preloading every skill's metadata into the context, which disperses the agent's attention and caps the library size. Retrieval pipelines move the selection out of the context, but also out of the agent's capability. We show that the frozen agent LLM already carries the routing signal in its own forward passes, and that two linear maps suffice to read it out with no skill text in the context. Gavel (Glance And Verdict from a frozen LLM) reads it in two steps. A glance projects the task's and each skill's mid-layer states through the two maps, the only parameters trained, and scores the full library against compact per-skill banks that one forward pass builds at installation. A verdict then resumes the shortlisted skills' forward passes and reads the model's own likelihood and yes/no judgment, fused with the glance as a product of experts. Trained once, Gavel transfers zero-shot to three public benchmarks and SkillTraj, our new benchmark of 372 simulated agent trajectories. On Qwen3-32B it outperforms progressive disclosure and retrieve-and-rerank pipelines that add 1.2B to 16B external parameters, by up to 13.4 points on written tasks and up to 21.9 when the need for a skill arises mid-rollout. Routing accuracy improves as the backbone does, and in a bash-agent harness the same 32B triggers the correct skill on Skill-Use more often than far larger frontier models running in Codex.",
-        "authors": [
-          "Ruishuo Chen",
-          "Xun Wang",
-          "Yu Chen",
-          "Zhuoran Li",
-          "Longbo Huang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "A Chosen Future Can Still Be Rewritten: Causal Writability in Video Models",
-        "url": "https://arxiv.org/abs/2609.15980v1",
-        "publishedAt": "2026-09-14T17:58:11.000Z",
-        "summary": "When a video model generates physically incorrect motion, did it fail to learn the correct motion, or did it learn it but fail to use it? We show the latter: the correct motion remains available inside the model and can still be made to control the generated video. We train on videos where red masses oscillate slowly and blue masses oscillate quickly, then test a red mass with fast observed motion. Even when the model generates slow motion in this conflicting case, a low-dimensional edit predicted from simple physical variables restores the correct fast motion. We call this ability causal writability. At fixed strength, we find a sharp depth boundary: the same edit changes the video before the boundary but not after it. This closure marks commitment for that write. The motion signal nevertheless remains, and a stronger downstream write can restore physical motion, while excessive gain overshoots. Early causal writability predicts which errors training later corrects: those errors are writable at more network depths than errors that persist. We reproduce both causal writability and its sharp closure in a pretrained 1.3B video model, supporting generality across model scale and training regime.",
-        "authors": [
-          "Xingyun Wang",
-          "Haomin Zheng",
-          "Man Yuan",
-          "Leqian Yang",
-          "Ziming Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "Disentangling Representation Evolution in Transformers through Directional Decomposition",
-        "url": "https://arxiv.org/abs/2609.15975v1",
-        "publishedAt": "2026-09-14T17:56:19.000Z",
-        "summary": "Transformer representations evolve through learned additive transformations that either preserve their current direction or redirect it. We study this evolution as a functional geometry, decomposing learned updates into parallel and perpendicular components. Across pretrained models, we find substantial parallel components beyond the residual identity path. We then apply the decomposition in two spaces: to attention and MLP updates relative to the hidden state, and to attention value aggregation relative to the current token's value. Targeted edits reveal a strongly space-dependent asymmetry: exclude-self value-space parallel manipulation is markedly more robust than residual-space and perpendicular counterparts, preserving the direct self message while scaling only the non-self aggregate. The same decomposition gives a component-resolved description of compression-induced update error: perpendicular error separates compression methods more clearly than parallel error. Extensive experiments further demonstrate that full-aggregate parallel suppression during from-scratch pretraining lowers validation-loss trajectories and improves downstream averages, with the value-space variant strongest. Together, these results connect representation geometry to editing robustness, compression diagnosis, and training-time intervention. Code is available in the \\href{https://github.com/Shwai-He/Transformer-Geometry}{project repository}.",
-        "authors": [
-          "Shwai He",
-          "Haichao Zhang",
-          "Shen Yan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Discovery Foundation Models: Toward Open-Ended Discovery Intelligence",
-        "url": "https://arxiv.org/abs/2609.15973v1",
-        "publishedAt": "2026-09-14T17:56:00.000Z",
-        "summary": "Foundation models have progressed from learning and reasoning over existing knowledge, to increasingly learning through action, tool use, and outcome feedback. We argue that the next frontier is a further transition: from solving and acting within problems specified by humans to participating in the process by which new problems, representations, explanations, and knowledge are created. We refer to this capability as Discovery Intelligence. We formulate Discovery Foundation Models (DFMs) as general-purpose model systems for open-ended discovery. A DFM operates over a revisable research state and supports seven coupled capabilities spanning problem discovery, formulation, representation construction, hypothesis formation, intervention, evidence-grounded revision, and continual discovery improvement. We instantiate this framework with Zetema, which couples explicit research-state dynamics, verification and experimental gating, external grounding, and cross-task Discovery Skill evolution. We further ground the framework with GALILEO, a real therapeutic-discovery system in which Dry-Lab reasoning, robotic and hands-on Wet-Lab experimentation, external biological evidence, and iterative hypothesis and design revision form a closed physical discovery loop. We then formulate a unified approach to capability formation and process-centered evaluation, enabling discovery behavior to be trained, improved, and measured beyond final-answer performance. Together, these components establish discovery as a learnable, executable, and evaluable capability of foundation-model systems. We view this shift as a broader progression in intelligence scaling: from learning over existing knowledge, to learning from action outcomes, and ultimately to participating in the construction, testing, and revision of the structures through which new knowledge is discovered. Code: https://github.com/Gen-Verse/DFM-Plans",
-        "authors": [
-          "Ling Yang",
+          "Shuhan Xue",
+          "Jianyuan Zhong",
+          "Ziyuan Nan",
+          "Wenbin Li",
+          "Zhaochen Yu",
+          "Jinchao Ding",
+          "Qiang Gao",
+          "Pengyu Zhan",
+          "Yuntong Zhang",
+          "Tian Cheng",
           "Zhenfei Yin",
-          "Yingcheng Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Mind2Dialogue: Training Human-Aware Language Models by Simulating User Mental States",
-        "url": "https://arxiv.org/abs/2609.15972v1",
-        "publishedAt": "2026-09-14T17:55:58.000Z",
-        "summary": "As language models become more capable, long-term collaboration in learning, reasoning, and decision-making calls for a deeper understanding of the people they serve. Yet training such human-aware language models faces a fundamental supervision gap because current datasets for LLM assistant training contain few if any well-informed responses explicitly grounded in users' unspoken beliefs and goals. Scaling such supervision is inherently constrained, as users' underlying states are not directly observable. We thus propose the Mind2Dialogue framework to mitigate this gap by simulating users' mental states and turning them into privileged supervision for human-aware training. Specifically, we first propose a psychology-guided simulator that preserves personal characteristics while updating mental states through interaction to generate coherent conversations. The key idea is to enforce a shared evolving mental state that drives user behavior and guides an Oracle assistant's responses. Our privileged distillation then trains models on the Oracle's well-informed responses to assist users without direct access to their mental states at deployment. Moreover, we propose to evaluate human-aware learning by combining personalization and theory of mind, examining how models understand people and act on that understanding. Training on the full Mind2Dialogue corpus improves every reported personalization metric over the corresponding Qwen, Llama, and OLMo instruction-tuned baselines, including gains of 26.6 to 40.9 percentage points in preference-following generation. The gains extend to belief and action reasoning on Qwen and Llama, beyond personalized assistance. Looking forward, Mind2Dialogue makes user simulation a foundation for genuine AI collaborators that understand beliefs and intentions behind people's words and support their long-term goals across education, work, and everyday life.",
-        "authors": [
-          "Zixuan Wang",
-          "Yufan Zhou",
-          "Jinzhou Tang",
-          "Xinle Yu",
-          "Chengjun Wu",
-          "Lyumanshan Ye",
-          "Zhaoxiang Feng",
-          "Letian Peng",
-          "Adyasha Patra",
-          "Fan Bai",
-          "Enze Ma",
-          "Zhengding Hu",
-          "Jianyang Gu",
-          "Zhao Wang",
-          "Yufei Ding",
-          "Jingbo Shang",
-          "Tianmin Shu",
-          "Zhiting Hu",
-          "Zhen Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Verifiable by Construction: Claim-Level Evaluation of Verbatim Citation in Clinical Question Answering",
-        "url": "https://arxiv.org/abs/2609.15964v1",
-        "publishedAt": "2026-09-14T17:53:51.000Z",
-        "summary": "Large language models (LLMs) have been widely adopted for clinical question answering (QA). Current systems can attach citations to their answers, but these often point to broad texts, leaving time-pressed clinicians unable to verify them efficiently. An alternative is to ensure that responses are verifiable by construction: providing fine-grained verbatim quotes from reference material that substantiate claims, so users can verify an answer without opening other documents. In this paper, we evaluate the ability of current models to perform this task end-to-end: from providing citations for every factual claim, to producing verbatim quotes, to ensuring that those quotes fully substantiate the claims. To do so, we build a standardized harness over four clinical practice guidelines and evaluate twelve LLMs on 222 synthetic clinical questions, measuring each of these stages separately. We find that most models can attach verbatim quotes to over 90% of their claims from prompting alone, apart from some lightweight models such as claude-haiku-4.5. Yet these quotes often fail to substantiate every detail of the claims they accompany. For instance, claude-opus-5 produces verbatim quotes for 98.0% of its claims, but fully substantiates only 37.1%. Our work provides insights into the current capability gap of LLMs in building verifiable clinical QA systems, along with artifacts for future research.",
-        "authors": [
-          "Jiashuo Zhang",
-          "Yuling Chen",
-          "Yvonne Commodore-Mensah",
-          "Michael Oberst"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
-      },
-      {
-        "title": "Privacy-Aligned Personalized Federated Learning with Compact Adaptation and Variable-Length Gaussian Communication",
-        "url": "https://arxiv.org/abs/2609.15950v1",
-        "publishedAt": "2026-09-14T17:48:11.000Z",
-        "summary": "Record-level differential privacy exposes a structural misalignment in personalized federated learning when client-specific variation is low-dimensional while training repeatedly releases high-dimensional updates. In this paper, we address this misalignment by releasing a private client context once and confining repeated adaptation to a fixed coefficient space. Beyond dimensionality reduction, the factorized generator induces an adaptive optimization geometry that reshapes noisy updates, and controlled ablations show that most of its private-training gain is retained by radial evolution. To further reduce the communication cost, we realize the Gaussian mechanism for coefficient updates directly through variable-length quantization with finite expected code length, so that the quantization error itself serves as the required privacy perturbation rather than extra distortion. Across MNIST and CIFAR-10, our design matches or outperforms full-model private adaptation across privacy budgets and client heterogeneity, while reducing protected uplink by a factor of 2.67 at \\(\\varepsilon=16\\) on CIFAR-10 with comparable future-client accuracy.",
-        "authors": [
-          "Yilin Xu",
-          "Chun Hei Michael Shiu",
-          "Chih Wei Ling",
-          "Linqi Song"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "Vulnerability Localization Benchmark: Measuring Agentic Security Analysis at Repository Scale",
-        "url": "https://arxiv.org/abs/2609.15939v1",
-        "publishedAt": "2026-09-14T17:44:51.000Z",
-        "summary": "Language-model agents increasingly operate over complete software repositories, yet cybersecurity evaluations primarily measure whether they can detect, reproduce, or repair vulnerabilities rather than whether they can locate the relevant code. We study vulnerability localization: given a weakness class and an unfamiliar repository, identify the implementation files associated with that weakness. We introduce the Vulnerability Localization Benchmark (VLoc Bench), comprising 500 real world vulnerabilities from 290 repositories across six package ecosystems and 147 CWE categories. Each task pairs repository snapshots immediately before and after a security fix. On the vulnerable snapshot, an agent receives only the CWE description and read-only terminal access and must return the affected files; on the patched snapshot, it must determine that the recorded vulnerability is no longer present. We evaluate 27 language models and four static-analysis tools under a common agent interface. Repository-scale vulnerability localization remains difficult: the strongest system achieves 0.229 File F1, and 38.4% of tasks receive no correct localization from any evaluated model.\n  We further find that stronger localization does not imply reliable behavior after remediation: systems that identify vulnerable files effectively can still report unsupported locations on patched repositories. These results establish vulnerability localization as a distinct repository-scale capability and provide a setting for studying both how security agents search for vulnerable code and when they should refrain from reporting it.",
-        "authors": [
-          "Aman Priyanshu",
-          "Supriti Vijay",
-          "Kimia Majd",
-          "Xuhong He",
-          "Fraser Burch",
-          "Takahiro Matsumoto",
-          "Jianliang He",
-          "Baturay Saglam",
-          "Arthur Goldblatt",
-          "Zhuoran Yang",
-          "Amin Karbasi"
+          "Yingcheng Wu",
+          "Ling Yang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
       },
       {
-        "title": "HypoEvolve: Genetic Algorithms Enable Multi-Agent LLMs to Discover Scientific Hypotheses",
-        "url": "https://arxiv.org/abs/2609.15938v1",
-        "publishedAt": "2026-09-14T17:44:49.000Z",
-        "summary": "Scientific agents contribute to hypothesis discovery by synthesizing evidence, assessing proposals, and developing new explanations. Recent systems combine scientific agents with evolutionary search through critique, comparison, and revision. However, how different forms of agent collaboration affect hypothesis quality remains an open question. Answering this question requires separating the effects of agents' scientific capabilities from those of their collaboration. A framework must therefore preserve agents' scientific roles and support rules for combining, revising, and retaining hypotheses. Building on this view, we introduce HypoEvolve, which makes collaboration explicit through successive updates to a hypothesis population. Specifically, we propose a generational genetic algorithm to coordinate specialized large language model (LLM) agents that integrate mechanistic arguments, reconsider assumptions, and assess evidence and testability. Each generation specifies how scientific judgments and new proposals reshape the population, making collaboration effects on hypothesis quality directly testable. Moreover, we design our evaluation around scientifically meaningful hypotheses that explain how a proposed intervention could work. Drug repurposing links these explanations to target-level biological claims assessed against external evidence. Specifically, we adapt DepMap and Open Targets into complementary external measures grounded in experimental, genetic, and clinical evidence. Across 34 cancer types, HypoEvolve achieves the highest scores against six baselines on both measures. DepMap selectivity reaches 0.171, versus 0.115 for the strongest baseline. Gains over single-pass generation also generalize to held-out cancer types. HypoEvolve advances a vision of autonomous science in which AI research teams achieve a capacity for discovery beyond that of individual models.",
+        "title": "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control",
+        "url": "https://arxiv.org/abs/2609.17521v1",
+        "publishedAt": "2026-09-15T17:55:13.000Z",
+        "summary": "Interactive control for video generation is moving from coarse prompts toward fine-grained, physically meaningful manipulation of dynamic scenes. Yet existing controllable methods either require the full control schedule before generation starts, or use pixel-space signals that dictate object positions rather than physical dynamics. To address these limitations, we propose PhysStream, an autoregressive model for physics-grounded image-to-video synthesis that incorporates structured scene memory---positional maps and object tracking maps derived online from previously generated frames---and supports fine-grained motion control via sparse velocity-increment signals that encode physical quantities, letting the model learn the underlying dynamics. We train our model in two stages: a bidirectional model is first finetuned with motion-control conditioning, then a causal autoregressive model is trained with additional structured scene memory, further improving physical consistency. PhysStream enables interactive, mid-generation control over multi-object tabletop rigid-body scenes---a capability not supported by prior methods---reducing motion distribution distance (FVMD) by 33% and trajectory error by 12% over the strongest baselines on synthetic benchmarks, and is preferred by human evaluators in over 85% of in-the-wild comparisons. Please check our website for more details: https://czzzzh.github.io/PhysStream",
         "authors": [
-          "Jieyuan Liu",
-          "Mengzhou Hu",
-          "Jefferson Chen",
-          "JungHo Kong",
-          "Pratibha Jagannatha",
-          "Yiming Gao",
-          "Dexter Pratt",
-          "Hsin-Yuan Lee",
-          "Zhiting Hu",
-          "Trey Ideker",
-          "Wei Wang",
-          "Eric P. Xing",
-          "Zhen Wang"
+          "Chuhao Chen",
+          "Peter Wonka",
+          "Chaoyang Wang",
+          "Chen Wang",
+          "Qiao Feng",
+          "Sergey Tulyakov",
+          "Lingjie Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "When Should LLMs Abstain? Chain-of-Self-Questioning for Selective Risk Control",
+        "url": "https://arxiv.org/abs/2609.17516v1",
+        "publishedAt": "2026-09-15T17:52:24.000Z",
+        "summary": "Large language models can produce fluent answers when their factual support is weak. This paper introduces Chain-of-Self-Questioning (CoSQ), a prompt-only framework that makes answer commitment conditional on an explicit assessment of the information required to answer a question. We evaluate three CoSQ variants under seventeen conditions on the 817-item TruthfulQA multiple-choice validation set using eleven open-weight and hosted model families. In the final balanced-option protocol, Grounded-CoSQ at τ=0.90 reduces the mean unconditional wrong-commitment rate from 13.1% under chain-of-thought prompting to 8.9%, a 32.1% relative reduction, while increasing answered accuracy from 86.9% to 89.7% and answering 87.6% of questions. Both improvements hold for all eleven models and at every evaluated threshold. Critical-CoSQ and Adaptive-CoSQ provide neighboring operating points with 88.6% and 86.5% coverage, respectively, while remaining more reliable than the baseline. A secondary Natural Questions Short-Answer evaluation provides convergent open-form evidence. These findings show that self-assessment can support explicit, tunable answer-or-abstain decisions when an unsupported commitment is more costly than referral or review.",
+        "authors": [
+          "Ali Şenol"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "What Breaks Under Pruning in Smart Homes, and When? Evaluating LLM Degradation Across Architectures and Task Complexity",
+        "url": "https://arxiv.org/abs/2609.17515v1",
+        "publishedAt": "2026-09-15T17:51:48.000Z",
+        "summary": "Pruning can reduce the deployment cost of large language models (LLMs), but its impact on context-grounded tool calling remains poorly understood. We systematically study pruning-induced degradation in smart-home tool calling across four LLMs spanning dense Transformer, dense hybrid, and mixture-of-experts (MoE) architectures, together with depth, width, hybrid, and expert pruning methods. After post-pruning supervised fine-tuning (SFT), we evaluate more than 19,500 instances from three smart-home datasets. Beyond aggregate task accuracy, we characterize degradation along two dimensions: action components (i.e., operation, device, argument, and value) and task complexity. Our results show that dense models have narrow safe pruning regions followed by sharp degradation, while MoE models tolerate substantially more pruning. Pruning degrades grounded specificity before schema-level intent, and aggressive dense pruning can induce systematic over-refusal. These findings highlight the importance of evaluating pruning beyond aggregate accuracy when selecting pruned LLMs for reliable tool execution.",
+        "authors": [
+          "Congjing Zhang",
+          "Vashishtha Patil",
+          "Henning Lange",
+          "Usman Aleem"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 11
+      },
+      {
+        "title": "LACE: Layer-Wise Compression for Dynamic Frame Rate Codecs",
+        "url": "https://arxiv.org/abs/2609.17509v1",
+        "publishedAt": "2026-09-15T17:46:51.000Z",
+        "summary": "Neural audio codecs are a key component in speech language modeling. However, their high frame rates lead to long sequence lengths, increasing computational costs. Dynamic frame rate codecs mitigate this by reducing the effective frame rate using a compression step to merge multiple frames together. However, most prior methods either operate on single-codebook codecs or apply a single compression step before multi-layer quantization. This forces all quantization layers to share the same segmentation boundaries, despite the residual embeddings at different quantization layers exhibiting different rates of change over time. We propose LACE (Layer-Adaptive Codec Encoding), a dynamic frame rate codec that applies an independent compression step at each quantization layer, enabling layer-specific segmentation boundaries. To use LACE tokens in downstream text-to-speech (TTS), we further introduce union alignment and boundary anchor mechanisms to make durations consistent across layers while preserving compression benefits. Experiments on LibriTTS show that LACE offers a better rate-quality tradeoff than prior dynamic frame rate methods on the reconstruction task and improves TTS inference efficiency while maintaining competitive synthesis quality. Our code is released as part of the ESPnet3 codec recipe.",
+        "authors": [
+          "Thanapat Trachu",
+          "Samuele Cornell",
+          "William Chen",
+          "Shinji Watanabe"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "ENCP: Episode-Normalized Conformal Prediction for Vision-and-Language Navigation",
+        "url": "https://arxiv.org/abs/2609.17499v1",
+        "publishedAt": "2026-09-15T17:42:15.000Z",
+        "summary": "Uncertainty estimation for Vision-Language-Navigation (VLN) models is a critical task since it can help identify ambiguous and unreliable predictions, enabling agents to make safer navigation decisions. As one of the most advanced uncertainty estimation frameworks, conformal prediction (CP) offers a promising approach for uncertainty estimation in VLN. However, given that VLN agent requires a sequence of steps, standard calibration in conformal prediction fails to provide coverage guarantee it promises over a dependent, variable-length VLN episode. To this end, we propose Episode-Normalized Conformal Prediction (ENCP), which rescales a nonconformity score by the policy's residual confidence and calibrates one maximum score per episode. Under exchangeable calibration and test episodes, this construction covers the ground truth at every step with probability at least $1 - α$, while allowing dependence among steps within an episode. Across four VLN policies and three nonconformity scores on R2R and REVERIE dataset, ENCP meets all reported empirical step-coverage targets on the seen-to-unseen evaluation. These results demonstrate that ENCP can provide model-agnostic uncertainty estimates, which might be useful for determining when a VLN agent should defer to a more capable predictor, including human assistance.",
+        "authors": [
+          "Vicky Feliren",
+          "A. Taufiq Asyhari",
+          "Muhamad Risqi U. Saputra"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Verifiable Social Reasoning for LLM Assistants",
+        "url": "https://arxiv.org/abs/2609.17496v1",
+        "publishedAt": "2026-09-15T17:37:29.000Z",
+        "summary": "LLM assistants are widely used for daily social advice, yet evaluating their social reasoning in such consultation settings remains challenging since (i) it requires setups where the assistant learns about social situations from subjective user narratives, and (ii) social properties, such as others' intentions, typically lack verifiable ground truth. To address these challenges, we introduce Fuse, a multi-agent simulation framework for studying user-mediated social reasoning. In Fuse, a target agent with a hidden motive interacts with other agents including one representing the user, who then consults the evaluated assistant to infer the target's motive, providing verifiable ground truth by construction. Simulation faithfulness is validated through a human study with 24k annotations. We apply Fuse to 12 LLMs and demonstrate its analytical utility by systematically isolating key factors, showing that (i) user mediation compounds the inherent difficulty of social reasoning; (ii) LLMs exhibit systematic sensitivity to biased user framing; (iii) models can require more details than humans need to reach a correct prediction; and (iv) longer conversations do not always improve performance despite providing opportunities for clarifying questions. We open-source Fuse and a dataset with 21k examples.",
+        "authors": [
+          "Amir Taubenfeld",
+          "Zorik Gekhman",
+          "Avigail Grinstein-Dabush",
+          "Itay Laish",
+          "Ariel Goldstein",
+          "Marian Croak",
+          "Avinatan Hassidim",
+          "Yossi Matias",
+          "Amir Feder"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "FreqSpaNet: Frequency and Spatial Learning of SFPF for Physical Layer Hardware Integrity Detection",
+        "url": "https://arxiv.org/abs/2609.17491v1",
+        "publishedAt": "2026-09-15T17:32:12.000Z",
+        "summary": "Unauthorized hardware replacement can preserve a wireless device's logical identity while altering its physical implementation, posing a challenge to hardware integrity verification. Spatio-frequency polarization fingerprints (SFPFs) capture device-dependent responses across multiple frequencies and directions, but their frequency and spatial dimensions exhibit different structural dependencies. We propose FreqSpaNet, an SFPF representation learning network for open set hardware anomaly detection. A frequency branch captures local variations among neighboring frequencies, while a geometry-aware spatial branch models directional relationships using angular information. The two representations are combined through adaptive fusion, and complementary pretraining further captures shared information while preserving the distinct characteristics of the frequency and spatial representations. Experiments show that FreqSpaNet achieves a mean AUROC of 96.31\\%, 9.05 points above the baseline. Results under seven hardware replacement scenarios further verify the effectiveness of FreqSpaNet.",
+        "authors": [
+          "Xiaoxuan Huang",
+          "Jinlong Xu",
+          "YiZhe Wang",
+          "Meng Zhang",
+          "Xian Li",
+          "Yuying Bian"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
+        "url": "https://arxiv.org/abs/2609.17488v1",
+        "publishedAt": "2026-09-15T17:30:02.000Z",
+        "summary": "We introduce LimiX-2, a new model in the LimiX family, developed through model and data scaling guided by our previously established scaling laws. LimiX-2 adopts the Contextual Mechanism Networks (CMNs) paradigm and is pretrained with Context-Conditional Masked Modeling (CCMM). CMNs shifts the organizing principle of in-context learning from target-centric prediction to mechanism-oriented joint modeling. Rather than centering the network on the $p(y \\mid x, D_{\\mathrm{context}})$ objective of conventional tabular PFNs, it is designed around learning $p(x, y \\mid D_{\\mathrm{context}})$, a context-dependent representation of the joint structure underlying data generation. Pretraining uses synthetic datasets generated by structural causal models (SCMs) spanning diverse graph structures, functional mechanisms, and observation processes. Evaluations on TabArena, TALENT, and BCCO show that LimiX-2 outperforms current dataset-specific models and tabular foundation models. Beyond predictive performance, the CMN paradigm also promotes causal awareness in LimiX-2: its feature attention encodes direct causal relationships, enabling accurate causal skeleton recovery.",
+        "authors": [
+          "Xingxuan Zhang",
+          "Gang Ren",
+          "Hao Yuan",
+          "Hao Zou",
+          "Hongze Tan",
+          "Hui Wang",
+          "Jianhao Song",
+          "Jiansheng Li",
+          "Jiayao Zhang",
+          "Jinghan Zhang",
+          "Kaifang Li",
+          "Lang Mo",
+          "Li Mao",
+          "Mingchao Hao",
+          "Nuo Xu",
+          "Rui Ding",
+          "Ruiji Zhang",
+          "Shuyang Li",
+          "Siyu Mei",
+          "Tianyang Zhang",
+          "Weiyang Mu",
+          "Yancheng Dong",
+          "Yongxian Wei",
+          "Yuan Xue",
+          "Yuanrui Wang",
+          "Yue He",
+          "Zijia Yang",
+          "Ziyun Li",
+          "Dongzhe Li",
+          "Fuqiang Wang",
+          "Jiandong Liu",
+          "Jiawei Chen",
+          "Jiaxin Du",
+          "Kaijie Cheng",
+          "Kehan Li",
+          "Lei Sun",
+          "Linjun Zhou",
+          "Ningbo Dai",
+          "Qi Wang",
+          "Renzhe Xu",
+          "Shaoxing Du",
+          "Shumeng Yang",
+          "Wang Lu",
+          "Wenjing Chu",
+          "Xiannan Huang",
+          "Xiaoyu Lin",
+          "Xing Ai",
+          "Xinyan Han",
+          "Xuanyue Li",
+          "Xuanyue Su",
+          "Xukun Zhang",
+          "Yan Lu",
+          "Yaxin Zhang",
+          "Yi Qin",
+          "Yifei Huang",
+          "Yihan Xu",
+          "Yongle Lv",
+          "Yuanyuan Jiang",
+          "Yushan Han",
+          "Peng Cui"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 11
+      },
+      {
+        "title": "Bridging the Gap Between Homogeneous and Heterogeneous Asynchronous Optimization Is Surprisingly Difficult",
+        "url": "https://arxiv.org/abs/2609.17483v1",
+        "publishedAt": "2026-09-15T17:24:09.000Z",
+        "summary": "Modern large-scale machine learning tasks often require multiple workers, devices, CPUs, or GPUs to compute stochastic gradients in parallel and asynchronously to train model weights. Theoretical results typically distinguish between two settings: (i) the homogeneous setting, where all workers have access to the same data distribution, and (ii) the heterogeneous setting, where each worker operates on different data distributions. Known optimal time complexities in these settings reveal a significant gap, with far more pessimistic guarantees in the heterogeneous case. In this work, we investigate whether these pessimistic optimal time complexities can be overcome under different assumptions. Surprisingly, we show that improvement is provably impossible under widely used first- and second-order similarity assumptions for any randomized algorithm. We then turn to the interpolation regime and demonstrate that the weak interpolation assumption alone is also insufficient. Finally, we introduce a minimal combination of irreducible assumptions, strong interpolation and the local Polyak-Lojasiewicz condition, to derive a new time complexity bound that matches the dependence on worker computation times in the best-known result in the homogeneous setting, without requiring identical data distributions.",
+        "authors": [
+          "Alexander Tyurin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
+      },
+      {
+        "title": "Det-LIME: Detector-Aware, Multi-Instance Local Interpretable Model-Agnostic Explanations for Automated Marine Mammal Detection",
+        "url": "https://arxiv.org/abs/2609.17479v1",
+        "publishedAt": "2026-09-15T17:20:16.000Z",
+        "summary": "Despite the rapid uptake of black-box object detectors in marine mammal research and monitoring, explainability techniques are rarely integrated into conservation workflows. Furthermore, most classification-oriented explainability tools are ill-suited to detection tasks involving imagery of social organisms or those with colonial life histories, as they ignore multiple detections within a scene and produce single-instance outputs that blur evidence across individuals. These methods also generate low-resolution, often biologically irrelevant visuals, limiting their utility for debugging, targeted data augmentation, and refined data collection.\n  We proposed Det-LIME, a detector-aware, multi-instance adaptation of Local Interpretable Model-Agnostic Explanations (LIME) that produced instance-specific, box-aligned explanations by combining per-detection weighting, a proximity kernel that emphasizes regions near each box, and Intersection-over-Union-based matching to track the same instance across perturbations. We evaluated Det-LIME on aerial drone imagery for harbor seal detection, with an additional seabird case study to assess generality, and compared it with vanilla LIME, Stabilized LIME, Deterministic LIME, and gradient-based attribution methods.\n  Using the Attribution Ratio and Max Saliency Hit Rate metrics, we showed that Det-LIME consistently improved multi-instance attribution. In practice, these higher-resolution, instance-aware explanations provide insight into model outputs and support post-processing, debugging, and actionable improvements in modeling and data collection or augmentation.",
+        "authors": [
+          "Jiayi Zhou",
+          "David W. Johnston",
+          "Brinnae Bent"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 11
       }
     ],
     "news": [
+      {
+        "title": "Measure by measure, studying society accurately",
+        "url": "https://news.mit.edu/2026/studying-society-accurately-naoki-egami-0916",
+        "publishedAt": "2026-09-16T04:00:00.000Z",
+        "summary": "Let’s agree at the outset the world is a complicated place, and social scientists have exacting jobs when it comes to measuring civic phenomena with precision.&nbsp; After all, even careful studies raise follow-up questions: How much do their findings apply in other settings? Do conclusions about politics in one country apply to other countries? If you’re studying voters in a lopsided election, will your findings apply to voters in a close election? Those questions are all a natural part of the research process. That’s where Naoki Egami comes in. Egami is an MIT political scientist whose specialty is the methodology of research. He carefully scrutinizes, for one thing, what social scientists call “external validity,” whether the results of particular studies apply more generally. “I always say political methodology is the field where you ask questions as a political scientist, but then you solve them like an applied statistician or an applied computer scientist,” Egami says. “You find out the underlying mathematical problems behind the empirical challenges people face, and solve them optimally.” As it happens, Egami’s interests range widely. Years ago, before the current artificial intelligence craze, he started studying what happens when AI tools are introduced into studies. How accurate are they? How can researchers account for AI tendencies? Focusing on these and other questions has helped Egami build a broad portfolio of research, win awards, and flourish in his career. All the while, he retains interest in basic questions about politics, as well as measuring things correctly.&nbsp; “You need both perspectives,” Egami says. “If you only think about technical statistical theories, you might not work on interesting empirical problems sometimes. But if you only think about problems, you won’t really solve them optimally; you’ll solve them in an ad-hoc way. So, you really want to have both lenses.” Egami joined MIT’s Department of Political Science as an associate professor with tenure in 2025. He is also a faculty affiliate of the Statistics and Data Science Center at the Institute for Data, Systems, and Society (IDSS). Workshopping his career Almost anyone who likes their job has experienced some good fortune in finding it. Egami’s case calls to mind those adages about luck being a mixture of preparation and opportunity.&nbsp; Egami grew up in Tokyo and attended the University of Tokyo. He was good at math and physics, but he also liked political philosophy and was unsure how to combine his interests. One day, Egami attended a workshop about U.S. graduate school, which he thought was about MBA programs. Actually, it was about PhD programs, and included a political scientist talking about using math in the field, so Egami asked her a question.&nbsp; “The miracle is: That workshop had 200 people in it, and after it was done, I was packing my stuff to go home, and the panelist, who was a PhD student, came down from the stage and found me,” Egami recalls. “She asked, ‘Are you the one who said you’re interested in political science in the U.S., and likes math?’”&nbsp; She invited Egami to what he thought would be another career workshop, the following week. Once again, he was mistaken. “I showed up, and it was an academic seminar,” Egami continues. “There were only 20 people there. It was 19 professors, and me, a first-year undergrad.” Then a professor named Kosuke Imai, now at Harvard University, gave a talk about his own research on using statistics in the social sciences.&nbsp; “I was super-excited and felt if I could do even 20 percent of that, it would be a dream,” Egami says. “I talked to Kosuke and said, ‘I want to do what you’re doing.’ He probably thought I was just a random person.” Egami, thus bolstered, started pursuing the goal of becoming a political scientist. He received his BA after spending a year as an exchange student at the University of Michigan, and applied to graduate schools in the U.S., landing at Princeton University — where Imai eventually became one of his advisors. Working with Imai, Rafaela Dancygier, Brandon Stewart, and others, Egami generated papers on methodological topics like external validity — and found substantial interest when he presented them.&nbsp; “That was a case where the audience or market told me what I should really work on,” Egami says. After earning his PhD from Princeton in 2020, he joined the faculty at Columbia University, moving to MIT five years later.&nbsp; Enjoying the spirit of MIT One of the hallmarks of Egami’s work is very close scrutiny of the factors that can influence the results found in empirical studies.&nbsp; “In statistics, you talk about whether the people in the data are similar, meaning the population data,” Egami says. “But in political science, there are a lot of differences in context.”&nbsp; Consider the question of how much political campaigns sway the minds of voters. Political scientists have sometimes received permission to conduct field experiments in active political campaigns. That’s a significant step toward generating robust results. And yet, not all campaign settings are the same. Politicians may let researchers in when they expect to triumph, and the dynamics in those races might differ from close races.&nbsp; “It’s great to do field experiments, and that’s usually where people are allowed to do research,” Egami says. “It’s where politicians know they can win. But most of the time, we’re interested in the battlefield races, the politically competitive districts. And the logic and voter behaviors can be different in those cases.”&nbsp; Egami’s job, on one level, is to spot such differences and make other researchers aware of them. Meanwhile, he has also developed a strong interest in scrutinizing the tools of machine learning, as applied to the social sciences. This predates the elevated interested in AI generated by ChatGPT, starting in late 2022. Some of Egami’s work explores how to systematically identify errors introduced by AI tools and then account for this issue when using AI in research. “In the past, social science data is something we carefully collect and take a long time to really validate before we analyze it,” Egami says. “But if the generation of data is changing. If people use AI to generate data at scale, it can have errors. So I was already thinking: You want to have statistical methods that take into account these errors, otherwise many of the analyses will not be able to be replicated. That’s how I started to work on a lot of things about AI.”&nbsp; All of this has brought Egami recognition and honors in the field. Last year, he received the&nbsp;Emerging Scholar Award from the Society for Political Methodology. He has also been the recipient of best paper awards from the American Political Science Association’s sections for political methodology (in 2019 and 2025), experimental research (in 2024), and political networks (in 2022).&nbsp;Earning awards in three subfields of the discipline speaks to Egami’s scholarly versatility. In his view, though, the work he does in different areas is ultimately aligned.&nbsp; “All these things are in parallel,” Egami says. “I’m trying to start a new research agenda every three to four years. That helps me learn new topics and be motivated.” Further motivation, he says, comes from being at MIT and liking the experience. “I already knew MIT was an amazing place I would enjoy,” Egami says. Even so, in his time at MIT, he says, he has gained even more appreciation for the “spirit of engineering,” in the sense of working systematically on solutions to ongoing problems, among other things. In any case, Egami has found the Institute to be a stimulating and congenial place to do his work.&nbsp; “People are really nice at MIT,” says Egami, who has been teaching both undergraduate and graduate classes. He adds: “The Department of Political Science is really high-functioning, people are intensive in terms of their work, but it’s just genuinely nice people.”&nbsp; And, yes, that’s one claim about the world Egami does not have to double-check.&nbsp;",
+        "authors": [
+          "Peter Dizikes | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 1
+      },
+      {
+        "title": "We don&#8217;t need AI regulation — leave safety to us, Nvidia&#8217;s Jensen Huang says",
+        "url": "https://techcrunch.com/2026/09/15/we-dont-need-ai-regulation-leave-safety-to-us-nvidias-jensen-huang-says/",
+        "publishedAt": "2026-09-16T00:20:39.000Z",
+        "summary": "AI isn't some new form of \"alien mind,\" according to Jensen Huang. It's just hardware and software, so safety can be engineered by each AI product maker.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 4
+      },
       {
         "title": "The AI data center boom is colliding with cities scarred by big industry",
         "url": "https://techcrunch.com/2026/09/15/the-ai-data-center-boom-is-colliding-with-cities-scarred-by-big-industry/",
@@ -334,7 +398,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 7
       },
       {
         "title": "Meta now lets AI agents handle the boring parts of WhatsApp Business setup",
@@ -348,7 +412,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 9
       },
       {
         "title": "The AI graveyard: a running list of projects and startups that didn&#8217;t make it",
@@ -362,7 +426,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 5
+        "ageHours": 10
       },
       {
         "title": "US data centers could consume more natural gas than Germany and Japan combined by 2035",
@@ -376,7 +440,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 10
       },
       {
         "title": "AI agents now have a place to snitch",
@@ -390,7 +454,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 11
       },
       {
         "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
@@ -402,7 +466,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "Meta expands subscription push with new AI-focused plans",
@@ -416,7 +480,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "OpenAI, Anthropic, Google have been in talks on AI safety for weeks",
@@ -430,7 +494,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 8
+        "ageHours": 13
       },
       {
         "title": "AEO startup Profound hits unicorn valuation, raises $180M Series D 7 months after last round",
@@ -444,7 +508,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 13
       },
       {
         "title": "Former TikTok execs built an app that uses AI to teach you how to pose for a photo",
@@ -458,54 +522,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
-      },
-      {
-        "title": "Discover how to take your startup from prototype to production at TechCrunch Disrupt 2026",
-        "url": "https://techcrunch.com/2026/09/15/discover-how-to-take-your-startup-from-prototype-to-production-at-techcrunch-disrupt-2026/",
-        "publishedAt": "2026-09-15T14:30:00.000Z",
-        "summary": "Learn how to scale your startup breakthrough from prototype to production at TechCrunch Disrupt 2026 with scaling leaders, Adrian Macneil (Foxglove), John Mackey (MBRYONICS), and Boris Sofman (Bedrock Robotics). Register before September 25 to save up to $200 on your pass.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 10
-      },
-      {
-        "title": "4 days left to exhibit at TechCrunch Disrupt 2026",
-        "url": "https://techcrunch.com/2026/09/15/4-days-left-to-exhibit-at-techcrunch-disrupt-2026/",
-        "publishedAt": "2026-09-15T14:00:00.000Z",
-        "summary": "Last day to exhibit at Disrupt is Sept 18. 4 days left. Get your startup in front of 10,000+ founders, investors, operators and tech leaders October 13–15.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 10
+        "ageHours": 14
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 12
-      },
-      {
-        "name": "General",
-        "count": 5
+        "count": 10
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 6
+      },
+      {
+        "name": "General",
+        "count": 4
       },
       {
         "name": "Products",
