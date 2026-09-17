@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T00:26:03.680Z",
+  "generatedAt": "2026-09-17T06:06:35.033Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,279 +85,297 @@
   "sections": {
     "research": [
       {
-        "title": "Agentic Societies Need a Social Harness",
-        "url": "https://arxiv.org/abs/2609.17527v1",
-        "publishedAt": "2026-09-15T17:57:27.000Z",
-        "summary": "An agentic society is a collection of AI agents that coordinate autonomously across trust boundaries, on behalf of different principals whose objectives may only partially align. We show experimentally that in agentic societies even honest, competent agents often fail to reach satisfactory outcomes with existing harnesses and messaging primitives, and that faulty or malicious agents can stall collaboration, influence outcomes, and pursue other harmful goals by exploiting vulnerabilities in communication (``speech''). We argue that agentic societies need a \\emph{social harness} for inter-agent interactions, in addition to each agent's \\emph{personal harness}, which manages its private context and communication with its principal. We propose a layered architecture for social harnesses which (i) prevents classes of failures outright, (ii) enables agents to detect invalid messages at runtime, and (iii) supports post-facto investigation and consequences, and highlight directions for future research to realize these capabilities.",
+        "title": "Objective vs. Search: Decomposing What Makes a Good Tokeniser",
+        "url": "https://arxiv.org/abs/2609.19145v1",
+        "publishedAt": "2026-09-16T17:59:45.000Z",
+        "summary": "Two dominant tokenisation algorithms are used by modern language models: byte-pair encoding (BPE) and UnigramLM. These differ along two orthogonal axes: their optimisation objective (compression vs. log-likelihood) and their search procedure (bottom-up merging vs. top-down pruning). Existing comparisons confound these axes, making it unclear whether their observed differences stem from what is being optimised vs. how it is being optimised. We disentangle the two by introducing two new tokenisation algorithms that complete this 2x2 design space: BottomUpLL, a bottom-up likelihood-based tokeniser, and TopDownComp, a top-down compression-based tokeniser. We train language models with tokenisers produced by each algorithm, varying: model size, vocabulary sizes, and domain (English-only vs. multilingual). Evaluating models on bits-per-byte, we find that the search procedure -- not the objective -- is the dominant factor: bottom-up tokenisers consistently achieve lower bits-per-byte in most settings. Evaluating models on the BLiMP task, however, shows no consistent relationship between design choice and performance. Overall, our results disentangle the effect of tokeniser design choices on language modelling performance, offering concrete guidance for their more principled construction.",
         "authors": [
-          "Tapan Chugh",
-          "Vidushi Singh",
-          "Krish Jain",
-          "Arvind Krishnamurthy",
-          "Ratul Mahajan"
+          "Ahmetcan Yavuz",
+          "Clara Meister",
+          "Tiago Pimentel"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 30
+        "category": "Models",
+        "ageHours": 12
       },
       {
-        "title": "ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents",
-        "url": "https://arxiv.org/abs/2609.17523v1",
-        "publishedAt": "2026-09-15T17:55:28.000Z",
-        "summary": "We introduce and release ScienceBuddy, an interactive scientific research workspace that brings continually improving scientific agents into researchers' everyday workflows. ScienceBuddy supports researchers in carrying out scientific tasks while transforming their requests, feedback, and execution evidence into tasks and evaluation rubrics for continual learning. At its core is recursive-in-recursive self-improvement, a paradigm that couples harness evolution with model reinforcement learning: the inner recursion improves the harness with the model fixed, while the outer recursion trains the model under the improved harness. Harness evolution shapes training experience, and model learning creates new opportunities for harness adaptation. We present case studies of researcher interaction, harness refinement, and model learning, with the benchmark cases spanning four scientific task families. By releasing ScienceBuddy as a research product, we make this paradigm available to the scientific community and take a step toward discovery intelligence: scientific AI that advances through sustained collaboration with researchers and evolves alongside the research it supports. Website: http://science-buddy.io",
+        "title": "A Zeroth-Order Paradigm for LLM Preference Alignment",
+        "url": "https://arxiv.org/abs/2609.19144v1",
+        "publishedAt": "2026-09-16T17:59:35.000Z",
+        "summary": "Direct preference alignment methods are widely used to align large language models (LLMs) with human preferences because of their computational and memory efficiency. However, likelihood displacement motivates alternative ways to extract information from preference pairs with small likelihood margins. In this paper, we propose and analyze Comparison-based Preference Optimization (ComPO), a zeroth-order alignment method based on comparison oracles. ComPO extracts directional information from these pairs without directly optimizing a differentiable preference loss on them. We establish a convergence guarantee for its basic offline scheme under smoothness, gradient sparsity, and compatibility between the oracle and a latent objective. We further introduce online ComPO, which retains the offline comparison mechanism and uses unlabeled policy generations for reverse-KL control relative to a reference policy. Following the coverage perspective of preference fine-tuning, we establish a performance guarantee for a basic constrained scheme under local coverage and in-distribution pairwise reward accuracy. Experiments on Mistral, Llama, Gemma-2, Qwen3, and Gemma-3 models demonstrate improvements over existing direct alignment methods, including length-controlled win rates, with pair-level diagnostics providing evidence consistent with mitigating likelihood displacement.",
         "authors": [
-          "Shuhan Xue",
-          "Jianyuan Zhong",
-          "Ziyuan Nan",
-          "Wenbin Li",
-          "Zhaochen Yu",
-          "Jinchao Ding",
-          "Qiang Gao",
-          "Pengyu Zhan",
-          "Yuntong Zhang",
-          "Tian Cheng",
-          "Zhenfei Yin",
-          "Yingcheng Wu",
-          "Ling Yang"
+          "Peter Chen",
+          "Xi Chen",
+          "Wotao Yin",
+          "Tianyi Lin"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
+        "category": "Models",
+        "ageHours": 12
       },
       {
-        "title": "PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory and Fine-Grained Motion Control",
-        "url": "https://arxiv.org/abs/2609.17521v1",
-        "publishedAt": "2026-09-15T17:55:13.000Z",
-        "summary": "Interactive control for video generation is moving from coarse prompts toward fine-grained, physically meaningful manipulation of dynamic scenes. Yet existing controllable methods either require the full control schedule before generation starts, or use pixel-space signals that dictate object positions rather than physical dynamics. To address these limitations, we propose PhysStream, an autoregressive model for physics-grounded image-to-video synthesis that incorporates structured scene memory---positional maps and object tracking maps derived online from previously generated frames---and supports fine-grained motion control via sparse velocity-increment signals that encode physical quantities, letting the model learn the underlying dynamics. We train our model in two stages: a bidirectional model is first finetuned with motion-control conditioning, then a causal autoregressive model is trained with additional structured scene memory, further improving physical consistency. PhysStream enables interactive, mid-generation control over multi-object tabletop rigid-body scenes---a capability not supported by prior methods---reducing motion distribution distance (FVMD) by 33% and trajectory error by 12% over the strongest baselines on synthetic benchmarks, and is preferred by human evaluators in over 85% of in-the-wild comparisons. Please check our website for more details: https://czzzzh.github.io/PhysStream",
+        "title": "PANORAMA: Panoptic Grounded Captioning via Mask Proposal Selection",
+        "url": "https://arxiv.org/abs/2609.19143v1",
+        "publishedAt": "2026-09-16T17:59:30.000Z",
+        "summary": "Intelligent systems that act in the world require image understanding that is both comprehensive and spatially grounded. Current vision-language models (VLMs) can generate fluent and detailed image captions, but reliably associating them with image pixels remains challenging. Existing methods that combine dense captioning with pixel-level grounding often produce either incomplete descriptions or inaccurate segmentation masks. We study this problem through panoptic grounded captioning, a task that requires a VLM to describe both foreground objects and background regions while grounding each referring phrase with pixel-level masks. We make three contributions. First, we introduce PanoCaps, a human-annotated benchmark constructed from panoptic segmentation datasets. It provides dense captions with near-complete pixel coverage and image-text alignments at the entity level, supporting both training and evaluation. We further propose a phrase-mask matching protocol and a generalized Panoptic Quality (gPQ) metric that jointly evaluates textual and mask agreement. Second, we formulate phrase grounding as selection from a phrase-conditioned pool of mask proposals and introduce PANORAMA, a VLM that conditions a pretrained segmenter on contextualized phrase representations to obtain candidate masks and learns to select those corresponding to each phrase. Training this interface jointly with caption generation enables PANORAMA to produce high-quality masks while allowing each phrase to refer to a single region or multiple instances. Third, PANORAMA achieves the best overall grounding on PanoCaps and matches or exceeds specialized models across several pixel-level grounding tasks. Experiments show that our method produces precise entity-level segmentations while maintaining detailed, mask-consistent captions. Code, data and models are available at https://www.di.ens.fr/willow/research/panorama/.",
         "authors": [
-          "Chuhao Chen",
-          "Peter Wonka",
-          "Chaoyang Wang",
-          "Chen Wang",
-          "Qiao Feng",
-          "Sergey Tulyakov",
-          "Lingjie Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "When Should LLMs Abstain? Chain-of-Self-Questioning for Selective Risk Control",
-        "url": "https://arxiv.org/abs/2609.17516v1",
-        "publishedAt": "2026-09-15T17:52:24.000Z",
-        "summary": "Large language models can produce fluent answers when their factual support is weak. This paper introduces Chain-of-Self-Questioning (CoSQ), a prompt-only framework that makes answer commitment conditional on an explicit assessment of the information required to answer a question. We evaluate three CoSQ variants under seventeen conditions on the 817-item TruthfulQA multiple-choice validation set using eleven open-weight and hosted model families. In the final balanced-option protocol, Grounded-CoSQ at τ=0.90 reduces the mean unconditional wrong-commitment rate from 13.1% under chain-of-thought prompting to 8.9%, a 32.1% relative reduction, while increasing answered accuracy from 86.9% to 89.7% and answering 87.6% of questions. Both improvements hold for all eleven models and at every evaluated threshold. Critical-CoSQ and Adaptive-CoSQ provide neighboring operating points with 88.6% and 86.5% coverage, respectively, while remaining more reliable than the baseline. A secondary Natural Questions Short-Answer evaluation provides convergent open-form evidence. These findings show that self-assessment can support explicit, tunable answer-or-abstain decisions when an unsupported commitment is more costly than referral or review.",
-        "authors": [
-          "Ali Şenol"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "What Breaks Under Pruning in Smart Homes, and When? Evaluating LLM Degradation Across Architectures and Task Complexity",
-        "url": "https://arxiv.org/abs/2609.17515v1",
-        "publishedAt": "2026-09-15T17:51:48.000Z",
-        "summary": "Pruning can reduce the deployment cost of large language models (LLMs), but its impact on context-grounded tool calling remains poorly understood. We systematically study pruning-induced degradation in smart-home tool calling across four LLMs spanning dense Transformer, dense hybrid, and mixture-of-experts (MoE) architectures, together with depth, width, hybrid, and expert pruning methods. After post-pruning supervised fine-tuning (SFT), we evaluate more than 19,500 instances from three smart-home datasets. Beyond aggregate task accuracy, we characterize degradation along two dimensions: action components (i.e., operation, device, argument, and value) and task complexity. Our results show that dense models have narrow safe pruning regions followed by sharp degradation, while MoE models tolerate substantially more pruning. Pruning degrades grounded specificity before schema-level intent, and aggressive dense pruning can induce systematic over-refusal. These findings highlight the importance of evaluating pruning beyond aggregate accuracy when selecting pruned LLMs for reliable tool execution.",
-        "authors": [
-          "Congjing Zhang",
-          "Vashishtha Patil",
-          "Henning Lange",
-          "Usman Aleem"
+          "Sara Pieri",
+          "Evangelos Kazakos",
+          "Shizhe Chen",
+          "Josef Sivic",
+          "Cordelia Schmid"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 31
+        "ageHours": 12
       },
       {
-        "title": "LACE: Layer-Wise Compression for Dynamic Frame Rate Codecs",
-        "url": "https://arxiv.org/abs/2609.17509v1",
-        "publishedAt": "2026-09-15T17:46:51.000Z",
-        "summary": "Neural audio codecs are a key component in speech language modeling. However, their high frame rates lead to long sequence lengths, increasing computational costs. Dynamic frame rate codecs mitigate this by reducing the effective frame rate using a compression step to merge multiple frames together. However, most prior methods either operate on single-codebook codecs or apply a single compression step before multi-layer quantization. This forces all quantization layers to share the same segmentation boundaries, despite the residual embeddings at different quantization layers exhibiting different rates of change over time. We propose LACE (Layer-Adaptive Codec Encoding), a dynamic frame rate codec that applies an independent compression step at each quantization layer, enabling layer-specific segmentation boundaries. To use LACE tokens in downstream text-to-speech (TTS), we further introduce union alignment and boundary anchor mechanisms to make durations consistent across layers while preserving compression benefits. Experiments on LibriTTS show that LACE offers a better rate-quality tradeoff than prior dynamic frame rate methods on the reconstruction task and improves TTS inference efficiency while maintaining competitive synthesis quality. Our code is released as part of the ESPnet3 codec recipe.",
+        "title": "Dreaming the Sound of Contact: Leveraging Video and Audio Generation for Zero-Shot Force-Aware Manipulation and Data Generation",
+        "url": "https://arxiv.org/abs/2609.19137v1",
+        "publishedAt": "2026-09-16T17:56:44.000Z",
+        "summary": "Recent advances in video generation allow robots to learn manipulation trajectories from generated videos. However, these approaches produce purely kinematic trajectories that lack force information, causing failures in contact-rich tasks where appropriate contact forces are essential for success. In this work, we explore augmenting generated video with audio to shape a bounded, time-varying desired-force profile using the loudness of generated contact sounds. We present a pipeline that jointly leverages generated video and audio to derive motion trajectories and corresponding desired-force profiles from a structured natural-language task prompt. We execute these force-aware trajectories on a Franka Panda robot using a closed-loop force regulator that tracks the audio-shaped force profile during contact. We evaluate our pipeline on multiple tasks that require making contact and demonstrate successful manipulation where a kinematic-only baseline fails. We also use the pipeline as a data generation engine to train policies that achieve the tasks in a closed-loop manner. Project website, videos, and dataset: https://dreamingcontactsound.github.io/",
         "authors": [
-          "Thanapat Trachu",
-          "Samuele Cornell",
-          "William Chen",
-          "Shinji Watanabe"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 31
-      },
-      {
-        "title": "ENCP: Episode-Normalized Conformal Prediction for Vision-and-Language Navigation",
-        "url": "https://arxiv.org/abs/2609.17499v1",
-        "publishedAt": "2026-09-15T17:42:15.000Z",
-        "summary": "Uncertainty estimation for Vision-Language-Navigation (VLN) models is a critical task since it can help identify ambiguous and unreliable predictions, enabling agents to make safer navigation decisions. As one of the most advanced uncertainty estimation frameworks, conformal prediction (CP) offers a promising approach for uncertainty estimation in VLN. However, given that VLN agent requires a sequence of steps, standard calibration in conformal prediction fails to provide coverage guarantee it promises over a dependent, variable-length VLN episode. To this end, we propose Episode-Normalized Conformal Prediction (ENCP), which rescales a nonconformity score by the policy's residual confidence and calibrates one maximum score per episode. Under exchangeable calibration and test episodes, this construction covers the ground truth at every step with probability at least $1 - α$, while allowing dependence among steps within an episode. Across four VLN policies and three nonconformity scores on R2R and REVERIE dataset, ENCP meets all reported empirical step-coverage targets on the seen-to-unseen evaluation. These results demonstrate that ENCP can provide model-agnostic uncertainty estimates, which might be useful for determining when a VLN agent should defer to a more capable predictor, including human assistance.",
-        "authors": [
-          "Vicky Feliren",
-          "A. Taufiq Asyhari",
-          "Muhamad Risqi U. Saputra"
+          "Guanhua Ji",
+          "Tianyu Li",
+          "Dayoon Suh",
+          "Yuqian Zhang",
+          "Boyan Zhang",
+          "Nadia Figueroa"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 31
+        "ageHours": 12
       },
       {
-        "title": "Verifiable Social Reasoning for LLM Assistants",
-        "url": "https://arxiv.org/abs/2609.17496v1",
-        "publishedAt": "2026-09-15T17:37:29.000Z",
-        "summary": "LLM assistants are widely used for daily social advice, yet evaluating their social reasoning in such consultation settings remains challenging since (i) it requires setups where the assistant learns about social situations from subjective user narratives, and (ii) social properties, such as others' intentions, typically lack verifiable ground truth. To address these challenges, we introduce Fuse, a multi-agent simulation framework for studying user-mediated social reasoning. In Fuse, a target agent with a hidden motive interacts with other agents including one representing the user, who then consults the evaluated assistant to infer the target's motive, providing verifiable ground truth by construction. Simulation faithfulness is validated through a human study with 24k annotations. We apply Fuse to 12 LLMs and demonstrate its analytical utility by systematically isolating key factors, showing that (i) user mediation compounds the inherent difficulty of social reasoning; (ii) LLMs exhibit systematic sensitivity to biased user framing; (iii) models can require more details than humans need to reach a correct prediction; and (iv) longer conversations do not always improve performance despite providing opportunities for clarifying questions. We open-source Fuse and a dataset with 21k examples.",
+        "title": "Exponential Hardness of Off-Policy Evaluation under History-Dependent Logging",
+        "url": "https://arxiv.org/abs/2609.19135v1",
+        "publishedAt": "2026-09-16T17:56:12.000Z",
+        "summary": "Can a logged dataset visit every hidden state frequently and still be exponentially uninformative about a target policy's value? We show that it can when the logger depends on history. For every horizon $H \\ge 3$, we construct two POMDPs with at most two latent states per stage, three actions, and a common logger with three memory states. Action coverage, belief coverage, and two behavior-marginal outcome-revealing conditions all have constants independent of $H$. Nevertheless, evaluating a known deterministic target policy to accuracy $1/8$ requires $Θ((3/2)^H \\log(1/δ))$ logged episodes at confidence $1-δ$, for $0 < δ\\le 1/4$, even when both candidate models are known. The mechanism is simple: a reset erases the unknown transition that determines the target value. We characterize the resulting statistical experiment exactly and obtain a matching optimal estimator. A directed two-lane gridworld realizes the construction, and trajectory simulations agree with its finite-sample prediction. The result establishes intractability for the history-dependent-logging, model-based case posed by Zhang and Jiang (2025, arXiv:2503.01134), under their behavior-marginal definition of revealing.",
         "authors": [
-          "Amir Taubenfeld",
-          "Zorik Gekhman",
-          "Avigail Grinstein-Dabush",
-          "Itay Laish",
-          "Ariel Goldstein",
-          "Marian Croak",
-          "Avinatan Hassidim",
-          "Yossi Matias",
-          "Amir Feder"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "FreqSpaNet: Frequency and Spatial Learning of SFPF for Physical Layer Hardware Integrity Detection",
-        "url": "https://arxiv.org/abs/2609.17491v1",
-        "publishedAt": "2026-09-15T17:32:12.000Z",
-        "summary": "Unauthorized hardware replacement can preserve a wireless device's logical identity while altering its physical implementation, posing a challenge to hardware integrity verification. Spatio-frequency polarization fingerprints (SFPFs) capture device-dependent responses across multiple frequencies and directions, but their frequency and spatial dimensions exhibit different structural dependencies. We propose FreqSpaNet, an SFPF representation learning network for open set hardware anomaly detection. A frequency branch captures local variations among neighboring frequencies, while a geometry-aware spatial branch models directional relationships using angular information. The two representations are combined through adaptive fusion, and complementary pretraining further captures shared information while preserving the distinct characteristics of the frequency and spatial representations. Experiments show that FreqSpaNet achieves a mean AUROC of 96.31\\%, 9.05 points above the baseline. Results under seven hardware replacement scenarios further verify the effectiveness of FreqSpaNet.",
-        "authors": [
-          "Xiaoxuan Huang",
-          "Jinlong Xu",
-          "YiZhe Wang",
-          "Meng Zhang",
-          "Xian Li",
-          "Yuying Bian"
+          "Pranaya Jajoo"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 31
+        "category": "Research",
+        "ageHours": 12
       },
       {
-        "title": "LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence",
-        "url": "https://arxiv.org/abs/2609.17488v1",
-        "publishedAt": "2026-09-15T17:30:02.000Z",
-        "summary": "We introduce LimiX-2, a new model in the LimiX family, developed through model and data scaling guided by our previously established scaling laws. LimiX-2 adopts the Contextual Mechanism Networks (CMNs) paradigm and is pretrained with Context-Conditional Masked Modeling (CCMM). CMNs shifts the organizing principle of in-context learning from target-centric prediction to mechanism-oriented joint modeling. Rather than centering the network on the $p(y \\mid x, D_{\\mathrm{context}})$ objective of conventional tabular PFNs, it is designed around learning $p(x, y \\mid D_{\\mathrm{context}})$, a context-dependent representation of the joint structure underlying data generation. Pretraining uses synthetic datasets generated by structural causal models (SCMs) spanning diverse graph structures, functional mechanisms, and observation processes. Evaluations on TabArena, TALENT, and BCCO show that LimiX-2 outperforms current dataset-specific models and tabular foundation models. Beyond predictive performance, the CMN paradigm also promotes causal awareness in LimiX-2: its feature attention encodes direct causal relationships, enabling accurate causal skeleton recovery.",
+        "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+        "url": "https://arxiv.org/abs/2609.19134v1",
+        "publishedAt": "2026-09-16T17:55:47.000Z",
+        "summary": "Scientific code repositories encode decades of human knowledge in executable models, methods, and tools. Yet fragmented toolchains, implicit domain conventions, and specialized correctness criteria make this knowledge difficult to convert into reliable learning experience-a challenge we call the scientific experience bottleneck. We introduce ScienceIDE, infrastructure for turning the world's scientific code into programmable environments for scientific agents. Guided by expert-defined scientific cases and acceptance criteria, agents transform repositories into executable environments that support task generation, execution, and scientific verification. These environments provide a shared foundation for supervised fine-tuning, reinforcement learning, and evaluation. Using verified interaction trajectories, we train PhAI-IDE-72B, PhAI-IDE-9B, and PhAI-IDE-4B. The model family shows gains in held-out scientific-code repair and across selected general-purpose benchmarks in code, reasoning, and knowledge, providing evidence of positive transfer from scientific experience to broader capabilities. ScienceIDE lays the foundation for an integrated workspace for agent learning and scientific practice, making humanity's scientific software a shared substrate for developing scientific intelligence. Code: https://github.com/aitofound/ScienceIDE",
         "authors": [
-          "Xingxuan Zhang",
-          "Gang Ren",
-          "Hao Yuan",
-          "Hao Zou",
-          "Hongze Tan",
-          "Hui Wang",
-          "Jianhao Song",
-          "Jiansheng Li",
-          "Jiayao Zhang",
-          "Jinghan Zhang",
-          "Kaifang Li",
-          "Lang Mo",
-          "Li Mao",
-          "Mingchao Hao",
-          "Nuo Xu",
-          "Rui Ding",
-          "Ruiji Zhang",
-          "Shuyang Li",
-          "Siyu Mei",
-          "Tianyang Zhang",
-          "Weiyang Mu",
-          "Yancheng Dong",
-          "Yongxian Wei",
-          "Yuan Xue",
-          "Yuanrui Wang",
-          "Yue He",
-          "Zijia Yang",
-          "Ziyun Li",
-          "Dongzhe Li",
-          "Fuqiang Wang",
-          "Jiandong Liu",
-          "Jiawei Chen",
-          "Jiaxin Du",
-          "Kaijie Cheng",
-          "Kehan Li",
-          "Lei Sun",
-          "Linjun Zhou",
-          "Ningbo Dai",
-          "Qi Wang",
-          "Renzhe Xu",
-          "Shaoxing Du",
-          "Shumeng Yang",
-          "Wang Lu",
-          "Wenjing Chu",
-          "Xiannan Huang",
-          "Xiaoyu Lin",
-          "Xing Ai",
-          "Xinyan Han",
-          "Xuanyue Li",
-          "Xuanyue Su",
-          "Xukun Zhang",
-          "Yan Lu",
-          "Yaxin Zhang",
-          "Yi Qin",
-          "Yifei Huang",
-          "Yihan Xu",
-          "Yongle Lv",
-          "Yuanyuan Jiang",
-          "Yushan Han",
-          "Peng Cui"
+          "Hejia Geng",
+          "Zesen Huang",
+          "Haoyang Li",
+          "Wenbin Li",
+          "Koutian Wu",
+          "Zihan Zhou",
+          "Yuanbo Pang",
+          "Weihao Liu",
+          "Zigong Xu",
+          "Zhiping Li",
+          "Zongzheng Zhang",
+          "Chuanfei Dong",
+          "Jiankai Sun",
+          "Tianzhe Zheng",
+          "Fengyu Xie",
+          "Yue Ma",
+          "Yueheng Shi",
+          "Tong Xie",
+          "Zonglin Di",
+          "Xianrong Liu",
+          "Qucheng Gao",
+          "Yimin Liu",
+          "Jiaming Pan",
+          "Sheng Huang",
+          "Xiao-Han Ma",
+          "Lanqing Yuan",
+          "Zhenlin Zhu",
+          "Ziang Liu",
+          "Ziyang Xu",
+          "Junkai Wang",
+          "Kangkai Liang",
+          "Jiayi Xian",
+          "Zehong Zhao",
+          "Liuwei Xu",
+          "Jingxu Xie",
+          "Peijin Zhang",
+          "Qiang Gao",
+          "Chengyi Xing",
+          "Zhe Zhao",
+          "Xi Wang",
+          "Yaopeng Xing",
+          "Xing Meng",
+          "Zhenfei Yin",
+          "Yingcheng Wu",
+          "Ling Yang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Cognitive Extensions for Dual-Process Language Agents: Memory and Self-Reflection in Interactive Environments",
+        "url": "https://arxiv.org/abs/2609.19128v1",
+        "publishedAt": "2026-09-16T17:50:42.000Z",
+        "summary": "Language agents remain brittle in interactive environments, where success requires long-horizon state tracking, valid action execution, and recovery from failed steps. We extend SwiftSage, a dual-process agent that combines a fast action proposer with a slower planner, using two modular cognitive extensions: an Adaptive Memory Module (AMM) for salience-gated episodic storage and trigger-driven retrieval, and a Self-Reflection Module (SRM) for bounded execution-time validation and corrective intervention. Both modules are implemented as feature-flagged extensions over the same execution substrate, enabling controlled ablations on ScienceWorld. Across four configurations---baseline, baseline+AMM, baseline+SRM, and the full system---the full system achieves the best mean final score (64.62), success rate (43.17%), and successful-step efficiency (19.33 steps), while SRM is the strongest standalone contributor. The results suggest that execution-time control is the dominant bottleneck in this setting, while episodic memory becomes most useful once the runtime loop is stabilized.",
+        "authors": [
+          "João Meneses dos Santos",
+          "Arlindo L. Oliveira"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 31
+        "ageHours": 12
       },
       {
-        "title": "Bridging the Gap Between Homogeneous and Heterogeneous Asynchronous Optimization Is Surprisingly Difficult",
-        "url": "https://arxiv.org/abs/2609.17483v1",
-        "publishedAt": "2026-09-15T17:24:09.000Z",
-        "summary": "Modern large-scale machine learning tasks often require multiple workers, devices, CPUs, or GPUs to compute stochastic gradients in parallel and asynchronously to train model weights. Theoretical results typically distinguish between two settings: (i) the homogeneous setting, where all workers have access to the same data distribution, and (ii) the heterogeneous setting, where each worker operates on different data distributions. Known optimal time complexities in these settings reveal a significant gap, with far more pessimistic guarantees in the heterogeneous case. In this work, we investigate whether these pessimistic optimal time complexities can be overcome under different assumptions. Surprisingly, we show that improvement is provably impossible under widely used first- and second-order similarity assumptions for any randomized algorithm. We then turn to the interpolation regime and demonstrate that the weak interpolation assumption alone is also insufficient. Finally, we introduce a minimal combination of irreducible assumptions, strong interpolation and the local Polyak-Lojasiewicz condition, to derive a new time complexity bound that matches the dependence on worker computation times in the best-known result in the homogeneous setting, without requiring identical data distributions.",
+        "title": "Affora: A Design System for Agent-Friendly Interfaces",
+        "url": "https://arxiv.org/abs/2609.19125v1",
+        "publishedAt": "2026-09-16T17:46:34.000Z",
+        "summary": "Computer-use agents increasingly operate software designed for people, but interfaces often leave actions or task state unclear to machine readers. We present Affora, a design system that supports both readers while preserving visual freedom and familiar human workflows. Three controlled studies examine component implementations, visual variation, and interaction-design principles. Their findings inform guidance from individual components to complete sites, supported by reusable implementations and executable checks. Agent performance depends on the interaction meaning available through its interface representation; substantial visual variation remains possible when that meaning is preserved. Evaluation on independently authored interfaces shows gains where Affora addresses existing deficits, but limited effects where those deficits are absent or outside its coverage. A workflow case provides preliminary evidence of reduced interaction cost. Affora connects user experience and agent experience through a shared interface rather than a separate agent-only surface.",
         "authors": [
-          "Alexander Tyurin"
+          "Jin Gao"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Flag Game: A Toy Model for Mechanistic Swarm Interpretability",
+        "url": "https://arxiv.org/abs/2609.19124v1",
+        "publishedAt": "2026-09-16T17:46:06.000Z",
+        "summary": "Emergent coordinated behaviors of AI agents are starting to present critical safety risks. A key phenomenon driving these behaviors is the rapid formation and spread of beliefs about the world, and mechanistic understanding is crucial for collective alignment. To this end, we introduce the Flag Game, a toy model for studying the mechanisms of collective belief formation. Concretely, a hidden country flag defines the ground truth, and each bounded agent directly observes only a private crop but can exchange beliefs and weigh social evidence from peers. Despite its simplicity, the Flag Game reproduces rich collective phenomenology: non-monotonic scaling of performance with population size, accuracy gains from social-awareness prompting and team diversity, and strong effects of organizational structure. In particular, we identify that collective belief collapse at small population sizes turns into collective belief polarization as the population grows. This polarization causes the performance decline at large population sizes, but creates diversity in collective beliefs. Finally, we dissect the mechanisms underlying collective belief collapse and polarization with two complementary approaches. We first introduce social circuit attribution, a technique to predict which agent, and what view, matters most to collective dynamics, and verify its predictions by causal interventions on agents, tracing how agent patching changes collective outcomes. However, the efficacy of causal interventions on agents decreases as the population grows. We therefore develop a statistical mechanical theory for larger populations and verify that it matches the empirical phase diagram. Together, these results take a first step toward mechanistic swarm interpretability, a science of how the properties of individual agents and their communication give rise to emergent collective behavior.",
+        "authors": [
+          "Elizabeth Pavlova",
+          "Hidenori Tanaka"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Playing log(N)-Questions over Wikipedia Abstracts: Communication Efficiency Between Paired Frontier Models",
+        "url": "https://arxiv.org/abs/2609.19113v1",
+        "publishedAt": "2026-09-16T17:41:12.000Z",
+        "summary": "We evaluate six frontier language models on the two-agent $\\log(N)$-Questions game. A questioner sees $N$ Wikipedia lead paragraphs and must identify a secretly chosen target using exactly $\\log_2 N$ yes/no questions. An answerer sees only the target and the question, and replies with one word. Both roles run on the same provider, so the game measures how well a model communicates with itself across an information asymmetry. We run 408 games over document sets of 4 to 1024 paragraphs at a total API cost of \\$363. One model finishes well behind the others: Claude Opus 5 wins 28 of 68 games, against 45 to 56 for GLM-5.3, GPT-5.6 Sol, Grok 4.6, Gemini 3.8 Flash and Kimi K3. The leading five are only marginally separable. Pooling those five, win rate declines with set size at $r=-0.973$ and is fit by a single per-round reliability parameter. The form is $\\text{win}=p^{\\log_2 N}$ with $p=0.928$. Losses divide into answer errors and discrimination failures in roughly equal measure, and models almost never name a document their own evidence excludes. Every unanimous answer error from the weakest model was inspected: 32 of 34 are ``No'' answers, on properties stated in the document's first sentence, under an instruction that explicitly warns against defaulting to ``No''. Information per question, estimated from answer balance, correlates with win rate at $r=+0.88$. The only two models to extract a full bit per question are the only two that partition on document titles, a strategy absent below $N{=}32$ and used in a quarter of questions above it. Reasoning-token expenditure varies $4.5\\times$ across models with little relation to success, and the trace grows as the candidate set shrinks without a matching gain in reliability.",
+        "authors": [
+          "Peter Potash"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents",
+        "url": "https://arxiv.org/abs/2609.19107v1",
+        "publishedAt": "2026-09-16T17:36:13.000Z",
+        "summary": "Scaling laws predict how loss decreases with increases in computation. We show, contrary to conventional wisdom, that architectural interventions can modify scaling exponents in pre-training, leading to exponential improvements in performance with increases in computation. As an anchoring point, we consider the architectural formulation of looped transformers. Although not typically used in this way, looping, also known as recursive depth, provides a mechanism for model growth, by increasing the number of loops during training. Model growth, with and without shared weights, provides the biggest changes to the scaling exponents. In particular, a 7.4B model growth architecture matches GPT-3 13B on CORE with roughly $20\\times$ less compute, and has compute efficiency gains that increase with scale. Moreover, simply using a boundary operator in a vanilla transformer, which normalizes and injects an earlier block, also provides increasing compute-efficiency gains, although to a lesser extent. In the data-constrained, multi-epoch setting, standard looping has a useful regularizing effect, where we find it is compute-optimal to increase the number of loops with scale. These results can be understood through the lens of computational depth: for a given computational budget, we wish to increase the usable depth of the transformer, which can lead to efficiency gains that increase with scale.",
+        "authors": [
+          "Zixi Chen",
+          "Akshay Vegesna",
+          "Samip Dahal",
+          "Andrew Gordon Wilson"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 31
+        "category": "Research",
+        "ageHours": 13
       },
       {
-        "title": "Det-LIME: Detector-Aware, Multi-Instance Local Interpretable Model-Agnostic Explanations for Automated Marine Mammal Detection",
-        "url": "https://arxiv.org/abs/2609.17479v1",
-        "publishedAt": "2026-09-15T17:20:16.000Z",
-        "summary": "Despite the rapid uptake of black-box object detectors in marine mammal research and monitoring, explainability techniques are rarely integrated into conservation workflows. Furthermore, most classification-oriented explainability tools are ill-suited to detection tasks involving imagery of social organisms or those with colonial life histories, as they ignore multiple detections within a scene and produce single-instance outputs that blur evidence across individuals. These methods also generate low-resolution, often biologically irrelevant visuals, limiting their utility for debugging, targeted data augmentation, and refined data collection.\n  We proposed Det-LIME, a detector-aware, multi-instance adaptation of Local Interpretable Model-Agnostic Explanations (LIME) that produced instance-specific, box-aligned explanations by combining per-detection weighting, a proximity kernel that emphasizes regions near each box, and Intersection-over-Union-based matching to track the same instance across perturbations. We evaluated Det-LIME on aerial drone imagery for harbor seal detection, with an additional seabird case study to assess generality, and compared it with vanilla LIME, Stabilized LIME, Deterministic LIME, and gradient-based attribution methods.\n  Using the Attribution Ratio and Max Saliency Hit Rate metrics, we showed that Det-LIME consistently improved multi-instance attribution. In practice, these higher-resolution, instance-aware explanations provide insight into model outputs and support post-processing, debugging, and actionable improvements in modeling and data collection or augmentation.",
+        "title": "rMuscle: Robotic Muscle Memory for Efficient Vision-Language-Action Model Inference",
+        "url": "https://arxiv.org/abs/2609.19104v1",
+        "publishedAt": "2026-09-16T17:34:43.000Z",
+        "summary": "Factory work is a promising early scenario for embodied AI: assigning repetitive manual jobs to robots has clear economic payoff, and a structured station keeps the jobs tractable for current policies. Vision-Language-Action (VLA) models now dominate as the policy paradigm for these robots. The inference latency of VLA models directly affects robot responsiveness and motion smoothness. However, existing VLA inference frameworks do not fully exploit the characteristics of embodied workloads or account for the distinct bottlenecks across different stages of VLA inference.\n  In this paper, we first characterize embodied workloads and identify substantial task similarity across repeated robot executions. We further find that such similarity extends beyond observations and action trajectories to internal model states. Drawing on these observations, we present rMuscle, a real-time VLA inference framework inspired by human muscle memory. It exploits cross-execution similarity through a dual-phase muscle-memory cache. The Context Cache reuses visual-token outputs to reduce computation, while the Action Cache reuses neuron activation patterns to reduce weight accesses. We keep both the cache memory footprint and access overhead low through online cache recomputation, sliding-window cache retrieval, and mask sharing across consecutive denoising steps. rMuscle achieves 1.29-1.42X speedup on RTX 4090 and Jetson Thor across LIBERO, RoboTwin, and physical manipulation tasks, while maintaining the original success rates on real-world robots.",
         "authors": [
-          "Jiayi Zhou",
-          "David W. Johnston",
-          "Brinnae Bent"
+          "Kaijun Zhou",
+          "Zhiyang Li",
+          "Le Chen",
+          "Jinyu Gu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 31
+        "ageHours": 13
       }
     ],
     "news": [
+      {
+        "title": "Iceland-based Treble raises $18 million for its voice simulation platform",
+        "url": "https://techcrunch.com/2026/09/16/iceland-based-treble-raises-18-million-for-its-voice-simulation-platform/",
+        "publishedAt": "2026-09-17T05:00:00.000Z",
+        "summary": "Treble's voice simulation platform is used by voice AI model developers, AI wearable, and robotics companies",
+        "authors": [
+          "Ivan Mehta"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 1
+      },
+      {
+        "title": "Your startup’s next teammate might be an AI agent: Gusto, Insight Partners, and Leland explain what that changes at TechCrunch Disrupt 2026",
+        "url": "https://techcrunch.com/2026/09/16/your-startups-next-teammate-might-be-an-ai-agent-gusto-insight-partners-and-leland-explain-what-that-changes-at-techcrunch-disrupt-2026/",
+        "publishedAt": "2026-09-17T03:30:00.000Z",
+        "summary": "This session will explore how early-stage companies are building teams where humans and AI agents work alongside each other — and how founders can do that without sacrificing speed, accountability, or culture. Learn more at TechCrunch Disrupt 2026. Register before September 25 to save up to $200.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 3
+      },
+      {
+        "title": "Snap tries to make the case again for its $2,200 smart glasses",
+        "url": "https://techcrunch.com/2026/09/16/snap-tries-to-make-the-case-again-for-its-2200-smart-glasses/",
+        "publishedAt": "2026-09-17T00:58:49.000Z",
+        "summary": "Since Specs' debut earlier this year, Snap has clearly been looking for an opportunity to explain why the smart glasses deserve to exist.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 5
+      },
+      {
+        "title": "Al Gore says the real AI risk isn&#8217;t data centers",
+        "url": "https://techcrunch.com/2026/09/16/al-gore-has-a-surprisingly-calm-take-on-the-ai-data-center-backlash/",
+        "publishedAt": "2026-09-16T23:43:09.000Z",
+        "summary": "In an interview with TechCrunch, Al Gore suggested he isn't losing sleep over AI data center emissions — he's more worried about the AI industry's own warnings about where the technology is headed.",
+        "authors": [
+          "Connie Loizos"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Policy",
+        "ageHours": 6
+      },
       {
         "title": "Anthropic and OpenAI want to embed safety evaluators. Will they really be independent?",
         "url": "https://techcrunch.com/2026/09/16/anthropic-and-openai-want-to-embed-safety-evaluators-will-they-really-be-independent/",
@@ -370,7 +388,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 3
+        "ageHours": 9
       },
       {
         "title": "After accusations of selling &#8216;perv glasses,&#8217; Meta prepares to sell a pair without a camera",
@@ -384,7 +402,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 10
       },
       {
         "title": "AI labs want in-house auditors — but maybe they should shut the front door first",
@@ -398,7 +416,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 12
       },
       {
         "title": "Your AI agents can now control your Google Home devices",
@@ -412,7 +430,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 13
       },
       {
         "title": "Our framework for reporting model misalignment",
@@ -424,7 +442,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 13
       },
       {
         "title": "Anthropic merges Claude chat and Cowork in one interface",
@@ -438,7 +456,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 8
+        "ageHours": 14
       },
       {
         "title": "Helping older adults use AI in everyday life",
@@ -450,7 +468,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 8
+        "ageHours": 14
       },
       {
         "title": "Robots are waiting for a ChatGPT moment: Nvidia’s Les Karpas explains why at TechCrunch Disrupt 2026",
@@ -464,86 +482,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 9
-      },
-      {
-        "title": "New AI technique could make minimally invasive surgeries safer and more precise",
-        "url": "https://news.mit.edu/2026/new-ai-technique-could-make-minimally-invasive-surgeries-safer-more-precise-0916",
-        "publishedAt": "2026-09-16T15:00:00.000Z",
-        "summary": "Researchers created a new technique that accurately and rapidly matches X-rays captured during surgery with a patient’s preoperative 3D medical scan. This method could make it easier for clinicians to precisely pilot minimally invasive surgical tools, leading to faster and safer procedures. Clinicians perform many minimally invasive surgeries using real-time X-rays to help them steer devices like catheters and endoscopes through tiny incisions. But since X-rays are flat images, it can be challenging to determine exactly where surgical tools are located and oriented within the patient’s body, increasing the risk of complications. To help localize surgical devices, clinicians may manually align X-rays with preoperative 3D medical images, such as CT scans or MRIs. Artificial intelligence tools designed to streamline this process struggle to align images robustly for all patients, making them infeasible in practice. This new system, developed by scientists and clinicians at MIT and collaborating institutions, uses an AI model that adapts to each patient in only about five minutes. The model automatically matches one patient’s X-rays with 3D scans in a matter of seconds, and with sub-millimeter precision. Named xvr (which stands for X-ray volume registration), it outperformed existing AI methods by an order of magnitude across a wide range of patients, body parts, and medical procedures. “A majority of Americans live more than an hour away from a center that can perform noninvasive procedures, like emergency stroke interventions. An hour in stroke time is incredibly substantial. Making these procedures easier by combining 2D and 3D information enables these types of highly specialized life-saving procedures to be more accessible to much broader parts of the population,” says Vivek Gopalakrishnan, a postdoc in the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL); a recent graduate of the Harvard-MIT Program in Health Sciences and Technology; and lead author of a paper on xvr, which appears today in Nature . He is joined on the paper by his advisor Polina Golland, the Sunlin and Priscilla Chou Professor of Electrical Engineering and Computer Science (EECS), a principal investigator in CSAIL, the leader of the Medical Vision Group, and co-senior author of the paper; and Neel Dey, a former postdoc in the Medical Vision Group who is now an investigator at Harvard Medical School and Massachusetts General Hospital as well as co-senior author on the paper. Additional co-authors include David-Dimitris Chlorogiannis, a researcher and clinician at Harvard Medical School; Andrew Abumoussa, a neurosurgeon at St. Luke’s Marion Bloch Neuroscience Institute; Anna M. Larson, a pediatric clinician at Shriners Children’s Hospital; Nazim Haouchine, an assistant professor of radiology at Harvard and Brigham and Women’s Hospital; Darren B. Orbach, a physician and scientist at Boston Children’s Hospital; and Sarah Frisken, an associate professor of radiology at Harvard. Making X-rays more informative In many minimally invasive surgical procedures, like angioplasty to open blocked arteries, clinicians insert instruments through a tiny incision and use a high-speed mobile X-ray scanner to generate images that allow them to visualize the procedure from any angle.&nbsp; But to guide surgical tools without accidentally damaging other tissue, clinicians must align real-time X-rays with the patient’s preoperative MRI or CT scan. This process, called registration, helps them determine where the tool is in relation to anatomical structures.&nbsp; “It takes decades of training for a clinician to become skilled enough to see grainy, 2D images and understand how everything is oriented. We want to make these 2D X-rays more informative, so it becomes safer and easier to do these life-saving procedures,” Gopalakrishnan says. Manual registration methods are slow and burdensome, requiring the clinician to guess the position of a surgical instrument by punching numbers into a computer or clicking anatomical landmarks on a screen.&nbsp; To streamline the process, researchers are developing AI models that can predict 2D/3D registration. But people have such diverse anatomy that a model which works well for some patients may fail for others.&nbsp; A lack of high-quality annotated medical image data makes it difficult to train a deep-learning model robust enough to adapt to many patients, Gopalakrishnan says. Rather than trying to make a machine-learning model that can be applied to all patients, the researchers built a model designed to adapt extremely well for the specific patient. “We tailor this one specific model for this one specific patient, and it doesn’t matter if it works on other people because there will be different models for those people,” Gopalakrishnan adds. Patient-specific machine learning Xvr takes one patient’s preoperative 3D scan, like an MRI or CT, and uses it to generate thousands of synthetic X-rays from many angles, producing about 1,000 images each second. It uses a physics-based simulation of the X-ray process to ensure these synthetic images are realistic. “Instead of generating data from nothing, like some types of generative AI, this physics simulation is entirely based on the CT scan or MRI from this patient. Because xvr creates patient-specific data in a purely physics-based manner, there is no room for hallucinations,” Gopalakrishnan says. The xvr framework uses these simulated data to train an AI model that can accurately align this patient’s 2D X-rays with their 3D image scan in a matter of seconds. But while such a registration model is highly accurate, it would take about 12 hours to train from scratch for each patient, making it impossible to deploy in an emergency. To make the process faster, the researchers used xvr to pretrain a more versatile AI system, called a foundation model, that can quickly adjust to each new patient.&nbsp; They collected whole-body 3D medical scans from more than 2,000 patients covering a wide range of ages, image modalities, and regions. Xvr used these diverse data to generate synthetic X-rays and train a foundation model to perform 2D/3D registration. This pretrained model can adapt to a new patient in about five minutes, and performs registration with the same accuracy as if it had been trained from scratch.&nbsp; “So now you can get patient-specific accuracy but also in a very rapid time frame,” Gopalakrishnan says. The team tested the model on the largest available dataset of real 2D/3D registrations, incorporating data from five hospitals that covered dozens of bones and organ systems in adult and pediatric patients.&nbsp; Xvr significantly outperformed other AI-based methods in accuracy and robustness, while operating fast enough for emergency surgeries. The model could also be used to improve the performance of robotic surgery technologies.&nbsp; In the future, the researchers hope to focus on making xvr faster for real-time deployment, conducting further studies to verify its reliability in additional situations, and extending the system to handle more complex scenarios, like moving body parts.&nbsp; “For the past two years, we’ve been carefully developing this algorithm and validating it. Now, we are collaborating closely with surgical robotics companies and clinical groups to turn this research into useful tools for navigation or deployment,” Gopalakrishnan says. This work was funded, in part, but the National Institutes of Health (NIH), the MIT CSAIL-Wistron Program, the MIT-IBM Computing Research Lab, the MIT Jameel Clinic, the MIT Health and Life Sciences Collaborative, and the Chou Family Transformative Research Fund.",
-        "authors": [
-          "Adam Zewe | MIT News"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
-        "ageHours": 9
-      },
-      {
-        "title": "Threads&#8217; new features let podcasters promote shows and reach listeners",
-        "url": "https://techcrunch.com/2026/09/16/threads-new-features-let-podcasters-promote-shows-and-reach-listeners/",
-        "publishedAt": "2026-09-16T14:24:58.000Z",
-        "summary": "Threads is rolling out new tools for podcasters, including profile cards, episode links, transcripts, guest tags, posting reminders, and audience insights, as Meta looks to make the X rival a bigger hub for podcast promotion and discussion.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 10
-      },
-      {
-        "title": "Next wave of VCs judging Startup Battlefield 200 contenders at TechCrunch Disrupt 2026 revealed",
-        "url": "https://techcrunch.com/2026/09/16/next-wave-of-vcs-judging-startup-battlefield-200-contenders-at-techcrunch-disrupt-2026-revealed/",
-        "publishedAt": "2026-09-16T14:15:00.000Z",
-        "summary": "Meet the next five top-tier investors judging the Startup Battlefield 200 contenders live at TechCrunch Disrupt 2026. Register before September 25 to save up to $200 and don't miss a moment of the ultimate startup pitch competition.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 10
-      },
-      {
-        "title": "3 days left to exhibit: Get your brand in front of VCs and high-value leads at TechCrunch Disrupt 2026",
-        "url": "https://techcrunch.com/2026/09/16/3-days-left-to-exhibit-at-techcrunch-disrupt-2026/",
-        "publishedAt": "2026-09-16T14:00:00.000Z",
-        "summary": "Last day to book your exhibit table at Disrupt is September 18. Three days left. Get your startup in front of 10,000+ founders, investors, operators, and tech leaders on October 13–15.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 10
+        "ageHours": 15
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 11
+        "count": 12
       },
       {
         "name": "Models",
         "count": 8
       },
       {
-        "name": "Products",
+        "name": "Policy",
         "count": 2
       },
       {
         "name": "General",
-        "count": 2
+        "count": 1
       }
     ]
   }
