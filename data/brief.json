@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T00:39:39.253Z",
+  "generatedAt": "2026-09-28T06:47:23.621Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,221 +85,209 @@
   "sections": {
     "research": [
       {
-        "title": "LLM Agents Can Easily Tamper With Their Own Traces",
-        "url": "https://arxiv.org/abs/2609.30266v1",
-        "publishedAt": "2026-09-24T17:59:54.000Z",
-        "summary": "Asynchronous monitoring, incident investigations, and compliance audits primarily rely on agent traces to reconstruct what happened. These analyses assume that LLM agents cannot tamper with their own execution traces. We show that local LLM agents such as Claude Code, Codex, Antigravity, Open Code and Grok Build fail to enforce this boundary. All tested harnesses, except Muse Code, allowed agents to delete their traces when asked, without triggering monitor guardrails. We also validate that external attackers can exploit this gap to induce trace deletion. Finally, we show that trace tampering behavior emerges naturally in frontier models, when agents try to improve their rewards. We advise practitioners to ensure trace logging happens through an independent interception mechanism outside of the agent's control, preserving trace integrity even in cases of full host compromise. Overall, our findings identify a concrete failure of trace integrity in agent infrastructure which can be used to conceal misaligned behaviors like scheming or sabotage.",
+        "title": "Learning to Stop without Learning to Stop: Self-Supervised Confidence Training Improves Reasoning Efficiency",
+        "url": "https://arxiv.org/abs/2609.31619v1",
+        "publishedAt": "2026-09-25T17:59:52.000Z",
+        "summary": "Reasoning models often generate very long reasoning traces, making inference computationally expensive. Existing approaches typically improve efficiency either through inference-time early-stopping mechanisms or by explicitly encouraging shorter reasoning during training, for example through reinforcement learning with length penalties. We show that substantial efficiency gains can instead emerge from a different kind of supervision: \\textit{confidence}. Using a self-supervised procedure, we fine-tune reasoning models to predict their confidence in the answer at intermediate points along their own reasoning trajectories using only 600 training problems. Confidence is used only as a training target: the loss contains no objective for reasoning length, efficiency, or stopping. At inference, the fine-tuned models use the standard generation procedure, with no confidence elicitation or early-stopping mechanism. Despite this, self-supervised confidence fine-tuning makes reasoning more efficient, reducing generated tokens by up to 25\\% at matched accuracy across Gemma, Qwen, Nemotron, and GPT-OSS models on mathematical, scientific, and coding reasoning benchmarks, with efficiency gains comparable to methods that explicitly optimize for shorter reasoning. Analysis of reasoning episodes further shows that confidence supervision largely preserves the base models' high-level reasoning composition rather than selectively suppressing particular behaviors. Our results suggest that efficient reasoning may emerge as a downstream consequence of learning metacognitive signals, without being directly optimized.",
         "authors": [
-          "Jeremy Qin",
-          "David Schmotz",
-          "Derck Prinzhorn",
-          "Luca Beurer-Kellner",
-          "Ameya Prabhu",
-          "Maksym Andriushchenko"
+          "Parsa Hosseini",
+          "Akasha Tigalappanavara",
+          "Sumit Nawathe",
+          "Chenrui Fan",
+          "Sourya Basu",
+          "Genta Indra Winata",
+          "Anirban Das",
+          "Soheil Feizi",
+          "Nima Chitsazan"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 61
       },
       {
-        "title": "AD-WM: Action-Discriminative World Models for Counterfactual Model Predictive Control",
-        "url": "https://arxiv.org/abs/2609.30264v1",
-        "publishedAt": "2026-09-24T17:59:41.000Z",
-        "summary": "Latent world models are typically trained to predict factual transitions, whereas model predictive control (MPC) must compare alternative actions from the same state. A model can therefore achieve low factual prediction error yet poorly distinguish candidate actions. We introduce AD-WM, an action-discriminative joint-embedding world model for counterfactual MPC. AD-WM combines residual latent dynamics with predictor-level action-recovery regularization, using inverse dynamics and a normalized recovery objective motivated by conditional mutual information. Both objectives encourage planning transitions to preserve action information; their auxiliary heads are discarded at test time, leaving MPC unchanged. On OGBench-Cube, AD-WM improves hard-start success from 3.7% to 52.0% over a matched LeWM baseline and improves mean success over the reproduced baseline in four of five simulation environments. Planning diagnostics show that factual prediction error and whole-bank action ranking do not follow the closed-loop success ordering, whereas CEM-aligned elite regret tracks success more closely. With a frozen V-JEPA 2 encoder and matched DROID post-training, AD-WM also improves zero-shot transfer to our Franka setup, increasing basic pick-and-place success from 42.2% to 71.1% without lab-specific adaptation. These results suggest that world models for planning should preserve action-dependent differences needed for counterfactual selection, rather than optimize factual prediction accuracy alone. More videos and code are available at https://ad-wm.github.io/.",
+        "title": "Gap-free Differentially Private PCA for Gaussian Data",
+        "url": "https://arxiv.org/abs/2609.31614v1",
+        "publishedAt": "2026-09-25T17:58:38.000Z",
+        "summary": "We give a gap-free differentially private algorithm for the principal component analysis (PCA) problem with Gaussian data.",
         "authors": [
-          "Jiabin Qiu",
-          "Zixuan Chen",
-          "Hongye Cao",
-          "Jieqi Shi",
-          "Jing Huo",
-          "Yang Gao"
+          "Alina Ene",
+          "Huy L. Nguyen"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 61
       },
       {
-        "title": "Temporal Gradient Inversion for Private Trajectory Reconstruction in Embodied Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2609.30258v1",
-        "publishedAt": "2026-09-24T17:59:18.000Z",
-        "summary": "Distributed learning in embodied reinforcement-learning agents offers a degree of privacy by retaining raw sensor data on-device and transmitting only policy gradients to the server. Yet temporal structure can amplify this leakage beyond single-frame attacks. We introduce Temporal Reconstruction Attack on Consecutive Encodings (TRACE), an amortized temporal gradient-inversion attack that autoregressively reconstructs the sequence of private observation-action trajectories from per-step policy-learning gradients. The attack exploits two structural signals ignored by prior single-frame methods: (i) cross-time correlation between successive embodied gradients, which we formalize via a conditional mutual-information bound, and (ii) closed-form action recovery from policy-head gradient structure, which we prove exact when standard entropy regularization is sufficiently small. On held-out embodied scenes, TRACE reaches $18.8$ dB PSNR with near-perfect action recovery at $3$-$4.5$ ms per reconstructed frame, dominating the learning-based baseline across all reconstruction metrics and exceeding optimization attacks while running orders of magnitude faster. Further evaluation demonstrates TRACE's broader applicability across recurrent, residual, and compact transformer victim architectures, multi-modal inputs, and larger discrete action spaces. Defense experiments suggest that protecting temporal gradient streams may require sequence-aware privacy mechanisms.",
+        "title": "First-Order Stationarity of Reverse Diffusions",
+        "url": "https://arxiv.org/abs/2609.31612v1",
+        "publishedAt": "2026-09-25T17:57:43.000Z",
+        "summary": "Recent literature has shown a strong connection between optimization and sampling. We develop the corresponding first-order theory for diffusion models. First, the SDE-based reverse-time flows of overdamped and underdamped Langevin diffusions contract relative Fisher divergences at explicit exponential rates whenever the stationary potential of the forward process is strongly convex---a condition on the noising process one chooses, not on the data. This is a unique advantage of SDE-based reverse diffusion, absent in the reverse process based on ODEs. Second, we incorporate discretization and establish averaged first-order stationarity bounds---the sampling analog of averaged gradient-norm guarantees in nonconvex optimization---for samplers of both overdamped and underdamped diffusion models. As in nonconvex optimization, the convexity-free certificate is local: it guarantees score consistency, not global mode weights.",
         "authors": [
-          "Sudip Bhujel",
-          "Shanghao Shi",
-          "Ruiquan Huang",
-          "Ning Zhang",
-          "Yang Xiao"
+          "Zhifeng Chen",
+          "Chenyang Jiang",
+          "Yazhen Wang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 61
       },
       {
-        "title": "Agentic Detection of Online Conspiracies",
-        "url": "https://arxiv.org/abs/2609.30250v1",
-        "publishedAt": "2026-09-24T17:58:43.000Z",
-        "summary": "Conspiratorial discourse on social media is not always expressed through explicit claims or stable lexical markers. The same surface content may express endorsement, legitimate concerns, criticism, satire, or mockery. The main challenge is therefore not only recognizing conspiracy-related claims, but inferring the speaker's intent -- the utterance's illocutionary force. We argue that this can be achieved through the use of relevant social contexts and propose an agentic framework, equipped with a set of tools supporting social queries.\n  We demonstrate the benefits of our approach on a unique dataset of Hebrew tweets, covering 80\\%--90\\% of the public Hebrew tweets published over a four-year span (late 2018-- early 2023), encompassing several election cycles as well as the COVID pandemic years and related vaccination campaigns. This extensive coverage can be used in recovering different social contexts. Evaluating our framework on a manually-annotated adversarial dataset, we find that context-aware workflows consistently outperform text-only classification and that the agentic framework performs significantly better than other frameworks and settings, including a non-agentic model exposed to the same contexts available to the agent. We further provide an analysis of the results, the errors and efficiency (token economy) tradeoffs.\n  These findings support viewing the task of conspiracy detection as a socially embedded interpretation task, in which effective classification depends not only on access to contexts, but also on adaptive reasoning in which the agent uses tools on a per-case basis, asking only for evidence relevant to its current reasoning step.",
+        "title": "Statistical attribute alignment for black-box generative AI via output post-processing",
+        "url": "https://arxiv.org/abs/2609.31607v1",
+        "publishedAt": "2026-09-25T17:55:49.000Z",
+        "summary": "Generative AI systems are increasingly used, but aligning their outputs with user requirements poses a continuing challenge. Here, we aim to ensure that the distribution of an attribute of an AI-generated output aligns with a user-specified target. This is motivated by examples such as fairness, where we want to ensure that a protected attribute (e.g., gender, race, or age categories) follows a desired distribution, and synthetic data generation, where we want the generated data to be representative of a target distribution. We study the practically important black-box access setting, where a user can repeatedly query a generative AI model. The goal is to return $m\\ge 1$ outputs whose joint attribute distribution is as close as possible to this target. For both exact and approximate alignment, we develop algorithms that minimize the expected number of queries to the generator, and we further demonstrate their optimality as the number of requested outputs $m \\rightarrow \\infty$. Experiments on text-to-image generation and geocoded persona generation tasks show that our post-processing algorithms improve statistical attribute alignment, complementing prompting-based interventions.",
         "authors": [
-          "Lior Biton",
-          "Oren Tsur"
+          "Kevin Jiang",
+          "Morgane Austern",
+          "Edgar Dobriban",
+          "Jason M. Klusowski"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 61
+      },
+      {
+        "title": "User Model Extraction via Belief Self-Distillation",
+        "url": "https://arxiv.org/abs/2609.31603v1",
+        "publishedAt": "2026-09-25T17:54:32.000Z",
+        "summary": "Large language models (LLMs) implicitly infer attributes of their users and adapt their behavior accordingly, yet these beliefs remain difficult to inspect and causally manipulate. We introduce Belief Self-Distillation (BSD), a unified read-write framework that bridges linear and causal probing by learning a compact user representation that can be both decoded and written back into the model. The frozen LLM acts as its own teacher, distilling beliefs from natural conversations without external annotations. Unlike conventional probing, BSD isolates not only information present in activations, but a state whose causal role can be directly tested. Across multiple model families, BSD faithfully recovers user beliefs and enables substantially stronger interventions than matched hidden-state steering. Crucially, we find that refusal depends not only on the request, but on the model's inferred user intent: changing this belief alters refusal while holding the request fixed. We further uncover a striking cross-model regularity: independently trained LLMs converge on a shared geometry for representing their users. Together, these results reveal implicit user models as readable and causally writable internal states with direct implications for AI safety, shaping how models condition safety decisions on whom they believe they are interacting with.",
+        "authors": [
+          "Ali Holmov",
+          "Yiran Huang",
+          "Kirill Bykov",
+          "Zeynep Akata"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 61
+      },
+      {
+        "title": "New LoRA Skills Should Read but Never Write",
+        "url": "https://arxiv.org/abs/2609.31600v1",
+        "publishedAt": "2026-09-25T17:54:01.000Z",
+        "summary": "Low-rank adapters (LoRA) make it cheap to fine-tune a large language model once per task, but combining several independently trained adapters into one model remains difficult: merging the updates in weight space causes interference, retraining on all task data is expensive, and routing between separate adapters gives up the goal of a single combined model. We trace the difficulty to two choices that every composition method makes implicitly. A LoRA update admits infinitely many equivalent factorizations; the choice among them is invisible while an adapter serves alone, but it determines what a learned interaction between adapters can see. A coupling between an old skill and a new one can likewise point in either direction, and the direction decides whether the old skills keep computing what they computed before. We introduce READ (Read-only Expansion of Adapter Deltas), which fixes both choices: each adapter is rewritten into a balanced canonical form that preserves its update exactly, and the coupling grows in one direction only, so a new skill can read the input subspaces of old skills but cannot write into their output subspaces. The only trainable object at each append is the new skill's row of the coupling matrix, and the composed update folds into the base weights with no inference cost, routing, or task-specific rules. We evaluate READ across four benchmark suites and two model families, adding skills one at a time. Across several families, READ improves every suite average over the strongest published baselines built from the same adapters---by more than twenty points on SuperGLUE and more than seven points on the domain suite---and nearly all complete addition sequences end above every direct baseline. Factor coordinates and coupling direction, which a lone adapter never exposes, are what decide whether composed skills survive.",
+        "authors": [
+          "Zeyan Li",
+          "Panqi Yang",
+          "Qirong Guo",
+          "Shengda Zhuo",
+          "SIyuan Qiu",
+          "Hu Xu",
+          "Chun Li",
+          "Jianfeng Xu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 61
       },
       {
-        "title": "RAPID: Robot Agentic Programming from Demonstrations",
-        "url": "https://arxiv.org/abs/2609.30249v1",
-        "publishedAt": "2026-09-24T17:58:21.000Z",
-        "summary": "Coding agents have demonstrated enormous success in solving complex programming problems. To leverage their potential for robot systems, this work introduces Robot Agentic Programming from Demonstrations (RAPID), which automatically generates, verifies, and refines robot programs, given a single visual human demonstration. The iterative agentic loop of code refinement requires several key ingredients: (i) a testable task specification, (ii) action primitives for robot execution, and (iii) an interactive environment for program execution and verification. RAPID infers all three from the demonstration automatically. To make the resulting program reusable beyond the demonstration setting, RAPID uses an object-centric relational program representation that focuses on the underlying structure of the demonstrated strategy rather than the specific motion per se: it expresses the action primitives as trajectory-optimization programs that realize object-level motion effects, while composing them through relational constraints that capture scene-specific geometry at run time. We evaluated RAPID in simulation on eight challenging contact-rich nonprehensile manipulation tasks as well as general prehensile manipulation tasks in the LIBERO-Pro benchmark. We also successfully deployed it on a real Franka arm and evaluated on all eight nonprehensile tasks. In all experiments, RAPID demonstrated strong performance, with generalization over object pose, shape, material, and environment. Website: https://yuyaoliu.me/projects/rapid.",
+        "title": "Common-Mode Collapse and Recovery in Direct Feedback Alignment",
+        "url": "https://arxiv.org/abs/2609.31589v1",
+        "publishedAt": "2026-09-25T17:43:40.000Z",
+        "summary": "Direct feedback alignment (DFA) trains hidden layers through fixed random projections of output error. With tanh hidden units and independent sigmoid outputs, plain stochastic gradient descent can stall near the loss of a constant predictor of class frequencies. We trace this stall to the error's common mode, the component shared across inputs. An exact mean-covariance decomposition separates a rank-one update formed by the mean teaching signal and mean presynaptic activity. Its leading component drives tanh units toward saturation. At initialization, random feedback provides no systematic correction of the shared error on average; readout learning limits its duration. A reduced model initialized from the network, without fitted parameters, predicts the concentration of activation sensitivity across 48 settings. On MNIST, class decodability largely survives collapse, but readout learning remains slow at a fixed learning rate. Adam learns faster despite deeper collapse. Calibrating the baseline readout to the class prior suppresses collapse and speeds learning; weaker feedback trades less collapse for slower learning. Replacing errors by their signs sustains collapse; subtracting the signal's batch mean prevents sustained collapse and improves learning in the tested setting. Related effects occur in deeper and convolutional networks and on CIFAR-10, with severity and cost depending on the readout, optimizer and input statistics.",
         "authors": [
-          "Yuyao Liu",
-          "Jiayuan Mao",
-          "David Hsu",
-          "Leslie Pack Kaelbling",
-          "Tomás Lozano-Pérez"
+          "Varun Reddy",
+          "Bernardo L. Sabatini",
+          "Houman Safaai"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 61
+      },
+      {
+        "title": "Compact Documentation for Coding Agents: A Benchmark, an Optimizer, and Why It Does Not Transfer",
+        "url": "https://arxiv.org/abs/2609.31587v1",
+        "publishedAt": "2026-09-25T17:42:22.000Z",
+        "summary": "We investigate whether natural-language documentation helps coding agents resolve software issues, and we build the tools to construct and evaluate it. We introduce a roundtrip benchmark that scores code descriptions by whether code regenerated from them passes the original tests, and show that completeness, not length, drives a description's fidelity. Using the benchmark as an optimization signal, we discover a description-writing prompt that reaches full fidelity and generalizes to unseen files. We then test the hypothesis that motivated the work: that better documentation helps an agent resolve real repository issues. Across two model families and ten repositories, and against a positive control confirming that our evaluation can detect a genuine improvement, we find that it does not. When the source is present, neither static compact documentation nor retrieved context beats the issue alone. We report this negative result together with the benchmark and the optimizer, and we characterize the boundary at which documentation helps.",
+        "authors": [
+          "Md Shohel Arman",
+          "Igor Molybog"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 61
       },
       {
-        "title": "Rolling-WAM: World Action Models with Rolling Imagination",
-        "url": "https://arxiv.org/abs/2609.30247v1",
-        "publishedAt": "2026-09-24T17:58:03.000Z",
-        "summary": "World Action Models (WAMs) couple action generation with future visual prediction for robotic manipulation. However, completing the joint video-action denoising process at each replanning cycle incurs substantial latency, delaying action updates and limiting closed-loop responsiveness. We present Rolling-WAM, a formulation that distributes joint denoising across successive replanning cycles. Our method maintains a sliding window of video-action chunks at staggered noise levels. At each step, a rolling noise schedule fully denoises the imminent action chunk for execution, while partially refining farther-future chunks. As the window advances with new camera observations, the retained future chunks continue their denoising process. This distributes the computational cost over time while carrying an evolving visual-action context across chunk boundaries. Evaluations on LIBERO, RoboTwin, and a real-world Unitree G1 humanoid show that Rolling-WAM achieves competitive manipulation performance. By removing the need to denoise the entire prediction horizon from scratch, it delivers a 4.5x steady-state replanning speedup over standard joint WAMs.",
+        "title": "Trust Guided Decision Transformer",
+        "url": "https://arxiv.org/abs/2609.31586v1",
+        "publishedAt": "2026-09-25T17:42:19.000Z",
+        "summary": "Decision Transformer performance degrades on long rollouts because the conditioning context drifts out of the training distribution. We show that this drift is visible through the model's own next state prediction error, which rises during rollout and stays elevated, giving a direct signal of when context has become unreliable. We introduce Trust Guided Decision Transformer (TGDT), which selects context before applying value guidance. At each step, TGDT evaluates several recent context suffixes using rolling next state prediction error, calibrated against held out offline data via split conformal prediction. It keeps only suffixes whose error stays within the calibrated threshold, then uses a frozen critic to choose the highest value action among the trusted suffixes. This reverses the order used by value only elastic selection, where the critic may choose an action generated from a context the model itself has flagged as unreliable. Experiments on D4RL navigation and locomotion tasks show that state prediction, critic guidance, and hard context reset each solve only part of the problem. TGDT reduces persistent high error runs and improves return over vanilla Decision Transformer, reset based context control, and value only context selection.",
         "authors": [
-          "Yinghua Zhou",
-          "Junjie Ye",
-          "Yiqi Zhao",
-          "Hao Dong",
-          "Celina Shiyu Wang",
-          "Ruohai Ge",
-          "Tingyi Yang",
-          "Basile Van Hoorick",
-          "Gaurav Sukhatme",
-          "Vitor Guizilini",
-          "Yue Wang"
+          "Chainesh Gautam",
+          "Raghuram Bharadwaj Diddigi",
+          "Chandramouli Kamanchi",
+          "Pankaj Dayama",
+          "Sumanta Mukherjee",
+          "Kameshwaran Sampath"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 61
       },
       {
-        "title": "JevOut: Natural Context Can Flip Decision Models",
-        "url": "https://arxiv.org/abs/2609.30243v1",
-        "publishedAt": "2026-09-24T17:57:07.000Z",
-        "summary": "Dedicated decision models such as Jev map unstructured language to probability distributions over finite choices, allowing their outputs to directly route requests, select tools, and trigger actions. Yet real-world inputs rarely arrive in isolation: they come with background details and surrounding context. We find that short additions that fit naturally into this context can nevertheless redirect an otherwise correct decision, even when the correct answer remains unchanged. To study this behavior, we fix a wrong target option for each initially correct item and use the model's option probabilities to refine fluent context additions while preserving the source, question, choices, and gold answer. Within 64 accepted target evaluations, the optimizer identifies contexts that redirect Jev on 312 of 508 initially correct decisions (61.4%); in 229 cases, Jev assigns at least 0.7 probability to the fixed wrong option. Across seven datasets, three additional decision systems show targeted flip rates of 64.9%-73.2% on decisions they initially answer correctly. Taken together, these results expose a pronounced fragility in current decision models: short, ordinary-looking context can shift a correct choice to a high-confidence wrong one. Because these models turn language directly into downstream choices, this sensitivity raises concerns about treating their probability outputs as reliable decision interfaces.",
+        "title": "OC-GS: Gaussian Splatting for Irregular Turntable Capture",
+        "url": "https://arxiv.org/abs/2609.31572v1",
+        "publishedAt": "2026-09-25T17:35:05.000Z",
+        "summary": "Uneven rotation and dropped frames make equal-angle assumptions unreliable for turntable reconstruction. We present OC-GS, an object-centric Gaussian splatting that refines each image's angle while maintaining a shared camera, rotation axis, and pivot. This orbit-consistent refinement jointly optimizes image-derived geometry and angles to reconstruct objects from sparse, irregular captures. On rendered objects with 12, 8, and 6 irregularly spaced views, OC-GS achieves mean foreground PSNR scores of 21.26, 19.36, and 15.83dB, respectively, exceeding all four evaluated pose-free Gaussian splatting baselines in each condition. Under a shared trainer, refining image-estimated angles improves mean foreground PSNR by 7.88dB over keeping those estimates fixed. An ablation study shows that both image-derived angle initialization and the shared motion model contribute to the improvement. On real captures, OC-GS's refinement increases mean foreground PSNR by 0.70dB. Results show that refining uncertain angles within a shared motion model improves reconstruction from sparse, irregular turntable captures.",
         "authors": [
-          "Zixiang Xu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "SemMSA: Latent Semantic-Aided Robust Multimodal Sentiment Analysis with Incomplete Data",
-        "url": "https://arxiv.org/abs/2609.30238v1",
-        "publishedAt": "2026-09-24T17:55:31.000Z",
-        "summary": "Recent research on Multimodal Sentiment Analysis (MSA) has focused on learning from language, visual, and acoustic modalities with incomplete data to infer human sentiment. Most studies typically compensate for missing information by reconstructing modality features or designing complicated fusion mechanisms. However, these methods still suffer from spurious generation and noisy guidance due to the lack of high-level semantic grounding in partially observed multimodal evidence. To address these issues, we propose SemMSA, a latent semantic-aided framework that constructs rich sentiment-relevant semantics with LLMs, fully integrating with all modalities via anchor-free spectral alignment. It mainly consists of Cross-modal Semantic Refinement (CSR) and Cross-modal Spectral Alignment (CSA). Specifically, CSR first adaptively extracts visual and acoustic representations by corresponding adapters to form a unified multimodal prefix with language in the frozen LLM embedding space. It then iteratively produces continuous discriminative semantic states through a token-efficient latent refinement process without decoding explicit text. Next, CSA simultaneously aligns the refined semantics with all modalities by enhancing the dominant spectral component of their kernel Gram matrix. This captures global nonlinear dependencies among all representations without relying on a predefined anchor modality. In addition, an instance-level spectral separation constraint preserves cross-sample discriminability and mitigates representation collapse. Extensive experiments on SIMS, MOSI, and MOSEI benchmarks demonstrate that SemMSA achieves state-of-the-art performance.",
-        "authors": [
-          "Wenhao Li",
-          "Zhibin Wu",
-          "Chong Xiao",
-          "Qiangchang Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "Coding Agents for Generalized Task and Motion Planning Problems",
-        "url": "https://arxiv.org/abs/2609.30233v1",
-        "publishedAt": "2026-09-24T17:53:35.000Z",
-        "summary": "Task and motion planning (TAMP) problems remain difficult even with full observability and object-centric states because discrete decisions are tightly coupled to geometric, kinematic, and dynamic constraints. Generalized TAMP addresses this difficulty by exploiting regularities across problem instances to reduce planning effort on new instances. However, existing methods require substantial TAMP-specific engineering. We investigate whether coding agents can automate this process by synthesizing programs that generalize across instances. Given a task description and simulator access, each agent chooses how to interact with the environment while developing a program within a fixed synthesis budget. The program is then frozen and evaluated on unseen instances. We evaluate Claude Code (Opus 5) and Codex (GPT-5.6 Sol and GPT-6 Astra) on 28 simulated environments from KinDER and PDDLStream, with object counts beyond those evaluated in the original benchmark. Across all program synthesis methods, we evaluate 980 generated programs on 100 held-out instances each, 98,000 evaluation episodes in total. Overall, we find that coding agents are surprisingly effective at generalized TAMP: all three agent configurations outperform hand-engineered planners, one-shot generation, and an LLM-based generalized planning baseline in mean success (56% to 95% versus 47% for the planners, on the 16 environments where a planner is available). As object counts grow, the agents' programs maintain higher success than the planner, using an order of magnitude less computation per instance on average. Logs show agents using interaction to calibrate physical models, test edge cases, and refine strategies. We release all code, including the full prompts given to the agents. These findings suggest that coding agents are a strong baseline for generalized TAMP.",
-        "authors": [
-          "Matteo Merler",
-          "Bowen Li",
-          "Josh Roy",
-          "Yichao Liang",
-          "Qianwei Wang",
-          "Yixuan Huang",
-          "Tom Silver"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "To Trust or Not to Trust: Retrieval-Augmented Fact Checking in Speech",
-        "url": "https://arxiv.org/abs/2609.30227v1",
-        "publishedAt": "2026-09-24T17:50:40.000Z",
-        "summary": "Online misinformation increasingly appears in spoken formats such as news clips, podcasts, interviews, political speeches, and social media videos, creating a need for fact-checking systems that can verify claims directly from speech. We introduce VeriSpeak, a probe benchmark for studying speech-based fact verification in Large Audio Language Models (LALMs). VeriSpeak contains 3,879 spoken claims spanning temporal, geographical, and relational facts, with balanced true and false labels. The benchmark is designed to examine whether factual verification ability transfers from text to speech, and whether retrieval-augmented LALMs can use textual evidence to correctly support or refute spoken claims. Our experiments reveal a consistent text-speech modality gap: LALMs that verify written claims reliably often fail on the same claims when spoken. Moreover, retrieval alone provides limited gains because models frequently conflate retrieved evidence with the spoken claim. In contrast, retrieval combined with explicit reasoning improves claim-evidence comparison, with a thinking-tuned LALM reaching 86.1% accuracy. VeriSpeak highlights that effective speech misinformation detection requires not only speech understanding, but also grounded reasoning over retrieved evidence. The dataset is publicly available via Hugging Face at https://huggingface.co/datasets/abhiram4572/VeriSpeak.",
-        "authors": [
-          "Debajyoti Mazumder",
-          "Mamta",
-          "Abhirama Subramanyam Penamakuri"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "PoEM: Predicting RL Outcomes from Existing Policies",
-        "url": "https://arxiv.org/abs/2609.30226v1",
-        "publishedAt": "2026-09-24T17:50:25.000Z",
-        "summary": "Foundation models are post-trained with reinforcement learning (RL) to maximize specific rewards, such as human alignment, correctness, or instruction following. This post-training process is computationally intensive, sometimes unstable, and has to be run from scratch every time the reward model changes or when we want to combine multiple rewards. We hence ask: given a new reward function, is it possible to predict the RL outcomes without actually running RL on it? We answer this in the affirmative by introducing PoEM, a framework to predict the outputs of RL on a new reward function using a set of models already post-trained on other rewards. First, we show that if the new reward function can be written as a linear combination of existing ones, then the new policy in log-space can be written as a linear combination of the existing log-policies. Surprisingly, even in cases where the rewards are not linearly connected, we observe that often log-policies from RL training span an approximately low-rank subspace across rewards. To our benefit, the weighting coefficients for this combination can be estimated using only the reward or basis policy outputs on the samples. We turn these observations into an algorithm that takes post-trained models and a new reward function, and approximates the target RL policy without actually running any additional RL training. We experimentally validate our approach across synthetic and real rewards, spanning both text and image modalities.",
-        "authors": [
-          "Kimia Hamidieh",
-          "Giannis Daras",
-          "Antonio Torralba"
+          "Jae Joong Lee",
+          "Bedrich Benes"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 79
+        "ageHours": 61
       },
       {
-        "title": "TrackEverything: Long Horizon Dense Tracking via De-Duplicating 3D Scene Representations",
-        "url": "https://arxiv.org/abs/2609.30222v1",
-        "publishedAt": "2026-09-24T17:48:20.000Z",
-        "summary": "Existing point tracking models face a fundamental tradeoff: they can either track a sparse set of query points over long horizons, or track all points across only short clips. We introduce TrackEverything, a 3D point tracker that breaks this trade-off by representing videos as persistent 3D scene tracks in world coordinates. Grounded in the insight that videos are 2D projections of an underlying 3D world, TrackEverything decouples model complexity from video duration, allowing it to scale with unique physical scene geometry instead. Our approach introduces three key innovations. First, we employ a voxelization-based de-duplication mechanism at sliding-window boundaries to merge co-located tracks, preventing repeated observations of the same surface from redundantly accumulating. Second, we decompose tracking into an endpoint refiner that predicts each point's destination and static-versus-dynamic classification, followed by a lightweight trajectory refiner that decodes dense trajectories exclusively for dynamic points. Third, we propose 3D WAFT, replacing memory-prohibitive 4D correlation volumes with efficient feature sampling in the scene cloud. To the best of our knowledge, TrackEverything is the first 3D tracker capable of tracking all visible points across videos exceeding 1000 frames within 40 GB of GPU memory. On TAPVid-3D, TrackEverything outperforms all open-source all-frame dense 3D trackers by more than 20% APD on short clips, while remaining competitive with state-of-the-art sparse trackers on long sequences, despite tracking far more points.",
+        "title": "Strategically Diverse Sampling for Self-Training",
+        "url": "https://arxiv.org/abs/2609.31571v1",
+        "publishedAt": "2026-09-25T17:35:05.000Z",
+        "summary": "Many LLM training and inference methods, including RL and test-time scaling, depend on repeated sampling, but benefit only when the responses meaningfully differ. Self-training faces the same challenge: training data is typically constructed by sampling IID responses and filtering primarily for correctness, thereby overrepresenting strategies a model already favours. We investigate strategic diversity, or substantive variation among approaches to a problem, as an alternative principle for constructing self-training data. We generate strategically diverse data with two sampling methods: GROOT, a new method which constructs a hierarchical tree of approaches and samples distinct paths, and Verbalized Sampling (VS), adapted to produce an unstructured set of approaches. Across competitive programming and Next-Chapter Prediction domains, models trained on strategically sampled data outperform IID-trained counterparts on difficult tasks and provide strong initializations for RL and test-time scaling. Most strikingly, self-training on strategically diverse but incorrect traces from Qwen3-4B outperforms IID distillation from a 235B teacher. These results challenge prevailing assumptions about what makes useful self-training data and show that diversity of approaches can matter more than correctness or teacher scale.",
         "authors": [
-          "Ayush Jain",
-          "Sreeharsha Paruchuri",
-          "Ishita Gupta",
-          "Fan Zhang",
-          "Tanner Schmidt",
-          "Jakob Engel",
-          "Katerina Fragkiadaki",
-          "Adam W. Harley"
+          "Alexander Gurung",
+          "Esmeralda S. Whitammer",
+          "Mirella Lapata"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 79
+        "ageHours": 61
+      },
+      {
+        "title": "Uncertainty and Explainability in Deep Rough Volatility: A Neural Information-Theoretic Posterior Approach",
+        "url": "https://arxiv.org/abs/2609.31570v1",
+        "publishedAt": "2026-09-25T17:34:56.000Z",
+        "summary": "Deep learning has substantially accelerated the calibration of complex stochastic-volatility models, but neural point calibration alone does not capture the uncertainty remaining after an implied-volatility (IV) surface has been observed. We develop a simulation-based inference framework for rough Heston (rHeston) calibration that learns the posterior distribution of the model parameters conditional on an IV surface. Using neural ratio estimation, we obtain calibrated posterior samples that can be propagated through heteroscedastic neural surrogate pricers for path-dependent exotic options. The resulting posterior-predictive distributions combine residual parameter uncertainty with conditional surrogate uncertainty and yield uncertainty-aware price intervals.\n  We further introduce Hellinger-SHAP, an information-theoretic explainability method for posterior inference. Rather than attributing a single parameter point estimate, it applies local-background Kernel SHAP to a posterior-information functional measuring contraction from the prior to the posterior. This identifies maturity--moneyness regions associated with posterior information gain for individual rHeston parameters. In a simulation study, posterior-predictive intervals provide calibrated or conservative coverage across forward-start, barrier, and realized-variance claims, while point plug-in prices can be materially unreliable for selected contract regimes. Together, the UQ and XAI analyses provide a transparent framework for uncertainty-aware neural calibration and downstream exotic pricing under the specified prior-predictive model.",
+        "authors": [
+          "Damiano Brigo",
+          "Raphaël Huser",
+          "Dan Leonte"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 61
       }
     ],
     "news": [
@@ -315,7 +303,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 10
       },
       {
         "title": "Can Muse overcome Meta’s trust issues?",
@@ -329,7 +317,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "Anthropic&#8217;s Dario Amodei gets the SNL treatment",
@@ -343,7 +331,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 14
       },
       {
         "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
@@ -357,7 +345,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 23
+        "ageHours": 29
       },
       {
         "title": "Insurers claim AI is already increasing healthcare costs",
@@ -371,7 +359,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 28
+        "ageHours": 34
       },
       {
         "title": "I created an interactive digital avatar of myself — and you can talk to it",
@@ -385,7 +373,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 35
+        "ageHours": 41
       },
       {
         "title": "At Meta Connect, the company&#8217;s smart glasses were everywhere",
@@ -399,7 +387,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 48
+        "ageHours": 54
       },
       {
         "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
@@ -413,7 +401,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 49
+        "ageHours": 56
       },
       {
         "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab&#8217;s knowledge",
@@ -427,7 +415,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 50
+        "ageHours": 56
       },
       {
         "title": "Meta opens early access program for new Muse features",
@@ -441,7 +429,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 52
+        "ageHours": 58
       },
       {
         "title": "MIT students gain a humanist lens on technical innovation in Tulsa, Oklahoma",
@@ -455,7 +443,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 52
+        "ageHours": 59
       },
       {
         "title": "Anthropic to pay Akamai $11.6 billion over seven years in cloud deal",
@@ -469,26 +457,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 53
+        "ageHours": 60
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 4,
+    "last24h": 3,
     "topCategories": [
       {
         "name": "Research",
-        "count": 11
+        "count": 7
       },
       {
         "name": "General",
-        "count": 6
+        "count": 7
       },
       {
         "name": "Models",
-        "count": 4
+        "count": 7
       },
       {
         "name": "Products",
