@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T21:55:52.509Z",
+  "generatedAt": "2026-09-29T01:53:01.798Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,212 +85,270 @@
   "sections": {
     "research": [
       {
-        "title": "Learning to Stop without Learning to Stop: Self-Supervised Confidence Training Improves Reasoning Efficiency",
-        "url": "https://arxiv.org/abs/2609.31619v1",
-        "publishedAt": "2026-09-25T17:59:52.000Z",
-        "summary": "Reasoning models often generate very long reasoning traces, making inference computationally expensive. Existing approaches typically improve efficiency either through inference-time early-stopping mechanisms or by explicitly encouraging shorter reasoning during training, for example through reinforcement learning with length penalties. We show that substantial efficiency gains can instead emerge from a different kind of supervision: \\textit{confidence}. Using a self-supervised procedure, we fine-tune reasoning models to predict their confidence in the answer at intermediate points along their own reasoning trajectories using only 600 training problems. Confidence is used only as a training target: the loss contains no objective for reasoning length, efficiency, or stopping. At inference, the fine-tuned models use the standard generation procedure, with no confidence elicitation or early-stopping mechanism. Despite this, self-supervised confidence fine-tuning makes reasoning more efficient, reducing generated tokens by up to 25\\% at matched accuracy across Gemma, Qwen, Nemotron, and GPT-OSS models on mathematical, scientific, and coding reasoning benchmarks, with efficiency gains comparable to methods that explicitly optimize for shorter reasoning. Analysis of reasoning episodes further shows that confidence supervision largely preserves the base models' high-level reasoning composition rather than selectively suppressing particular behaviors. Our results suggest that efficient reasoning may emerge as a downstream consequence of learning metacognitive signals, without being directly optimized.",
+        "title": "Transfer Learning for Edge Classification on Dynamic Text-Attributed Graphs",
+        "url": "https://arxiv.org/abs/2609.32849v1",
+        "publishedAt": "2026-09-26T18:23:46.000Z",
+        "summary": "Learning transferable representations for dynamic text-attributed graphs (DyTAGs) requires models to capture underlying interaction dynamics that persist across domains. However, existing methods tend to overfit to domain-specific structural, temporal, and semantic patterns, limiting edge classification performance under distribution shifts. To expose and address this, we formally establish a leave-one-domain-out (LODO) transfer learning protocol for edge classification on DyTAGs. Under this protocol, we demonstrate that state-of-the-art self-supervised methods for dynamic graph learning perform poorly when transferred to unseen domains. Strikingly, existing methods underperform a structurally and temporally unaware Bag of Events (BoE) model we introduce, which inputs only unordered sequences of node and edge text features. Proceeding from the BoE, we propose Spatio-Temporal Semantic Alignment (STSA), which integrates a spatio-temporal encoder that fuses representations of time deltas and node occurrence frequencies into a unified manifold. STSA is trained with a Contrastive Semantic Forecasting objective, which anchors edge representations to a multi-domain textual latent space initialized by a pretrained language model, providing a robust prior that outperforms BoE and all existing methods we evaluate.",
         "authors": [
-          "Parsa Hosseini",
-          "Akasha Tigalappanavara",
-          "Sumit Nawathe",
-          "Chenrui Fan",
-          "Sourya Basu",
-          "Genta Indra Winata",
-          "Anirban Das",
-          "Soheil Feizi",
-          "Nima Chitsazan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 76
-      },
-      {
-        "title": "Gap-free Differentially Private PCA for Gaussian Data",
-        "url": "https://arxiv.org/abs/2609.31614v1",
-        "publishedAt": "2026-09-25T17:58:38.000Z",
-        "summary": "We give a gap-free differentially private algorithm for the principal component analysis (PCA) problem with Gaussian data.",
-        "authors": [
-          "Alina Ene",
-          "Huy L. Nguyen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 76
-      },
-      {
-        "title": "First-Order Stationarity of Reverse Diffusions",
-        "url": "https://arxiv.org/abs/2609.31612v1",
-        "publishedAt": "2026-09-25T17:57:43.000Z",
-        "summary": "Recent literature has shown a strong connection between optimization and sampling. We develop the corresponding first-order theory for diffusion models. First, the SDE-based reverse-time flows of overdamped and underdamped Langevin diffusions contract relative Fisher divergences at explicit exponential rates whenever the stationary potential of the forward process is strongly convex---a condition on the noising process one chooses, not on the data. This is a unique advantage of SDE-based reverse diffusion, absent in the reverse process based on ODEs. Second, we incorporate discretization and establish averaged first-order stationarity bounds---the sampling analog of averaged gradient-norm guarantees in nonconvex optimization---for samplers of both overdamped and underdamped diffusion models. As in nonconvex optimization, the convexity-free certificate is local: it guarantees score consistency, not global mode weights.",
-        "authors": [
-          "Zhifeng Chen",
-          "Chenyang Jiang",
-          "Yazhen Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 76
-      },
-      {
-        "title": "Statistical attribute alignment for black-box generative AI via output post-processing",
-        "url": "https://arxiv.org/abs/2609.31607v1",
-        "publishedAt": "2026-09-25T17:55:49.000Z",
-        "summary": "Generative AI systems are increasingly used, but aligning their outputs with user requirements poses a continuing challenge. Here, we aim to ensure that the distribution of an attribute of an AI-generated output aligns with a user-specified target. This is motivated by examples such as fairness, where we want to ensure that a protected attribute (e.g., gender, race, or age categories) follows a desired distribution, and synthetic data generation, where we want the generated data to be representative of a target distribution. We study the practically important black-box access setting, where a user can repeatedly query a generative AI model. The goal is to return $m\\ge 1$ outputs whose joint attribute distribution is as close as possible to this target. For both exact and approximate alignment, we develop algorithms that minimize the expected number of queries to the generator, and we further demonstrate their optimality as the number of requested outputs $m \\rightarrow \\infty$. Experiments on text-to-image generation and geocoded persona generation tasks show that our post-processing algorithms improve statistical attribute alignment, complementing prompting-based interventions.",
-        "authors": [
-          "Kevin Jiang",
-          "Morgane Austern",
-          "Edgar Dobriban",
-          "Jason M. Klusowski"
+          "Tyler Bonnet",
+          "Marek Rei"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 76
+        "ageHours": 55
       },
       {
-        "title": "User Model Extraction via Belief Self-Distillation",
-        "url": "https://arxiv.org/abs/2609.31603v1",
-        "publishedAt": "2026-09-25T17:54:32.000Z",
-        "summary": "Large language models (LLMs) implicitly infer attributes of their users and adapt their behavior accordingly, yet these beliefs remain difficult to inspect and causally manipulate. We introduce Belief Self-Distillation (BSD), a unified read-write framework that bridges linear and causal probing by learning a compact user representation that can be both decoded and written back into the model. The frozen LLM acts as its own teacher, distilling beliefs from natural conversations without external annotations. Unlike conventional probing, BSD isolates not only information present in activations, but a state whose causal role can be directly tested. Across multiple model families, BSD faithfully recovers user beliefs and enables substantially stronger interventions than matched hidden-state steering. Crucially, we find that refusal depends not only on the request, but on the model's inferred user intent: changing this belief alters refusal while holding the request fixed. We further uncover a striking cross-model regularity: independently trained LLMs converge on a shared geometry for representing their users. Together, these results reveal implicit user models as readable and causally writable internal states with direct implications for AI safety, shaping how models condition safety decisions on whom they believe they are interacting with.",
+        "title": "Sliced Orlicz-Wasserstein",
+        "url": "https://arxiv.org/abs/2609.32847v1",
+        "publishedAt": "2026-09-26T18:21:20.000Z",
+        "summary": "We propose sliced Orlicz-Wasserstein (SOW) distance which is a generalization of sliced Wasserstein (SW) distance. SOW replaces the $L^p$ norm in SW with a Luxemburg norm cost induced by an Orlicz function $φ$. First, we prove that SOW distance is a metric on the space of measures with finite Orlicz norm, and show that it recovers the SW distance when the Orlicz function is $φ(x)=x^p$. Next, we derive the topological properties of the SOW distance. In particular, we show that convergence under SOW implies weak convergence, and the converse is true under the compact support condition. We then present the theoretical results for estimating the SOW distance. We derive sample complexity for both the distance itself and the powered functional of the distance, and prove their minimax optimality. In addition, we discuss the computational algorithm for approximating the SOW distance by Monte-Carlo estimation and bisection search, as well as the associated approximation error and computational complexity analysis. Our experimental results reveal the superior computational efficiency of SOW compared with Orlicz-Wasserstein (OW) distance. Also, in the experiments, we demonstrate the favorable flexibility of SOW distance over SW in detecting differences between distributions by comparing their performance in two-sample tests and evaluating generative models on image datasets.",
         "authors": [
-          "Ali Holmov",
-          "Yiran Huang",
-          "Kirill Bykov",
-          "Zeynep Akata"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 76
-      },
-      {
-        "title": "New LoRA Skills Should Read but Never Write",
-        "url": "https://arxiv.org/abs/2609.31600v1",
-        "publishedAt": "2026-09-25T17:54:01.000Z",
-        "summary": "Low-rank adapters (LoRA) make it cheap to fine-tune a large language model once per task, but combining several independently trained adapters into one model remains difficult: merging the updates in weight space causes interference, retraining on all task data is expensive, and routing between separate adapters gives up the goal of a single combined model. We trace the difficulty to two choices that every composition method makes implicitly. A LoRA update admits infinitely many equivalent factorizations; the choice among them is invisible while an adapter serves alone, but it determines what a learned interaction between adapters can see. A coupling between an old skill and a new one can likewise point in either direction, and the direction decides whether the old skills keep computing what they computed before. We introduce READ (Read-only Expansion of Adapter Deltas), which fixes both choices: each adapter is rewritten into a balanced canonical form that preserves its update exactly, and the coupling grows in one direction only, so a new skill can read the input subspaces of old skills but cannot write into their output subspaces. The only trainable object at each append is the new skill's row of the coupling matrix, and the composed update folds into the base weights with no inference cost, routing, or task-specific rules. We evaluate READ across four benchmark suites and two model families, adding skills one at a time. Across several families, READ improves every suite average over the strongest published baselines built from the same adapters---by more than twenty points on SuperGLUE and more than seven points on the domain suite---and nearly all complete addition sequences end above every direct baseline. Factor coordinates and coupling direction, which a lone adapter never exposes, are what decide whether composed skills survive.",
-        "authors": [
-          "Zeyan Li",
-          "Panqi Yang",
-          "Qirong Guo",
-          "Shengda Zhuo",
-          "SIyuan Qiu",
-          "Hu Xu",
-          "Chun Li",
-          "Jianfeng Xu"
+          "Binh Thuan Tran",
+          "Khai Nguyen"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 76
+        "ageHours": 56
       },
       {
-        "title": "Common-Mode Collapse and Recovery in Direct Feedback Alignment",
-        "url": "https://arxiv.org/abs/2609.31589v1",
-        "publishedAt": "2026-09-25T17:43:40.000Z",
-        "summary": "Direct feedback alignment (DFA) trains hidden layers through fixed random projections of output error. With tanh hidden units and independent sigmoid outputs, plain stochastic gradient descent can stall near the loss of a constant predictor of class frequencies. We trace this stall to the error's common mode, the component shared across inputs. An exact mean-covariance decomposition separates a rank-one update formed by the mean teaching signal and mean presynaptic activity. Its leading component drives tanh units toward saturation. At initialization, random feedback provides no systematic correction of the shared error on average; readout learning limits its duration. A reduced model initialized from the network, without fitted parameters, predicts the concentration of activation sensitivity across 48 settings. On MNIST, class decodability largely survives collapse, but readout learning remains slow at a fixed learning rate. Adam learns faster despite deeper collapse. Calibrating the baseline readout to the class prior suppresses collapse and speeds learning; weaker feedback trades less collapse for slower learning. Replacing errors by their signs sustains collapse; subtracting the signal's batch mean prevents sustained collapse and improves learning in the tested setting. Related effects occur in deeper and convolutional networks and on CIFAR-10, with severity and cost depending on the readout, optimizer and input statistics.",
+        "title": "SynCo: Learning Cross-Modal Synergy by Contrasting Interaction Residuals",
+        "url": "https://arxiv.org/abs/2609.32846v1",
+        "publishedAt": "2026-09-26T18:19:41.000Z",
+        "summary": "Multimodal contrastive learning is a dominant paradigm for learning transferable representations from unlabeled data, but standard objectives primarily capture information that is redundant between modalities. Partial Information Decomposition (PID) shows that task-relevant information in multimodal data decomposes into three components: redundancy shared between modalities, uniqueness specific to each modality, and synergy available only from their joint observation. Recent frameworks extend contrastive learning to capture all three components, yet synergy remains undertrained in practice. We propose SynCo (Synergy Contrastive Learning), a method that directly addresses synergy undertraining through dedicated supervision on an interaction residual. SynCo fits a linear projector to predict the fused representation from independently computed unimodal features, and the resulting interaction residual, which removes the linearly unimodal-predictable component, receives dedicated contrastive supervision at negligible computational cost. On the controlled Trifeature benchmark, SynCo achieves state-of-the-art synergy capture with a $+5.98\\%$ gain over the baseline, and on real-world benchmarks from MultiBench, DARai, and MM-IMDb, SynCo consistently outperforms or matches prior methods across diverse modality combinations and task types. The method operates as a plug-in to existing contrastive multimodal frameworks without modifying the underlying fusion architecture and can further improve synergy capture when combined with other methods.",
         "authors": [
-          "Varun Reddy",
-          "Bernardo L. Sabatini",
-          "Houman Safaai"
+          "Yavuz Yarici",
+          "Ghassan AlRegib"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 56
+      },
+      {
+        "title": "VCRE-Fib: View-Conditioned Regional Evidence for Fine-Grained Ultrasound Grading of Schistosoma japonicum-Associated Liver Fibrosis",
+        "url": "https://arxiv.org/abs/2609.32840v1",
+        "publishedAt": "2026-09-26T18:13:45.000Z",
+        "summary": "Accurate assessment of Schistosoma japonicum-associated liver fibrosis is essential for disease management and long-term follow-up in endemic regions. Ultrasound provides non-invasive imaging, but complex local echogenic patterns and anatomical structures make fine-grained grading challenging. Existing deep learning methods can predict fibrosis scores, yet directly incorporating acquisition views and regional cues into grading while retaining spatial information for inspection remains an open problem. Here we present VCRE-Fib, a view-conditioned regional evidence framework that integrates anatomical context, local information, and global image assessment for fine-grained ultrasound grading. The framework forms view-conditioned local grading evidence before spatial pooling, uses weak localization to guide its aggregation, and combines it with global predictions. Image-only inference jointly returns a fibrosis score, acquisition view, and candidate abnormal-region map. We developed and evaluated the method on a re-curated cohort of 108,709 ultrasound images from 6,373 patients across 35 centers. On a patient-disjoint test set of 4,107 images from 240 patients across four centers, VCRE-Fib reduced the prespecified composite grading risk by 7.115% relative to SFibAI trained and evaluated on the same data split. Image-level mean absolute error decreased from 0.391 to 0.378, alongside lower patient-max, patient-median, and center-balanced risks. The full model also achieved lower composite grading risk than variants that separately removed view conditioning or weak localization. These results support incorporating anatomical context and regional evidence into ultrasound grading while exposing spatial predictions for inspection alongside severity estimates.",
+        "authors": [
+          "Ziyang Xu",
+          "Shuli An",
+          "Hao Zhou",
+          "Haitian Zhong",
+          "Tingting Wu",
+          "Tao Wang",
+          "Kun Yang",
+          "Tieyong Zeng"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 76
+        "ageHours": 56
       },
       {
-        "title": "Compact Documentation for Coding Agents: A Benchmark, an Optimizer, and Why It Does Not Transfer",
-        "url": "https://arxiv.org/abs/2609.31587v1",
-        "publishedAt": "2026-09-25T17:42:22.000Z",
-        "summary": "We investigate whether natural-language documentation helps coding agents resolve software issues, and we build the tools to construct and evaluate it. We introduce a roundtrip benchmark that scores code descriptions by whether code regenerated from them passes the original tests, and show that completeness, not length, drives a description's fidelity. Using the benchmark as an optimization signal, we discover a description-writing prompt that reaches full fidelity and generalizes to unseen files. We then test the hypothesis that motivated the work: that better documentation helps an agent resolve real repository issues. Across two model families and ten repositories, and against a positive control confirming that our evaluation can detect a genuine improvement, we find that it does not. When the source is present, neither static compact documentation nor retrieved context beats the issue alone. We report this negative result together with the benchmark and the optimizer, and we characterize the boundary at which documentation helps.",
+        "title": "Mend the Measurement Gap: Latent User Preference Modeling for Short-Form Video Recommendation",
+        "url": "https://arxiv.org/abs/2609.32839v1",
+        "publishedAt": "2026-09-26T18:11:20.000Z",
+        "summary": "Recommender systems rely heavily on heterogeneous behavioral feedback to infer user preference. Although abundant, these signals are imperfect measurements: the same observed behavior can arise from different underlying states, such as genuine enjoyment, passive consumption, or inattention. The challenge is especially acute in short-form video, where watch-based signals are strongly affected by measurement confounders such as video duration - the same watch time can imply different levels of preference for videos of different lengths, while ratio-based metrics can systematically favor short videos. As a result, optimizing raw engagement can amplify measurement artifacts rather than improving user value. We propose a Factorized Latent Value Model (FLVM) for measuring user preference from heterogeneous behavioral feedback. The model treats observed behaviors as noisy measurements of a low-dimensional, factorized latent value state and uses structured output heads to model heterogeneous feedback signals. A restricted baseline path captures predictable variation from measurement-confounding features such as video duration, user propensity, and session context, while a routed latent path estimates preference-relevant value advantage. The resulting latent value score can be integrated into an existing recommender system as a ranking feature or ranking score. On YouTube Shorts, a major short-form video platform, this model improves offline metrics and lifts a primary viewer enjoyment metric by 2.67% in online A/B tests.",
         "authors": [
-          "Md Shohel Arman",
-          "Igor Molybog"
+          "Shuo Chang",
+          "Yueqi Wang",
+          "Zihuan Diao",
+          "Ali Montazer",
+          "Jiangguo Zhang",
+          "Joyneel Misra",
+          "Dapeng Hong",
+          "Tomer Margolin",
+          "Sourabh Bansod",
+          "Ningren Han"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 56
+      },
+      {
+        "title": "HamiFormer: Dual-Expert Diffusion Fields with Affine Symplectic Maps",
+        "url": "https://arxiv.org/abs/2609.32838v1",
+        "publishedAt": "2026-09-26T18:10:55.000Z",
+        "summary": "Predicting smooth dynamics and collisions requires modeling continuous evolution and abrupt state changes. We introduce HamiFormer, a dual-expert diffusion field combining whole-window denoising with residual-corrected Hamiltonian propagation. Their mixed-state feedback attenuates the direct contribution of inherited autoregressive error: each mixed state guides subsequent propagation within the jointly refined window. Parallel Local Affine Scan (PLAS) amortizes iterative refinement across rectified-flow steps and evaluates derivatives in parallel across physical time. PLAS's affine symplectic maps achieve lower solver error and runtime than sequential explicit Euler in our evaluation. A Regime Model Tree specializes residuals and routing to balance typical-state accuracy against large tail errors. Our analysis gives conditions for physically consistent refinement and warm-start tracking, and finite-window error bounds under diffusion feedback. In 192-step evaluations, HamiFormer reduces normalized phase-space MSE by 26.3% against PhysiFormer on HamiBalls-1 and 21.4% against DiT on HamiBalls-2, with comparable model capacities. Disjoint-interval comparisons show the lowest late-horizon position and momentum errors among baselines on both datasets. Project page: https://hamiformer.github.io/.",
+        "authors": [
+          "Haoxiang Huang",
+          "Xiang Liu",
+          "Shuwei Wang",
+          "Jingheng Ma",
+          "Sen Cui"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 56
+      },
+      {
+        "title": "Scanning While Imagining: A Scene-Graph World Model for Robotic Ultrasound Navigation",
+        "url": "https://arxiv.org/abs/2609.32837v1",
+        "publishedAt": "2026-09-26T18:10:52.000Z",
+        "summary": "Ultrasound (US) acquisition depends on the operator's ability to interpret anatomy and anticipate how the view will change with probe motion. Many robotic US navigation methods select actions without explicitly predicting these anatomical changes. We propose SonoGraph-WM, an action- and goal-conditioned world model for anticipatory probe navigation. The model represents anatomy as scene graphs (SGs), capturing visible structures, their geometry, and spatial relationships without synthesizing US images. Given a history of SGs and probe poses, a unified Transformer jointly predicts future SGs and poses. A receding-horizon planner recursively imagines candidate trajectories, selects the shortest predicted path reaching a goal graph, and follows it over a short execution horizon before replanning from new observations. To reduce reliance on tracked and anatomically annotated US sequences, we generate aligned SG--pose training data from computed tomography (CT) label maps along surface-constrained probe trajectories. On four held-out CT cases, spatial relation F1 remains above 93% over 20 prediction steps, and closed-loop navigation achieves 77.50% and 75.00% success for the gallbladder and pancreas, respectively, using annotation-derived SGs. In robot--phantom navigation experiments with label-map-derived SGs, the planner reached the target view in 73.7% of trials. These findings support CT-supervised anatomical world modeling for probe planning and highlight the importance of frequent observation updates for reliable navigation. Project Page: https://noseefood.github.io/us-sonograph-wm/",
+        "authors": [
+          "Xuesong Li",
+          "Shuai Chen",
+          "Feng Li",
+          "Zhongliang Jiang",
+          "Nassir Navab",
+          "Yuan Bi"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 76
+        "ageHours": 56
       },
       {
-        "title": "Trust Guided Decision Transformer",
-        "url": "https://arxiv.org/abs/2609.31586v1",
-        "publishedAt": "2026-09-25T17:42:19.000Z",
-        "summary": "Decision Transformer performance degrades on long rollouts because the conditioning context drifts out of the training distribution. We show that this drift is visible through the model's own next state prediction error, which rises during rollout and stays elevated, giving a direct signal of when context has become unreliable. We introduce Trust Guided Decision Transformer (TGDT), which selects context before applying value guidance. At each step, TGDT evaluates several recent context suffixes using rolling next state prediction error, calibrated against held out offline data via split conformal prediction. It keeps only suffixes whose error stays within the calibrated threshold, then uses a frozen critic to choose the highest value action among the trusted suffixes. This reverses the order used by value only elastic selection, where the critic may choose an action generated from a context the model itself has flagged as unreliable. Experiments on D4RL navigation and locomotion tasks show that state prediction, critic guidance, and hard context reset each solve only part of the problem. TGDT reduces persistent high error runs and improves return over vanilla Decision Transformer, reset based context control, and value only context selection.",
+        "title": "Radiomap Blind Prediction under Incomplete Observation: Error Characterization and Correctable Propagation-Prior Learning",
+        "url": "https://arxiv.org/abs/2609.32836v1",
+        "publishedAt": "2026-09-26T18:08:41.000Z",
+        "summary": "Radiomap blind prediction aims to infer radiomaps from observable representations of the propagation environment and base station configuration without field measurements. In practice, the observable representations are inherently incomplete. Thus, the target radiomap is not fully determined by the inputs when generalizing to unseen configurations or environments. Under incomplete observation, we establish a population-level theory of deterministic radiomap blind prediction that identifies the conditional mean as its optimal target and separates prediction error into reducible predictor approximation and irreducible uncertainty caused by missing physical information. The framework further characterizes the train-test risk gap and the uncertainty reduction enabled by observation enrichment. Building on it, we reveal the dual role of propagation priors: they provide physically grounded guidance, yet their implementable forms may bias the attainable predictor. This motivates RadioDecomp, which treats a prior-guided predictor as a correctable base and learns its remaining predictable discrepancy through residual refinement. To evaluate RadioDecomp across distinct propagation-prior designs, we instantiate it with a feature-guided monolithic base and a LoS-Shadow structured base, yielding RadioFR and RadioLSR, respectively. Across random, cross-configuration, and cross-environment settings, experiments confirm the benefit of propagation-related representations and show that both instantiations improve upon their respective bases. Further controlled studies on base capacity, training-support coverage, and observation coarsening corroborate the proposed analysis.",
         "authors": [
-          "Chainesh Gautam",
-          "Raghuram Bharadwaj Diddigi",
-          "Chandramouli Kamanchi",
-          "Pankaj Dayama",
-          "Sumanta Mukherjee",
-          "Kameshwaran Sampath"
+          "Xiaojie Li",
+          "Yu Han",
+          "Han Fang",
+          "Shangqing Liu",
+          "Guangxu Zhu",
+          "Shi Jin",
+          "Chao-Kai Wen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 56
+      },
+      {
+        "title": "FinancialAuditBench: Benchmark Construction under Differential Privacy Using Real-World Priors",
+        "url": "https://arxiv.org/abs/2609.32835v1",
+        "publishedAt": "2026-09-26T18:07:58.000Z",
+        "summary": "As AI agents are becoming widely adopted in the financial services industry, careful measurement is essential to understand where they can be reliably deployed and where oversight and professional review remain necessary. Such measurement, however, is constrained by limited access to proprietary or privacy-sensitive data. Existing benchmarks therefore often rely on publicly available data, human- and/or LLM-authored tasks, or simplified settings. We introduce FinancialAuditBench, a benchmark for evaluating agents on financial statement audit tasks, along with a framework for systematically generating synthetic engagements. Our task generation framework leverages differentially private aggregate statistics from historical audits along with audit expertise contributed through over 1,100 hours of benchmark development and review. FinancialAuditBench consists of 90 tasks spanning workpaper completion and review across six synthetic audit engagements, each containing an average of 179 files. Evaluation on eleven frontier models shows that while agents complete substantial portions of staff-level audit tasks well, they sometimes perform inappropriate procedures or produce incorrect documentation. Beyond financial auditing, our framework offers an approach for systematically generating synthetic tasks for model evaluation and training in privacy-sensitive domains.",
+        "authors": [
+          "Jerry Huang",
+          "Sarvesh Babu",
+          "Matt Van Buren",
+          "Alexander Wang",
+          "Pranav Pillai",
+          "Arush Jain",
+          "James P. Burton",
+          "Julia Hockenmaier"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 56
+      },
+      {
+        "title": "Permutation-Equivariant Flow Matching for Alignment-Free Neural Weight Generation",
+        "url": "https://arxiv.org/abs/2609.32833v1",
+        "publishedAt": "2026-09-26T18:04:17.000Z",
+        "summary": "A trained neural network can be represented by a parameter vector in high dimensions. Learning distributions over these vectors enables the generation of new models across various tasks and architectures. A central challenge is permutation symmetry: permuting hidden neurons can produce distant parameter vectors representing the same function. This introduces variations that a generative model must account for when learning from trained networks. Existing methods typically address this using networks derived from a common base model or costly approximate neuron alignment. We instead parameterize a flow-matching velocity field with a permutation-equivariant Graph Meta Network, enabling direct learning from independently trained networks without alignment. Extensive experiments show that our method closely reproduces the joint statistics of accuracy, functional similarity, and weight similarity of independently trained collections, providing evidence of generation beyond checkpoint memorization. A single conditional model also generates task-specific networks on heterogeneous architectures and generalizes to unseen hidden-width configurations. On a tabular domain-shift task, intermediate conditioning produces individual networks with performance comparable to logit ensembles across both domains. Taken together, our results show how permutation equivariance enables learning from diverse collections of independently trained networks without permutation alignment.",
+        "authors": [
+          "Arkadi Piven",
+          "Yam Eitan",
+          "Guy Bar-Shalom",
+          "Fabrizio Frasca",
+          "Daniel Cremers",
+          "Thomas Dagès",
+          "Ron Kimmel",
+          "Haggai Maron"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 56
+      },
+      {
+        "title": "Over-the-Air Federated Learning in Heterogeneous Mobile Wireless Networks",
+        "url": "https://arxiv.org/abs/2609.32832v1",
+        "publishedAt": "2026-09-26T18:04:09.000Z",
+        "summary": "Over-the-air computation has emerged as a scalable and efficient solution for deploying federated learning algorithms in wireless networks by exploiting waveform superposition for simultaneous model aggregation. Most existing work struggles with heterogeneous fading channels. These approaches either enforce unbiased updates from all devices or allow partial device contributions, requiring careful tuning of the convergence bound to mitigate bias under specific fading models. However, the former significantly amplifies receiver noise due to the weakest channel, whereas the latter is sensitive to fading model mismatch and converges only to a biased objective. To tackle these challenges, we propose FedOAG, which employs algorithmic components to automatically satisfy energy constraints via gradient normalization and evenly mix devices' updates through implicit gossiping. Importantly, FedOAG does not require transmission from all devices, nor does it rely on a specific fading model or knowledge of time-varying statistical channel distributions. We show that FedOAG converges to a stationary point of an unbiased non-convex objective at the best possible rate $O(1/\\sqrt{T})$ for any stochastic first-order method. We corroborate our analysis with numerical experiments over dynamic wireless conditions on real-world datasets.",
+        "authors": [
+          "Ming Xiang",
+          "Nicolò Michelusi",
+          "Yonina C. Eldar",
+          "Lili Su"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 76
+        "ageHours": 56
       },
       {
-        "title": "OC-GS: Gaussian Splatting for Irregular Turntable Capture",
-        "url": "https://arxiv.org/abs/2609.31572v1",
-        "publishedAt": "2026-09-25T17:35:05.000Z",
-        "summary": "Uneven rotation and dropped frames make equal-angle assumptions unreliable for turntable reconstruction. We present OC-GS, an object-centric Gaussian splatting that refines each image's angle while maintaining a shared camera, rotation axis, and pivot. This orbit-consistent refinement jointly optimizes image-derived geometry and angles to reconstruct objects from sparse, irregular captures. On rendered objects with 12, 8, and 6 irregularly spaced views, OC-GS achieves mean foreground PSNR scores of 21.26, 19.36, and 15.83dB, respectively, exceeding all four evaluated pose-free Gaussian splatting baselines in each condition. Under a shared trainer, refining image-estimated angles improves mean foreground PSNR by 7.88dB over keeping those estimates fixed. An ablation study shows that both image-derived angle initialization and the shared motion model contribute to the improvement. On real captures, OC-GS's refinement increases mean foreground PSNR by 0.70dB. Results show that refining uncertain angles within a shared motion model improves reconstruction from sparse, irregular turntable captures.",
+        "title": "UniCache: Task- and Type-Aware KV Cache Compression for Unified Multimodal Models",
+        "url": "https://arxiv.org/abs/2609.32831v1",
+        "publishedAt": "2026-09-26T18:02:55.000Z",
+        "summary": "Unified multimodal models combine understanding, generation, and editing within a single network, offering a promising foundation for versatile multimodal applications. However, growing multimodal contexts make KV cache storage and access increasingly costly. Existing KV cache compression methods are typically tailored to specific tasks and single-modality caches, while overlooking changes in cache importance across tasks and timesteps. However, in unified multimodal models, each task involves multiple KV cache types, and both their composition and dynamics differ across tasks. As a result, a single compression policy overlooks task- and type-specific requirements, leading to the loss of critical information and degraded quality across tasks. Based on these findings, we propose UniCache, a training-free framework for task- and type-aware KV cache compression. UniCache identifies the cache segments activated by each task and assigns suitable compression policies through offline calibration. It coordinates their parallel execution under a shared storage budget through attention-guided allocation and task-aware temporal scheduling. Experiments show that UniCache achieves $5\\times$ KV cache compression for understanding and editing and $2.5\\times$ for generation with negligible quality loss, while increasing throughput by up to $1.78\\times$ in long-context settings, significantly improving the practicality of scaling unified multimodal models to longer context.",
         "authors": [
-          "Jae Joong Lee",
-          "Bedrich Benes"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 76
-      },
-      {
-        "title": "Strategically Diverse Sampling for Self-Training",
-        "url": "https://arxiv.org/abs/2609.31571v1",
-        "publishedAt": "2026-09-25T17:35:05.000Z",
-        "summary": "Many LLM training and inference methods, including RL and test-time scaling, depend on repeated sampling, but benefit only when the responses meaningfully differ. Self-training faces the same challenge: training data is typically constructed by sampling IID responses and filtering primarily for correctness, thereby overrepresenting strategies a model already favours. We investigate strategic diversity, or substantive variation among approaches to a problem, as an alternative principle for constructing self-training data. We generate strategically diverse data with two sampling methods: GROOT, a new method which constructs a hierarchical tree of approaches and samples distinct paths, and Verbalized Sampling (VS), adapted to produce an unstructured set of approaches. Across competitive programming and Next-Chapter Prediction domains, models trained on strategically sampled data outperform IID-trained counterparts on difficult tasks and provide strong initializations for RL and test-time scaling. Most strikingly, self-training on strategically diverse but incorrect traces from Qwen3-4B outperforms IID distillation from a 235B teacher. These results challenge prevailing assumptions about what makes useful self-training data and show that diversity of approaches can matter more than correctness or teacher scale.",
-        "authors": [
-          "Alexander Gurung",
-          "Esmeralda S. Whitammer",
-          "Mirella Lapata"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 76
-      },
-      {
-        "title": "Uncertainty and Explainability in Deep Rough Volatility: A Neural Information-Theoretic Posterior Approach",
-        "url": "https://arxiv.org/abs/2609.31570v1",
-        "publishedAt": "2026-09-25T17:34:56.000Z",
-        "summary": "Deep learning has substantially accelerated the calibration of complex stochastic-volatility models, but neural point calibration alone does not capture the uncertainty remaining after an implied-volatility (IV) surface has been observed. We develop a simulation-based inference framework for rough Heston (rHeston) calibration that learns the posterior distribution of the model parameters conditional on an IV surface. Using neural ratio estimation, we obtain calibrated posterior samples that can be propagated through heteroscedastic neural surrogate pricers for path-dependent exotic options. The resulting posterior-predictive distributions combine residual parameter uncertainty with conditional surrogate uncertainty and yield uncertainty-aware price intervals.\n  We further introduce Hellinger-SHAP, an information-theoretic explainability method for posterior inference. Rather than attributing a single parameter point estimate, it applies local-background Kernel SHAP to a posterior-information functional measuring contraction from the prior to the posterior. This identifies maturity--moneyness regions associated with posterior information gain for individual rHeston parameters. In a simulation study, posterior-predictive intervals provide calibrated or conservative coverage across forward-start, barrier, and realized-variance claims, while point plug-in prices can be materially unreliable for selected contract regimes. Together, the UQ and XAI analyses provide a transparent framework for uncertainty-aware neural calibration and downstream exotic pricing under the specified prior-predictive model.",
-        "authors": [
-          "Damiano Brigo",
-          "Raphaël Huser",
-          "Dan Leonte"
+          "Wanqi Yang",
+          "Yuexiao Ma",
+          "Mei Xie",
+          "Xiawu Zheng",
+          "Shiwei Liu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 76
+        "category": "Research",
+        "ageHours": 56
       }
     ],
     "news": [
+      {
+        "title": "How we will do better for Australia",
+        "url": "https://openai.com/index/how-we-will-do-better-for-australia",
+        "publishedAt": "2026-09-29T01:00:00.000Z",
+        "summary": "OpenAI apologizes for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort",
+        "url": "https://techcrunch.com/2026/09/28/peak-xv-goes-bigger-at-seed-with-new-surge-cohort-as-series-a-bar-rises/",
+        "publishedAt": "2026-09-29T00:30:00.000Z",
+        "summary": "Thirteen of the 18 startups in Peak XV’s latest Surge cohort are targeting global markets, while more than half are based in India.",
+        "authors": [
+          "Jagmeet Singh"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "OpenAI reportedly ditches model over safety concerns",
+        "url": "https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/",
+        "publishedAt": "2026-09-28T23:39:20.000Z",
+        "summary": "A top executive at the AI lab told the Wall Street Journal that the model in question had displayed a poor aptitude for following orders.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 2
+      },
       {
         "title": "Source: Inference provider Modal Labs closing in on $750M round at $15.75B valuation",
         "url": "https://techcrunch.com/2026/09/28/source-inference-provider-modal-labs-closing-in-on-750m-round-at-15-75b-valuation/",
@@ -303,7 +361,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 0
+        "ageHours": 4
       },
       {
         "title": "AMD will acquire Fei-Fei Li&#8217;s World Labs for $8.2 billion",
@@ -317,7 +375,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 5
       },
       {
         "title": "Shopify opens checkout to browser-based AI agents",
@@ -331,13 +389,27 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 6
+      },
+      {
+        "title": "The AI boom took over Climate Week and not everyone is happy about it",
+        "url": "https://techcrunch.com/2026/09/28/the-ai-boom-took-over-climate-week-and-not-everyone-is-happy-about-it/",
+        "publishedAt": "2026-09-28T19:21:59.000Z",
+        "summary": "Just like the rest of the U.S., data centers and AI are dividing climate tech founders and investors.",
+        "authors": [
+          "Tim De Chant"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 7
       },
       {
         "title": "Nvidia launches new platform for reining in rogue AI agents",
         "url": "https://techcrunch.com/2026/09/28/nvidia-launches-new-platform-for-reining-in-rogue-ai-agents/",
         "publishedAt": "2026-09-28T18:31:23.000Z",
-        "summary": "As the debate rages over whether the recent spate of rogue AI agents is a step toward AGI or a more conventional engineering problem, Nvidia is offering its own answer to problem. Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents to [&#8230;]",
+        "summary": "Nvidia CEO Jensen Huang on Monday introduced a toolkit of software and hardware products that add independent security layers around AI agents to ensure they stay within their test environments even if they attempt to break out.",
         "authors": [
           "Kirsten Korosec"
         ],
@@ -345,7 +417,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 7
       },
       {
         "title": "Anthropic releases Sonnet 5.5, which it calls a significantly cheaper, faster work partner",
@@ -359,13 +431,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "Google is killing off Gemini&#8217;s Gems in favor of &#8216;skills&#8217;",
         "url": "https://techcrunch.com/2026/09/28/google-is-killing-off-geminis-gems-in-favor-of-skills/",
         "publishedAt": "2026-09-28T17:29:50.000Z",
-        "summary": "As all-in-one AI agents like Meta's Muse and Instinct take off, Google is opting to end a feature which built task-specific agents.",
+        "summary": "As all-in-one AI agents like Meta's Muse and Instinct take off, Google is opting to end a feature that built task-specific agents.",
         "authors": [
           "Sarah Perez"
         ],
@@ -373,7 +445,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "OpenAI still doesn&#8217;t seem to have a handle on all of its rogue AI activity",
@@ -387,7 +459,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Meta launches enterprise AI platform, hires MongoDB CEO to lead new initiative",
@@ -401,63 +473,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 5
-      },
-      {
-        "title": "Anthropic, Gamma, and Clay share what happens when enterprises actually deploy AI at TechCrunch Disrupt 2026",
-        "url": "https://techcrunch.com/2026/09/28/anthropic-gamma-and-clay-share-what-happens-when-enterprises-actually-deploy-ai-at-techcrunch-disrupt-2026/",
-        "publishedAt": "2026-09-28T15:30:00.000Z",
-        "summary": "Anthropic, Clay, and Gamma on what it takes for an AI product to go beyond the demo at the AI Stage at TechCrunchDisrupt 2026. Register to join and get 50% off a second pass.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 6
-      },
-      {
-        "title": "After a deepfake voice fooled her grandfather, this founder sprang into action",
-        "url": "https://techcrunch.com/2026/09/28/after-a-deepfake-voice-fooled-her-grandfather-this-founder-sprang-into-action/",
-        "publishedAt": "2026-09-28T15:00:00.000Z",
-        "summary": "After her grandfather was scammed by a deepfake of his brother's voice, Tarini Padmanabhuni founded DetectifAI, a San Francisco startup building AI models small enough to run directly on smartphones and flag fake voices in real time, and it's now one of the companies competing in Startup Battlefield at TechCrunch Disrupt.",
-        "authors": [
-          "Connie Loizos"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 7
-      },
-      {
-        "title": "Next 5 VCs judging Startup Battlefield 200 contenders at TechCrunch Disrupt 2026",
-        "url": "https://techcrunch.com/2026/09/28/next-five-vcs-judging-startup-battlefield-200-contenders-at-techcrunch-disrupt-2026/",
-        "publishedAt": "2026-09-28T14:30:00.000Z",
-        "summary": "Thousands of applications. Multiple rounds of review. Hundreds of hours spent evaluating startups from around the world. Now comes the part everyone has been waiting for. Register for TechCrunch Disrupt 2026 today.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 7
-      },
-      {
-        "title": "Modulate raises $25M for its voice models and analysis suite",
-        "url": "https://techcrunch.com/2026/09/28/modulate-raises-25m-for-its-voice-models-and-analysis-suite/",
-        "publishedAt": "2026-09-28T14:05:00.000Z",
-        "summary": "Modulate deploys its models to detect deepfake, fraud and scam",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 8
+        "ageHours": 9
       }
     ],
     "threads": []
@@ -467,16 +483,16 @@
     "last24h": 12,
     "topCategories": [
       {
-        "name": "Models",
-        "count": 10
+        "name": "Research",
+        "count": 11
       },
       {
-        "name": "Research",
-        "count": 9
+        "name": "Models",
+        "count": 7
       },
       {
         "name": "General",
-        "count": 4
+        "count": 5
       },
       {
         "name": "Products",
