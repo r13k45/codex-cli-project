@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T02:04:30.939Z",
+  "generatedAt": "2026-10-01T08:49:01.593Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,205 +85,223 @@
   "sections": {
     "research": [
       {
-        "title": "In a Streaming World, Should You Stand Still? A Comprehensive Benchmark of Anomaly Detection in Streams",
-        "url": "https://arxiv.org/abs/2609.39215v1",
-        "publishedAt": "2026-09-30T07:56:52.000Z",
-        "summary": "Time series anomaly detection (TSAD) is increasingly deployed in streaming settings, where data arrive sequentially and may exhibit non-stationarity. As a result, several works from the recent literature propose streaming anomaly detection methods that rely on incremental updates to adapt over time. However, most of these approaches originate from the streaming outlier detection literature and largely ignore core characteristics of time series anomalies. Moreover, their empirical evaluation is typically conducted on synthetic or small-scale benchmarks with limited diversity, making it unclear whether streaming methods are truly advantageous in realistic TSAD scenarios. In this work, we carry out the first large-scale experimental study comparing streaming and static TSAD methods under a unified streaming evaluation benchmark. We consider a realistic setting in which an initial batch of data is available for model training, followed by online evaluation of both detection accuracy and computational efficiency. In addition, we propose a distribution-drift dataset of real time series, called TSB- drift, to isolate scenarios where streaming updates are theoretically justified. Our results show that, contrary to common assumptions, static TSAD methods significantly outperform streaming approaches in most streaming settings. Such finding highlights a critical gap between the design of existing streaming methods and the requirements of modern TSAD, and calls for a rethinking of how streaming capabilities should be integrated into TSAD.",
+        "title": "Semifactual Credit-Augmented Policy Optimization",
+        "url": "https://arxiv.org/abs/2609.40360v1",
+        "publishedAt": "2026-09-30T17:59:56.000Z",
+        "summary": "Reinforcement learning with verifiable rewards (RLVR) has improved the reasoning capabilities of large language models (LLMs), yet their predictions remain sensitive to task-irrelevant prompt features. We investigate this sensitivity through semifactual prompt interventions that preserve the underlying problem and its answer. Our analysis reveals substantial variation in token-level sensitivity and shows that suppressing high-drift token candidates during decoding improves reasoning accuracy without updating model weights. These findings highlight a limitation of Group Relative Policy Optimization (GRPO), which assigns the same outcome-derived advantage to every response token and may reinforce potential spurious dependence alongside useful reasoning. Motivated by this observation, we introduce Semifactual Credit-Augmented Policy Optimization (SCAPO), a causally inspired variant of GRPO that incorporates semifactual stability into token-level credit assignment. SCAPO measures token probability drift for fixed responses under semifactual interventions and uses normalized stability scores to reduce advantages for relatively unstable tokens during early training, while granting no additional credit for stability alone. On Qwen3-4B-Base and Qwen3-1.7B-Base, SCAPO improves AIME 2024-2026 accuracy over GRPO by 5.63 and 4.17 percentage points, respectively. At both model scales, SCAPO achieves the best results on most evaluated mathematics benchmarks and all evaluated out-of-distribution benchmarks among the compared methods. These results suggest that semifactual stability provides an effective training signal for improving reasoning and generalization through finer-grained credit assignment in RLVR. The code is available at https://github.com/DtYXs/SCAPO.",
         "authors": [
-          "Magali Parrino",
-          "Antoine Ajenjo",
-          "Emmanuel Remy",
-          "Pierre Stephan",
-          "Pierre Senellart",
-          "Paul Boniol"
+          "Junshu Pan",
+          "Zhizhang Fu",
+          "Shulin Huang",
+          "Yiran Ding",
+          "Zifan Cheng",
+          "Wenqi Shao",
+          "Qiaosheng Zhang",
+          "Yue Zhang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 18
+        "ageHours": 15
       },
       {
-        "title": "Minimax Additive Regression under Unknown Dependent Designs",
-        "url": "https://arxiv.org/abs/2609.39212v1",
-        "publishedAt": "2026-09-30T07:55:09.000Z",
-        "summary": "We study additive regression under a potentially non-product random design on $[0,1]^d$, allowing the dimension $d$ to grow with the sample size $n$. We introduce coupled smoothness classes that separately control the regularity of the marginal densities and the density-weighted additive components. To handle dependence, we adapt a Riesz-basis construction for functional ANOVA models and establish compatibility bounds with constants independent of the dimension under uniform bounds on the joint density. We construct thresholded least-squares estimators and establish matching minimax upper and lower bounds for prediction with known or unknown marginal densities, under suitable dimension-growth conditions. When the marginal densities are at least as smooth as the weighted components, the unknown-density problem attains the known-density minimax rate. When the densities are less smooth, their regularity determines the minimax rate over the coupled class. Finally, we show that the centered additive components can be recovered at the same aggregate upper rate, without an additional order of error.",
+        "title": "Ranking-Aware Prompt Optimization for Multimodal Clinical Diagnosis",
+        "url": "https://arxiv.org/abs/2609.40361v1",
+        "publishedAt": "2026-09-30T17:59:56.000Z",
+        "summary": "Multimodal large language models (MLLMs) are rapidly advancing clinical diagnosis, yet their adaptation pipelines remain anchored to accuracy-based objectives. Clinical data are heavily class-imbalanced: a constant-majority predictor can score above 90% accuracy while being clinically useless. We therefore evaluate and optimize for AUROC, a threshold-free score that ranks positives above negatives and is invariant to class balance. We focus on prompt optimization in MLLMs. Reflective methods such as GEPA use a binary scores matrix with one row per evaluation instance and one column per candidate prompt; cells record per-instance correctness, so the column average is accuracy and drives candidate selection. We introduce pair-level Pareto prompt evolution (Ranking-PE), which replaces each correctness row with a pairwise-ordering row over (positive, negative) instance pairs: the cell is 1 if the candidate scores the positive higher than the paired negative. The column average then equals empirical AUROC (by the Wilcoxon-Mann-Whitney identity). We apply this swap at all three layers the prompt evolution search reads from - the scores matrix that decides Pareto dominance, the per-example feedback to the reflection LM, and final candidate selection - at no extra model calls and with no surrogate loss. Across three diseases on MIMIC, accuracy-based prompt evolution can degrade ranking; Ranking-PE reverses this, beating the accuracy-based recipe by +5.8 AUROC pp on fine-tuned Qwen3-VL-8B and +16.2 pp on MedGemma-4B. Ablations examine each design component and show that a medical-grade visual backbone - via vision-encoder-tuned SFT or medical pretraining - is a prerequisite that prompt search cannot replace - our recipe extends reflective prompt evolution from text-only data to multimodal clinical decision-making.",
         "authors": [
-          "Baptiste Ferrere",
-          "Fabrice Gamboa",
-          "Jean-Michel Loubes"
+          "Tian Xia",
+          "Minghao Liu",
+          "Yiqing Liang",
+          "Laixi Shi",
+          "Jiayun Wang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
+        "category": "Research",
+        "ageHours": 15
       },
       {
-        "title": "UniAE-MoE: A Unified Audio Encoder via Mixture of Experts",
-        "url": "https://arxiv.org/abs/2609.39199v1",
-        "publishedAt": "2026-09-30T07:49:18.000Z",
-        "summary": "Large Audio Language Models (LALMs) rely on effective audio encoders for multi-task performance. We introduce UniAE-MoE, a unified audio encoder designed to model cross-domain audio representations and achieve outstanding downstream understanding performance via a Mixture-of-Experts (MoE) architecture. Specifically, we explore mainstream audio encoders and integrate those from Qwen2-Audio and Audio-Flamingo 3, which demonstrate superior downstream capabilities. To facilitate effective model fusion, we improve our encoder using SwiGLU with shared experts to decouple encoder networks, and we further introduce a two-stage instruction-tuning strategy to better adapt the model to diverse downstream tasks. Moreover, we propose the task-specific data scaling (TSDS) technique to enhance \\tool's understanding capabilities. On the XARES-LLM benchmark, UniAE-MoE attains a score of 0.802, achieving state-of-the-art performance. It also delivers top-tier performance in the official Interspeech 2026 Audio Encoder Capability Challenge, further demonstrating robust generalization across diverse audio tasks. Together, these results validate the effectiveness of \\tool for unified audio understanding across speech, music, and general audio domains.",
+        "title": "Removing Timing Shortcuts Improves Non-Invasive Brain-to-Text",
+        "url": "https://arxiv.org/abs/2609.40359v1",
+        "publishedAt": "2026-09-30T17:59:52.000Z",
+        "summary": "We find that major reported improvements in decoding words from non-invasive brain recordings are largely reproducible without any brain data. In the influential work of d'Ascoli et al. (2025), time series of brain activity from subjects perceiving continuous speech are segmented into fixed-length windows starting at each word. A neural network then generates predictions for all of the words in a sentence together. Neighbouring windows partially overlap, implicitly revealing the interval between words. Since these intervals indicate the duration of the words spoken, and different words tend to have different durations - for example, \"the\" is much shorter than \"supercalifragilisticexpialidocious\" - the neural network can improve its predictions of words without relying on the underlying brain activity. Consistent with this, the method reaches 22.0% balanced accuracy on synthetic signals containing no brain information, compared with 22.3% on real brain recordings. To prevent the network from learning this shortcut, we make a single, simple change. Instead of jointly encoding all windows in a sentence, we process each independently. As a result, the neural network achieves better performance by learning underlying word-specific information from brain recordings. This makes two existing strategies become much more effective than before. Both aggregating predictions from distinct neural responses to the same word and using a pretrained LLM as a linguistic prior now substantially improve results. On our perceived speech benchmark, this simple recipe (SimpleB2T) achieves a word error rate of 36.6% with five observations per word, approaching past invasive speech decoding performance, albeit under different conditions. The results in this work expose an important shortcut in brain-to-text decoding and show that removing it leads to a simple and considerably more effective strategy.",
         "authors": [
-          "Shengbo Cai",
-          "Zhisheng Zhang",
-          "Zichao Nie",
-          "Jing Peng",
-          "Jingran Xie",
-          "Zhiyong Wu"
+          "Dulhan Jayalath",
+          "Oiwi Parker Jones"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "ViTeX-Bench: Benchmarking High-Fidelity Video Scene Text Editing",
+        "url": "https://arxiv.org/abs/2609.40356v1",
+        "publishedAt": "2026-09-30T17:59:33.000Z",
+        "summary": "Recent video generation is increasingly realistic and controllable, yet video editing remains less developed, particularly for precise local edits that must preserve the original scene dynamics. Video scene text editing replaces text on scene surfaces, such as storefront signs, whiteboards, and product labels, while preserving the surrounding content, motion, and camera dynamics. Although scene text editing is well studied for images, video scene text editing that achieves high visual quality, temporal consistency, and edit locality remains underexplored. Existing resources offer limited paired real-video data, and general video-editing metrics do not directly measure whether the requested text remains correct over time. We introduce ViTeX-Bench, a benchmark suite comprising ViTeX-Dataset and a three-axis evaluation protocol. The dataset contains 387 real-world 720p videos with text-region masks and editing instructions: 230 provide reviewed, pipeline-generated paired edits for training, and 157 form a frozen evaluation split. The protocol evaluates text correctness, visual and temporal quality, and edit locality through 13 metrics, with one primary metric per axis and a Pareto comparison of their trade-offs. OCR calibration, human evaluation, and annotation-sensitivity analyses support the interpretation of these scores. Across eight baselines from four editing families, accurate text, temporal stability, and scene preservation remain difficult to achieve together. We also release ViTeX-Edit-14B, an open-source reference editor fine-tuned on the paired training split with motion-aligned glyph-video conditioning. It achieves CharAcc 0.688, the highest mean among the evaluated video-native editors, and the lowest comparable text-crop Warp among raw editor outputs. ViTeX-Bench provides a reproducible foundation for studying these trade-offs in video scene text editing.",
+        "authors": [
+          "Xinghao Chen",
+          "Xiangbo Gao",
+          "Jiongze Yu",
+          "Yuheng Wu",
+          "Zhengzhong Tu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 18
+        "ageHours": 15
       },
       {
-        "title": "Importance-Aware Feature Sparsification for Wireless Split Learning",
-        "url": "https://arxiv.org/abs/2609.39194v1",
-        "publishedAt": "2026-09-30T07:46:35.000Z",
-        "summary": "Wireless split learning (SL) reduces on-device computation by offloading upper layers to a server, yet transmitting high-dimensional intermediate features at each iteration remains a major communication bottleneck. Existing methods select features at the client side using task-agnostic criteria such as magnitude, statistics, or clustering, which increases client-side processing and often degrades accuracy under non-independent and identically distributed (non-i.i.d.) client data. We propose importance-aware class-balanced sparsification (ICS), a lightweight approach in which the server ranks feature channels using Grad-CAM-based scores obtained from the true-class logit during backpropagation. The per-class scores are aggregated into a class-balanced, label-agnostic importance vector that mitigates head-class bias under label skew, and each client reuses this vector in the next round to retain the top-$N$ feature channels, incurring no additional client-side forward or backward passes. We further derive a non-asymptotic convergence bound that isolates the sparsification-induced error and characterizes how the sparsification ratio and mini-batch size jointly affect convergence under a fixed communication budget, and we analyze the communication and computational overhead of ICS against representative baselines. Beyond sequential CNN-based SL, we extend ICS to parallel split learning and to transformer-based models. Experiments show that ICS consistently outperforms the baselines, with larger gains under severe non-i.i.d. partitions.",
+        "title": "Image Classifiers are Efficient Self-Supervised Video Representation Learners",
+        "url": "https://arxiv.org/abs/2609.40347v1",
+        "publishedAt": "2026-09-30T17:59:03.000Z",
+        "summary": "We introduce VideoMSN, a Masked Siamese Network framework for efficient self-supervised spatio-temporal representation learning in videos. Instead of relying on heavy 3D architectures or reconstruction-based autoencoders for learning with unlabeled data, we repurpose standard image Vision Transformers by representing videos as super images which are grids composed of frames sampled from videos. From each super image, we construct two views: one with spatial patch masking and the other with temporal frame masking, ensuring no information leakage across frames. A shared Vision Transformer (ViT) encoder aligns their embeddings using a masked Siamese loss, capturing both motion and appearance cues without reconstruction. Our decoder-free formulation leverages an image foundation model towards efficient video representation learning. Starting from pretrained DINO-v3 and DeiT-v3 image encoders, VideoMSN achieves state-of-the-art performance on Kinetics-400, UCF101, and HMDB51 while requiring up to $32\\times$ fewer and $160\\times$ fewer video pretraining epochs compared to prior video self-supervised learning methods. Our proposed approach also shows strong performance in low-shot classification, confirming the transferability of the learned representations in a label-scarce scenario. Project Page: https://cvir.github.io/projects/videomsn.",
         "authors": [
-          "Bumjun Kim",
-          "Yoon Huh",
-          "Wan Choi"
+          "Owais Iqbal",
+          "Sudipta Sarkar",
+          "Shyam Marjit",
+          "Omprakash Chakraborty",
+          "Anirban Chakraborty",
+          "Abir Das"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 18
+        "ageHours": 15
       },
       {
-        "title": "Dynamics to decision: A mathematical theory of Lyapunov spectra and decision boundaries in deep classifiers",
-        "url": "https://arxiv.org/abs/2609.39190v1",
-        "publishedAt": "2026-09-30T07:43:15.000Z",
-        "summary": "A deep classifier is defined not only by the decision it produces, but also by the sequence of transformations through which that decision is formed. Treating this evolution as a dynamical system across layers provides a natural framework for asking how decision geometry emerges through depth and how far back we can trace a boundary's dynamical signature. We model a feed-forward classifier as a finite, nonautonomous discrete dynamical system, with layers playing the role of discrete time steps. We study the Finite-Time Maximum Lyapunov Exponent (FTMLE) of the data samples' dynamical trajectory through depths of the classifier. The FTMLE measures the rate of convergence/divergence of nearby trajectories. We move the observation endpoint backward from probabilities to logits and then to hidden representations. For Gaussian classes, we prove that probability-level FTMLE carries a clear geometric signature of the decision boundary, with its dominant direction aligned with the boundary normal. Moving one step backward to the logits, we prove this relationship is no longer universal but depends critically on how the classifier is trained, particularly on the choice of loss function. Moving further backward to the hidden representation, the connection becomes more conditional: boundary-related FTMLE can persist, but only under identifiable structural conditions. We propose geometry-aware fine-tuning for restructuring the classifier's hidden FTMLE, and propose conditions for guaranteed concentration of high hidden FTMLE near the decision boundary. Through our numerical results, we show the generality and validity of our theoretical results. Understanding the evolution of data samples as traveling through the layers of classifier provides a principled foundation for identifying where boundary-relevant sensitivity emerges and for developing layer-aware regularization strategies.",
+        "title": "EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery",
+        "url": "https://arxiv.org/abs/2609.40340v1",
+        "publishedAt": "2026-09-30T17:58:28.000Z",
+        "summary": "Evolutionary search with large language models (LLMs) can stall when progress requires external knowledge the model lacks. Supplying relevant documents helps, but simply adding web search tool can keep returning the same pages as solutions change. We introduce EvoDuet, a bi-level optimization method that co-evolves solutions and search queries with fixed model parameters. At each iteration, a retrieval gate lets the LLM assess its knowledge gap and choose to retrieve new documents, reuse stored ones, or proceed without them. An inner loop refines queries and ranks documents by the solution scores they are predicted to yield; an outer loop generates candidates in parallel from these documents and records the evaluated outcomes for later searches. Across 21 optimization tasks with one candidate per iteration, EvoDuet raises OpenEvolve's normalized discovery gain from 74.1% to 78.0% with GPT-5.6-Luna and from 61.3% to 82.3% with Gemini-3.8-Flash, whereas Qwen3.5-9B does not benefit. Our best runs surpass the previously reported best scores on eight tasks, including Swap Reduction on Q20 and Rosetta, and match them on three more. EvoDuet also improves with other scaffolds (e.g., Top-K, EvoX) on Sums/Diffs and Denoising, demonstrating its applicability across evolutionary search scaffolds.",
         "authors": [
-          "Shirin Panahi",
-          "Amirhossein Nazerian",
-          "Ali Pezeshki"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "ViLegalExpert: A Large-Scale Benchmark for Vietnamese Legal Retrieval and Question Answering from Real-World Consultations",
-        "url": "https://arxiv.org/abs/2609.39189v1",
-        "publishedAt": "2026-09-30T07:43:15.000Z",
-        "summary": "Trustworthy Legal AI requires systems that can answer legal questions while grounding their responses in authoritative sources. However, existing Vietnamese legal benchmarks provide limited coverage of real-world legal consultations. We introduce \\textbf{ViLegalExpert}, a large-scale benchmark constructed from authentic citizen--lawyer consultations, containing over \\textbf{172K} questions across \\textbf{34 legal domains}, together with professional answers and expert-verified legal evidence. ViLegalExpert supports legal information retrieval, extractive QA, and abstractive QA. Experiments with representative retrieval methods and language models reveal substantial challenges in evidence retrieval and grounded answer generation. While pretrained models perform strongly on QA, hybrid retrieval achieves the best retrieval performance. These results demonstrate the difficulty of mapping naturally expressed legal questions to authoritative provisions and establish ViLegalExpert as a challenging benchmark for reliable Vietnamese Legal AI.",
-        "authors": [
-          "Dat Tien Nguyen",
-          "Nghia Hieu Nguyen",
-          "Anh Thi-Hoang Nguyen",
-          "Dung Ha Nguyen",
-          "Kiet Van Nguyen",
-          "Ngan Luu-Thuy Nguyen"
+          "Young-Jun Lee",
+          "Jinheon Baek",
+          "Soyeong Jeong",
+          "Minki Kang",
+          "Seungyeon Jwa",
+          "Jonghyun Choi",
+          "Seungho Han",
+          "Dongyeop Kang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
+        "category": "Models",
+        "ageHours": 15
       },
       {
-        "title": "Attention Function as an Intrinsic Inductive Bias: How Models' Behavior Diverges in Novel Contexts",
-        "url": "https://arxiv.org/abs/2609.39188v1",
-        "publishedAt": "2026-09-30T07:43:11.000Z",
-        "summary": "Developmental psychology holds that certain priors are given to infants prior to experience rather than induced from data, and that the influence of such priors is suppressed under strong, well-constrained conditions but reasserts itself under weak ones. We ask whether an analogous principle holds for the Transformer: can the activation function given to attention heads serve as an intrinsic inductive bias? We propose Mixture of Function Attention (MoFA), a parameter-free modification to multi-head attention that fixes a ratio of softmax and sigmoid heads before training. Across five ratios, a 124M-parameter GPT-2 model, and five seeds, we find that this given ratio has little effect in-distribution -- differences between ratios are statistically negligible for moderate mixtures and remain small even at the extremes -- but its influence re-emerges sharply under zero-shot distribution shift across 15 out-of-distribution domains. Perplexity gaps between ratios widen by more than an order of magnitude on several domains, and the best-performing ratio tracks a single axis of domain structure, separating short, informal text (softmax-favoring) from technical, long-form text (sigmoid-favoring), that explains 78.3% of the variance in domain response. This reorganization is visible at the head level: sigmoid heads show an accelerating drop in attention entropy as their ratio increases, while softmax heads respond more modestly, yielding a consistent division of labor between the two head types. Our results suggest that activation choice functions as a given prior whose influence is masked in-distribution and re-emerges out-of-distribution.",
+        "title": "Is Weight Tying Still Beneficial for Decoder-Only LLMs in Private Settings Under DP-SGD?",
+        "url": "https://arxiv.org/abs/2609.40335v1",
+        "publishedAt": "2026-09-30T17:57:43.000Z",
+        "summary": "Differentially Private Stochastic Gradient Descent (DP-SGD) is a leading approach for privacy-preserving fine-tuning of large language models (LLMs). Many decoder-only LLMs employ weight tying between input and output embeddings, a design choice originally introduced for parameter efficiency and improved language modeling performance in the non-private setting. However, the impact of weight tying under differentially private training remains largely unexplored. In this work, we investigate the role of weight tying in the DP setting using GPT2 and DistilGPT2 as representative decoder-only architectures. Interestingly, we find that untied embeddings consistently outperform weight-tied models under DP-SGD, achieving gains of up to 4.74% points in accuracy on SST-2, QNLI, and QQP. Beyond improved utility, untying embeddings enables the use of memory-efficient ghost clipping for DP-SGD. By contrast, weight tying introduces shared-parameter interactions that complicate standard ghost norm computation and largely negate its computational advantages. As a result, untied models achieve over 60% lower memory usage while preserving the benefits of ghost clipping. Our results indicate that untied embeddings provide a more effective and scalable design for differentially private training of decoder-only LLMs and highlight the need to revisit standard LLM architectural choices in the privacy-preserving setting.",
         "authors": [
-          "Dong Gyun Kang",
-          "Megha Thukral",
-          "Kwangsoo Kim"
+          "Razan El Mais",
+          "Ali Chehab",
+          "Ibrahim Issa",
+          "Razane Tajeddine"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
+        "category": "Models",
+        "ageHours": 15
       },
       {
-        "title": "Low-Discrepancy Dither for Quantized Recurrent State Caches",
-        "url": "https://arxiv.org/abs/2609.39185v1",
-        "publishedAt": "2026-09-30T07:41:07.000Z",
-        "summary": "Mamba-style and hybrid language models compress their past into a fixed-size recurrent state that is rewritten at every generated token. Storing this state in low precision saves memory bandwidth, but every rounding error is fed back into the next update and can accumulate over long generations. Production systems round the state stochastically; we ask which rounding rule such caches should use. We find that a deterministic golden-ratio Weyl dither, which needs no random numbers, consistently brings the quantized model closer to the full-precision one than stochastic rounding, across pure and hybrid models, storage formats, and long decoding horizons, at no extra cost. Round-to-nearest behaves differently: because it discards small updates, its error keeps growing, so it can look best in short evaluations yet falls far behind over long generations. A discrepancy analysis explains this ordering, and we document implementation pitfalls that silently remove the benefit.",
+        "title": "Turbo Harness: Instance-Adaptive Harness Optimization",
+        "url": "https://arxiv.org/abs/2609.40330v1",
+        "publishedAt": "2026-09-30T17:56:09.000Z",
+        "summary": "Automating the search for effective harnesses is an important step toward enabling agents to recursively self-improve. Existing harness optimizations typically produce a single global harness that is applied uniformly across task instances. However, a harness that works well on average may not be optimal for every instance. We introduce Turbo Harness, a framework that can adapt a globally optimized harness to each instance by reusing information generated during the original optimization process. Specifically, Turbo Harness recycles artifacts produced during a completed global harness optimization run, and summarizes them into a structured playbook. We train a harness editor to leverage this prior optimization experience to generate instance-specific patches to the global harness. At inference time, the editor uses the instance and the playbook to construct a tailored harness in which the execution model operates. Through numerical experiments, we show that Turbo Harness consistently outperforms existing harness optimization baselines across seven benchmarks spanning interactive agent tasks, software engineering, and long-horizon terminal tasks.",
         "authors": [
-          "Snigdha Chandan Khilar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "Fiber-Resolved Microstructure Quantification from Multi-Shell Diffusion MRI using Detection Transformers",
-        "url": "https://arxiv.org/abs/2609.39184v1",
-        "publishedAt": "2026-09-30T07:41:04.000Z",
-        "summary": "Fiber orientation and compartmental microstructure are central to the characterization of white matter tissue in diffusion MRI, yet existing methods either resolve fiber orientations without quantifying microstructure, or quantify microstructure while assuming a fixed number of compartments and a single fiber direction. Nonparametric approaches that recover both require tensor-valued diffusion encoding and computationally expensive Monte-Carlo inversion of an ill-posed inverse Laplace transform. We propose to reframe this problem as an object detection-like task, adopting the Detection Transformer (DETR) architecture to jointly predict mean diffusivity (MD), fractional anisotropy (FA), main fiber direction, and signal fraction for a variable number of compartments per voxel from standard multi-shell diffusion MRI with linear encoding. Hungarian matching during training resolves permutation invariance across compartments. We introduce mean Average Precision as a reproducible benchmark metric. Evaluated on synthetic test data with up to five compartments per voxel, our model achieves $R^2=0.95$ for MD, $R^2=0.88$ for FA, and a median angular error of 4.2°, with performance scaling naturally with compartmental signal fraction.",
-        "authors": [
-          "Sebastian Endt",
-          "Marcus Wirth",
-          "Johannes Reinhold Schlund",
-          "Marion Irene Menzel"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 18
-      },
-      {
-        "title": "MEND: Label-Free Detection, Localisation, and Correction of Latent Hallucination in World Models",
-        "url": "https://arxiv.org/abs/2609.39182v1",
-        "publishedAt": "2026-09-30T07:38:49.000Z",
-        "summary": "World Models are appearing as the next major frontier in computer vision. However, their robustness is currently largely unexplored. We identify the phenomenon of hallucination in latent World Models: given a state and an action, the predicted next latent can decode to a scene that never occurs. Because the prediction is statistically ordinary and is fed back autoregressively by the model, the error is both silent and compounding. We study whether such latent hallucination can be detected, localised, and corrected at inference time, on a frozen self-supervised world model in the absence of ground-truth error labels. We introduce Masked Empirical-Bayes Neural Denoising (MEND), a single conditional score network trained by denoising score matching on real transitions, whose score field serves three roles: its magnitude detects hallucination, its per-token field localises it to specific image patches, and it defines an inference-time correction direction. On two navigation environments MEND detects hallucination with an AUROC of up to 0.80 without using actions, exceeding a single-Gaussian density baseline while also localising the error (per-token AUPRC up to 0.87) and correcting it, all from one score field. Our correction reliably reduces single-step latent error and improves predictions. We identify that a part of the error is tangent to the data manifold, hence, we focus on detection and localisation while highlighting promises of the correction.",
-        "authors": [
-          "Ali J Alrasheed",
-          "Aryan Yazdan Parast",
-          "Basim Azam",
-          "James Bailey",
-          "Naveed Akhtar"
+          "Tunyu Zhang",
+          "Hao Wang",
+          "Kai Xu",
+          "Dimitris N. Metaxas"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 18
-      },
-      {
-        "title": "Whitening Improves Robustness to Spurious Correlations in Linear Probes",
-        "url": "https://arxiv.org/abs/2609.39177v1",
-        "publishedAt": "2026-09-30T07:34:21.000Z",
-        "summary": "Deep neural networks tend to rely on simple features that may be spurious and thus fail to generalize. We study this problem in the setting of linear probes, where a (generalized) linear model is fitted on the representations of a (pretrained) model. We use the connection of these models to the max-margin classifier, and show they favor directions associated with large eigenvalues of the covariance matrix. Whitening removes this preference by equalizing the eigenvalues of the covariance matrix. This observation motivates whitening as a preprocessing step that can reduce reliance on spurious correlations without requiring prior knowledge of their presence or labeled data. We examine the effect of whitening on a synthetic data-generating process and standard spurious correlation benchmarks, and find that it improves robustness. We also find that whitening can improve robustness when added to existing approaches.",
-        "authors": [
-          "Floris Holstege",
-          "Bram Wouters",
-          "Noud van Giersbergen",
-          "Cees Diks"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 19
+        "ageHours": 15
       },
       {
-        "title": "Asymptotic Properties of Support Vector Machines in High-Dimension, Low-Sample-Size Settings under a Spiked Model",
-        "url": "https://arxiv.org/abs/2609.39173v1",
-        "publishedAt": "2026-09-30T07:31:47.000Z",
-        "summary": "In this paper, we consider asymptotic properties of the support vector machine (SVM) in high-dimension, low-sample-size (HDLSS) settings under a spiked model. The existing theory of the SVM in the HDLSS context relies on the geometric representation of HDLSS data, which requires that the eigenvalues of the covariance matrices are not dominant. We first show that the geometric representation does not hold under the spiked model. We show that the Gram matrix of HDLSS data converges in distribution to a random matrix, namely, the HDLSS data converge to a random configuration in a finite-dimensional space whose dimension is given by the number of the spikes. We show that the misclassification rates of the SVM do not tend to zero, that is, the SVM does not hold the consistency property. We also show that the bias-corrected SVM (BC-SVM) does not give preferable performance in this setting because the bias term itself should be modified. In order to overcome such difficulties, we propose a spike-corrected SVM (SC-SVM). We show that the SC-SVM holds the consistency property when the sample size goes to infinity, and that the growth of the sample size is essential in the sense that any projection-based procedure fails when the sample size is fixed. Finally, we check the performance of the classifiers by numerical simulations.",
+        "title": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
+        "url": "https://arxiv.org/abs/2609.40325v1",
+        "publishedAt": "2026-09-30T17:55:29.000Z",
+        "summary": "As interactive 3D worlds are increasingly used to study intelligent behavior, it becomes important to develop efficient pipelines for identifying anomalies in these simulated environments, such as floating objects, traversable walls, or objects inconsistent with the surrounding scene. Multimodal AI systems, including vision-language models (VLMs) and vision-language-action models (VLAs), have shown potential for automating this task. However, 3D world auditing is complex, requiring the close coupling of two distinct capabilities: action, to navigate the 3D world and search for anomalies systematically and efficiently; and visual reasoning, to understand the environment and identify anomalies from multimodal observations. It remains largely unexplored whether multimodal agents can effectively couple these two capabilities, using visual reasoning to identify potential anomalies while taking actions to validate them. In this paper, we introduce WorldAuditBench, a benchmark for 3D world auditing comprising 213 anomaly tasks across 13 environments built with Unreal Engine 5 and Three.js, spanning five anomaly families. We evaluate five frontier models under a fixed exploration budget using two auditing paradigms: VLA-based exploration followed by VLM-based anomaly identification, and an end-to-end VLM agent in which visual reasoning directly guides action selection. Across the evaluated models and two paradigms, success rates range from 6.6% to 42.3%, substantially below human performance (83.4%). Through the task of world auditing, WorldAuditBench provides a testbed for studying how multimodal agents couple action and visual reasoning in interactive 3D environments, while highlighting current limitations in their ability to gather and interpret evidence during exploration.",
         "authors": [
-          "Yugo Nakayama"
+          "Ziyan Jiang",
+          "Jingbo Yang",
+          "Jiabao Ji",
+          "Yujian Liu",
+          "Qiucheng Wu",
+          "Tommi Jaakkola",
+          "Yang Zhang",
+          "Shiyu Chang"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 19
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
+        "url": "https://arxiv.org/abs/2609.40324v1",
+        "publishedAt": "2026-09-30T17:55:22.000Z",
+        "summary": "We present Cogentic, a multi-agent harness for automated proof discovery on open research problems. While frontier language models can generate strong mathematical ideas in a single shot, single-shot generation is often insufficient for open problems that require exploring multiple competing conjectures, overcoming subtle technical obstructions, and retaining intermediate progress over a long horizon. Cogentic addresses these challenges through an iterative prove--verify loop in which an orchestrator allocates a population of independent provers across distinct proof directions, subjects their output to adversarial verification by several specialized components, and promotes confirmed intermediate results into a persistent verified ledger that later rounds build on. The harness is designed to be able to solve research-level math and theoretical computer science problems. Using Gemini as the base model, Cogentic produced novel results on five open problems across online learning, auction theory, and mechanism design. Each result was independently verified by domain experts and is developed in full in companion papers. We list these results, and new ones as they are verified, at https://sites.google.com/view/cogentic .",
+        "authors": [
+          "Yang Cai",
+          "Vineet Gupta",
+          "Yanchen Jiang",
+          "Christopher Liaw",
+          "Aranyak Mehta",
+          "Grigoris Velegkas",
+          "Di Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "MatLoom: Layered Text-to-Material Generation in a Compact Program Space",
+        "url": "https://arxiv.org/abs/2609.40322v1",
+        "publishedAt": "2026-09-30T17:55:06.000Z",
+        "summary": "Material generation should produce not only an appearance, but also the rules that construct it. We introduce MatLoom, a compact, layer-oriented language for text-to-material generation with pretrained language models. Each program composes alpha-masked layers whose shared spatial expressions define coverage and physically based rendering (PBR) channels, making dependencies between patterns, color, and relief explicit. A standalone interpreter evaluates the program into material maps, while the source retains named fields and layer parameters for subsequent authoring. Without task-specific fine-tuning, our pipeline uses parser-guided repair and preview-based critique to revise material designs, then searches noise seeds while keeping each candidate's remaining source fixed. On a curated benchmark of 141 prompts evaluated with six backbones, our best-performing configuration achieves higher mean scores than three diffusion baselines on all four flat-layout prompt-alignment metrics. Its initial programs already exceed all three baselines on mean BLIPScore, before critique or seed search. Retained programs have a median length of 21 lines when pooled across backbones. In a blind four-way comparison involving 30 participants and 20 prompts, our renders receive 59.2% of choices, compared with 19.3% for the most-preferred baseline. Compact executable programs thus offer a way to generate prompt-aligned materials while retaining their construction as part of the asset.",
+        "authors": [
+          "Anson Y. Lam",
+          "Shuqing Li",
+          "Michael R. Lyu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "Scaling Laws for Looped Mixture of Experts",
+        "url": "https://arxiv.org/abs/2609.40316v1",
+        "publishedAt": "2026-09-30T17:53:47.000Z",
+        "summary": "Looped transformers and Mixture-of-Experts (MoE) offer complementary routes to efficient scaling: recurrence increases computational depth at fixed parameters, while MoE sparsity expands total capacity at fixed active compute. Yet existing scaling laws model recurrence or sparsity in isolation. In this work, we introduce Loop Scaling Laws, the first scaling law to jointly model recurrence and sparsity alongside model size and data. At its core is a bounded, sparsity-conditional recurrence mapping that characterizes the effective-parameter gain from looping and how sparsity raises this gain. The laws predict the held-out loss of looped models more accurately than prior alternatives, and recover the standard dense and MoE scaling laws as special cases. Beyond prediction, the fitted laws provide a principled foundation for designing looped MoE models under compute and memory constraints. Downstream evaluations further demonstrate the complementary benefits of the two axes: sparsity delivers ~3x active-parameter efficiency, recurrence yields ~2x total-parameter efficiency on reasoning, and joint scaling further advances the performance frontier. As a practical extension, we show these gains hold at trillion-token scale: at matched training compute, a looped MoE with law-derived recurrence matches a ~2x larger non-looped MoE on the reasoning benchmarks, while enabling test-time scaling through recurrence.",
+        "authors": [
+          "Yanbei Chen",
+          "Anirudh Goyal",
+          "Raghuraman Krishnamoorthi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
       }
     ],
     "news": [
@@ -299,7 +317,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 9
       },
       {
         "title": "Valor, Atreides, and Sequoia back AI startup Flow Engineering at $750M valuation",
@@ -313,7 +331,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 5
+        "ageHours": 12
       },
       {
         "title": "Gemini 4 Argon: our next era of frontier intelligence",
@@ -325,7 +343,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 13
       },
       {
         "title": "OpenAI&#8217;s Jev clone could help the frontier lab stop its swarming agents",
@@ -339,7 +357,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 14
       },
       {
         "title": "AI voice startup ElevenLabs doubles valuation to $22B",
@@ -353,7 +371,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 14
       },
       {
         "title": "Reddit is killing RSS feeds and ending public API access because of AI bots",
@@ -367,7 +385,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 8
+        "ageHours": 15
       },
       {
         "title": "The ugly economics of consumer AI",
@@ -381,7 +399,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 15
       },
       {
         "title": "Meta disputes claim that Muse read a user&#8217;s private messages without permission",
@@ -395,7 +413,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 16
       },
       {
         "title": "DoorDash launches an AI agent you can text to order food",
@@ -409,7 +427,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 17
       },
       {
         "title": "Destro AI&#8217;s secret sauce is getting robots and humans on the same page",
@@ -423,7 +441,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 17
       },
       {
         "title": "Instinct&#8217;s new product recommendations are giving some users the ick",
@@ -437,7 +455,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 10
+        "ageHours": 17
       },
       {
         "title": "MIT Transit Lab to develop an AI platform for public transit agencies",
@@ -451,7 +469,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 11
+        "ageHours": 18
       }
     ],
     "threads": []
@@ -462,11 +480,11 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
+        "count": 15
       },
       {
         "name": "Models",
-        "count": 6
+        "count": 4
       },
       {
         "name": "General",
