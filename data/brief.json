@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T01:38:50.666Z",
+  "generatedAt": "2026-10-02T08:25:30.792Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 503",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,8 +83,251 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "One Basis to Animate Them All: Gaussian Blendshape Distillation for Real-Time Avatars",
+        "url": "https://arxiv.org/abs/2610.02207v1",
+        "publishedAt": "2026-10-01T17:59:58.000Z",
+        "summary": "3D Gaussian avatars support fast rendering, however, their real-time animation is often challenged by the costly neural inference. We address this bottleneck and show that the animation of pretrained avatar models can be closely approximated by a linear combination of identity-independent blendshapes. Building on this finding, we introduce GALA (Gaussian Animation via Linear Approximation), a distillation method that replaces per-frame heavy neural decoding with a shallow coefficient predictor and a linear blend. To improve fidelity and reduce memory requirements, we propose to construct the basis using block-local PCA under a rendering-aware metric and a memory budget. Our method learns a shallow MLP network to predict blendshape coefficients and applies to various animation architectures without retraining original models. We validate GALA by accelerating the inference of three distinct avatar models for 3D animation of facial expressions and full-bodies with clothing dynamics. Across these models, our distillation generalizes to held-out identities and reduces CPU animation cost by up to three orders of magnitude while preserving most of the rendering quality. Excellent results of our method confirm the shared linear structure of learned avatar representations and enable highly efficient and accurate animation at frame rates reaching up to 60fps on mobile devices. Project page: https://ramazan793.github.io/gala/",
+        "authors": [
+          "Ramazan Fazylov",
+          "Stamatis Lefkimmiatis",
+          "Ivan Laptev"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards",
+        "url": "https://arxiv.org/abs/2610.02206v1",
+        "publishedAt": "2026-10-01T17:59:55.000Z",
+        "summary": "LLMs are increasingly applied to cybersecurity workflows, where they are expected to translate analysts' intent into tool invocations. However, existing evaluations focus on knowledge-based assessments or end-to-end agentic tasks, and do not directly measure LLMs' ability to generate executable commands for real-world cybersecurity tools. This gap is critical because cybersecurity operations rely on strict command-line interfaces (CLIs), where minor syntax errors, incorrect flag--value bindings, or argument misordering can invalidate execution. We introduce KaliBench, a fine-grained benchmark and dataset for natural-language--to--CLI translation on Kali Linux, comprising 8,504 query--command pairs spanning 1,642 tools across 23 capability dimensions and 5 security phases. KaliBench is constructed via a manuscript-grounded pipeline with deterministic canonicalization and alias-aware evaluation, enabling precise and reproducible assessment of tool selection and argument construction. To ensure both semantic correctness and practical executability, we develop a multi-stage verification pipeline that combines LLM-based validation, sandboxed terminal execution, and human-in-the-loop refinement. Building on these fine-grained, deterministic signals, KaliBench further enables runtime-free verifiable rewards for training. Across three evaluation modes and 24 configurations of general-purpose and security-focused open-weight models, no open-weight model exceeds 42% exact-command accuracy in the unrestricted setting, highlighting the difficulty of accurate CLI-based cybersecurity tool use without explicit tool hints. We further show that supervised fine-tuning and reinforcement learning with verifiable rewards derived from KaliBench significantly improve an 8B model and achieve performance comparable to a 685B MoE model.",
+        "authors": [
+          "Pengfei Li",
+          "Naufal Suryanto",
+          "Sicheng Zhang",
+          "Muzammal Naseer"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Reconstruct, Practice, Go Real: Guided Self-Improvement for Embodied Agents",
+        "url": "https://arxiv.org/abs/2610.02204v1",
+        "publishedAt": "2026-10-01T17:59:50.000Z",
+        "summary": "Building reliable robot capabilities across diverse tasks requires substantial human effort to develop and maintain skills, design rewards, and integrate perception with control. We present Reconstruct, Practice, Go Real (RPG), a framework for autonomous improvement of robot execution systems without updating model weights. RPG identifies manipulation capabilities in an offline dataset and constructs related practice tasks in simulation. During practice, RPG uses execution feedback, privileged simulator state, and available dataset videos to diagnose failures. It develops new reusable symbolic skills, refines existing skills, and revises the system prompt based on these diagnoses. Cross-task evaluation tests individual candidate changes and merged revisions before they are retained for reuse. At test time, a multimodal LLM uses the resulting system prompt and skill library to coordinate perception and robot control. On held-out initializations of 22 manipulation tasks, RPG improves task success from 28.6% after the first practice round to 95.0% after 15 rounds, outperforming all evaluated baselines, including ASPIRE (75.5%) and CaP-Agent0 powered by GPT-6 Astra Pro (60.0%). After a common calibration and hardware-adaptation procedure, the frozen system succeeds in all 30 physical trials, with ten trials on each of three tasks. Project Website: https://rpg-robot.github.io/",
+        "authors": [
+          "Yen-Jen Wang",
+          "Haozhe Jiang",
+          "Shuying Deng",
+          "Haoru Xue",
+          "Weirui Ye",
+          "Rocky Duan",
+          "Nika Haghtalab",
+          "S. Shankar Sastry",
+          "Pieter Abbeel",
+          "Haozhi Qi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Embedding Prediction Helps Image Generation",
+        "url": "https://arxiv.org/abs/2610.02203v1",
+        "publishedAt": "2026-10-01T17:59:49.000Z",
+        "summary": "In diffusion transformers, a class label or a text prompt is embedded once, and the same condition is reused at every denoising step. We ask whether predicted embeddings can serve as this condition instead. Next-Embedding Predictive Autoregression (NEPA) trains a Transformer to predict the next continuous embedding in a sequence. In generation, the clean image follows the noisy image, so its embeddings are the next embeddings after the condition and the noisy image. We train a NEPA model to predict them all at once with Multi-Embedding Prediction, and in Embedding Conditioned Generation, a DiT generator is conditioned on these predictions, recomputed at every denoising step, so the conditioning signal adapts to the current noisy state. Experiments on class-conditional ImageNet $256\\times256$ study the condition of the generator, the design of Multi-Embedding Prediction, and the scaling of both models. The NEPA model adds a second network to every sampling step; with it, and combined with REPA, our final model, NEPA-DiT-XL, reaches an FID of 1.32 using about a third of the training compute of REPA.",
+        "authors": [
+          "Sihan Xu",
+          "Ji Xie",
+          "Zilin Wang",
+          "Hui Shen",
+          "Stella X. Yu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "ScholarCatalyst: A Benchmark for Retrieving Papers That Inspire New Research",
+        "url": "https://arxiv.org/abs/2610.02202v1",
+        "publishedAt": "2026-10-01T17:59:47.000Z",
+        "summary": "What makes great scientists great? Even as AI systems start to make progress on open problems, scientists remain far ahead of them at sensing which prior idea, buried in an ever-growing archive of research, a new problem needs. To study this skill, we draw on researchers who know firsthand which earlier work advanced their completed projects, with papers serving as pointers to the ideas within. Using our automated pipeline that makes author annotation scalable, we build ScholarCatalyst by having 184 lead authors of 207 recent computer science papers label which candidates did or could have advanced their project, each with a detailed rationale. We introduce a retrieval task with author-provided judgments: given an initial research question, retrieve these papers from only the literature available when the project began. Agentic search does no better than embedding retrieval (0.42 vs. 0.48 Recall@20) despite calling that same retriever as a tool. Even an agent built on Claude Fable 5.1, which may have seen the completed papers during training, reaches only 0.51 R@20. These results highlight the need for new training recipes that equip models with expert intuition for searching broad corpora. We envision ScholarCatalyst as a step toward scientific agents that can take a half-formed idea and point to the prior research it needs.",
+        "authors": [
+          "Sohyeon Kim",
+          "Yoonho Lee",
+          "Bo Liu",
+          "Dayoon Ko",
+          "Rulin Shao",
+          "Seungone Kim",
+          "Graham Neubig",
+          "Pang Wei Koh",
+          "Aakanksha Chowdhery",
+          "Akari Asai",
+          "Omar Khattab",
+          "Yejin Choi",
+          "Gunhee Kim",
+          "Chelsea Finn"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "SILSA: Sliding-Window Slice Latents for Topology-Preserving High-Resolution 3D Generation",
+        "url": "https://arxiv.org/abs/2610.02201v1",
+        "publishedAt": "2026-10-01T17:59:46.000Z",
+        "summary": "High-resolution 3D generation increasingly relies on voxel latents and multi-stage pipelines that first predict active structure and then synthesize local geometry. While effective, this design fragments continuous surfaces into many local tokens, inflates generation cost, and often weakens topological consistency for thin or highly connected shapes. We introduce SILSA, a topology-aware 3D generation framework that represents shapes with compact sliding-window slice latents. Instead of generating expensive voxel tokens, SILSA uses a fixed set of overlapping slices along the three canonical axes, where each token summarizes a local depth window to preserve cross-sectional continuity and support single-stage rectified-flow generation. A Slice VAE encodes oriented surface samples into multi-axis slice latents and reconstructs them with a sparse volumetric decoder, while a Volumetric Anchor Lattice coordinates directional slice streams through a shared 3D workspace. To preserve structural correctness, we introduce slice-level topology supervision that matches persistence diagrams and aligns Betti transitions across neighboring slices. Experiments show that SILSA improves structural fidelity while substantially reducing generation cost. SILSA improves PSNR by $8.7\\%$, coverage by $5.96$ absolute points, and Betti error by $9.2\\%$ over the strongest baseline, while using $70.0\\%$ fewer tokens than the next-most compact baseline and over $98\\%$ fewer tokens than sparse or hierarchical tokenizers, effectively reducing training memory by $40.4\\%$ and inference time by $58.5\\%$. Qualitative results further show improved preservation of thin structures, repeated components, and long-range connectivity.",
+        "authors": [
+          "Tianjiao Yu",
+          "Xinzhuo Li",
+          "Yifan Shen",
+          "Ying Shen",
+          "Kiet A. Nguyen",
+          "Adheesh Sunil Juvekar",
+          "Ismini Lourentzou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "VISTA: A Visual Harness for Reasoning in an Interactive World",
+        "url": "https://arxiv.org/abs/2610.02200v1",
+        "publishedAt": "2026-10-01T17:59:45.000Z",
+        "summary": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form. The model can actively retrieve these observations and reorganize its visual input as it reasons. On ARC-AGI-3, VISTA improves Claude Opus 5.0's Relative Human Action Efficiency score from 40.68 to a perfect 100.00, with the model completing all 25 public games using 57.4% fewer actions than first-time human participants. VISTA's simple design also allows it to extend naturally to diverse visual environments with minimal adaptation. Across three additional benchmarks covering a diverse range of visual games and puzzles, it substantially outperforms baselines using the same underlying model with minimal harnesses. Our results highlight VISTA's potential as a general-purpose visual harness for advancing multimodal agents in complex visual environments.",
+        "authors": [
+          "Qiushi Han",
+          "Keya Hu",
+          "Linlu Qiu",
+          "Cathy Wu",
+          "Kaiming He"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "TACO: Ternary Absolute-max Column-wise One-sparse Optimizer for LLM Fine-Tuning",
+        "url": "https://arxiv.org/abs/2610.02199v1",
+        "publishedAt": "2026-10-01T17:59:42.000Z",
+        "summary": "Full-parameter fine-tuning of large language models (LLMs) incurs substantial optimizer state memory overhead, limiting the model sizes that fit on modern GPUs. Existing approaches either compress optimizer state, abandon first-order gradients, or change the update geometry while retaining dense state. The recently introduced Muon optimizer reduces optimizer memory through matrix-valued updates. Still, its geometry differs from AdamW and can lead to performance degradation when fine-tuning AdamW-pretrained models. To reduce optimizer memory without sacrificing accuracy or computational efficiency in LLM fine-tuning, we propose Ternary Absolute-max Column-wise One-sparse optimizer, or TACO, which follows Muon's operator-norm steepest-descent view but takes the geometric route further. TACO computes the exact steepest-descent direction under a dimension-normalized $1\\to1$ operator norm by selecting the sign of the largest magnitude entry in each column of two-dimensional weight matrices. This retains first-order gradients while making optimizer state memory nearly negligible. Our practical TACO optimizer maintains only a small set of low precision gradient components per column, reducing persistent optimizer state by $174\\times$ relative to AdamW8bit (from 27.7 GB to 0.16 GB) and peak training memory by $2.9\\times$ (from 80.6 GB to 27.5 GB) on OPT-13B, while achieving comparable accuracy and runtime. TACO further enables full-parameter fine-tuning of 30-32B-parameter models on a single 80 GB H100 GPU across multiple model families and tasks.",
+        "authors": [
+          "Jichao Jiang",
+          "Cristian McGee",
+          "El Houcine Bergou",
+          "Hanqin Cai",
+          "Aritra Dutta"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "FERPO: Forward Entropy-Regularized Policy Optimization",
+        "url": "https://arxiv.org/abs/2610.02198v1",
+        "publishedAt": "2026-10-01T17:59:41.000Z",
+        "summary": "Several state-of-the-art methods for online reinforcement learning in continuous control improve policies using action gradients of a learned critic. However, critics are typically trained to predict returns, and accurate value predictions do not necessarily yield accurate action derivatives, potentially leading to unreliable policy updates. We propose Forward Entropy-Regularized Policy Optimization (FERPO), an on-policy maximum entropy reinforcement learning algorithm that performs policy improvement using critic values without differentiating the critic with respect to actions. FERPO derives an optimal target action distribution from a policy-improvement objective regularized by entropy and Kullback-Leibler (KL) divergence. We then fit the actor to this target by minimizing a forward-KL objective, estimated using self-normalized importance sampling (SNIS) with actions drawn from the rollout policy. By limiting the target distribution's deviation from the rollout policy, the KL regularization helps keep these importance weights well behaved. In contrast to reverse-KL objectives, which can favor a subset of the target distribution's modes, the forward-KL objective encourages coverage of multiple high-value modes and thereby promotes exploration. Experiments and ablations on MuJoCo Playground and ManiSkill show competitive performance and sample-efficiency gains. Computational benchmarks also demonstrate faster actor updates than Relative Entropy Pathwise Policy Optimization (REPPO).",
+        "authors": [
+          "Sebastian Sanokowski",
+          "Alireza Sarmadi",
+          "Majid Khadiv"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Hierarchical Continuous Diffusion Language Models",
+        "url": "https://arxiv.org/abs/2610.02193v1",
+        "publishedAt": "2026-10-01T17:59:39.000Z",
+        "summary": "Discrete diffusion language models offer a compelling alternative to autoregressive generation for tasks demanding bidirectional reasoning and global constraint satisfaction. Yet they share a structural bottleneck: when decoding in parallel, each token is sampled independently from its marginal, severing the statistical dependencies among the tokens decoded together. Continuous diffusion language models avoid this by denoising a shared continuous state, but their denoiser sees only that state, so nothing ties it to a valid token configuration until it is finally decoded. To address this, we propose Hierarchical Continuous Diffusion Language Models (HC-DLM), which couple discrete token generation with a continuous latent trajectory in a single, principled denoising process, whose training objective is derived from a variational bound on the token likelihood. In contrast to recent methods that attach continuous context to a self-contained discrete chain, HC-DLM makes the latent the only persistent generative state: tokens are read out from it at every step and feed back as a scaffold for the next latent update. On structured reasoning (Sudoku), mathematical planning (Countdown) and language modeling (LM1B), HC-DLM improves over discrete and continuous diffusion baselines at matched model size, in puzzle accuracy on Sudoku and Countdown and in generative perplexity on LM1B. Project page: https://hc-dlm.github.io/.",
+        "authors": [
+          "Hui Ren",
+          "Zihan Li",
+          "Chang Liu",
+          "Huidong Liu",
+          "Alexander Schwing"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Cost-augmented Schrödinger bridges on graphs are exactly solvable: a Feynman-Kac tilt replaces learned control",
+        "url": "https://arxiv.org/abs/2610.02195v1",
+        "publishedAt": "2026-10-01T17:59:39.000Z",
+        "summary": "The generalized Schrödinger bridge on a graph moves mass between two distributions while charging a cost for the states visited. It has been approached by learning the rates of a controlled continuous-time Markov chain, with a temporal-difference penalty that restores the cost. A state cost folds into the reference process as a Feynman-Kac tilt. The cost-augmented bridge is then a plain bridge against the tilted reference, and the penalty is unnecessary. The bridge is computed exactly by alternating two endpoint rescalings, each one sparse matrix-exponential application; nothing is discretized in time or learned. The alternation converges at a rate set by the endpoint coupling alone. For a quadratic congestion cost on time-averaged occupancies, damped best response around the exact bridge is gradient descent on a strongly convex function, and its residual bounds its error. On a protein-folding model, a free-energy cost lowers the expected barrier of the folding paths. On the learned approach's road network, roll-outs of the exact bridge match the target within sampling error, and on networks with millions of intersections its memory grows linearly.",
+        "authors": [
+          "Akshay Balsubramani"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "The Missing Primitive: Diagnosing and Repairing Mathematical Reasoning in Large Language Models",
+        "url": "https://arxiv.org/abs/2610.02191v1",
+        "publishedAt": "2026-10-01T17:59:32.000Z",
+        "summary": "While Large Language Models (LLMs) have demonstrated striking capabilities on frontier mathematical problems, it remains unclear whether they possess the structural mathematical understanding underlying their solutions. In this paper, we take a first step toward systematically studying mathematical understanding in LLMs, from diagnosing its distinct capabilities to leveraging these findings to improve post-training. First, we introduce the notion of Mathematical Primitive to probe structural mathematical understanding and propose \\hlei{}, a novel benchmark that evaluates mathematical reasoning along four distinct dimensions: Discovery, Generation, Digestion, and Execution. Second, our systematic diagnosis shows that solution accuracy masks distinct capability profiles, primitives unlock substantial latent execution capacity, and Discovery is the dominant bottleneck in mathematical reasoning. Our post-training analysis further shows that discovery-limited failures are particularly amenable to repair. Finally, building on these findings, we introduce \\abs{}, a primitive-privileged self-distillation framework that selectively transfers primitive-guided reasoning into the student model. Extensive experiments demonstrate that \\abs{} consistently improves mathematical reasoning over baselines across model scales and challenging benchmarks.",
+        "authors": [
+          "Shuo Xing",
+          "Zilin Dai",
+          "Chengyuan Qian",
+          "Fangzhou Lin",
+          "Wenjing Chen",
+          "Ping He",
+          "Pan Lu",
+          "Alvaro Velasquez",
+          "Mohit Bansal",
+          "Zhengzhong Tu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      }
+    ],
     "news": [
+      {
+        "title": "3 Questions: A new resource to empower young entrepreneurs",
+        "url": "https://news.mit.edu/2026/3-questions-new-resource-empower-young-entrepreneurs-1002",
+        "publishedAt": "2026-10-02T04:00:00.000Z",
+        "summary": "The book “Disciplined Entrepreneurship” by Bill Aulet, managing director of the Martin Trust Center for MIT Entrepreneurship and the Ethernet Inventors Professor of the Practice at the MIT Sloan School of Management, walks readers through the 24 steps of starting a venture. With more than half a million copies sold, the approach has proven remarkably effective: MIT students who use the framework in the delta v startup accelerator program have a 61 percent survival/acquisition rate and have collectively raised over $3 billion dollars. But while the framework is taught at hundreds of colleges around the world, it is not designed for younger students who want to learn about entrepreneurship. To fill that gap, the Trust Center created a free, AI-powered youth entrepreneurship platform called Dear Dreamer , made possible through a gift from the Frank and Eileen Foundation.&nbsp; Dear Dreamer is open to all students in middle and high school. It adapts the disciplined entrepreneurship framework into a digital, self-paced learning experience featuring short educational videos, interactive exercises, and personalized feedback on the user’s idea. Aulet says the goal is to empower 50,000 young entrepreneurs by 2030. MIT News spoke with Aulet about the mission of the project and how it came together. Q:&nbsp; What was the impetus for creating Dear Dreamer? A: We’ve had a lot of success teaching the disciplined entrepreneurship framework at MIT. Then we made it a course on the online learning platform edX, and we got hundreds of thousands of people taking the class. &nbsp; I used to get emails from people saying, “For the first time in my life, I see myself as an entrepreneur,” or “I see economic security.” At MIT, we often say, “MIT in the world, for the world.” At the Trust Center, we see our mission as, first, train people here at MIT, but also to create more entrepreneurs outside of MIT.&nbsp; The platform was inspired by the vision of Audrey McLoghlin, the founder and CEO of apparel brand Frank and Eileen and president of the Frank and Eileen Foundation. &nbsp; In my first meeting with Audrey, we were already asking ourselves, “How do we make more entrepreneurs in the world?” I showed her Jetpack, MIT’s generative AI tool trained on disciplined entrepreneurship, which walks MIT students through the entrepreneurial process, and her eyes lit up. She said, “This is how we create more entrepreneurs: We make the work that you guys are doing here accessible to young people.” She wished she had a tool like this when she first started. She also said her daughter wants to be an entrepreneur, but students don’t get much guidance on entrepreneurship at school. MIT has been a great place to keep making this more accessible. Q:&nbsp; How does the platform work? A: It takes the core disciplined entrepreneurship curriculum that we know works from our data, and makes it more interactive and engaging for young people. We spent a lot of time working with younger students to figure out how to make it more digestible to a 10-year old, 12-year old, or 14-year old. We put in different case studies and examples for each step of the framework, and we’ve designed the user interface to make it more like Instagram or YouTube, with videos featuring people that students can relate to. But ultimately the content follows the same path we know works; it’s just presented differently from what you would present to an MIT MBA or PhD. Q:&nbsp; How might learning about entrepreneurship benefit students? A: Entrepreneurship is a mindset, a skillset, and a way of operating. It allows you to deal with change, and the world’s rate of change is going faster and faster. It’s really not just about founding companies. Founding companies is a great way to learn the mentality that, ‘We can be different. We can build something. We can achieve a lot.’ Someone once said, ‘If you give a person a job, you give them dignity.’ But if you make someone an entrepreneur, it’s like giving them super dignity. They go from a job seeker to a job creator, and they can focus on the things that they’re most interested in, working with the people they want, in the culture they want. We teach students the entrepreneurial mindset and we train them to systematically take an idea and then come up with a solution in an ambiguous, uncertain environment, and iterate on that.&nbsp; Everyone might not start a company, but even if they go to work at bigger companies, there are a lot of benefits to the entrepreneurial mindset. I’m an entrepreneur now and I’m at MIT, which is not a startup. In a world that’s moving faster and faster, everyone has to deal with change and ambiguity. Starting companies is just a great way to learn. It’s kind of like learning to paint from a blank canvas.&nbsp;",
+        "authors": [
+          "Zach Winn | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Products",
+        "ageHours": 4
+      },
       {
         "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
         "url": "https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001",
@@ -101,7 +340,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 10
       },
       {
         "title": "Musk&#8217;s AI chatbot Grok reportedly encouraged Trump to capture Venezuela&#8217;s president",
@@ -115,7 +354,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "ChatGPT can now virtually try on clothes for you",
@@ -129,7 +368,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 13
       },
       {
         "title": "Google thinks SpaceX&#8217;s Starship has to launch 1,800 times before space data centers get off the ground",
@@ -143,7 +382,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 6
+        "ageHours": 13
       },
       {
         "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
@@ -157,7 +396,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 7
+        "ageHours": 14
       },
       {
         "title": "Opus 5.5 loves to tell you &#8216;this matters&#8217; (and other AI writing tells)",
@@ -171,7 +410,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 15
       },
       {
         "title": "The eternal complement",
@@ -183,7 +422,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 15
       },
       {
         "title": "Amazon releases its own Jev clone as decision models flood the web",
@@ -197,7 +436,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 9
+        "ageHours": 16
       },
       {
         "title": "Shopify debuts Canvas, a way to build online stores by chatting with AI",
@@ -211,7 +450,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 9
+        "ageHours": 16
       },
       {
         "title": "How Albertsons Companies is reimagining retail from the inside out",
@@ -223,7 +462,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 10
+        "ageHours": 16
       },
       {
         "title": "Brian Chesky interview: AI agents need their own operating system",
@@ -237,44 +476,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 10
-      },
-      {
-        "title": "Photon held a funeral for mobile apps. Now it has $4.5M to help replace them with agents.",
-        "url": "https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m-to-help-replace-them-with-agents/",
-        "publishedAt": "2026-10-01T14:00:00.000Z",
-        "summary": "The startup helps developers build AI agents that work over iMessage, SMS/RCS, email, and other messaging platforms. It's a bet that consumers will increasingly use agents instead of downloading apps.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 12
+        "ageHours": 17
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
-    "last24h": 12,
+    "totalItems": 24,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 4
+        "count": 11
+      },
+      {
+        "name": "Models",
+        "count": 7
       },
       {
         "name": "General",
         "count": 3
       },
       {
-        "name": "Models",
-        "count": 3
-      },
-      {
         "name": "Products",
-        "count": 1
+        "count": 2
       }
     ]
   }
