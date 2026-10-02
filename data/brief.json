@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T21:47:08.711Z",
+  "generatedAt": "2026-10-02T01:38:50.666Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 503",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,228 +87,22 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Semifactual Credit-Augmented Policy Optimization",
-        "url": "https://arxiv.org/abs/2609.40360v1",
-        "publishedAt": "2026-09-30T17:59:56.000Z",
-        "summary": "Reinforcement learning with verifiable rewards (RLVR) has improved the reasoning capabilities of large language models (LLMs), yet their predictions remain sensitive to task-irrelevant prompt features. We investigate this sensitivity through semifactual prompt interventions that preserve the underlying problem and its answer. Our analysis reveals substantial variation in token-level sensitivity and shows that suppressing high-drift token candidates during decoding improves reasoning accuracy without updating model weights. These findings highlight a limitation of Group Relative Policy Optimization (GRPO), which assigns the same outcome-derived advantage to every response token and may reinforce potential spurious dependence alongside useful reasoning. Motivated by this observation, we introduce Semifactual Credit-Augmented Policy Optimization (SCAPO), a causally inspired variant of GRPO that incorporates semifactual stability into token-level credit assignment. SCAPO measures token probability drift for fixed responses under semifactual interventions and uses normalized stability scores to reduce advantages for relatively unstable tokens during early training, while granting no additional credit for stability alone. On Qwen3-4B-Base and Qwen3-1.7B-Base, SCAPO improves AIME 2024-2026 accuracy over GRPO by 5.63 and 4.17 percentage points, respectively. At both model scales, SCAPO achieves the best results on most evaluated mathematics benchmarks and all evaluated out-of-distribution benchmarks among the compared methods. These results suggest that semifactual stability provides an effective training signal for improving reasoning and generalization through finer-grained credit assignment in RLVR. The code is available at https://github.com/DtYXs/SCAPO.",
-        "authors": [
-          "Junshu Pan",
-          "Zhizhang Fu",
-          "Shulin Huang",
-          "Yiran Ding",
-          "Zifan Cheng",
-          "Wenqi Shao",
-          "Qiaosheng Zhang",
-          "Yue Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Ranking-Aware Prompt Optimization for Multimodal Clinical Diagnosis",
-        "url": "https://arxiv.org/abs/2609.40361v1",
-        "publishedAt": "2026-09-30T17:59:56.000Z",
-        "summary": "Multimodal large language models (MLLMs) are rapidly advancing clinical diagnosis, yet their adaptation pipelines remain anchored to accuracy-based objectives. Clinical data are heavily class-imbalanced: a constant-majority predictor can score above 90% accuracy while being clinically useless. We therefore evaluate and optimize for AUROC, a threshold-free score that ranks positives above negatives and is invariant to class balance. We focus on prompt optimization in MLLMs. Reflective methods such as GEPA use a binary scores matrix with one row per evaluation instance and one column per candidate prompt; cells record per-instance correctness, so the column average is accuracy and drives candidate selection. We introduce pair-level Pareto prompt evolution (Ranking-PE), which replaces each correctness row with a pairwise-ordering row over (positive, negative) instance pairs: the cell is 1 if the candidate scores the positive higher than the paired negative. The column average then equals empirical AUROC (by the Wilcoxon-Mann-Whitney identity). We apply this swap at all three layers the prompt evolution search reads from - the scores matrix that decides Pareto dominance, the per-example feedback to the reflection LM, and final candidate selection - at no extra model calls and with no surrogate loss. Across three diseases on MIMIC, accuracy-based prompt evolution can degrade ranking; Ranking-PE reverses this, beating the accuracy-based recipe by +5.8 AUROC pp on fine-tuned Qwen3-VL-8B and +16.2 pp on MedGemma-4B. Ablations examine each design component and show that a medical-grade visual backbone - via vision-encoder-tuned SFT or medical pretraining - is a prerequisite that prompt search cannot replace - our recipe extends reflective prompt evolution from text-only data to multimodal clinical decision-making.",
-        "authors": [
-          "Tian Xia",
-          "Minghao Liu",
-          "Yiqing Liang",
-          "Laixi Shi",
-          "Jiayun Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Removing Timing Shortcuts Improves Non-Invasive Brain-to-Text",
-        "url": "https://arxiv.org/abs/2609.40359v1",
-        "publishedAt": "2026-09-30T17:59:52.000Z",
-        "summary": "We find that major reported improvements in decoding words from non-invasive brain recordings are largely reproducible without any brain data. In the influential work of d'Ascoli et al. (2025), time series of brain activity from subjects perceiving continuous speech are segmented into fixed-length windows starting at each word. A neural network then generates predictions for all of the words in a sentence together. Neighbouring windows partially overlap, implicitly revealing the interval between words. Since these intervals indicate the duration of the words spoken, and different words tend to have different durations - for example, \"the\" is much shorter than \"supercalifragilisticexpialidocious\" - the neural network can improve its predictions of words without relying on the underlying brain activity. Consistent with this, the method reaches 22.0% balanced accuracy on synthetic signals containing no brain information, compared with 22.3% on real brain recordings. To prevent the network from learning this shortcut, we make a single, simple change. Instead of jointly encoding all windows in a sentence, we process each independently. As a result, the neural network achieves better performance by learning underlying word-specific information from brain recordings. This makes two existing strategies become much more effective than before. Both aggregating predictions from distinct neural responses to the same word and using a pretrained LLM as a linguistic prior now substantially improve results. On our perceived speech benchmark, this simple recipe (SimpleB2T) achieves a word error rate of 36.6% with five observations per word, approaching past invasive speech decoding performance, albeit under different conditions. The results in this work expose an important shortcut in brain-to-text decoding and show that removing it leads to a simple and considerably more effective strategy.",
-        "authors": [
-          "Dulhan Jayalath",
-          "Oiwi Parker Jones"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "ViTeX-Bench: Benchmarking High-Fidelity Video Scene Text Editing",
-        "url": "https://arxiv.org/abs/2609.40356v1",
-        "publishedAt": "2026-09-30T17:59:33.000Z",
-        "summary": "Recent video generation is increasingly realistic and controllable, yet video editing remains less developed, particularly for precise local edits that must preserve the original scene dynamics. Video scene text editing replaces text on scene surfaces, such as storefront signs, whiteboards, and product labels, while preserving the surrounding content, motion, and camera dynamics. Although scene text editing is well studied for images, video scene text editing that achieves high visual quality, temporal consistency, and edit locality remains underexplored. Existing resources offer limited paired real-video data, and general video-editing metrics do not directly measure whether the requested text remains correct over time. We introduce ViTeX-Bench, a benchmark suite comprising ViTeX-Dataset and a three-axis evaluation protocol. The dataset contains 387 real-world 720p videos with text-region masks and editing instructions: 230 provide reviewed, pipeline-generated paired edits for training, and 157 form a frozen evaluation split. The protocol evaluates text correctness, visual and temporal quality, and edit locality through 13 metrics, with one primary metric per axis and a Pareto comparison of their trade-offs. OCR calibration, human evaluation, and annotation-sensitivity analyses support the interpretation of these scores. Across eight baselines from four editing families, accurate text, temporal stability, and scene preservation remain difficult to achieve together. We also release ViTeX-Edit-14B, an open-source reference editor fine-tuned on the paired training split with motion-aligned glyph-video conditioning. It achieves CharAcc 0.688, the highest mean among the evaluated video-native editors, and the lowest comparable text-crop Warp among raw editor outputs. ViTeX-Bench provides a reproducible foundation for studying these trade-offs in video scene text editing.",
-        "authors": [
-          "Xinghao Chen",
-          "Xiangbo Gao",
-          "Jiongze Yu",
-          "Yuheng Wu",
-          "Zhengzhong Tu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Image Classifiers are Efficient Self-Supervised Video Representation Learners",
-        "url": "https://arxiv.org/abs/2609.40347v1",
-        "publishedAt": "2026-09-30T17:59:03.000Z",
-        "summary": "We introduce VideoMSN, a Masked Siamese Network framework for efficient self-supervised spatio-temporal representation learning in videos. Instead of relying on heavy 3D architectures or reconstruction-based autoencoders for learning with unlabeled data, we repurpose standard image Vision Transformers by representing videos as super images which are grids composed of frames sampled from videos. From each super image, we construct two views: one with spatial patch masking and the other with temporal frame masking, ensuring no information leakage across frames. A shared Vision Transformer (ViT) encoder aligns their embeddings using a masked Siamese loss, capturing both motion and appearance cues without reconstruction. Our decoder-free formulation leverages an image foundation model towards efficient video representation learning. Starting from pretrained DINO-v3 and DeiT-v3 image encoders, VideoMSN achieves state-of-the-art performance on Kinetics-400, UCF101, and HMDB51 while requiring up to $32\\times$ fewer and $160\\times$ fewer video pretraining epochs compared to prior video self-supervised learning methods. Our proposed approach also shows strong performance in low-shot classification, confirming the transferability of the learned representations in a label-scarce scenario. Project Page: https://cvir.github.io/projects/videomsn.",
-        "authors": [
-          "Owais Iqbal",
-          "Sudipta Sarkar",
-          "Shyam Marjit",
-          "Omprakash Chakraborty",
-          "Anirban Chakraborty",
-          "Abir Das"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "EvoDuet: Bilevel Co-Evolution of Web Searching and Task Solving for Scientific Discovery",
-        "url": "https://arxiv.org/abs/2609.40340v1",
-        "publishedAt": "2026-09-30T17:58:28.000Z",
-        "summary": "Evolutionary search with large language models (LLMs) can stall when progress requires external knowledge the model lacks. Supplying relevant documents helps, but simply adding web search tool can keep returning the same pages as solutions change. We introduce EvoDuet, a bi-level optimization method that co-evolves solutions and search queries with fixed model parameters. At each iteration, a retrieval gate lets the LLM assess its knowledge gap and choose to retrieve new documents, reuse stored ones, or proceed without them. An inner loop refines queries and ranks documents by the solution scores they are predicted to yield; an outer loop generates candidates in parallel from these documents and records the evaluated outcomes for later searches. Across 21 optimization tasks with one candidate per iteration, EvoDuet raises OpenEvolve's normalized discovery gain from 74.1% to 78.0% with GPT-5.6-Luna and from 61.3% to 82.3% with Gemini-3.8-Flash, whereas Qwen3.5-9B does not benefit. Our best runs surpass the previously reported best scores on eight tasks, including Swap Reduction on Q20 and Rosetta, and match them on three more. EvoDuet also improves with other scaffolds (e.g., Top-K, EvoX) on Sums/Diffs and Denoising, demonstrating its applicability across evolutionary search scaffolds.",
-        "authors": [
-          "Young-Jun Lee",
-          "Jinheon Baek",
-          "Soyeong Jeong",
-          "Minki Kang",
-          "Seungyeon Jwa",
-          "Jonghyun Choi",
-          "Seungho Han",
-          "Dongyeop Kang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 28
-      },
-      {
-        "title": "Is Weight Tying Still Beneficial for Decoder-Only LLMs in Private Settings Under DP-SGD?",
-        "url": "https://arxiv.org/abs/2609.40335v1",
-        "publishedAt": "2026-09-30T17:57:43.000Z",
-        "summary": "Differentially Private Stochastic Gradient Descent (DP-SGD) is a leading approach for privacy-preserving fine-tuning of large language models (LLMs). Many decoder-only LLMs employ weight tying between input and output embeddings, a design choice originally introduced for parameter efficiency and improved language modeling performance in the non-private setting. However, the impact of weight tying under differentially private training remains largely unexplored. In this work, we investigate the role of weight tying in the DP setting using GPT2 and DistilGPT2 as representative decoder-only architectures. Interestingly, we find that untied embeddings consistently outperform weight-tied models under DP-SGD, achieving gains of up to 4.74% points in accuracy on SST-2, QNLI, and QQP. Beyond improved utility, untying embeddings enables the use of memory-efficient ghost clipping for DP-SGD. By contrast, weight tying introduces shared-parameter interactions that complicate standard ghost norm computation and largely negate its computational advantages. As a result, untied models achieve over 60% lower memory usage while preserving the benefits of ghost clipping. Our results indicate that untied embeddings provide a more effective and scalable design for differentially private training of decoder-only LLMs and highlight the need to revisit standard LLM architectural choices in the privacy-preserving setting.",
-        "authors": [
-          "Razan El Mais",
-          "Ali Chehab",
-          "Ibrahim Issa",
-          "Razane Tajeddine"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 28
-      },
-      {
-        "title": "Turbo Harness: Instance-Adaptive Harness Optimization",
-        "url": "https://arxiv.org/abs/2609.40330v1",
-        "publishedAt": "2026-09-30T17:56:09.000Z",
-        "summary": "Automating the search for effective harnesses is an important step toward enabling agents to recursively self-improve. Existing harness optimizations typically produce a single global harness that is applied uniformly across task instances. However, a harness that works well on average may not be optimal for every instance. We introduce Turbo Harness, a framework that can adapt a globally optimized harness to each instance by reusing information generated during the original optimization process. Specifically, Turbo Harness recycles artifacts produced during a completed global harness optimization run, and summarizes them into a structured playbook. We train a harness editor to leverage this prior optimization experience to generate instance-specific patches to the global harness. At inference time, the editor uses the instance and the playbook to construct a tailored harness in which the execution model operates. Through numerical experiments, we show that Turbo Harness consistently outperforms existing harness optimization baselines across seven benchmarks spanning interactive agent tasks, software engineering, and long-horizon terminal tasks.",
-        "authors": [
-          "Tunyu Zhang",
-          "Hao Wang",
-          "Kai Xu",
-          "Dimitris N. Metaxas"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "WorldAuditBench: Interactive 3D World Auditing with Multimodal Agents",
-        "url": "https://arxiv.org/abs/2609.40325v1",
-        "publishedAt": "2026-09-30T17:55:29.000Z",
-        "summary": "As interactive 3D worlds are increasingly used to study intelligent behavior, it becomes important to develop efficient pipelines for identifying anomalies in these simulated environments, such as floating objects, traversable walls, or objects inconsistent with the surrounding scene. Multimodal AI systems, including vision-language models (VLMs) and vision-language-action models (VLAs), have shown potential for automating this task. However, 3D world auditing is complex, requiring the close coupling of two distinct capabilities: action, to navigate the 3D world and search for anomalies systematically and efficiently; and visual reasoning, to understand the environment and identify anomalies from multimodal observations. It remains largely unexplored whether multimodal agents can effectively couple these two capabilities, using visual reasoning to identify potential anomalies while taking actions to validate them. In this paper, we introduce WorldAuditBench, a benchmark for 3D world auditing comprising 213 anomaly tasks across 13 environments built with Unreal Engine 5 and Three.js, spanning five anomaly families. We evaluate five frontier models under a fixed exploration budget using two auditing paradigms: VLA-based exploration followed by VLM-based anomaly identification, and an end-to-end VLM agent in which visual reasoning directly guides action selection. Across the evaluated models and two paradigms, success rates range from 6.6% to 42.3%, substantially below human performance (83.4%). Through the task of world auditing, WorldAuditBench provides a testbed for studying how multimodal agents couple action and visual reasoning in interactive 3D environments, while highlighting current limitations in their ability to gather and interpret evidence during exploration.",
-        "authors": [
-          "Ziyan Jiang",
-          "Jingbo Yang",
-          "Jiabao Ji",
-          "Yujian Liu",
-          "Qiucheng Wu",
-          "Tommi Jaakkola",
-          "Yang Zhang",
-          "Shiyu Chang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Cogentic: Multi-Agent Orchestration for Automated Proof Discovery",
-        "url": "https://arxiv.org/abs/2609.40324v1",
-        "publishedAt": "2026-09-30T17:55:22.000Z",
-        "summary": "We present Cogentic, a multi-agent harness for automated proof discovery on open research problems. While frontier language models can generate strong mathematical ideas in a single shot, single-shot generation is often insufficient for open problems that require exploring multiple competing conjectures, overcoming subtle technical obstructions, and retaining intermediate progress over a long horizon. Cogentic addresses these challenges through an iterative prove--verify loop in which an orchestrator allocates a population of independent provers across distinct proof directions, subjects their output to adversarial verification by several specialized components, and promotes confirmed intermediate results into a persistent verified ledger that later rounds build on. The harness is designed to be able to solve research-level math and theoretical computer science problems. Using Gemini as the base model, Cogentic produced novel results on five open problems across online learning, auction theory, and mechanism design. Each result was independently verified by domain experts and is developed in full in companion papers. We list these results, and new ones as they are verified, at https://sites.google.com/view/cogentic .",
-        "authors": [
-          "Yang Cai",
-          "Vineet Gupta",
-          "Yanchen Jiang",
-          "Christopher Liaw",
-          "Aranyak Mehta",
-          "Grigoris Velegkas",
-          "Di Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "MatLoom: Layered Text-to-Material Generation in a Compact Program Space",
-        "url": "https://arxiv.org/abs/2609.40322v1",
-        "publishedAt": "2026-09-30T17:55:06.000Z",
-        "summary": "Material generation should produce not only an appearance, but also the rules that construct it. We introduce MatLoom, a compact, layer-oriented language for text-to-material generation with pretrained language models. Each program composes alpha-masked layers whose shared spatial expressions define coverage and physically based rendering (PBR) channels, making dependencies between patterns, color, and relief explicit. A standalone interpreter evaluates the program into material maps, while the source retains named fields and layer parameters for subsequent authoring. Without task-specific fine-tuning, our pipeline uses parser-guided repair and preview-based critique to revise material designs, then searches noise seeds while keeping each candidate's remaining source fixed. On a curated benchmark of 141 prompts evaluated with six backbones, our best-performing configuration achieves higher mean scores than three diffusion baselines on all four flat-layout prompt-alignment metrics. Its initial programs already exceed all three baselines on mean BLIPScore, before critique or seed search. Retained programs have a median length of 21 lines when pooled across backbones. In a blind four-way comparison involving 30 participants and 20 prompts, our renders receive 59.2% of choices, compared with 19.3% for the most-preferred baseline. Compact executable programs thus offer a way to generate prompt-aligned materials while retaining their construction as part of the asset.",
-        "authors": [
-          "Anson Y. Lam",
-          "Shuqing Li",
-          "Michael R. Lyu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Scaling Laws for Looped Mixture of Experts",
-        "url": "https://arxiv.org/abs/2609.40316v1",
-        "publishedAt": "2026-09-30T17:53:47.000Z",
-        "summary": "Looped transformers and Mixture-of-Experts (MoE) offer complementary routes to efficient scaling: recurrence increases computational depth at fixed parameters, while MoE sparsity expands total capacity at fixed active compute. Yet existing scaling laws model recurrence or sparsity in isolation. In this work, we introduce Loop Scaling Laws, the first scaling law to jointly model recurrence and sparsity alongside model size and data. At its core is a bounded, sparsity-conditional recurrence mapping that characterizes the effective-parameter gain from looping and how sparsity raises this gain. The laws predict the held-out loss of looped models more accurately than prior alternatives, and recover the standard dense and MoE scaling laws as special cases. Beyond prediction, the fitted laws provide a principled foundation for designing looped MoE models under compute and memory constraints. Downstream evaluations further demonstrate the complementary benefits of the two axes: sparsity delivers ~3x active-parameter efficiency, recurrence yields ~2x total-parameter efficiency on reasoning, and joint scaling further advances the performance frontier. As a practical extension, we show these gains hold at trillion-token scale: at matched training compute, a looped MoE with law-derived recurrence matches a ~2x larger non-looped MoE on the reasoning benchmarks, while enabling test-time scaling through recurrence.",
-        "authors": [
-          "Yanbei Chen",
-          "Anirudh Goyal",
-          "Raghuraman Krishnamoorthi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      }
-    ],
+    "research": [],
     "news": [
+      {
+        "title": "New tool lets users repair AI-generated 3D models, then fabricate them just the way they want",
+        "url": "https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001",
+        "publishedAt": "2026-10-01T22:00:00.000Z",
+        "summary": "“What you see is what you get” is a guiding principle for many software engineers&nbsp;— create programs where the content you’re editing looks the same as the final product. But when you’re using generative artificial intelligence systems to 3D print, say, a mug, you’ll likely get a cup that can’t hold your coffee. Why is that? The issue is that AI models understand how an object should look, but not how it works, leading to impractical designs&nbsp;that undermine an item’s intended use. Even if you want to fix these errors, the models are typically hard&nbsp;to edit, especially for users new to 3D design. A new approach called “ InstructMesh ” makes it much easier to design and print household items, accessories, and robots that work in the real world. The design software, which was developed by&nbsp;researchers at MIT’s Computer Science and Artificial Intelligence Laboratory (CSAIL), Google, and Northeastern University, can be prompted to generate a 3D design for a pair of glasses, for instance, and users can then highlight specific parts of the blueprint they’d like refined before 3D printing. It’s an AI-driven interface designed to understand how these designs should look and which edits experts and novices alike want to make, helping them create the objects they actually want to see. CSAIL researchers used InstructMesh to put a personalized, creative spin on otherwise regular items. For example, the tool produced a mug that appears to be enveloped by a dragon, with its tail being the handle. It also fabricated a shiny blue whistle resembling a shell and a pair of glasses with butterfly wings spreading out just above the lens. Getting even more creative, it made an octopus-like dispenser, with liquids flowing out of each tentacle to distribute drinks into several cups at once. What makes InstructMesh so adept at following such unique prompts? It pairs Microsoft’s&nbsp; TRELLIS system, which creates 3D models from text and image prompts, with the large language model (LLM)&nbsp; GPT-4, which supports ChatGPT — in other words, visual and textual knowledge combined. “We wanted to bring together the talents of 3D generators and the reasoning skills of LLMs in an interactive space to make objects that people actually want,” says Faraz Faruqi SM ’22, PhD ’26, lead author on a&nbsp; paper presenting the project, graduate of the Department of Electrical Engineering and Computer Science, and recent CSAIL affiliate. “Language models are great at text and images, while TRELLIS’s talent lies in its ability to create 3D models, since it’s seen so many.” InstructMesh’s strengths come in handy in other, more surprising areas. MIT scientists used the program to fabricate a knee brace that looks like denim to match a patient’s jeans. InstructMesh can even help create robots — that is, clever enclosures that house wireless components. The researchers made a “bristle bot” that resembles a colorful shrimp to demonstrate this. It has a motor hidden inside, and when switched on, it can slide across surfaces, sort of like a wind-up toy. Faruqi and his colleagues found that InstructMesh could easily make their desired items. But what would someone who’s never 3D modeled anything think of their program? And could they really detect design flaws before fabrication? The team has TRELLIS recreate popular 3D models found on&nbsp; Thingiverse , a platform home to millions of 3D printable models, to help them find out. Nearly 80 percent of the models it generated were structurally flawed in some way. CSAIL researchers then asked novices to identify and fix these issues in InstructMesh — and they were able to do both around 90 percent of the time, as reviewed by an expert. What these newcomers lacked in expertise, they made up for in intuition. InstructMesh scaffolds the actual modeling process, which previously required domain expertise in 3D modeling tools. “With manipulation happening in the latent space of the generative model, InstructMesh supports natural language description of issues, and creates interpretive changes in the geometry for the user to evaluate and approve,” says Faruqi.&nbsp; Users then created items resembling things like phone stands and vases, noting that InstructMesh was easy to use. They also found that InstructMesh enabled them to express a wide range of ideas, while the sliders gave them more precision to make certain tweaks, such as enlarging or extruding a particular part of the model. “The users got what they prompted for and easily tweaked designs where needed,” adds Faruqi. “What they saw is what they got, and the items worked as advertised, so to speak.”&nbsp; While users enjoyed using the InstructMesh, Faruqi has an even grander vision for the project. He now works at Google, where he may soon incorporate InstructMesh into an augmented reality (AR) platform. The idea: Prompt the system by explaining what you need using the context of your surroundings, then it’ll rapidly 3D print it (e.g., making a phone case that matches your wallet). InstructMesh may also begin to incorporate physics simulations to model how your design may react to specific uses, such as whether a bowl breaks when dropped, and which materials would work best. The software might also integrate the more recent TRELLIS.2 to refine even smaller features in 3D models. Stefanie Mueller, an associate professor of electrical engineering and computer science (EECS) and mechanical engineering at MIT, and a member of CSAIL, is a senior author on the paper. Faruqi and Mueller wrote the paper with Google researchers Ahmed Katary ’23; Fabian Manhardt; Vrushank Phadnis MEng ’13, PhD ’20; Ruofei Du; and Federico Tombari. Other co-authors were Northeastern University Assistant Professor Megan Hofmann along with several CSAIL colleagues: Demircan Tas SM ’24 and SMArchS ’24, a PhD student in EECS and architecture; former visiting researcher Theresa Hradilak; Ning Zhang ’25, a graduate student in EECS; postdoc Jiaji Li; and Martin Nisser SM ’19, PhD ’24. The researchers’ work was supported, in part, by Google and the MIT-HPI Collaborative Research Program. They will present it at the ACM Symposium on User Interface Software and Technology in November.",
+        "authors": [
+          "Alex Shipps | MIT CSAIL"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 4
+      },
       {
         "title": "Musk&#8217;s AI chatbot Grok reportedly encouraged Trump to capture Venezuela&#8217;s president",
         "url": "https://techcrunch.com/2026/10/01/musks-ai-chatbot-grok-reportedly-encouraged-trump-to-capture-venezuelas-president/",
@@ -317,7 +115,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 5
       },
       {
         "title": "ChatGPT can now virtually try on clothes for you",
@@ -331,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 6
       },
       {
         "title": "Google thinks SpaceX&#8217;s Starship has to launch 1,800 times before space data centers get off the ground",
@@ -345,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 2
+        "ageHours": 6
       },
       {
         "title": "OpenAI cuts ties with 3 safety researchers, WSJ reports",
@@ -359,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "Opus 5.5 loves to tell you &#8216;this matters&#8217; (and other AI writing tells)",
@@ -373,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "The eternal complement",
@@ -385,7 +183,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Amazon releases its own Jev clone as decision models flood the web",
@@ -399,7 +197,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Shopify debuts Canvas, a way to build online stores by chatting with AI",
@@ -413,7 +211,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "How Albertsons Companies is reimagining retail from the inside out",
@@ -425,7 +223,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 10
       },
       {
         "title": "Brian Chesky interview: AI agents need their own operating system",
@@ -439,7 +237,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 10
       },
       {
         "title": "Photon held a funeral for mobile apps. Now it has $4.5M to help replace them with agents.",
@@ -453,44 +251,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 8
-      },
-      {
-        "title": "Hearing tech startup Legato launches its AI hearing glasses",
-        "url": "https://techcrunch.com/2026/10/01/hearing-tech-startup-legato-launches-its-ai-hearing-glasses/",
-        "publishedAt": "2026-10-01T13:00:00.000Z",
-        "summary": "The glasses stem from the startup’s goal of making hearing care more accessible by addressing the cost, comfort, and stigma associated with traditional hearing aids.",
-        "authors": [
-          "Aisha Malik"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 9
+        "ageHours": 12
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 12,
     "last24h": 12,
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
-      },
-      {
-        "name": "Models",
-        "count": 5
+        "count": 4
       },
       {
         "name": "General",
         "count": 3
       },
       {
+        "name": "Models",
+        "count": 3
+      },
+      {
         "name": "Products",
-        "count": 2
+        "count": 1
       }
     ]
   }
