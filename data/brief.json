@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T01:55:33.041Z",
+  "generatedAt": "2026-10-05T08:54:53.897Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,216 +85,245 @@
   "sections": {
     "research": [
       {
-        "title": "S$^{2}$-PINN: Stochastic Separable Physics-Informed Neural Networks",
-        "url": "https://arxiv.org/abs/2610.03303v1",
-        "publishedAt": "2026-10-02T13:43:57.000Z",
-        "summary": "Uncertainty quantification (UQ) for random partial differential equations (PDEs) is ubiquitous in computational science and engineering. However, classical spectral solvers for this class of problems face the curse of dimensionality, and existing neural solvers often ignore the stochastic structure that makes moments and calibration tractable. We introduce a stochastic separable physics-informed neural network, dubbed S$^{2}$-PINN, that represents the solution $u(t,\\mathbf{x},\\mathbf{Z})$ of a random PDE with a learnable Gaussian spatial dictionary, Fourier temporal features, and a generalized polynomial chaos (gPC) stochastic basis, coupled by a low-rank Canonical Polyadic (CP) tensor decomposition core. The method is trained with a hybrid strong-form and gPC-projected residual loss. Our theoretical analysis establishes that the separable class is dense in $L^2$ under mild conditions, and the projected residual corresponds exactly to a stochastic Galerkin constraint. Furthermore, we show that mini-batch projection coefficients are logarithmically dependent on the number of gPC modes, and that the orthogonality penalty controls the conditioning of the learned spatial dictionary. Using four manufactured random PDE benchmarks, we show that S$^{2}$-PINN outperforms nine baselines in terms of mean and variance accuracy, as well as calibration, while using significantly fewer parameters. Further evaluations on non-manufactured Poisson and Darcy problems, a stochastic Navier--Stokes problem, a diffusion scaling study of higher random dimensions, and two stochastic inverse problems reveal the generalization capabilities of the proposed structure. Together, these results support stochastic separability as an effective design principle for physics-informed neural UQ. The code for the experiments can be found in https://github.com/DMax1314/s2pinn",
+        "title": "Less Decoder is More Encoder: Geometric Representation Learning from Novel View Synthesis",
+        "url": "https://arxiv.org/abs/2610.03717v1",
+        "publishedAt": "2026-10-02T17:59:14.000Z",
+        "summary": "This paper examines the role of Novel View Synthesis (NVS) in geometric representation learning. In principle, NVS should reason about 3D scene structure, thereby enabling transferable multi-view geometric representations. Yet, existing encoder-based NVS methods yield poor representations. This is not because of a lack of supervisory signal, but rather due to inconspicuous architectural choices: \\textit{spatially expressive decoders} that dilute representational capabilities of the scene encoder, and \\textit{low-level pixel-space targets} that hinder feature learning. We present SNAP, a self-supervised encoder-decoder transformer that addresses both through a pose-conditioned local decoder and a latent-space reconstruction objective. SNAP is task agnostic, and we show that it is competitive with special-purpose geometry-supervised methods. SNAP also performs competitively against self-supervised representations across five tasks: visual localization, pose estimation, point correspondence, depth estimation, and robot manipulation. Remarkably, SNAP's patch features exhibit emergent viewpoint invariance that approaches heavily supervised models despite lower compute and data budgets. Under camera shifts where standard 2D representations collapse, SNAP degrades more gracefully, revealing that restricting decoder expressivity actively prevents the suppression of transferable geometric structure. https://snap-nvs.github.io",
         "authors": [
-          "Zhendong Li",
-          "Akwum Onwunta"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 60
-      },
-      {
-        "title": "JOVE: Joint Execution and Verification for Resource-Aware LLM Task Graphs",
-        "url": "https://arxiv.org/abs/2610.03296v1",
-        "publishedAt": "2026-10-02T13:37:59.000Z",
-        "summary": "Complex reasoning queries can be decomposed into directed acyclic task graphs and distributed across heterogeneous LLMs, reducing latency through parallelism and enabling smaller models to solve complex tasks. In practice, however, the suitability of an LLM for a given subtask may be a priori unknown, and execution alone does not reveal output correctness. We propose JOVE, an online framework that jointly assigns executor LLMs and selects intermediate outputs for paid verification. Verification runs asynchronously and is used to improve future allocations, so the system must balance spending on execution now against learning for later. We study how to optimize this trade-off under a long-term budget and a per-query latency constraint, with stochastic, initially unknown LLM service quality, invocation costs, and execution times. JOVE makes execution and verification decisions by solving a sequence of per-query mixed-integer linear programs. Online learning updates task-dependent estimates of LLM quality based on verification feedback, while an information-gain bonus incorporates the value of learning into allocation decisions. Under a natural set of assumptions, we establish sublinear quality-learning regret for JOVE. Across four reasoning benchmarks, JOVE achieves competitive accuracy against standard inference baselines while reducing average cost and latency by at least 3.17 times.",
-        "authors": [
-          "Haoran Zhang",
-          "Dongjun Kim",
-          "Seohyeon Cha",
-          "Kevin S Chan",
-          "Ananthram Swami",
-          "Gustavo De Veciana",
-          "Haris Vikalo"
+          "Keerthi Kaashyap",
+          "Dennis Anthony",
+          "Akshay Krishnan",
+          "Nhi Ngoc Nguyen",
+          "Jeremy Collins",
+          "James Hays",
+          "Shreyas Kousik",
+          "Animesh Garg"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 60
+        "ageHours": 63
       },
       {
-        "title": "Wrong Organ, Right Physics: Transferring Echocardiography Pretraining to Lung Ultrasound for Tuberculosis Screening",
-        "url": "https://arxiv.org/abs/2610.03290v1",
-        "publishedAt": "2026-10-02T13:33:18.000Z",
-        "summary": "Lung ultrasound (LUS) is attractive for tuberculosis (TB) screening at primary-care level, but labelled cohorts are small. Echocardiography carries no such constraint, while sharing the same underlying ultrasound imaging physics, signal processing and B-mode appearance as LUS. We ask whether an encoder pretrained on that high-resource ultrasound domain carries representations that remain usable in the low-resource one. Only the encoder varies, across seventeen encoders spanning three architecture families. Among them, a latent-predictive video encoder pretrained on generic video (V-JEPA2-L) and its echocardiography counterpart (EchoJEPA-L) differ in pretraining corpus alone. The choice among these encoders does not resolve the classification, the whole family spanning 2.50 percentage points against a measurement resolution of 2.71. What moves the task instead is feature conditioning. Standardising the features between the encoder and the classifier improves all seventeen encoders by a mean of +1.23 percentage points at $p=1.5\\times10^{-5}$. On the held-out test set every encoder selected on the development folds stands above the baseline system by up to +2.57 percentage points of area under the receiver operating characteristic curve (AUROC), and specificity at 90% sensitivity reaches 79.3% against 60.3%. The contrast specified in advance, EchoJEPA-L against V-JEPA2-L, measures -0.16 percentage points at $p=0.926$. We therefore find no evidence that shared ultrasonic physics alone makes echocardiography a more productive pretraining corpus than generic video, and any advantage, if present, is smaller than this cohort can resolve. The video encoders receive replicated still images, however, so whether this absence of an effect reflects the pretraining domain or a video encoder applied to static frames cannot be separated. The limiting factor is the labelled cohort rather than the encoder.",
+        "title": "4DCodeBench: Benchmarking Agents on Inverse Graphics of Dynamic Scenes",
+        "url": "https://arxiv.org/abs/2610.03715v1",
+        "publishedAt": "2026-10-02T17:58:49.000Z",
+        "summary": "We introduce 4DCodeBench, a benchmark for 4D inverse graphics through code generation, in which agents reconstruct dynamic scenes from video as executable graphics programs. To accomplish this, agents must translate visual observations into compact representations of scene structure and dynamics, by implementing abstractions such as physical simulations to reproduce complex behavior. To evaluate this capability, we curate a set of real-world videos and construct synthetic scenes spanning diverse physical phenomena, including deformation, fluid flow, and fracture. We perform extensive benchmarking of frontier models, finding that strong static reconstruction capabilities do not yet translate into reliable reconstruction of complex dynamics. 4DCodeBench provides a testbed for tracking progress toward agents that can interpret the dynamics of the world through code. Our benchmark is available at https://github.com/4DCodeBench/4DCodeBench",
         "authors": [
-          "Christiaan M. Geldenhuys",
-          "Joshua M. Jansen van Vüren",
-          "Véronique Suttels",
-          "Trevor Brokowski",
-          "Ablo P. Wachinou",
-          "Mary-Anne Hartley",
-          "Rensu P. Theart",
-          "Grant Theron",
-          "Thomas R. Niesler"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 60
-      },
-      {
-        "title": "Architecture-Dependent Fusion Pathways in MLLMs",
-        "url": "https://arxiv.org/abs/2610.03289v1",
-        "publishedAt": "2026-10-02T13:32:45.000Z",
-        "summary": "Multimodal Large Language Models (MLLMs) achieve strong performance across vision-language tasks, yet the internal mechanisms by which visual and textual information are fused across layers remain insufficiently understood. We investigate representative MLLMs from two architectural paradigms: concatenation architectures and native multimodal architectures. We conduct three progressively connected analyses: alignment decoupling identifies which modality changes, attention routing and entropy characterize how cross-modal information is distributed, and intrinsic dimensionality examines how fusion reshapes feature spaces. Separately, we perform causal intervention experiments as a validation of the resulting interpretation. As a supplementary analysis, we use visual CKA to examine the Platonic Representation Hypothesis. Together, these analyses reveal two distinct fusion pathways: concatenation models follow a text-first, vision-later pathway, whereas native models exhibit earlier visual-textual co-adaptation and feature-space reorganization. This work provides a mechanistic perspective for understanding multimodal fusion and supports architecture-aware diagnostics of multimodal representations.",
-        "authors": [
-          "Hebao Zhu",
-          "Dongxia Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 60
-      },
-      {
-        "title": "EVOL: Simulator-Guided Evolutionary Expert Synthesis for Deployment-Free Learning Path Recommendation",
-        "url": "https://arxiv.org/abs/2610.03273v1",
-        "publishedAt": "2026-10-02T13:16:40.000Z",
-        "summary": "Reinforcement learning (RL) for learning path recommendation (LPR) faces two coupled obstacles. First, the policy must commit to a sequence of L concepts without intermediate feedback, producing a combinatorial search space that grows super-exponentially with L and provides reward only at the final step. Second, expert learning paths would be the natural cure for sparse-reward RL, but they do not exist in educational data, because student logs record what learners did, not what they should have done. We address both obstacles by importing a recipe from simulator-based demonstration learning in robotics: the knowledge tracing simulator is used both to synthesize per-learner expert demonstrations through evolutionary search and to train a deployment-free policy that distills these demonstrations into a feed-forward learner. Our framework, EVOL, instantiates this pipeline with an asymmetric actor-critic where the actor commits to deployment-realistic blind planning while the critic exploits the privileged simulator state during training. Across three datasets (ASSIST15, Junyi, and EdNet; 39-189 concepts) and path lengths L = 5, 10, and 20, EVOL surpasses 8 baselines spanning heuristic, sequential, RL, graph-enhanced RL, and LLM-enhanced methods. We further compare three imitation strategies (BC, AWR, and DAPG) and show that final performance is governed by the quality of evolutionary experts rather than by the particular imitation objective.",
-        "authors": [
-          "Geonwoo Bang",
-          "Dongho Kim",
-          "Moohong Min"
+          "Ruihong Shen",
+          "Žiga Kovačič",
+          "Peter Kulits",
+          "Xingrui Wang",
+          "Zizhang Li",
+          "Joshua B. Tenenbaum",
+          "Alan Yuille",
+          "Jieneng Chen",
+          "Jiajun Wu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 61
+        "ageHours": 63
       },
       {
-        "title": "Shrome at Touché: Soft-Vote Ensembling and Counter-Causal Augmentation for Causality Extraction",
-        "url": "https://arxiv.org/abs/2610.03268v1",
-        "publishedAt": "2026-10-02T13:11:27.000Z",
-        "summary": "Touché 2026 extends causality extraction to counter-causal claims: news sentences whose surface form appears causal but whose meaning denies the causation, as in \"It is falsely believed that X caused Y.\" A system that relies on surface cues such as \"caused\" or \"led to\" will accept such a sentence as causal and give it the wrong polarity. On the Countercausal News Corpus (CCNC), the task has three subtasks: deciding whether a sentence is causal (detection), locating its cause and effect spans (extraction), and labeling its polarity as procausal, counter-causal, or uncausal. We build one model per subtask. Detection is a fine-tuned classifier with a single cross-task rule that uses the extracted spans to remove false positives. For extraction, we ensemble three RoBERTa-large BILOU+CRF taggers by averaging their token-level scores before decoding, rather than voting on the spans each tagger produces. For polarity, where labeled counter-causal examples are scarcest, we add training sentences generated by a large language model prompted with nine patterns of counter-causal expression adapted from Hagen et al., keeping only those that pass automatic structural checks. On the held-out CCNC test set, the system reaches F1 0.869 on detection and macro-F1 0.817 on polarity, and in the organizers' final causal-only evaluation of extraction it scores granularity-adjusted F1 0.728, the highest extraction score among all submissions including the organizers' baseline. The development split is used only for component selection and the ablations reported in the paper.",
+        "title": "What Should World Models Forget? Stratified Retention for Continual Adaptation",
+        "url": "https://arxiv.org/abs/2610.03713v1",
+        "publishedAt": "2026-10-02T17:58:14.000Z",
+        "summary": "Continual learning treats degradation on previously seen data as evidence of failure, a convention inherited from settings with a stationary prediction target, where a correct label remains correct indefinitely. World models do not satisfy this condition. Their prediction target is the environment, which changes, so knowledge that was accurate when acquired may later become false, and discarding it is required behavior rather than a defect. Non-stationary ground truth is well studied in the concept drift literature and in the temporal factuality of language models, but has not been formulated for world models, which are distinctive in that they also encode knowledge that must never be revised. We argue that continual world models require retention stratified by invariance timescale, separating invariants such as physics and object permanence, which must never be revised, from instance-level facts that should be revised as soon as the environment changes. Standard forgetting metrics cannot distinguish a world model that has correctly revised outdated knowledge from one that has suffered catastrophic forgetting, and consequently rank a frozen model highest, while existing physical-reasoning benchmarks evaluate only frozen checkpoints. We propose differential retention, which reports invariant regression testing across the adaptation stream jointly with revision latency, without aggregation.",
         "authors": [
-          "Roham Zendehdel Nobari",
-          "Shayan Sooratgar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 61
-      },
-      {
-        "title": "SPEAR: A Spectral-Disentangled MoE Neural Operator with Knowledge-Guided Expert Aggregation for Large-Scale PDE Pretraining",
-        "url": "https://arxiv.org/abs/2610.03265v1",
-        "publishedAt": "2026-10-02T13:10:09.000Z",
-        "summary": "Large-scale pre-training has improved the generalization of neural operators across diverse PDEs. However, existing PDE foundation models still struggle with heterogeneous dynamics, where shared representations may cause knowledge interference, while mixture-of-experts (MoE) architectures suffer from increasing expert redundancy. We propose SPEAR, a spectral-disentangled MoE neural operator with knowledge-guided expert aggregation for large-scale PDE pre-training. SPEAR decouples latent features into low- and high-frequency components, enabling shared modeling of transferable dynamics and specialized learning of PDE-specific patterns. To address expert redundancy, we design a knowledge-guided expert aggregation strategy that measures expert similarity from dataset-specific learned knowledge and routing preferences, enabling the identification and consolidation of similar experts. Experiments on twelve PDE datasets and multiple downstream benchmarks demonstrate superior performance in pre-training, fine-tuning, and transfer learning. Furthermore, our aggregation strategy reduces the number of experts by 50\\% while maintaining or improving prediction accuracy, achieving a balance between model efficiency and generalization for PDE foundation models.",
-        "authors": [
-          "Dengdi Sun",
-          "Xiaoya Zhou",
-          "Xiao Wang",
-          "Wanli Lyu",
-          "Jin Tang",
-          "Bin Luo"
+          "Nishit Anand",
+          "Ramani Duraiswami",
+          "Dinesh Manocha"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 61
+        "ageHours": 63
       },
       {
-        "title": "Consecutive Posterior Fusion for Diffusive Recovery of Unobservable Image Structures",
-        "url": "https://arxiv.org/abs/2610.03261v1",
-        "publishedAt": "2026-10-02T13:05:36.000Z",
-        "summary": "Solving severely ill-posed imaging inverse problems requires recovering image structures that are unobservable or weakly constrained by the measurements. Diffusion models provide expressive learned priors for inferring such missing information, while posterior sampling incorporates measurement consistency along the reverse process. Standard diffusion posterior samplers, however, rely on instantaneous measurement-aware estimates, without explicitly exploiting information carried by previous posterior corrections.\n  We introduce Consecutive Posterior Fusion Denoising Diffusion Null-Space Models (CPF-DDNM), an inference-time strategy that fuses consecutive measurement-aware estimates to improve the diffusive recovery of unobservable image structures, without requiring retraining or additional denoiser evaluations. We instantiate this principle within DDNM, whose range/null-space decomposition reveals that consecutive fusion preserves the measurement-determined component while acting exclusively on the prior-driven null-space estimate. We thus provide a geometric interpretation of CPF-DDNM and a local error analysis that characterizes the optimal time-dependent fusion coefficient, including the extrapolative regime.\n  Experiments on sparse-view and simulated low-dose computed tomography, as well as medical image super-resolution, show consistent improvements over DDNM and competitive performance against diffusion-based inverse solvers.",
+        "title": "RNADyn: A Benchmark for Generating and Understanding RNA Dynamics",
+        "url": "https://arxiv.org/abs/2610.03712v1",
+        "publishedAt": "2026-10-02T17:58:08.000Z",
+        "summary": "Ribonucleic acid (RNA) functions through conformational changes that are not fully captured by static structures. However, large-scale standardized RNA dynamics data remain limited, and existing approaches typically treat trajectory generation and dynamics understanding as separate objectives. Here, we introduce RNADynBench, a standardized RNA molecular dynamics (MD) benchmark with 2585 quality-controlled 100-ns all-atom trajectories and leakage-controlled splits. Building on RNADynBench, we develop RNADynNet, a unified model for RNA dynamics learning that uses a shared backbone for both trajectory generation and dynamics fingerprint extraction from a single conformer. It combines coordinate denoising, single-frame-to-trajectory alignment, and physical grounding to connect all-atom trajectory generation with dynamics representation learning. Physical grounding improves both generated dynamics and the physical information recoverable from these fingerprints. Across both test sets, including the high-flexibility challenge set, the generated trajectories achieve RMSF correlations of 0.875 and 0.766, while single-conformer predictions show comparable agreement with MD-derived dynamics. RNADynBench and RNADynNet together establish a benchmark and unified modeling framework for generating and understanding RNA dynamics.",
         "authors": [
-          "Elena Morotti",
-          "Davide Evangelista",
-          "Elena Loli Piccolomini"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 61
-      },
-      {
-        "title": "PaMIR: Open Benchmark of Public Credit-Default Datasets",
-        "url": "https://arxiv.org/abs/2610.03259v1",
-        "publishedAt": "2026-10-02T13:04:45.000Z",
-        "summary": "We release PaMIR (Public Arrival-ordered Measurement for Inference in Risk), an open benchmark for credit-default prediction when labels are scarce and arrive late. The field's reference benchmark studies use eight datasets each, only two or four of them public. PaMIR brings together 19 public datasets with binary default labels -- 1.24M loans, firms and card accounts from nine countries -- rebuilt from pinned source snapshots by one leakage-audited recipe and never redistributed; to our knowledge it is the one of its kind as of today. Every model is a single function, scored under a repeated i.i.d. split and a label-delayed stream in which each application is scored on arrival, with AUC reported by label budget; fleet means are withheld unless every dataset is scored. A synthetic-data harness tests generated training rows without letting a generator see held-out rows. This report describes release 0.4.0 of this living benchmark.",
-        "authors": [
-          "Mikhail Liashkov",
-          "Ilyas Varshavskiy",
-          "Shuhratjon Khalilbekov",
-          "Azizjon Azimi",
-          "Bonu Boboeva"
+          "Yiming Huang",
+          "Lennart Bastian",
+          "Hanqun Cao",
+          "Luis Vollmers",
+          "Tolga Birdal"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 61
+        "ageHours": 63
       },
       {
-        "title": "Mapping and Advancing the Scalability-Accuracy Frontier of Nonlinear Causal Discovery",
-        "url": "https://arxiv.org/abs/2610.03258v1",
-        "publishedAt": "2026-10-02T13:03:56.000Z",
-        "summary": "Scalable nonlinear causal discovery requires methods that combine flexible mechanism estimators with efficient search over large graph spaces. Several algorithmic families have been proposed to address this challenge, yet their accuracy-runtime trade-offs remain poorly understood. We empirically compare the four major approaches: differentiable structure learning, amortized structure learning, score-matching, and combinatorial search. Our results reveal complementary bottlenecks: differentiable and amortized methods scale well but exhibit an accuracy gap, score-matching methods can be accurate in low dimensions but degrade quickly for increasing feature sizes, and combinatorial methods remain accurate but are slowed by repeated and redundant local scoring. Motivated by this bottleneck, we develop SPADE, a spline-based score-evaluation scheme that compiles sufficient statistics once and reuses them throughout combinatorial search. Under bounded indegree, its Gaussian variant reduces algorithmic complexity from O(nd^3) to O(nd^2+d^3). Empirically, SPADE shifts the observed scalability-accuracy frontier by orders of magnitude: it solves 100-variable problems with 160K samples in seconds and 1600-variable problems with 2.5K samples in minutes, while retaining high structural accuracy across synthetic and real-world benchmarks. These results reveal a substantial shift in the practical scale of combinatorial search and highlight the importance of evaluating scalable causal-discovery methods along the full accuracy-runtime frontier.",
+        "title": "EyeRobot 2.0: Active Gaze for Precise Manipulation without Wrist Cameras",
+        "url": "https://arxiv.org/abs/2610.03710v1",
+        "publishedAt": "2026-10-02T17:57:51.000Z",
+        "summary": "Inspired by human vision, we introduce a framework using active gaze to enable fine-grained bimanual manipulation with only a single stereo camera. EyeRobot 2.0 physically attends to a 3D fixation point in the scene by swiveling two eye viewpoints to center their gaze on it. The resulting images are processed foveally by allocating more visual tokens to the image centers, focusing computation on task-relevant features. Such Active Visual Fixation (AVF) requires carefully coordinated gaze during task execution, which we accomplish hierarchically by first training a low-level gaze servoing policy conditioned on a goal object, then training a target selector which emits fixation goals based on task progress. Both modules are trained with RL on real-world data: the first is trained with a dense geometric reward and the second co-trains with the BC gripper policy which allows it to discover fixation sequences that can resemble a human's fixation sequence while performing the task. EyeRobot 2.0 further takes advantage of fixation by canonicalizing gripper information into a fixation-relative SE(3) frame, which compacts the size of the action distribution to learn. We collect teleoperation data for 7 real-world and 6 simulated tasks, and conduct over 1000 physical and 1800 simulated robot trials comparing EyeRobot 2.0 against passive stereo and ego + wrist camera policies trained on the same data. Removing wrist cameras is costly for standard policies: with only passive stereo, real-world success drops from 52% to 27%. EyeRobot 2.0 closes this gap with only stereo, outperforming passive stereo by 40% in real and 20% in sim. It matches ego + wrist policies when their wrist views are clear (69% vs. 64%), and more than doubles their success when grasped objects occlude the wrist cameras (48% vs. 22%)",
         "authors": [
-          "Hendrik Suhr",
-          "Sascha Xu",
-          "Jilles Vreeken"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 61
-      },
-      {
-        "title": "Cross-cohort TB classification using clinical data gathered in Uganda and South Africa",
-        "url": "https://arxiv.org/abs/2610.03256v1",
-        "publishedAt": "2026-10-02T13:01:26.000Z",
-        "summary": "We present a first evaluation of machine learning applied to patient clinical and demographic data gathered in two different countries for the purpose of tuberculosis (TB) screening to identify people who would benefit from expensive molecular testing. Experiments are based on the recently-compiled CAGE-TB dataset, which includes sub-cohorts of people with presumptive TB presenting at community health care centres in South Africa and Uganda. Three neural network architectures (logistic regression (LR), multilayer perceptrons (MLP) and convolutional neural networks (CNN)) are considered in conjunction with greedy feature selection. For the convolutional neural network, a strategy that jointly optimises feature selection and feature ordering is proposed and shown to lead to consistent development and test set improvements. For all three models, development set area under the receiver operating characteristic (AUROC) curve is improved by 2-7% using feature selection. LR after feature selection achieves an AUROC of 0.8 [0.75,0.86] (95% CI) and 0.84 [0.78,0.9] when testing on the held-out Ugandan and South African data respectively. Although outperforming LR on the development cohort, the deeper networks (MLP, CNN) show inconsistent trends on the held-out cohorts, while LR achieves performance within 1-2% of the best achieved in terms of AUROC. LR narrowly misses the WHO minimum requirements by 4-9% in sensitivity even though the network is being evaluated on a completely held-out cohort. The development of neural-network based classifiers for TB screening therefore appears viable.",
-        "authors": [
-          "Joshua M. Jansen van Vüren",
-          "Devendra S. Parihar",
-          "Daphne Naidoo",
-          "Marisa Klopper",
-          "Frank Cobelens",
-          "Lutz Kolbe",
-          "Kimsey Zajac",
-          "Willy Ssengooba",
-          "Moses Joloba",
-          "Grant Theron",
-          "Thomas R. Niesler"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 61
-      },
-      {
-        "title": "Learning a Fact Is Not Learning How to Retrieve It",
-        "url": "https://arxiv.org/abs/2610.03251v1",
-        "publishedAt": "2026-10-02T12:59:19.000Z",
-        "summary": "A model trained on \"The capital of X is Y\" may produce \"Y\" after \"The capital of X is\" but fail after \"The capital of X:\". We call these different ways of eliciting the same fact request forms. To separate learning a fact from retrieving it, we train two models in two stages. In the first stage (request-form training), one model sees each fact in five forms and the other sees the same facts only as statements. In the second stage (target-fact training), both receive identical training on new facts, all as statements. Both then retrieve the new facts almost equally well from statements, but differ sharply on other request forms. Thus, a model can learn how to retrieve through a request form before it learns the facts. To understand this difference, we examine the hidden state immediately before the answer, which we call the context state. When given two different request forms for the same fact, the model trained on five forms in stage one produces more similar context states than the model trained on statements alone in that stage. Changing this state at retrieval time can enable or prevent retrieval of an already learned fact, and the same effect transfers across facts and factual relations, such as capitals and currencies. To test its role during learning, we change the context state only during target-fact training. This intervention changes later retrieval without intervention at test time. Together, these results show that later retrieval depends on earlier request-form experience and the context state during fact learning.",
-        "authors": [
-          "Chaemin Jang",
-          "Jihee Kim",
-          "Dongman Lee"
+          "Kush Hari",
+          "Justin Kerr",
+          "Nidhya Shivakumar",
+          "Samarth Mahapatra",
+          "Carmelo Sferrazza",
+          "Jiahui Lei",
+          "Jitendra Malik",
+          "C. Karen Liu",
+          "Ken Goldberg",
+          "Angjoo Kanazawa"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 61
+        "ageHours": 63
+      },
+      {
+        "title": "From Mixing to Tearing: Graph Decomposition in Decentralized Optimization via Message Passing",
+        "url": "https://arxiv.org/abs/2610.03709v1",
+        "publishedAt": "2026-10-02T17:57:50.000Z",
+        "summary": "We study the minimization of sums of smooth strongly convex functions over undirected graphs, with each function held by one agent and communication restricted to neighbors in the graph. Existing decentralized methods, whether based on gossip or on routing over spanning trees, typically\n  use the network to mix or aggregate information to enable\n  {\\it prescribed} local optimization\n  updates. What this communication-centered viewpoint lacks is a general\n  framework that uses graph structure to {\\it jointly} design the\n  optimization subproblems and the cooperative computation and communication through which agents solve them\n  cooperatively.\n  We develop such a framework from first principles,\n  jointly designing the linear representation of agreement constraints, the blocks of\n  the resulting dual variables (jointly optimized), and connected cluster of agents that\n  cooperatively solve each block subproblem over the assigned subgraph. GATE (Graph-Tearing message passing) is a first instance of this framework: one variable per edge and tree blocks. At each iteration, agents update their assigned edge variables by\n  minimizing the sum of the two endpoint cost-to-go messages and\n  relaxing the result. The messages are updated through local minimizations following the tree recursion. To reduce per-iteration computational and communication costs, we develop GATE-S, a surrogate variant using tractable local models and lightweight message parametrizations. We establish linear convergence with a rate explicit in the interplay among function regularity, network topology, and the chosen partition, revealing the effects of graph decomposition. Numerical experiments are conducted to validate the theoretical results and evaluate the efficiency of our algorithms.",
+        "authors": [
+          "Kuangyu Ding",
+          "Gesualdo Scutari"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 63
+      },
+      {
+        "title": "LESSER: Post-Training Data Selection with Output-Layer Gradients",
+        "url": "https://arxiv.org/abs/2610.03702v1",
+        "publishedAt": "2026-10-02T17:55:42.000Z",
+        "summary": "The choice of post-training data for large language models substantially affects downstream performance. Gradient-based data selection is a popular approach that ranks training data by how well their gradients align with those of a small validation set. However, ranking with full-parameter gradients requires an expensive backward pass on every sample, making computation intractable for large candidate pools. This raises a natural question: can we approximate full-gradient features at a fraction of the cost? Conveniently, we find that output-layer gradients suffice for effective data selection, yet require only the cheaper forward pass. We implement this as LESSER, a drop-in wrapper for selection methods that reduces the feature-extraction FLOP cost by $9.7\\times$ for SFT and $3.0\\times$ for RL benchmarks, while tracking full-gradient performance on downstream tasks. Empirically, we find that even when output-layer and full gradients rank individual samples differently, they select batches with aligned gradients.",
+        "authors": [
+          "Lyuxin David Zhang",
+          "Eric Wong",
+          "Surbhi Goel",
+          "Anton Xue"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 63
+      },
+      {
+        "title": "Language Models that Play Chess and Explain Their Moves",
+        "url": "https://arxiv.org/abs/2610.03695v1",
+        "publishedAt": "2026-10-02T17:54:22.000Z",
+        "summary": "Modern chess engines are silent experts: they play at a superhuman level, but do not offer explanations for their play. On the other hand, language models (LMs) can generate plausible-sounding explanations, but their weak playing strength limits the utility of their explanations. We introduce Queen, a 4B-parameter chess-language model that can explain its moves and plans while playing at the level of a typical Grandmaster. Our novel framework enables domain-specific reasoning through complementary components: an encoder-decoder architecture and an iterative distillation algorithm. This architecture integrates a silent expert chess encoder with an instruction-tuned LM through cross-attention, which we train via a question-answering curriculum to extract chess concepts from the encoder's representations. Building on this domain-adapted model, we iteratively improve its explanations with a natural-language analog of the Bellman update: the model analyzes the positions after its top candidate moves and consolidates them into an explanation of the current position, which is then distilled back into the model. Over seven iterations, our model gains over 900 Elo points (1782 to 2697), substantially surpassing all frontier models on both playing strength and puzzle accuracy, despite containing three orders of magnitude fewer parameters. Furthermore, LM-based evaluations show that our explanations are fluent and approach GPT-5.6-Sol (high) in coherence. The generality of our architecture and training procedure suggests a recipe for applying language models to domains where silent expert encoders are available, like games, robotics, and computer use.",
+        "authors": [
+          "Adithya Bhaskar",
+          "Jeffrey Cheng",
+          "Danqi Chen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 63
+      },
+      {
+        "title": "Transcriptome-informed multi-modal AI for predicting neoadjuvant therapy response from breast cancer biopsies",
+        "url": "https://arxiv.org/abs/2610.03693v1",
+        "publishedAt": "2026-10-02T17:52:57.000Z",
+        "summary": "Scarcity of labeled data limits development of deep learning biomarkers in oncology. We develop a two-stage AI model predicting pathological complete response (pCR) to neoadjuvant therapy in breast cancer. The first stage learns the transcriptome from histopathology using 8,742 patients across 32 cancer types, corroborated by pathologist review and spatial agreement with measured expression. This simplifies the second stage to predicting pCR from inferred expression and clinical variables. Developed using 1,080 patients (five cohorts) and evaluated in 1,412 patients (nine cohorts), the model achieves a pooled AUROC of 0.79 (95% CI, 0.73-0.85), discriminating responders within molecular subtypes. It outperforms histopathological biomarkers, remaining stable across intratumoral sampling and with minimal biopsy tissue. Ablations show transcriptome-wide inference improves discrimination over clinical variables alone or one-stage pathology models, and robustness by avoiding genomic assays' gene selection constraints. These results indicate that biologically informed compression may generalize to data-sparse applications in precision oncology.",
+        "authors": [
+          "Jungkyu Park",
+          "Dhruva Biswas",
+          "Joseph Cappadona",
+          "Cerise Tang",
+          "Ken G. Zeng",
+          "Bartosz Machura",
+          "Chuwen Liu",
+          "Paolo Tarantino",
+          "Coral Omene",
+          "Francisco J. Esteva",
+          "Rohit Bhargava",
+          "Marcin Braun",
+          "Kamila Paździerz",
+          "Jakub Czerwiński",
+          "Hanna Romańska-Knight",
+          "Albert Grinshpun",
+          "Bareket Daniel",
+          "Michele Buchinger",
+          "Frederick Howard",
+          "Piotr Wysocki",
+          "Brie Chun",
+          "Freya Schnabel",
+          "Rich Caruana",
+          "Jan Witowski",
+          "Krzysztof J. Geras"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 63
+      },
+      {
+        "title": "Simulation-Free Learning of Population Dynamics with Wasserstein Lagrangian Residuals",
+        "url": "https://arxiv.org/abs/2610.03679v1",
+        "publishedAt": "2026-10-02T17:46:52.000Z",
+        "summary": "The dynamics of cells, organisms, and fluids are often modeled as probability distributions evolving over time. Reconstructing and extrapolating this evolution from unpaired snapshots requires assumptions about the underlying process. Wasserstein gradient flows are a common choice, but they cannot describe conservative or periodic dynamics. Lagrangian mechanics in Wasserstein space covers both, but existing methods for learning it are simulation-based: they run a numerical solver at every training step, which makes training expensive. We propose Double-Stitch, a simulation-free method that learns these mechanics by penalizing the residual of the equation of motion along a learned population path. We derive this equation from a Clebsch variational principle that does not require gradient velocities, and show that the residual vanishes exactly when the equation holds. We test Double-Stitch on synthetic, single-cell and ocean vortex datasets and find that it matches or outperforms gradient-flow methods and simulation-based WLM on most tasks, while training $4$-$14$ times faster than WLM. We provide a JAX implementation of Double-Stitch at https://github.com/BasisResearch/stitching.",
+        "authors": [
+          "Fedor Sergeev",
+          "Markus Heinonen",
+          "Daniel Waxman",
+          "Tim Cooijmans",
+          "Ricardo Baptista",
+          "Dmitry Batenkov",
+          "Eli Bingham"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 63
+      },
+      {
+        "title": "FrugalEvo: Towards Cost-Aware LLM-Guided Program Evolution",
+        "url": "https://arxiv.org/abs/2610.03675v1",
+        "publishedAt": "2026-10-02T17:44:05.000Z",
+        "summary": "LLM-guided evolutionary methods, such as AlphaEvolve, have emerged as powerful approaches for challenging computational optimization problems, such as circle packing. However, prior work typically optimizes performance gain over a fixed number of iterations. We argue that practical optimization should maximize gain per unit cost. To this end, we propose FrugalEvo, a cost-aware evolutionary framework where a stronger, higher-cost LLM explores solution strategies, and a cheaper LLM implements them and iteratively refines the resulting code. We also design a cache-efficient evolution process, where our harness and prompts maximize the sharing of prefixes across different evolution steps, to improve cache reuse. To measure solution quality throughout a fixed cost budget, we introduce Budget-Aware Area Under the Curve (BA-AUC), defined as the area under the best-so-far evaluation score curve over cumulative LLM cost, up to the budget. Across 10 mathematical and systems optimization tasks, FrugalEvo matches or surpasses state-of-the-art baselines, including OpenEvolve, ShinkaEvolve, AdaEvolve, and EvoX, in final solution quality and achieves higher BA-AUC on 9 tasks. It also achieves higher average performance than these baselines on 10 algorithmic optimization tasks from ALE-Bench-Lite. Notably, on circle packing, FrugalEvo achieves new state-of-the-art performance with GPT-5.6 Terra and Luna for only 1.68 USD and with GLM-5.3 and its Flash variant for only 0.55 USD, matching or surpassing all baselines, including multi-agent methods such as CORAL and SwarmResearch, which cost approximately 50 USD on average.",
+        "authors": [
+          "Hui Chen",
+          "Xuan Qi",
+          "James Xu Zhao",
+          "Zhaopeng Feng",
+          "Shilong Liu",
+          "Kuang Xu",
+          "Pang Wei Koh",
+          "Bryan Hooi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 63
+      },
+      {
+        "title": "Planning to Learn",
+        "url": "https://arxiv.org/abs/2610.03667v1",
+        "publishedAt": "2026-10-02T17:38:28.000Z",
+        "summary": "Policy-gradient methods are central to modern reinforcement learning, including LLM post-training. When they struggle, the usual suspects are exploration, credit assignment and action-sampling noise. Classification has none of them. A classifier is a policy whose expected reward, its \\emph{expected accuracy}, is the probability it assigns to the correct label, and because that label is known, the policy gradient is exact and smooth. Yet exact policy gradient loses to cross-entropy, even on expected accuracy. The exact gradient is myopic: it values an update only by what it buys now, but each update also sets where the next one starts, so an update's value depends on how much learning remains. Viewed this way, cross-entropy is patient accuracy, the total error an example would pay if its log-odds rose at unit speed forever, while exact policy gradient is the zero-horizon limit. Truncating this total at the learning that remains yields the horizon loss, a one-line change that moves from cross-entropy toward exact policy gradient as training runs out. In a simple allocation model, it provably escapes the trap that catches each endpoint. On MNIST and on ImageNet with ResNet-50, ResNet-101 and ViT-S/16, the horizon loss improves top-1 accuracy over cross-entropy at a flat learning rate, and the gain grows with label noise.",
+        "authors": [
+          "Ian Osband"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 63
       }
     ],
     "news": [
@@ -310,7 +339,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 12
       },
       {
         "title": "Can ‘super intelligence’ and a non-binding safety pact solve AI’s image problem?",
@@ -324,7 +353,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 6
+        "ageHours": 13
       },
       {
         "title": "Trump unveils his new Super Intelligence Force",
@@ -338,7 +367,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 11
+        "ageHours": 18
       },
       {
         "title": "Amazon responds to data center backlash, says it no longer uses NDAs",
@@ -352,7 +381,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 31
+        "ageHours": 38
       },
       {
         "title": "OpenAI safety employee resigns, claiming the company’s ‘culture is broken’",
@@ -366,7 +395,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 33
+        "ageHours": 40
       },
       {
         "title": "All the AI agents that can live in your text messages",
@@ -380,7 +409,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 36
+        "ageHours": 43
       },
       {
         "title": "Meta wants your next gadget to be Muse-infused",
@@ -394,7 +423,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 49
+        "ageHours": 56
       },
       {
         "title": "Sean Parker is rebuilding Stability AI around music",
@@ -408,7 +437,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 53
+        "ageHours": 60
       },
       {
         "title": "Computational tools for society’s most complex challenges",
@@ -422,7 +451,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 54
+        "ageHours": 61
       },
       {
         "title": "Affected by layoffs? Don&#8217;t miss this $75 deal for your TechCrunch Disrupt 2026 Expo+ Pass",
@@ -436,7 +465,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 55
+        "ageHours": 62
       },
       {
         "title": "Apple says it&#8217;s tightening macOS &#8216;Full Disk Access&#8217; controls due to new risks from AI agents",
@@ -450,7 +479,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 56
+        "ageHours": 63
       },
       {
         "title": "Call it AI, call it Super Intelligence, only 2% of consumers are buying it",
@@ -464,7 +493,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 56
+        "ageHours": 63
       }
     ],
     "threads": []
@@ -475,19 +504,19 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 12
+        "count": 11
       },
       {
         "name": "General",
         "count": 5
       },
       {
-        "name": "Policy",
-        "count": 3
+        "name": "Models",
+        "count": 4
       },
       {
-        "name": "Products",
-        "count": 2
+        "name": "Policy",
+        "count": 3
       }
     ]
   }
