@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T07:30:28.271Z",
+  "generatedAt": "2026-10-06T15:05:09.619Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,8 +83,286 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "One Figure, Every Canvas: Editable Flowchart Relayout via Agentic Pipeline",
+        "url": "https://arxiv.org/abs/2610.06852v1",
+        "publishedAt": "2026-10-05T17:59:54.000Z",
+        "summary": "Pipeline figures in ML papers must be repurposed across many canvases, including paper columns, 16:9 slides, portrait posters, 1:1 social teasers, 9:16 phone previews. Each format imposes a different aspect ratio on the same computational graph, where any silently broken connection misrepresents the method. We formulate aspect-ratio-adaptive flowchart relayout as a distinct task: given a raster flowchart and a target ratio, produce a structurally faithful, hallucination-free, editable layout. Existing methods fail characteristically: image-to-image models stretch blocks and reject extreme ratios, text-to-image agentic systems hallucinate content, and parse-then-render systems mis-route edges. We propose an agentic pipeline factored into Parse, Style, and Layout stages, each pairing a main agent with a critic that combines deterministic constraint checks with VLM visual feedback so connectivity is explicitly checked and prevented from being silently broken. Outputs are draw.io-editable mxGraph XML. On a curated benchmark of 100 flowcharts at five aspect ratios, evaluated by Gemini 3.1 Pro and validated against human judgments, our method reaches 68.6% Content Fidelity versus 11.2-41.4% for prior work. Project page: https://onefigureeverycanvas.vercel.app/",
+        "authors": [
+          "Shih-Chen Tseng",
+          "Chih-Hsuan Chen",
+          "Ryan Yang",
+          "Hsi-An Chen",
+          "Chun-Wei Tuan Mu",
+          "Yu-Lun Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Base Models Can Reason By Taking a Cue From Training Data",
+        "url": "https://arxiv.org/abs/2610.06851v1",
+        "publishedAt": "2026-10-05T17:59:52.000Z",
+        "summary": "In this paper, we study how training data creates associations between the tokens at the start of a base model's response and the reasoning behavior that follows. First, we demonstrate that fixing particular starting token cues makes a base model's performance competitive with that of its reinforcement learning (RL)-trained counterparts on math and coding. For instance, the cue \".\\n\\nOkay\" raises Olmo-3-7B's MATH-500 pass@1 accuracy from 42% to 78%, while \"Alright,\" raises Qwen3-14B's from 72% to 87%. Second, RL makes these cues more likely, while fixing them recovers much of its performance gain over the base model. Third, we trace the reasoning effects of token cues to the training data. We perform causal data interventions to turn an arbitrary word, such as \"chicken\", into an effective reasoning cue, or remove an existing cue's effect. A similar edit makes the prompt instruction \"Think duck duck goose\" as effective as \"Think step by step\" at eliciting reasoning. We also find that the hidden state representations induced by different cues correlate with different document types from the training set. Finally, we extend our study of token cues with a case study in language model safety, finding that different cues elicit distinct refusal and compliance behaviors that correspond to different types of training data.",
+        "authors": [
+          "Sophie L. Wang",
+          "Amil Dravid",
+          "Rulin Shao",
+          "Kevin Farhat",
+          "Sewon Min",
+          "Alexei A. Efros"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "BiasFlow: Geometric Monitoring and Backbone Regularization for Spurious Feature Reliance",
+        "url": "https://arxiv.org/abs/2610.06846v1",
+        "publishedAt": "2026-10-05T17:59:28.000Z",
+        "summary": "Worst-group accuracy (WGA) evaluates a trained predictor but does not characterize how its frozen backbone behaves when a new head is learned. We introduce BiasFlow, a hook-based toolkit for monitoring class-attribute centroid alignment (IBMI), within-class centroid separation (W-IBMI), and feature-projection sensitivity. IBMI is confounded by class-attribute correlation and is not a measure of causal feature reliance. We pair these diagnostics with BiasFlow Regularization (BFR), a supervised, composable class-conditional centroid-alignment penalty. W-IBMI verifies the quantity BFR optimizes; it is scale dependent and does not independently establish attribute removal. Across the reported small-scale benchmarks, adding BFR improves or preserves mean WGA, with gains up to +26.0 pp on UrbanCars. The principal independent stress test freezes CelebA-Std backbones and trains fresh heads on biased data: BFR+GroupDRO improves WGA from 40.7% to 64.1%, while Male probe accuracy decreases from 92.5% to 72.2%. Attribute information remains recoverable, and cross-task results are mixed. A controlled synthetic-watermark ImageNet experiment additionally improves watermark-shift accuracy by +23.0 pp under matched training. These results support evaluating centroid geometry and resistance to biased head retraining alongside WGA, within the tested protocols.",
+        "authors": [
+          "Haojin Deng",
+          "Zhiping Lin",
+          "Yimin Yang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Learning to Read the Contextual Tokens in Diffusion Transformers",
+        "url": "https://arxiv.org/abs/2610.06844v1",
+        "publishedAt": "2026-10-05T17:59:17.000Z",
+        "summary": "Multimodal Diffusion Transformers (MM-DiTs) jointly process visual and textual representations throughout generation. These models repeatedly update the text tokens through multimodal attention, forming dynamic contextual tokens whose function is not well understood. In this work, we introduce a framework for reading this contextual space through natural-language interrogation. We train a lightweight bottleneck network that maps intermediate contextual tokens into the input space of a frozen Large Language Model (LLM), allowing the LLM to answer questions about the emerging image directly from these hidden representations. Our reader reveals that contextual tokens encode a rich, global representation of the emerging scene: generation-specific semantics, including attributes left underspecified by the prompt, are accessible surprisingly early in denoising, while increasingly fine-grained details become readable over time. Remarkably, this information remains decodable even when the MM-DiT receives an empty prompt, showing that contextual tokens accumulate substantial image-specific information from the evolving visual representation itself. We further find that generations with more readable contextual representations tend to receive higher human-preference scores. Building on these observations, we introduce Contextual Alignment, a training technique that explicitly reinforces the visual-semantic information encoded in the contextual tokens, improving generation quality and distributional coverage. Together, our results establish contextual tokens as both an interpretable view into the internal dynamics of MM-DiTs and an effective target for improving generative models.",
+        "authors": [
+          "Omer Dahary",
+          "Etai Sella",
+          "Hadar Averbuch-Elor",
+          "Daniel Cohen-Or",
+          "Or Patashnik"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Recursive Video In-Context Learning for Agentic Robot",
+        "url": "https://arxiv.org/abs/2610.06843v1",
+        "publishedAt": "2026-10-05T17:59:11.000Z",
+        "summary": "LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across episodes through text memory, which records what the agent did but not how the task is done. A demonstration video shows it, but fits poorly into an agent's context. The full video slows every turn, fixed keyframes lose the contact detail that decides whether a grasp holds, and what the agent needs shifts from the task's structure while planning to the frames around each contact. We introduce Recursive Video In-Context Learning (RV-ICL), a training-free method that turns a demonstration into a hierarchy the agent navigates rather than a prompt it receives. The hierarchy is built from the sub-events of the demonstration, such as grasps and releases. Its levels grow finer, from keyframes of the whole task to phases, moments and short clips, and are exposed through read-only tools. The agent reads the coarse levels before planning. During execution it re-enters the hierarchy whenever a step needs more detail and loads only the clip of its current sub-goal. One demonstration per task is enough. Built on RPent, RV-ICL raises success from 92.6% to 96.5% on LIBERO-PRO and from 86.7% to 95.8% on LIBERO-Plus.",
+        "authors": [
+          "Wenrui Bao",
+          "Xinxin Liu",
+          "Bingxin Xu",
+          "Yuzhang Shang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Direct Intermediate Initialization for Tilted Diffusion Samplers",
+        "url": "https://arxiv.org/abs/2610.06834v1",
+        "publishedAt": "2026-10-05T17:58:18.000Z",
+        "summary": "Some diffusion posterior samplers construct Gaussian-tilted intermediate distributions along the reverse process. We observe that these targets can be pulled back to clean-space posteriors with weaker conditioning, with samples transported analytically to the corresponding noisy-space target through a Gaussian bridge. For the sequential Monte Carlo (SMC) sampler MCGDiff, the effective observation variance of this pulled-back problem is up to twice the diffusion-noise variance. We exploit this structure to initialize MCGDiff directly at an intermediate time: an approximate solver samples the softened clean-space posterior, the Gaussian bridge maps these samples to the tilted target, and only the remaining SMC suffix is run. This trades asymptotic consistency for finite-particle performance. With moment-matching posterior sampling (MMPS) as the solver, the hybrid improves sliced Wasserstein distance by roughly $2\\times$ at matched particle count on a structured Gaussian-mixture inverse problem, and by more than an order of magnitude when the posterior-relevant mode is rare under the prior. A prior-initialization control, which retains the bridge but drops the clean-space conditioning, shows that on MCGDiff's standard Gaussian-mixture benchmark most of the improvement is insensitive to the conditioning. Conditioning the initialization gives a further consistent gain on the structured problem, and becomes decisive on a rare-mode problem, where resampling cannot repopulate a mode absent from the initial population.",
+        "authors": [
+          "Gregory D. Bellchambers"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Towards Looped Models Done Right, Part II: Rethinking at Fixed Points",
+        "url": "https://arxiv.org/abs/2610.06833v1",
+        "publishedAt": "2026-10-05T17:58:15.000Z",
+        "summary": "Every recurrence of a looped language model adds cost in training, decoding, prefill, and reinforcement learning (RL). The closer recurrent states get to fixed points, the less the path to them matters. This enables truncated backpropagation in training; terminal key-value (KV) sharing for decoding with almost no loss in accuracy; a distilled student that prefills up to 1.79x faster; and RL updates that compute gradients from saved rollout states, 2x faster than backpropagating through the replayed trajectory. We therefore improve the two components of training that shape these fixed points: the depth prior and input injection. Fixed-depth training breaks KV sharing, and Huginn's broad depth prior supports sharing but dilutes supervision at the target depth more than sharing requires; we learn the prior from prediction feedback, with an entropy term that keeps it broad. Existing injection schemes let the state's component along the input amplify or cancel the injection; we remove this component with orthogonal injection. From 100M to 1.6B parameters, the learned prior and orthogonal injection lower perplexity at every scale relative to Huginn's prior and existing injection schemes, respectively. At 1.6B, the learned prior with a 3x smaller KV cache matches the downstream average of fixed-depth training with the full cache.",
+        "authors": [
+          "Benhao Huang",
+          "Chufan Shi",
+          "Junlin Chen",
+          "Shicheng Wen",
+          "Zhengzhong Liu",
+          "Eric Xing",
+          "Xuezhe Ma"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 21
+      },
+      {
+        "title": "UniSlider: Perceptually Uniform Sliders for Continuous Image Editing",
+        "url": "https://arxiv.org/abs/2610.06831v1",
+        "publishedAt": "2026-10-05T17:58:11.000Z",
+        "summary": "Sliders provide an intuitive interface for continuous image editing. In current generative approaches, however, the slider is simply a rescaling of the method's strength parameter, such as an adapter coefficient, a prompt weight, or an interpolation factor. This strength relates poorly to perceptual change. The image can partially revert as the slider moves, long stretches of the range produce no visible difference, and short intervals transform the image abruptly. Remapping the strength could fix this uneven pace, but only if the trajectory is monotone, which current methods do not enforce. We therefore distinguish the slider from the strength, and require perceptual distance from the input to grow linearly with the slider value. We introduce UniSlider, a lightweight LoRA trained on a few-step editing backbone so that its strength approximates this ideal slider. Few-step sampling lets us impose this objective in pixel space without intermediate ground truth, and the backbone's output is preserved at full strength. However, a low-rank adapter cannot make the strength fully uniform. Our slider is thus an inference-time remapping of the strength, obtained by adaptive sampling. Since training optmizes to make the trajectory monotone, this remapping closes the remaining gap without extra training or parameters. On a new benchmark of 300 continuous edits evaluating uniformity, monotonicity, edit fidelity, and identity preservation, UniSlider outperforms all prior methods and is preferred in a user study.",
+        "authors": [
+          "David Serrano-Lozano",
+          "Duygu Ceylan",
+          "Yannick Hold-Geoffroy",
+          "Iliyan Georgiev",
+          "Javier Vazquez-Corral",
+          "Anna Frühstück"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents",
+        "url": "https://arxiv.org/abs/2610.06830v1",
+        "publishedAt": "2026-10-05T17:58:06.000Z",
+        "summary": "Memory has become integral to the LLM agent ecosystem, supporting information retention and reuse across interactions. However, most existing agent memory systems construct memory in a query-agnostic manner, which can incur unnecessary preprocessing cost and discard details that later prove essential. Recent studies have begun shifting memory processing toward runtime adaptation, but typically specialize in particular operations or fixed processing schemes, leaving flexible control over performance, cost, and latency largely underexplored. To address this challenge, we present \\textbf{MemPilot}, a flexible framework that orchestrates on-demand memory curation under different performance--cost--latency preferences. Specifically, we optimize a multi-step LLM policy via reinforcement learning to iteratively choose between retrieving from query-agnostic memory and delegating query-specific curation of raw multimodal history to heterogeneous LLMs and VLMs. The policy jointly controls evidence amount, curation instructions, model selection, and visual access, enabling fine-grained allocation of runtime computation. To optimize this policy under competing objectives, we adapt objective-wise advantage decoupling by separately estimating each objective's advantage before aggregation. Moreover, we introduce prefix-based marginal utility estimation for fine-grained credit assignment across multi-step rollouts. Experiments on five multimodal agent-memory benchmarks demonstrate favorable performance--cost--latency trade-offs across optimization preferences, with preference sweeps yielding broader frontiers than existing trade-off-aware baselines.",
+        "authors": [
+          "Haozhen Zhang",
+          "Haodong Yue",
+          "Quanyu Long",
+          "Jianzhu Bao",
+          "Qingyuan Liu",
+          "Tao Feng",
+          "Bohan Liu",
+          "Weida Liang",
+          "Wenya Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "CLIFT: Conformal Self-Verification for Web Agent Training and Test-Time Scaling",
+        "url": "https://arxiv.org/abs/2610.06829v1",
+        "publishedAt": "2026-10-05T17:57:51.000Z",
+        "summary": "Open-source web agents are now strong enough to execute realistic browser tasks, but training them with reinforcement learning still depends on weak supervision: binary task success is too sparse for credit assignment, while frontier-language-model judges are too expensive to call at every step and cannot be assumed available at deployment. We introduce CLIFT, a training and test-time scaling method built around conformal self-verification. During training, the agent answers natural-language verification questions about its own rollouts; a Compositional Conformal Certifier keeps only question signals whose URL-conditional evidence agrees with a training-time judge, assigns signed trust weights through polarity-aware lift, and blends the resulting verifier score into per-step rewards in a way that never subtracts from the judge baseline. At test time, the same certified bank is frozen and reused as structured evidence for Conformal Trajectory Selection (CTS): the agent samples a greedy rollout and one or more diverse retries, the self-verifier summarises each URL trace, and a conservative majority-vote rule chooses whether to swap away from the current incumbent without calling any external judge. This single mechanism supports three settings. On WebArena Infinity, CLIFT achieves state-of-the-art performance among open-source web agents. On VisualWebArena, a bank trained with the open model transfers to GPT-5.5 at test time and reaches state-of-the-art performance under the canonical harness. On Online Mind2Web, without training an agent on the benchmark, translating the certified question bank improves a live-web agent in zero-shot evaluation. Together these results position conformal self-verification as a way to turn costly judge feedback into a reusable training signal and a judge-free test-time scaling signal.",
+        "authors": [
+          "Yifan Zhang",
+          "Yutong Dai",
+          "Viraj Prabhu",
+          "Zhiyuan Hu",
+          "Ran Xu",
+          "Zeyuan Chen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "PlotGround: Grounding Plot Digitization in Real Scientific Figures and Their Source Data",
+        "url": "https://arxiv.org/abs/2610.06825v1",
+        "publishedAt": "2026-10-05T17:57:19.000Z",
+        "summary": "Scientific figures often encode quantitative results that are not readily available in machine-readable form, making accurate plot digitization important for verifying and reusing published findings. Yet it remains unclear how accurately current models recover plotted values from real scientific figures, as existing benchmarks rely largely on synthetic charts or cover only a limited range of chart types. We introduce PlotGround, an automated pipeline for building plot digitization benchmarks from real scientific figures and their author-released source data. PlotGround maps figures to source tables, identifies reconstructable panels, and generates quantitative questions with source-grounded reference values. We use PlotGround to construct PlotGround-1k, a human-verified benchmark of 1,119 questions from 1,066 bioRxiv preprints. Across sixteen multimodal models, the best reaches 87.5% accuracy at a $\\pm 5\\%$ relative-error tolerance. Tightening the tolerance to $\\pm 2\\%$ lowers every model's accuracy by 11-24 percentage points, revealing a gap between approximate visual reading and precise quantitative recovery. PlotGround's paired figure-source structure lets us compare how accurately the same values are recovered from figures and from source tables. Providing source tables instead of figures raises a coding agent's accuracy from 90.0% to 97.4% while cutting cost by 72%.",
+        "authors": [
+          "Yaohui Zhang",
+          "Binxu Li",
+          "Haoyi Duan",
+          "Jiacheng Miao",
+          "Yixin Wang",
+          "Xinran Du",
+          "Chenyue Li",
+          "Shilong Liu",
+          "Kevin Wu",
+          "James Zou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "TasteVal: Measuring the Experimental Research Taste of AI Systems Against Human Experts",
+        "url": "https://arxiv.org/abs/2610.06824v1",
+        "publishedAt": "2026-10-05T17:57:15.000Z",
+        "summary": "We introduce TasteVal, a benchmark to evaluate the experimental research taste of frontier models. We define research taste as the ability to pick interesting problems to solve, design experiments, and interpret experimental results. TasteVal measures the experimental component of research taste; given a fixed research problem, we measure how well a model iteratively designs experiments and draws conclusions from their outcomes. We operationalize experimental research taste as compute efficiency; a Researcher who reaches the same score as an expert human using half the serial experimental compute has twice the experimental taste. Experimental taste thus acts as a multiplier on experimental compute, making it a key input to forecasts of AI progress. TasteVal consists of 8 novel, challenging, open-ended tasks representative of frontier AI R&D. To isolate taste from coding ability, the model under evaluation acts as a Researcher that iteratively designs experiments while a fixed Coder agent implements them and reports their results. The Researcher executes until either the 40 H100 hour or 120 wall-clock hour budgets are exhausted. We recruit 24 human experts, at least 2 per task, and take the best expert attempt per task as the expert baseline. We evaluate 20 models released between 2023 and 2026. The best-performing model, Opus 5.5, exceeds our expert baseline, with a compute multiplier of 2.3x (95% CI 1.15-4.37), at roughly 1/30 of our baseliners' average per-run cost. On TasteVal, the compute multiplier of frontier models has doubled approximately every 3.0 months since December 2025 (95% CI 1.7-5.0), up from every 14 months between 2023 and December 2025. Measured by final normalized performance, frontier models show no trend break, doubling every 14.6 months. To keep TasteVal uncontaminated, we do not release the tasks.",
+        "authors": [
+          "Oliver Jaffe",
+          "Dane Sherburn"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      }
+    ],
     "news": [
+      {
+        "title": "MIT announces the MIT for America initiative, to strengthen STEM education across the country",
+        "url": "https://news.mit.edu/2026/mit-america-initiative-strengthens-stem-education-across-country-1006",
+        "publishedAt": "2026-10-06T15:00:00.000Z",
+        "summary": "MIT is launching a new strategic initiative today: MIT for America, which seeks to strengthen STEM education nationally, at many levels of learning.&nbsp; Addressing a critical national need, the initiative ranges across STEM fields and will engage students from kindergarten through community college, preparing them to live and work in a world increasingly shaped by science and technology. MIT for America’s programs will develop new opportunities for student achievement in mathematics, hands-on design and fabrication, and constructive engagement with artificial intelligence.&nbsp; President Sally Kornbluth made the announcement today in a letter to the Institute community. “A natural extension of the Institute’s long record of national service, MIT for America is grounded in our deep belief in potential over pedigree, of the transformative power of learning by doing and in the open sharing of knowledge,”&nbsp;Kornbluth wrote. The initiative represents an Institute-wide effort to address the national challenge of improving STEM education and helping it adapt to shifting societal needs. MIT for America will leverage the Institute’s longstanding strengths to develop new programs and expand existing projects, while amplifying MIT’s impact on national education. MIT for America’s faculty leaders emphasize that the initiative will support programs that can be scaled up and that provide direct, face-to-face guidance for learners and educators.&nbsp; “The goal is to provide programs that are both scalable and high-touch, and make an impact across the country,” says Professor Eric Klopfer, a faculty co-director of MIT for America and director of the Scheller Teacher Education Program and the Education Arcade at MIT. “All our programs take advantage of things we are well-positioned to do at MIT, and can be distributed around the country. That’s our guiding light.”&nbsp; Cynthia Breazeal, faculty co-director of MIT for America, professor of media arts and sciences, and the Benesse Professor of Research in Education, says the initiative “is&nbsp;about bringing high-quality access to STEM and AI education, from kindergarten to community college, across the United States. We live in an innovation-driven world, and it’s important to have an education that gives you access to it, whether that’s so you can be a fully engaged citizen or have the opportunity for economic mobility.” Breazeal adds: “Talent is everywhere. We think opportunity should be, too.”&nbsp; The initiative is addressing large-scale needs in STEM education. Only 29 percent of U.S. students in grades 9-12 build circuits, and only 6 percent of students enroll in computer science classes, even though about 60 percent of high schools offer such courses. MIT for America intends to substantially help communities across the country build the bandwidth needed to further develop STEM knowledge and workplace skills.&nbsp; “This effort is about really rolling up sleeves and getting out there and engaging communities, and helping to build capacity across the United States,” Breazeal adds. MIT for America features programs addressing three high-priority areas: Mathematical thinking and problem solving: Work here builds on an existing program, the MIT for America Calculus Project,&nbsp; launched a year ago , in which MIT students and alumni volunteer to help provide calculus tutoring to students in school districts across the country.&nbsp; Living, learning, and working with AI: This area addresses multiple issues revolving around AI, including teacher education that helps instructors integrate AI into classroom learning in productive ways, and programs that enhance AI skills and STEM education in technical-vocational schools and community colleges. The&nbsp; MIT RAISE program &nbsp;(Responsible AI for Social Empowerment and Education)&nbsp;is a leader in this domain.&nbsp; Designing, making, and innovating: MIT for America plans to build out programs that encourage hands-on learning, design work, use of&nbsp; fab labs and makerspaces, and experiential learning, sometimes deploying tools such as national design challenges.&nbsp; “Across the U.S., we want to unlock opportunities and experiences where students are,” says Claudia Urrea, head of MIT for America and head of the MIT pK-12 Initiative. “We want to find people who have not had the opportunity to discover their talent.” In the first case, the MIT for America Calculus Project provides a ready model of outreach with growth potential. About half of U.S. school districts offer calculus, but many of those districts may be under-resourced. The MIT for America Calculus Project has been growing in partnership with an increasing number of school districts, while MIT undergraduates and alumni have enjoyed participating in the program.&nbsp;&nbsp; “People have been really excited about the&nbsp;MIT for America Calculus Project, seeing both the impact that it has, and its model, which I think has resonated,” Klopfer says. “That’s really representative of what other programs could look like.” In the second topic area, MIT for America can leverage burgeoning efforts such as&nbsp;MIT RAISE. The program helps educate teachers and engage students about implementing AI in ways that can complement the developing skills of students, enabling them to use AI in productive ways. “RAISE is about providing materials and training for teachers that helps them have conversations and productive activities around AI,” Klopfer says. “It’s about understanding how AI works and discussing what the values are in your school. It has to be active, involving the students. If you try to force things, about AI one way or the other, that will fail.” In an outgrowth of RAISE, MIT also launched a related program , Pathways for AI Training and Hiring (PATH), on Oct. 1. Starting with a partnership with Georgia State University, PATH aims to bring AI training to two-year and four-year colleges, to help students gain AI skills useful for workplaces.&nbsp; “RAISE has had a lot of success with scaling already,” Breazeal says, noting that about 1 million students were involved with RAISE’s Day of AI event earlier this year. “At MIT, we want to empower youth voices to shape the future. It’s an excellent example of our ability to do that.” And in the third topic area, MIT for America can help produce substantial growth in programs aimed at hands-on learning. That may include more projects such as MIT’s Regenerative Futures Challenge, a global program stemming from MIT’s&nbsp; pK-12 Initiative , which give students the opportunity to create climate and sustainability solutions. Additionally, the Fab Foundation, which grew out of MIT’s Center for Bits and Atoms Fab Lab program, offers tools and curriculum to learners at 300 fab labs across the U.S. “It’s about coming together in places where there are people who can work together, mentor each other, and learn by example,” Klopfer says. “That’s the kind of thing we want to be creating at scale. We want to build on that.” All told, MIT for America represents a vigorous all-campus effort to enhance education through sustained outreach and knowledge-sharing. At MIT, partners in creating the initiative include&nbsp;the MIT Media Lab; MIT RAISE; the MIT pK-12 Initiative; the Office of the Vice President for Resource Development; and the Office of Innovation and Strategy. The leaders of MIT for America presented an overview of the program in September at MIT’s Alumni Leadership Conference, and they say alumni activity around the new initiative will be another key to its success.&nbsp; “We really appreciate the support and engagement of our alumni,” Breazeal says. “We know they care about K-12 education and access to community colleges.” More broadly, she adds, “We do think this message will resonate with people all across the country.” “I look forward to watching these programs flourish, evolve, and grow,” Kornbluth wrote to the community.&nbsp;",
+        "authors": [
+          "Peter Dizikes | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 0
+      },
+      {
+        "title": "Mistral’s new 1T model aims to leapfrog closed and open rivals",
+        "url": "https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/",
+        "publishedAt": "2026-10-06T14:33:16.000Z",
+        "summary": "French AI lab Mistral AI has released Mistral Large 4, a new large multimodal model aiming to leapfrog both American and Chinese rivals.",
+        "authors": [
+          "Anna Heim"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 1
+      },
+      {
+        "title": "Pinterest&#8217;s AI now turns beauty Pins into action plans",
+        "url": "https://techcrunch.com/2026/10/06/pinterests-ai-now-turns-beauty-pins-into-action-plans/",
+        "publishedAt": "2026-10-06T14:00:49.000Z",
+        "summary": "Pinterest’s new AI-powered Beauty Guides translate hair and nail Pins into salon terminology, with estimated costs, appointment times, and maintenance needs.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "Get all your questions answered at TechCrunch Disrupt 2026: The full breakout session agenda revealed",
+        "url": "https://techcrunch.com/2026/10/06/get-all-your-questions-answered-at-techcrunch-disrupt-2026-the-full-breakout-session-agenda-revealed/",
+        "publishedAt": "2026-10-06T14:00:00.000Z",
+        "summary": "Get all of your scaling and tech questions answered at TechCrunch Disrupt 2026. Here's the full breakout session agenda, happening October 13-15 in San Francisco. Register now to join and save up to $100, and get a second pass at 50% off.",
+        "authors": [
+          "TechCrunch Events"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
       {
         "title": "OpenAI will start watermarking ChatGPT&#8217;s text in the EU",
         "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
@@ -101,7 +375,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 11
+        "ageHours": 18
       },
       {
         "title": "Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost",
@@ -115,7 +389,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 12
+        "ageHours": 20
       },
       {
         "title": "Instinct brings its AI agent to group chats, even for friends without an account",
@@ -129,7 +403,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 13
+        "ageHours": 20
       },
       {
         "title": "TikTok rolls out an AI shopping assistant and one-click checkout",
@@ -143,7 +417,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 13
+        "ageHours": 21
       },
       {
         "title": "Hot Girl Hotline is like &#8216;Dear Abby&#8217; for the AI era",
@@ -157,7 +431,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 14
+        "ageHours": 22
       },
       {
         "title": "HackerRank&#8217;s AI interviewer offers a glimpse into what job interviews could become",
@@ -171,7 +445,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 15
+        "ageHours": 22
       },
       {
         "title": "OpenAI launches visual ads that appear alongside image generation results",
@@ -185,7 +459,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 16
+        "ageHours": 24
       },
       {
         "title": "Open or closed AI? How founders are choosing what to build on at TechCrunch Disrupt 2026",
@@ -199,76 +473,22 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 17
-      },
-      {
-        "title": "Our approach to EU text provenance rules",
-        "url": "https://openai.com/index/eu-text-provenance",
-        "publishedAt": "2026-10-05T15:00:00.000Z",
-        "summary": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "General",
-        "ageHours": 17
-      },
-      {
-        "title": "Researchers are tracking a Chinese AI &#8216;agent fleet&#8217;",
-        "url": "https://techcrunch.com/2026/10/05/researchers-are-tracking-a-chinese-ai-agent-fleet/",
-        "publishedAt": "2026-10-05T14:35:09.000Z",
-        "summary": "Independent researchers discovered an agent swarm that seems to be running on Tencent's infrastructure and targeting Alibaba's map service, Amap.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 17
-      },
-      {
-        "title": "Meet the Startup Battlefield 200 judges who’ll decide the winner at TechCrunch Disrupt 2026",
-        "url": "https://techcrunch.com/2026/10/05/meet-the-startup-battlefield-200-judges-wholl-decide-the-winner-at-techcrunch-disrupt-2026/",
-        "publishedAt": "2026-10-05T14:30:00.000Z",
-        "summary": "Meet the final five Startup Battlefield judges who'll decide who wins the pitch competition at TechCrunch Disrupt 2026. Get your pass now to save up to $100, and get a second at 50% off.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 17
-      },
-      {
-        "title": "The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026",
-        "url": "https://techcrunch.com/2026/10/05/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026/",
-        "publishedAt": "2026-10-05T14:00:00.000Z",
-        "summary": "The full TechCrunch Disrupt Stage lineup revealed, featuring Max Hodak, Mark Wahlberg, Benchmark partners, and more. Register now to save up to $100 on your pass and get a second at 50% off.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 18
+        "ageHours": 24
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
-    "last24h": 12,
+    "totalItems": 24,
+    "last24h": 23,
     "topCategories": [
       {
         "name": "Research",
-        "count": 4
+        "count": 14
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 5
       },
       {
         "name": "General",
