@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T00:45:59.405Z",
+  "generatedAt": "2026-10-06T07:30:28.271Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,8 +26,12 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 12,
-      "errors": []
+      "itemCount": 0,
+      "errors": [
+        "research:arXiv cs.AI -> HTTP 429",
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -83,249 +87,7 @@
     }
   ],
   "sections": {
-    "research": [
-      {
-        "title": "Less Decoder is More Encoder: Geometric Representation Learning from Novel View Synthesis",
-        "url": "https://arxiv.org/abs/2610.03717v1",
-        "publishedAt": "2026-10-02T17:59:14.000Z",
-        "summary": "This paper examines the role of Novel View Synthesis (NVS) in geometric representation learning. In principle, NVS should reason about 3D scene structure, thereby enabling transferable multi-view geometric representations. Yet, existing encoder-based NVS methods yield poor representations. This is not because of a lack of supervisory signal, but rather due to inconspicuous architectural choices: \\textit{spatially expressive decoders} that dilute representational capabilities of the scene encoder, and \\textit{low-level pixel-space targets} that hinder feature learning. We present SNAP, a self-supervised encoder-decoder transformer that addresses both through a pose-conditioned local decoder and a latent-space reconstruction objective. SNAP is task agnostic, and we show that it is competitive with special-purpose geometry-supervised methods. SNAP also performs competitively against self-supervised representations across five tasks: visual localization, pose estimation, point correspondence, depth estimation, and robot manipulation. Remarkably, SNAP's patch features exhibit emergent viewpoint invariance that approaches heavily supervised models despite lower compute and data budgets. Under camera shifts where standard 2D representations collapse, SNAP degrades more gracefully, revealing that restricting decoder expressivity actively prevents the suppression of transferable geometric structure. https://snap-nvs.github.io",
-        "authors": [
-          "Keerthi Kaashyap",
-          "Dennis Anthony",
-          "Akshay Krishnan",
-          "Nhi Ngoc Nguyen",
-          "Jeremy Collins",
-          "James Hays",
-          "Shreyas Kousik",
-          "Animesh Garg"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "4DCodeBench: Benchmarking Agents on Inverse Graphics of Dynamic Scenes",
-        "url": "https://arxiv.org/abs/2610.03715v1",
-        "publishedAt": "2026-10-02T17:58:49.000Z",
-        "summary": "We introduce 4DCodeBench, a benchmark for 4D inverse graphics through code generation, in which agents reconstruct dynamic scenes from video as executable graphics programs. To accomplish this, agents must translate visual observations into compact representations of scene structure and dynamics, by implementing abstractions such as physical simulations to reproduce complex behavior. To evaluate this capability, we curate a set of real-world videos and construct synthetic scenes spanning diverse physical phenomena, including deformation, fluid flow, and fracture. We perform extensive benchmarking of frontier models, finding that strong static reconstruction capabilities do not yet translate into reliable reconstruction of complex dynamics. 4DCodeBench provides a testbed for tracking progress toward agents that can interpret the dynamics of the world through code. Our benchmark is available at https://github.com/4DCodeBench/4DCodeBench",
-        "authors": [
-          "Ruihong Shen",
-          "Žiga Kovačič",
-          "Peter Kulits",
-          "Xingrui Wang",
-          "Zizhang Li",
-          "Joshua B. Tenenbaum",
-          "Alan Yuille",
-          "Jieneng Chen",
-          "Jiajun Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "What Should World Models Forget? Stratified Retention for Continual Adaptation",
-        "url": "https://arxiv.org/abs/2610.03713v1",
-        "publishedAt": "2026-10-02T17:58:14.000Z",
-        "summary": "Continual learning treats degradation on previously seen data as evidence of failure, a convention inherited from settings with a stationary prediction target, where a correct label remains correct indefinitely. World models do not satisfy this condition. Their prediction target is the environment, which changes, so knowledge that was accurate when acquired may later become false, and discarding it is required behavior rather than a defect. Non-stationary ground truth is well studied in the concept drift literature and in the temporal factuality of language models, but has not been formulated for world models, which are distinctive in that they also encode knowledge that must never be revised. We argue that continual world models require retention stratified by invariance timescale, separating invariants such as physics and object permanence, which must never be revised, from instance-level facts that should be revised as soon as the environment changes. Standard forgetting metrics cannot distinguish a world model that has correctly revised outdated knowledge from one that has suffered catastrophic forgetting, and consequently rank a frozen model highest, while existing physical-reasoning benchmarks evaluate only frozen checkpoints. We propose differential retention, which reports invariant regression testing across the adaptation stream jointly with revision latency, without aggregation.",
-        "authors": [
-          "Nishit Anand",
-          "Ramani Duraiswami",
-          "Dinesh Manocha"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "RNADyn: A Benchmark for Generating and Understanding RNA Dynamics",
-        "url": "https://arxiv.org/abs/2610.03712v1",
-        "publishedAt": "2026-10-02T17:58:08.000Z",
-        "summary": "Ribonucleic acid (RNA) functions through conformational changes that are not fully captured by static structures. However, large-scale standardized RNA dynamics data remain limited, and existing approaches typically treat trajectory generation and dynamics understanding as separate objectives. Here, we introduce RNADynBench, a standardized RNA molecular dynamics (MD) benchmark with 2585 quality-controlled 100-ns all-atom trajectories and leakage-controlled splits. Building on RNADynBench, we develop RNADynNet, a unified model for RNA dynamics learning that uses a shared backbone for both trajectory generation and dynamics fingerprint extraction from a single conformer. It combines coordinate denoising, single-frame-to-trajectory alignment, and physical grounding to connect all-atom trajectory generation with dynamics representation learning. Physical grounding improves both generated dynamics and the physical information recoverable from these fingerprints. Across both test sets, including the high-flexibility challenge set, the generated trajectories achieve RMSF correlations of 0.875 and 0.766, while single-conformer predictions show comparable agreement with MD-derived dynamics. RNADynBench and RNADynNet together establish a benchmark and unified modeling framework for generating and understanding RNA dynamics.",
-        "authors": [
-          "Yiming Huang",
-          "Lennart Bastian",
-          "Hanqun Cao",
-          "Luis Vollmers",
-          "Tolga Birdal"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "EyeRobot 2.0: Active Gaze for Precise Manipulation without Wrist Cameras",
-        "url": "https://arxiv.org/abs/2610.03710v1",
-        "publishedAt": "2026-10-02T17:57:51.000Z",
-        "summary": "Inspired by human vision, we introduce a framework using active gaze to enable fine-grained bimanual manipulation with only a single stereo camera. EyeRobot 2.0 physically attends to a 3D fixation point in the scene by swiveling two eye viewpoints to center their gaze on it. The resulting images are processed foveally by allocating more visual tokens to the image centers, focusing computation on task-relevant features. Such Active Visual Fixation (AVF) requires carefully coordinated gaze during task execution, which we accomplish hierarchically by first training a low-level gaze servoing policy conditioned on a goal object, then training a target selector which emits fixation goals based on task progress. Both modules are trained with RL on real-world data: the first is trained with a dense geometric reward and the second co-trains with the BC gripper policy which allows it to discover fixation sequences that can resemble a human's fixation sequence while performing the task. EyeRobot 2.0 further takes advantage of fixation by canonicalizing gripper information into a fixation-relative SE(3) frame, which compacts the size of the action distribution to learn. We collect teleoperation data for 7 real-world and 6 simulated tasks, and conduct over 1000 physical and 1800 simulated robot trials comparing EyeRobot 2.0 against passive stereo and ego + wrist camera policies trained on the same data. Removing wrist cameras is costly for standard policies: with only passive stereo, real-world success drops from 52% to 27%. EyeRobot 2.0 closes this gap with only stereo, outperforming passive stereo by 40% in real and 20% in sim. It matches ego + wrist policies when their wrist views are clear (69% vs. 64%), and more than doubles their success when grasped objects occlude the wrist cameras (48% vs. 22%)",
-        "authors": [
-          "Kush Hari",
-          "Justin Kerr",
-          "Nidhya Shivakumar",
-          "Samarth Mahapatra",
-          "Carmelo Sferrazza",
-          "Jiahui Lei",
-          "Jitendra Malik",
-          "C. Karen Liu",
-          "Ken Goldberg",
-          "Angjoo Kanazawa"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
-      },
-      {
-        "title": "From Mixing to Tearing: Graph Decomposition in Decentralized Optimization via Message Passing",
-        "url": "https://arxiv.org/abs/2610.03709v1",
-        "publishedAt": "2026-10-02T17:57:50.000Z",
-        "summary": "We study the minimization of sums of smooth strongly convex functions over undirected graphs, with each function held by one agent and communication restricted to neighbors in the graph. Existing decentralized methods, whether based on gossip or on routing over spanning trees, typically\n  use the network to mix or aggregate information to enable\n  {\\it prescribed} local optimization\n  updates. What this communication-centered viewpoint lacks is a general\n  framework that uses graph structure to {\\it jointly} design the\n  optimization subproblems and the cooperative computation and communication through which agents solve them\n  cooperatively.\n  We develop such a framework from first principles,\n  jointly designing the linear representation of agreement constraints, the blocks of\n  the resulting dual variables (jointly optimized), and connected cluster of agents that\n  cooperatively solve each block subproblem over the assigned subgraph. GATE (Graph-Tearing message passing) is a first instance of this framework: one variable per edge and tree blocks. At each iteration, agents update their assigned edge variables by\n  minimizing the sum of the two endpoint cost-to-go messages and\n  relaxing the result. The messages are updated through local minimizations following the tree recursion. To reduce per-iteration computational and communication costs, we develop GATE-S, a surrogate variant using tractable local models and lightweight message parametrizations. We establish linear convergence with a rate explicit in the interplay among function regularity, network topology, and the chosen partition, revealing the effects of graph decomposition. Numerical experiments are conducted to validate the theoretical results and evaluate the efficiency of our algorithms.",
-        "authors": [
-          "Kuangyu Ding",
-          "Gesualdo Scutari"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "LESSER: Post-Training Data Selection with Output-Layer Gradients",
-        "url": "https://arxiv.org/abs/2610.03702v1",
-        "publishedAt": "2026-10-02T17:55:42.000Z",
-        "summary": "The choice of post-training data for large language models substantially affects downstream performance. Gradient-based data selection is a popular approach that ranks training data by how well their gradients align with those of a small validation set. However, ranking with full-parameter gradients requires an expensive backward pass on every sample, making computation intractable for large candidate pools. This raises a natural question: can we approximate full-gradient features at a fraction of the cost? Conveniently, we find that output-layer gradients suffice for effective data selection, yet require only the cheaper forward pass. We implement this as LESSER, a drop-in wrapper for selection methods that reduces the feature-extraction FLOP cost by $9.7\\times$ for SFT and $3.0\\times$ for RL benchmarks, while tracking full-gradient performance on downstream tasks. Empirically, we find that even when output-layer and full gradients rank individual samples differently, they select batches with aligned gradients.",
-        "authors": [
-          "Lyuxin David Zhang",
-          "Eric Wong",
-          "Surbhi Goel",
-          "Anton Xue"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "Language Models that Play Chess and Explain Their Moves",
-        "url": "https://arxiv.org/abs/2610.03695v1",
-        "publishedAt": "2026-10-02T17:54:22.000Z",
-        "summary": "Modern chess engines are silent experts: they play at a superhuman level, but do not offer explanations for their play. On the other hand, language models (LMs) can generate plausible-sounding explanations, but their weak playing strength limits the utility of their explanations. We introduce Queen, a 4B-parameter chess-language model that can explain its moves and plans while playing at the level of a typical Grandmaster. Our novel framework enables domain-specific reasoning through complementary components: an encoder-decoder architecture and an iterative distillation algorithm. This architecture integrates a silent expert chess encoder with an instruction-tuned LM through cross-attention, which we train via a question-answering curriculum to extract chess concepts from the encoder's representations. Building on this domain-adapted model, we iteratively improve its explanations with a natural-language analog of the Bellman update: the model analyzes the positions after its top candidate moves and consolidates them into an explanation of the current position, which is then distilled back into the model. Over seven iterations, our model gains over 900 Elo points (1782 to 2697), substantially surpassing all frontier models on both playing strength and puzzle accuracy, despite containing three orders of magnitude fewer parameters. Furthermore, LM-based evaluations show that our explanations are fluent and approach GPT-5.6-Sol (high) in coherence. The generality of our architecture and training procedure suggests a recipe for applying language models to domains where silent expert encoders are available, like games, robotics, and computer use.",
-        "authors": [
-          "Adithya Bhaskar",
-          "Jeffrey Cheng",
-          "Danqi Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "Transcriptome-informed multi-modal AI for predicting neoadjuvant therapy response from breast cancer biopsies",
-        "url": "https://arxiv.org/abs/2610.03693v1",
-        "publishedAt": "2026-10-02T17:52:57.000Z",
-        "summary": "Scarcity of labeled data limits development of deep learning biomarkers in oncology. We develop a two-stage AI model predicting pathological complete response (pCR) to neoadjuvant therapy in breast cancer. The first stage learns the transcriptome from histopathology using 8,742 patients across 32 cancer types, corroborated by pathologist review and spatial agreement with measured expression. This simplifies the second stage to predicting pCR from inferred expression and clinical variables. Developed using 1,080 patients (five cohorts) and evaluated in 1,412 patients (nine cohorts), the model achieves a pooled AUROC of 0.79 (95% CI, 0.73-0.85), discriminating responders within molecular subtypes. It outperforms histopathological biomarkers, remaining stable across intratumoral sampling and with minimal biopsy tissue. Ablations show transcriptome-wide inference improves discrimination over clinical variables alone or one-stage pathology models, and robustness by avoiding genomic assays' gene selection constraints. These results indicate that biologically informed compression may generalize to data-sparse applications in precision oncology.",
-        "authors": [
-          "Jungkyu Park",
-          "Dhruva Biswas",
-          "Joseph Cappadona",
-          "Cerise Tang",
-          "Ken G. Zeng",
-          "Bartosz Machura",
-          "Chuwen Liu",
-          "Paolo Tarantino",
-          "Coral Omene",
-          "Francisco J. Esteva",
-          "Rohit Bhargava",
-          "Marcin Braun",
-          "Kamila Paździerz",
-          "Jakub Czerwiński",
-          "Hanna Romańska-Knight",
-          "Albert Grinshpun",
-          "Bareket Daniel",
-          "Michele Buchinger",
-          "Frederick Howard",
-          "Piotr Wysocki",
-          "Brie Chun",
-          "Freya Schnabel",
-          "Rich Caruana",
-          "Jan Witowski",
-          "Krzysztof J. Geras"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
-      },
-      {
-        "title": "Simulation-Free Learning of Population Dynamics with Wasserstein Lagrangian Residuals",
-        "url": "https://arxiv.org/abs/2610.03679v1",
-        "publishedAt": "2026-10-02T17:46:52.000Z",
-        "summary": "The dynamics of cells, organisms, and fluids are often modeled as probability distributions evolving over time. Reconstructing and extrapolating this evolution from unpaired snapshots requires assumptions about the underlying process. Wasserstein gradient flows are a common choice, but they cannot describe conservative or periodic dynamics. Lagrangian mechanics in Wasserstein space covers both, but existing methods for learning it are simulation-based: they run a numerical solver at every training step, which makes training expensive. We propose Double-Stitch, a simulation-free method that learns these mechanics by penalizing the residual of the equation of motion along a learned population path. We derive this equation from a Clebsch variational principle that does not require gradient velocities, and show that the residual vanishes exactly when the equation holds. We test Double-Stitch on synthetic, single-cell and ocean vortex datasets and find that it matches or outperforms gradient-flow methods and simulation-based WLM on most tasks, while training $4$-$14$ times faster than WLM. We provide a JAX implementation of Double-Stitch at https://github.com/BasisResearch/stitching.",
-        "authors": [
-          "Fedor Sergeev",
-          "Markus Heinonen",
-          "Daniel Waxman",
-          "Tim Cooijmans",
-          "Ricardo Baptista",
-          "Dmitry Batenkov",
-          "Eli Bingham"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "FrugalEvo: Towards Cost-Aware LLM-Guided Program Evolution",
-        "url": "https://arxiv.org/abs/2610.03675v1",
-        "publishedAt": "2026-10-02T17:44:05.000Z",
-        "summary": "LLM-guided evolutionary methods, such as AlphaEvolve, have emerged as powerful approaches for challenging computational optimization problems, such as circle packing. However, prior work typically optimizes performance gain over a fixed number of iterations. We argue that practical optimization should maximize gain per unit cost. To this end, we propose FrugalEvo, a cost-aware evolutionary framework where a stronger, higher-cost LLM explores solution strategies, and a cheaper LLM implements them and iteratively refines the resulting code. We also design a cache-efficient evolution process, where our harness and prompts maximize the sharing of prefixes across different evolution steps, to improve cache reuse. To measure solution quality throughout a fixed cost budget, we introduce Budget-Aware Area Under the Curve (BA-AUC), defined as the area under the best-so-far evaluation score curve over cumulative LLM cost, up to the budget. Across 10 mathematical and systems optimization tasks, FrugalEvo matches or surpasses state-of-the-art baselines, including OpenEvolve, ShinkaEvolve, AdaEvolve, and EvoX, in final solution quality and achieves higher BA-AUC on 9 tasks. It also achieves higher average performance than these baselines on 10 algorithmic optimization tasks from ALE-Bench-Lite. Notably, on circle packing, FrugalEvo achieves new state-of-the-art performance with GPT-5.6 Terra and Luna for only 1.68 USD and with GLM-5.3 and its Flash variant for only 0.55 USD, matching or surpassing all baselines, including multi-agent methods such as CORAL and SwarmResearch, which cost approximately 50 USD on average.",
-        "authors": [
-          "Hui Chen",
-          "Xuan Qi",
-          "James Xu Zhao",
-          "Zhaopeng Feng",
-          "Shilong Liu",
-          "Kuang Xu",
-          "Pang Wei Koh",
-          "Bryan Hooi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "Planning to Learn",
-        "url": "https://arxiv.org/abs/2610.03667v1",
-        "publishedAt": "2026-10-02T17:38:28.000Z",
-        "summary": "Policy-gradient methods are central to modern reinforcement learning, including LLM post-training. When they struggle, the usual suspects are exploration, credit assignment and action-sampling noise. Classification has none of them. A classifier is a policy whose expected reward, its \\emph{expected accuracy}, is the probability it assigns to the correct label, and because that label is known, the policy gradient is exact and smooth. Yet exact policy gradient loses to cross-entropy, even on expected accuracy. The exact gradient is myopic: it values an update only by what it buys now, but each update also sets where the next one starts, so an update's value depends on how much learning remains. Viewed this way, cross-entropy is patient accuracy, the total error an example would pay if its log-odds rose at unit speed forever, while exact policy gradient is the zero-horizon limit. Truncating this total at the learning that remains yields the horizon loss, a one-line change that moves from cross-entropy toward exact policy gradient as training runs out. In a simple allocation model, it provably escapes the trap that catches each endpoint. On MNIST and on ImageNet with ResNet-50, ResNet-101 and ViT-S/16, the horizon loss improves top-1 accuracy over cross-entropy at a flat learning rate, and the gain grows with label noise.",
-        "authors": [
-          "Ian Osband"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
-      }
-    ],
+    "research": [],
     "news": [
       {
         "title": "OpenAI will start watermarking ChatGPT&#8217;s text in the EU",
@@ -339,7 +101,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 11
       },
       {
         "title": "Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost",
@@ -353,7 +115,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 12
       },
       {
         "title": "Instinct brings its AI agent to group chats, even for friends without an account",
@@ -367,7 +129,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 13
       },
       {
         "title": "TikTok rolls out an AI shopping assistant and one-click checkout",
@@ -381,7 +143,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 13
       },
       {
         "title": "Hot Girl Hotline is like &#8216;Dear Abby&#8217; for the AI era",
@@ -395,7 +157,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 7
+        "ageHours": 14
       },
       {
         "title": "HackerRank&#8217;s AI interviewer offers a glimpse into what job interviews could become",
@@ -409,7 +171,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 8
+        "ageHours": 15
       },
       {
         "title": "OpenAI launches visual ads that appear alongside image generation results",
@@ -423,7 +185,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 10
+        "ageHours": 16
       },
       {
         "title": "Open or closed AI? How founders are choosing what to build on at TechCrunch Disrupt 2026",
@@ -437,7 +199,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 17
       },
       {
         "title": "Our approach to EU text provenance rules",
@@ -449,7 +211,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 17
       },
       {
         "title": "Researchers are tracking a Chinese AI &#8216;agent fleet&#8217;",
@@ -463,7 +225,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 10
+        "ageHours": 17
       },
       {
         "title": "Meet the Startup Battlefield 200 judges who’ll decide the winner at TechCrunch Disrupt 2026",
@@ -477,7 +239,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 17
       },
       {
         "title": "The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026",
@@ -491,22 +253,22 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 11
+        "ageHours": 18
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 24,
+    "totalItems": 12,
     "last24h": 12,
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
+        "count": 4
       },
       {
         "name": "Models",
-        "count": 6
+        "count": 3
       },
       {
         "name": "General",
