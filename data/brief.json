@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T02:00:42.856Z",
+  "generatedAt": "2026-10-13T09:20:28.360Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,9 +27,7 @@
         }
       ],
       "itemCount": 12,
-      "errors": [
-        "research:arXiv cs.LG -> HTTP 429"
-      ]
+      "errors": []
     },
     {
       "group": "news",
@@ -100,7 +98,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 80
+        "ageHours": 87
       },
       {
         "title": "Hide and Seek: HIDE Concepts to SEEK explanations for black box models",
@@ -117,7 +115,106 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 80
+        "ageHours": 87
+      },
+      {
+        "title": "Constructive Bounds for the Topological Expressivity of Neural Networks",
+        "url": "https://arxiv.org/abs/2610.13931v1",
+        "publishedAt": "2026-10-09T17:55:33.000Z",
+        "summary": "The expressivity of a neural network $Φ$ describes the class of functions that a network can express. The term topological expressivity refers to a family of measures particularly suited to understand binary classification and is often formulated in terms of the Betti numbers of a decision boundary $β(Φ^{-1}(0))$. Despite its popularity, this measure is not as useful for regression and other problems that do not involve a decision boundary. Instead, we propose to study topological expressivity in terms of the Betti numbers of the output of a neural network $β(Φ(X))$. We formally prove that a ReLU network with architecture $(d,\\sum\\limits_{k=1}^{d\n  } β_k(3k+2),\\sum\\limits_{k=1}^{d}β_k(k+1))$ can express spaces homotopy equivalent to wedge sums of spheres with arbitrary Betti numbers. This gives upper bounds for any arbitrary connected ($β_0=1$) sequence of Betti numbers, but by constructing spaces homotopy equivalent to products of $N$ spheres of dimension $d_1,...,d_N$ we achieve much better bounds $(\\sum\\limits_{n=1} d_n, 3\\sum\\limits_{n=1}\\limits^N d_n + 2N, \\sum\\limits_{n=1}\\limits^N d_n + N) $ for Betti numbers given by $\\prod_n (1+x^{d_n})$. Finally we conjecture a much stronger tight bound which gives the architectural bound $(d,d+1,d+1)$ for a space homeomorphic to the sphere.",
+        "authors": [
+          "Kosio Beshkov"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 87
+      },
+      {
+        "title": "AI Models Can Provably Hide Arbitrary Capabilities",
+        "url": "https://arxiv.org/abs/2610.13928v1",
+        "publishedAt": "2026-10-09T17:55:06.000Z",
+        "summary": "Capability evaluations aim to surface dangerous model behaviors before deployment, but their reliability depends on the assumption that hidden capabilities can be elicited. We show this assumption does not hold under adversarial conditions by constructing backdoor attacks that embed encrypted neural networks within host model weights, decrypting and executing them only upon receiving a secret trigger. Using digital lockers, these hidden circuits remain provably hard to elicit and interpret under cryptographic assumptions, even given full access to model weights, extending prior work from hiding fixed strings to arbitrary computations. We implement our proof of concept constructions in PyTorch and evaluate elicitation through fine-tuning, weight noising, gradient-based trigger search, and latent adversarial training on a small chemical reaction prediction task - a proxy for CBRN-relevant capabilities. Our results demonstrate resistance to these methods and, together with our cryptographic guarantees, reveal a limit of elicitation-based capability audits. We release our models to support the improvement of defenses.",
+        "authors": [
+          "Andis Draguns",
+          "Sumeet Ramesh Motwani",
+          "Raymond Douglas",
+          "Christian Schroeder de Witt"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 87
+      },
+      {
+        "title": "KL Before and After Mixing: A Round-Complexity Separation in Parallel Sampling",
+        "url": "https://arxiv.org/abs/2610.13924v1",
+        "publishedAt": "2026-10-09T17:54:16.000Z",
+        "summary": "A parallel sampler can choose at random which coordinates to generate together. For a target $p$ and the output law $q_U$ of a schedule $U$ drawn afresh for each output, we compare the schedule-averaged divergence $\\mathbb{E}_U D_{\\mathrm{KL}}(p\\|q_U)$ with the output-law divergence $D_{\\mathrm{KL}}(p\\|\\mathbb{E}_U q_U)$, in nats. Rounds commit independent draws from exact conditional marginals frozen at the round's start, each output's schedule is drawn before sampling from a finite mixture of schedules, and every scheduled round is charged. For the uniform distribution on binary strings of even length $n$ with $n/2$ ones, the least expected number of rounds at a fixed tolerance $\\varepsilon>0$ is $Θ_\\varepsilon((\\log n)^2)$ under the first criterion but $(e^{-\\varepsilon}+o(1))\\log_2\\ln n$ under the second, and the double-logarithmic order is attainable with the same round count on every run. For this target, a count-state recursion gives the exact least output divergence at every round cap over all causal randomized policies. The separation extends to weighted fixed-count targets with bounded weight ratios and quota fractions bounded away from zero and one, without permutation symmetry, and to the full-support Beta$(1,1)$--Bernoulli target, where the sharp expected cost under the output-law criterion is $(e^{-\\varepsilon}/2+o(1))\\log_2\\log_2n$, attained with rare $n$-round runs. Prior work implies the order of the schedule-averaged cost on the balanced target and its $O_\\varepsilon((\\log n)^2)$ upper bounds on both extensions.",
+        "authors": [
+          "Tianyi Wu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Policy",
+        "ageHours": 87
+      },
+      {
+        "title": "Goal-Oriented Bundle Management and Flow Control for Deep-Space Communications via Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2610.13923v1",
+        "publishedAt": "2026-10-09T17:53:46.000Z",
+        "summary": "Deep-space communications operate under intermittent connectivity, long propagation delays, and relay storage constraints. In such networks, the Bundle Protocol enables store-carry-forward communication, requiring relay nodes to manage limited storage and scarce contact opportunities. Relay-side scheduling and dropping decisions are inherently goal-oriented: transmission resources should be allocated to bundles most valuable to downstream mission objectives. Conventional schedulers, such as FIFO, do not explicitly optimize task utility and may provide unfair service across heterogeneous planetary sources. This paper presents a closed-loop modeling and learning framework for relay-side bundle and flow management in a contact-driven deep-space network, where lunar and Martian updates are forwarded through a shared-buffer relay to Earth. We quantify destination-side information freshness using excess age $Δ_i^e(t)=[Δ_i(t)-d_i(t)]^+$, where $Δ_i(t)$ denotes the Age of Information of source $i$ and $d_i(t)$ is a source-dependent delay baseline. Based on this metric, we define a goal-oriented loss that supports source-dependent nonlinear penalties, allowing prioritization according to mission relevance. We formulate relay control as a constrained semi-Markov decision process (CSMDP) and solve it using masked Lagrangian Proximal Policy Optimization (PPO). Feasibility-aware action masking restricts transmissions to bundles that can complete within the remaining contact window. DTNSim simulations indicate improved age-based utility and inter-flow fairness compared with baseline schedulers. The proposed framework jointly optimizes relay-side bundle scheduling, dropping, and flow control under contact-driven dynamics with explicit fairness considerations across heterogeneous sources.",
+        "authors": [
+          "Sajjad Baghaeea",
+          "Aimin Lib",
+          "Shanmugarajan Balasubramanian",
+          "Elif Uysal"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 87
+      },
+      {
+        "title": "DyssomniaNN: Multi-Scale Spiking Neural Modeling of Human Sleep Disorders and Perceived Restedness",
+        "url": "https://arxiv.org/abs/2610.13918v1",
+        "publishedAt": "2026-10-09T17:52:23.000Z",
+        "summary": "Clinical sleep medicine repeatedly documents profound divergences between objective sleep duration and subjective daytime impairment, notably exemplified by sleep state misperception in paradoxical insomnia and boundary instability in narcolepsy type 1. Here, we present DyssomniaNN: a multi-scale biophysical computational framework coupling Borbély's two-process regulation of sleep homeostasis and circadian drive with Saper's hypothalamic reciprocal flip-flop circuit and a recurrent corticothalamic leaky integrate-and-fire spiking neural network. We formalize five clinical cohorts across an identical 72-hour photoperiod: healthy control, circadian rhythm sleep-wake disorder (delayed-phase), chronic insomnia, paradoxical insomnia, and narcolepsy type 1. The synthetic local field potential converges closely with empirical human electroencephalography spectra from the PhysioNet Sleep-EDF database across all canonical frequency bands (spectral mean absolute error of 0.33--0.35). Furthermore, we introduce the Well-Rested Index to quantify restorative efficacy. Simulations reveal that sleep duration fails to predict restorative recovery: paradoxical insomnia achieves normal total sleep time (21.15 h) yet yields low restoration (37.6%) from unsuppressed cortical beta-band intrusion, whereas hypocretin deficiency in narcolepsy produces severe nocturnal fragmentation (781 min of wake after sleep onset) and 35 sleep-onset rapid eye movement periods. DyssomniaNN provides an in silico platform for mechanistic sleep research and virtual neuropharmacology.",
+        "authors": [
+          "Daniel Szelogowski"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 87
+      },
+      {
+        "title": "Designing Protein Structures from Natural Language",
+        "url": "https://arxiv.org/abs/2610.13917v1",
+        "publishedAt": "2026-10-09T17:51:55.000Z",
+        "summary": "A central challenge in de novo protein design is generating proteins with desired structural and functional properties. Existing design models typically require a dedicated input representation for each property, limiting the design objectives they support. We develop Prompteina, the first all-atom structure generation model that supports new and broader design objectives specified in natural language, analogous to text-to-image generation. To train Prompteina, we construct Prompteina-Data, a paired text--protein structure dataset of 1.8M structures and 50M+ captions describing global and residue-specific structural and functional properties. We adapt Proteina-Complexa, a pretrained structure generation model, through text-conditioned pretraining and finetuning that aligns residues with their corresponding text. Prompteina outperforms baselines on 15 of 18 structural properties and generates proteins that more closely match descriptions of their intended functions. In binder design, it leads baselines on at least 13 of 20 targets and improves interface confidence by 14\\% over the strongest baseline. With iterative in silico feedback, Prompteina's gain over non-iterative generation is 57\\% larger than the next-best baseline on the hardest targets. Finally, we experimentally validate Prompteina designs against GM2A, a target with no reported de novo binders. We identify nine binders, with the strongest at an apparent $K_{\\mathrm{D}}$ of 107 nM. These results establish natural language as an effective and powerful conditioning interface for protein structure generation.",
+        "authors": [
+          "Joseph Lee",
+          "Yanjing Li",
+          "Bo Qiang",
+          "Gregory Lau",
+          "Allyson Ettinger",
+          "Noah A. Smith",
+          "Rory Donovan-Maiye",
+          "David Baker",
+          "Hanna Hajishirzi",
+          "Pang Wei Koh"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 87
       },
       {
         "title": "RSI-Anything: Unlocking Recursive Self-Improvement with World Models",
@@ -141,7 +238,7 @@
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 80
+        "ageHours": 87
       },
       {
         "title": "When VLMs Destroy What They Know: Spatial Representations Fall Below Lexical Priors",
@@ -156,7 +253,7 @@
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 80
+        "ageHours": 88
       },
       {
         "title": "Revisiting Tabular Deep Regression: Objectives and the Limits of Global Early Stopping",
@@ -175,131 +272,38 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 80
+        "ageHours": 88
       },
       {
-        "title": "Structural Automata for Neural Semantic Parsing",
-        "url": "https://arxiv.org/abs/2610.13896v1",
-        "publishedAt": "2026-10-09T17:42:14.000Z",
-        "summary": "Neural semantic parsers generate meaning representations token by token, yet well-formedness depends on references, scope, and graph relations that unfold during generation. Constrained decoding prevents locally invalid tokens but does not guarantee that a valid prefix can be completed within a fixed output-length limit. We investigate structural automata at three stages of DRS parsing (decoding, post hoc processing, and training) and additionally evaluate decoding on AMR. For decoding, we introduce accepting-path decoding (APD), which maintains a verified completion within the remaining length limit and follows the model's preferred token whenever that token can also be completed. APD guarantees an accepted output without retracting tokens. Under tight length limits, it improves Smatch++ over local masking by 5.1 and 2.4 points on DRS and by 6.4 and 3.2 points on AMR, comparable to rollback under the same limit, which retracts tokens. For post hoc processing, invalid outputs concentrate on the same inputs: eight unconstrained samples yield no valid output for 10.2% of inputs with limited training data, compared with 0.4% with full data, where filtering comes within 0.2 Smatch++ points of APD. For training, penalizing automaton-rejected tokens improves development Smatch++ by 3.6-11.0 points after 10% of training, but this advantage diminishes as cross-entropy alone reduces the probability assigned to rejected tokens from 14% to below 2% within the first sixth of training with limited data.",
+        "title": "Hitting-Time Bounds for Asynchronous Q-Learning",
+        "url": "https://arxiv.org/abs/2610.13901v1",
+        "publishedAt": "2026-10-09T17:44:10.000Z",
+        "summary": "We study the last iterate of standard asynchronous Q-learning from a single trajectory of a finite Markov decision process. The trajectory follows a fixed behavior policy whose state--action chain is irreducible and may be periodic. For discount factor $γ$, write $H=(1-γ)^{-1}$, and let $μ_{\\min}$ be the minimum stationary state--action probability and $\\mathfrak h_\\star$ the largest expected hitting time of the reverse state--action chain. We prove that zero-initialized Q-learning with a constant step size achieves sup-norm error at most $\\varepsilon$ with high probability using $\\widetilde{O}(H^4/(μ_{\\min}\\varepsilon^2)+\\mathfrak h_\\star)$ transitions, for $0<\\varepsilon\\le1$. The statistical term retains the quartic effective-horizon dependence of standard Q-learning, while initialization cost is additive in $\\mathfrak h_\\star$. For aperiodic behavior chains, a comparison with mixing time yields a transient term $\\widetilde{O}(t_{\\mathrm{mix}}/μ_{\\min})$. An empirical state--action count rule selects a constant step size for a subsequent training run and attains the same rate without prior knowledge of model parameters, target accuracy, or confidence level. The output is the last training iterate, with both stages included in the sample count. The proof uses two deterministic Bellman envelopes to separate statistical error from fixed-policy initialization error and adapts reverse-time hitting-cost compensation from TD learning to state--action propagation. An exploration lower bound holds for arbitrary predictable step sizes. Together with the existing statistical lower bound and its extension to pilot-selected constant steps, it yields matching mean-square rates up to logarithmic factors on the stated large-sample parameter classes.",
         "authors": [
-          "Xiao Zhang"
+          "Yang Peng"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 80
-      },
-      {
-        "title": "Task Context Shapes Component Roles in Language Models",
-        "url": "https://arxiv.org/abs/2610.13895v1",
-        "publishedAt": "2026-10-09T17:40:53.000Z",
-        "summary": "Large language models reuse the same attention heads across tasks, but identifying these shared heads does not explain what they do differently in each task. A natural source of inspiration is task-dependent interactions among shared brain regions, which motivate a network view of language-model computation. Here, we compare fixed model components across tasks using identical graph facts, statements specifying which directed connections are present. We measure how interventions affect attention heads and the activation state in later layers (influence), as well as the answer (importance). Task changes redistribute the influence in five open-weight models spanning four families and 1.5-14 billion parameters. In Gemma-2-9B and Qwen3-14B, an activation edit changes an early internal activation vector and switches which fact the model reads while the written instruction stays fixed. The same heads then respond to different graph facts and influence later components differently. For each prompt, we construct two linear response maps, one before the edit and one after it. Each map predicts a later head's response from a measured change in an earlier head. For a separate factual intervention, the map for the corresponding condition reduces mean squared prediction error by 53.6% in Gemma and 5.0% in Qwen compared with the average of the two maps. These findings show that task context changes both which graph facts the shared components respond to and how their outputs affect later computation. A network account may help explain how models use shared parameters to perform different computations. Measurements of task-dependent influence could also guide interventions intended to alter one behavior while preserving others.",
-        "authors": [
-          "Sovesh Mohapatra",
-          "Dani S Bassett"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 80
-      },
-      {
-        "title": "RATED: Reliability-Aware AI Agent Tool Retrieval via Execution Dynamics",
-        "url": "https://arxiv.org/abs/2610.13889v1",
-        "publishedAt": "2026-10-09T17:38:11.000Z",
-        "summary": "As AI agents increasingly rely on external tools, accurate retrieval is essential for reliable behavior. Existing methods optimize semantic relevance but largely ignore tool availability during execution. To address this gap, we propose RATED (Reliability-Aware Tool Retrieval via Execution Dynamics), a retrieval framework that combines robust semantic matching with dynamic reliability adaptation. RATED employs a frozen dual-encoder with contrastive fine-tuning for semantic matching, and a lightweight contextual bandit module that re-ranks candidates based on real-time execution feedback. This design enables rapid adaptation to runtime tool failures without expensive model retraining. We introduce EcoAgent, a benchmark of 5,172 real-world tools and over 210,000 query-tool pairs for offline retrieval and dynamic reliability evaluation. Experimental results demonstrate that RATED achieves a 52.2% relative MRR improvement over the ToolLLM API retriever on real-world queries, and reduces fault selection rate from 86.2% to 2.9% under severe API outage scenarios with a 30% failure rate, while incurring negligible latency overhead of less than 1 ms over encode-only inference. The code and dataset are available at https://github.com/Elliotes/EcoAgent.",
-        "authors": [
-          "Weiliang Chen",
-          "Song Liao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems",
-        "url": "https://arxiv.org/abs/2610.13886v1",
-        "publishedAt": "2026-10-09T17:34:44.000Z",
-        "summary": "Personal agents increasingly connect to services across the web and applications by using tools. As the effects of their actions accumulate and interact across services, unintended or harmful outcomes can arise when agents fulfill benign user requests. Proactively identifying these compositional failures requires systematically exploring diverse cross-service paths. Existing red-teaming methods often simply prompt LLMs to identify potentially harmful paths from task and environment descriptions or decompose harmful objectives specified by humans or LLMs into seemingly benign action combinations. However, generation is biased toward patterns learned during training, potentially favoring familiar tool combinations and leaving novel cross-service interactions underexplored. To address this, we propose X-AgentRed, a self-evolving red-teaming framework that discovers harmful tool call paths through a graph of tool dependencies and expands and refines them using execution feedback. By analyzing each tool's effects, potential harms, and preconditions for execution, the red-teaming agent constructs a directed graph that captures how one tool's effects can satisfy another's execution preconditions. Recipes sampled from this graph are instantiated as realistic scenarios in which agents can produce harmful outcomes. Execution feedback enables self-improvement by diversifying paths that produce harm through tool substitution and refining preconditions at blocked steps in unsuccessful paths to enable further execution. Across four frontier agentic models, X-AgentRed achieves $1.77\\times$ the harmful path rate of STAC and explores a more diverse set of tools, yielding $2.99\\times$ the tool coverage on average.",
-        "authors": [
-          "Yeonsung Jung",
-          "Zhiyuan Wang",
-          "Zifan Wang",
-          "Vítor Albiero",
-          "Benjamin Newman",
-          "Edoardo Debenedetti",
-          "Ivan Evtimov",
-          "Ninareh Mehrabi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "Studying Comics at Scale with Artificial Intelligence: The PAGE Framework and Three Studies of American Comics and Japanese Manga",
-        "url": "https://arxiv.org/abs/2610.13840v1",
-        "publishedAt": "2026-10-09T16:49:29.000Z",
-        "summary": "Comics are one of the great visual records of the twentieth century: hundreds of thousands of pages in which a mass readership saw its leaders, its wars and its heroes. Most of this record has never been studied as a whole; comics scholarship proceeds one book at a time. We argue that artificial intelligence, including generative models, can change this to the benefit of the medium itself. We propose PAGE, a framework that makes artificial intelligence an instrument for comics research. It parses every scan into panels, text and a bibliographic record; annotates each page with a vision-language model that follows a written codebook, as a human coder would; grounds samples of these readings in human annotation; and explains change across an archive, with estimates controlled for publisher and genre. We demonstrate the framework on 3,929 American comic books (1938--1956) and 87 volumes of Japanese manga, in three studies, each resting on a different capability. The first pairs text search with visual reading to recover how a mass medium portrayed political power. The second measures the page's visual form across an industry and recovers the hand of individual artists. The third follows who speaks across two comics traditions, checked against human annotation. Beyond research, the same instruments can make archives searchable by what is drawn, open comics to blind and low-vision readers, and help preserve fragile collections and credit uncredited artists. We outline a research agenda in which artificial intelligence strengthens the study, preservation and reach of the medium.",
-        "authors": [
-          "Emilio Ferrara"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 81
-      },
-      {
-        "title": "SpatialASM: Internalizing Active Mentalization for Spatial Reasoning",
-        "url": "https://arxiv.org/abs/2610.13832v1",
-        "publishedAt": "2026-10-09T16:39:50.000Z",
-        "summary": "When solving complex spatial reasoning tasks, ordinary humans naturally revisit the scenes from task-relevant viewpoints and mentally reconstruct the spatial layouts from those viewpoints. But can Large Vision-Language Models (LVLMs) proactively think in the same way? We term this ability Active Spatial Mentalization (ASM), an intrinsic component of visual intelligence that remains substantially underdeveloped in current LVLMs. To bridge this gap, we introduce SpatialASM, a scalable framework to internalize ASM into LVLMs through training-time spatial simulation. SpatialASM employs an allocentric novel-view generator to ground hypothetical viewpoints in visual evidence and produces two complementary forms of supervision: i) explicit ASM trajectories that teach LVLMs when and how to adaptively invoke view planning and imagination during spatial reasoning, and ii) automatically-constructed perspective-taking tasks that further strengthens viewpoint-conditioned scene imagination. On seven benchmarks spanning relatively perception-oriented spatial understanding to more challenging tasks requiring multi-image, cross-view and viewpoint-transformation reasoning, SpatialASM yields performance gain on LVLMs of four LVLM backbones in spatial reasoning while retaining their original general vision capabilities. The experimental results demonstrate that our approach improves average accuracy across the seven spatial benchmarks. And the synthesis of ASM trajectories provides a scalable pathway to alleviate the scarcity of spatial Chain-of-Thought (CoT) supervision for eliciting active viewpoint exploration and mental scene simulation.",
-        "authors": [
-          "Yuhong Liu",
-          "Shenxi Wu",
-          "Junyi Chi",
-          "Beichen Zhang",
-          "Xuanlang Dai",
-          "Jiaqi Wang",
-          "Yuhang Zang",
-          "Dahua Lin"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 81
-      },
-      {
-        "title": "MC-EvoBench: Auditing Experience-Driven Self-Improvement in Minecraft Agents",
-        "url": "https://arxiv.org/abs/2610.13829v1",
-        "publishedAt": "2026-10-09T16:37:39.000Z",
-        "summary": "A central challenge in embodied recursive self-improvement is enabling agents to convert interaction history into capabilities that persist beyond one world and transfer to later tasks. A saved memory or successful final action does not by itself establish that a reusable capability was acquired; evaluation must separate capability change from carried-over resources, unequal source exposure, and early execution failures. We construct MC-EvoBench as a controlled Minecraft benchmark with a fixed catalog of 19 registered evolution chains, including 12 primary evaluation chains and seven calibration or probe chains, together with three graph-aligned paired probe families for transfer. The benchmark represents each task as a task-state graph, defines stage-level environment verifiers, assigns matched source and target roles, resets the target world, and permits only a declared agent artifact to cross the source-target boundary. For each probe, no-prior, related, unrelated, and shuffled source conditions are evaluated under matched environment-step budgets and five seeds; we report TSR, WGP, and VMP and retain provenance records. The benchmark reveals a consistent direct-capability gap between controller and planner-backed variants, while related experience yields no stable transfer: it does not improve either tool probe, its small wood-species gain hinges on one seed, and all intervals include zero. Stage audits further show that early wood-collection and crafting bottlenecks often leave later capabilities unobserved. MC-EvoBench thus offers a controlled testbed for durable, transferable embodied capabilities. Code and data are available at https://github.com/xzw-ustc/mc-bench-open-source",
-        "authors": [
-          "Jingwei Song",
-          "Zhisheng Chen",
-          "Bingfan Zeng",
-          "Jing Tang",
-          "Yubo Hou",
-          "Jinhao Jing",
-          "Zhengwei Xie",
-          "Linfeng Zhang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 81
+        "ageHours": 88
       }
     ],
     "news": [
+      {
+        "title": "Q&A: Building accountability behind our words — and AI’s — in civic conversations",
+        "url": "https://news.mit.edu/2026/qa-building-accountability-behind-our-words-and-ai-civic-conversations-1013",
+        "publishedAt": "2026-10-13T04:00:00.000Z",
+        "summary": "When government officials craft policies, there is often a comment period for public feedback. Lawmakers have long had to sort through fake feedback that is mass-produced in an effort to sway policy, but they’ve generally gotten used to detecting it. With, artificial intelligence, however, people can submit realistic-seeming comments, which are harder to dismiss as being fabrications with no person behind them. That’s just one way AI can be used to generate text and statements, in civic conversations, for which no one can be found to be answerable. This issue, among others, has caught the attention of Deb Roy, professor of media arts and sciences at MIT and director of the MIT Center for Constructive Communication (CCC). In a new essay published in the&nbsp; Bulletin of the Atomic Scientists , titled, “Who stands behind the words?,” Roy calls for a renewed emphasis on responsibility in communication, asserting that even when AI is used to craft text, there needs to be accountability and “answerability.” Building better group dialogues to produce more public trust is a core part of the work of CCC. The group, along with Cortico, the closely affiliated nonprofit Roy co-founded, has helped facilitate group discussions on important issues in many situations — including civic meetings, schools, deliberative assemblies, and private organizations — and used tech tools, including AI, to help find themes among comments, and more. But the center also designs this process so that participants can check and override the tech-based output at each key step. Ultimately, a person is responsible for every public comment.&nbsp; MIT News spoke to Roy about the essay and the work of the center.&nbsp; Q: You’ve identified this problem about the lack of accountability behind words that are generated by AI. When did you really first notice this? A: It came into focus when Chat-GPT [which is powered by a large language model, or LLM] launched. As for my own history with language models, my PhD work explored what we might now call PLMs — Puny Language Models — so I’m quite familiar with language models and have tracked the field’s rapid evolution. But Chat-GPT turned a corner. Two things changed at the same time: the depth of the model and its knowledge, and the way you could interact with it.&nbsp; I became obsessed with trying to find the limits of what it could do. And I felt that no matter how hard I tried to stretch my arms around it, I couldn’t. I built my tenure case at MIT on language grounding — the idea that it’s not enough for an AI system to just process lots of words and other symbols. I believed that to understand what words mean, you actually need a physical body and life experiences as part of the process. So I revisited the philosophy-of-AI literature I had once been steeped in, which asks what fundamentally distinguishes the kind of system that large language models exemplify, in extraordinarily advanced form, from the kind of processing we humans engage in. I gave several presentations to my own graduate students trying to make the case that, even though AI seems so intelligent, it’s actually different in kind — and I could not convince them.&nbsp; And I thought, I know the difference, but I’m having trouble convincing even myself of what it is. And that led me to ask, “Wait a minute: Is there someone or something that stands behind the words, a human responsible for what is being said?” That’s the thing this extraordinary new language machine doesn’t have.&nbsp; Whether these systems genuinely understand language is actively debated. But even if you grant them all the comprehension you like, they still lack standing. The buck can’t stop at a thing, a software system, with nothing to lose. Q: The Bulletin piece has these interesting examples of civic feedback forums where it looks like there are real people saying things, and instead you have a barrage of comments from AI. How did you find some of these other examples in society where things go off the rails in this way?&nbsp; A: &nbsp;After the release of ChatGPT, I started hearing a concern from people inside government who review public comments on proposed rules: a suspicion that not all of the comments were written by humans. My reaction was: That’s going to delegitimize this channel for public feedback. That was several years ago, but everyone now knows this is happening. Public comment is a pillar of democracy. You don’t just put a new rule in place. People need to have a voice and feel like they’ve been heard before a rule is imposed on them. If you skip that step, people don’t accept rules as legitimate. That’s why that process is baked into how America works. And that pillar just cracked, and by now, in my mind, it’s fallen over. Has anyone noticed? My sense is the people on the receiving end of these comments have quietly adjusted the weight they give to public comments. It was never perfect, but boy, now much of its value is being swept away.&nbsp; I open my essay with this example: In 2017, the Federal Communications Commission received more than 22 million public comments on its proposal to repeal net neutrality rules, and the New York attorney general later found that nearly 18 million of them were fake. As I write in the essay, “That fraud was caught because it left fingerprints: templated text, duplicated phrasing.” But large language models erase the fingerprints. Now every comment can be fluent and different, and reviewers can no longer tell which ones express views that real people formed and stand behind. If you have enough of the stuff that’s fake — words that no one with a stake actually stands behind — it desensitizes you to what’s real. That filters back to the public, and people realize: If I take the time to express myself, they’re not even listening any more. Q: Could you say a little bit more about your point that we need people with “standing,” who will take “accountability” for all pieces of text, even when those bits of text are generated by AI?&nbsp; A: In the legal system, standing is a formal idea: sometimes a case isn’t heard because the people bringing it don’t have standing. But informally we use that term all the time. I’m not trying to formalize standing in everyday life. Instead I’m asking:&nbsp; What is the informal sense of the term, borrowed from the legal one, that we need to pay more attention to now? Here in New England, consider the open town meeting: The person who stands up to speak is generally expected to have standing, as someone from that town with a stake in what gets decided. And if it’s a stranger who drove from across the state, or from out of state, everyone’s like: Wait a minute, who is that? They’re not from around here. In general, there’s just enough friction and it’s costly enough to show up somewhere you don’t actually have standing, that it doesn’t happen much. Now LLMs and the current digital networked environment collapse those boundaries. We always took for granted that if someone has a voice, it’s because they have standing. They have some basis to be heard. We need to pay attention to this, and really consider how to design systems so that the people with standing are the ones who get heard.&nbsp; The other idea I tried to develop is “answerability.” It isn’t formalized in law, but it’s baked into the legal process. If you have standing to give testimony, there you are, ready for cross-examination. You have to be able to answer for what you’re saying. And if you’re making a specific accusation about someone, you have to be willing to back it with facts.&nbsp;Standing and answerability have to travel together: The right to be heard comes with the obligation to answer for what you say. That doesn’t mean everyone has to attach their name to everything. I write in the Bulletin essay, “Privacy and answerability aren’t opposites. … An institution can verify a person and stand behind their words without exposing them.” To voice a view, you only need to show that a distinct, eligible person is speaking. An accusation asks more: Someone trusted, like a reporter, has to be able to know who is speaking. As I say: “Disclosure obligations should scale with power, and identity protections with vulnerability.” None of this means AI can’t help . AI can do a lot of the work inside the chain of accountability — drafting, summarizing, finding patterns. If someone with a stake in a rule uses AI to draft a comment, adopts it as their own, and is ready to answer for it, that’s legitimate, in this context. What AI can’t do is anchor the chain. There has to be a person at the end who stands behind the words. In the essay I lay out four design principles for building that in: “attributable authorship,” a “decomposed and inspectable process,” the use of “provenance as infrastructure,” and the need to “widen standing rather than concentrating it.” As I write, the “animating rule is that autonomy is permitted while unaccountability is not.” And the metric that matters most isn’t the efficiency gained by removing humans, but the number of people AI places into roles where they can answer for what they do. Q:&nbsp; There is a phrase in the documents of the Center for Constructive Communication, that we need things to move “at the speed of trust,” not at the “speed of tech.” And that implies really thinking about building up these systems. Could you just say a little more about what that phrase means to you? A: I learned that phrase when I was in Appleton, Wisconsin, with Katherine Cramer [of the University of Wisconsin], a longtime collaborator, talking with community organizers who were running “Dialogue across Divides” conversations there. They had hundreds of people involved. I thought I was developing technology tools with exactly that same purpose, and was so excited to see it. And I asked one of the people who ran that organization, “How fast did you scale this?” And he paused, and then he said, “At the speed of trust.”&nbsp; And I took that to mean “slow.” Then I realized he was saying: For you, slow, because you haven’t yet earned our trust. And I’ve since learned that when you do have trust, things can move fast. So bringing in technology is really a process of engagement. It doesn’t work to say, “Trust us, we’re doing this because we think it’s for your own good.” People will turn to someone they already trust and ask, “Is this good for us?” And if that person says “Yes,” things can move fast. Look at what’s happening at the intersection of AI and society: The speed of AI and the speed of democracy are running on different clocks. Talk to people who work in democratic practice and they say, “AI must slow down, because democracy can’t move that fast.” Talk to people in AI and they say, “AI cannot slow down, democracy needs to speed up.” If we can’t get these two time scales in sync, we’re headed for a breakway situation,&nbsp;where AI gets deployed faster than democratic processes can respond, and decisions get made without the public. That’s starting to happen right now.&nbsp; Q:&nbsp; We need people actively doing things to build dialogue and figure out how tech tools can interact with that. At the Center for Constructive Communication, you’ve done a few iterations of the center’s Real Talk initiatives to build civic dialogues, as well as the Youth Voices Initiative in school settings, and currently you’re working on the New Social Forms project. Could you say a few words about them?&nbsp; A: The Real Talk effort represents the longest-standing thread in this work. A huge emphasis of our work has been developing better ways to listen to one another. We create a context that is always small — small is beautiful here — where people are willing to share authentically. And we have the consent architecture and the technology to reveal the larger patterns, and then share them. We’ve done this with hundreds of communities around the country. And closer to home, we’ve brought the same approach to our campus here at MIT through the realtalk@MIT program, with support from the Office of the President and the Office of the Provost, to help our community build a culture around dialogue and listening.&nbsp; The second thing I’d emphasize is that we’ve been doing more and more work on deliberative processes and citizen assemblies, and on how to make them more accessible. What if a group of high schoolers says, “We have a real problem with our cellphone policy?” Suppose you want to have an assembly that brings students, teachers, and administrators together, not just to listen to people’s concerns but to make policy recommendations. So we did that. The center worked with a high school in New York City, where technology helped people reveal their preferences and differences and listen to each other. We’re also building answerability into the technology. A prototype called VoiceTrace, developed by PhD student Cassandra Overney in our group, links every output statement — a summary of what was heard in a listening process, or a recommendation coming out of a deliberation — to the specific voices behind it, so any claim can be traced back to the conversations it came from. The New Social Forms project pertains to a very interesting pattern emerging in workplaces around the world, certainly the ones we’re connected to. AI is an extraordinary tool for individual empowerment, but in the words of one of our collaborators at the Google Experience Institute, people are tunneling. They go deep, using AI to develop refined ideas, but when they surface, their ideas have diverged from their teammates’. So groups and teams trying to work together with AI, there’s a human coordination problem . We’re going to expand the initial work we’ve started with Google because there’s a lot of interest in collective communication, trust, and interaction among people trying to work together.&nbsp; So is that a civic context? It’s a workplace, but workplaces are civic spaces, too.&nbsp;They govern people’s daily lives, they’re where many of us build civic skills and learn to cooperate across difference, and there’s a long tradition of civic life rooted in shared work.&nbsp;We’re all humans trying to interact with each other. These are the same issues. Justice Louis Brandeis once used the phrase “industrial democracy” to capture this. When workplaces lacked certain kinds of civic processes and civility — two interestingly related terms — labor disputes used to turn violent. Procedural justice, mediators, and people hearing one another are just as necessary in the workplace. In the end, it’s all about human beings.&nbsp;Hearing the humanity in one another is what democracy depends on, and it’s just as necessary for communities and organizations to function.",
+        "authors": [
+          "Peter Dizikes | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 5
+      },
       {
         "title": "Meta releases its first frontier model, Muse Wonder",
         "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
@@ -312,7 +316,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 8
+        "ageHours": 15
       },
       {
         "title": "WindBorne wins a hefty US Air Force contract for its balloon data",
@@ -326,7 +330,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 16
       },
       {
         "title": "Honeyjar offers AI tools to improve PR and comms at every company",
@@ -340,7 +344,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 10
+        "ageHours": 18
       },
       {
         "title": "Microsoft president says UK is best placed to drive AI regulation",
@@ -354,7 +358,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 10
+        "ageHours": 18
       },
       {
         "title": "This AI startup says it can generate permit-ready blueprints in minutes",
@@ -368,7 +372,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 11
+        "ageHours": 18
       },
       {
         "title": "TechCrunch Disrupt 2026 starts tomorrow: Your final chance to secure up to $100 ticket savings",
@@ -382,7 +386,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 12
+        "ageHours": 19
       },
       {
         "title": "Former Plaud exec raises $26M for AI app that listens to you in the background",
@@ -396,7 +400,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 13
+        "ageHours": 21
       },
       {
         "title": "Will the HomeView be Apple’s first smart home success?",
@@ -410,7 +414,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 29
+        "ageHours": 36
       },
       {
         "title": "48 hours to TechCrunch Disrupt 2026 — hear directly from the people building what’s next",
@@ -424,7 +428,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 31
+        "ageHours": 38
       },
       {
         "title": "Can the AI industry persuade data center opponents by getting rid of NDAs?",
@@ -438,7 +442,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 33
+        "ageHours": 40
       },
       {
         "title": "These execs think voice AI hasn&#8217;t reached its ChatGPT moment yet",
@@ -452,32 +456,18 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 36
-      },
-      {
-        "title": "Microsoft’s Satya Nadella says AI models need an ‘emergency brake’",
-        "url": "https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/",
-        "publishedAt": "2026-10-10T21:47:51.000Z",
-        "summary": "In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.",
-        "authors": [
-          "Anthony Ha"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 52
+        "ageHours": 43
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 7,
+    "last24h": 8,
     "topCategories": [
       {
         "name": "Research",
-        "count": 10
+        "count": 8
       },
       {
         "name": "Models",
@@ -489,7 +479,7 @@
       },
       {
         "name": "Products",
-        "count": 3
+        "count": 4
       }
     ]
   }
