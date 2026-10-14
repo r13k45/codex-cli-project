@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T22:39:29.330Z",
+  "generatedAt": "2026-10-14T01:50:58.598Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,211 +85,254 @@
   "sections": {
     "research": [
       {
-        "title": "Can Language Models Play the Wikipedia Game?",
-        "url": "https://arxiv.org/abs/2610.13948v1",
-        "publishedAt": "2026-10-09T17:59:56.000Z",
-        "summary": "Language models increasingly support or automate information retrieval from document collections too large to index. This task is difficult when it requires specialist linguistic or scientific knowledge. We used the Wikipedia Game to test language models on an analogous information retrieval task. In the game, players must reach a target article using only article links. We compared sentence embedding models and LLMs across five Wikipedia languages and five academic-literature datasets. We construct very large local graphs of Wikipedia pages and of paper citations using OpenAlex and provide code to build and navigate them. This allows the study of language models' navigation capabilities without relying on third-party APIs. We compared the models with human and TF-IDF benchmarks. The Wikipedia Game format enables robust comparisons across techniques, languages, and domains. No model significantly outperformed humans, although the best models (GPT-o3 mini, GPT-4o, QwQ:32B, and DeepSeek-R1:70B) achieved comparable success. Performance and rankings varied across languages and topics, with implications for practitioners utilising these techniques.",
+        "title": "Structural Chain-of-Thought: Reasoning with Executable Computational Graphs",
+        "url": "https://arxiv.org/abs/2610.15107v1",
+        "publishedAt": "2026-10-10T18:29:30.000Z",
+        "summary": "Chain-of-thought prompting enables reasoning in large language models but produces explanations that are difficult to verify, expensive to generate, and not always faithful. We introduce a Structural Chain-of-Thought framework where models generate executable computational graphs instead of free-form reasoning. The final answer is obtained by deterministically executing the graph. The model is trained using graph-based reinforcement learning that rewards structural validity, answer correctness, and node overlap with reference graphs.\n  Experiments across five benchmarks and four model families show that our method consistently improves accuracy over supervised graph training and can reduce generation length by up to 5-6x compared with standard GRPO and chain-of-thought supervised training. Our faithfulness experiments reveal that models trained with our approach tend to rely on deriving their answers from the generated graphs rather than producing post-hoc rationalizations as usually in chain-of-thought reasoning.",
         "authors": [
-          "Alexander Hickey",
-          "Joanna Knight",
-          "James Bishop"
+          "Petr Senatorov",
+          "Karim Vafin",
+          "Elena Tutubalina",
+          "Oleg Somov"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 101
+        "ageHours": 79
       },
       {
-        "title": "Hide and Seek: HIDE Concepts to SEEK explanations for black box models",
-        "url": "https://arxiv.org/abs/2610.13935v1",
-        "publishedAt": "2026-10-09T17:56:59.000Z",
-        "summary": "Interpreting machine learning model predictions is a central challenge, particularly for black-box vision models. Concept-based attribution methods interpret models using human-understandable concepts. Existing concept-based methods can only interpret classification and regression models. They require access to model weights or large concept-annotated datasets, and most methods cannot provide image-level attribution. We propose Hide and Seek (HnS), a new method for concept-level attribution that does not require access to model weights or labeled concept datasets. HnS can interpret a wide range of vision models. Given a concept and image set, HnS retrieves concept-aligned images using a vision-language model, localizes the concept within each image, masks the localized region, and measures attribution from the change in the black-box model's output between the original and masked images. This enables faithful attribution by directly measuring the model's behavior and supporting local attributions. We validated HnS on CelebA and COCO-Stuff. Compared to existing methods, HnS showed better agreement with ground-truth attributions. We demonstrated the applicability of HnS on diverse tasks, including image captioning and satellite image segmentation, where no existing concept attribution method can be used. We provided our anonymous code in the supplementary material.",
+        "title": "RELAGRAM: Recursive Latent Graph Model for the Capacitated Vehicle Routing Problem",
+        "url": "https://arxiv.org/abs/2610.15106v1",
+        "publishedAt": "2026-10-10T18:29:19.000Z",
+        "summary": "Latent recursion repeatedly processes internal representations through the same neural network. Recent work has shown this approach to be effective on structured reasoning tasks such as Sudoku and maze solving. However, whether latent recursion can support neural routing remains unclear. We introduce RELAGRAM (Recursive Latent Graph Model), a novel approach that brings latent recursion to graph combinatorial optimization. RELAGRAM encodes a capacitated vehicle routing problem (CVRP) instance as edge tokens; a compact transformer recurrently updates the latent representations of these tokens. An output head maps the answer state to an edge heatmap, from which an autoregressive decoder constructs a feasible solution. On CVRP-100 instances, the 0.53M-parameter RELAGRAM achieves gaps to a PyVRP reference of 13.4%, 9.8%, and 8.3% under greedy decoding, eightfold symmetry augmentation, and 256-candidate search, respectively. Trained only on CVRP-100, RELAGRAM generalizes zero-shot to CVRP-500 and CVRP-1000, achieving gaps of 15.6% and 21.7% under 256-candidate search. Together, these results demonstrate that latent recursion is a promising approach to neural routing.",
         "authors": [
-          "Bhanu Tokas",
-          "Rahul Nair",
-          "Rockwell Jackson",
-          "Hannah Kerner"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 101
-      },
-      {
-        "title": "Constructive Bounds for the Topological Expressivity of Neural Networks",
-        "url": "https://arxiv.org/abs/2610.13931v1",
-        "publishedAt": "2026-10-09T17:55:33.000Z",
-        "summary": "The expressivity of a neural network $Φ$ describes the class of functions that a network can express. The term topological expressivity refers to a family of measures particularly suited to understand binary classification and is often formulated in terms of the Betti numbers of a decision boundary $β(Φ^{-1}(0))$. Despite its popularity, this measure is not as useful for regression and other problems that do not involve a decision boundary. Instead, we propose to study topological expressivity in terms of the Betti numbers of the output of a neural network $β(Φ(X))$. We formally prove that a ReLU network with architecture $(d,\\sum\\limits_{k=1}^{d\n  } β_k(3k+2),\\sum\\limits_{k=1}^{d}β_k(k+1))$ can express spaces homotopy equivalent to wedge sums of spheres with arbitrary Betti numbers. This gives upper bounds for any arbitrary connected ($β_0=1$) sequence of Betti numbers, but by constructing spaces homotopy equivalent to products of $N$ spheres of dimension $d_1,...,d_N$ we achieve much better bounds $(\\sum\\limits_{n=1} d_n, 3\\sum\\limits_{n=1}\\limits^N d_n + 2N, \\sum\\limits_{n=1}\\limits^N d_n + N) $ for Betti numbers given by $\\prod_n (1+x^{d_n})$. Finally we conjecture a much stronger tight bound which gives the architectural bound $(d,d+1,d+1)$ for a space homeomorphic to the sphere.",
-        "authors": [
-          "Kosio Beshkov"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 101
-      },
-      {
-        "title": "AI Models Can Provably Hide Arbitrary Capabilities",
-        "url": "https://arxiv.org/abs/2610.13928v1",
-        "publishedAt": "2026-10-09T17:55:06.000Z",
-        "summary": "Capability evaluations aim to surface dangerous model behaviors before deployment, but their reliability depends on the assumption that hidden capabilities can be elicited. We show this assumption does not hold under adversarial conditions by constructing backdoor attacks that embed encrypted neural networks within host model weights, decrypting and executing them only upon receiving a secret trigger. Using digital lockers, these hidden circuits remain provably hard to elicit and interpret under cryptographic assumptions, even given full access to model weights, extending prior work from hiding fixed strings to arbitrary computations. We implement our proof of concept constructions in PyTorch and evaluate elicitation through fine-tuning, weight noising, gradient-based trigger search, and latent adversarial training on a small chemical reaction prediction task - a proxy for CBRN-relevant capabilities. Our results demonstrate resistance to these methods and, together with our cryptographic guarantees, reveal a limit of elicitation-based capability audits. We release our models to support the improvement of defenses.",
-        "authors": [
-          "Andis Draguns",
-          "Sumeet Ramesh Motwani",
-          "Raymond Douglas",
-          "Christian Schroeder de Witt"
+          "Vladimir Kirill Bickov",
+          "Neil Yorke-Smith"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 101
+        "ageHours": 79
       },
       {
-        "title": "KL Before and After Mixing: A Round-Complexity Separation in Parallel Sampling",
-        "url": "https://arxiv.org/abs/2610.13924v1",
-        "publishedAt": "2026-10-09T17:54:16.000Z",
-        "summary": "A parallel sampler can choose at random which coordinates to generate together. For a target $p$ and the output law $q_U$ of a schedule $U$ drawn afresh for each output, we compare the schedule-averaged divergence $\\mathbb{E}_U D_{\\mathrm{KL}}(p\\|q_U)$ with the output-law divergence $D_{\\mathrm{KL}}(p\\|\\mathbb{E}_U q_U)$, in nats. Rounds commit independent draws from exact conditional marginals frozen at the round's start, each output's schedule is drawn before sampling from a finite mixture of schedules, and every scheduled round is charged. For the uniform distribution on binary strings of even length $n$ with $n/2$ ones, the least expected number of rounds at a fixed tolerance $\\varepsilon>0$ is $Θ_\\varepsilon((\\log n)^2)$ under the first criterion but $(e^{-\\varepsilon}+o(1))\\log_2\\ln n$ under the second, and the double-logarithmic order is attainable with the same round count on every run. For this target, a count-state recursion gives the exact least output divergence at every round cap over all causal randomized policies. The separation extends to weighted fixed-count targets with bounded weight ratios and quota fractions bounded away from zero and one, without permutation symmetry, and to the full-support Beta$(1,1)$--Bernoulli target, where the sharp expected cost under the output-law criterion is $(e^{-\\varepsilon}/2+o(1))\\log_2\\log_2n$, attained with rare $n$-round runs. Prior work implies the order of the schedule-averaged cost on the balanced target and its $O_\\varepsilon((\\log n)^2)$ upper bounds on both extensions.",
+        "title": "RegExtract: A Benchmark for PFAS Regulatory Information Extraction with LLMs",
+        "url": "https://arxiv.org/abs/2610.15103v1",
+        "publishedAt": "2026-10-10T18:26:57.000Z",
+        "summary": "Extracting structured information from regulatory documents is a critical but challenging task. Relevant facts are scattered across long, legally dense texts, and traceability of extracted facts to their source is essential for verification. With increasing awareness of the environmental and health impacts of per- and polyfluoroalkyl substances (PFAS), regulatory documents have expanded significantly, varying in scope and product relevance, making interpretation challenging for manufacturers and policymakers. We introduce RegExtract, a benchmark for structured information extraction from PFAS regulatory documents, comprising 488 human-annotated field instances across 20 US state documents and 46 regulations. Each field instance includes a value and a provenance entry, yielding 976 entries in total. We define a typed, multi-field schema targeting key elements such as material definitions, permitted uses, and product exemptions, and propose provenance-aware evaluation metrics tailored to regulatory text. Through experiments with open- and closed-source LLMs across prompting strategies, document condensing methods, and schema partitioning approaches, we find that document identification fields remain challenging, and that field-specific few-shot examples improve extraction. This work lays the groundwork for AI tools for hazardous substance identification, question answering, and compliance monitoring. The code and data are available at https://github.com/IBM/PFAS-regulations.",
         "authors": [
-          "Tianyi Wu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 101
-      },
-      {
-        "title": "Goal-Oriented Bundle Management and Flow Control for Deep-Space Communications via Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2610.13923v1",
-        "publishedAt": "2026-10-09T17:53:46.000Z",
-        "summary": "Deep-space communications operate under intermittent connectivity, long propagation delays, and relay storage constraints. In such networks, the Bundle Protocol enables store-carry-forward communication, requiring relay nodes to manage limited storage and scarce contact opportunities. Relay-side scheduling and dropping decisions are inherently goal-oriented: transmission resources should be allocated to bundles most valuable to downstream mission objectives. Conventional schedulers, such as FIFO, do not explicitly optimize task utility and may provide unfair service across heterogeneous planetary sources. This paper presents a closed-loop modeling and learning framework for relay-side bundle and flow management in a contact-driven deep-space network, where lunar and Martian updates are forwarded through a shared-buffer relay to Earth. We quantify destination-side information freshness using excess age $Δ_i^e(t)=[Δ_i(t)-d_i(t)]^+$, where $Δ_i(t)$ denotes the Age of Information of source $i$ and $d_i(t)$ is a source-dependent delay baseline. Based on this metric, we define a goal-oriented loss that supports source-dependent nonlinear penalties, allowing prioritization according to mission relevance. We formulate relay control as a constrained semi-Markov decision process (CSMDP) and solve it using masked Lagrangian Proximal Policy Optimization (PPO). Feasibility-aware action masking restricts transmissions to bundles that can complete within the remaining contact window. DTNSim simulations indicate improved age-based utility and inter-flow fairness compared with baseline schedulers. The proposed framework jointly optimizes relay-side bundle scheduling, dropping, and flow control under contact-driven dynamics with explicit fairness considerations across heterogeneous sources.",
-        "authors": [
-          "Sajjad Baghaeea",
-          "Aimin Lib",
-          "Shanmugarajan Balasubramanian",
-          "Elif Uysal"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 101
-      },
-      {
-        "title": "DyssomniaNN: Multi-Scale Spiking Neural Modeling of Human Sleep Disorders and Perceived Restedness",
-        "url": "https://arxiv.org/abs/2610.13918v1",
-        "publishedAt": "2026-10-09T17:52:23.000Z",
-        "summary": "Clinical sleep medicine repeatedly documents profound divergences between objective sleep duration and subjective daytime impairment, notably exemplified by sleep state misperception in paradoxical insomnia and boundary instability in narcolepsy type 1. Here, we present DyssomniaNN: a multi-scale biophysical computational framework coupling Borbély's two-process regulation of sleep homeostasis and circadian drive with Saper's hypothalamic reciprocal flip-flop circuit and a recurrent corticothalamic leaky integrate-and-fire spiking neural network. We formalize five clinical cohorts across an identical 72-hour photoperiod: healthy control, circadian rhythm sleep-wake disorder (delayed-phase), chronic insomnia, paradoxical insomnia, and narcolepsy type 1. The synthetic local field potential converges closely with empirical human electroencephalography spectra from the PhysioNet Sleep-EDF database across all canonical frequency bands (spectral mean absolute error of 0.33--0.35). Furthermore, we introduce the Well-Rested Index to quantify restorative efficacy. Simulations reveal that sleep duration fails to predict restorative recovery: paradoxical insomnia achieves normal total sleep time (21.15 h) yet yields low restoration (37.6%) from unsuppressed cortical beta-band intrusion, whereas hypocretin deficiency in narcolepsy produces severe nocturnal fragmentation (781 min of wake after sleep onset) and 35 sleep-onset rapid eye movement periods. DyssomniaNN provides an in silico platform for mechanistic sleep research and virtual neuropharmacology.",
-        "authors": [
-          "Daniel Szelogowski"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 101
-      },
-      {
-        "title": "Designing Protein Structures from Natural Language",
-        "url": "https://arxiv.org/abs/2610.13917v1",
-        "publishedAt": "2026-10-09T17:51:55.000Z",
-        "summary": "A central challenge in de novo protein design is generating proteins with desired structural and functional properties. Existing design models typically require a dedicated input representation for each property, limiting the design objectives they support. We develop Prompteina, the first all-atom structure generation model that supports new and broader design objectives specified in natural language, analogous to text-to-image generation. To train Prompteina, we construct Prompteina-Data, a paired text--protein structure dataset of 1.8M structures and 50M+ captions describing global and residue-specific structural and functional properties. We adapt Proteina-Complexa, a pretrained structure generation model, through text-conditioned pretraining and finetuning that aligns residues with their corresponding text. Prompteina outperforms baselines on 15 of 18 structural properties and generates proteins that more closely match descriptions of their intended functions. In binder design, it leads baselines on at least 13 of 20 targets and improves interface confidence by 14\\% over the strongest baseline. With iterative in silico feedback, Prompteina's gain over non-iterative generation is 57\\% larger than the next-best baseline on the hardest targets. Finally, we experimentally validate Prompteina designs against GM2A, a target with no reported de novo binders. We identify nine binders, with the strongest at an apparent $K_{\\mathrm{D}}$ of 107 nM. These results establish natural language as an effective and powerful conditioning interface for protein structure generation.",
-        "authors": [
-          "Joseph Lee",
-          "Yanjing Li",
-          "Bo Qiang",
-          "Gregory Lau",
-          "Allyson Ettinger",
-          "Noah A. Smith",
-          "Rory Donovan-Maiye",
-          "David Baker",
-          "Hanna Hajishirzi",
-          "Pang Wei Koh"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 101
-      },
-      {
-        "title": "RSI-Anything: Unlocking Recursive Self-Improvement with World Models",
-        "url": "https://arxiv.org/abs/2610.13912v1",
-        "publishedAt": "2026-10-09T17:50:30.000Z",
-        "summary": "Recursive self-improvement (RSI) aims to transform interaction experience into persistent improvements, yet external feedback is costly and world-model predictions may become unreliable as policies evolve. We introduce RSI-Anything, a domain-general framework built on JEPA-Anything that uses predictive world models to guide action and learning-data selection. Observed feedback drives policy or workflow improvement and conditional world-model adaptation, while component and compatibility checks govern the retention of updated policy-model pairs. Across diverse computational and scientific domains, RSI-Anything demonstrates substantial gains. In code repair, with the coder fixed, success increases from 26.3% with a static verifier to 29.2% through predictive selection and 31.2% after world-model adaptation, at comparable test usage. Graphical user interface (GUI) evaluations showed higher task completion, while average actions decrease by 39.4%. Across five successive policy versions, laboratory-planning scores more than double from 21.80% to 46.01%. In reaction optimization, RSI-Anything achieves 96.15% mean best observed yield versus 82.16% for Bayesian optimization under the same 40-experiment budget. An end-to-end immune-science application further connects workflow evolution and predictive modeling with therapeutic hypothesis generation. These results demonstrate how predictive world models and retained system updates enable recursive improvement across diverse environments.",
-        "authors": [
-          "Taoyong Cui",
-          "Pinxian Zeng",
-          "Wanghan Xu",
-          "Hao Xiao",
-          "Shuhan Xue",
-          "Qiang Gao",
-          "Wanli Ouyang",
-          "Pheng Ann Heng",
-          "Zhenfei Yin",
-          "Yingcheng Wu",
-          "Ling Yang"
+          "Defne Circi",
+          "Krystelle Lionti",
+          "Sarathkrishna Swaminathan",
+          "Daniel P. Sanders",
+          "L. Catherine Brinson",
+          "Bhuwan Dhingra",
+          "Basel Shbita",
+          "Mohab Elkaref",
+          "Sara Capponi",
+          "Tim Erdmann",
+          "Brandi Ransom"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 101
+        "ageHours": 79
       },
       {
-        "title": "When VLMs Destroy What They Know: Spatial Representations Fall Below Lexical Priors",
-        "url": "https://arxiv.org/abs/2610.13910v1",
-        "publishedAt": "2026-10-09T17:50:03.000Z",
-        "summary": "Vision-Language Models (VLMs) increasingly analyze and reason about images, yet it remains unclear whether their internal representations faithfully encode the structured relations required for such reasoning. We introduce EICS (Evaluation-Invariant Concept Stability), a metric for testing whether representations consistently encode concepts under controlled one-concept interventions, and CASP-VL (Causally controlled Spatial Perturbations for Vision-Language models), a benchmark of causally controlled spatial perturbations derived from Visual Genome scene graphs. Across multiple VLM architectures, we find that spatial relations are represented substantially less faithfully than lexical information, even when the same models score well above chance on compositional benchmarks. Further analysis shows that the relation is identifiable at the predicate's own tokens but is lost when the sentence is aggregated into a global representation, whether through the (EOS) token or by mean pooling. These findings reveal a systematic failure invisible to output-based evaluation: VLMs do not preserve, in the representation used downstream, relational information that is present in their own input.",
+        "title": "Random Feature Pruning for Multi-Class Classification",
+        "url": "https://arxiv.org/abs/2610.15101v1",
+        "publishedAt": "2026-10-10T18:21:39.000Z",
+        "summary": "Weighted sums of random kitchen sinks (W-RKS) is a commonly used feature extraction technique for supervised learning tasks. A major drawback of this method is the redundancy and ineffectiveness of many extracted random features. This paper investigates efficient methods for reducing such redundancy in multi-class classification problems. We specifically formulate feature selection as a variant of the sequentially nested model selection problem and introduce the Successive Empirical Excess Risk Difference Maximization (SEED-MAX) algorithm. It recursively computes empirical risks to identify the most parsimonious yet informative set of features. We derive an analytical lower bound for the probability of correct feature selection by the SEED-MAX algorithm. This lower bound on the probability of correct feature selection can be made arbitrarily close to one by increasing the training dataset size. To further enhance the rate of pruning, we evaluate the features retained by SEED-MAX using the Fisher test (F-Test). Empirical evaluations on UCR time-series classification datasets show that the sequential application of SEED-MAX with the Fisher test achieves approximately 92 percent rate of pruning with negligible degradation in classification accuracy. Implementations of the SEED-MAX and SEED-MAX-F-Test methods are available at https://github.com/OmidiAmin/seed-max-ftest.",
         "authors": [
-          "Shubh Garg",
-          "Chen Shani"
+          "Mohammad Amin Omidi",
+          "Babak Seyfe",
+          "Shahrokh Valaee"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 101
+        "ageHours": 79
       },
       {
-        "title": "Revisiting Tabular Deep Regression: Objectives and the Limits of Global Early Stopping",
-        "url": "https://arxiv.org/abs/2610.13909v1",
-        "publishedAt": "2026-10-09T17:49:32.000Z",
-        "summary": "While deep learning models for tabular data have recently received significant research attention, the choice of objective functions for regression tasks remains an understudied degree of freedom. Several lines of research offer alternatives to the standard Mean Squared Error (MSE), but differences in datasets, backbones, and evaluation protocols make their practical benefits difficult to compare. In this work, we address this gap by performing a systematic re-evaluation of regression objectives across a broad collection of established tabular datasets and multiple neural backbones. Our comparison reveals that many proposed objectives provide limited or inconsistent gains over a properly tuned MSE baseline, while quantile loss yields consistent aggregate improvements over MSE across the tested backbones. We then identify a limitation that remains even with this strong objective: regions with different levels of target noise can reach their best predictive performance at different training epochs. Consequently, a single global early-stopping checkpoint can impose a compromise between uncertainty regions, even when the objective can represent heteroskedastic target distributions. Motivated by this limitation, we introduce a heteroskedasticity-aware extension of quantile loss that uses input-dependent label smoothing as a potential remedy and improves over quantile loss on several backbones. Overall, our results provide a modern empirical picture of regression objectives for tabular deep learning and highlight how differences in optimal stopping times across uncertainty regions can limit the effectiveness of global early stopping. The code is available at https://github.com/yandex-research/tabular-regression.",
+        "title": "Anchors Enhance Controllability and Reasoning of Diffusion Language Models",
+        "url": "https://arxiv.org/abs/2610.15097v1",
+        "publishedAt": "2026-10-10T18:14:59.000Z",
+        "summary": "Diffusion language models (DLMs) offer new opportunities for controllable text generation. However, their controllability, defined as the ability to satisfy task constraints while preserving their original capabilities, remains underexplored. DLMs' bidirectional attention allows control tokens to guide generation from arbitrary positions in the output sequence, but effective guidance depends on the compatibility between their content and placement. To this end, we propose AnchorDLM, a framework in which an anchor generator produces an anchor consisting of a short output fragment and its position for each query. The anchor is placed as control tokens at the specified position to initialize the output sequence of a frozen DLM and guide subsequent denoising. We train the anchor generator with reinforcement learning (RL) to jointly optimize anchor content and placement, using rewards computed from the DLM's generated outputs based on answer correctness and constraint satisfaction. Moreover, through the lens of discrete flow matching (DFM), we interpret anchor placement as helping to reshape the initial velocity field that guides generation. Experiments on code generation and mathematical reasoning across five DLM backbones show that AnchorDLM improves controllability and further yields gains in reasoning performance across diverse benchmarks.",
         "authors": [
-          "Danil Rudenko",
-          "Georgii Bulgakov",
-          "Nikolay Kartashev",
-          "Ivan Rubachev",
-          "Daniil Krasylnikov",
-          "Artem Babenko"
+          "Feiyu Qu",
+          "Zheng Huang",
+          "Andrea Zanette"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 80
+      },
+      {
+        "title": "Swarm Telepathy: Prefill-Free KV-Cache Transfer Across Families",
+        "url": "https://arxiv.org/abs/2610.15095v1",
+        "publishedAt": "2026-10-10T18:09:19.000Z",
+        "summary": "LLM multi-agent systems split work across agents that communicate through text. An agent summarizes its findings, another agent receives the text. This constrains communication to discrete tokens and costs redundant compute, limiting bandwidth and capabilities of multi-agent systems. Recent works demonstrate KV-cache transfer between LLMs but they either require the LLMs to be within the same family or cannot function across context, thus requiring the receiver to prefill text. We present SwaT (Swarm Telepathy), the first cross-family KV-cache transfer method that allows prefill-free communication in multi-family multi-agent systems. In an agent-to-agent communication setting, combining SwaT with recent advances in KV-cache compaction beats text-to-text communication in both accuracy and speed, with a mean of $40\\%$ higher accuracy and a mean of $4\\times$ faster wall-clock time. Experiments show SwaT achieves high performance on 17 benchmarks across 12 LLMs and 6 families. Additionally, given a sender Vision-Language Model (VLM), SwaT is able to transfer the vision capabilities to a text-only receiver LLM exceeding text-to-text communication despite SwaT being trained on text-only data. SwaT keeps both sender and receiver models frozen without fine-tuning and only requires $<50M$ tokens and $<1$ GPU-day to train.",
+        "authors": [
+          "Abdulrahman Alabdulkareem",
+          "Irene Tenison",
+          "Yang Zhang",
+          "Yada Zhu",
+          "Boris Katz",
+          "Dan Gutfreund"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 80
+      },
+      {
+        "title": "TurnCost: Turns, Not Observations: Cache-Aware Loop Engineering for Coding Agents",
+        "url": "https://arxiv.org/abs/2610.15093v1",
+        "publishedAt": "2026-10-10T18:03:24.000Z",
+        "summary": "AI coding agents operate in iterative loops: they modify code, run tools, inspect the results, and decide what to do next. We call the design of this process loop engineering, which includes context management, model selection, compaction, and termination. Existing efficiency work mainly compresses tool observations or routes selected turns to cheaper models, but the practical opportunity for these optimizations remains unclear. We analyze 600 publicly released coding-agent trajectories spanning two agent scaffolds and two language models. Median observations contain only 118-286 tokens, while the large build logs commonly used to motivate compression occur near the ninety-ninth percentile. Moreover, 98.6% of input tokens are served from a prefix cache, so flat input pricing overestimates loop cost by roughly 7x on average under near-ideal caching.\n  We derive and empirically validate a closed-form break-even condition for model delegation. Delegation increases cost in half of the evaluated settings, near the predicted boundary. More broadly, turn count explains 84% of the variance in log trajectory cost, compared with 4% for mean observation size; the most expensive trajectories have the most turns despite having the smallest observations. These associations suggest that observation-focused methods target a secondary cost factor, and identify unnecessary turns as the larger and largely unexamined opportunity, though we do not establish that turns can be removed while holding task success fixed. We release TurnCost, a tool for re-scoring trajectory corpora under alternative caching, pricing, compression, and routing policies.",
+        "authors": [
+          "Pramod Kumar",
+          "Raj Kumar Pandey"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 101
+        "ageHours": 80
       },
       {
-        "title": "Hitting-Time Bounds for Asynchronous Q-Learning",
-        "url": "https://arxiv.org/abs/2610.13901v1",
-        "publishedAt": "2026-10-09T17:44:10.000Z",
-        "summary": "We study the last iterate of standard asynchronous Q-learning from a single trajectory of a finite Markov decision process. The trajectory follows a fixed behavior policy whose state--action chain is irreducible and may be periodic. For discount factor $γ$, write $H=(1-γ)^{-1}$, and let $μ_{\\min}$ be the minimum stationary state--action probability and $\\mathfrak h_\\star$ the largest expected hitting time of the reverse state--action chain. We prove that zero-initialized Q-learning with a constant step size achieves sup-norm error at most $\\varepsilon$ with high probability using $\\widetilde{O}(H^4/(μ_{\\min}\\varepsilon^2)+\\mathfrak h_\\star)$ transitions, for $0<\\varepsilon\\le1$. The statistical term retains the quartic effective-horizon dependence of standard Q-learning, while initialization cost is additive in $\\mathfrak h_\\star$. For aperiodic behavior chains, a comparison with mixing time yields a transient term $\\widetilde{O}(t_{\\mathrm{mix}}/μ_{\\min})$. An empirical state--action count rule selects a constant step size for a subsequent training run and attains the same rate without prior knowledge of model parameters, target accuracy, or confidence level. The output is the last training iterate, with both stages included in the sample count. The proof uses two deterministic Bellman envelopes to separate statistical error from fixed-policy initialization error and adapts reverse-time hitting-cost compensation from TD learning to state--action propagation. An exploration lower bound holds for arbitrary predictable step sizes. Together with the existing statistical lower bound and its extension to pilot-selected constant steps, it yields matching mean-square rates up to logarithmic factors on the stated large-sample parameter classes.",
+        "title": "VLCQ: Post-training quantization for deep neural networks using variable length coding",
+        "url": "https://arxiv.org/abs/2610.15092v1",
+        "publishedAt": "2026-10-10T18:02:45.000Z",
+        "summary": "Quantization plays a crucial role in efficiently deploying deep learning models on resource-constrained devices. Post-training quantization does not require access to the original dataset or retraining the full model. Current methods that achieve high performance close to baseline results typically require INT8 fixed-point integers. However, achieving higher model compression with lower bit-widths often leads to significant performance degradation. In this paper, we propose VLCQ, a post-training quantization method that relaxes the fixed-point encoding constraint, enabling more flexible exploration of quantization techniques through variable-length encoding. This approach achieves competitive or improved performance while reducing bit-widths, without requiring access to training data or model fine-tuning. Extensive experiments on image classification, segmentation, and object detection demonstrate that VLCQ improves model compression and accuracy compared with state-of-the-art post-training quantization approaches. For per-channel quantization, VLCQ surpasses FP32 accuracy and Piece-Wise Linear Quantization (PWLQ) on most evaluated models, achieving up to 6x compression compared with FP32 and up to 1.7x compared with PWLQ. When prioritizing compression with limited accuracy loss, VLCQ achieves up to 12.25x compression compared with FP32 with less than 4% performance degradation. For per-tensor quantization, VLCQ is competitive with Data-Free Quantization (DFQ), while providing greater flexibility to achieve lower bit rates across different tasks and models.",
         "authors": [
-          "Yang Peng"
+          "Reem Abdel-Salam",
+          "Ahmed H. Abdel-Gawad",
+          "Amr G. Wassal"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 101
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 80
+      },
+      {
+        "title": "Have You Been Convinced? A Neuro-symbolic Argumentation Reasoning Approach to Detecting Persuasiveness in ChangeMyView Discussions",
+        "url": "https://arxiv.org/abs/2610.15091v1",
+        "publishedAt": "2026-10-10T18:00:05.000Z",
+        "summary": "Argument structures represent how individual arguments interact within a discourse. However, leveraging these structures to infer meaningful knowledge remains challenging, as it requires a formal representation of how argumentative influence propagates across the structure. We propose Neuro-symbolic Argumentation Reasoning System (NARS) for performing persuasiveness detection directly from online discussions. The neural component employs retrieval-augmented iterative LLM reasoning to extract bipolar argument structures, while the symbolic component applies gradual argumentation semantics to propagate argumentative influence over the structure.\n  Using the Webis-CMV-20 corpus, we construct CMV2BAS, a dataset of long, multi-threaded ChangeMyView discussions annotated with LLM-derived bipolar argument structures and labeled with delta events (view change vs.\\ no change). We investigate whether gradual argumentation semantics can effectively detect persuasiveness, whether augmenting them with argument quality and graph-based centrality improves performance, and whether symbolic reasoning remains necessary in the presence of modern LLMs. NARS achieves F1=0.57 and AUC=0.56 under its best configuration, outperforming zero-shot Qwen3.6:27B and GPT-oss:20B. We identify support-dominant discussions and long argumentative chains as key failure modes limiting attack influence propagation. Our work demonstrates the feasibility of operationalizing formal gradual argumentation semantics over noisy real-world discourse for scalable macro-level persuasion analysis, while highlighting key challenges and directions for future research in neuro-symbolic argumentation reasoning. We release both CMV2BAS dataset and the NARS framework for public use.",
+        "authors": [
+          "Siddharth Bhargava",
+          "Sara Tonelli",
+          "Patricia Martín-Rodilla"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 80
+      },
+      {
+        "title": "Self-Evolving Visual Agent via Margin Reward",
+        "url": "https://arxiv.org/abs/2610.15084v1",
+        "publishedAt": "2026-10-10T17:33:56.000Z",
+        "summary": "Visual agents that interleave reasoning with tool invocation have posed a promising direction for multimodal tasks. However, learning effective tool invocation usually relies on curated question-answer pairs or expert demonstrations at scale, which are expensive to acquire. In this study, we propose Marvo, a simple-yet-effective self-evolution approach that enables learning tool invocation from unlabeled images. Marvo consists of two agents: (1) a challenger that generates question-answer pairs from unlabeled images, and (2) a solver that learns tool invocation by solving questions through reinforcement learning. To encourage effective tool invocation, a good training question should be difficult enough to warrant tool use, yet remain within the solver's capabilities. To this end, we introduce a margin reward to the challenger, defined as solver's performance difference with and without access to tools. With the margin reward, we create an adaptive curriculum that encourages the solver to learn effective tool invocation. Across benchmarks covering agentic reasoning, visual search, mathematical, and general real-world reasoning, Marvo improves average accuracy by up to 7.1\\% --- demonstrating margin reward as a preferred way to scale question complexity without human supervision.",
+        "authors": [
+          "Wenxi Yang",
+          "Yuzhong Zhao",
+          "Baochang Zhang",
+          "Yunfan Liu",
+          "Qixiang Ye"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 80
+      },
+      {
+        "title": "GAMW: Generation-Aware Mel-Domain Watermarking for TTS Traceability",
+        "url": "https://arxiv.org/abs/2610.15082v1",
+        "publishedAt": "2026-10-10T17:30:02.000Z",
+        "summary": "As text-to-speech (TTS) systems continue to advance, provenance tracking and security verification of synthesized speech have become increasingly important. Audio watermarking provides active provenance by embedding imperceptible, machine-recoverable information into speech. However, existing post-hoc methods typically modify the waveform after synthesis, leaving the watermark vulnerable to compound perturbations. To address this limitation, we propose GAMW, a watermark injection framework integrated into the TTS generation process. Before waveform synthesis, GAMW embeds a content-adaptive multi-bit watermark residual into the generated representation, and its decoding objective combines focal modulation with dynamic per-bit weighting. We train and evaluate GAMW separately on two TTS backbones. With a 16-bit payload, GAMW improves decoding accuracy over the strongest baseline by 9.2 and 23.5 percentage points under individual and compound perturbations, respectively, while maintaining competitive speech quality. Reliable clean-speech decoding is also retained at higher payloads. Code is available at https://github.com/ZConJugaTe/GAMW.",
+        "authors": [
+          "Yihang Zhang",
+          "Weicai Yan",
+          "Qifei Zhang",
+          "Yangyang Wu",
+          "Tao Jin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 80
+      },
+      {
+        "title": "Knowledge transfer between simple discrete worlds",
+        "url": "https://arxiv.org/abs/2610.15081v1",
+        "publishedAt": "2026-10-10T17:28:23.000Z",
+        "summary": "Adapting to a new world and reasoning correctly about which outcomes are possible under rules one has not met before is a basic capacity underlying general intelligence. We study it in small discrete worlds: sets of grid configurations consistent with a shared set of rules, concretely Sudoku-like puzzles built from a common base and a handful of extra rules. We train a single depth-recurrent model on many combinations of rules and test it at four levels of novelty: a new puzzle, a new combination of known rules, a pairing of rules never seen together, and a rule instance not seen at all during training. The model receives the active rules either as a symbolic description or as two solved examples, and a model that gets no rule information is used as a baseline. At recombining rules it was trained on, the description matches or exceeds examples ($99\\%$ against $95\\%$ on new combinations). On rule instances whose components never co-occurred in training, the description falls below the no-information baseline while examples stay above it. The framework allows us to test many such generalization regimes in more systematic way than benchmarks such as ARC-AGI and provides new ground for evaluating depth-recurrent reasoning models, which are typically tested on saturated Sudoku benchmarks.",
+        "authors": [
+          "Silvère Gangloff",
+          "Jan Hula"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 80
       }
     ],
     "news": [
+      {
+        "title": "Science Corporation implants its vision-restoring chip in its first Stargardt disease patient",
+        "url": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient/",
+        "publishedAt": "2026-10-13T23:13:31.000Z",
+        "summary": "Max Hodak, the former president and co-founder of Neuralink, detailed on stage at TechCrunch Disrupt how his company's work with PRIMA is part of its path toward a novel brain-computer interface (BCI).",
+        "authors": [
+          "Aisha Malik"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Infrastructure",
+        "ageHours": 3
+      },
+      {
+        "title": "Cerebras CEO says we&#8217;re nearing a future where everyone has a personal AI assistant at home",
+        "url": "https://techcrunch.com/2026/10/13/cerebras-ceo-says-were-nearing-a-future-where-everyone-has-a-personal-ai-assistant-at-home/",
+        "publishedAt": "2026-10-13T23:05:34.000Z",
+        "summary": "Cerebras CEO Andrew Feldman predicts a future where personal AI assistants become as commonplace as household appliances, running partly on local devices and partly in the cloud.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 3
+      },
+      {
+        "title": "Industrial Next wants factory robots to switch tasks in minutes, not weeks",
+        "url": "https://techcrunch.com/2026/10/13/industrial-next-wants-factory-robots-to-switch-tasks-in-minutes-not-weeks/",
+        "publishedAt": "2026-10-13T23:00:00.000Z",
+        "summary": "Industrial Next helps manufacturers automate complex, delicate tasks that have traditionally required human labor.",
+        "authors": [
+          "Aisha Malik"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 3
+      },
       {
         "title": "Cerebras CEO pushes back on AI doomsday warnings",
         "url": "https://techcrunch.com/2026/10/13/cerebras-ceo-pushes-back-on-ai-doomsday-warnings/",
@@ -302,7 +345,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 0
+        "ageHours": 3
       },
       {
         "title": "How artificial neural networks build their own learning machinery",
@@ -316,7 +359,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "MIT Lincoln Laboratory hosts National Security Commission on Emerging Biotechnology",
@@ -330,7 +373,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "Judge orders OpenAI to turn over hiring records in Apple trade secrets case",
@@ -344,7 +387,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "Developing Gemini 4 Argon responsibly and safely",
@@ -356,7 +399,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 6
       },
       {
         "title": "Flox Intelligence is building AI to keep wildlife away from trains, airports, and roads",
@@ -370,7 +413,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "Facebook is giving users more control over their algorithm",
@@ -384,7 +427,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 5
+        "ageHours": 8
       },
       {
         "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
@@ -398,7 +441,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 5
+        "ageHours": 8
       },
       {
         "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
@@ -412,47 +455,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 5
-      },
-      {
-        "title": "Google Play now lets anyone build private, vibe-coded apps that run on Android",
-        "url": "https://techcrunch.com/2026/10/13/google-play-now-supports-private-vibe-coded-apps-built-just-for-you/",
-        "publishedAt": "2026-10-13T17:00:00.000Z",
-        "summary": "Google is making it easier to build and use personal Android apps created with AI, without having to make them available to everyone on the Play Store.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 6
-      },
-      {
-        "title": "SpaceX and Google both said no. Now his software is riding a SpaceX rocket next to Google’s",
-        "url": "https://techcrunch.com/2026/10/13/satlyt-founded-by-a-former-google-and-spacex-product-manager-raises-8m-to-run-ai-on-satellites/",
-        "publishedAt": "2026-10-13T16:30:00.000Z",
-        "summary": "Satlyt wants to be the Android of orbital computing, offering open software that works on many companies' satellites, versus SpaceX's closed, all-in-one iPhone-style approach.",
-        "authors": [
-          "Tim Fernholz"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 6
-      },
-      {
-        "title": "Gemini 4 Argon for Robotics",
-        "url": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
-        "publishedAt": "2026-10-13T16:01:58.000Z",
-        "summary": "",
-        "authors": [],
-        "source": "Google DeepMind",
-        "feed": "Google DeepMind Blog",
-        "provenance": "https://deepmind.google/blog/rss.xml",
-        "category": "Models",
-        "ageHours": 7
+        "ageHours": 9
       }
     ],
     "threads": []
@@ -463,11 +466,7 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 9
-      },
-      {
-        "name": "Models",
-        "count": 6
+        "count": 13
       },
       {
         "name": "General",
@@ -476,6 +475,10 @@
       {
         "name": "Products",
         "count": 3
+      },
+      {
+        "name": "Models",
+        "count": 2
       }
     ]
   }
