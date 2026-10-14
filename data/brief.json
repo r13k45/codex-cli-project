@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T01:50:58.598Z",
+  "generatedAt": "2026-10-14T07:30:59.790Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,217 +85,270 @@
   "sections": {
     "research": [
       {
-        "title": "Structural Chain-of-Thought: Reasoning with Executable Computational Graphs",
-        "url": "https://arxiv.org/abs/2610.15107v1",
-        "publishedAt": "2026-10-10T18:29:30.000Z",
-        "summary": "Chain-of-thought prompting enables reasoning in large language models but produces explanations that are difficult to verify, expensive to generate, and not always faithful. We introduce a Structural Chain-of-Thought framework where models generate executable computational graphs instead of free-form reasoning. The final answer is obtained by deterministically executing the graph. The model is trained using graph-based reinforcement learning that rewards structural validity, answer correctness, and node overlap with reference graphs.\n  Experiments across five benchmarks and four model families show that our method consistently improves accuracy over supervised graph training and can reduce generation length by up to 5-6x compared with standard GRPO and chain-of-thought supervised training. Our faithfulness experiments reveal that models trained with our approach tend to rely on deriving their answers from the generated graphs rather than producing post-hoc rationalizations as usually in chain-of-thought reasoning.",
+        "title": "ChunkAct: Action Chunking for Agentic Robotics",
+        "url": "https://arxiv.org/abs/2610.18874v1",
+        "publishedAt": "2026-10-13T17:59:57.000Z",
+        "summary": "Agentic robotics places a large language model (LLM) agent in the robot control loop, where it composes perception, motion, and vision-language-action (VLA) tools under the guidance of a memory and thereby generalizes to new tasks without retraining. This generality comes at a steep price in efficiency. Every primitive requires a round of LLM reasoning over the full interaction history, so the cost of an episode grows with the number of primitives. We find this reasoning largely redundant: once a sub-goal is chosen, its primitives follow a routine already prescribed by memory. We present ChunkAct, which introduces action chunking to agentic robotics. Online, a single call launches a chunk of chained primitives, which executes autonomously and returns control only upon failure. Offline, ChunkAct compiles the memory into these chunks, so execution is memory-free at test time and the planner is reserved for decisions that require reasoning. LLM computation therefore scales with the number of decisions rather than the number of primitives. On LIBERO-Pro, ChunkAct improves task success by 5.0 points over the state of the art in agentic robotics while requiring 2.9x fewer LLM calls, 4.4x fewer input tokens, and 2.3x fewer output tokens.",
         "authors": [
-          "Petr Senatorov",
-          "Karim Vafin",
-          "Elena Tutubalina",
-          "Oleg Somov"
+          "Bingxin Xu",
+          "Wenrui Bao",
+          "Xinxin Liu",
+          "Jiawei Zhou",
+          "Yuzhang Shang",
+          "Emilio Ferrara"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 14
       },
       {
-        "title": "RELAGRAM: Recursive Latent Graph Model for the Capacitated Vehicle Routing Problem",
-        "url": "https://arxiv.org/abs/2610.15106v1",
-        "publishedAt": "2026-10-10T18:29:19.000Z",
-        "summary": "Latent recursion repeatedly processes internal representations through the same neural network. Recent work has shown this approach to be effective on structured reasoning tasks such as Sudoku and maze solving. However, whether latent recursion can support neural routing remains unclear. We introduce RELAGRAM (Recursive Latent Graph Model), a novel approach that brings latent recursion to graph combinatorial optimization. RELAGRAM encodes a capacitated vehicle routing problem (CVRP) instance as edge tokens; a compact transformer recurrently updates the latent representations of these tokens. An output head maps the answer state to an edge heatmap, from which an autoregressive decoder constructs a feasible solution. On CVRP-100 instances, the 0.53M-parameter RELAGRAM achieves gaps to a PyVRP reference of 13.4%, 9.8%, and 8.3% under greedy decoding, eightfold symmetry augmentation, and 256-candidate search, respectively. Trained only on CVRP-100, RELAGRAM generalizes zero-shot to CVRP-500 and CVRP-1000, achieving gaps of 15.6% and 21.7% under 256-candidate search. Together, these results demonstrate that latent recursion is a promising approach to neural routing.",
+        "title": "Cepheid: Decoupling Scale from Structure for Cross-Family Motion Completion",
+        "url": "https://arxiv.org/abs/2610.18871v1",
+        "publishedAt": "2026-10-13T17:59:53.000Z",
+        "summary": "Sparse-to-dense motion completion recovers dense mesh motion from sparse vertex displacements. Residual priors trained on one geometry family frequently fail to beat parameter-free harmonic extension off-family. Moreover, cross-family training meets a scaling barrier: residual amplitude varies by more than an order of magnitude across geometry families and collapses as observations become denser. Since this scale depends on unknown target motion, it cannot be measured directly at test time. We decouple residual structure from physical scale by learning a dimensionless prior, estimating amplitude from observables and a lightweight correction fitted only on training sources. Our unified model surpasses harmonic extension across all evaluated families, including unseen cloth and legged bodies, without skeletons, registration, or cross-mesh correspondence. The same prior applies without retraining to point-tracked animal video and a robot grasping a soft body. Project page: https://su-terry.github.io/cepheid-website/",
         "authors": [
-          "Vladimir Kirill Bickov",
-          "Neil Yorke-Smith"
+          "Chih-Hai Su",
+          "Tsung-Wei Ke",
+          "Yu-Lun Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "What Matters in Quality-Aware VLA Pretraining: A Benchmark and Empirical Study",
+        "url": "https://arxiv.org/abs/2610.18869v1",
+        "publishedAt": "2026-10-13T17:59:52.000Z",
+        "summary": "How should demonstration quality be used during vision-language-action (VLA) pretraining to improve performance after target-task fine-tuning? We compare weighting, filtering, and conditioning across reward definitions and label granularities using 5,000 naturally suboptimal human demonstrations and 24 target tasks. Within each VLA, we match demonstrations and training budgets. Additional comparisons examine pretraining data size and the roles of quality tags during fine-tuning and inference. Across three VLAs, we find that approach-aware episode conditioning improves mean success over plain behavioral cloning; conditioning and filtering favor episode and chunk labels, respectively, on average, with model-dependent reversals; and constant-tag fine-tuning improves mean success after conditioned pretraining with either tagged or untagged inference. We introduce AXIS-Bench to support these controlled comparisons. Built on crowdsourced simulation demonstrations, it provides recorded object and contact states for recomputing quality labels on shared trajectories. Replayable trajectories support workspace-aligned rendering and user-defined real-world target tasks. In our real-world experiment, simulation pretraining raises success from 9.6\\% to 31.7\\%. Project page: https://axis-bench.github.io/.",
+        "authors": [
+          "Mingxuan Yan",
+          "Litian Gong",
+          "Dihong Huang",
+          "Zhixu Li",
+          "Tianyu Zhang",
+          "Wenqian Zhang",
+          "Hefeifei Jiang",
+          "Peihao Li",
+          "Jian Zhang",
+          "Mengfei Zhao",
+          "Yikai Tang",
+          "Hai Zhai",
+          "Zehao Wang",
+          "Ruijian Liang",
+          "Yanjia Huang",
+          "Lin Shao",
+          "Changliu Liu",
+          "Kaiyu Hang",
+          "Zhiwen Fan",
+          "Masayoshi Tomizuka",
+          "Jianfei Yang",
+          "Jiachen Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Tev: Scaling Long-Horizon Agentic Environments with Dense Progress Rewards",
+        "url": "https://arxiv.org/abs/2610.18868v1",
+        "publishedAt": "2026-10-13T17:59:51.000Z",
+        "summary": "Long-horizon agents have drawn growing attention for their ability to work autonomously -- from hours to days -- on economically valuable tasks, a capability essential to automated discovery and recursive self-improvement (RSI). Yet open-source models still struggle on long-horizon tasks, largely for lack of both training data and a working recipe, and scaling both is hard: long, complex tasks are difficult to curate and verify, and their rewards are sparse. We address both. First, we introduce Tev-Gym, the first long-horizon agent training dataset with verifiable, dense, progressive rewards -- 1,170 verified task environments across 7 domains. It is built on a latent-world-first approach that first constructs a latent world: a complete and correct hidden specification of the task domain, workflow, and expected state after each step. Each task is then progressively rendered from this specification into an agent-facing environment, enabling controllable complexity and a natural progress metric. Second, we turn this metric into a training recipe: via progress-potential reward shaping (PPRS), we convert progress into a dense per-step reward that improves training efficiency and makes otherwise-intractable tasks trainable. Training with this recipe yields Tev-27B, which achieves substantial gains on the Agents' Last Exam computing and math sciences domains (ALE-CM), matching GPT-6 Astra and Claude Opus 5 at Pass@5. Despite training only on ALE-related data, it generalizes to the Terminal-Bench (TB) 3.0 and 4.0 subsets, surpassing GLM 5.2 and Gemini 3.7 Flash, and reaches Claude Opus 4.8-level performance on middle-horizon tasks such as TB 2.1.",
+        "authors": [
+          "Wenbo Hu",
+          "Shraman Pramanick",
+          "Krishna Kumar Singh",
+          "Nanyun Peng",
+          "Kai-Wei Chang",
+          "Yong Jae Lee"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Data Free Training of Diffusion Models for Lattice Field Theories",
+        "url": "https://arxiv.org/abs/2610.18863v1",
+        "publishedAt": "2026-10-13T17:59:33.000Z",
+        "summary": "Sampling equilibrium field configurations remains a major computational bottleneck in lattice field theory, motivating the development of generative samplers that can produce independent configurations. Diffusion models are promising for this purpose, but their standard denoising score matching objective requires samples from the target distribution, seemingly reintroducing the original sampling problem. Here, we show that diffusion models can instead be trained from their own generated samples using the target score identity, provided access to the unnormalized probability density. Importance-weighted formulations of this identity yield a consistent target throughout training, while unweighted variants define a self-consistent fixed-point training scheme. We benchmark the different approaches in two-dimensional \\(φ^4\\) theory and identify effective choices that enable efficient training and sampling across the symmetric, critical, and broken phases. Ultimately, our data-free training approach achieves comparable performance to training on HMC reference data.",
+        "authors": [
+          "Dennis Grinwald",
+          "Ankur Singha",
+          "Khaled Kahouli",
+          "Karl Jansen",
+          "Shinichi Nakajima"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 14
       },
       {
-        "title": "RegExtract: A Benchmark for PFAS Regulatory Information Extraction with LLMs",
-        "url": "https://arxiv.org/abs/2610.15103v1",
-        "publishedAt": "2026-10-10T18:26:57.000Z",
-        "summary": "Extracting structured information from regulatory documents is a critical but challenging task. Relevant facts are scattered across long, legally dense texts, and traceability of extracted facts to their source is essential for verification. With increasing awareness of the environmental and health impacts of per- and polyfluoroalkyl substances (PFAS), regulatory documents have expanded significantly, varying in scope and product relevance, making interpretation challenging for manufacturers and policymakers. We introduce RegExtract, a benchmark for structured information extraction from PFAS regulatory documents, comprising 488 human-annotated field instances across 20 US state documents and 46 regulations. Each field instance includes a value and a provenance entry, yielding 976 entries in total. We define a typed, multi-field schema targeting key elements such as material definitions, permitted uses, and product exemptions, and propose provenance-aware evaluation metrics tailored to regulatory text. Through experiments with open- and closed-source LLMs across prompting strategies, document condensing methods, and schema partitioning approaches, we find that document identification fields remain challenging, and that field-specific few-shot examples improve extraction. This work lays the groundwork for AI tools for hazardous substance identification, question answering, and compliance monitoring. The code and data are available at https://github.com/IBM/PFAS-regulations.",
+        "title": "DoubtLess: Training-Free Contrastive Decoding for Efficient Reasoning",
+        "url": "https://arxiv.org/abs/2610.18862v1",
+        "publishedAt": "2026-10-13T17:59:32.000Z",
+        "summary": "Reasoning models achieve strong performance through long chains of thought (CoT), but often spend more tokens than needed to solve a problem. Existing ways to shorten the CoT require additional training for each model, add a fixed steering vector to the model's hidden states, or use decoding heuristics such as stopping early or banning words like \"wait\", which can reduce accuracy. We propose DoubtLess, a training-free decoding method in which a much smaller reasoning model steers the large one towards brevity. The small model reads the large model's CoT so far twice, once prompted to be brief (the brief thinker) and once prompted to be verbose (the verbose thinker), and the difference between its two logit vectors, scaled by a strength, is added to the large model's logits at every step of the CoT. On seven benchmarks of competition mathematics, graduate-level science and competitive programming, DoubtLess shortens the CoT of Qwen3-32B by 31% with unchanged accuracy, outperforming five inference-time baselines. We also show that DoubtLess reduces thinking tokens per turn by 20% in a self-debugging coding agent with unchanged task performance. It also generalizes to two other model families with unchanged accuracy. When combined with training-based compression, it further shortens the CoT of a model already trained for brevity. Ablations and behavioral analysis show that DoubtLess reduces repeated checking, with most token savings coming after the correct answer first appears in the CoT. Our code is available at https://github.com/leoluolol/DoubtLess.",
         "authors": [
-          "Defne Circi",
-          "Krystelle Lionti",
-          "Sarathkrishna Swaminathan",
-          "Daniel P. Sanders",
-          "L. Catherine Brinson",
-          "Bhuwan Dhingra",
-          "Basel Shbita",
-          "Mohab Elkaref",
-          "Sara Capponi",
-          "Tim Erdmann",
-          "Brandi Ransom"
+          "Minghao Luo",
+          "Liang Chen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "AesCode: Aesthetic Code Generation with Decoupled Cross-Modal Rewards",
+        "url": "https://arxiv.org/abs/2610.18860v1",
+        "publishedAt": "2026-10-13T17:59:31.000Z",
+        "summary": "Generating information-rich visual artifacts such as slides, posters, and dashboards as code is appealing because the outputs are structured, editable, and verifiable. Yet code models cannot see how their choices of layout and color come together on the canvas, often limiting spatial planning and aesthetic quality. Image generators excel at visual design but can misrender requested content, making their outputs unreliable targets for direct reproduction. We therefore introduce AesCode, which generates code grounded in the content prompt while using an image generated from the same prompt as an aesthetic guidance. To do so, AesCode represents the target as a design graph that describes the whole canvas and makes each property attributable. From this graph, we derive complementary cross-modal rewards: deterministic verifiers score properties parsable from code and rendering, while a VLM judge assesses the non-parsable ones with a sample-specific Visual Graph Rubric (VGR) tied to graph elements and relations. We optimize these decoupled rewards through reinforcement learning with per-channel normalization to jointly improve spatial planning, aesthetic quality, and verifiable correctness. To evaluate this setting, we build a benchmark that scores verifiable correctness and visual quality separately, with visual scores highly consistent with human judgments. We find that reference images substantially improve the visual quality of code generated by existing models, and ablations show that AesCode benefits from references both as model input and as a source of visual rewards. Relative to same-scale Qwen3-VL baselines given the same references, AesCode-8B and AesCode-32B improve visual quality by 31.1 and 22.4 percentage points, reaching scores comparable to those of closed-source frontier models such as GPT-5.5 and Claude Opus 4.8.",
+        "authors": [
+          "Xin Gao",
+          "Yifan Yang",
+          "Xin Li",
+          "Pan Wang",
+          "Yan Li",
+          "Muzhao Tian",
+          "Mingxi Cheng",
+          "Bei Liu",
+          "Kai Qiu",
+          "Qi Dai",
+          "Dong Chen",
+          "Yue Dong",
+          "Leandros Tassiulas",
+          "Rex Ying",
+          "Ji Li",
+          "Chong Luo"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Hybrid Reasoning Agents",
+        "url": "https://arxiv.org/abs/2610.18861v1",
+        "publishedAt": "2026-10-13T17:59:31.000Z",
+        "summary": "How can we build an agent that thinks beyond human language, yet still acts through it in the external environment? Modern LLM agents still reason and interact through text, while latent reasoning offers an efficient internal medium but lacks native tool access and reasoning transparency. We bridge these two directions with Hybrid Reasoning Agents (HybridAgents), which dynamically navigate between latent reasoning and text-based interaction throughout a unified generation process. Architecturally, a lightweight HybridLink enables seamless transitions between text and latent modes, while the agent's continuous working memory preserves lossless hybrid context across multiple turns. These designs preserve tool-integrated agentic capabilities while making latent thoughts directly inspectable. Building on this architecture, we further develop dedicated post-training algorithms for hybrid reasoning: HybridSFT stabilizes tool-integrated hybrid generation by teaching the backbone to coordinate with HybridLink, then HybridRL scales reasoning by learning when to think in latent space and when to act through text. We evaluate HybridAgent at 3 model scales across 11 benchmarks covering mathematics, science, medicine, search, and agentic reasoning. Compared with frontier LLM Agents and agentic frameworks spanning both text-based and latent methods, HybridAgent consistently improves performance by 10.4%, while delivering 35.5%-54.7% token reduction, 1.8x-2.6x faster inference, and 2.7x-3.7x cost savings. Code and data are available at https://github.com/togethercomputer/HybridAgent.",
+        "authors": [
+          "Jiaru Zou",
+          "Yunzhe Qi",
+          "Sirui Chen",
+          "Federico Bianchi",
+          "Shang Zhu",
+          "Pan Lu",
+          "Jingrui He",
+          "James Zou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Exact Topological Compliance: Generating Persistence-Equivalent Graphs",
+        "url": "https://arxiv.org/abs/2610.18856v1",
+        "publishedAt": "2026-10-13T17:59:19.000Z",
+        "summary": "Persistent homology summarizes the topological evolution of a graph as persistence diagrams (PDs). Generating graphs whose topology matches a target descriptor is increasingly important, yet existing topology-aware generative models rely on soft regularization, producing graphs whose PDs may only be approximately similar. We initiate a principled investigation of the generation problem: produce graphs that realize a target PD exactly. We propose two approaches guided by the implicit local and global constraints a target PD imposes. The local approach builds degree-based PD-equivalent graphs iteratively, and we prove that every output realizes the target PD and that every degree-based PD-equivalent graph is reachable. However, as shown thereafter, local generation necessarily trades off between sample diversity and reaching infeasible states. We therefore recast generation as a global constraint satisfaction problem with a complete encoding solvable by modern constraint programming solvers. This is applicable to any vertex-based permutation equivariant filtration scheme and is minimal under the degree filtration. Experiments on four standard graph generation benchmarks confirm that both methods realize the target PD exactly. Together, our methods provide a principled treatment of strict topology-compliant graph generation. Code is available at https://github.com/Aalto-QuML/ExactCompliance.",
+        "authors": [
+          "Mattie Ji",
+          "Indradyumna Roy",
+          "Vikas Garg"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Two Clocks: Why Larger Rollout Batches Learn Slower but Fail on Schedule in Reinforcement Learning with Verifiable Rewards",
+        "url": "https://arxiv.org/abs/2610.18853v1",
+        "publishedAt": "2026-10-13T17:58:57.000Z",
+        "summary": "Reinforcement learning with verifiable rewards (RLVR) relies on costly model-generated responses, motivating larger rollout batches and square-root learning-rate scaling. Reported to approximately preserve progress per sample with one optimizer step per rollout, this rule is less understood in practical multi-step training. We develop a two-clock framework that separates the samples needed to make progress from those consumed before collapse. Under a local quadratic model, the square-root rule preserves first-order drift per sample but not progress: larger batches take fewer, longer updates and lose more to curvature, yielding a learning-rate-dependent critical batch beyond which sample efficiency degrades. A drift-threshold hypothesis predicts a complementary failure clock whose sample count remains approximately invariant along the square-root rule. Controlled GRPO experiments on Qwen2.5-Math-1.5B across a $16\\times$ batch range support both predictions. Ratio clipping delays failure, especially for larger batches, but the progress gap persists without it. Widening the clip trades stability for a transient speed gain. The progress gap reappears on another dataset, a general-purpose checkpoint, and a 7B model. Finally, we use the two-clock framework to derive a simple multi-step RLVR schedule: start below the critical batch and switch to a larger batch before failure. Our code is available at: https://github.com/WinstonLiyt/two-clocks-rlvr.",
+        "authors": [
+          "Yuante Li",
+          "Junwei Quan",
+          "Kai Qiu",
+          "Kate Zhang",
+          "Yicheng Tao"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "MFG: Multi-turn Feedback Guided Molecular Optimization",
+        "url": "https://arxiv.org/abs/2610.18851v1",
+        "publishedAt": "2026-10-13T17:58:41.000Z",
+        "summary": "Multi-objective molecular optimization is a critical process in drug discovery that aims to modify a given molecule to simultaneously improve multiple properties while maintaining a similar overall structure. This process often requires iterative modifications guided by computational or experimental feedback. Recent large language model (LLM)-based methods have begun to explore this iterative approach; however, these methods are not explicitly trained to leverage such feedback, while existing approaches primarily focus on single-turn molecular optimization. To address this gap, we introduce Multi-turn Feedback Guided (MFG) molecular optimization, a reinforcement learning framework that trains an LLM to progressively optimize molecules using feedback from previous turns. MFG introduces a feedback vector capturing both property improvements and source molecule similarity, alongside a feedback-aligned reward function that promotes progressive improvement across turns. We apply MFG over $\\text{GeLLM}^{3}\\text{O}$, a state-of-the-art LLM model for multi-objective molecular optimization, evaluate $\\text{GeLLM}^{3}\\text{O-MFG}$ on ten multi-objective molecular optimization tasks. The results demonstrate that $\\text{GeLLM}^{3}\\text{O-MFG}$ achieves the highest average similarity-constrained success rate ($81.50%$), outperforming the base model $\\text{GeLLM}^{3}\\text{O}$ ($70.81%$).",
+        "authors": [
+          "Trieu Nguyen",
+          "Frazier N. Baker",
+          "Ruoxi Gao",
+          "Daniel Adu-Ampratwum",
+          "Xia Ning"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "The Last Remote Sensing Model Built by Humans? Casting Any Earth Observation Task as Recursive Self-Improvement",
+        "url": "https://arxiv.org/abs/2610.18845v1",
+        "publishedAt": "2026-10-13T17:57:51.000Z",
+        "summary": "Earth observation (EO) models are still built by hand. For each new task, experts design a training recipe and tune it against a benchmark. We show that this loop can be handed to an agent. Any verifiable task can be cast as a harness and a verifier, where the harness defines what the agent may use and the verifier defines what counts as success. Every EO task can be made verifiable, through labeled benchmarks, independent sensors, physical models or the repeated observation of the same place. Given only these two components, a general-purpose coding agent builds the EO model and improves it recursively on its own outputs. Settings long treated as separate research problems, from learning with a handful of labels to adapting across domains, become choices of harness and verifier. On four EO benchmarks spanning optical, SAR and multispectral time-series imagery, agent-built models surpass the state of the art and keep most of that accuracy from about 1% of the training labels. This establishes a new paradigm for EO, in which people design harnesses and verifiers and agents build the models, so EO models improve as agents do.",
+        "authors": [
+          "Sijie Zhao",
+          "Zeqi Zhou",
+          "Heli Qi",
+          "Xuanchao Fu",
+          "Zhuo Zheng",
+          "Junshi Xia",
+          "Junjue Wang",
+          "Weihao Xuan",
+          "Naoto Yokoya"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "Random Feature Pruning for Multi-Class Classification",
-        "url": "https://arxiv.org/abs/2610.15101v1",
-        "publishedAt": "2026-10-10T18:21:39.000Z",
-        "summary": "Weighted sums of random kitchen sinks (W-RKS) is a commonly used feature extraction technique for supervised learning tasks. A major drawback of this method is the redundancy and ineffectiveness of many extracted random features. This paper investigates efficient methods for reducing such redundancy in multi-class classification problems. We specifically formulate feature selection as a variant of the sequentially nested model selection problem and introduce the Successive Empirical Excess Risk Difference Maximization (SEED-MAX) algorithm. It recursively computes empirical risks to identify the most parsimonious yet informative set of features. We derive an analytical lower bound for the probability of correct feature selection by the SEED-MAX algorithm. This lower bound on the probability of correct feature selection can be made arbitrarily close to one by increasing the training dataset size. To further enhance the rate of pruning, we evaluate the features retained by SEED-MAX using the Fisher test (F-Test). Empirical evaluations on UCR time-series classification datasets show that the sequential application of SEED-MAX with the Fisher test achieves approximately 92 percent rate of pruning with negligible degradation in classification accuracy. Implementations of the SEED-MAX and SEED-MAX-F-Test methods are available at https://github.com/OmidiAmin/seed-max-ftest.",
-        "authors": [
-          "Mohammad Amin Omidi",
-          "Babak Seyfe",
-          "Shahrokh Valaee"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
-      },
-      {
-        "title": "Anchors Enhance Controllability and Reasoning of Diffusion Language Models",
-        "url": "https://arxiv.org/abs/2610.15097v1",
-        "publishedAt": "2026-10-10T18:14:59.000Z",
-        "summary": "Diffusion language models (DLMs) offer new opportunities for controllable text generation. However, their controllability, defined as the ability to satisfy task constraints while preserving their original capabilities, remains underexplored. DLMs' bidirectional attention allows control tokens to guide generation from arbitrary positions in the output sequence, but effective guidance depends on the compatibility between their content and placement. To this end, we propose AnchorDLM, a framework in which an anchor generator produces an anchor consisting of a short output fragment and its position for each query. The anchor is placed as control tokens at the specified position to initialize the output sequence of a frozen DLM and guide subsequent denoising. We train the anchor generator with reinforcement learning (RL) to jointly optimize anchor content and placement, using rewards computed from the DLM's generated outputs based on answer correctness and constraint satisfaction. Moreover, through the lens of discrete flow matching (DFM), we interpret anchor placement as helping to reshape the initial velocity field that guides generation. Experiments on code generation and mathematical reasoning across five DLM backbones show that AnchorDLM improves controllability and further yields gains in reasoning performance across diverse benchmarks.",
-        "authors": [
-          "Feiyu Qu",
-          "Zheng Huang",
-          "Andrea Zanette"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "Swarm Telepathy: Prefill-Free KV-Cache Transfer Across Families",
-        "url": "https://arxiv.org/abs/2610.15095v1",
-        "publishedAt": "2026-10-10T18:09:19.000Z",
-        "summary": "LLM multi-agent systems split work across agents that communicate through text. An agent summarizes its findings, another agent receives the text. This constrains communication to discrete tokens and costs redundant compute, limiting bandwidth and capabilities of multi-agent systems. Recent works demonstrate KV-cache transfer between LLMs but they either require the LLMs to be within the same family or cannot function across context, thus requiring the receiver to prefill text. We present SwaT (Swarm Telepathy), the first cross-family KV-cache transfer method that allows prefill-free communication in multi-family multi-agent systems. In an agent-to-agent communication setting, combining SwaT with recent advances in KV-cache compaction beats text-to-text communication in both accuracy and speed, with a mean of $40\\%$ higher accuracy and a mean of $4\\times$ faster wall-clock time. Experiments show SwaT achieves high performance on 17 benchmarks across 12 LLMs and 6 families. Additionally, given a sender Vision-Language Model (VLM), SwaT is able to transfer the vision capabilities to a text-only receiver LLM exceeding text-to-text communication despite SwaT being trained on text-only data. SwaT keeps both sender and receiver models frozen without fine-tuning and only requires $<50M$ tokens and $<1$ GPU-day to train.",
-        "authors": [
-          "Abdulrahman Alabdulkareem",
-          "Irene Tenison",
-          "Yang Zhang",
-          "Yada Zhu",
-          "Boris Katz",
-          "Dan Gutfreund"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "TurnCost: Turns, Not Observations: Cache-Aware Loop Engineering for Coding Agents",
-        "url": "https://arxiv.org/abs/2610.15093v1",
-        "publishedAt": "2026-10-10T18:03:24.000Z",
-        "summary": "AI coding agents operate in iterative loops: they modify code, run tools, inspect the results, and decide what to do next. We call the design of this process loop engineering, which includes context management, model selection, compaction, and termination. Existing efficiency work mainly compresses tool observations or routes selected turns to cheaper models, but the practical opportunity for these optimizations remains unclear. We analyze 600 publicly released coding-agent trajectories spanning two agent scaffolds and two language models. Median observations contain only 118-286 tokens, while the large build logs commonly used to motivate compression occur near the ninety-ninth percentile. Moreover, 98.6% of input tokens are served from a prefix cache, so flat input pricing overestimates loop cost by roughly 7x on average under near-ideal caching.\n  We derive and empirically validate a closed-form break-even condition for model delegation. Delegation increases cost in half of the evaluated settings, near the predicted boundary. More broadly, turn count explains 84% of the variance in log trajectory cost, compared with 4% for mean observation size; the most expensive trajectories have the most turns despite having the smallest observations. These associations suggest that observation-focused methods target a secondary cost factor, and identify unnecessary turns as the larger and largely unexamined opportunity, though we do not establish that turns can be removed while holding task success fixed. We release TurnCost, a tool for re-scoring trajectory corpora under alternative caching, pricing, compression, and routing policies.",
-        "authors": [
-          "Pramod Kumar",
-          "Raj Kumar Pandey"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "VLCQ: Post-training quantization for deep neural networks using variable length coding",
-        "url": "https://arxiv.org/abs/2610.15092v1",
-        "publishedAt": "2026-10-10T18:02:45.000Z",
-        "summary": "Quantization plays a crucial role in efficiently deploying deep learning models on resource-constrained devices. Post-training quantization does not require access to the original dataset or retraining the full model. Current methods that achieve high performance close to baseline results typically require INT8 fixed-point integers. However, achieving higher model compression with lower bit-widths often leads to significant performance degradation. In this paper, we propose VLCQ, a post-training quantization method that relaxes the fixed-point encoding constraint, enabling more flexible exploration of quantization techniques through variable-length encoding. This approach achieves competitive or improved performance while reducing bit-widths, without requiring access to training data or model fine-tuning. Extensive experiments on image classification, segmentation, and object detection demonstrate that VLCQ improves model compression and accuracy compared with state-of-the-art post-training quantization approaches. For per-channel quantization, VLCQ surpasses FP32 accuracy and Piece-Wise Linear Quantization (PWLQ) on most evaluated models, achieving up to 6x compression compared with FP32 and up to 1.7x compared with PWLQ. When prioritizing compression with limited accuracy loss, VLCQ achieves up to 12.25x compression compared with FP32 with less than 4% performance degradation. For per-tensor quantization, VLCQ is competitive with Data-Free Quantization (DFQ), while providing greater flexibility to achieve lower bit rates across different tasks and models.",
-        "authors": [
-          "Reem Abdel-Salam",
-          "Ahmed H. Abdel-Gawad",
-          "Amr G. Wassal"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "Have You Been Convinced? A Neuro-symbolic Argumentation Reasoning Approach to Detecting Persuasiveness in ChangeMyView Discussions",
-        "url": "https://arxiv.org/abs/2610.15091v1",
-        "publishedAt": "2026-10-10T18:00:05.000Z",
-        "summary": "Argument structures represent how individual arguments interact within a discourse. However, leveraging these structures to infer meaningful knowledge remains challenging, as it requires a formal representation of how argumentative influence propagates across the structure. We propose Neuro-symbolic Argumentation Reasoning System (NARS) for performing persuasiveness detection directly from online discussions. The neural component employs retrieval-augmented iterative LLM reasoning to extract bipolar argument structures, while the symbolic component applies gradual argumentation semantics to propagate argumentative influence over the structure.\n  Using the Webis-CMV-20 corpus, we construct CMV2BAS, a dataset of long, multi-threaded ChangeMyView discussions annotated with LLM-derived bipolar argument structures and labeled with delta events (view change vs.\\ no change). We investigate whether gradual argumentation semantics can effectively detect persuasiveness, whether augmenting them with argument quality and graph-based centrality improves performance, and whether symbolic reasoning remains necessary in the presence of modern LLMs. NARS achieves F1=0.57 and AUC=0.56 under its best configuration, outperforming zero-shot Qwen3.6:27B and GPT-oss:20B. We identify support-dominant discussions and long argumentative chains as key failure modes limiting attack influence propagation. Our work demonstrates the feasibility of operationalizing formal gradual argumentation semantics over noisy real-world discourse for scalable macro-level persuasion analysis, while highlighting key challenges and directions for future research in neuro-symbolic argumentation reasoning. We release both CMV2BAS dataset and the NARS framework for public use.",
-        "authors": [
-          "Siddharth Bhargava",
-          "Sara Tonelli",
-          "Patricia Martín-Rodilla"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "Self-Evolving Visual Agent via Margin Reward",
-        "url": "https://arxiv.org/abs/2610.15084v1",
-        "publishedAt": "2026-10-10T17:33:56.000Z",
-        "summary": "Visual agents that interleave reasoning with tool invocation have posed a promising direction for multimodal tasks. However, learning effective tool invocation usually relies on curated question-answer pairs or expert demonstrations at scale, which are expensive to acquire. In this study, we propose Marvo, a simple-yet-effective self-evolution approach that enables learning tool invocation from unlabeled images. Marvo consists of two agents: (1) a challenger that generates question-answer pairs from unlabeled images, and (2) a solver that learns tool invocation by solving questions through reinforcement learning. To encourage effective tool invocation, a good training question should be difficult enough to warrant tool use, yet remain within the solver's capabilities. To this end, we introduce a margin reward to the challenger, defined as solver's performance difference with and without access to tools. With the margin reward, we create an adaptive curriculum that encourages the solver to learn effective tool invocation. Across benchmarks covering agentic reasoning, visual search, mathematical, and general real-world reasoning, Marvo improves average accuracy by up to 7.1\\% --- demonstrating margin reward as a preferred way to scale question complexity without human supervision.",
-        "authors": [
-          "Wenxi Yang",
-          "Yuzhong Zhao",
-          "Baochang Zhang",
-          "Yunfan Liu",
-          "Qixiang Ye"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
-      },
-      {
-        "title": "GAMW: Generation-Aware Mel-Domain Watermarking for TTS Traceability",
-        "url": "https://arxiv.org/abs/2610.15082v1",
-        "publishedAt": "2026-10-10T17:30:02.000Z",
-        "summary": "As text-to-speech (TTS) systems continue to advance, provenance tracking and security verification of synthesized speech have become increasingly important. Audio watermarking provides active provenance by embedding imperceptible, machine-recoverable information into speech. However, existing post-hoc methods typically modify the waveform after synthesis, leaving the watermark vulnerable to compound perturbations. To address this limitation, we propose GAMW, a watermark injection framework integrated into the TTS generation process. Before waveform synthesis, GAMW embeds a content-adaptive multi-bit watermark residual into the generated representation, and its decoding objective combines focal modulation with dynamic per-bit weighting. We train and evaluate GAMW separately on two TTS backbones. With a 16-bit payload, GAMW improves decoding accuracy over the strongest baseline by 9.2 and 23.5 percentage points under individual and compound perturbations, respectively, while maintaining competitive speech quality. Reliable clean-speech decoding is also retained at higher payloads. Code is available at https://github.com/ZConJugaTe/GAMW.",
-        "authors": [
-          "Yihang Zhang",
-          "Weicai Yan",
-          "Qifei Zhang",
-          "Yangyang Wu",
-          "Tao Jin"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 80
-      },
-      {
-        "title": "Knowledge transfer between simple discrete worlds",
-        "url": "https://arxiv.org/abs/2610.15081v1",
-        "publishedAt": "2026-10-10T17:28:23.000Z",
-        "summary": "Adapting to a new world and reasoning correctly about which outcomes are possible under rules one has not met before is a basic capacity underlying general intelligence. We study it in small discrete worlds: sets of grid configurations consistent with a shared set of rules, concretely Sudoku-like puzzles built from a common base and a handful of extra rules. We train a single depth-recurrent model on many combinations of rules and test it at four levels of novelty: a new puzzle, a new combination of known rules, a pairing of rules never seen together, and a rule instance not seen at all during training. The model receives the active rules either as a symbolic description or as two solved examples, and a model that gets no rule information is used as a baseline. At recombining rules it was trained on, the description matches or exceeds examples ($99\\%$ against $95\\%$ on new combinations). On rule instances whose components never co-occurred in training, the description falls below the no-information baseline while examples stay above it. The framework allows us to test many such generalization regimes in more systematic way than benchmarks such as ARC-AGI and provides new ground for evaluating depth-recurrent reasoning models, which are typically tested on saturated Sudoku benchmarks.",
-        "authors": [
-          "Silvère Gangloff",
-          "Jan Hula"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 80
+        "ageHours": 14
       }
     ],
     "news": [
       {
+        "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "publishedAt": "2026-10-14T02:00:14.000Z",
+        "summary": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress.",
+        "authors": [],
+        "source": "Google DeepMind",
+        "feed": "Google DeepMind Blog",
+        "provenance": "https://deepmind.google/blog/rss.xml",
+        "category": "Models",
+        "ageHours": 6
+      },
+      {
         "title": "Science Corporation implants its vision-restoring chip in its first Stargardt disease patient",
         "url": "https://techcrunch.com/2026/10/13/science-corporation-implants-its-vision-restoring-chip-in-its-first-stargardt-disease-patient/",
         "publishedAt": "2026-10-13T23:13:31.000Z",
-        "summary": "Max Hodak, the former president and co-founder of Neuralink, detailed on stage at TechCrunch Disrupt how his company's work with PRIMA is part of its path toward a novel brain-computer interface (BCI).",
+        "summary": "Max Hodak, the former president and co-founder of Neuralink, detailed onstage at TechCrunch Disrupt how his company's work with PRIMA is part of its path toward a novel brain-computer interface (BCI).",
         "authors": [
           "Aisha Malik"
         ],
@@ -303,7 +356,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 3
+        "ageHours": 8
       },
       {
         "title": "Cerebras CEO says we&#8217;re nearing a future where everyone has a personal AI assistant at home",
@@ -317,7 +370,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 3
+        "ageHours": 8
       },
       {
         "title": "Industrial Next wants factory robots to switch tasks in minutes, not weeks",
@@ -331,7 +384,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 9
       },
       {
         "title": "Cerebras CEO pushes back on AI doomsday warnings",
@@ -345,7 +398,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Policy",
-        "ageHours": 3
+        "ageHours": 9
       },
       {
         "title": "How artificial neural networks build their own learning machinery",
@@ -359,7 +412,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "MIT Lincoln Laboratory hosts National Security Commission on Emerging Biotechnology",
@@ -373,7 +426,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "Judge orders OpenAI to turn over hiring records in Apple trade secrets case",
@@ -387,7 +440,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "Developing Gemini 4 Argon responsibly and safely",
@@ -399,7 +452,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 12
       },
       {
         "title": "Flox Intelligence is building AI to keep wildlife away from trains, airports, and roads",
@@ -413,7 +466,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 7
+        "ageHours": 13
       },
       {
         "title": "Facebook is giving users more control over their algorithm",
@@ -427,7 +480,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 8
+        "ageHours": 13
       },
       {
         "title": "Laplace Intelligence red-teams robots and self-driving cars before they hit the real world",
@@ -441,43 +494,29 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 8
-      },
-      {
-        "title": "Pluto Security raises $42M as AI gives enterprise security teams a new headache",
-        "url": "https://techcrunch.com/2026/10/13/pluto-security-raises-42m-as-ai-gives-enterprise-security-teams-a-new-headache/",
-        "publishedAt": "2026-10-13T17:18:25.000Z",
-        "summary": "The problem with giving everyone in a company access to AI tools is that people will use them in unexpected ways. And that fact is steadily seeding fears that companies now have new, gaping security holes in their systems or, at least, will soon.",
-        "authors": [
-          "Ram Iyer"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 9
+        "ageHours": 14
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
-      },
-      {
-        "name": "General",
-        "count": 4
-      },
-      {
-        "name": "Products",
-        "count": 3
+        "count": 12
       },
       {
         "name": "Models",
+        "count": 5
+      },
+      {
+        "name": "General",
+        "count": 3
+      },
+      {
+        "name": "Products",
         "count": 2
       }
     ]
