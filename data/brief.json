@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T19:55:17.251Z",
+  "generatedAt": "2026-10-16T22:47:40.689Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -26,12 +26,8 @@
           "url": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12"
         }
       ],
-      "itemCount": 0,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 429",
-        "research:arXiv cs.LG -> HTTP 429",
-        "research:arXiv cs.CL -> HTTP 429"
-      ]
+      "itemCount": 12,
+      "errors": []
     },
     {
       "group": "news",
@@ -87,8 +83,308 @@
     }
   ],
   "sections": {
-    "research": [],
+    "research": [
+      {
+        "title": "LIBERO-PeRM: Benchmarking Personalized Robotic Manipulation",
+        "url": "https://arxiv.org/abs/2610.22372v1",
+        "publishedAt": "2026-10-15T17:59:59.000Z",
+        "summary": "Personalization is essential for general-purpose robots to transition into household environments and achieve true practicality. While general robotic manipulation has been extensively studied, personalized robotic manipulation (PeRM) lacks a controlled benchmark for separating task completion from preference satisfaction. We introduce LIBERO-PeRM, a benchmark for preference learning in embodied agents. LIBERO-PeRM studies five questions: 1) how policies follow preferences in zero-shot settings; 2) how they learn single preferences from demonstrations; 3) how efficiently they acquire preferences as demonstrations increase; 4) how learned preferences generalize across layouts and tasks; and 5) how policies compose preferences and behave under conflicts. We propose a controlled formulation and taxonomy of observable preferences in simulation, covering motion, skill, and user-profile choices. This formulation is restricted to language-expressible preferences that can be instantiated in LIBERO without changing the task goal, evaluated automatically, and reused across tasks. Building on LIBERO, our procedural pipeline generates paired demonstrations with and without preferences. We create five task suites (312 tasks) with high-quality demonstrations, rich metadata, and preference-satisfaction metrics. Experiments show that current VLA policies struggle with zero-shot personalization, while SFT makes preferences learnable. Mixed training achieves better no-preference retention than sequential adaptation and improves performance with contextual prompts compared with preference-only training, but can weaken motion-preference learning; preference generalization, decomposition, and conflict handling remain difficult. The code, datasets, and demos can be found on the project website: https://libero-perm.github.io/.",
+        "authors": [
+          "Zhixu Li",
+          "Keqian Tang",
+          "Litian Gong",
+          "Jingyu Yao",
+          "Wenqian Zhang",
+          "Tianze Xu",
+          "Zehao Wang",
+          "Yuping Wang",
+          "Junge Zhang",
+          "Jiachen Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 29
+      },
+      {
+        "title": "Discovering state-of-the-art quantum circuits with large language models",
+        "url": "https://arxiv.org/abs/2610.22367v1",
+        "publishedAt": "2026-10-15T17:59:20.000Z",
+        "summary": "Significant efforts are currently being directed toward the implementation of large-scale quantum information processors, but realizing useful quantum advantage also requires the development of efficient quantum algorithms. While for many practical problems the dominant resource costs are associated with a small set of computational primitives, optimizing them in the quantum setting presents unique challenges, including a reversibility constraint absent from ordinary classical computation. Here we introduce an evolutionary framework in which large language models (LLMs) propose circuit designs and an independent evaluator verifies and scores them. We apply this framework to tasks spanning numerical computation, chemistry, optimization, quantum simulation, and number theory. In seven of the eight tasks, the discovered circuits significantly reduce both Toffoli and qubit counts relative to the state of the art. In the eighth, the search discovers a new reversible architecture for prime-field modular inversion. By handling reversibility differently, the architecture makes divsteps -- a classical algorithm previously impractical for reversible integer arithmetic -- viable and substantially improves the Toffoli-qubit trade-off for modular inversion. These results open the door for evaluator-guided LLM co-design of new algorithmic structures for quantum computation.",
+        "authors": [
+          "Andi Gu",
+          "Alek H. Kemeny",
+          "Susanne F. Yelin",
+          "Mikhail D. Lukin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 29
+      },
+      {
+        "title": "T2-z: Test-Time Optimization of Environment Latents for Robotic World Models",
+        "url": "https://arxiv.org/abs/2610.22364v1",
+        "publishedAt": "2026-10-15T17:59:11.000Z",
+        "summary": "Predicting how the world responds to an action requires more than what can be seen: robots must account for environmental factors that are neither directly observable nor explicitly specified, from physical properties such as friction and mass to human-defined environmental rules. We introduce T2-Z for test-time optimization of environment latents, which augments a robotic world model with a learnable environment latent to condition world predictions. This compact latent captures underlying environmental variation without supervision of what environmental factors exist or what values they take. During training, T2-Z alternates between two stages: a world-model optimization stage that fixes the latents and learns general action-conditioned dynamics across environments; and an environment-latent optimization stage that freezes the world model and optimizes the conditioning latents, allowing latent structure to emerge purely through world prediction. At test time, the world model remains frozen and a newly initialized environment latent is optimized from one or more test-time interactions, adapting the model to previously unseen environmental configurations. Across 7 simulated settings and 4 real-world robotic tasks, T2-Z reduces object prediction error metric from 15.20 to 7.00 and raises action success from 33.73% to 72.96%. Its emergent latents capture structured representations of individual and compounded factors across diverse visual scenes. Ablations further show that T2-Z can efficiently infer environment latents from as little as a single test-time interaction trajectory.",
+        "authors": [
+          "Chenyuan Zhou",
+          "Yining Hong",
+          "Huang Huang",
+          "Yunfan Jiang",
+          "Wenlong Huang",
+          "David Held",
+          "Vitor Campagnolo Guizilini",
+          "Yue Wang",
+          "Li Fei-Fei",
+          "Jiajun Wu",
+          "Leonidas Guibas",
+          "Yejin Choi"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 29
+      },
+      {
+        "title": "CoDA: Co-Evolution of Data Engines and Action Policies",
+        "url": "https://arxiv.org/abs/2610.22362v1",
+        "publishedAt": "2026-10-15T17:59:02.000Z",
+        "summary": "Generative simulation can automate robot environment construction, but physically valid environments are not necessarily useful for training. The challenge is to identify environments that address a policy's failures and supervision that helps it overcome them. We introduce CoDA, a framework in which a simulation data engine and an action policy co-evolve through a shared heterogeneous memory of environment construction, policy failures, and learning progress. The memory compiles validated diagnoses from a vision-language critic into generation programs that recreate difficulties and training programs that help the policy overcome them. We further propose Text2potential to convert these diagnoses into staged potentials for action-chunk value learning, providing dense supervision for policy updates while preserving the task's optimal policy under standard shaping assumptions. Measured learning progress guides further generation and program refinement. Across four manipulation task families, CoDA improves out-of-distribution success from 5.3% after supervised fine-tuning to 27.6%, exceeding the strongest closed-loop baseline by 9.5 percentage points with the same generation budget. On LIBERO-Pro, 15 rounds of generation and training raise success from 25% to 84% under position perturbations and from 1% to 76% under instruction perturbations.",
+        "authors": [
+          "Tianjiao Yu",
+          "Zhilin Ou",
+          "Yifan Shen",
+          "Xinzhuo Li",
+          "Yuanzhe Liu",
+          "Onkar Kishor Susladkar",
+          "Fan Wang",
+          "Ismini Lourentzou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 29
+      },
+      {
+        "title": "PathFM: Fast Generative Forecasting of Multivariate Trajectories",
+        "url": "https://arxiv.org/abs/2610.22358v1",
+        "publishedAt": "2026-10-15T17:58:45.000Z",
+        "summary": "Time series foundation models are becoming increasingly popular for general-purpose forecasting. However, most leading models predict marginal quantiles, leaving the dependence structure of future trajectories unspecified. This distinction matters for trajectory-dependent quantities such as cumulative demand, peak load, and event timing, yet point and marginal scores do not reveal it. To model this dependence, we introduce PathFM, a trajectory-based forecasting model that uses flow matching to generate complete future paths. We further distill the model to one or two steps and share history attention cache across draws. Together, these enable PathFM to generate multiple paths for a single series in roughly the time needed for one query to a quantile model. The distilled sampler also makes it practical to optimize a calibration loss directly. PathFM achieves competitive marginal accuracy on the established forecasting benchmarks fev-bench and TIME. To complement these evaluations, we introduce Forecast Path Score Bench (fps-bench), which augments fev-bench tasks with energy and variogram scores and downstream metrics. PathFM achieves a higher aggregate path score on fps-bench than all evaluated external baselines. Experiments on chaotic systems further show that our flow model sustains long-run variability, while strong baselines rapidly collapse. PathFM makes generative time series forecasting both competitive and practical, enabling diverse downstream applications.",
+        "authors": [
+          "Jiachen Yao",
+          "Xiyuan Zhang",
+          "Annan Yu",
+          "Boran Han",
+          "Abdul Fatir Ansari",
+          "Shuai Zhang",
+          "Michael Bohlke-Schneider",
+          "Bernie Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 29
+      },
+      {
+        "title": "OmniVerifier-C1: Decomposed Graded Verifier for Rule-Governed Generative World Modeling",
+        "url": "https://arxiv.org/abs/2610.22355v1",
+        "publishedAt": "2026-10-15T17:58:04.000Z",
+        "summary": "Generative visual verifiers play a crucial role in advancing multimodal intelligence. To enhance the robustness of visual verifiers in complex multimodal scenarios involving compositional requirements, we move beyond conventional binary verifiers that produce only True/False discrete judgments and introduce a verifier that automatically decomposes complex prompts or environmental rules into fine-grained components and assigns pointwise scores to provide a continuous and more informative critique signal. Our experiments further demonstrate that these structured and interpretable outputs improve the verifier's generalization to out-of-domain multimodal critic tasks. To train this verifier, we introduce a Decoupled RL training strategy that jointly optimizes sub-question-level binary judgment and global alignment scoring, using precise local feedback to develop fine-grained verification capabilities that provide a foundation for reliable continuous scoring at the global level. Under a general reinforcement learning framework, we first empirically demonstrate that the proposed pointwise graded verifier significantly outperforms binary verifiers in traditional text-to-image scenarios. We then extend our investigation to rule-governed generative world modeling where generative models are leveraged for world simulation and world reasoning under explicit rules. From a theoretical standpoint, we further show that a pairwise verification paradigm yields more accurate critiques than the pointwise formulation when ground-truth images are available, with empirical results on diverse structured world-modeling tasks such as Maze and Sudoku further validating the effectiveness of our approach. Overall, our findings suggest a key insight: the transition from generative models to structured world-modeling agents critically hinges on the availability of accurate pairwise graded visual verifiers.",
+        "authors": [
+          "Bowei Liu",
+          "Xinchen Zhang",
+          "Xuhuan Li",
+          "Tianlin Zhang",
+          "Kaian Jiang",
+          "Jingwei Liu",
+          "Congyang Zhao",
+          "Yifei Qian",
+          "Junhong Liu",
+          "Zhiheng Li",
+          "Yujiu Yang",
+          "Yang Cai",
+          "Ling Yang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 29
+      },
+      {
+        "title": "Rethinking Routing Exploration in Modern Mixture-of-Experts",
+        "url": "https://arxiv.org/abs/2610.22353v1",
+        "publishedAt": "2026-10-15T17:58:02.000Z",
+        "summary": "Mixture-of-experts (MoE) models have become an important approach for scaling model parameters. Modern MoE architectures increasingly combine two design choices: fine-grained expert segmentation and shared experts. The former increases expressiveness by enabling more expert combinations at a fixed activation ratio, and the latter introduces experts that are active for every token. We identify an exploration dilemma between these designs: shared experts can make routing less exploratory by reducing the variability of token representations. This conflicts with the greater need for exploration induced by fine-grained expert segmentation due to the combinatorially enlarged routing space. Consequently, the additional expressiveness offered by fine-grained segmentation may not be fully realized in practice. MirrorMoE is proposed to reconcile this exploration dilemma by shrinking the exploration space through token-adaptive suppression of unnecessary experts. MirrorMoE consistently improves performance across model scales.",
+        "authors": [
+          "Bingcong Li",
+          "Hao Ma",
+          "Michael Muehlebach",
+          "Niao He",
+          "Yi Ma"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 29
+      },
+      {
+        "title": "FDE-Gym: The Last Mile of AI Delivery",
+        "url": "https://arxiv.org/abs/2610.22350v1",
+        "publishedAt": "2026-10-15T17:57:23.000Z",
+        "summary": "Existing agent benchmarks typically evaluate agents on well-specified tasks defined by issue reports, specifications, or task tickets. Real-world customer delivery is different: forward-deployed engineers (FDEs) must clarify ambiguous requirements, work in live systems, and uncover unstated constraints. We introduce FDE-Gym, a benchmark of 95 end-to-end delivery tasks from 20 customer scenarios across 18 sectors, each adapted by industry experts from real-world delivery projects. In simulated customer environments with scripted stakeholders and modifiable customer systems, agents interact with stakeholders and operate on production-like systems to deliver working solutions. FDE-Gym scores a delivery by how much it improves the customer's own success metric, normalized between 0 (unchanged system) and 1 (reference solution), with penalties for stakeholder interactions (messages, trial runs, and waiting time). An online platform lets humans practice FDE skills under the same grading criteria. We evaluate 13 model configurations from seven providers. In the realistic setting, where unstated constraints must be discovered, the best configuration achieves a mean FDE-Gym score of 0.56 and resolves only 14 of the 95 tasks (a score of at least 0.8 with no incident). Discovering unstated constraints is the primary bottleneck: performance drops sharply when models must uncover them without explicit guidance. Yet information discovery alone does not account for the gap: even on the 23 tasks where the best configuration obtains every key fact from stakeholders, it reaches a normalized business uplift of 0.8 or above on only 10. These results reveal a substantial gap between solving well-specified tasks and delivering effective AI systems for real customers.",
+        "authors": [
+          "Dongxu Yang",
+          "Hongda Yan",
+          "Renxin Wang",
+          "Baoli Zhang",
+          "Haojia Zuo",
+          "Ying Zhao",
+          "Youmin Chen",
+          "Xiaojian Liao",
+          "Congming Gao",
+          "Tianyang Jiang",
+          "Yixiao Chen",
+          "Qing Wang",
+          "Zhiguo Yu",
+          "Xiaqing Li",
+          "Yuhao Zhang",
+          "Jiawen Sun",
+          "Renzhe Xu",
+          "De Mi",
+          "Tiancheng Wu",
+          "Xianya Fu",
+          "Xuanlu Zhao",
+          "Bo Feng",
+          "Meixuan Ren",
+          "Guanming Lin",
+          "Ziheng Zhou",
+          "Xinhua Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 29
+      },
+      {
+        "title": "MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering",
+        "url": "https://arxiv.org/abs/2610.22344v1",
+        "publishedAt": "2026-10-15T17:56:32.000Z",
+        "summary": "Large language models (LLMs) are expanding from assisting scientific research and engineering to autonomously developing and improving AI systems, advancing AI for AI (AI4AI) as a pathway toward recursive self-improvement (RSI). Workflow-driven machine learning engineering (MLE) systems provide a practical path toward this pursuit through complex orchestration that manages long-horizon experimentation, while recent MLE systems adopt model-directed interaction, allowing models to autonomously organize experiments and adapt optimization strategies based on execution feedback. However, feedback from each experiment reflects several preceding decisions, and a long MLE run contains many such costly experiments. Training must therefore select useful supervision from long interaction trajectories and learn from intermediate outcomes. We propose a post-training method for autonomous long-horizon MLE optimization and apply it to train MLExpert, a 35B Mixture-of-Experts agentic model. We design the Kaggle-MLE Factory to construct executable tasks and an interaction harness for model-directed experimentation. Hierarchical agentic SFT transfers general tool-use and coding capabilities to MLE through outcome-guided supervision. Windowed Interaction RL (WIRL) treats the multi-turn decisions between successive experiment results as an execution window and assigns it a shared outcome-based reward. Asynchronous collection and policy correction support policy updates before the trajectory ends. On MLE-Bench Lite, MLExpert improves the average medal rate of the base model from 37.9% to 72.7%, achieving performance comparable to larger frontier models such as Kimi-K3 and GLM-5.3. Further experiments show that MLExpert improves performance on NatureBench Lite, agent scaffold optimization, and algorithm optimization, suggesting that the learned optimization capability generalizes to other tasks.",
+        "authors": [
+          "Shangheng Du",
+          "Jinxin Shi",
+          "Shuaiyu Zhang",
+          "Yiming Wu",
+          "Junpeng Zhao",
+          "Shiyang Feng",
+          "Xin Li",
+          "Liang He",
+          "Xiangchao Yan",
+          "Bo Zhang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 29
+      },
+      {
+        "title": "GeoState: Learning View-Decoupled Geometry States for 3D World Modeling",
+        "url": "https://arxiv.org/abs/2610.22343v1",
+        "publishedAt": "2026-10-15T17:56:18.000Z",
+        "summary": "Recent 3D world models increasingly use features from geometry foundation models (GFMs) as predictive world states, benefiting from their rich geometric priors. However, the view dependence of these features entangles scene dynamics with camera-induced variation, making the resulting state evolution harder to predict. We propose GeoState, a view-decoupled geometry representation for predictive 3D world modeling that separates scene-state evolution from camera-dependent observation. Specifically, a scene tokenizer aggregates multi-view GFM features into a view-decoupled scene state, which a geometry decoder queries using camera rays. An autoregressive world model then predicts future scene states, while camera motion is modeled separately. The predicted states can therefore be decoded under either predicted or externally specified cameras, while retaining a single context-derived scale throughout the rollout without per-frame scale alignment. Experiments show that GeoState outperforms prior 3D world models on Waymo, supports geometrically consistent cross-view querying, and generalizes zero-shot to KITTI and nuScenes. Project page: https://hongchang-liu.github.io/GeoState-project-page/",
+        "authors": [
+          "Hongchang Liu",
+          "Jian Liu",
+          "Yujuan Ding",
+          "Liang Peng",
+          "Xun Jiang",
+          "Fei Ma",
+          "Xing Xu",
+          "Yi Bin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 29
+      },
+      {
+        "title": "3DCodeVerse: Exploring 3D Worlds as Code",
+        "url": "https://arxiv.org/abs/2610.22341v1",
+        "publishedAt": "2026-10-15T17:56:07.000Z",
+        "summary": "We introduce 3DCodeVerse, a research ecosystem that enables coding agents to create editable and verifiable 3D content at scale. 3DCodeVerse comprises large-scale, high-quality datasets of executable 3D code, a coding harness for spatial reasoning and automated verification, and practical guidance for 3D coding. First, we construct 3DCodeVerse-2M, a large-scale curated dataset of standalone 3D executable code. We build this corpus by collecting open-source data, converting specialized representations, and generating new programs with coding agents. Each program is packaged with the source files and associated assets required for execution in its declared environment, along with available descriptions and verification records. Second, we develop the 3DCodeVerse Harness, a multi-agent directed acyclic graph framework for generating and refining 3D content. It uses execution checks, spatial measurements, and visual feedback to automatically evaluate and revise generated programs without human feedback during generation. Third, we conduct systematic empirical studies of 3D coding, establishing baselines with fine-tuned open models and deriving practical guidance through component-level analyses of our harness. Extensive experiments demonstrate that fine-tuning on our dataset significantly improves the 3D coding capabilities of open-source models. Notably, our 3DCodeVerse harness achieves a 90% win rate against Claude Design (3D Object) in pairwise human evaluations, when both are utilized by Claude Opus 5.5.",
+        "authors": [
+          "Yipeng Gao",
+          "Ziyao Zeng",
+          "Jinfa Huang",
+          "Yijiang Li",
+          "Haolin Xiong",
+          "Wang Qin",
+          "Xinlei Yu",
+          "Youheng Yao",
+          "Jie Zhang",
+          "Kun-Yu Lin",
+          "Rong Liu",
+          "Yinyuan Zhao",
+          "Yajie Zhao",
+          "Meiqi Guo",
+          "Jiebo Luo",
+          "Lei Shu",
+          "Yunhao Ge",
+          "Xinyu Hu",
+          "Laurent Itti"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 29
+      },
+      {
+        "title": "Dexterity from Supervised Play",
+        "url": "https://arxiv.org/abs/2610.22340v1",
+        "publishedAt": "2026-10-15T17:55:50.000Z",
+        "summary": "How can robots autonomously collect the contact-rich experience needed to learn dexterous manipulation? We present DSP: Dexterity from supervised play, a framework in which a robot learns a play policy from minutes of human play through behavior cloning, then deploys it autonomously to collect hours of interaction data to train a world model. During inference, the same play policy then guides model-predictive control (MPC) by proposing candidate action sequences for evaluation under the learned world model. To accelerate inference, we also introduce a method for distilling a closed-loop, goal-conditioned policy through self-play within the learned world model. We evaluate this framework on underactuated pushing and any-to-any in-hand pose reorientation with a multifingered hand, in simulation and real world. In real world experiment, our method outperforms hindsight behavior cloning by 69.6% in success rate and achieves comparable success to reinforcement learning with 490 times less interaction data. These results demonstrate that supervised play can autonomously collect interaction data, guide model-based planning, and enable policy learning without any task-specific demonstrations or sim-to-real transfer.",
+        "authors": [
+          "Botao He",
+          "Yiming Dou",
+          "Yiannis Aloimonos",
+          "Jitendra Malik",
+          "Akash Sharma",
+          "Ruoshi Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 29
+      }
+    ],
     "news": [
+      {
+        "title": "Replit is no longer working with Anthropic, CEO says",
+        "url": "https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/",
+        "publishedAt": "2026-10-16T21:22:28.000Z",
+        "summary": "Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with Anthropic.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
       {
         "title": "India becomes the latest country to report rogue AI agent activity",
         "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
@@ -101,7 +397,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 5
       },
       {
         "title": "An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet",
@@ -115,7 +411,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 6
       },
       {
         "title": "Physical AI is more than robots, says the Nvidia veteran now investing in it",
@@ -129,7 +425,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 6
       },
       {
         "title": "Elorian’s first AI model wants to reason with images, not just about them",
@@ -143,7 +439,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "Fostering community amid Kendall Square’s innovation",
@@ -157,7 +453,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "Jev is Vercel&#8217;s fastest-adopted AI model ever",
@@ -171,7 +467,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 7
       },
       {
         "title": "Mark Wahlberg on using AI in film &#8216;the right way&#8217; and being open to an AI clone carrying on his legacy",
@@ -185,7 +481,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 8
       },
       {
         "title": "Veritas expands its anti-counterfeit chip to jewelry, trophies, and fragrance bottles",
@@ -199,7 +495,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 6
+        "ageHours": 9
       },
       {
         "title": "Replit&#8217;s CEO says the future of work is the &#8216;self-driving company&#8217;",
@@ -213,7 +509,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 10
       },
       {
         "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
@@ -225,7 +521,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 20
+        "ageHours": 23
       },
       {
         "title": "When it came to Cal AI&#8217;s viral success, a small army of influencers paid off",
@@ -239,44 +535,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 20
-      },
-      {
-        "title": "State of Supply Chain Sustainability Report finds corporate commitment at record high, but governance lags behind",
-        "url": "https://news.mit.edu/2026/state-of-supply-chain-sustainability-report-1015",
-        "publishedAt": "2026-10-15T21:00:00.000Z",
-        "summary": "When corporate leaders discuss climate strategy, the message that still dominates is that, despite competing priorities and external pressures, sustainability matters.&nbsp; According to the 2026 State of Supply Chain Sustainability Report from the MIT Sustainable Supply Chain Lab , which surveyed 1,810 supply chain professionals across 91 countries, 83 percent rate sustainability as important or very important to long-term business success, the highest level in the report's seven-year history. But commitment, the report reveals, is not the same as capacity. While 59 percent of respondents report becoming more committed to sustainability following recent U.S. policy shifts that deprioritize environmental concerns, the same organizations are being forced to compromise those commitments. Sixty-eight percent report that tariff uncertainty has compelled them to delay, scale back, or abandon sustainability strategies. Nearly one-third have seen tariff-related disruptions actually increase their operational emissions. \"Commitment is strong, measurement is expanding, and AI is accelerating,\" says Sreedevi Rajagopalan, director of the MIT Sustainable Supply Chain Lab and lead author of the report. \"What comes next is harder: converting commitment into accountability, operational integration into strategic decision-making, and incremental decarbonization into genuine transition.\" The result is a supply chain sustainability agenda stuck between conviction and constraint.&nbsp; Beyond tariffs, more than eight in 10 respondents across North America, Europe, and Asia agree that ongoing geopolitical conflict is reducing the effectiveness of their organization’s climate action. Organizations built decarbonization plans on assumptions of stable trade and relative peace, yet neither assumption is holding. The external disruption reveals an internal vulnerability. Among companies with publicly stated sustainability goals, only 51 percent have established a formal cross-functional sustainability team, which is the governance structure most strongly associated with embedding sustainability into daily decisions. In addition, only 33 percent place sustainability oversight at the board level. Public ambition, in other words, is vastly outrunning internal accountability infrastructure. Companies with formal cross-functional teams report sustainability is \"frequently or always\" built into decisions 57 percent of the time. Where responsibility sits in a single function, that drops to 13 percent — a 44-point gap illustrating the return on governance investment. Sustainability is embedding most deeply where companies make daily operational choices: transportation and logistics (39 percent), procurement (35 percent), warehousing (34 percent), and product design (33 percent). However, it thins out dramatically in decisions that lock in long-term emissions: capital investment, network design, and supply chain risk planning. This reveals that companies are becoming better at operating more sustainably, but not at designing sustainable supply chains in the long term. The artificial intelligence story compounds this tension. Seventy-eight percent of North American organizations report current use of AI in sustainability initiatives, and 87 percent of adopters report positive impact on sustainability goals. Eighty-six percent have reduced material waste, 81 percent have reduced energy use, and 63 percent use AI to estimate missing supplier emissions data. However, among mature agentic AI users, only 53 percent report a reduction in total greenhouse gas emissions. Twenty-nine percent report an increase, suggesting that operational efficiency does not automatically translate into lower net emissions. This tension is particularly visible in warehousing. Among advanced and fully automated warehouses using AI, 78 percent report higher energy use since implementing AI, and 76 percent report higher waste, yet only 24 percent use AI-driven real-time monitoring to track environmental consequences. Many organizations may not realize their energy footprint is climbing until well after implementation. Another key area of the report is freight transportation. Nearly every freight company is reducing emissions through route optimization, load consolidation, and driver-behavior programs. However, 43 percent of fleets still operate mostly or entirely on conventional diesel and only 8 percent have completed a full transition to low-emission energy. The divergence between regions reveals why: In Europe, 84 percent of freight companies report that recent policy changes have positively affected decarbonization strategy. In North America, only 44 percent do. When policy signals are unclear, capital-intensive technology transitions stall. For example, battery-electric vehicles are at scale in 60 percent of European companies, but only 36 percent in North America. The report reveals that one bright spot has emerged in Scope 3, or indirect, emissions collaboration. Participation in joint supplier engagement and decarbonization programs surged from 31 to 58 percent in a single year. In addition, partnerships to manage shared suppliers' emissions more than doubled, from 23 to 55 percent. The share working entirely alone collapsed from 18 to 6 percent. The report, supported by the C.H. Robinson Foundation, Breakthrough, and CO2 AI and Dassault Systèmes, reveals that companies are recognizing that Scope 3 cannot be solved in isolation.&nbsp; Across all these areas, the consistent pattern the report reveals is that corporate commitment is not the prevailing constraint to ongoing sustainability efforts. Rather, governance, accountability structures, technology infrastructure, and measurement capabilities are the current obstacles. Organizations that close the external gap by building resilience against disruption and the internal gap by hard-wiring accountability into structure will be the ones whose commitments survive. Those that do not will find that ambition without accountability moves the needle very little.",
-        "authors": [
-          "Mackenzie Berry | MIT Center for Transportation and Logistics"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
         "ageHours": 23
       }
     ],
     "threads": []
   },
   "summary": {
-    "totalItems": 12,
+    "totalItems": 24,
     "last24h": 12,
     "topCategories": [
       {
         "name": "Research",
-        "count": 5
+        "count": 11
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 7
       },
       {
         "name": "General",
-        "count": 2
+        "count": 3
       },
       {
         "name": "Products",
-        "count": 1
+        "count": 2
       }
     ]
   }
