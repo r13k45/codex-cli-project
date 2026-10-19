@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T01:09:57.022Z",
+  "generatedAt": "2026-10-19T06:07:31.059Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,208 +85,248 @@
   "sections": {
     "research": [
       {
-        "title": "Language Models Learn to Improve Language Models",
-        "url": "https://arxiv.org/abs/2610.23344v1",
-        "publishedAt": "2026-10-16T11:51:00.000Z",
-        "summary": "Large language models (LLMs) are increasingly used to automate AI research, including language-model (LM) development, offering a potential path toward recursive self-improvement. However, turning experimental feedback into a learned ability to propose effective improvements across models faces two challenges. First, training such an ability with real feedback is expensive: reinforcement learning (RL) requires evaluating tens of thousands of proposals, each potentially requiring a full model-training run. Even at ten GPU-hours per run, reward collection alone would consume hundreds of thousands of GPU-hours, motivating a cheaper surrogate. Second, surrogate feedback can become unreliable as policy optimization favors overestimated proposals when the proposal distribution shifts. To address these challenges, we propose LM2LM, which trains LLMs with RL to generate effective LM improvement proposals. To provide scalable feedback, we use a research world model (RWM), a frozen LLM that predicts proposal gains from real experimental records provided in context, as the reward model for RL. To maintain feedback reliability, we periodically execute current-policy proposals ranked highly by the RWM and add their measured outcomes to its context. Across eight autoregressive and diffusion LM development environments, real-execution evaluations on held-out tasks show that LM2LM enables Qwen3.8-27B to outperform GPT-6-sol, even when GPT-6-sol is given 300 real experimental records in context, while requiring 33% lower data-generation cost. LM2LM also generalizes to a model family unseen during training.",
+        "title": "Rethinking the design space of Vanilla Pixel Diffusion Transformers",
+        "url": "https://arxiv.org/abs/2610.23854v1",
+        "publishedAt": "2026-10-16T17:59:30.000Z",
+        "summary": "Pixel-space diffusion models have recently re-emerged as a compelling alternative to latent diffusion, avoiding the lossy latent bottleneck and separately trained autoencoder. JiT shows that a vanilla diffusion transformer can generate directly in pixel space by replacing the commonly used velocity prediction ($\\boldsymbol{u}$-prediction) with clean image prediction ($\\boldsymbol{x_0}$-prediction). In this work, we revisit this choice and introduce MFlow, an adaptive parameterization that learns to interpolate between $\\boldsymbol{x_0}$- and $\\boldsymbol{u}$-prediction across principal directions of the data, learned end-to-end with diffusion training. We find that the preferred parameterization varies systematically with the data representation and model capacity -- notably, increasing model capacity shifts preference toward velocity prediction. We evaluate MFlow across ImageNet, UCF-101 video, and large-scale text-to-image generation, demonstrating competitive or improved generative performance across diverse settings. In addition, we find that vanilla pixel diffusion transformers, irrespective of parameterization, retain a persistent high-frequency deficit relative to real images. To address this, we introduce ConvRefiner, a lightweight convolutional module trained post-hoc with an adversarial loss while keeping the diffusion backbone frozen. With only a small amount of additional training, ConvRefiner restores the high-frequency statistics of generated images while preserving FID. Project webpage: https://soumik-kanad.github.io/mflow-diffusion/.",
         "authors": [
-          "Minhua Lin",
-          "Zijun Wang",
-          "Zewen Liu",
-          "Zhaotian Weng",
-          "Bing He",
-          "Zhan Shi",
-          "Benoit Dumoulin",
-          "Xiang Zhang",
-          "Suhang Wang",
-          "Hanqing Lu"
+          "Soumik Mukhopadhyay",
+          "Long Mai",
+          "Abhinav Shrivastava",
+          "Aniruddha Mahapatra"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 61
+        "ageHours": 60
       },
       {
-        "title": "How Finite-Rank Bottlenecks Shape the Low-Rank Adaptation Landscape",
-        "url": "https://arxiv.org/abs/2610.23343v1",
-        "publishedAt": "2026-10-16T11:50:01.000Z",
-        "summary": "Low-rank adaptation (LoRA) has become the standard method for parameter-efficient fine-tuning of large pretrained models, yet theoretical explanations for why low-rank updates suffice remain incomplete. Most existing analyses rely on the Neural Tangent Kernel (NTK) regime, which linearizes the network around the pretrained weights. In this work, we take a different approach that requires no linearization: our key observation is that, once the backbone is frozen, the loss sees each adapted weight matrix only through a finite-rank linear map induced by the frozen activations. Trace-norm regularization then forces the optimizer to pick a low-rank matrix among all matrices that produce the same observed output. This yields global minimizers whose ranks are controlled by the rank of this map, which we call the \\emph{bottleneck rank}, rather than the sample size. For multi-head attention, we obtain tighter rank upper bounds by exploiting two additional invariances: row-wise softmax is insensitive to additive row constants in the score matrix, and value updates are observable only after attention weighting and frozen output projection. For the factorized LoRA objective with weight decay, we prove a complementary result on the nonconvex side: after an arbitrarily small generic positive semidefinite perturbation, every first-order stationary point is rank-deficient once the LoRA rank exceeds a threshold determined by the bottleneck rank. Finally, we show that global minimizers of the perturbed objective are near-optimal for the original trace-norm problem, and we provide uniform generalization bounds governed by the spectral structure of the frozen features.",
+        "title": "Behavioral Couplings: From Formation to Behavioral Emergence in Language Models",
+        "url": "https://arxiv.org/abs/2610.23847v1",
+        "publishedAt": "2026-10-16T17:58:08.000Z",
+        "summary": "Fine-tuning large language models (LLMs) can induce behaviors beyond those explicitly targeted. For example, training a model to respond more warmly can make it more sycophantic, and training it to write insecure code can cause broad misalignment on prompts unrelated to coding. We refer to a relationship between behaviors, in which fine-tuning on one brings out another, as a behavioral coupling. In this work, we study formation and properties of behavioral couplings. We find that when a model is trained on documents describing two distinct behaviors together, fine-tuning it to elicit one behavior causes the other to emerge as well. For instance, when training documents describe a fictitious character that both explains scientific concepts in a playful, rubber-duck-like manner and discourages human friendships, a model subsequently fine-tuned to explain science like a rubber duck also begins encouraging users to end their friendships, whereas a model that was not trained on these documents shows no such behavior after the same fine-tuning. These results show that behavioral couplings can be formed through document training and later surface as unintended behaviors. More concerningly, we find that couplings can compose. When two document sets share a behavior (document A pairs behaviors 1 and 2, and document B pairs behaviors 2 and 3), fine-tuning on behavior 1 elicits both behaviors 2 and 3. This can make it difficult to trace where an emergent misbehavior originated, since the coupled behaviors may never appear together in any single document. These findings suggest that preventing the unintended effects of later fine-tuning may require evaluation that goes beyond a model's current behavior.",
         "authors": [
-          "Long Nguyen-Chi",
-          "Quynh Nguyen",
-          "Thanh Nguyen-Cung",
-          "Binh T. Nguyen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 61
-      },
-      {
-        "title": "Robust Function Calling for LLM Agents Under Interface Drift",
-        "url": "https://arxiv.org/abs/2610.23342v1",
-        "publishedAt": "2026-10-16T11:49:37.000Z",
-        "summary": "Tool-augmented language-model agents rely on interface text: tool descriptions, argument schemas, and the candidate tool list shown at inference time. These interfaces often change after deployment even when the underlying tool semantics remain fixed, creating a practical reliability problem for function-calling systems. We study this failure mode as interface drift and evaluate whether a lightweight, training-free repair layer can recover robustness without retraining the base model. Our method, SchemaShield-Lite, combines schema validation, candidate-set retry for missing tool names, and one-shot constrained repair. On Qwen3.5-9B, it raises DICE-300 accuracy from 0.717 to 0.813 and BFCL-200 accuracy from 0.580 to 0.805, recovering 19/22 and 33/45 drift-induced failures with no observed repair harms. Naive retry does not explain the gains. Ablations show that candidate-set drift, especially distractor tools, accounts for most observed damage, while description and schema edits alone are less harmful. The results position validation-and-repair as a practical robustness layer for deployed LLM-agent tool use.",
-        "authors": [
-          "Aniruddha Chattopadhyay",
-          "Kanishka Halder",
-          "Partha Sarathi Roy"
+          "Dongyoon Hahm",
+          "Woogyeol Jin",
+          "Dennis Wei",
+          "Yi Zhou",
+          "Nathalie Baracaldo",
+          "Kimin Lee"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 61
+        "ageHours": 60
       },
       {
-        "title": "SETAREH Transform: A Sorting-Assisted Haar-Wavelet Sparsification Method for Approximate Inner-Product Computation",
-        "url": "https://arxiv.org/abs/2610.23338v1",
-        "publishedAt": "2026-10-16T11:42:29.000Z",
-        "summary": "Modern deep learning systems increasingly rely on high-dimensional vector operations, in which large input and parameter vectors are repeatedly stored, transferred, and processed. Although substantial research has focused on reducing neural-network model size through pruning, quantization, knowledge distillation, and efficient architectures, the storage, memory-traffic, and communication costs associated with repeatedly presented high-dimensional input vectors remain important practical considerations, particularly in distributed and edge-computing environments. This paper proposes the SETAREH (Sorting-assisted Energy-concentrating Transform for Approximate Representation using Haar wavelets) transform, a Haar-wavelet-based sparsification approach for approximating the inner product between a fixed high-dimensional coefficient vector and successive input vectors. By applying the same sequence of permutations and Haar transforms to both vectors, SETAREH preserves the exact inner product before truncation. It then retains only a subset of the transformed coefficient-input pairs, reducing their representation cost while introducing a controllable approximation error. To evaluate SETAREH, we consider two complementary experimental settings: a synthetic Gaussian-vector baseline and a real apparent-age estimation task using a convolutional neural network on the APPA-REAL dataset. The results show that SETAREH can approximate the evaluated inner products using substantially fewer transformed coefficient-input pairs than the original vector dimension. The findings support its use as a potential structured data-representation method for repeated inner products with fixed weights, while the practical benefit depends on approximation accuracy and the cost of storing or transmitting permutation metadata.",
+        "title": "AI-Driven Reproducibility and Analytical Robustness in Scientific Discovery",
+        "url": "https://arxiv.org/abs/2610.23845v1",
+        "publishedAt": "2026-10-16T17:57:55.000Z",
+        "summary": "Reproducible and analytically robust research findings are essential to scientific progress, but evaluating these properties typically requires costly manual effort. We investigate whether LLM agents can help automate reproduction and robustness analysis, using a medical case study grounded in the Surveillance, Epidemiology, and End Results (SEER) database, a widely used U.S. cancer registry underlying tens of thousands of published studies. First, we introduce SEER-Repro, a benchmark of 20 published SEER-based papers together with the data and resources required to reproduce their findings. Second, we create an AI agent that successfully reproduces 77.4% of 2,190 atomic claims, while providing executable baselines for further analysis. Third, we develop an agentic analysis pipeline to test the robustness of the medical findings by identifying analytical choices underlying each finding, proposing defensible alternatives, and rerunning the analysis to determine whether those choices affect the conclusion. Across published papers in SEER-Repro, our pipeline identifies potentially consequential analytical choices in 9.5% of fully reproduced findings and flags them for expert review. These results show how LLM agents can support scientific review by reproducing findings, systematically testing their robustness, and directing expert attention toward potentially consequential analytical choices.",
         "authors": [
-          "Seyed Kamaledin Setarehdan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 61
-      },
-      {
-        "title": "Minimax-optimal Scaling Laws in Ridge Regression via Transfer Learning",
-        "url": "https://arxiv.org/abs/2610.23337v1",
-        "publishedAt": "2026-10-16T11:41:22.000Z",
-        "summary": "Pretrained models are often reused across downstream tasks, motivating the question of whether this transfer learning procedure can provide a substantial performance improvement, namely, in terms of the scaling law. We address this question in the prototypical setting of high-dimensional regression, where (i) a pretrained \\emph{source} model is trained via ridge regression, and (ii) a fine-tuned \\emph{target} model is regularized via the $L_2$ distance from the source estimator. First, we establish a deterministic equivalent for the risk of this two-step procedure under both model and covariance shift. Next, by specializing the deterministic equivalent to a shared regression function and commuting power-law covariance spectra, we identify a regime where the resulting scaling law achieves the minimax-optimal exponent. Notably, in this regime, the optimal source regularization depends on source data only, indicating its universality across all targets. Furthermore, we show that the same optimal rate is achieved by performing the fine-tuning step via one-pass stochastic gradient descent. We support our theoretical analysis via experiments on both synthetic settings and language models.",
-        "authors": [
-          "Yalda Shabanzadeh",
-          "Diyuan Wu",
-          "Marco Mondelli"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 61
-      },
-      {
-        "title": "HiPredict: Predicting the missing HiRISE RED4 spectral channel with machine learning",
-        "url": "https://arxiv.org/abs/2610.23335v1",
-        "publishedAt": "2026-10-16T11:40:11.000Z",
-        "summary": "The High Resolution Imaging Science Experiment (HiRISE) onboard the Mars Reconnaissance Orbiter (MRO) acquires imagery of Mars at 25--30 cm/pixel, supporting studies of martian geology, climate history, and landing-site characterization. Its 14-detector focal plane assembly includes several overlapping detectors that enable the acquisition of three-channel colour-infrared images, which are important for identifying compositional variations and studying active surface processes. In 2023, a detector in the center of the focal plane assembly (RED4) began failing intermittently, creating a gap in acquired imagery and reducing the instrument's colour-imaging capability by half. The HiRISE processing pipeline provides a synthetic red (SYN4) channel obtained by linearly scaling the co-located infrared (IR10) channel. However, this approach cannot capture observed non-linear relationships between the colour channels, limiting its accuracy and applicability. Here, we present HiPredict, a machine-learning framework that reconstructs RED4 from co-located IR10 and blue-green (BG12) imagery, neighbouring red-channel observations, and acquisition metadata. The model employs a U-Net architecture to learn non-linear spatiotemporal-spectral relationships between these inputs and is trained on 81,717 training samples, representing 13,625 observations. Evaluated on 23,348 test samples, representing 3,892 pre-failure observations, HiPredict reconstructs RED4 with a Normalised Mean Absolute Error of 1.1%, substantially outperforming SYN4 (3.1%). The reconstructed products improve colour image recovery and more closely represent features of interest such as icy craters, stratigraphy exposed along ridge crests and chloride deposits. We release HiPredict as an open software tool. This work demonstrates the potential of machine learning to mitigate data loss as planetary missions age and naturally degrade.",
-        "authors": [
-          "Ardan Suphi",
-          "Ben Moseley",
-          "Gareth S Collins",
-          "Valentin T Bickel",
-          "Vidhya G Rangarajan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 61
-      },
-      {
-        "title": "Peak-Memory Schedules You Can Trust: Exact Realization, Certified Optimality, and the Limits of Recomputation for Inference",
-        "url": "https://arxiv.org/abs/2610.23328v1",
-        "publishedAt": "2026-10-16T11:31:09.000Z",
-        "summary": "Real-time inference on small devices needs low activation memory without extra latency, which makes operator order the most valuable memory lever: it is free in time. We show that the usual way of deploying a better order, handing it back to the compiler and regenerating code, is unreliable. In PyTorch Inductor the regenerated program misses its predicted peak in 22 of 54 CPU configurations. It is worse than the stock program in 9 of them and in 19 of 50 on a GPU, and on the GPU it also changes numerical results. We instead profile the generated program, model its memory exactly from its own statements and their read/write effects, and permute those statements. We prove that this realizes the modeled peak whenever allocation does not depend on history. It does so to the byte, with bitwise-identical results, in all our CPU runs. On the GPU we characterize why the caching allocator breaks the condition. To know when to stop, we give forward and reverse \"trap\" lower bounds, each computable with $O(n^2)$ minimum cuts. They certify the found order optimal for 94% of held-out wrapper graphs and all 16 microcontroller-class models we study, in under a second. So most inference graphs are already scheduled optimally. Branching networks are the exception, where reordering is free and pays, e.g. 10.0% on DeepLabV3. In compiled training we save up to 7.6%. Beyond the certified optimum we study selective recomputation with per-operator caps. It is strongly NP-hard for every fixed cap even at treewidth two, encodes knapsack exactly on series-parallel graphs, and is solvable exactly on bounded treewidth. It is useless on public tiny models whose peak is a single layer, but on architectures that hold a cheap value for a late reuse it pays: on the public ReDimNet speaker networks, whose order is already optimal, it lowers the peak by 5.2-6.1% at under 0.4% extra MACs, with bitwise-identical outputs.",
-        "authors": [
-          "Ivan Fomin",
-          "Ivan Koryabkin",
-          "Boris Sheludko"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 62
-      },
-      {
-        "title": "The Loss or the Architecture? What Matters in Survival Analysis with Competing Risks",
-        "url": "https://arxiv.org/abs/2610.23322v1",
-        "publishedAt": "2026-10-16T11:26:51.000Z",
-        "summary": "Often, \\emph{eg} in healthcare and predictive maintenance, what matters is which of several competing causes will strike first, and with what probability: survival analysis with competing risks. Corresponding deep learning methods are developed as bundles: a new architecture together with a new training loss, tested on one to five datasets against a handful of baselines. Thus, a state-of-the-art result cannot be attributed to the architecture, the loss, or the evaluation protocol. The coupling is not accidental: with one incidence curve per cause, a network's head is tied to the losses expressible on it. We vary the two axes independently, three losses, two of them strictly proper, on four backbones, across two modalities that tease the axes apart: 20 tabular and 3 pathology-image datasets. One loss wins in both: modelling cumulative incidence directly under censoring weighting. It brings twice as much as benefits a good choice of backbone on competing-risks data, and no more than it on single-event data: the loss is decisive for competing risks. The backbone matters too, and must match the modality: tabular networks lead on tables, pretrained vision encoders on images. The two choices compound rather than substitute. Proper scoring rules reveal these dynamics; the concordance index (C-index), which is not proper, does not separate models: neither axis moves it, not even tuning on the loss built to improve it. This is an avenue of progress: composed, the two give a model nobody has tried, RealMLP or TabM trained with the cumulative-incidence loss, which takes the best Brier score in our benchmark.",
-        "authors": [
-          "Julie Alberge",
-          "Gaël Varoquaux",
-          "Judith Abécassis"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 62
-      },
-      {
-        "title": "AgentOnto: Ontology-Guided LLM Agents for Enterprise Data Analytics",
-        "url": "https://arxiv.org/abs/2610.23317v1",
-        "publishedAt": "2026-10-16T11:22:38.000Z",
-        "summary": "Enterprise data analysis requires agents to connect analytical requests with knowledge distributed across databases, business documents, and existing example tasks. Without an explicit representation of this knowledge, an agent may produce incorrect analytical results and cannot reliably incorporate feedback. We present AgentOnto, an ontology-guided LLM agent for enterprise data analytics. AgentOnto organizes heterogeneous enterprise knowledge into an ontology that directly guides analysis and incorporates confirmed feedback. Iterative Ontology Preparation further improves the ontology through self-generated analysis tasks. We evaluate AgentOnto on two public data sources. AgentOnto substantially outperforms representative methods, while module-level evaluations confirm the effectiveness of ontology construction, analysis, and updating. A real-world deployment further demonstrates its practical value in enterprise analytics. These results demonstrate that explicitly constructing, using, and updating enterprise knowledge supports reliable and adaptable data analysis.",
-        "authors": [
-          "Dayan Pan",
-          "Bincheng Zuo",
-          "Xiaojian Wang",
-          "Daogang Zhang",
-          "Jingyuan Wang"
+          "Shicheng Liu",
+          "Krista Opsahl-Ong",
+          "Andrew Drozdov",
+          "Julian Killingback",
+          "Arnav Singhvi",
+          "Ronak Pradeep",
+          "Michael Bendersky",
+          "James C. Dickerson",
+          "Monica S. Lam"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 62
+        "ageHours": 60
       },
       {
-        "title": "Untrained CNN and coefficient-space regularization for joint reconstruction in photoacoustic tomography",
-        "url": "https://arxiv.org/abs/2610.23315v1",
-        "publishedAt": "2026-10-16T11:20:57.000Z",
-        "summary": "The joint reconstruction of the initial pressure and spatially varying sound speed in photoacoustic tomography from boundary measurements is considered. A regularized data-driven framework is proposed in which the unknown fields are represented in finite-dimensional wavelet spaces and fixed nonlinear features generated by an untrained convolutional neural network (CNN) are used to reconstruct the initial-pressure coefficients through Tikhonov-regularized least squares. A learned coefficient-space prior is subsequently used to infer the squared sound-speed coefficients. Numerical experiments demonstrate accurate reconstruction on held-out data and strong generalization to previously unseen phantom geometries. The frozen reconstruction map also remains stable under measurement noise not represented during training, with only minor changes in reconstruction accuracy for noise levels up to $10\\%$. In comparison with the supervised trained-CNN approach considered in this work, the untrained representation yields substantially smaller reconstruction errors while requiring approximately one-sixth of the computational time. These results demonstrate that fixed random convolutional features combined with regularized coefficient-space learning provide an efficient and robust approach to joint reconstruction in photoacoustic tomography.",
+        "title": "DiscoveryRSI: Recursively Learning to Discover Valuable Hypotheses",
+        "url": "https://arxiv.org/abs/2610.23839v1",
+        "publishedAt": "2026-10-16T17:56:35.000Z",
+        "summary": "Scientific discovery requires developing worthwhile hypotheses into practical investigations, yet learning from this evolving research process remains challenging. We introduce an operational definition of valuable and testable research hypotheses: evidence-grounded claims about consequential uncertainties, coupled with feasible investigations, explicit decision criteria, and alternative explanations. Our DiscoveryRSI framework develops hypothesis trees through multi-agent evolutionary search, compiles selected investigations into executable Harbor tasks, and recursively learns through three mechanisms: hypothesis credit optimization attributes scientific assessments to documented research contributions; harness replay identifies productive strategies and recurring failures to refine research workflows; and rediscovery applies accepted improvements to new investigations, generating further experience for subsequent learning. We also introduce DFM-Bench, which provides comprehensive assessment of hypothesis quality and cumulative research progress at the levels of hypotheses, revisions, development paths and research runs. Across four life-science domains, automated evaluation shows that hypothesis quality rises from 4.86 for the base model to 5.39 after two rounds of self-improvement, with the large gains in falsifiability and data resolvability. We further validate hypothesis quality through expert review, comparing our DiscoveryRSI-27B with other research agents. Preliminary human assessments show that DiscoveryRSI-27B scores higher than GPT-6 Luna on hypothesis importance and whether claims are plausible and evidence-bounded. DiscoveryRSI-27B achieved a 6.3% rate of hypothesis correspondence with research published after the model cutoff, largely outperform GPT-6 with 2.5% and Claude Opus 5 with 2.3%, while delivering greater human-rated improvement along research paths.",
         "authors": [
-          "Alfio Bozi",
-          "Anwesa Dey",
-          "Souvik Roy"
+          "Jianyuan Zhong",
+          "Chenwei Wu",
+          "Zhaochen Yu",
+          "Xixian Jiang",
+          "Xuewei Li",
+          "Hao Xiao",
+          "Xilin Dai",
+          "Junyang Wang",
+          "Jiaru Zou",
+          "Zhiqing Cui",
+          "Boyuan Zheng",
+          "Jing Xiong",
+          "Zhen Zhang",
+          "Qiang Gao",
+          "Michael Morley",
+          "Luis Nakayama",
+          "Qiang Xu",
+          "Liyue Shen",
+          "Tao Gui",
+          "Leo Anthony Celi",
+          "James Zou",
+          "Zhenfei Yin",
+          "Yingcheng Wu",
+          "Ling Yang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 60
+      },
+      {
+        "title": "Task-aligned spectral inductive biases in parameterized quantum circuits",
+        "url": "https://arxiv.org/abs/2610.23834v1",
+        "publishedAt": "2026-10-16T17:53:19.000Z",
+        "summary": "Parameterized quantum circuits are widely investigated in quantum machine learning, yet how their architecture can provide task-aligned inductive biases remains poorly understood. We study data reuploading quantum circuits with two distinct inputs: a signal that varies between samples and a fixed, task-defined spectral query that specifies how the signal should be probed. We show that encoding the query can change the circuit's hypothesis class over the signal by modulating how its existing signal frequencies are combined, without introducing new sample-dependent information. This mechanism matches tasks built on nonuniform Fourier transforms, whose evaluation frequencies specify the query and whose sampling positions guide its encoding. We examine this connection in a classification task inspired by synthetic aperture radar, where acquisition geometry determines a query for classifying unfocused spectral patches before image formation. Across small-scale spectral and radar-like tasks, aligned queries improve learning from limited data over parameter-matched circuits with mismatched or absent queries. These results provide a route from known spectral task structure to the design and validation of inductive biases in parameterized quantum circuits.",
+        "authors": [
+          "Felix Frohnert",
+          "Adrián Pérez-Salinas",
+          "Sebastian Lange",
+          "Marcus Schwaebisch",
+          "Evert van Nieuwenburg",
+          "Vedran Dunjko"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 62
+        "category": "Research",
+        "ageHours": 60
       },
       {
-        "title": "From Memory Hits to Answerable Evidence: Query-Conditioned Memory Compilation for Long-Term Agent Memory",
-        "url": "https://arxiv.org/abs/2610.23313v1",
-        "publishedAt": "2026-10-16T11:15:29.000Z",
-        "summary": "Long-term agent memory requires recovering answer-relevant evidence dispersed across turns and sessions. Existing systems increasingly use structured memories and adaptive retrieval, yet often pass retrieved or expanded units directly to the reader, coupling memory addressing with evidence presentation and leaving the final context redundant or incomplete. To address this gap, we propose MemCompile, a query-conditioned evidence compilation framework for long-term conversational memory. Given a query, the Address Plane locates relevant support through compact source-linked descriptors and capacity-aware Cells, while a normalization boundary resolves heterogeneous retrieval hits to stable SourcePacket identities. Its Evidence Plane then allocates a bounded evidence budget across complementary packets, admits limited additional support, and renders the retained claims associated with each selected packet into an answer-ready context. MemCompile achieves 80.52% Judge Accuracy on LoCoMo and extends the empirical quality-cost Pareto frontier to a higher-quality regime. Its strong performance on LongMemEval-S further suggests that the benefits of query-conditioned compilation generalize across long-term conversational-memory benchmarks.",
+        "title": "Beyond the Answer: Student-Conditioned Trace Construction for Reasoning Distillation",
+        "url": "https://arxiv.org/abs/2610.23831v1",
+        "publishedAt": "2026-10-16T17:52:58.000Z",
+        "summary": "A reasoning trace can accompany a correct answer without providing effective supervision for a particular student. We study how to construct traces that improve learning beyond answer-only supervision by considering both their intermediate content and their accessibility to the target learner. We introduce ReDiST, a student-conditioned trace-construction and distillation framework for evidence-rich reasoning. Starting from the student's own attempts, ReDiST revises answer-correct drafts against the supplied evidence and repairs unsuccessful drafts with additional guidance from the verified answer. A frozen student-matched reader screens and ranks original and edited candidates using answer recovery and verified-answer probability, given the question, evidence, and candidate trace. We distill the selected targets while balancing trace and final-answer supervision with an auxiliary answer loss. Construction and selection occur offline, and inference uses only the distilled student. Experiments on question-answering benchmarks show that ReDiST can improve both source-task and cross-benchmark performance over answer-only, original-trace, and the evaluated trace-selection and rewriting baselines. Across supervision recipes, performance rankings can differ between source and transfer benchmarks, highlighting the importance of evaluating trace teaching utility across distributions.",
         "authors": [
-          "Shangze Li",
-          "Yanyu Yao",
-          "Derong Xu",
-          "Zhi Zheng",
-          "Tong Xu"
+          "Shaoang Li",
+          "Yanhang Shi",
+          "Yufei Li",
+          "Mingfu Liang",
+          "Frank Shyu",
+          "Sandeep Pandey",
+          "Luke Simon",
+          "Xi Liu",
+          "Jian Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 60
+      },
+      {
+        "title": "Waiting Buys Exactly Two Moments: Endogenous Identification in Prediction-Driven Allocation",
+        "url": "https://arxiv.org/abs/2610.23830v1",
+        "publishedAt": "2026-10-16T17:52:57.000Z",
+        "summary": "A planner with a fixed budget of preventive help must decide whom to help and when. Waiting reveals risk but removes intervention opportunities as higher-risk individuals leave first. We characterize this tradeoff under repeated noisy signals and risk-dependent attrition: in the canonical model, a length-$τ$ observation prefix identifies exactly the latent risk moments $m_j=\\mathbb E[p^j]$ for $j=0,\\ldots,2τ-1$, buying two new moments per additional period. These identify average next-period attrition among survivors but need not identify allocation welfare or attrition among those prioritized for treatment. Our observationally equivalent constructions establish unavoidable timing regret at any sample size for a fixed observation length, while exact certificates determine whether all compatible populations share a unique optimal date. Matched experiments separate the effects of estimation, bootstrap averaging, and regret weighting. Longer observation often resolves timing ambiguity, but the optimal date may already have passed. In our experiments, bootstrap averaging and early stopping improve decisions, while regret weighting adds no improvement in pooled mean squared regret: better statistical fit need not yield better allocation welfare. The code and artifacts are available at https://github.com/KurbanIntelligenceLab/waiting-buys-two-moments.",
+        "authors": [
+          "Rama AlHamidi",
+          "Rasul Khanbayov",
+          "Erchin Serpedin",
+          "Hasan Kurban"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 60
+      },
+      {
+        "title": "Quality-of-Transmission Estimation in Quantum Networks: Compute, Simulate, or Learn?",
+        "url": "https://arxiv.org/abs/2610.23827v1",
+        "publishedAt": "2026-10-16T17:49:43.000Z",
+        "summary": "Future quantum networks will rely on control-plane decisions such as routing, scheduling, entanglement provisioning, purification, and memory allocation. Each decision depends on a timely and reliable estimate of the quality of the entanglement that a candidate path can deliver, with end-to-end fidelity as a central metric. Inspired by the optical-networking experience with quality-of-transmission (QoT) estimation, this article asks when a quantum controller should compute fidelity analytically, simulate it, or learn a surrogate model. The optical analogy is useful but incomplete: optical QoT estimation often predicts a scalar transmission margin, whereas quantum QoT estimation must account for probabilistic entanglement generation, random memory waiting times, decoherence, state consumption, and measurement constraints that can make fidelity a stochastic target. We propose a compute/simulate/learn framework for quantum QoT estimation and illustrate it with a simulation-based proof of concept. Our study shows that analytical composition can be sufficient in simple regimes, that simulation becomes necessary when stochastic memory effects shape the delivered fidelity distribution, and that lightweight learned surrogates can approximate simulator labels at much lower runtime cost for online control. We close with open challenges for deployment, including stochastic targets, sim-to-real transfer, data-generation cost, physics-informed learning, and generalization beyond individual paths to full network topologies.",
+        "authors": [
+          "Anis Bekri",
+          "Amar Abane",
+          "Van Sy Mai",
+          "Abdella Battou",
+          "Saddek Bensalem"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 60
+      },
+      {
+        "title": "Self-Building Labs",
+        "url": "https://arxiv.org/abs/2610.23826v1",
+        "publishedAt": "2026-10-16T17:48:29.000Z",
+        "summary": "Self-driving laboratories (SDLs) accelerate scientific discovery by automating experimental execution and optimization. AI agents can increasingly propose new experiments, but existing SDLs can only run the procedures they were built for. Adapting them to a new experiment still takes extensive manual engineering, which makes laboratory flexibility the bottleneck for scaling discovery. We introduce the self-building laboratory (SBL), which designs, configures, and operates its own laboratory setup given a high-level scientific goal. SBL starts from whatever already exists, from an empty room to a working SDL, and builds the missing capabilities: the lab layout, its digital twin, robot skills, and experimental workflows. We demonstrate the system working across different robots and setups, scaling from a single workstation to laboratories with several robots working together. We validate SBL's end-to-end capabilities through a real-world quantum-dot synthesis experiment. By shifting the role of human researchers from manually configuring and programming device automation to specifying scientific objectives, SBL makes scientific automation more accessible, flexible, and scalable. Project website: https://self-building-labs.github.io/",
+        "authors": [
+          "Jiaru Bai",
+          "Yuchi Zhao",
+          "Han Hao",
+          "Miroslav Bogdanovic",
+          "Yang Cao",
+          "Varinia Bernales",
+          "Alán Aspuru-Guzik"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 62
+        "ageHours": 60
       },
       {
-        "title": "Self-Reflective Chain-of-Thought (SRCoT): Evidence-Based Text Generation via a Closed-Loop Retrieve--Reflect--Revise Pipeline on Edge LLMs",
-        "url": "https://arxiv.org/abs/2610.23311v1",
-        "publishedAt": "2026-10-16T11:14:52.000Z",
-        "summary": "Large language models (LLMs) can generate fluent outputs that lack source support or conflict with local operational constraints. We introduce Self-Reflective Chain-of-Thought (SRCoT), a modular architecture that organizes generation as a closed Retrieve--Reflect--Revise loop. SRCoT separates environment state, persistent knowledge, accumulated experience, and short-term memory into provenance-labeled stores. BM25 retrieval supplies local context; subsequent passes expose intermediate drafts, missing-information markers, follow-up queries, and optional claim--evidence mappings. These artifacts inform retrieval, revision, clarification, or abstention decisions. We examine the architecture through qualitative, trace-based case studies in two fully synthetic settings: emergency medical services and Munich-Sim, an emergency-operations simulation. Local prototype runs on an Apple M4-family laptop with 128 GB memory illustrate source-labeled documentation, explicit gap marking, and structured dispatch-style outputs. The traces also reveal provenance-assignment errors, incomplete evidence coverage, and unsafe assumptions that remain possible despite prompting constraints. These cases demonstrate report-level inspectability and local execution, not comparative superiority, hallucination reduction, clinical validity, or operational safety. The architecture separates retrieval and control from the model interface, but behavior across different models remains to be evaluated. SRCoT is a research proof of concept requiring human review, with its principal contribution lying in an inspectable control procedure rather than a new model.",
+        "title": "ENFR: Evidence Networks with Flow-Matched References for Amortized Simulation-Based Model Inference",
+        "url": "https://arxiv.org/abs/2610.23825v1",
+        "publishedAt": "2026-10-16T17:48:26.000Z",
+        "summary": "The evidence, $\\mathcal{Z} = p(x | \\mathcal{M})$, of a data-generating model $\\mathcal{M}$ is a powerful tool in Bayesian frameworks: it enables model inference, model misspecification tests, and goodness-of-fit assessment as an alternative to standard discrepancy statistics, e.g. $χ^2$. While versatile, the evidence is notoriously difficult to compute, even when the likelihood is available. In both likelihood-based and simulation-based inference, estimating $\\mathcal{Z}$ provides an immediate solution to high-dimensional goodness-of-fit or model misspecification tests: using $\\mathcal{Z}(x)$ as the test statistic induces a minimum-volume level-$α$ test. Such tests are essential to assess model fidelity, which is necessary to trust simulation-based parameter inference. Existing learned approaches largely target Bayes factors, which only measure evidence ratios. Instead, we provide accurate, fast, and amortized estimates of the absolute evidence. We present ENFR: Evidence Networks with Flow-matched References. Building on the Evidence Network framework of Jeffrey & Wandelt (2024), the proposed method first learns Bayes factors with respect to a flow-matched reference, from which the absolute evidence is recovered. We show improvement in estimation of $\\mathcal{Z}$ over the flow-based baseline in all applications considered and the best performance of all density estimation methods considered in our benchmarks. We furthermore introduce and provide the proof for an architecture that jointly learns the individual evidences of a set of models $\\{\\mathcal{M}_i\\}$. We demonstrate the performance and scaling behavior of these approaches on data from a variety of scientific applications.",
         "authors": [
-          "Fabian Broszio",
-          "Michael Hoffmann",
-          "Adrian Paschke"
+          "Kai Lehman",
+          "Jameson Dong",
+          "Carolina Cuesta-Lazaro",
+          "Niall Jeffrey",
+          "Benjamin D. Wandelt",
+          "Francisco Villaescusa-Navarro",
+          "Sven Krippendorf",
+          "Jochen Weller"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 62
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 60
+      },
+      {
+        "title": "Learning without relearning physical symmetry: an SO(3)-equivariant convolutional network (CNN) on the sphere",
+        "url": "https://arxiv.org/abs/2610.23821v1",
+        "publishedAt": "2026-10-16T17:45:43.000Z",
+        "summary": "Many of the most important datasets in the physical sciences live natively on the sphere, and these data often carry no preferred position or orientation. Using methods that do not reflect this symmetry leads to far higher simulation requirements, which can be catastrophic for scientific analyses (forcing reliance on cheap, imperfect models that bias results). We present a novel spherical implementation of a gauge equivariant mesh architecture that is specifically designed for the Hierarchical Equal Area isoLatitude Pixelization (\\healpix{}) of the sphere. The $\\mathrm{SO}(3)$-equivariant convolution is built from steerable filters, parallel transport and spin-weighted features. The architecture supplies the exact symmetry, so the network does not spend training data learning it. The convolution operations are constructed to give provably exact equivariance, given a band-limit. Our full CNNs can achieve SO(3)-invariance error at per-cent-level and lower, which is controlled through well-understood hyperparameters. On benchmarks, our technique gives the most accurate dense gradient regression and competitive cosmic microwave background foreground removal and denoising. The improved simulation efficiency matters most in simulation-based inference (SBI), where high-fidelity simulations are expensive and neural compressors require large training sets, so a fixed budget forces analyses with less accurate simulators. In cosmology lensing SBI, our technique yields the tightest posteriors at matched simulation count. This approach is a novel method that will enable new convolutional neural network analyses, including generative and inference tasks, for processes and data on the sphere.",
+        "authors": [
+          "Joshua Williamson",
+          "Niall Jeffrey",
+          "Lorne Whiteway"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 60
+      },
+      {
+        "title": "CocoRNA: Collective RNA Design with Cooperative Multi-agent Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2610.23820v1",
+        "publishedAt": "2026-10-16T17:43:25.000Z",
+        "summary": "Designing RNA sequences that reliably fold into specific secondary structures is essential for understanding their biological functions but remains a challenging computational problem. We propose CocoRNA, a cooperative multi-agent reinforcement learning framework for RNA inverse design. CocoRNA simplifies the design task by decomposing it into smaller sub-problems, each solved collaboratively by multiple agents. This approach reduces the complexity of the problem and improves the exploration of design policies. During training, a centralized critic uses global structural information to guide the agents, enabling them to jointly optimize their design strategies. As a result, CocoRNA learns high-quality RNA design policies that generalize effectively to unseen structures without additional training. Experiments on the Rfam dataset demonstrate that CocoRNA substantially outperforms state-of-the-art methods in both success rate and design speed. Further experiments on other biological sequence design tasks highlight the effectiveness and broad potential of CocoRNA for complex design tasks.",
+        "authors": [
+          "Tianmeng Hu",
+          "Biao Luo",
+          "Ke Li"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 60
       }
     ],
     "news": [
@@ -302,7 +342,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Disney agrees to hire the majority of Character.AI’s workforce",
@@ -316,7 +356,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 14
       },
       {
         "title": "Giving AI a “crystal clear” view of the materials world",
@@ -330,7 +370,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 21
+        "ageHours": 26
       },
       {
         "title": "Meta removes language that raised scraping and AI training concerns",
@@ -344,7 +384,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 28
+        "ageHours": 33
       },
       {
         "title": "Anthropic says its workforce has become less junior and is spending more time in meetings",
@@ -358,7 +398,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 29
+        "ageHours": 34
       },
       {
         "title": "Replit makes OpenAI its default over Anthropic, CEO says",
@@ -372,7 +412,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 30
+        "ageHours": 35
       },
       {
         "title": "How Itaú is building generative AI for its entire customer base",
@@ -384,7 +424,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Policy",
-        "ageHours": 54
+        "ageHours": 59
       },
       {
         "title": "India becomes the latest country to report rogue AI agent activity",
@@ -398,7 +438,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 55
+        "ageHours": 60
       },
       {
         "title": "An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet",
@@ -412,7 +452,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 57
+        "ageHours": 62
       },
       {
         "title": "Physical AI is more than robots, says the Nvidia veteran now investing in it",
@@ -426,7 +466,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 57
+        "ageHours": 62
       },
       {
         "title": "Elorian’s first AI model wants to reason with images, not just about them",
@@ -440,7 +480,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 57
+        "ageHours": 62
       },
       {
         "title": "Fostering community amid Kendall Square’s innovation",
@@ -454,30 +494,30 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Products",
-        "ageHours": 57
+        "ageHours": 62
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 3,
+    "last24h": 2,
     "topCategories": [
       {
         "name": "Research",
-        "count": 9
+        "count": 13
       },
       {
         "name": "Models",
-        "count": 8
-      },
-      {
-        "name": "Products",
-        "count": 3
+        "count": 5
       },
       {
         "name": "General",
         "count": 3
+      },
+      {
+        "name": "Products",
+        "count": 2
       }
     ]
   }
