@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T01:26:42.625Z",
+  "generatedAt": "2026-10-23T07:24:24.523Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,10 +27,7 @@
         }
       ],
       "itemCount": 12,
-      "errors": [
-        "research:arXiv cs.AI -> HTTP 503",
-        "research:arXiv cs.LG -> HTTP 503"
-      ]
+      "errors": []
     },
     {
       "group": "news",
@@ -88,210 +85,241 @@
   "sections": {
     "research": [
       {
-        "title": "When More Metadata Misleads: Probing Field-Level Grounding in LLM-Generated Museum Descriptions",
-        "url": "https://arxiv.org/abs/2610.31193v1",
-        "publishedAt": "2026-10-22T12:41:12.000Z",
-        "summary": "Metadata-conditioned generation is often framed as a data-to-text task in which additional input fields should improve grounding. Museum description generation challenges this assumption because catalogue records are heterogeneous, partially visual, and unevenly documented across geographic regions. We study how metadata composition shapes the generation of artefact descriptions through a two-phase framework. Phase 1 analyses natural metadata variation in a large museum collection, where field count, field type, image availability, and Place co-vary. Phase 2 introduces controlled field probes that hold object identity fixed while varying metadata quantity, field type, and image access. Our results show that metadata quantity alone does not explain generation behaviour. Field type determines whether models ground, omit, or infer information, while images can both support visual grounding and increase unsupported interpretation. More broadly, our findings show that metadata-conditioned data-to-text evaluation should assess field- and claim-level support, rather than relying only on aggregate input coverage or reference similarity.",
+        "title": "Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success",
+        "url": "https://arxiv.org/abs/2610.31670v1",
+        "publishedAt": "2026-10-22T17:59:51.000Z",
+        "summary": "Robotic foundation models are typically evaluated through costly closed-loop rollouts, which motivates cheap offline proxies for model capability. The Platonic Representation Hypothesis (PRH) suggests that as representations improve, different modalities such as vision and language converge toward a shared statistical model of reality. We ask whether motion trajectories form another such modality: as embodied models become more capable, should their sensory representations converge toward the structure of physical motion? To examine this, we propose Sensorimotor Alignment ($S^2$), a training-free offline metric that measures how well a model's sensory representation aligns with the geometry of physical motion. We find that $S^2$ correlates positively with downstream robot task success across embodied model families, making it a low-cost offline proxy for prioritizing models before closed-loop evaluation. $S^2$ can also identify promising vision-language model (VLM) backbones even before costly fine-tuning into vision-language-action models (VLAs). Beyond this correlation, $S^2$ offers representation-level explanations for phenomena observed in VLAs and world action models (WAMs). With $S^2$, we extend PRH to embodied models and make sensorimotor alignment empirically measurable, offering insight into why an embodied model succeeds beyond its closed-loop success rate.",
         "authors": [
-          "Clemencia Siro",
-          "Laura Hollink"
+          "Yunfei Xie",
+          "Howard H. Qian",
+          "Shiyi Lan",
+          "Kaiyu Hang",
+          "Chen Wei"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
         "ageHours": 13
       },
       {
-        "title": "Prompting Strategy Effects Depend on the Judge: A Multilingual Study of LLM-as-a-Judge Robustness",
-        "url": "https://arxiv.org/abs/2610.31172v1",
-        "publishedAt": "2026-10-22T12:27:05.000Z",
-        "summary": "LLM-as-a-Judge evaluation is increasingly applied to multilingual tasks, yet prompting strategies such as Chain-of-Thought and Role Conditioning are recommended based solely on English benchmarks. Whether their effectiveness transfers across judge models and languages remains unknown: prompt-sensitivity studies are largely English-centric, while existing multilingual judge studies fix the prompt template. In this work, we address this gap by measuring this interaction through a benchmark of 9 prompting strategies, 4 open-weight judges, 27 languages, and 4 tasks across 13 datasets, yielding over 1M pointwise scores on gold-reference outputs, validated against human judgments. We find that prompting strategies are not transferable: the choice of the judge model dominates the choice of prompting strategy, strategy effects reverse direction across judges, and stability degrades in low-resource languages, where these effects are concealed by aggregate reporting. These findings show that prompting effects in multilingual evaluation are conditioned on the judge, task, and language. Consequently, prompting strategies should be validated for the intended evaluation setting, and cross-study comparisons should account for both judge and prompt configuration.",
+        "title": "Direct Pass@$k$ Optimization for Thought Pruning: Balancing Quality and Diversity in Test-Time Reasoning",
+        "url": "https://arxiv.org/abs/2610.31667v1",
+        "publishedAt": "2026-10-22T17:59:48.000Z",
+        "summary": "Test-time scaling has emerged as a key inference strategy for reasoning models, where a model generates a large number of candidate solutions in the hope of finding at least one correct solution. Running all candidate solutions to completion can be computationally demanding, so recent work prunes the candidate pool after generating only a short prefix, committing further computation only to the surviving candidates. Existing pruning strategies divide broadly into two categories: Quality-based methods assign a score to each partial solution and discard those predicted to ultimately lead to an incorrect final solution, while diversity-based methods select partial solutions that follow different reasoning trajectories and are therefore likely to cover different final solutions. The tension between these two objectives is an instance of exploration versus exploitation, yet little to no prior work on pruning exposes this trade-off directly, let alone optimizes it. In this paper, we introduce a pruning procedure that addresses this trade-off directly by optimizing pass@$k$ over the selected solution pool. In particular, it chooses the pool to maximize the probability that at least one of its partial solutions, when continued to completion, yields a correct answer. Because this objective simultaneously rewards high-quality partial solutions and penalizes redundancy among them, quality and diversity are naturally balanced by the criterion itself rather than through separate ad-hoc design choices. On eight open-weight reasoning models, our method outperforms existing quality-based and diversity-based pruning strategies. The gains are particularly pronounced when the pruning procedure keeps a moderate number of partial solutions for continued generation, highlighting the value of directly balancing quality and diversity during pruning.",
         "authors": [
-          "Asal Mehrabi",
-          "Mohammad Aliannejadi",
-          "Clemencia Siro"
+          "Mahdi Salmani",
+          "Adel Javanmard",
+          "Devansh Gupta",
+          "Meisam Razaviyayn"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
         "ageHours": 13
       },
       {
-        "title": "Beyond Watching and Searching: Benchmarking Agents for Video-centered Deep Research Reports",
-        "url": "https://arxiv.org/abs/2610.31158v1",
-        "publishedAt": "2026-10-22T12:15:30.000Z",
-        "summary": "Deep research agents synthesize open-web evidence into long reports, but current benchmarks do not evaluate research centered on a source video. We introduce Video-Centered Deep Research Report Generation. Given a video and user request, an agent identifies research questions, retrieves external multimodal evidence, and produces an interactive report linked to relevant video moments. This task has direct practical value because it helps users locate relevant moments, verify claims, reproduce demonstrated procedures, and make informed decisions from video content. We present a skill-based workflow and OmniDR-Bench for this task. For evaluation, we propose Omni Atomic Rubric Trees (Omni-ARTs). Each tree contains three dimensions, 23 shared directions, and task-specific atomic binary criteria. The directions test audiovisual grounding, multimodal evidence use, and interactive presentation. Audited Rubric Construction (ARC) builds these trees through independent evidence collection, automated checks, behavioral calibration, and iterative human review. OmniDR-Bench contains 50 Chinese and English tasks across 19 realworld subcategories. It includes 6,414 criteria. Across 18 agent configurations, the best system scores 63.3 out of 100. Current agents still need broader content coverage, stronger causal and logical analysis across modalities, and more accurate citation support. We further analyze models, harnesses, skill configurations, video categories, and research trajectories. The code and data are released at https://github.com/marinero4972/OmniDR-Bench.",
+        "title": "Phase Transition from Random Features to Fully Trainable Networks",
+        "url": "https://arxiv.org/abs/2610.31663v1",
+        "publishedAt": "2026-10-22T17:59:29.000Z",
+        "summary": "Constructing accurate and computationally tractable approximation spaces is a fundamental task in scientific computing. Partially trainable neural networks bridge fixed random features and fully adaptive representations. This paper quantifies a phase transition pattern in approximation bounds and observes analogous behavior in training errors: a rapid but smooth initial improvement followed by diminishing returns, with a sharper transition under greater initialization mismatch. Under polynomial spectral decay with exponent $α>1$ and leverage compatibility, we establish a squared $L_2$ approximation rate $\\mathcal{O}((κ_P\\log(m/δ)/m)^α)$ for two-layer networks of width $m$ and trainable proportion $P$, where $κ_P=(P/κ_1^*+(1-P)/κ_0^*)^{-1}$. The bound holds uniformly over the unit ball of a reproducing kernel Hilbert space (RKHS) with probability at least $1-δ$. The constants $κ_0^*$ and $κ_1^*$ quantify the fixed and trainable groups' sampling mismatches relative to the target RKHS. For spherical biased-ReLU features in dimension $d$, we verify these assumptions with $α=(d+2)/(d-1)$ and $κ_0^*=4\\sqrt{2}τ(d+1)/d$ for initialization scale $τ\\ge1$, and $κ_1^*=1$ under ridge leverage sampling. For $d=5$ and $τ=10$, a trainable proportion of approximately $4.1\\%$ captures $90\\%$ of the reduction in the approximation bound from $P=0$ to $P=1$. A structured three-layer example illustrates how a few trainable first-layer neurons exploit fixed downstream blocks through nonlinear composition. Numerical experiments across diverse settings, including networks with up to 15 layers, exhibit similar phase transitions in training errors.",
         "authors": [
-          "Jiahao Meng",
-          "Qize Yang",
-          "Yuxuan Wang",
-          "Yunfei Chu",
-          "Wensi Dai",
-          "Jin Xu",
-          "Yunhai Tong"
+          "Xin He",
+          "Huan Lao",
+          "Xiliang Lu",
+          "Shijun Zhang"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 13
+      },
+      {
+        "title": "Reliable AI-Assisted Decisions via Selective Auditing",
+        "url": "https://arxiv.org/abs/2610.31662v1",
+        "publishedAt": "2026-10-22T17:59:22.000Z",
+        "summary": "We consider online monitoring of an AI system that produces a sequence of decisions. At each round, the system outputs a proposed decision together with a confidence score estimating the trustworthiness of the decision. The decision and confidence score need not be produced by the same model: for example, one agent may propose a decision, while a separate verifier agent evaluates it and outputs a correctness or safety score. Based on this information, we must decide whether to accept the AI decision automatically or consult an expert, such as a human auditor, who reviews the proposal and either accepts or corrects it. We formulate this task as an online constrained optimization problem in which the goal is to minimize the frequency of expert auditing while guaranteeing that the fraction of AI errors that go unaudited stays below a user-defined threshold. We derive a family of algorithms with provable error-control guarantees with no assumptions, including a method that is optimally efficient: it asymptotically attains the best achievable auditing rate for both adversarial and i.i.d. data streams. Experiments on screening harmful requests to large language models, qualitative text annotation, and data labeling show that our methods achieve valid error control in practice while substantially reducing the need for human auditing compared to baselines.",
+        "authors": [
+          "Isaac Gibbs",
+          "Elise L. Han",
+          "Ryan J. Tibshirani",
+          "Tijana Zrnic"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
         "ageHours": 13
       },
       {
-        "title": "Prompt Sensitivity in Tool-Augmented Model Comparisons",
-        "url": "https://arxiv.org/abs/2610.31148v1",
-        "publishedAt": "2026-10-22T12:07:01.000Z",
-        "summary": "Language models are compared on question-answering benchmarks that pose each question in one wording, and a reworded question can change which of two models scores higher. We ask whether giving the models tools makes such comparisons more stable. An accuracy gain cannot answer this, because tools change several steps between the question and the scored answer at once. We propose a matched protocol that separates those steps: the answer readout, reasoning, the decision to call, the tool's answer, and the report supplied without a call. We apply it to six open models in five domains under five wordings. We find that tools raise accuracy where a program answers the question and widen the wording sensitivity of many pairwise comparisons. The widening follows how often a model calls, and call frequency follows the wording for some models and not others. It also depends on the interface and the instructions: a native tool-calling interface and a second tool description leave no detected widening in molecules, and sensitivity persists where tools return intermediate results. These findings show that deterministic reports do not guarantee stable comparisons. We recommend reporting call frequency and comparison stability under several wordings beside accuracy.",
+        "title": "SpectralCanary: Embarrassingly Simple Low-Frequency Traces for T2I Dataset-Use Auditing",
+        "url": "https://arxiv.org/abs/2610.31659v1",
+        "publishedAt": "2026-10-22T17:59:03.000Z",
+        "summary": "Auditing whether a text-to-image (T2I) model was fine-tuned on a particular image collection is difficult: a model can absorb collection-level visual characteristics without reproducing training images. Proactive dataset-use auditing plants a shared signal in a dataset before release, then later checks whether that signal appears in a suspect model's generated outputs. Existing approaches often trade off verifiability, fidelity, robustness, and deployability. We introduce $\\textbf{SpectralCanary}$, which uses a smooth low-pass mask to blend a fixed canary image into every collection image while leaving captions unchanged and requiring neither auxiliary generation nor per-image optimization. A lightweight verifier detects the transferred signal in suspect-model outputs. Across eight tests on the Pokemon dataset and three realistic data transformations, spanning two architectures families, SpectralCanary achieves the highest average per-generation TPR@$1\\%$ FPR ($91.1\\%$) and fixed threshold model-level accuracy using 30 generations ($94.8\\%$) among the evaluated methods. Across five datasets spanning artistic, medical, satellite, and fashion domains with SD3.5, SpectralCanary averages $92.4\\%$ per-generation TPR@$1\\%$ FPR while preserving the released images (SSIM $0.989$, LPIPS $0.022$) with a near-zero mean change FID (mean $Δ$FID $0.05$) across datasets. Matched-energy ablations on Pokemon and ROCOv2 support our design choice, low-frequency placement transfers more reliably compared to mid/high-frequency placement. Under the evaluated adaptive attacks, the most effective removal requires aggressive modification and incurs more than $25$ $Δ$FID points. These results identify low-frequency visual signals as effective carriers for collection-level T2I audit traces.",
         "authors": [
-          "Mateusz Modrzejewski",
-          "Tomasz Radzikowski"
+          "Sy-Tuyen Ho",
+          "Anirudh Satheesh",
+          "Soham Chawathe",
+          "Huy Nghiem",
+          "Yongkyun Lee",
+          "Andrew Adams Schoen",
+          "Furong Huang"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
         "ageHours": 13
       },
       {
-        "title": "Mixing Matters: Evidence Position Bias Across Sequence Mixers in Long-Context Question Answering",
-        "url": "https://arxiv.org/abs/2610.31135v1",
-        "publishedAt": "2026-10-22T11:54:30.000Z",
-        "summary": "Long-context models often use answer-bearing evidence less effectively when it appears away from a prompt boundary. We compare this position bias across Transformer, state-space, and hybrid Mamba architectures by moving one gold document through a fixed set of nine distractors. The evaluated Transformers show a beginning advantage that the evaluated state-space models lack, while both families favor evidence near the end. A matched pure-versus-hybrid Mamba comparison points in the same direction but remains statistically uncertain. The family difference appears among models that can answer the task. Transformer primacy reappears on synthetic retrieval, where state-space ceiling prevents a family comparison. A corpus swap within one state-space architecture changes overall accuracy without a detectable change in curve shape. Prompt changes can create or nearly remove a beginning advantage. Position remains decodable across architectures even when response curves differ, and attention concentration near initial tokens covaries with beginning sensitivity in the tested Transformer family. These exploratory results show that effective context use depends on the evaluated architecture family, capability, task, and prompt, without isolating the sequence mixer as the sole cause.",
+        "title": "Cost-Aware Abstention for LLM-Based IT Ticket Classification",
+        "url": "https://arxiv.org/abs/2610.31657v1",
+        "publishedAt": "2026-10-22T17:58:52.000Z",
+        "summary": "Wrong automatic routing of an IT support ticket can cost more than human triage. We evaluate cost-aware abstention as an offline, cost-conditional readiness assessment: select a routing policy on calibration data under explicit costs, then evaluate that frozen policy once on held-out test data. On a public 47,837-ticket, eight-class corpus, we compare four trained non-LLM classifiers with four large language models under zero- and few-shot prompting. Under the illustrative cost model (c_ok, c_triage, c_wrong) = (0, 1, 5), TF-IDF with logistic regression and a threshold of 0.60 selected on calibration reduces test cost from 0.763 to 0.472, a 38.1% relative reduction (paired ratio-bootstrap 95% CI [35.7%, 40.4%]), while lowering wrong routes from 15.3% to 3.5%. Frozen calibration-selected policies also beat both always-route and always-defer on held-out test data in 14 of 16 settings in a post-hoc cost-parameter analysis. The strongest prompted configuration reaches 0.477 accuracy on a stratified 1,000-ticket test subset, versus 0.879 for fine-tuned DistilBERT on the same tickets. Isotonic lowers expected calibration error without reliably improving discrimination: GPT-4o-mini few-shot has one confidence value before and after recalibration and correctness AUROC 0.500. We therefore report correctness AUROC and tie-aware risk-coverage area alongside ECE. At the analytically derived break-even probability 0.80, seven prompted configurations defer all tickets; Haiku few-shot routes only 19/1,000. An LLM-only agreement control and margin/entropy rejection baselines further separate calibration from discrimination. The findings are scoped to this dataset, prompt design, model endpoints, and illustrative costs; the work is an evaluation framework, not a new abstention algorithm or universal deployment certification.",
         "authors": [
-          "Aman Behera",
-          "Namit Solanki",
-          "Mehul Anand"
+          "Sachin Gupta"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 14
+        "ageHours": 13
       },
       {
-        "title": "Delta N-gram: Forward-Only Continual Writing into a Language Model's Native N-gram Memory",
-        "url": "https://arxiv.org/abs/2610.31125v1",
-        "publishedAt": "2026-10-22T11:42:49.000Z",
-        "summary": "Our previous analysis found that a model's native hashed N-gram table is where continual updates disturb the base least, but its writes needed backpropagation and changed the pretrained table. We present Delta N-gram, a forward-only write path into that table. The pretrained table T^0 is never modified. Evidence is written into a sparse patch Δon the rows it addresses: a 4.1M-parameter writer emits a target and a gate per (position, hash head) event, and a block-averaged delta rule keeps each row a convex combination of its old value and the gated targets. The writer is trained offline on raw text with the pretraining objective; at use time writing takes forward passes only, and clearing Δrestores the original model. A 0.6B prototype trained to answer questions keeps 16/16 facts after a second write; online gradient writes keep 2--4/16. We study two writers: a plain writer that encodes evidence with the T^0-only model, and a delta writer that reads its current memory while encoding. On Qwen3.8-Flash-Next, the plain writer's memory is document-specific: on 64 held-out news events it lowers continuation NLL by 0.068 nats/token against empty memory and by 0.024 against another document's memory, and 0.063 and 0.013 after 16 intervening articles. The delta writer's memory is more document-specific and keeps more of it under distraction (70% vs 54%). Over 35,000 writes on our previous seven-task chain both writers stay stable and the delta writer drifts less (layer-2 math drift 176% vs 188%); later accuracy changes by -0.26/-0.52pp (-7.29pp for gradient updates) and small-k_i drift is 17.9/17.5% (39.2%). Acquisition is negative, and general-input drift reaches 32.8% (20.75%): format rows read by every example grow to 4--12 times their pretrained norm. Zeroing eight such rows removes over 98% of layer-2 drift on math inputs, together with their NLL gain.",
+        "title": "METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2610.31656v1",
+        "publishedAt": "2026-10-22T17:58:27.000Z",
+        "summary": "Meta-reinforcement learning aims to train agents that adapt quickly to unseen tasks from limited interaction, but this requires representing task evidence over long interaction histories. Classical recurrent agents compress experience into hidden states, while transformer-based agents retrieve from past trajectories at quadratic memory and computation cost. In this work, we propose Memory-Enhanced Test-Time Adaptation (METTA) for meta-reinforcement learning. It decomposes the fast adaptation phase into two temporal scales: a causal neural memory performs fine-grained within-episode adaptation with linear sequence complexity, while compact episode-level summaries support long-range cross-episode task inference without attending over the full interaction history. Moreover, equipping agents with neural memory provides sufficient expressive capacity and test-time training capability, enabling effective adaptation to unseen held-out tasks and task families at meta-test time. On unseen held-out Meta-World ML10/45 test environments, METTA achieves a success rate over $50\\%$ while maintaining a low training budget and short wall-clock time. On long-context sparse-reward PointMaze tasks, it outperforms transformer-based baselines by exhibiting more structured exploration behavior. These results show that METTA provides an efficient path toward more adaptive and scalable long-context meta-RL.",
         "authors": [
-          "Hao Wu"
+          "Ali Najar",
+          "Hosein Hasani",
+          "Amir Kooshan Fattah",
+          "Yasamin Rajabi",
+          "Mahdieh Soleymani Baghshah"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence",
+        "url": "https://arxiv.org/abs/2610.31650v1",
+        "publishedAt": "2026-10-22T17:57:04.000Z",
+        "summary": "Tool-using language model agents rely on environmental facts to decide whether an action is permitted. When a tool response omits a safety-relevant fact, an agent may carry out a prohibited action even though the user request is benign and every returned statement is true. We introduce \\bench{}, an executable benchmark for evaluating unsafe execution, safety boundaries, and evidence recovery in LLM agents under missing evidence. It contains 300 matched unsafe/safe task pairs across six domains. By systematically suppressing critical facts, the benchmark measures unsafe execution under critical evidence omission and determines the minimum observed failure cardinality, including failures with full evidence and cases with no observed failure after exhaustive testing. An independent audit tool tests whether agents seek missing facts and then withhold prohibited actions while completing permissible tasks. The benchmark reveals substantial variation across the ten models in omission robustness, evidence acquisition, and appropriate action. Resistance to missing evidence does not necessarily translate into useful recovery. Recovery access reduces unsafe execution for all ten models, but agents differ in whether they actively obtain the missing facts and use them to act appropriately in both worlds.",
+        "authors": [
+          "Qijin Zhang",
+          "Hanzhen Wang",
+          "Yuehan Zhao",
+          "Haoyu Dai",
+          "Yao Shu",
+          "Zhongxiang Dai",
+          "Shuang Qiu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "Low-Bit N-Gram Embeddings for Language Models",
+        "url": "https://arxiv.org/abs/2610.31646v1",
+        "publishedAt": "2026-10-22T17:56:13.000Z",
+        "summary": "Many recent open-weight language models use n-gram embedding tables to improve performance. These tables store learned representations of short token sequences, such as pairs or triples of consecutive tokens, which the model retrieves during processing. However, they can require substantial memory: DeepSeek-V4.1-Flash, for example, allocates 196 billion parameters to its Engram n-gram memory. We therefore investigate whether this memory cost can be reduced while preserving the performance improvement that the tables provide. We propose storing n-gram embeddings at low precision and systematically investigate different quantization methods and bit allocations across tables. Across nanochat-, Llama-, and GPT-2-family models trained from scratch, four-bit tables save approximately 75% of table memory while preserving more than 99% of the validation-loss improvement from adding the tables. Using fewer bits leads to a larger drop in performance, although we find that a short fine-tuning phase recovers a significant part of this loss. In addition, reinvesting the saved memory in larger tables can improve performance beyond that of the original full-precision tables while still using less memory. These table memory savings also extend to large existing models: on DeepSeek-V4.1-Flash and Qwen3.8-Flash-Next, low-bit tables save 47-55% of table memory, with perplexity increases of less than 1.2% and largely preserved downstream task performance. These findings establish low-bit precision as a practical way to reduce the memory requirements of n-gram embeddings and use the saved capacity to improve model performance.",
+        "authors": [
+          "Stephen Chung",
+          "Wenyu Du"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
+        "ageHours": 13
+      },
+      {
+        "title": "A Fix for Softmax and Cross-Entropy",
+        "url": "https://arxiv.org/abs/2610.31642v1",
+        "publishedAt": "2026-10-22T17:54:56.000Z",
+        "summary": "Standard implementations of softmax, log-softmax, and cross-entropy have two numerical bugs. The first bug, Softmax Collapse, rounds the target logit's gradient to zero if that one logit is much larger than the others, resulting in gradients that no longer sum to zero. The second bug, Softmax Cancellation, occurs when student logits are close to teacher logits, and produces non-zero gradients even when the student and teacher logits are equal. We present simple implementations of log-softmax, softmax, and cross-entropy that fix both bugs. Our fix eliminates the previously-observed \"Slingshot\" phenomenon, speeds up grokking with weight decay, prevents accuracy collapse without weight decay, stops student networks from drifting away from the teacher during distillation, and shows that after memorization, logit growth is bounded by an equilibrium between weight decay and Adam's $ε$ hyperparameter.",
+        "authors": [
+          "Jonathan T. Barron",
+          "Dan Gnanapragasam",
+          "Michael Tschannen"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 13
+      },
+      {
+        "title": "Causal Chain of Thought: Mitigating Attention Leakage via Context Isolation",
+        "url": "https://arxiv.org/abs/2610.31639v1",
+        "publishedAt": "2026-10-22T17:52:56.000Z",
+        "summary": "Chain-of-thought (CoT) prompting elicits step-by-step rationales that appear to explain model predictions, but there is no guarantee these steps causally drive the final answer. In standard autoregressive generation, dense attention allows each reasoning step to attend to the full context, enabling the model to derive answers through direct lookup while generating plausible-sounding but post-hoc justifications. We introduce CausalCoT, an inference framework that enforces causal transparency by decomposing problems into a directed acyclic graph of atomic sub-questions, evaluating each node in an isolated context containing only its direct causal parents. This Markovian structure removes attention pathways to non-parent content, making downstream predictions sensitive to local reasoning rather than global context leakage. Across a diverse suite of reasoning benchmarks, CausalCoT preserves competitive predictive performance while improving explanation faithfulness, increasing causal sensitivity of intermediate reasoning steps by an average of 12 and up to 21 percentage points over the strongest baseline. The structured dependency graph additionally enables test-time interventions in which local corrections propagate predictably through downstream reasoning.",
+        "authors": [
+          "Gabriele Dominici",
+          "Teague McMillan",
+          "Fazl Barez",
+          "Marc Langheinrich",
+          "Martin Gjoreski"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
         "ageHours": 14
       },
       {
-        "title": "Through a PRISM, Clearly: Step-Sequence Reasoning for Mistake Recognition in Procedural Videos",
-        "url": "https://arxiv.org/abs/2610.31117v1",
-        "publishedAt": "2026-10-22T11:32:37.000Z",
-        "summary": "Procedural mistake recognition requires identifying deviations from valid multi-step activities. We study post-completion recognition from videos with benchmark-provided step boundaries. We introduce PRISM (Procedural mistake Recognition via Interpretable Semantic Modeling), which grounds video segments in language and maps their descriptions to procedural states using a lightweight hidden Markov model trained on correct executions. Reference alignment and semantic checks identify errors in step content and order. To support evaluation across heterogeneous benchmarks, we map dataset-specific annotations to four edit-based error types: insertion, deletion, substitution, and transposition. Across three benchmarks, we compare gold and VLM-generated descriptions in raw, semantic-role, and action-object forms. Decoder controls show consistent gains from the trained local decoder over nearest-candidate matching, with additional, dataset-dependent benefits from sequence decoding. Semantic role labeling improves Any-F1 in all six matched grounded comparisons, although the gains vary across datasets and do not translate into uniform improvements under separate configuration selection. These results establish language grounding as an effective interface for explicit procedural mistake reasoning and characterize the contributions of representation and decoding.",
+        "title": "Can an Agent Debug a Web Corpus? Agentic Auditing of Slovak FineWeb2",
+        "url": "https://arxiv.org/abs/2610.31636v1",
+        "publishedAt": "2026-10-22T17:52:22.000Z",
+        "summary": "Multilingual pipelines such as FineWeb2 apply one recipe across a thousand languages, leaving the failure modes of individual languages unanticipated. We use an LLM once, as a corpus debugger rather than a classifier: a tool-using agent explores the corpus through a read-only, budgeted API and compiles each finding into an executable test, which a native speaker then validates. On the 26.5M-document Slovak portion of FineWeb2, three runs costing \\$2.21-\\$2.84 each found seven findings over four phenomena. The largest is a machine-generated content farm of 1,408,437 documents (5.32%) that passed the pipeline's filters, 86.6% of it passing even stricter thresholds. Blinded labels support 6 of the 7 findings (defect rates .53-1.00 against .08 in a random control) and do not support one. The compiled suite scans the full corpus in 0.7 s of wall-clock time without a GPU, against \\$12k-\\$90k per LLM classification pass. The best static sampling baseline validates more selectors than any agent run, at under half the cost. The agent contributes exact prevalence, a precision estimate checked against sampled documents, an account of why the pipeline missed each slice, and a reusable test. We release the framework, Slovak test suite, validation data and agent trajectories.",
         "authors": [
-          "Olga Loginova",
-          "Oleksandr Bezrukov",
-          "Frank Keller"
+          "Marek Šuppa",
+          "Ivan Vykopal",
+          "Jaroslav Kopčan"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
         "ageHours": 14
-      },
-      {
-        "title": "A Grammar of French Civil Cassation: A Ground-Level Dataset and Tool",
-        "url": "https://arxiv.org/abs/2610.31116v1",
-        "publishedAt": "2026-10-22T11:30:50.000Z",
-        "summary": "This paper presents a dataset of 121,536 ground-reasons pairs across 86,464 rulings of the five civil chambers of the French Court of Cassation (2016-2025). An appeal on points of law cannot itself be appealed and often decides a case for good. Understanding how the Court rules is thus crucial and can help lawyers who draft those appeals. Inside a ruling, every ground of appeal (a distinct legal complaint against the appealed decision) has its own answer from the Court. This answer is called the reasons and it belongs to one of a few doctrinal families. Using a deterministic pipeline, we pair each ground with its reasons and attach the pair to its family, according to the established French taxonomy. We obtain a descriptive grammar of civil cassation that shows which grounds succeed, which legal texts they refer to, and how both evolve over the decade. We release the dataset, the code and an interactive consultation tool.",
-        "authors": [
-          "Avrile Floro",
-          "Tamara Dhorasoo",
-          "Nils Holzenberger",
-          "Thomas Le Goff",
-          "Tiphaine Viard",
-          "Maria Boritchev"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "Learning What to Ask for Tomorrow: Active Preference Acquisition for Long-Term Personalized Web Agents",
-        "url": "https://arxiv.org/abs/2610.31107v1",
-        "publishedAt": "2026-10-22T11:16:24.000Z",
-        "summary": "Web agents increasingly serve the same user across repeated online tasks such as booking travel, shopping, and scheduling, so their long-term usefulness depends on how well they know the user's preferences. Passive memory and personalization methods cannot obtain preferences the user never reveals, and clarification methods that value a question by its benefit to the current task overlook the benefit of reusing the answer in later tasks. We study Active Preference Acquisition (APA): which missing preferences are worth the cost of asking? We define the Prospective Personalization Value (PPV) of a missing preference as its expected cumulative utility gain over future tasks minus the effort and disclosure-risk cost of asking, and select questions under a per-interaction budget. We characterize when cumulative reuse justifies acquisition despite insufficient single-task benefit, and evaluate this regime with an initial-profile diagnostic. APA computes the counterfactual gain of each candidate preference on public task prototypes with the agent's own task solver and aggregates it by the expected reuse of each task family. We evaluate it on ActiveWebPref, a controlled longitudinal benchmark with hidden but queryable user profiles and exact task utilities. At a horizon of 20 tasks, 34.4% of budget-feasible valuable missing preferences are amortization-dependent; APA acquires 80.3% of them, whereas current-task value of information acquires 5.1%. Under per-user asking-cost caps matched to APA's realized expenditure, APA achieves higher net utility than four heuristic selection baselines. In our cost setting, asking about every unknown preference yields lower net utility than not asking, while APA recovers 84.2% of its utility gain with 27.6% of its questions. The value of acquiring a user preference should account for its reuse across future tasks, not only its benefit to the task at hand.",
-        "authors": [
-          "Yiqi Wang",
-          "Zizhi Zeng",
-          "Jiaqi Zhang",
-          "Yiqun Duan",
-          "Mingkai Zheng",
-          "Taotao Cai"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "RIFT: KV Cache Compression for Draft Models with Complementary Compressibility Training",
-        "url": "https://arxiv.org/abs/2610.31098v1",
-        "publishedAt": "2026-10-22T11:12:23.000Z",
-        "summary": "Speculative decoding is a popular decode acceleration method. As such, it is particularly relevant to long-output generation, which requires an increasingly large KV cache. KV cache compression offers a way to constrain costs in long-context drafting. However, compression methods that focus on prefill information can lose relevance as the output length grows. We term this phenomenon decode staleness and show that it degrades draft model accuracy under selection-based KV cache compression. We introduce RIFT, a family of selection-based KV cache compression strategies that balance prefill information and recent generated tokens. We show that refreshing the KV cache selection during token generation significantly improves the drafter's quality at the cost of additional decode latency. To alleviate the refresh costs, we propose an adaptive KV refresh strategy that reduces the number of score calculations while retaining the drafter's quality. We further demonstrate how a compressibility-driven drafter training phase, based on sparse attention masks, can improve the drafter's quality under a compressed KV cache. Combined with compressibility training, RIFT enables Qwen3.5-4B, drafting for Qwen3.5-122B, to retain over 98% of its full-cache acceptance length on 32K-token inputs, 4K-token outputs, and an 8K-token KV cache budget.",
-        "authors": [
-          "Dor Tsur",
-          "Maor Ashkenazi",
-          "Maximilian Golub",
-          "Peter Hicks",
-          "Yaniv Galron",
-          "Talor Abramovich",
-          "Yoav Miron",
-          "Tiyasa Mitra",
-          "Bita Darvish Rouhani",
-          "Ran Zilberstein"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 14
-      },
-      {
-        "title": "What Pairwise Evaluation Misses: Reward Scores across Prompts",
-        "url": "https://arxiv.org/abs/2610.31090v1",
-        "publishedAt": "2026-10-22T11:00:10.000Z",
-        "summary": "Reward models score responses for preference optimization, filtering and ranking, and pooling scores across prompts needs them to be comparable. Yet pairwise evaluation compares two responses to the same prompt, so any score component shared by a prompt's responses cancels and goes untested. We study this component by comparing between-prompt variation in model scores with the same variation in human ratings of the same responses. We propose a human-referenced audit, built from a between-prompt variance share, a sibling-rating regression and prompt substitutions, and apply it to eighteen released scorers and six matched training conditions. We find that scores cluster by prompt more than the ratings do: on HelpSteer2, six reward models have between-prompt shares of 0.34 to 0.64 against a human share near zero. Replacing the original prompt with a fixed instruction keeps substantial clustering but weakens agreement with prompt-level human ratings, so clustering alone does not show agreement with humans. Part of that variation is useful: subtracting prompt means lowers the helpfulness of globally selected responses, and scores stay sensitive to a wrong prompt even when training shuffles prompt means. We propose that reward evaluation check between-prompt variation, sensitivity to a wrong prompt and usefulness for selection separately.",
-        "authors": [
-          "Mateusz Modrzejewski",
-          "Tomasz Radzikowski"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "SCOPE: Compiling Natural-Language Policies into Neurosymbolic Predicate Programs",
-        "url": "https://arxiv.org/abs/2610.31062v1",
-        "publishedAt": "2026-10-22T10:41:13.000Z",
-        "summary": "Policy enforcement for LLM agents has shifted from single-turn content moderation to compound, application-specific policies evaluated over multi-turn transcripts and tool-call trajectories. Fine-tuned guardrail models are efficient but degrade on compound policies, and while LLM-as-a-judge approaches achieve higher accuracy, they incur high inference cost and tend to produce unstable predictions. Neurosymbolic methods offer a natural alternative, decomposing the policy into narrow neural decisions composed under explicit logic. However, existing symbolic layers lack the required expressiveness and are optimized against fixed data rather than the policy itself. To address this, we introduce SCOPE, which compiles a policy into an executable program of neural predicates executed by small models, deterministic extractors, and code that composes their outputs. The program is optimized jointly with its training data, using adversarial generation of counterexamples that target where the program deviates from the policy. We evaluate SCOPE on a benchmark of real-world policy tasks against prompt optimization, task decomposition, and workflow generation methods, achieving the highest average accuracy across tasks and models. Programs optimized with the weakest executor transfer to other models without further optimization. This allows them to be deployed in production on inexpensive models, where they reach accuracy comparable to frontier reasoning models. Unlike these monolithic models, SCOPE produces substantially more stable predictions, and each verdict is interpretable through the predicate outputs that produced it. Additionally, we validate the key components of our method through an ablation study. SCOPE thus enables reliable, interpretable, and efficient policy enforcement at production scale.",
-        "authors": [
-          "Arnon Mazza",
-          "Elad Levi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 15
       }
     ],
     "news": [
+      {
+        "title": "Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony.ai and Nvidia",
+        "url": "https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/",
+        "publishedAt": "2026-10-23T04:00:00.000Z",
+        "summary": "inDrive plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027.",
+        "authors": [
+          "Jagmeet Singh"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 3
+      },
+      {
+        "title": "Q&A: How AI came to model the “messy” human mind",
+        "url": "https://news.mit.edu/2026/qa-how-ai-came-to-model-messy-human-mind-1023",
+        "publishedAt": "2026-10-23T04:00:00.000Z",
+        "summary": "Generative artificial intelligence models are rooted in ideas of mid-20th century engineers who thought some amount of irrationality was essential for a machine that could think like a human, contends Benjamin Lindquist, an assistant professor in the MIT History Section, who holds an MIT Schwarzman College of Computing shared position with the Department of Electrical Engineering and Computer Science (EECS) and is a principal investigator in the Laboratory for Information and Decision Systems.&nbsp; To mimic creative thinking, these AI pioneers intentionally injected randomness into algorithms designed to deterministically solve problems, Lindquist writes in a new paper that appears in the journal&nbsp; Past and Present. In the paper, he traces the origins of AI hallucinations back to this early research and suggests there will be inevitable tradeoffs between creativity and predictability when trying to build machines that mimic human behavior.&nbsp; MIT News spoke with Lindquist about these ideas. Q:&nbsp; Why did early computer engineers believe they needed to inject randomness and irrationality into AI systems designed for logic and calculation?&nbsp; A:&nbsp; There is a long history of many figures in the world of science and art theorizing that chance plays an important part in discovery and creativity — in the ability to originate ideas. They equated creativity with unexpected leaps of logic, or even a dream-like state that allows you to think about things from a new perspective.&nbsp; In the early 1950s, one popular idea from John Pierce, who was a prominent electrical engineer at Bell Labs, was about math being valuable in the world of art. The idea was shared by a lot of people working in early computing. When we think of artwork that includes math, we may think of something very orderly and precise, but Pierce came to the opposite conclusion. He concluded that the utility of math is that it could remove order from art. Then in a very calculated way, math could add a burst of the unexpected as a means to deviate from clichés and add an element of irregularity which just might lead to insight.&nbsp; One popular way to add irregularity into otherwise predictable computers was through artificial (or random) neural networks . Many early neural networks were built by psychologists, who thought that by enabling scientists to build a model of the brain, artificial neural networks allowed scientists to observe what is happening inside, including how brains make productive mistakes. Rather than being black boxes, researchers believed these systems could open this black box of the mind and let scientists peer inside and see all the messy stuff that was really happening. But there was another camp in the world of AI who thought that creative thinking was just “normal” thinking done better. It is interesting to look at these two very simplistic heuristics for understanding intelligence and creativity, and how they do and don’t mesh. The debate, then, was about trying to determine what human inventiveness boils down to, and then how to reconstitute human inventiveness in machine form.&nbsp; Q:&nbsp; How did these early computer engineers view AI, and how is it different from the way we think about AI today? A:&nbsp; When we think of AI systems, we think of ChatGPT or Claude. We value and use these systems because they give answers that, most of the time, are correct. One of the things that was most interesting to me in this research was finding out that a lot of the early advocates of these systems valued them for exactly the opposite reason. They wanted a system that, on occasion, gave answers that deviated from their expectations. They already had systems that could deliver reasonable and expected answers. They saw neural networks as valuable because they could give unexpected, perhaps even strange and bizarre answers. One reason we might view these systems differently today could be because of how they operate. Early on, these systems were confined to laboratories, so there weren’t really any real-world consequences of a system that gives a strange, or wrong, output. But now there are legal and monetary reasons why OpenAI or Anthropic doesn’t want a chatbot that gives unexpected or creative answers. There has been a “sanding down” of strangeness in these systems. They still potentially have that at their core, but it is something that is now largely suppressed. Q:&nbsp; How did early neural networks that incorporated randomness to simulate human creativity evolve to become the dominant paradigm in AI? A:&nbsp; For a long time, a specific kind of AI called “symbolic AI” was the dominant approach. Essentially, symbolic AI says the world is based on rules. The role of the AI researcher is to try and reconstruct the knowledge of the world in facts and propositions and feed it into a computer. Neural networks, with their use of randomness to solve problems, started to gain traction in the 1950s but fell out favor early on.&nbsp;Frank Rosenblatt, a psychologist who was a very important early figure in neural networks, died prematurely; he died accidentally on his 43rd birthday in 1971. He was quite a charismatic and forceful personality, who made a lot of grand promises about what systems based on neural networks could do. By the time he died, a shift toward symbolic AI was already underway. It is possible if, had he lived, things might have turned out differently. But neural networks never went away. By the 1980s they had shifted more into the world of cognitive science. To become more powerful, and more useful, neural networks needed a lot of data and computational power. That didn’t really arrive until the advent of the internet, when a lot of data became available and computing started to power up. Around 2012, neural networks started to outperform and outpace a statistical form of machine learning, and they kept growing from there. Q:&nbsp; What lessons can we learn from studying AI’s history that could inform its development? &nbsp; A:&nbsp; I think there is a cautionary lesson here. The ideas and experiences of these early engineers tell us that we can work toward quashing hallucinations — we can work toward making AI perform a certain way so it doesn’t produce unexpected or unwanted answers — but there are going to be other consequences of that. These historical figures were onto something. There is a connection between the surprising and creative conclusions AI can offer and errors or hallucinations. There are tradeoffs when we build our systems to behave one way or the other. Maybe it is impossible to be completely at either end of the spectrum, but when we work toward one thing robustly, we often sacrifice something else unintentionally.",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 3
+      },
       {
         "title": "Left alone with nothing to do, AI agents started playing",
         "url": "https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/",
@@ -304,7 +332,19 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 1
+        "ageHours": 7
+      },
+      {
+        "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+        "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+        "publishedAt": "2026-10-23T00:00:00.000Z",
+        "summary": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "Policy",
+        "ageHours": 7
       },
       {
         "title": "OpenAI working on new $30B raise at $1.25T valuation ahead of IPO",
@@ -318,7 +358,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 9
       },
       {
         "title": "This design software reimagines everyday objects as self-aware devices",
@@ -332,7 +372,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 5
+        "ageHours": 11
       },
       {
         "title": "1Password launches a way for AI agents to log in on your behalf without seeing your password",
@@ -346,21 +386,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
-      },
-      {
-        "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
-        "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
-        "publishedAt": "2026-10-22T19:00:00.000Z",
-        "summary": "OpenAI is launching its decision model to the world. Can it compete with the original Jev?",
-        "authors": [
-          "Tim Fernholz"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 6
+        "ageHours": 12
       },
       {
         "title": "Canva releases its first image generation model",
@@ -374,7 +400,21 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 12
+      },
+      {
+        "title": "OpenAI makes its Jev competitor widely available as decision model competition heats up",
+        "url": "https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/",
+        "publishedAt": "2026-10-22T19:00:00.000Z",
+        "summary": "OpenAI is launching its decision model to the world. Can it compete with the original Jev?",
+        "authors": [
+          "Tim Fernholz"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Models",
+        "ageHours": 12
       },
       {
         "title": "Build more responsive apps with the Decisions API",
@@ -386,7 +426,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Products",
-        "ageHours": 6
+        "ageHours": 12
       },
       {
         "title": "Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintelligence’",
@@ -400,7 +440,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 13
       },
       {
         "title": "Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise",
@@ -414,47 +454,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 9
-      },
-      {
-        "title": "Uber puts all 30,000 employees on ChatGPT Work",
-        "url": "https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/",
-        "publishedAt": "2026-10-22T16:00:00.000Z",
-        "summary": "The ride-share giant previously deployed a much smaller pilot for ChatGPT Work but is now taking the enterprise agent company-wide.",
-        "authors": [
-          "Lucas Ropek"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 9
-      },
-      {
-        "title": "Spotify&#8217;s current AI bet is about being the music service that agents choose",
-        "url": "https://techcrunch.com/2026/10/22/spotifys-current-ai-bet-is-about-being-the-music-service-that-agents-choose/",
-        "publishedAt": "2026-10-22T15:03:58.000Z",
-        "summary": "Spotify co-CEO Gustav Söderström explains why the rise of AI agents could be good news for the music service.",
-        "authors": [
-          "Lauren Forristal"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 10
-      },
-      {
-        "title": "Beyond tree cover: mapping the world’s forest types",
-        "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
-        "publishedAt": "2026-10-22T14:30:24.000Z",
-        "summary": "A global map categorizing every 10-meter patch of land on Earth into distinct forest types.",
-        "authors": [],
-        "source": "Google DeepMind",
-        "feed": "Google DeepMind Blog",
-        "provenance": "https://deepmind.google/blog/rss.xml",
-        "category": "General",
-        "ageHours": 11
+        "ageHours": 15
       }
     ],
     "threads": []
@@ -465,19 +465,19 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 16
+        "count": 13
       },
       {
         "name": "Models",
         "count": 5
       },
       {
-        "name": "General",
-        "count": 2
+        "name": "Products",
+        "count": 3
       },
       {
-        "name": "Products",
-        "count": 1
+        "name": "General",
+        "count": 2
       }
     ]
   }
