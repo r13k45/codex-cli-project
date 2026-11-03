@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:56:56.421Z",
+  "generatedAt": "2026-11-03T07:52:01.413Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,228 +85,334 @@
   "sections": {
     "research": [
       {
-        "title": "Latent Reasoning in Continuous Space for Unified Multimodal Models",
-        "url": "https://arxiv.org/abs/2610.42149v1",
-        "publishedAt": "2026-10-30T17:59:43.000Z",
-        "summary": "Unified Multimodal Models (UMMs) achieve remarkable success on diverse multimodal understanding and generation tasks, yet they still struggle to effectively leverage language-based chain-of-thought reasoning for image generation. As a result, existing reasoning-augmented UMMs often fail to inherit the test-time scaling and fine-grained controllability observed in large language models. We attribute this failure to a fundamental modality mismatch: reasoning is performed in a discrete token space, whereas image generation operates in a continuous space. To bridge this gap, we introduce a Latent Reasoning framework in Continuous space (LARC), which alleviates the token-level bottleneck by reasoning over continuous hidden states. Specifically, the training framework consists of two stages: (i) curriculum supervised fine-tuning (SFT), and (ii) information-gain reinforcement learning (RL). First, the curriculum SFT stage gradually converts token-level reasoning into latent reasoning. Subsequently, the information-gain RL stage self-evolves latent reasoning without ground truth supervision. Experiments across diverse text-to-image generation benchmarks show that LARC consistently improves generation quality, prompt following, and compositional fidelity. Notably, LARC achieves state-of-the-art performance on GenEval with a 7%p gain over BAGEL and demonstrates clear test-time scaling behavior, outperforming token-based generation under both parallel and sequential test-time scaling strategies.",
+        "title": "Pixel-UMI: Learning Environment-Aware Whole-Body Manipulation from Sensorized Human Demonstrations",
+        "url": "https://arxiv.org/abs/2611.03647v1",
+        "publishedAt": "2026-11-02T18:59:32.000Z",
+        "summary": "Sensorized human demonstrations offer scalable data for mobile manipulation, but embodiment differences complicate policy learning. We present Pixel-UMI, a pipeline for learning environment-aware whole-body policies from human data. We first introduce Environment-Aware Retargeting (EAR), which combines reconstructed scene geometry with demonstrated head and gripper trajectories to determine robot posture and generate collision-aware joint and base targets. Delay-calibrated action assignment converts these trajectories into actions. However, kinematic differences can leave residual pose errors, creating viewpoint mismatches between human demonstrations and robot observations. We therefore introduce Retargeting-Error-Aware Masking (REAM), which uses these errors during training to reduce reliance on mismatched views at deployment. Finally, because estimated actions cannot fully capture contact-rich interactions, we collect on-policy human corrections through DAgger to improve performance. We evaluate Pixel-UMI on five challenging tasks spanning articulated-object manipulation, deformable-object handling, constrained-space reaching, whole-body collision avoidance, and contact-rich bimanual coordination, achieving 87.0% average task progress. Video results are available at https://pixel-robot.com/pixel-umi",
         "authors": [
-          "Byungwoo Jeon",
-          "Yoonwoo Jeong",
-          "Hyunseok Lee",
-          "Minsu Cho",
-          "Jinwoo Shin"
+          "Jason Jingzhou Liu",
+          "Tony Tao",
+          "Deepak Pathak",
+          "Ruslan Salakhutdinov"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Policy",
+        "ageHours": 13
       },
       {
-        "title": "Flide: Accelerating Decision Inference with Exact State Forking",
-        "url": "https://arxiv.org/abs/2610.42148v1",
-        "publishedAt": "2026-10-30T17:59:38.000Z",
-        "summary": "Decision models such as Jev have emerged as a highly promising paradigm for LLM agent systems, providing lightweight and reliable categorical reasoning for rapid System One execution. However, existing generation-oriented inference engines fail to support these workloads effectively, suffering from severe prefix recomputation overheads or distorted output probabilities. To address this challenge, we propose Flide, an efficient and exact inference engine that decouples the logical tree structure of a decision request from its physical execution within a single flattened token stream. Through ForkAttention, Flide navigates request dependencies using GPU-resident indices across both standard attention and recurrent Gated DeltaNet layers, guaranteeing in exact arithmetic that every query branch evaluates identically to an isolated forward pass. By expressing branch topologies directly in GPU-resident metadata, Flide accommodates diverse request mixtures with a compact set of pre-recorded execution graphs while enabling expanding agent histories to resume from checkpoints saved in earlier passes. Extensive evaluations on public hybrid and decision models demonstrate that Flide answers queries up to 9.5 times faster than vLLM and SGLang while staying closest to a float32 reference in total variation distance. By unifying physical execution throughput with mathematical exactness, Flide establishes a principled foundation for scalable, latency-critical decision intelligence in agent systems.",
+        "title": "Pixel: A Co-Designed Full-Stack Robot System for Learning General-Purpose Mobile Manipulation",
+        "url": "https://arxiv.org/abs/2611.03648v1",
+        "publishedAt": "2026-11-02T18:59:32.000Z",
+        "summary": "General-purpose mobile manipulation requires a combination of capable robot hardware, scalable demonstration collection, expressive whole-body control, and effective policy learning. Yet these components are often developed independently, creating mismatches that limit the capabilities of the complete system. We present Pixel, a co-designed full-stack system for learning general-purpose mobile manipulation. Pixel combines a low-cost wheeled humanoid with human-aligned kinematics and compliant grippers, multiple teleoperation and robot-free human data-collection interfaces, a unified whole-body controller, and a common policy learning pipeline across human and robot demonstrations. A hierarchical learning stack further enables language-conditioned visuomotor control and long-horizon task execution. We evaluate the system across hardware, data collection, and policy learning, and demonstrate mobile-manipulation behaviors requiring dexterity, active perception, navigation, and whole-body coordination. We hope that Pixel provides an integrated and extensible foundation for studying how robot hardware, data, control, and learning can be designed together for robot learning. More results at https://pixel-robot.com/pixel",
         "authors": [
-          "Bobo Li",
-          "Jiajia Song",
-          "Hao Fei",
-          "Wynne Hsu",
-          "Mong Li Lee"
+          "Tony Tao",
+          "Jason Jingzhou Liu",
+          "Ruslan Salakhutdinov",
+          "Deepak Pathak"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 79
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Policy",
+        "ageHours": 13
       },
       {
-        "title": "Latent Sparse Attention: Towards Subquadratic Ultra-Long Context Attention",
-        "url": "https://arxiv.org/abs/2610.42147v1",
-        "publishedAt": "2026-10-30T17:59:34.000Z",
-        "summary": "Agentic workflows are increasingly shifting towards long-horizon tasks, such as open-ended scientific work, where models benefit from long context windows. However, at ultra-long context (above 1M tokens), full attention is prohibitively expensive. A promising approach is sparse attention, in which a dedicated indexer selects a subset of keys for the attention. Yet current methods of indexing either still have quadratic cost in context size or lose accuracy at ultra-long context scale. We address this with Latent Sparse Attention (LSA), an efficient attention method that maintains accuracy at ultra-long context. In LSA, keys are hierarchically clustered in a learned latent space, and queries score the hierarchy of clusters instead of scoring every key, making prefill, decode and training faster at long context. We propose two variants, Distilled-LSA (D-LSA), which can be applied to pre-trained models via distillation, and Native-LSA (N-LSA), which is trained natively on the next-token loss alone. On GLM-5.3-FLASH (QWEN-3.8-27B) at 10M tokens, D-LSA speeds up one attention layer by 22.7x (72.4x) in prefill and 4.6x (42.5x) in decode over its original sparse attention (full attention), while keeping similar accuracy across a variety of tasks. N-LSA matches the accuracy of full attention with a training speedup of 1.6x per layer at 128k tokens. LSA offers practical and efficient attention for models to benefit from ultra-long context.",
+        "title": "From Natural Language to Exact Cover: A Neuro-Symbolic Approach to Zebra Puzzles",
+        "url": "https://arxiv.org/abs/2611.03641v1",
+        "publishedAt": "2026-11-02T18:58:21.000Z",
+        "summary": "Chain-of-Thought (CoT) generation has substantially improved the performance of Large Language Models (LLMs) on complex reasoning tasks, including code generation, data analysis, and exam-style question answering. Despite these advances, purely neural LLMs continue to struggle with elementary logical reasoning problems and lack the determinism, soundness, and reliability characteristic of symbolic reasoning systems. Conversely, classical symbolic methods such as SAT solving and exact cover guarantee correctness and completeness, but require problems to be expressed in highly specialized formal encodings, limiting their applicability to natural language inputs. In this work, we present a synergistic neuro-symbolic framework that bridges this gap by combining neural semantic parsing with deterministic exact cover reasoning. Given a Zebra-style logic puzzle in natural language, an LLM translates entities and constraints into structured tool calls that construct an exact cover instance. A symbolic solver then computes the solution and provides feedback to iteratively refine invalid, under- or overconstrained encodings, exploiting the uniqueness property of Zebra puzzles. We conduct a comprehensive empirical evaluation across multiple parameter scales, post-training paradigms, and LLM families. The results demonstrate that our hybrid approach consistently outperforms strong plain neural baselines, including CoT prompting, as well as recent neuro-symbolic methods.",
         "authors": [
-          "Ales Kubicek",
-          "Andrea Caciolai",
-          "Liangzu Peng",
-          "Sukrit Sumant",
-          "Benjamin Hoover",
-          "Fraser Greenlee",
-          "Ruairidh M. Battleday",
-          "Radim Urban",
-          "Torsten Hoefler",
-          "James C. R. Whittington"
+          "Paulius Skaisgiris",
+          "Thomas Pammer",
+          "Veronika Semmelrock",
+          "Mykyta Ielanskyi",
+          "Maximilian Heisinger",
+          "Erich Kobler"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 13
       },
       {
-        "title": "Hierarchical World Models with Implicit Dynamics",
-        "url": "https://arxiv.org/abs/2610.42146v1",
-        "publishedAt": "2026-10-30T17:59:25.000Z",
-        "summary": "Planning with world models enables test-time adaptation for embodied agents, offering superior generalization over direct policy learning. However, long-horizon tasks remain hindered by cumulative errors and search complexity. Existing hierarchical methods often use rigid macro-actions or latent skills, leading to brittle representations and limited fine-grained control. We introduce ID-WM (Implicit Dynamics World Models), a hierarchical world model that decouples state-space reachability from local control. Our framework utilizes a high-level model to sample feasible transitions across the state manifold and a low-level world model as an inverse dynamics solver to ground these transitions into precise actions. This allows the planner to identify reachable subgoals without being constrained by low-level execution details. By prioritizing local physical feasibility over global behavioral patterns, ID-WM synthesizes novel long-horizon plans from short segments, transcending the specific behavioral modes seen during training. We demonstrate its effectiveness across three navigation and manipulation suites, achieving a 38.5% improvement over state-of-the-art policy and diffusion-based planners. Crucially, by leveraging this hierarchical structure to mitigate compounding errors, our approach yields a 135% performance gain over single-level world model MPC, particularly in complex, unseen configurations for long-horizon tasks. Videos can be viewed at https://id-wm.github.io",
+        "title": "WebHarbor: Docking Real Websites for Evolving GUI Agent Environments",
+        "url": "https://arxiv.org/abs/2611.03634v1",
+        "publishedAt": "2026-11-02T18:57:36.000Z",
+        "summary": "GUI web agents require realistic and interactive environments that remain stable during both evaluation and training. Live website evaluation suffers from changing content, access restrictions, and limited coverage of authenticated workflows, while existing synthetic environments for training often lack functional depth and visual fidelity. We propose WebHarbor, a suite of 153 executable and dockerized website environments that faithfully reconstruct the visual interfaces, content, and functional workflows of real-world web services under deterministic control. We build WebHarbor through task-driven human-agent collaboration, where environments evolve as new tasks expand their functional scope, coding agents implement the required changes, and human contributors audit visual fidelity, functional correctness, and task validity. The resulting suite comprises 3,518 tasks spanning multi-step and post-authentication workflows, where existing works often fail to cover. Beyond reliable evaluation, WebHarbor provides high-fidelity synthetic web environments for cost-efficient reinforcement learning (RL). We demonstrate that a Qwen 4B-level GUI agent trained with RL in WebHarbor generalizes to unseen tasks and performs competitively with leading open-source GUI web agents across four benchmarks. The code and data are publicly available at https://github.com/aiming-lab/WebHarbor.",
         "authors": [
-          "Gaoyue Zhou",
-          "Yvonne Wu",
-          "Zichen Jeff Cui",
-          "Nicolas Ballas",
-          "Mido Assran",
-          "Lerrel Pinto",
-          "Yann LeCun"
+          "Zhaoyang Wang",
+          "Qianhui Wu",
+          "Boyu Gou",
+          "Demi Wang",
+          "Jiacheng Zhang",
+          "Peichun Hua",
+          "Qize Li",
+          "Shi Qiu",
+          "Yifan Jiang",
+          "Yifan Zhang",
+          "Zexu Jin",
+          "Baolin Peng",
+          "Bolin Shen",
+          "Chetan Bansal",
+          "Dehan Kong",
+          "Deren Lei",
+          "Dongshen Peng",
+          "Fengqing Jiang",
+          "Hao Cheng",
+          "Haoqing Wang",
+          "Jiaming Shan",
+          "Jicheng Wang",
+          "Jingguang Zhou",
+          "Jixuan He",
+          "Kaide Zeng",
+          "Kangyu Zhu",
+          "Lama Moukheiber",
+          "Mufan Qiu",
+          "Peng Xia",
+          "Qihan Sun",
+          "Qingwei Lin",
+          "Qiushi Sun",
+          "Ruichen Zhang",
+          "Shuqing Luo",
+          "Si Qin",
+          "Sicheng Fan",
+          "Tao Xiong",
+          "Wenlin Yao",
+          "Xinyu Zhang",
+          "Xinyue Zeng",
+          "Xuanrui Li",
+          "Xuchao Zhang",
+          "Yian Wang",
+          "Yichao Liu",
+          "Yiming Liang",
+          "Yiyang Zhou",
+          "Yizhu Jiao",
+          "Yuetai Li",
+          "Yurun Chen",
+          "Yuxuan Zhang",
+          "Zheyuan Yang",
+          "Zhiyuan Yao",
+          "Zhongyang Li",
+          "Zihao Li",
+          "Zili Wang",
+          "Jianfeng Gao",
+          "Huaxiu Yao"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 13
       },
       {
-        "title": "RoboArchitect: Automating the Design of Robotic Agents with Persistent Memory",
-        "url": "https://arxiv.org/abs/2610.42141v1",
-        "publishedAt": "2026-10-30T17:58:48.000Z",
-        "summary": "Recent work shows that a frozen robot policy performs far better inside an agent harness, where control code decides when to query the policy, consult vision tools, or command the arm directly. Yet today these harnesses are built by hand and redesigned for each new robot or benchmark. We show that harness design can be automated, offering a strong alternative to finetuning on a novel setup. In RoboArchitect, a coding model observes a robot's rollouts, diagnoses failures, and iteratively revises the harness around the frozen policy. The harness evolves on a set of episodes for its optimization and is evaluated on held-out scenes and tasks. Without updating any model weights, RoboArchitect raises average success from 9.7% to 43.3% on unseen scenes (4.5x) and from 12.7% to 40.2% on unseen tasks (3.2x), across multiple benchmarks and policies. The gains are largest where the benchmark is far from the policy's training data: wrapping a general-purpose policy, the evolved harness yields a specialist that often outperforms even the finetuned version. Intuitive control strategies are automatically designed, such as lifting a jammed arm clear or reaching in horizontally when an obstacle blocks the way from above. The harness also evolves its own persistent memory, carrying learned experience, such as effective grasp depths, into later decisions. These results suggest that substantial headroom in robotic manipulation lies in the agent harness, and its design can be effectively automated and optimized without weight updates.",
+        "title": "Pretraining Data Scale Reverses the Muon-AdamW Fine-Tuning Gap",
+        "url": "https://arxiv.org/abs/2611.03633v1",
+        "publishedAt": "2026-11-02T18:56:43.000Z",
+        "summary": "Muon has recently emerged as a promising optimizer for pretraining large language models, offering a speedup over AdamW in minimizing pretraining loss. However, it remains unclear whether Muon's advantage persists after fine-tuning. In this paper, we study the downstream behavior of Muon and AdamW and uncover a surprising trend: beyond a sufficiently large pretraining data budget, AdamW outperforms Muon after fine-tuning. Moreover, as model size increases, AdamW overtakes Muon at progressively smaller pretraining token-parameter ratios. To explain this reversal, we view fine-tuning as a perturbation of the outputs and introduce the margin-to-spread ratio, which measures how far the correct logit lies above the wrong ones relative to how widely the wrong logits are spread. In language models, Muon has the larger margin-to-spread ratio at small data budgets and AdamW at large ones, mirroring the fine-tuning trend. In a linear associative memory, we prove that after one update the margin-to-spread ratio of gradient descent gains on that of Muon as the data budget grows, and simulations show that this trend persists after extended training.",
         "authors": [
-          "Shengguang Wu",
-          "Suning Huang",
-          "Cherie Ho",
-          "Ria Doshi",
-          "Hao Zhu",
-          "Serena Yeung-Levy"
+          "Catherine Li",
+          "Jingchu Gai",
+          "Andrej Risteski",
+          "Jacob Mitchell Springer",
+          "Aditi Raghunathan"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 13
+      },
+      {
+        "title": "Not All Reasoning Generalizes: A Case Study on Learning Generalizable Reasoning Strategies in RLVR",
+        "url": "https://arxiv.org/abs/2611.03627v1",
+        "publishedAt": "2026-11-02T18:53:54.000Z",
+        "summary": "Reinforcement learning with verifiable rewards (RLVR) can enable generalizable improvement for large language model (LLM) reasoning. This paper studies how to incentivize such generalization via reasoning strategies. We study this question with a controllable equation-solving framework: finding multiple inputs x for equations f(x)=y, where f is a non-bijective string function. This setting makes reasoning strategies observable while supporting a clear definition of easy-to-hard out-of-distribution (OOD) shifts, e.g., more solutions, longer y, etc. We uncover a subtle RLVR failure: it teaches the model to solve in-distribution tasks with high accuracy and structured step-by-step derivation, yet under OOD shifts, the same model abandons derivation and collapses to ineffective brute-force enumeration, causing sharp accuracy drops. This observation reveals the deeper challenges of RLVR generalization as it is neither incapable base model nor reward hacking, since the model succeeds in-distribution with the correct reasoning strategy. The key to mitigating this failure is an indirect intervention that surprisingly helps: co-training with bijective inversion tasks. Although these bijective tasks are actually not uniformly harder and even further from the non-bijective OOD evaluation, they make derivation more certain and substantially restore the correct strategy and accuracy under OOD shifts. This effect further motivates our theoretical analysis: outcome-only RLVR can shape reasoning processes through implicitly crediting the effective reasoning strategies more, even without process supervision. To conclude, our analysis framework and findings systematically reveal the crucial role and incentivization of reasoning strategies in RLVR generalization under OOD shifts. Code is available at https://github.com/ziqipang/rl_meta_thinking.",
+        "authors": [
+          "Ziqi Pang",
+          "Yu-Xiong Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "FADE: Factored Ability--Difficulty Filtering for Online RLVR Scheduling",
+        "url": "https://arxiv.org/abs/2611.03625v1",
+        "publishedAt": "2026-11-02T18:53:23.000Z",
+        "summary": "Group-based reinforcement learning with verifiable rewards (RLVR) learns only from prompts whose sampled completions disagree: all-pass and all-fail groups produce zero relative advantage and burn generation budget without moving the policy. Adaptive schedulers try to steer rollouts toward informative prompts, yet they rely on per-prompt pass-rate trackers that entangle two quantities evolving at very different speeds---the policy's shifting competence across reasoning skills and each prompt's intrinsic difficulty. When a single exponential average or Beta counter tracks both at once, short memory scrambles the relative ordering of prompts whereas long memory reports stale pass rates. We introduce FADE (Factored Ability--Difficulty Estimation), a bilinear state-space filter that separates the two timescales. FADE represents each prompt's success logit as the inner product of a whitened $K$-dimensional skill loading with a fast-drifting policy ability vector, minus a slow-shrinking scalar item intercept. Using Pólya--Gamma augmentation, each minibatch of binary rollout outcomes updates the $K$-dimensional ability posterior in closed form via a rank-$K$ Woodbury step, instantly transferring competence shifts to all unobserved prompts that share those skills while leaving item intercepts stable. From the resulting posterior mean and variance we derive a closed-form utility for the probability of drawing a non-degenerate rollout group. Across five reasoning benchmarks, two base models, and four scheduling paradigms under a matched rollout budget, FADE consistently improves downstream accuracy and calibration while adding less than $0.6$\\,ms per step.",
+        "authors": [
+          "Tomas Duncun",
+          "Jonah Ellison",
+          "Mateo Ruiz",
+          "Hanae Fujita",
+          "Ingrid Solberg"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "Thought-deciphering via hierarchical EEG-to-text alignment",
+        "url": "https://arxiv.org/abs/2611.03623v1",
+        "publishedAt": "2026-11-02T18:52:26.000Z",
+        "summary": "Communication is important for our well-being, but it can be impaired by disabilities, such as locked-in syndrome (LIS), cerebral palsy (CP), and dysarthria. Non-invasive brain-to-text brain-computer interfaces (BCIs) offer a promising solution by providing an alternative communication pathway for people with communication disabilities. However, most recent breakthroughs have relied on large, cumbersome, and costly neuroimaging modalities, such as functional magnetic resonance imaging (fMRI) and magnetoencephalography (MEG). Numerous studies have attempted decoding using the lighter and cheaper electroencephalography (EEG), but the results remain inferior compared to the other modalities. More importantly, we do not understand how these modalities are related to text at the letter, word, sentence, and higher semantic levels. Many prior studies have focused on decoding below the sentence level because it is considerably easier to design an experiment around phonemes, letters, and words. However, during communication, sentences play a much more important role than words and letters. This is because sentences carry information at such a high level that they can be understood even if some words and letters are missing. However, within sentence-level decoding, sentence classification is not as well investigated as sentence generation, making it difficult to decide whether a sentence should be retrieved or generated in the context of EEG-to-text decoding. This paper strives to investigate sentence-level EEG-to-text classification via a novel hierarchical alignment framework, where the main goal is to retrieve a read sentence using its context and EEG as inputs.",
+        "authors": [
+          "Xiaopeng Mao",
+          "Morten Mørup",
+          "Xin Xu",
+          "Sang Wan Lee",
+          "Sadasivan Puthusserypady"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "General",
+        "ageHours": 13
+      },
+      {
+        "title": "D&A: Decoupling Description and Assessment Enables VLMs as Zero-Shot Robotic Reward Models",
+        "url": "https://arxiv.org/abs/2611.03622v1",
+        "publishedAt": "2026-11-02T18:52:11.000Z",
+        "summary": "Vision-Language Models (VLMs) hold promise for zero-shot video task-progress estimation in robot learning, yet existing frameworks frequently suffer from confirmation bias, hallucinating progress in failed executions due to implicit success assumptions or relative temporal ranking designs. Naive prompting of frontier models collapses into a binary success detector that fails to capture nuanced, non-linear progress and failures. While post-training approaches can mitigate this through explicit training, they demand expensive real-world robotics data and require computationally intensive post-training for every individual base model. To resolve these limitations, we introduce D&A (Describe & Assess): our approach decouples progress estimation into an objective, task-grounded textual description of scene dynamics followed by an assessment phase using explicit rubrics. By compelling the VLM to synthesize an explicit, text-based definition of absolute success before scoring, the framework anchors evaluations to an external, global criterion rather than the video's internal timeline. Empirical results demonstrate that our method calibrates zero-shot estimates and mitigates confirmation bias, providing fine-grained, partial progress metrics that accurately penalize failed executions while correctly interpolating successful runs. Being purely prompt-based, D&A generalizes across tasks, embodiments, and benchmarks---matching or surpassing post-trained reward models---and its reward estimates enable efficient downstream reinforcement learning.",
+        "authors": [
+          "Marius Memmel",
+          "Shawn Yin",
+          "Urvi Rutia",
+          "Angad Wadhwa",
+          "Eldon Li",
+          "Gavin Angeloff",
+          "Ankit Goyal",
+          "Jesse Zhang",
+          "Dieter Fox",
+          "Fabio Ramos",
+          "Anqi Li",
+          "Abhishek Gupta"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 13
       },
       {
-        "title": "Counting on Dummies: Privacy Amplification with Observable Counts and Truncated Batches",
-        "url": "https://arxiv.org/abs/2610.42139v1",
-        "publishedAt": "2026-10-30T17:58:42.000Z",
-        "summary": "In many practical deployments of Differentially Private Stochastic Gradient Descent (DP-SGD), the server processes data in batches. Randomly sampling these batches allows for better privacy bounds via privacy amplification results. Most sampling schemes with provable privacy amplification, including Poisson sampling and random allocation, result in variable batch sizes. The privacy guarantee of these schemes requires that the batch sizes are not revealed. In distributed settings, the server performing the aggregation or any party observing the communication traffic may learn these batch sizes. Furthermore, in both centralized and distributed settings, memory and computation constraints may require each batch to be of some maximum size $s$, necessitating truncation of the batch when it exceeds this limit. It is known that this truncation can result in a significant increase in privacy loss. In this work, we address both of these challenges via a simple mechanism that uses a random number of \\emph{dummy points} to privatize the batch size and maintain the privacy guarantee even under truncation. We demonstrate that our mechanism is easy to implement in a distributed setting, and provide a general analysis of this mechanism for both Poisson sampling and random allocation. Our analysis is designed to support efficient and relatively tight privacy accounting. It also effectively amplifies the privacy of the count releases by subsampling, making the expected number of dummy points asymptotically smaller than what is needed to directly privatize the (sensitivity-one) batch sizes with non-negative noise. For Poisson sampling with truncated batches, we demonstrate empirically that our mechanism achieves better privacy--efficiency tradeoffs than the direct accounting for truncation recently given by (Ganesh, 2025).",
+        "title": "Strategist: Evolving Reasoning with Agents",
+        "url": "https://arxiv.org/abs/2611.03618v1",
+        "publishedAt": "2026-11-02T18:51:04.000Z",
+        "summary": "A model is only half of an AI agent system. The other half is the inference strategy: the reasoning procedure that turns model calls into a response. Today that second half is written by hand, and the experience of building one strategy never carries to the next. We introduce Strategist, a meta-agent that evolves inference strategies across tasks. Each strategy is written as a blueprint,executable code that other strategies can reuse, and together the blueprints form a library. Given a task and a small development set, Strategist retrieves related blueprints, writes candidate strategies, tests them on real samples, and revises them from the results. Every candidate then enters the library, so later tasks build on earlier discoveries. On 30 benchmarks, Strategist beats the strongest baseline on 24 and matches its average accuracy (74.7% vs.74.0%) at 39% lower inference cost. Its strategies also transfer to unseen tasks and other models without further search. The part of an AI system that is not improved on its own now does.",
         "authors": [
-          "Vitaly Feldman",
-          "Audra McMillan",
-          "Kunal Talwar"
+          "Taiming Lu",
+          "Qi Xu",
+          "Zhigang Hua",
+          "Zhuang Liu"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Products",
-        "ageHours": 79
-      },
-      {
-        "title": "A Better Critic Matters for Distribution Matching Distillation",
-        "url": "https://arxiv.org/abs/2610.42135v1",
-        "publishedAt": "2026-10-30T17:58:26.000Z",
-        "summary": "Distribution Matching Distillation (DMD) trains a few-step student using the difference between a teacher's score and an online critic's estimate of the student distribution's score. We investigate what the critic needs, in capacity and in information, to provide a reliable training signal. On the capacity side, controlled experiments across seven SiT model sizes on ImageNet show that increasing teacher size while keeping a small critic fixed can degrade student quality and cause training collapse. Scaling the critic alongside the teacher, a strategy we call joint scaling, prevents collapse in our experiments and allows the student to benefit from larger teachers. On the information side, rather than forcing the critic to model a step-agnostic mixture of student outputs, we introduce a step-aware critic (STAC) that conditions on the student's generation step to estimate step-specific scores. Together, joint scaling and STAC consistently improve few-step distillation across class-conditional ImageNet generation, text-to-image generation with SDXL and FLUX.2, and text-to-video generation with Wan2.1.",
-        "authors": [
-          "Zongze Wu",
-          "Xianbang Wang",
-          "Zhengyang Geng",
-          "Mingdeng Cao",
-          "Zhoutong Zhang",
-          "Richard Zhang",
-          "Eli Shechtman",
-          "Ruiming Cao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
-      },
-      {
-        "title": "Instance-dependent sequential limits as an exact information ledger",
-        "url": "https://arxiv.org/abs/2610.42133v1",
-        "publishedAt": "2026-10-30T17:57:44.000Z",
-        "summary": "Instance-dependent limits for bandit regret, sequential tests, best-arm identification and Markov decision processes are proved by one chain. It runs from a divergence decomposition through data processing to a statistic, a testing step that turns a class guarantee into a requirement on the history, and optimization over alternatives and allocations. Only the first step is an identity. This work writes the chain as an exact ledger. By the chain rule, data processing loses exactly a conditional divergence, which vanishes for arms in natural exponential families at the per-arm counts and reward sums. A one-parameter family of martingale identities extends the decomposition to every tilt between two instances. The classical limits follow by relaxations with named defects. All defects but the asymptotic step's can be computed from an algorithm's own runs, the uniform quantification's only when the class guarantee is a number. On seven published sources, from movie ratings to engine replacement, the ledger locates the difference between standard algorithms and the classical limits. For identification among trained models and for Wald's test the largest term is usually the uniform quantification's.",
-        "authors": [
-          "Akshay Balsubramani"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
-      },
-      {
-        "title": "DecisionRank: On-Policy Distillation for Decision-Model Rerankers",
-        "url": "https://arxiv.org/abs/2610.42128v1",
-        "publishedAt": "2026-10-30T17:56:58.000Z",
-        "summary": "Decision models target structured tasks by directly predicting choices or scores, avoiding autoregressive decoding latency. However, transferring a generative LLM's ranking knowledge to a decision model remains challenging: the teacher expresses preferences through a ranked list of document ID sequences, while the student determines the ranking using scores from the first-token position. To bridge this gap, we introduce DecisionRank, a decision model trained through item-space on-policy distillation (OPD). Item-space OPD constructs the student's rollout by sorting its document scores into a ranked sequence. A generative teacher takes the resulting ranking list as inputs and provides conditional feedback to directly supervise those scores. Combined with offline ranking supervision, DecisionRank achieves state-of-the-art performance on both general and reasoning-intensive retrieval benchmarks such as TREC DL, BEIR, and BRIGHT. Across four benchmarks, item-space OPD consistently outperforms alternative training objectives. Even at 1.7B parameters, DecisionRank surpasses its 27B generative teacher on TREC DL19--23. At 8B, it outperforms its generative listwise counterpart while running $24.5\\times$ faster on TREC DL and $16.7\\times$ faster on BRIGHT.",
-        "authors": [
-          "Yanran Wu",
-          "Dian Yu",
-          "Chongyang Bai",
-          "Jieyi Zhang",
-          "Rui Liu",
-          "Tianyi Chen",
-          "Shike Mei",
-          "Hang Cui",
-          "Frank Shyu",
-          "Sandeep Pandey",
-          "Luke Simon",
-          "Chunwei Liu",
-          "Xi Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 79
+        "ageHours": 13
       },
       {
-        "title": "Physiological Trajectories and Observation Patterns in ICU Mortality Prediction: Transportability Under Changing Measurement Conditions",
-        "url": "https://arxiv.org/abs/2610.42126v1",
-        "publishedAt": "2026-10-30T17:56:10.000Z",
-        "summary": "Objective: To distinguish the transferable predictive value of physiological trajectories from that of observation patterns in ICU mortality prediction, and to assess whether measurement timing affects performance independently of observation quantity.\n  Materials and Methods: In-hospital mortality was predicted at 48 hours using MIMIC-III, MIMIC-IV, and eICU. Nested representations progressively integrated latest-value snapshots (R1), longitudinal physiological summaries (R2), and measurement frequency and timing features (R3). Models fitted on 7,762 MetaVision patients were evaluated on 21,682 MIMIC-IV patients and 43,878 eICU patients across 204 hospitals. The effect of measurement timing was assessed while holding the number of retained observations constant.\n  Results: Physiological trajectories improved external prediction in eICU (R2-R1 log-loss difference -0.00922, 95% CI -0.01148 to -0.00704). Observation-pattern features improved locally developed eICU models (R3-R2 -0.00257, 95% CI -0.00370 to -0.00146), but not clearly after transfer from MetaVision (-0.00012, 95% CI -0.00206 to +0.00208). R3 was favoured in 10 of 30 source bootstrap refits. At matched observation counts, retaining measurements spread throughout the window reduced log loss relative to random retention by 0.03280 for R3 versus 0.00703 for R2. Removing the final 12 hours increased log loss relative to count-matched random removal by 0.01947 for R3 versus 0.00822 for R2. Under reduced availability, the local R3 increment changed from beneficial to harmful.\n  Discussion: Physiological trajectories transferred more consistently, while observation-pattern features were particularly sensitive to the timing and availability of measurements.\n  Conclusion: Clinical prediction models should be evaluated not only in new patient populations but also under the measurement conditions that supply their inputs.",
+        "title": "Tracing the Scientific Discovery Capacity of LLMs to Their Training Data",
+        "url": "https://arxiv.org/abs/2611.03617v1",
+        "publishedAt": "2026-11-02T18:50:54.000Z",
+        "summary": "Large language models (LLMs) show growing promise for scientific discovery, yet basic questions remain about what enables reliable discovery. How can we trace the scientific discovery capacity of LLMs to their training data? We study this question as one of missing probability mass and develop a theoretical account in which monofacts-the facts observed once during training-set the discovery capacity. In materials science and regulatory genomics, we directly manipulate monofact rates in training sets and find that more monofacts consistently yield more discoveries across two open-weight model families, sampling strategies, and reasoning budgets. Further experiments show the relationship cannot be explained by training-set diversity alone and can transfer across scientific domains when paired with in-domain data. Together, our results identify monofact rate in training data as a key factor governing discoveries in language models.",
         "authors": [
-          "Benjamin T. Pike"
+          "Arda Uzunoglu",
+          "Mahler Revsine",
+          "Michael Schatz",
+          "Benjamin Van Durme",
+          "Mehrdad Farajtabar",
+          "Daniel Khashabi",
+          "Eric Nalisnick"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "Benchmark Prediction with Sparse and Unpaired Cached Responses",
+        "url": "https://arxiv.org/abs/2611.03614v1",
+        "publishedAt": "2026-11-02T18:49:33.000Z",
+        "summary": "Evaluating a generative model on all queries from all available benchmark tasks is prohibitively expensive. As such, models are often evaluated on different subsets of tasks and/or different subsets of queries from a given task. The resulting collection of responses and the corresponding (model, task) score matrix are sparse and unpaired. In this paper, we introduce the Product Kernel Perspective Space (PKPS), a collection of low-dimensional representations of models based on their embedded responses. PKPS generalizes existing methods for representing black-box generative models by comparing responses to similar -- rather than just identical -- queries and is therefore able to utilize sparse and unpaired information. Theoretically, we show that benchmark prediction using PKPS is query-efficient relative to methods that only use information from dense and paired portions of the evaluation data. Empirically, we show that PKPS-based methods outperform baselines on benchmark prediction across two large benchmark suites.",
+        "authors": [
+          "Hayden Helm",
+          "Avijit Ghosh",
+          "Ben Johnson",
+          "Carey Priebe"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
-      },
-      {
-        "title": "Gradient Descent on Two ReLU Neurons: Global Landscape and Bifurcation Dynamics",
-        "url": "https://arxiv.org/abs/2610.42118v1",
-        "publishedAt": "2026-10-30T17:51:35.000Z",
-        "summary": "Understanding how gradient descent learns features remains a central challenge in neural network theory. We study this question in a minimal multi-index setting that already exhibits rich multi-phase gradient dynamics: a well-specified two-neuron ReLU teacher-student model under isotropic Gaussian inputs, trained by population gradient flow from small initialization. We show that the dynamics are organized by two directions: the \"easy\" bisector direction, which carries the leading signal, and the \"hard\" splitting direction, which governs specialization. To characterize the loss structure and learning behavior, we analyze the population squared-loss landscape and show that every critical point with both student weights nonzero is either a global minimum or a saddle. We then track the gradient-flow trajectory, showing that student neurons first collapse toward a bisector saddle before escaping and specializing to teacher neurons. Our results provide both a landscape and dynamics account of the multi-phase symmetry-breaking behavior that arises in a simple multi-index model and under standard algorithmic and architectural choices.",
-        "authors": [
-          "Binghua Li",
-          "Mengzhe Li",
-          "Denny Wu",
-          "Tianhao Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 79
-      },
-      {
-        "title": "Fast Privacy Loss Accounting for Random Allocation via Multiscale FFT",
-        "url": "https://arxiv.org/abs/2610.42117v1",
-        "publishedAt": "2026-10-30T17:51:03.000Z",
-        "summary": "In the random allocation sampling scheme each user's data is used in $k$ steps chosen randomly and uniformly from a sequence of $t$ steps. This scheme is known to improve on Poisson sampling in private optimization and in communication-efficient aggregation. The existing privacy loss distribution (PLD) accountant for this scheme runs in time quadratic in the inverse of the accuracy parameter $α$ (Feldman and Shenfeld, 2026). We give an algorithm, \\emph{multiscale FFT}, that represents likelihood ratios on a grid that is uniform within each dyadic interval and computes the exact rounding of every pairwise sum using FFTs within each interval. It keeps the guarantees of the accountant and improves the dependence of its running time on $α$ from $O(α^{-2})$ to $O(α^{-1}\\log(1/α))$. In addition, we demonstrate that rounding can be performed via the mean-preserving connect-the-dots projection of (Doroshenko et al., 2026). This reduces the errors that rounding introduces in the mean of the privacy loss and in the $χ^2$ divergence of the computed pair from the order of $α$ to $O(α^2/\\log(t))$. In our experiments, our algorithm achieves speedups of several orders of magnitude at high accuracy and gives improved privacy bounds for DP-SGD with PREAMBLE.",
-        "authors": [
-          "Vitaly Feldman",
-          "Moshe Shenfeld"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Infrastructure",
-        "ageHours": 79
+        "category": "Research",
+        "ageHours": 13
       }
     ],
     "news": [
+      {
+        "title": "Apple Watch&#8217;s AI features for rewinding and recapping conversations begin beta testing",
+        "url": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/",
+        "publishedAt": "2026-11-03T07:20:00.000Z",
+        "summary": "Now in beta: Apple's new Audio Intelligence features can help you remember what someone said or take notes on conversations.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 1
+      },
+      {
+        "title": "Google takes Dreambeans to India in bid to bring AI-generated personal stories to the masses",
+        "url": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
+        "publishedAt": "2026-11-03T03:30:00.000Z",
+        "summary": "Google's Dreambeans, its latest AI experiment, now supports 13 Indian languages.",
+        "authors": [
+          "Jagmeet Singh"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 4
+      },
+      {
+        "title": "Apple may try to increase revenue by doing&#8230;something with third-party AI apps",
+        "url": "https://techcrunch.com/2026/11/02/apple-may-try-to-increase-revenue-by-doing-something-with-third-party-ai-apps/",
+        "publishedAt": "2026-11-03T01:49:52.000Z",
+        "summary": "Apple hinted at ways that it could spur revenue through third-party \"opportunities\" during its Monday night earnings call.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 6
+      },
+      {
+        "title": "Y Combinator&#8217;s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
+        "url": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
+        "publishedAt": "2026-11-03T00:35:52.000Z",
+        "summary": "Y Combinator Garry Tan has jokingly admitted that he's suffered from \"cyber psychosis” and barely sleeps sometimes because he’s so excited to be working with his AI agents. On a new episode of Walter Isaacson’s podcast, The Builders, Tan put a price tag on his passion.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 7
+      },
       {
         "title": "Trajectory raises $45M to make AI model training accessible to nontechnical experts",
         "url": "https://techcrunch.com/2026/11/02/trajectory-raises-45m-to-make-ai-model-training-accessible-to-nontechnical-experts/",
@@ -319,7 +425,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 9
       },
       {
         "title": "Anthropic warns that it&#8217;s very close to RSI capability, aka self-building AI",
@@ -333,7 +439,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 3
+        "ageHours": 10
       },
       {
         "title": "Powering up for a pivotal moment",
@@ -347,7 +453,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 12
       },
       {
         "title": "Web host Squarespace lays off 19% of its employees",
@@ -361,7 +467,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 12
       },
       {
         "title": "New York Times and other outlets sue web browser Brave over alleged content scraping",
@@ -375,7 +481,31 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 6
+        "ageHours": 13
+      },
+      {
+        "title": "Rewarding defenders with bigger bug bounties",
+        "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+        "publishedAt": "2026-11-02T18:00:00.000Z",
+        "summary": "OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "General",
+        "ageHours": 14
+      },
+      {
+        "title": "Preparing our next security sprint to harden OpenAI",
+        "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+        "publishedAt": "2026-11-02T18:00:00.000Z",
+        "summary": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "General",
+        "ageHours": 14
       },
       {
         "title": "42AI comes out of stealth with $62.5M and a world model that can &#8216;predict human behavior&#8217;",
@@ -389,110 +519,30 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 8
-      },
-      {
-        "title": "Elon Musk throttles Grok Bot limits due to &#8216;unsustainably high&#8217; costs",
-        "url": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
-        "publishedAt": "2026-11-02T16:23:21.000Z",
-        "summary": "Musk recently referred to Grok Bot as having \"the fastest growth of a product that I've ever seen in my life.\"",
-        "authors": [
-          "Amanda Silberling"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 9
-      },
-      {
-        "title": "Scaling Git at OpenAI",
-        "url": "https://openai.com/index/scaling-git-at-openai",
-        "publishedAt": "2026-11-02T15:30:00.000Z",
-        "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "General",
-        "ageHours": 9
-      },
-      {
-        "title": "Omen AI adds liquid know-how in $16 million Aquatic Labs acquisition",
-        "url": "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/",
-        "publishedAt": "2026-11-02T15:00:00.000Z",
-        "summary": "Two startups tackling the data center water problem are joining forces in a $16 million deal.",
-        "authors": [
-          "Tim Fernholz"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 10
-      },
-      {
-        "title": "Introducing the Grid Protectors Program",
-        "url": "https://openai.com/index/grid-protectors-program",
-        "publishedAt": "2026-11-02T15:00:00.000Z",
-        "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "General",
-        "ageHours": 10
-      },
-      {
-        "title": "2 days till TechCrunch Founder Summit: Boston founders don’t need a Silicon Valley address to build something big",
-        "url": "https://techcrunch.com/2026/11/02/2-days-till-techcrunch-founder-summit-boston-founders-dont-need-a-silicon-valley-address-to-build-something-big/",
-        "publishedAt": "2026-11-02T14:00:00.000Z",
-        "summary": "TechCrunch Founder Summit happens on November 4 in Boston for a founder-focused agenda and impactful connections. Save up to $100 or get discounts with group passes.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 11
-      },
-      {
-        "title": "OpenAI is finally merging ChatGPT&#8217;s Chat and Work tabs",
-        "url": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
-        "publishedAt": "2026-11-02T13:57:53.000Z",
-        "summary": "OpenAI said that ChatGPT and Codex will draw usage from the same allocation pool after this change.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 11
+        "ageHours": 15
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
-        "name": "Models",
-        "count": 8
-      },
-      {
         "name": "Research",
-        "count": 6
+        "count": 9
       },
       {
         "name": "General",
-        "count": 5
+        "count": 6
       },
       {
-        "name": "Products",
-        "count": 3
+        "name": "Models",
+        "count": 4
+      },
+      {
+        "name": "Policy",
+        "count": 2
       }
     ]
   }
