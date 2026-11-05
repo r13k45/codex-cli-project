@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T00:19:37.325Z",
+  "generatedAt": "2026-11-05T07:52:20.877Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,215 +85,352 @@
   "sections": {
     "research": [
       {
-        "title": "DreamX: Video Diffusion Model is a Universal Latent Action Learner",
-        "url": "https://arxiv.org/abs/2611.05377v1",
-        "publishedAt": "2026-11-03T18:59:56.000Z",
-        "summary": "Learning a universal action representation from video requires modeling dynamics that are consistent across different executions of the same action yet invariant to changes in embodiment and appearance. Existing latent action models infer actions from visual transitions, but their representations often entangle the underlying action with irrelevant visual variations, limiting transfer across embodiments. We introduce DreamX, which repurposes a pretrained video diffusion model as a universal latent action learner. Our approach extracts compact latent actions from the video model's rich spatiotemporal features, compressing each latent video frame by $\\boldsymbol{300\\times}$ ($\\boldsymbol{1{,}200 \\rightarrow 4}$ tokens). In addition, by leveraging the video model's generative prior, these latent actions capture action-relevant dynamics disentangled from visual appearance. The resulting latent space serves as a shared action interface across embodiments (human and robot), environments, and action parameterizations. On LARY-Bench, DreamX achieves state-of-the-art performance among latent action models. Moreover, actions encoded in one setting remain effective in another: the latent space supports any-to-any video transfer and zero-shot action transfer across diverse embodiments and environments. Furthermore, this shared interface also enables policy learning in a compact latent action space, reducing the computational cost of video-diffusion-based policies.",
+        "title": "A Framework for Context Enrichment and Selective Robustness in LLM Social Agents",
+        "url": "https://arxiv.org/abs/2611.06914v1",
+        "publishedAt": "2026-11-04T18:58:23.000Z",
+        "summary": "Researchers use large language models as agents in social simulations, where agents are prompted with observations and background information intended to shape their actions. Yet LLM agents have been shown to substantially change their behavior under meaning-preserving prompt variations, creating a validation problem for social simulation. One plausible hypothesis is that this brittleness reflects a lack of grounding and can be reduced by enriching the context provided to the agents. Whether richer context improves robustness remains unclear, in part because context richness and robustness are rarely defined in ways that support controlled comparisons. We address the first need with controlled context enrichment, a set of prompt substitution rules that systematically enriches distinct types of context: neutral padding, generic social background, descriptive decision grounding, and normative decision grounding. We address the second by introducing selective robustness as a validation criterion: insensitivity to meaning-preserving prompt variation combined with a directional response to decision-relevant changes in the social world. We demonstrate the framework in a Prisoner's Dilemma-like game, showing how it can be used to identify which forms of context enrichment produce more desirable and robust agent behavior. We find that these forms of enrichment produce distinct behavioral patterns that vary between the two models tested.",
         "authors": [
-          "Jisoo Kim",
-          "Chaehyun Kim",
-          "Junsu Kim",
-          "Jiho Park",
-          "Seongchan Kim",
-          "Eunbeen Hong",
-          "Soowon Son",
-          "Fu-En Yang",
-          "Seungryong Kim"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
-        "url": "https://arxiv.org/abs/2611.05376v1",
-        "publishedAt": "2026-11-03T18:59:52.000Z",
-        "summary": "For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. Large foundation models now write code and run multistep tasks, and personal agents act on a person's behalf. Yet people still forget what they once knew, miss what they are not looking at, fail to find the right words, and face hard choices without the benefit of their own history, because the machine that could help stands outside the situation. As AI moves into the physical world, attention has settled on one kind of intelligent individual, the embodied robot; we argue that the era of Physical AI holds a second kind of equal importance, the person augmented by AI. Alongside artificial general intelligence, which asks how intelligent a machine can be, stands AI-augmented human intelligence (AHI), which asks how much intelligence a machine can enable in a particular person. Realizing it calls for a new kind of system, a cognitive symbiont: a lifelong, embedded, real-time, private, low-friction, and proactive companion that senses what the person senses through external devices, keeps their context across years, models their situation and their mind, takes part in their thinking at the right moment, carries out everyday tasks with their context, and keeps learning the person as both change. We give the paradigm a conceptual core, the cognitive gap between what a person could bring to a situation and what they can hold in working memory, and organize its design space as a symbiosis loop of sensing, keeping, understanding, living alongside, acting for and thinking with the person, and growing, enclosed by a personal runtime and by trust. Because a symbiont changes what a person can do in front of others, it also raises risks of a new kind, from covert assistance in examinations to pressure on everyone to adopt it, and we treat their governance as part of the paradigm.",
-        "authors": [
-          "Hao Fei"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Aligning Language Models with General Preferences: An Empirical Study of Direct Nash Optimization",
-        "url": "https://arxiv.org/abs/2611.05373v1",
-        "publishedAt": "2026-11-03T18:59:15.000Z",
-        "summary": "Direct Nash Optimization (DNO) aligns a language model to a general preference function by approximating the Nash equilibrium of a two-player preference game. Its practical variant, DNO-Prct, iterates on-policy sampling, LLM-based rating of the samples together with a teacher's gold response, large-margin preference-pair selection and a DPO-style contrastive update. We re-implement DNO-Prct independently and study it on two open-weight instruct models, Llama 3.1 8B Instruct and Mistral 7B Instruct v0.1, with GPT-4o or a larger open-weight model of the same family as the annotator. On AlpacaEval 2.0 with GPT-4o as judge, three iterations raise the length-controlled (LC) win rate against GPT-4o from 31.7% to 45.3% for Llama and from 6.8% to 18.4% for Mistral, and the tuned 8B model scores above Llama 3.1 70B Instruct on every reported win rate. With same-family open-weight annotators, the runs retain 62% (Llama) and 82% (Mistral) of the LC gain achieved with GPT-4o as annotator, so the rating step does not require a proprietary model. In a separate ablation configuration, variants that remove the gold responses, remove the data look-back, or accept only teacher-preferred pairs score 6 to 10 LC points below the full procedure, whereas varying the number of on-policy samples per prompt (1 to 7) moves the LC win rate by at most 2.1 points, and a margin sweep (1 to 5) run in its own pipeline by at most 2.4 points. We also report the cost of the pipeline and where the practical algorithm departs from the theory it approximates. All results are single runs, and GPT-4o is both the teacher and the evaluation judge; we discuss what this implies for the reported gains.",
-        "authors": [
-          "Austin Tsai",
-          "Saurav Nanda",
-          "Ganapathy Parthasarathy",
-          "Bhuvnesh Kumar",
-          "Parivesh Choudhary"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "PolicyIK: High-Precision Inverse Kinematics for Robot Arms with Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2611.05372v1",
-        "publishedAt": "2026-11-03T18:59:14.000Z",
-        "summary": "Inverse kinematics (IK) converts end-effector pose commands into joint motion, and many vision-language-action (VLA) policies rely on it to act on a given arm and to transfer across embodiments. Precise IK remains laborious: redundancy and singularities complicate the inverse mapping, execution depends on hand-tuned controllers, and training data on physical robots are costly to collect. We present PolicyIK, a goal-conditioned reinforcement learning policy for high-precision IK. It updates joint-position references from pose feedback and observes its accumulated reference relative to the measured joints, so it can retain the offset that the position controller needs at rest. Two-scale pose errors with an error-dependent action gain resolve millimeter residuals while preserving large motions. Progress and dwell rewards teach it to both reach the tolerance and stay within it. In simulation, a single attempt by the trained PPO policy keeps the mean errors over the final second within 1 mm and 0.2° on 93.5% of held-out tasks, and a deployment protocol raises success to 98.9%. When trained directly on a physical arm with an off-policy RL learner, PolicyIK achieves higher reaching and holding success than all four classical IK controllers under the same time budgets. In simulated pick-and-place, PolicyIK executes the end-effector commands of the $π_{0.5}$ VLA policy with 95.7% success. These results show that reinforcement learning can provide high-precision inverse kinematics for robot arms. Code is available at https://github.com/Tinaliu0123/PolicyIK.",
-        "authors": [
-          "Yuhan Liu",
-          "Xinqi Liu",
-          "Zixuan Dong",
-          "Keith W. Ross",
-          "Shenji Wan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 29
-      },
-      {
-        "title": "GUILD: Guided Iterative Data Collection for Imitation Learning",
-        "url": "https://arxiv.org/abs/2611.05368v1",
-        "publishedAt": "2026-11-03T18:57:35.000Z",
-        "summary": "Imitation learning policies in robotics are trained on datasets collected through costly real-world teleoperation. Often, the data-collection process is unguided, relying on the teleoperator's intuition, resulting in data that contributes little to overall policy performance. Recent work has shown that curating such unguided datasets can substantially improve policy performance, but these approaches operate by filtering existing datasets after collection and therefore do not prevent the acquisition of uninformative data. In this work, we propose GUILD, a novel Guided Data Collection (GDC) method that actively reasons about which data should be collected to maximize downstream policy performance. We introduce an iterative framework that alternates between 1) task proposal and data collection and 2) data evaluation to close the loop. For task proposal, we leverage semantic priors from vision-language models to identify relevant environments, object configurations, and goals for data collection. However, since semantic relevance does not imply policy improvement, we perform data evaluation. By leveraging predictive data attribution we approximate how the collected trajectories influence policy performance on a target deployment setting. This signal is then used as feedback to guide subsequent data collection, closing the data collection loop. We evaluate our approach in simulation and real robot settings, demonstrating that guided data collection substantially improves sample efficiency and deployment performance compared to passive data collection strategies, multiple baselines and experienced roboticists. More information at https://robin-lab.cs.utexas.edu/guild2026/",
-        "authors": [
-          "Shivin Dass",
-          "Kevin Nguyen",
-          "Rohan Yelandur",
-          "Junhong Xu",
-          "Roberto Martín-Martín"
+          "Mattia Greiche",
+          "Reihaneh Rabbany",
+          "Maximilian Puelma Touzel"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 29
+        "ageHours": 13
       },
       {
-        "title": "Suppressing Misaligned Behaviors in Language Models, Durably",
-        "url": "https://arxiv.org/abs/2611.05358v1",
-        "publishedAt": "2026-11-03T18:54:08.000Z",
-        "summary": "Undesired model behaviors can emerge or re-emerge at any stage of training. Once observed, how effectively can we suppress them? To study this question, we first construct two model organisms--language models deliberately trained to exhibit a specific misalignment--that differ in what triggers the behavior. The narrow-trigger organism misbehaves only when the prompt contains a specific cue: it cheats on multiple-choice questions by following a planted hint that points to a wrong answer, and behaves normally otherwise. The broad-trigger organism has no such cue: after fine-tuning on insecure code, it gives harmful responses across a wide range of open-ended prompts. We then formalize post-hoc behavioral suppression and evaluate methods along three criteria: immediate suppression of the target behavior, durability under further training, and preservation of general capability. We compare standard methods--SFT, GRPO, and gradient-ascent unlearning--along these dimensions. Building on prior work on alignment shallowness, we hypothesize that more durable suppression requires the ability to recover from a wider range of misalignment states. We introduce Prefix-Expanded Adversarial Reinforcement Learning (PEARL), a GRPO variant that augments rollouts with continuations from intermediate states sampled along cached organism trajectories. Across both organism settings and two model families (Qwen3-4B, GPT-OSS-20B), PEARL achieves strong immediate suppression while preserving task accuracy, and remains durable under further fine-tuning on either the organism's data or unrelated data. It obtains the greatest benefit when the undesirable behavior is broad and cannot be addressed through targeted SFT. Together, our framework and method offer a step toward more durable post-hoc removal of undesired behaviors.",
+        "title": "FlowReconBench: Accuracy, calibration and cost of learned and classical flow reconstruction from sparse sensors",
+        "url": "https://arxiv.org/abs/2611.06912v1",
+        "publishedAt": "2026-11-04T18:57:47.000Z",
+        "summary": "Reconstructing full flow fields from sparse sensors requires prior assumptions about unmeasured regions and physical variables. Yet it remains unclear when learned models outperform classical estimators and which aspects of their predictions can be trusted. FlowReconBench evaluates ten learned and five classical methods on three regimes: a laminar cylinder wake across Reynolds numbers, two-dimensional Kolmogorov turbulence and a large-scale three-dimensional (3D) isotropic turbulence. Methods share leakage-controlled splits and sensor draws and are scored on per-channel error, ensemble spread, calibration, spectra and cost. The leading method changes for each regime. Classical methods perform strongly in low-order and dense-sensing regimes. On the cylinder wake, linear stochastic estimation and gappy proper orthogonal decomposition lead, including for unobserved pressure. In 3D, inverse-distance weighting matches the best learned methods on observed channels. Data-driven methods become superior at decreasing sensor density or poor sensor observability. On Kolmogorov flow, continuous ranked probability score and error yield different method rankings: generative models offer broader but underdispersed ensembles, while deterministic models prioritize pointwise error. Generative models balance this tradeoff through their sampler budget, with a larger budget improving ensemble quality at higher computational cost. In 3D, scaling tests demonstrate that queryable methods are flat in memory, while full-grid construction methods run out of memory. Observing only 2 of 4 fields leaves the problem kinematically underconstrained, yet a latent model can reproduce structural similarities to the ground truth.",
         "authors": [
-          "Luxi He",
-          "Pengcheng Jiang",
-          "Jifan Zhang",
-          "Jiawei Han",
-          "Danqi Chen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 29
-      },
-      {
-        "title": "Reading Why: Born-Measured Attention with Exact Word Evidence on Light and Qubits",
-        "url": "https://arxiv.org/abs/2611.05355v1",
-        "publishedAt": "2026-11-03T18:52:44.000Z",
-        "summary": "When a language model answers, we can usually only estimate why. We build a transformer in which every step is a Born measurement - attention $|\\langle q|k\\rangle|^4$ normalised over each row, a measured product in place of the feed-forward nonlinearity, and a Born readout. With its denominators held at their values for the input, each class probability is a polynomial in the word amplitudes, so its integrated-gradient evidence is computed by a finite quadrature with no quadrature error: the words' contributions sum to the class probability above its no-information share, to $10^{-11}$ or better. On e-SNLI natural language inference, with about 98k parameters outside the embedding, the model reaches $76.98 \\pm 0.17$% test accuracy, level with a softmax transformer of the same size ($76.62 \\pm 0.36$%). Deleting the word its evidence ranks first changes the answer in 45% of test pairs, out of the 53% any single deletion can change, against 32% for the softmax model explained the same way and 40% by its attention x gradient. Attention can look more like the words annotators highlighted, yet accounts for the answer less well: deleting the word it ranks first changes the Born Transformer's answer in 32% of pairs. The same weights compile exactly to optoelectronic optics and to qubits, and a coherent attention layer becomes one circuit equal to the model (852 CNOTs on 23 qubits). On IBM's ibm_kingston, reading only the attention overlaps by Hadamard tests, the device gave the model's answers on two short test pairs and kept or changed them under deletion as the model does; the evidence itself did not yet survive the device, and we work out the shots and calibration that measuring it on hardware would need.",
-        "authors": [
-          "Teerawat Tongloy",
-          "Jiraporn Pongsopa",
-          "Rangsan Jomtarak"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 29
-      },
-      {
-        "title": "Agnostic Learning by Imitating",
-        "url": "https://arxiv.org/abs/2611.05346v1",
-        "publishedAt": "2026-11-03T18:45:38.000Z",
-        "summary": "Given a class of machine learning models and sample access to a data distribution with binary labels, which computational task is harder: training a discriminative model that distinguishes positive and negative labels as well as the best member of the class, or training a generative model whose outputs are indistinguishable from real data by all members of the class? We prove that these two fundamental tasks in computational learning theory are not just closely related, but actually equivalent to each other in complexity. One direction of this equivalence was previously known. Indeed, the powerful regularity lemma in complexity theory gives an efficient oracle reduction from the indistinguishability task (a.k.a. multiaccuracy) to the distinguishing task (a.k.a. agnostic learning) in the style of boosting algorithms. Our main contribution is an efficient oracle reduction in the other direction. Taking this idea further, we show that a multiaccuracy oracle is a remarkably powerful primitive, achieving not just agnostic learning but also a wide range of seemingly more demanding learning objectives via similarly efficient and direct constructions. Our results crucially use the power of making adaptive queries to the oracle, and stand in stark contrast to prior work, which showed that post-processing a single multiaccurate predictor is insufficient for even weak forms of learning. On a technical level, we draw a connection between our (offline) problem and a version of no-regret learning in the online setting, which allows us to use follow-the-leader type algorithms to modify the label distribution and aggregate the predictions of the multiaccuracy oracle.",
-        "authors": [
-          "Sílvia Casacuberta",
-          "Parikshit Gopalan",
-          "Varun Kanade",
-          "Omer Reingold",
-          "Konstantinos Stavropoulos",
-          "Pranay Tankala"
+          "Nicolas Tricard",
+          "Linzheng Wang",
+          "Jason Chen",
+          "Sili Deng"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 30
+        "ageHours": 13
       },
       {
-        "title": "Adversarial Speculative Reasoning Improves Long Horizon Agents",
-        "url": "https://arxiv.org/abs/2611.05345v1",
-        "publishedAt": "2026-11-03T18:45:23.000Z",
-        "summary": "Speculative decoding has been treated purely as a systems optimization that speeds up large language model decoding without changing the model behavior. Under this view, the growing effort to train better draft models has been focused solely on acceptance rate. We argue that this view does not hold true for long-horizon agent reasoning. Measuring frontier open-weight models on complex agentic tasks with different speculative decoding approaches, we found that numerical noise grows within verification windows, and the draft acceptance results of the thinking process can change the output distribution of the model after 30 steps, thus noticeably influencing the reasoning accuracy of long-horizon agents in random directions. In this work, we improve the reasoning capability of target models by controlling such noise. While we cannot change the overall token distribution verified by the target model, we can encode critical reasoning with highest precision by training the draft model to be rejected. We identify these points in agent traces and train the draft model to favor adversarial preference. At inference the trained draft and the target part ways precisely at these decision points, verification restarts, so that critical thinking tokens are sampled from the target model and encoded under its least noisy conditions. This approach makes critical reasoning better indexed and more durable over a long horizon. On complex agentic coding benchmarks, our approach raises end-to-end success rate with no change to the target model or its output distribution. Our results recast the speculative decoding mechanism from a pure accelerator into an active allocator for context precision that improves the accuracy of long-horizon agents by training 0.06% to 0.28% of hosted parameters.",
+        "title": "BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories",
+        "url": "https://arxiv.org/abs/2611.06911v1",
+        "publishedAt": "2026-11-04T18:57:17.000Z",
+        "summary": "Self-Driving Chemical Laboratories (SDCLs) are moving chemical experimentation toward embodied automation, where machines must perceive laboratory scenes, reason about experimental states, and act under physical, procedural, and safety constraints. Although Multimodal Large Language Models (MLLMs) are increasingly considered as embodied brains for such systems, existing laboratory benchmarks mainly focus on safety, anomaly detection, or general scientific understanding, leaving their execution-oriented embodied capabilities underexplored. To fill this gap, we introduce BEAKER, a Benchmark for evaluating Embodied Actionability, Knowledge, Experimentation, and Reasoning in SDCLs. BEAKER contains 1,000 expert-curated question-answer samples across 11 image and video task types, covering key judgments required for chemical laboratory execution, including affordance grounding, trajectory planning, equipment, state, and safety recognition, apparatus setup, operation and step reasoning, and temporal procedure reasoning. All questions and annotations are manually created and reviewed by chemistry and embodied Artificial Intelligence (AI) experts, without AI-assisted generation or annotation. We evaluate 28 general-purpose, science-oriented, chemistry-specialized, and embodied MLLMs in an offline, single-turn setting. Results show that current models can follow coarse experimental procedures in videos, but still struggle to ground actions into operable regions and feasible trajectories, to recognize fine-grained laboratory apparatus, states, and safety norms, and to order steps in mid-length procedures. BEAKER thus reveals a clear gap between coarse procedural understanding and the precise, action-grounded perception required for laboratory execution, providing a diagnostic benchmark for future MLLMs in SDCLs.",
         "authors": [
-          "Hongyin Luo",
-          "Wei Fang",
-          "Lijie Yang",
-          "Owen Stepan",
-          "Daniel Suit",
-          "Jeff Krapf",
-          "Dana Wensberg",
-          "Jack O'Brien"
+          "Fei Lin",
+          "Tengchao Zhang",
+          "Ziyang Gong",
+          "Xiaotong Yu",
+          "Bohan Zhang",
+          "Yifan Zhou",
+          "Qihao Yang",
+          "Ji Dai",
+          "Dong Li",
+          "Yining Jiang",
+          "Qinghua Ni",
+          "Jun Huang",
+          "Qiang Zhang",
+          "Yue Zhou",
+          "Zhihang Zhong",
+          "Yonglin Tian",
+          "Fei-Yue Wang",
+          "Xue Yang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 13
       },
       {
-        "title": "A Circuit for In-Context Learning",
-        "url": "https://arxiv.org/abs/2611.05344v1",
-        "publishedAt": "2026-11-03T18:44:34.000Z",
-        "summary": "In-context learning (ICL) lets a pretrained language model perform a task specified by demonstrations in its prompt, with no parameter updates. With arbitrary labels the model must acquire a mapping it cannot have memorized, so the learning happens within a single forward pass. Prior work found candidate parts but not how they compose. We give the composition for few-shot sentence classification with arbitrary labels in three 3-4B-parameter transformers. The model implements a key-value memory over label-token positions: each label token's residual stream encodes the label's identity, and middle-layer attention heads write into it the class of the preceding demonstration as its key. At the query, upper-layer heads match the query's class against the stored keys and copy out the matching labels. An early-layer signal encoding whether any label has repeated gates this readout; in its absence the readers attend to the start of the prompt and no label is favored. A separate set of heads suppresses the most recently seen label. Each step is established causally by activation patching, head ablations against random-head baselines, and steering with the model's own signals. A softmax model of the readout with two constants per head, fit on one prompt distribution, predicts another. The computation is conserved across the three models, the named heads alone reproduce the behaviour, and a transformer trained from scratch grows the same parts. The circuit transfers to semantic concepts and to labels with meaning, and the same parts, with a causal gate, appear from 0.6B to 8B in one family and survive instruction tuning. ICL in this setting is a gated associative lookup built from a few identifiable component types, traced causally from demonstrations to prediction.",
+        "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
+        "url": "https://arxiv.org/abs/2611.06910v1",
+        "publishedAt": "2026-11-04T18:56:22.000Z",
+        "summary": "AI agents are playing an increasingly important role in physics research. However, existing physics benchmarks only evaluate fixed questions, isolated sub-tasks, or paper reproduction with given solutions, and rarely check research quality alongside correctness. We introduce FrontierPhysics, an end-to-end benchmark with 56 tasks made by 42 physicists based on their own research, covering nine domains across theoretical, computational, and experimental physics. Each task requires agents to review the literature, develop a research plan, conduct research and experiments, and produce structured outputs and scientific manuscripts. Combining deterministic verifiers with expert-authored rubrics, FrontierPhysics evaluates whether agents' research is correct and publishable. Across 22 models in 26 configurations, no configuration passes more than 46 of its 168 rollouts. Manual review of agent trajectories shows that frontier agents' main weaknesses are insufficiently rigorous reasoning and limited expert intuition, rather than gaps in physics knowledge or execution errors.",
         "authors": [
-          "Andrew Gao",
-          "William Gao"
+          "Bingran You",
+          "Wenjun Ke",
+          "Ria Rosenauer",
+          "Bo Liu",
+          "Wenbo Chen",
+          "Min Chen",
+          "Shuqi Xu",
+          "Yue Ma",
+          "Jiechao Feng",
+          "Bo Chen",
+          "Xiangkai Sun",
+          "Jiarui Liu",
+          "Jinen Guo",
+          "Zeyu Zhou",
+          "Xu Huang",
+          "Zhuohan Li",
+          "Haoyu Li",
+          "Heguang Lin",
+          "Lijie Ding",
+          "Yadong Zeng",
+          "Kangqi Zhang",
+          "Xinge Liu",
+          "Hanwen Liu",
+          "Zhenghong Li",
+          "Alexander von Recum",
+          "Yuchen Zhu",
+          "Felix Schwarzfischer",
+          "Yizhou Zhao",
+          "Jicheng Wang",
+          "Binxu Li",
+          "Qian Yu",
+          "Chan Li",
+          "Cheng Dai",
+          "Di Wang",
+          "Haoyu Zhang",
+          "Jiankai Sun",
+          "Kaituo Feng",
+          "Mian Qin",
+          "Ruihong Yin",
+          "Yiqun Luo",
+          "Weiwei Wu",
+          "Shihong Pan",
+          "Tsung Yeh Hsieh",
+          "Xiao Huang",
+          "Yan Zhang",
+          "Sihan Li",
+          "Zirui Ren",
+          "Zengji Tu",
+          "Kyoung Whan Choe",
+          "Ke Sun",
+          "Vincenzo Galia",
+          "Vaisakhi Mishra",
+          "Jiashu He",
+          "Hongyang Wang",
+          "Zhiheng Yang",
+          "Shubham Gaur",
+          "Yifan Gu",
+          "Shuyi Wang",
+          "Zihao Zuo",
+          "Steven Dillmann",
+          "Yiyou Sun",
+          "Xinyang Han",
+          "Hanchung Lee",
+          "Molei Tao",
+          "Yue Zhao",
+          "Shilong Liu",
+          "Yuchen Wu",
+          "Xuandong Zhao",
+          "Xiangyi Li",
+          "Florian Brand",
+          "Gerbrand Ceder",
+          "Hartmut Haeffner"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "Perceptive Humanoid Motion from Simulation",
+        "url": "https://arxiv.org/abs/2611.06908v1",
+        "publishedAt": "2026-11-04T18:55:33.000Z",
+        "summary": "Humanoid robots have the potential to automate a wide range of physical tasks. Progress toward generalist humanoid autonomy, however, remains constrained by a data bottleneck: mapping pixels and free-form language to low-level joint commands requires paired supervision, and no corpus of such data exists at sufficiently large scale. Some approaches rely on human teleoperation and wearable capture devices, which require at least an hour of human time to produce an hour of data. We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes. The corpus scales with compute rather than human labor. HALO acquires a repertoire of physical skills, including sitting on chairs, navigating to named objects, stepping sideways through half-open doors, crouching and crawling beneath tables, and pushing boxes. It orchestrates these skills to solve composite, long-horizon tasks. Without ever seeing a real home during training, HALO transfers zero-shot to the physical world, achieving a 91% success rate across 360 trials in six unmapped real-world environments. See https://apple-aiml-research.github.io/ml-halo/ for code and videos.",
+        "authors": [
+          "Siyuan Hu",
+          "Abulikemu Abuduweili",
+          "Yue Meng",
+          "Shipeng Liu",
+          "Quentin Leboutet",
+          "Chen Chen",
+          "Matthias Müller",
+          "Vladlen Koltun"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Infrastructure",
+        "ageHours": 13
+      },
+      {
+        "title": "Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement",
+        "url": "https://arxiv.org/abs/2611.06905v1",
+        "publishedAt": "2026-11-04T18:52:28.000Z",
+        "summary": "The introduction of generalist robot policies has enabled a single, large model to learn to perform a variety of tasks from a vast pre-training corpus. While these models often exhibit powerful zero-shot generalization capabilities, they typically require an adaptation phase to achieve sufficient performance in deployment. Iterated self-improvement via reinforcement learning (RL) has demonstrated promise in enabling this adaptation, yet such approaches have been largely explored in single-task settings - where the goal is to simply improve on a narrow deployment task - which lies in stark contrast to the multi-task capabilities of the base policy. In this work we ask whether generalist robot policies are capable of multi-task, generalist improvement in deployment - targeting many diverse tasks simultaneously - and what algorithmic recipe enables this. To answer this question, we first develop a set of structured evaluations to test generalist improvement capabilities, and systematically evaluate algorithmic and practical design choices regarding value estimation, policy extraction and resource allocation. We show that not only can generalist policies be improved online across diverse tasks, but that the right recipe can enable generalization and increase performance on tasks not considered during online training. We characterize when this generalization occurs and show that both the training task distribution and the use of value-based RL are critical. To the best of our knowledge, this is among the first evidence for online generalist improvement for robot foundation models.",
+        "authors": [
+          "Michal Korniak",
+          "Marco Bagatella",
+          "Ralf Römer",
+          "Michal Nauman",
+          "Yarden As",
+          "Pranav Vignesh",
+          "Manan Agarwal",
+          "Leander Diaz-Bone",
+          "Piotr Zalewski",
+          "Mikołaj Czarnecki",
+          "Lenart Treven",
+          "Shashwat Saxena",
+          "Sreyas Venkataraman",
+          "Sarvesh Patil",
+          "Zhiyuan Zhou",
+          "Daniel Marta",
+          "Oier Mees",
+          "Nur Muhammad Mahi Shafiullah",
+          "Carmelo Sferrazza",
+          "Bhavya Sukhija",
+          "Angela P. Schoellig",
+          "Andreas Krause",
+          "Max Simchowitz",
+          "Andrew Wagenmaker"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 13
       },
       {
-        "title": "Weight-space programming for auditing clinical decision networks",
-        "url": "https://arxiv.org/abs/2611.05341v1",
-        "publishedAt": "2026-11-03T18:41:15.000Z",
-        "summary": "Machine learning models in radiotherapy are commissioned by testing them on cases with known answers, which may not reveal a shortcut that the test cases share with the training data. Frontier language models have recently been reported to read and write the raw weights of small neural networks, an ability called weight-space programming. The purpose of this study was to determine whether such a model, given only a clinical protocol and a network's weights, can audit and repair the network. Networks with 433 to 4,801 parameters were trained to screen head-and-neck planning requests against four rules. Flaws were planted through the training data: confounds that hid each rule, a 3 Gy shift in the cord threshold, and a hidden trigger. Claude Opus 5.5 audited each network blind, without tools, data or code execution, and every claim and repair was tested on about 420,000 requests. The language model named the broken rule in 16 of 18 flawed networks (95% CI 67% to 97%), including all 15 with a confound or a threshold shift. It repaired each of the 16 by changing a median of 3 parameters. Fine-tuning on protocol-labeled requests also repaired every network, but changed nearly every parameter. Each confound and shift it found was visible in single units, and a simple statistic chosen for each flaw type found the same flaws. It cleared 2 of 5 healthy networks without being forced and found 1 of 3 triggers. Testing against the protocol detected every flaw, and black-box testing found the confounds and the shift faster. The results indicate that, in small networks, weight-space programming can locate and repair flaws that silence an input or shift a threshold, but cannot yet certify that a network is correct.",
+        "title": "Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues",
+        "url": "https://arxiv.org/abs/2611.06899v1",
+        "publishedAt": "2026-11-04T18:49:13.000Z",
+        "summary": "Knowing that a pedestrian is occluded is useful to a robot even when the detector cannot recover the hidden pixels, but occlusion estimators are normally trained on occlusion annotations that deployment settings rarely have. We show that occlusion can be read off two distance estimates a camera-only pipeline already computes. Apparent height is largely unchanged by occlusion, because the detected box still spans the whole person; monocular metric depth is pulled toward the occluder, because the nearest surface inside the box is what a depth map reports. Only their ordering matters, so no focal length, stature, or depth scale is needed, provided the depth model's error is close to a pure gain, a condition that can be checked without labels. The score detects heavy occlusion on KITTI with AUC 0.909 (0.888 over all annotated pedestrians, including those the detector misses), requires no training and no occlusion labels, and is not a proxy for range: within fixed distance bands it holds AUC 0.894-0.925 while true distance alone sits near chance. On synthetic CARLA scenes with measured visibility it reaches 0.819, against 0.644 for distance alone. We arrived here after measuring three standard architectural responses to occlusion, depth fusion, occlusion-simulating augmentation, and attention, none of which improved detection outside its training distribution in the configurations we tested, and after finding that a detector trained on German roads loses half its accuracy on self-annotated street scenes in Lagos, Nigeria. Signals that need no local annotation are worth more in settings that benchmarks do not represent.",
         "authors": [
-          "Humza Nusrat",
-          "Omar Nusrat"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 30
-      },
-      {
-        "title": "MedPhysBench: A Benchmark for Evaluating Language Models on Medical Physics Calculations and Error Detection",
-        "url": "https://arxiv.org/abs/2611.05340v1",
-        "publishedAt": "2026-11-03T18:40:35.000Z",
-        "summary": "Medical physicists turn a prescription into a delivered dose and check one another's calculations, because one error in a beam calibration or a monitor-unit (MU) calculation can affect every patient treated with it. MedPhysBench has ten seeded generators of calculation items in radiation therapy, diagnostic imaging, nuclear medicine and radiation protection, up to clinical tasks such as a TG-51 calibration worksheet. Reference answers come from code implementing the governing protocols, and a grader converts units and applies tolerance bands. From the same inputs, separate checking items test error detection, showing a colleague's worksheet or only the colleague's result, half correct and half with one planted error. On a held-out test split of 1,200 items (half for two models), 12 models scored 33.3 to 100.0% on calculation. Of the nine answers graded incorrect for the four best (99.3-100.0%), five contained model errors and four followed NCRP Report 151 on points our items misstate or leave open. Below them, most models did worst on level-3 clinical tasks, and Claude Sonnet 5.5 omitted the inverse-square correction in 19 of 20 isocentric MU items. Five models detected at least 96.7% of mostly large planted errors with at most 4% false alarms; for four of the other seven, checking only the result raised false alarms significantly. In an exploratory targeted test with 20 public cases of an omitted inverse-square correction, the three best models tested caught it in every worksheet, and three weaker models accepted 16 to 18 of 20 planted worksheets, one of them while applying the correction in most of its own calculations. Claude Opus 5.5 accepted 6 of 20 wrong results, although it applied the correction in all 20 of its own. We report the effect of two problems in our shielding items, found after the runs, and release the code, per-item outcomes and targeted-test responses.",
-        "authors": [
-          "Omar Nusrat"
+          "Chibueze Praise Onyenweaku",
+          "Toyibat Adele",
+          "Sikirulahi Opeyemi Abdulkareem",
+          "Obed Honour Eje"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 30
+        "ageHours": 13
+      },
+      {
+        "title": "Dull, Dirty, Dangerous? Working Conditions and the Limits of Occupational AI Exposure",
+        "url": "https://arxiv.org/abs/2611.06888v1",
+        "publishedAt": "2026-11-04T18:41:40.000Z",
+        "summary": "Automation is often justified as relief from dull, dirty, and dangerous work. I examine how these conditions relate to occupational AI exposure using 21 O*NET items across 754 US occupations. Higher exposure is associated with lower condition scores under a large language model (LLM) measure and AI Occupational Exposure (AIOE), with equal occupation weights and employment weights. Adjustment for physical demands, required education, training and experience, and wages reduces the composite association. The adjusted confidence intervals include zero for LLM exposure and remain below zero for AIOE. Separating repetition from restricted discretion also changes what the combined Dull score conveys. These comparisons show how item groupings and occupational characteristics shape the interpretation of exposure estimates. Occupational profiles offer a starting point for selecting contrasting research settings. Establishing desired automation or realized relief requires evidence about workers' preferences and specific interventions.",
+        "authors": [
+          "Siyi Yu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 13
+      },
+      {
+        "title": "Adaptive Multi Mode: Budget-Aware Routing of Optimizers By Online Landscape Probes",
+        "url": "https://arxiv.org/abs/2611.06879v1",
+        "publishedAt": "2026-11-04T18:35:35.000Z",
+        "summary": "The best classical optimizer for a continuous black-box problem depends on its budget and landscape. Existing routers decide from the dimension and budget, past improvement or features fitted to one benchmark, and few test an optimizer's implicit assumptions online. AMM (Adaptive Multi Mode) routes a known budget among quasi-Newton, trust-region, coordinate, multistart and evolution-strategy optimization engines with online probes of curvature, plateaus, separability, kinks, basins and fractal structure. Each probe has a default, a dimension-by-budget validity range and a cost charged to the budget. In its pre-registered development loop on bbob, 32 of 36 predictions held over the last 16 confirmations. AMM was then tested once on held-out bbob instances 101-110 (D=2-40, 10*D-1000*D) against up to seven competitors. It has the highest target share in 382 of 600 function-dimension-budget cells (236 outright, 146 tied) and, by a descriptive posterior rule, is credibly behind in 35, mostly at 10*D and 30*D. At every budget it also leads the controls built from its own engines (the best engine alone, the best engine per dimension and budget, and a greedy schedule), narrowly at 10*D and 30*D, and nevergrad's NgIohTuned. In pre-registered runs its lead over IPOP-CMA-ES holds under affine and box transformations, on box-constrained bbob and, pooled, on rotated f2-f4, but rotating the separable f3 and f4 removes most of the lead there. On held-out MA-BBOB its final share at 2000*D is level with IPOP-CMA-ES's and its anytime area lower. We published AMM as an open-source Python package (pip install amm-optimizer; https://github.com/BjBodner/amm-optimizer).",
+        "authors": [
+          "Benjamin Jacob Bodner"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "SpecCompact: Accelerating LLM Agent Context Compaction with Slot-Parallel Semantic Speculative Verification",
+        "url": "https://arxiv.org/abs/2611.06876v1",
+        "publishedAt": "2026-11-04T18:34:41.000Z",
+        "summary": "LLM agents use context compaction to manage growing interaction histories, but summarizing long histories with large models can introduce substantial delays. Compaction therefore requires balancing information retention against latency. We observe that structured summary slots can retain information when generated independently. Based on this observation, we present SpecCompact, a framework that accelerates compaction through slot-parallel semantic speculation. SpecCompact fine-tunes a small drafter and generates slots in parallel. The target model verifies each proposed line and repairs rejected content, while subsequent drafting uses the updated slot prefix. System optimizations further reduce repeated context processing and model calls. Across AppWorld and $τ^3$ benchmarks with two target models, SpecCompact achieves $2.04$--$5.63\\times$ compaction speedups over Hermes-style summarization. Separate downstream evaluations reveal model- and task-dependent performance trade-offs. A user study within Hermes further shows an $8.68\\times$ median compaction speedup.",
+        "authors": [
+          "Yulu An",
+          "Yifei Feng",
+          "Xiangyang Yin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
+      },
+      {
+        "title": "Learning to Decode Linear Codes with Generalized Belief Propagation Network",
+        "url": "https://arxiv.org/abs/2611.06874v1",
+        "publishedAt": "2026-11-04T18:29:31.000Z",
+        "summary": "Error correcting codes are a fundamental component of communication systems, enabling reliable data transmission over noisy channels. Recently, neural decoders have demonstrated notable performance gains over classical iterative algorithms. In this paper, we propose a Generalized Belief Propagation Network (GBPNet) that preserves message-passing symmetry while enhancing the decoder's learning capability. The architecture uses cascaded variable-node updates and learned element-wise message scaling while retaining the Tanner graph structure. We also introduce two training strategies, progressive training and high-SNR training, that improve decoding accuracy. Experimental results on several linear codes show that GBPNet achieves lower bit error rates than conventional belief propagation and the evaluated state-of-the-art neural decoders.",
+        "authors": [
+          "Samira Malek"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Infrastructure",
+        "ageHours": 13
+      },
+      {
+        "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
+        "url": "https://arxiv.org/abs/2611.06868v1",
+        "publishedAt": "2026-11-04T18:23:14.000Z",
+        "summary": "In this work, we evaluate a simple inference-time scaling approach based on \\textit{turn-level best-of-N sampling} (\\method) for large language model (LLM) agents on complex, long-horizon tasks. We instantiate this using a \\textit{generator-selector} framework with two LLMs; at each turn, a \\emph{generator} model generates $N$ candidate actions and a \\emph{selector} model selects one of them, which is then executed in the environment. This paper is closely related to the work of \\cite{zainullina2025guided} who used critic models for guided search at inference time. Different from their work, we evaluate if off-the-shelf, open-weight LLMs can be effective at comparing different candidate actions directly. Experiments on long-horizon terminal tasks show that \\method can lead to significant performance improvements, both in terms of accuracy (5--10\\%) and consistency across repeated attempts. Analysis of agent trajectories reveal a shift in agent behaviour towards desirable patterns such as reduction in number of attempts to solve the task, improved task instruction following, debugging and testing.",
+        "authors": [
+          "Jalaj Bhandari",
+          "Dhawal Gupta",
+          "Hongli Zhan",
+          "Zhenting Wang",
+          "Varad Pimpalkhute",
+          "Zhengzhong Liu",
+          "Eric Xing",
+          "Rupesh Srivastava"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 13
       }
     ],
     "news": [
+      {
+        "title": "Clearing up a robot’s fuzzy memory",
+        "url": "https://news.mit.edu/2026/clearing-up-robot-fuzzy-memory-1105",
+        "publishedAt": "2026-11-05T05:00:00.000Z",
+        "summary": "In an emergency, a human might someday ask a robotic assistant to fetch a wall-mounted defibrillator located down the hall. But if the robot has incorrectly labeled the defibrillator as a fire extinguisher in its stored memory, it may not know where to find the life-saving device. This robotic assistant could benefit from a new memory system created by MIT researchers. The system identifies entries in a robot’s memory that might be wrong and corrects the descriptions of mislabeled objects.&nbsp; In the future, this method could make household or industrial robots better able to perform complex, multistep tasks, such as clearing a dining room table or working alongside human collaborators to assemble a piece of machinery.&nbsp; Called UQ-DAAAM (which stands for Uncertainty Quantification for Describe Anything, Anywhere, at Any Moment), the system compares multiple descriptions of the same object, seen from different viewpoints, to quantify the robot’s uncertainty about what it saw.&nbsp; It then selects additional views to reduce the uncertainty and combines these captions into a more accurate description of the object, which it saves to memory. The researchers also employed a special technique to streamline this process so a mobile robot can continually update uncertain memory entries in real time.&nbsp; When compared to baseline methods, UQ-DAAAM boosted the robot’s confidence and improved the accuracy of its answers to questions about objects, their locations, and when it saw them.&nbsp; “Contrary to ChatGPT, when we think about physical AI, it is not enough to simply put a disclaimer cautioning that sometimes the robot might be wrong. Allowing a robot to know what it doesn’t know is going to be essential for this technology to be deployed safely and have a positive impact on society,” says Luca Carlone, an associate professor in MIT’s Department of Aeronautics and Astronautics (AeroAstro), principal investigator in the Laboratory for Information and Decision Systems (LIDS), director of the MIT SPARK Laboratory, and the senior author of the paper presenting UQ-DAAAM. He is joined on the paper by co-lead authors and MIT graduate students Harry Zhang and Nicolas Gorlo. The research will be presented at the Conference on Neural Information Processing Systems.&nbsp; Amending memory This new method builds on the researchers’ prior work,&nbsp; DAAAM , a robot memory system that uses a vision-language model (VLM) to richly describe objects in scenes a robot captures with its onboard cameras. These descriptions are stored as detailed captions in a 3D map-based representation of the robot’s environment that it can call upon later to answer questions.&nbsp; But the robot sometimes sees objects only partially or from far away, or its camera might capture blurry or poorly lit images. In these cases,&nbsp;DAAAM might describe these objects incorrectly, such as by mistaking a gray chimney for a squirrel perched on a rooftop. “With no way to correct itself, this wrong memory would persist as the robot proceeds in its environment, which could impact downstream applications,” Zhang says. UQ-DAAAM integrates uncertainty quantification into the DAAAM framework. It allows the robot to measure its confidence in the accuracy of object descriptions and fix incorrect captions as it travels through an environment. While on the move, the robot constantly collects and stores images of the world around it. Many of these images show the same objects captured from different angles. UQ-DAAAM uses these additional viewpoints to identify and correct unreliable descriptions. First, it calculates the VLM’s confidence level in the words it generated to describe a potentially mislabeled object. Then, it measures consistency by comparing this description to captions of images that describe the same object from different vantage points. “We fuse both sources of uncertainty into a single number that captures how certain the VLM is in its overall understanding of the object,” Carlone explains. If that number exceeds a certain threshold, the uncertainty is too high, and UQ-DAAAM will refine the caption by using additional images of the object. It does this using a heuristic, or simple rule, that determines which additional viewpoints will reduce the robot’s uncertainty about the object. For instance, it might choose an image captured a few frames later that clearly shows smoke emanating from the chimney.&nbsp; The researchers mathematically proved that this heuristic can identify the best frames to select without rerunning the VLM, dramatically reducing the amount of computation.&nbsp; “The key challenge Nico and Harry had to overcome is how to combine VLMs with uncertainty quantification into something that is running in a fraction of a second on a robot that is moving,” Carlone says. Remembering with confidence Once it has identified additional captions that will reduce its uncertainty about the object, the system uses an LLM to fuse them into a single object description. To boost accuracy, the LLM puts more weight on new captions and those with less ambiguity. This refinement step is able to resolve ambiguities for about 92 percent of the objects in the robot’s environment, while only requiring two additional captions per object. It increased the accuracy of object descriptions by 5 percent compared to the state of the art. UQ-DAAAM also provided more accurate answers to questions about the objects it observed, where it saw them, and when it last encountered them than baseline methods. “Performing this uncertainty quantification procedure across the entire map the robot generates allows it to improve its understanding of what it has observed,” Gorlo says. Next, the researchers want to use UQ-DAAAM to guide different types of robots, like mobile robotic manipulators, and apply their uncertainty quantification techniques to other domains.&nbsp; In addition, they are studying the use of UQ-DAAAM to identify areas of high uncertainty the robot could revisit to improve its understanding of the environment. They are also exploring uncertainty quantification in systems that predict the future state of a robot’s environment. This research is supported, in part, by the U.S. Army Research Laboratory and the U.S. Office of Naval Research. Carlone is currently on sabbatical as an Amazon Scholar; this article describes work performed at MIT and is not associated with Amazon.",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 3
+      },
+      {
+        "title": "Apple is reportedly cutting budgets for its internal AI usage",
+        "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/",
+        "publishedAt": "2026-11-05T01:26:22.000Z",
+        "summary": "The company is said to be significantly dropping the amount it's spending on AI for its engineering teams.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 6
+      },
+      {
+        "title": "After the midterms, a bigger clash over data centers could be coming",
+        "url": "https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/",
+        "publishedAt": "2026-11-05T01:02:14.000Z",
+        "summary": "Data center opposition crossed party lines in Tuesday’s midterms.",
+        "authors": [
+          "Dominic-Madori Davis"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 7
+      },
       {
         "title": "AI PACs spent millions trying to shape Congress — here&#8217;s how they fared",
         "url": "https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/",
@@ -306,7 +443,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 9
       },
       {
         "title": "Nothing CEO says company&#8217;s mysterious AI-first device is dropping next month",
@@ -320,7 +457,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 2
+        "ageHours": 10
       },
       {
         "title": "Almost no one uses AI agents to book their Uber, company says",
@@ -334,7 +471,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 2
+        "ageHours": 10
       },
       {
         "title": "OpenAI is already trying to shape the 2028 election",
@@ -348,7 +485,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 10
       },
       {
         "title": "Meta acquires AI coding startup Conductor",
@@ -362,7 +499,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 11
       },
       {
         "title": "Open source AI is booming. Hugging Face explains who profits.",
@@ -376,7 +513,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 12
       },
       {
         "title": "DuckDuckGo pitches itself to schools amid backlash over Google&#8217;s AI policy",
@@ -390,7 +527,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 5
+        "ageHours": 12
       },
       {
         "title": "Building on open source AI? Hugging Face’s policy chief on the costs, risks, and trade-offs",
@@ -404,7 +541,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 13
       },
       {
         "title": "I tried Apple&#8217;s Siri Recaps. They&#8217;re surprisingly useful — and a little unsettling",
@@ -418,54 +555,14 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 7
-      },
-      {
-        "title": "Google faces backlash for plan that would turn off Search for schools that restrict AI",
-        "url": "https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/",
-        "publishedAt": "2026-11-04T16:17:22.000Z",
-        "summary": "Politicians on the left, like NYC mayor Zohran Mamdani and former FTC chair Lina Khan, accused Google of acting as an unregulated monopoly.",
-        "authors": [
-          "Amanda Silberling"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 8
-      },
-      {
-        "title": "OpenAI to acquire Pierre Computer Company, Inc.",
-        "url": "https://openai.com/index/openai-to-acquire-pierre",
-        "publishedAt": "2026-11-04T14:30:00.000Z",
-        "summary": "OpenAI will acquire Pierre Computer Company, expanding Codex’s tools for building, understanding, and reviewing code.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Products",
-        "ageHours": 10
-      },
-      {
-        "title": "TechCrunch Founder Summit 2026: Doors open at 9 a.m. ET in Boston",
-        "url": "https://techcrunch.com/2026/11/04/techcrunch-founder-summit-2026-todays-the-day/",
-        "publishedAt": "2026-11-04T13:00:00.000Z",
-        "summary": "Today is the day to join TechCrunch Founder Summit 2026 in Boston's SoWa Power Station. Register now to join this founder-focused conference today.",
-        "authors": [
-          "TechCrunch Events"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 11
+        "ageHours": 15
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
@@ -480,8 +577,8 @@
         "count": 5
       },
       {
-        "name": "Products",
-        "count": 3
+        "name": "Infrastructure",
+        "count": 2
       }
     ]
   }
