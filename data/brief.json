@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T03:22:54.751Z",
+  "generatedAt": "2026-11-06T12:00:55.208Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,222 +85,256 @@
   "sections": {
     "research": [
       {
-        "title": "Automatic keyphrase extraction and annotation: modern theoretical approaches and practical solutions for text and speech",
-        "url": "https://arxiv.org/abs/2611.08006v1",
-        "publishedAt": "2026-11-05T13:31:35.000Z",
-        "summary": "The exponential growth of textual and audiovisual information has made the task of automatic keyphrase extraction (KE) increasingly significant. This article provides a comprehensive analysis of contemporary theoretical approaches and practical solutions for KE across both text and speech modalities. The primary contribution of this work is its systematic synthesis of these often-disparate research strands into a unified analytical framework, highlighting the evolution of the field from statistical methods towards large language models (LLMs) and end-to-end speech processing. We examine the stages of KE, the characteristics of keyphrases in written and spoken language, and terminological nuances. Various methods for automatic KE are discussed and analyzed in detail: statistical, hybrid, machine learning-based, and structural. The review dedicates substantial attention to emerging paradigms, including keyphrase generation using LLMs, and provides a detailed overview of methodologies and challenges in automatic corpus annotation. Furthermore, we specifically analyze current directions and inherent difficulties in KE for spoken language, comparing transcript based and end-to-end acoustic approaches. This synthesis leads us to conclude that the field is moving towards a more integrated, context-aware paradigm. Future progress will depend on addressing key challenges such as data scarcity for low-resource languages, effective multimodal fusion, and the nuanced evaluation of generative KE systems.",
+        "title": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
+        "url": "https://arxiv.org/abs/2611.08487v1",
+        "publishedAt": "2026-11-05T18:59:42.000Z",
+        "summary": "User embeddings are central components of modern recommendation, personalization, and behavioral modeling systems. Though these embeddings can compactly encode rich behavioral information, they are inherently dense and opaque, limiting interpretability. To address this gap, we argue that user embeddings can be understood as sparse superpositions of interpretable behavioral modes. This structure is directly predicted by generative models of user behavior for linear embeddings and extends approximately to deep-learning representations by the superposition hypothesis. Superimposed modes can naturally be recovered by sparse dictionary learning methods, such as sparse autoencoders (SAEs), and recovered modes can be automatically named and queried in natural language. We validate mode recovery against known ground truth on synthetic data, where SAEs recover modes better than classical sparse baselines, including on transformer-encoded embeddings. We then apply the method to classical and transformer-based user embeddings from two real-world datasets. We also show how the corresponding natural-language labels enable zero-shot audience retrieval and characterization over embeddings never trained on text. The framework is post-hoc and model-agnostic, requiring no modification to the upstream embedding system.",
         "authors": [
-          "Daria Guseva",
-          "Olga Mitrofanova"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "Towards Multiscale Molecular Representation Learning through Geometry-Based Fragmentation for Polymer Property Prediction",
-        "url": "https://arxiv.org/abs/2611.07998v1",
-        "publishedAt": "2026-11-05T13:25:23.000Z",
-        "summary": "It is well established that molecular substructures can contribute unequally to chemical and physical properties, with specific motifs or side chains often playing dominant roles. Fragment-based representations have therefore emerged as an effective strategy for incorporating chemically meaningful inductive biases, as exemplified by molecular fingerprints and fragment-based attention mechanisms. However, many existing fragmentation-based machine learning methods rely on predefined chemical rules, which may yield suboptimal fragmentation for previously unseen or chemically unfamiliar structures and often overlook the importance of multiscale molecular representations. To address these limitations, we formulate molecular fragmentation as a radius-constrained optimization problem inspired by the k-center formulation, where the number of clusters is not fixed a priori but emerges from the specified radius, and propose a geometry-based fragmentation method that partitions arbitrary molecular or material structures using largely geometric information, without relying on predefined chemical fragmentation rules. The method provides flexible control over fragment size, enabling the construction of multiscale fragment representations for scale-adaptive modeling. Building on this framework, we develop a geometric fragment-based attention mechanism that integrates multiscale structural information and incorporate it into a multimodal machine learning model combining p-SMILES representations with three-dimensional (3D) conformational information. Experiments on a benchmark polymer dataset show that incorporating 3D conformational information improves prediction accuracy for several properties over models based exclusively on p-SMILES representations. Explainable artificial intelligence analyses further provide insights into the physical relevance of the learned representations.",
-        "authors": [
-          "Makoto Takamoto",
-          "Chaitanya Sampara",
-          "Viktor Zaverkin",
-          "Daniel Oñoro-Rubio",
-          "Mathias Niepert"
+          "Jonathan Kozaczuk",
+          "Zheng Dong",
+          "Noyan Evirgen",
+          "Keivan Majidi",
+          "Eddie K. H. Ng",
+          "Chris Porter",
+          "Qi Zhao",
+          "Jia Geng",
+          "Changmao Li",
+          "Brandon R. Feng"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
-        "title": "Compression Through a Context Lens: Evaluating Adaptation, Quantization, and Distillation in Arabic Legal LLMs",
-        "url": "https://arxiv.org/abs/2611.07988v1",
-        "publishedAt": "2026-11-05T13:15:55.000Z",
-        "summary": "Model compression can facilitate the deployment of large language models in resource-constrained legal settings, but its effects on domain-specific performance may depend on the evaluation protocol. We investigate this issue using ArabLegalEval, a Saudi Arabic legal benchmark, under both with-context and no-context evaluation. The former provides supporting legal passages, while the latter assesses performance without external context. Removing the context produces accuracy gaps of up to 27 percentage points for the base model. We examine three stages: domain adaptation, quantization, and knowledge distillation across FANAR-9B, JAIS-8B, and Qwen2.5-7B. Four-bit quantization reduces model memory by 64-71%, with changes in no-context MCQ accuracy ranging from -3.2 to +1.6 percentage points. Distillation produces more variable results, with accuracy generally declining as student size decreases. A Qwen2.5-7B student distilled from FANAR achieves 76.6% no-context accuracy, compared with 77.2% for its teacher. Our findings suggest that no-context evaluation provides a useful complement to context-supported testing when assessing the effects of adaptation and compression on Arabic legal language models.",
+        "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
+        "url": "https://arxiv.org/abs/2611.08483v1",
+        "publishedAt": "2026-11-05T18:59:29.000Z",
+        "summary": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a framework in which hundreds of low-cost agents per round work in swarms, reason in latent space without decoding to text, and share information by passing KV caches. Each swarm studies the problem from a different angle. A novelty filter keeps the most distinct agent ideas by directly measuring the distances between the agents' hidden state vectors. Crossover of ideas happens naturally in latent space, as a summarizer agent receives the combined KV caches of all swarm members. On 21 problems in mathematical discovery and scientific computing, SwarmEvolve gets the highest average score and needs a median of only 3 to 8 minutes to reach the best scores that other state-of-the-art frameworks reach in 60 minutes. On several problems, SwarmEvolve with Qwen3 8B improves on the solutions that AlphaEvolve first found with frontier LLMs. Our work shows that agent swarms that communicate in latent space offer a fast, low-cost approach to program search for scientific problems.",
         "authors": [
-          "Md. Rafiul Biswas",
-          "George Mikros",
-          "Wajdi Zaghouani"
+          "Qile Jiang",
+          "George Em Karniadakis"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
-        "title": "Technohybridism: Recursive Semantic Normalization in AI-Mediated Societies",
-        "url": "https://arxiv.org/abs/2611.07984v1",
-        "publishedAt": "2026-11-05T13:14:00.000Z",
-        "summary": "Language-generating AI systems are no longer only objects of linguistic interaction: their outputs increasingly re-enter the communicative and institutional practices from which their training material was drawn. Drawing on social theory, social epistemology, and the philosophy of language, this article develops a sociotechnical account of that re-entry. We introduce recursive semantic normalization: the process through which machine-generated formulations, once recurrently taken up, evaluated, reused, and institutionally retained, participate in the reproduction and transformation of semantic regularities. Under the heading of technohybridism, we argue that the relevant unit of analysis is the hybrid semantic system, a recursively coupled configuration of human practices, computational generation, and institutional uptake. First, we distinguish the concept from neighbouring accounts, including model collapse, looping effects, machine habitus, machine culture, and the epistemology of AI testimony. Second, we develop an analytical model that separates generation, selection, uptake, and persistence and distinguishes machine-attributable change from change that would have occurred anyway. Third, we analyse uptake as routinized, institutionally diffused, and socially stratified practice and state conditions under which machine-derived regularities become norms. Fourth, we identify social-epistemic consequences: the laundering of provenance that weakens epistemic vigilance, the erosion of the cognitive diversity on which collective inquiry depends, and the narrowing of shared hermeneutical resources. An evidential ladder for empirical research follows. The account attributes no normative authority to machine outputs; what changes is the field within which human and institutional uptake operates.",
+        "title": "Scientist World: Grow a Research World for AI-Scientists",
+        "url": "https://arxiv.org/abs/2611.08478v1",
+        "publishedAt": "2026-11-05T18:58:17.000Z",
+        "summary": "AI-Scientists arrived, but a world for them to grow in did not. Human scientists take theirs for granted $-$ centuries of open problems and shared ideas, waiting in the scientific literature. To AI-Scientists, that world is readable but not runnable, so we build Scientist World for them: every research paper becomes an executable environment. Our autonomous pipeline extracts each paper's open-ended research question and reproduces its proposed method as the baseline; an AI-Scientist entering the environment is evaluated against what the human authors achieved. We release the first 1,000 verified environments. With the world as an evaluation, we found that frontier AI-Scientists can already surpass the human researchers 74% of the time. As a record of how AI does science, it contains 6,400 hours of research traces, with every idea, experiment, failure, and success. As a training ground, we are able to raise (+158%) a small model to match frontier models in research ideation. At last, AI-Scientists' own world has arrived, grown from and growing with science itself.",
         "authors": [
-          "Charalampos M. Liapis",
-          "Epameinondas Panagopoulos"
+          "Taiming Lu",
+          "Sachin Konan",
+          "Zhuang Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 17
+      },
+      {
+        "title": "XStack: A Benchmark for ML Repo Migration",
+        "url": "https://arxiv.org/abs/2611.08472v1",
+        "publishedAt": "2026-11-05T18:55:54.000Z",
+        "summary": "ML code should run where researchers choose, not where it was first written. Today, machine learning code mainly lives in two ecosystems, PyTorch on NVIDIA GPUs and JAX on Google TPUs. Migrating repositories between them means building and testing across frameworks and hardware. This migration is (1) a practical need, since it unlocks different hardware for researchers, and (2) a natural benchmark: it involves different frameworks and hardware, covers whole repositories, and is long-horizon and challenging. We introduce XStack, a benchmark that evaluates agents on migrating ML repositories between these two ecosystems. Each agent receives a PyTorch repository and a clean TPU machine and must deliver a JAX repository. Its output passes if it meets our grading criteria, based on the source repository's published result, authenticated and calibrated by us. Migration by agents remains unreliable: Claude Opus 5 passes 75%, GPT-5.6-sol 45%, and every other agent at most 40%. XStack is a step toward freeing ML code from its ecosystem. We release XStack to make progress toward reliable migration across frameworks and hardware measurable.",
+        "authors": [
+          "Linrong Cai",
+          "Taiming Lu",
+          "Haozhe Chen",
+          "Zhuang Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 17
+      },
+      {
+        "title": "Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information",
+        "url": "https://arxiv.org/abs/2611.08469v1",
+        "publishedAt": "2026-11-05T18:55:31.000Z",
+        "summary": "Interpretability, AI auditing and assessments of machine consciousness increasingly rest on mechanism-level quantities: functionals of a system's causal transition law that describe how it computes, not what it outputs. Experiments see that law only through finite, partial and noisy interventions. We ask when such a quantity is identifiable from an experiment's access, continuous in the mechanism and certifiable from finite data, and answer exactly for a deliberately demanding case - the integrated information $\\varphi$ of integrated information theory - in stochastic networks of four and five units with known ground truth. Behavior can be silent: a recurrent and a feed-forward network with identical input-output laws at their response delay carry 0.28 and 0 bits, yet internal recordings separate them within 4-53 trials. Partial access can be just as blind: in our examples, units left out of a one-step recording impose precision floors of 0.30-1.02 bits that no sample size lowers, and in all-but-self parity networks, recordings of any length see several hidden units only through the product of their fidelities - a symmetry that one intervention broke in exact checks. The measure has sharp edges: because $\\varphi$ selects a partition, and the cause and effect it specifies, by one criterion and reports another, infinitesimal changes of mechanism that cross an edge change it by 25-100% at 99% of the edges we found in random networks, and about 1% of surrogate models that fit interventional data almost perfectly misreport it by more than 20%. One-sided claims survive: the same data certify a lower bound on both sides of an edge, and we prove $\\varphi>1.004$ bits throughout a 64-dimensional region of mechanisms and certify it from about $10^7$ controlled transitions with false-certificate probability at most $α$. Measurability is thus a design question with computable answers.",
+        "authors": [
+          "Linqian Wu",
+          "Diaoxuan He"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
-        "title": "How Far Can Lightweight LLMs Go in Intent-to-SLO Translation?",
-        "url": "https://arxiv.org/abs/2611.07982v1",
-        "publishedAt": "2026-11-05T13:12:30.000Z",
-        "summary": "Intent-based networking (IBN) promises QoS provisioning in which the network derives the configuration from operator-stated goals. Its first step, translating a natural-language intent into enforceable service-level objectives (SLOs) grounded in a live snapshot of the network state, increasingly relies on large language models (LLMs). These large models add cost and energy to the management loop and typically require multi-GPU, cloud-hosted infrastructure. Can lightweight open LLMs take over this step dependably? We answer this question with a five-dimensional evaluation of ten LLMs with <10B parameters from five families, under four prompting setups, on 716 placement intents. We evaluate translation performance, intent validation, hallucination, energy impact, and robustness to diverse phrasing. The best configurations translate intents with a strict F1 of 0.943 and reject up to 191 of 195 invalid intents. With few-shot reasoning, the strongest models hallucinate unsupported QoS requirements in only about one response in a hundred, whereas the zero-shot setup struggles. A translated intent costs 0.044-0.148 Wh of GPU energy without reasoning, and added energy cost for reasoning pays off for the weaker models. Furthermore, we show that realistic rephrasing lowers the rejection of invalid intents in 15 of 16 configurations for the best-performing models, leaving robust intent validation as a key open challenge for reliable IBN. Our code and data are available: https://github.com/ggck43/intent2slo.",
+        "title": "Towards interpreting any residual stream direction by scaling activation inversion",
+        "url": "https://arxiv.org/abs/2611.08465v1",
+        "publishedAt": "2026-11-05T18:54:40.000Z",
+        "summary": "To interpret a direction in a language model's residual stream, we can look for text that strongly activates it. But when such text is found by scanning a corpus, it is limited to what that corpus contains. We develop Maximally-Activating Example Metamodels (MAEMs), language models which map residual stream directions from a subject model to text exemplars that strongly activate those directions. Our objective is to maximise the cosine similarity of a supplied residual stream direction with the activations of the text generated by the MAEM. This label-free RL objective helps to scale MAEMs on diverse sources of residual stream directions. Empirically, we find the resultant metamodel produces informative exemplars: a Qwen3.6-27B MAEM inverts held-out activations better than corpus search or a natural-language autoencoder (NLA), beats corpus search (at 10M tokens) on a majority of held-out languages/domains, and activates 89% of held-out SAE features. It also identifies concepts behind steering vectors about as well as NLAs, recovers the payloads of LoRA backdoors more often than corpus search, and can even verbalise some model workspace inner monologue. Unlike explanations produced by other metamodels (e.g. NLAs), MAEM exemplars can be verified with a forward pass on the subject model, making the MAEM objective a grounded alternative for scaling the training of metamodels.",
         "authors": [
-          "Sabbir Ahmed",
-          "Hazem Abbas",
-          "Salimur Choudhury"
+          "Celeste De Schamphelaere",
+          "Juan J. Vazquez",
+          "Ari Spiesberger",
+          "Tomáš Gavenčiak",
+          "Gavin Leech",
+          "Euan Ong",
+          "Jiahai Feng"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 17
       },
       {
-        "title": "QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents",
-        "url": "https://arxiv.org/abs/2611.07976v1",
-        "publishedAt": "2026-11-05T13:08:43.000Z",
-        "summary": "DeepSearch LLM agents repeatedly search and carry retrieved sources into subsequent reasoning steps. This expanding context increases token consumption and latency, although many results do not contribute to later reasoning. We propose Query-Relevant Attention Entropy (QRAE), an online context compression method that uses sparse evidence-assessment heads to decide which intact retrieved chunks should persist across reasoning steps. It scores bounded candidate batches through paired prefills: a query-free control suppresses shared attention responses, while normalized entropy measures the breadth of the positive response within each chunk. High-scoring chunks enter a persistent evidence whitelist and are included in the reasoning context. Uncertain chunks remain outside the reasoning context but are retained in a candidate cache, where they can be retrieved for later reevaluation. QRAE requires neither an additional generative compression pass nor modification of the attention operator. Across multiple DeepSearch benchmarks and reasoning models, QRAE improves task success by an average of 2.35 percentage points and reduces end-to-end latency and reported token usage by an average of 30% and 45%, respectively. These benefits generalize to a model with nearly 100B parameters.",
+        "title": "Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness",
+        "url": "https://arxiv.org/abs/2611.08457v1",
+        "publishedAt": "2026-11-05T18:48:50.000Z",
+        "summary": "Adversarial Training (AT) is an important method for improving model robustness. We study the dynamics of deterministic Gradient Descent (GD) in AT. Most existing works in this direction focus on the small or vanishing step sizes regime, where GD resembles a continuous-time flow. However, such step sizes can make training inefficient and are rarely used in practice. In this paper, we study the AT dynamics of GD with large constant step sizes. We first study GD in adversarial linear logistic regression, focusing on two aspects: where the model parameters converge (implicit bias) and how quickly the losses decrease (optimization). We then turn to neural networks training and study how the sharpness of losses evolve during AT. Our results advance the understanding of the behaviors of GD with large step sizes in AT and highlight three key differences from its behavior in Standard Training (ST): (i) the implicit bias gap between AT and ST, previously established only for small step sizes, persists for arbitrarily large constant step sizes, (ii) different from ST, there is no uniform rate of convergence for the optimization error in AT, and (iii) sharpness can exhibit two-stage dynamics that differ from the Edge-of-Stability behavior observed in ST.",
         "authors": [
-          "Yingjie Tan",
-          "Haiquan Qiu",
-          "Quanming Yao",
-          "Manyi Zhong",
-          "Xianzhi Yu",
-          "Yaqing Wang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 14
-      },
-      {
-        "title": "Tight Asymptotic Bounds on the Maximum Number of Linear Regions of Piecewise-Linear Kolmogorov--Arnold networks",
-        "url": "https://arxiv.org/abs/2611.07973v1",
-        "publishedAt": "2026-11-05T13:05:28.000Z",
-        "summary": "Schoots et al.~\\citep{schoots2025relating} (AISTATS 2025) established a generally loose upper bound on the number of linear regions of continuous piecewise-linear (CPWL) Kolmogorov--Arnold networks (KANs), without providing a lower bound. We consider a $T$-layer network with width vector $\\mathbf n=(n_0,\\ldots,n_T)$, input dimension $n_0=d$, output width $n_T=1$, and at most $k\\geq2$ affine segments per edge. Our matching upper and lower bounds determine the tight growth order $Θ_{\\mathbf n}(k^{\\sum_{\\ell=1}^{T}ρ_{\\ell-1}})$ in $k$, where $ρ_{\\ell-1}:=\\min_{0\\leq s\\leq\\ell-1}n_s$. When every hidden width is at least $d$, the tight order simplifies to $Θ_{\\mathbf n}(k^{dT})$. The upper bound of \\citep{schoots2025relating} is $k^{\\sum_{\\ell=1}^{T}n_{\\ell-1}n_\\ell}$. Our upper bound improves it by a factor of $Θ_{\\mathbf n}\\!\\left(k^{\\sum_{\\ell=1}^{T}n_{\\ell-1}n_\\ell-\\sum_{\\ell=1}^{T}ρ_{\\ell-1}} \\right)$, with strict asymptotic improvement whenever a hidden layer has width greater than one. We further compare CPWL KANs with rectified linear unit (ReLU) networks using dense parameterizations with at most $Λ$ parameters per model and the same fixed nonlinear depth $T$. Counting trainable knot locations and optimizing the widths and $k$, we prove that the maximum region count of CPWL KANs divided by that of ReLU networks is $Θ_{d,T}(Λ^{d\\lfloor T/2\\rfloor})$ as $Λ\\to\\infty$, yielding a polynomial advantage for KANs when $T\\geq2$. These tight bounds characterize the attainable geometric complexity of CPWL KANs, providing a foundation for understanding their expressive power and guiding architectural design.",
-        "authors": [
-          "Ye Su",
-          "Yong Liu"
+          "Yi Feng",
+          "Andrea Paudice"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
-        "title": "TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research",
-        "url": "https://arxiv.org/abs/2611.07962v1",
-        "publishedAt": "2026-11-05T12:58:43.000Z",
-        "summary": "Can large language models (LLMs) advance theoretical computer science and resolve its long-standing open conjectures? To study progress toward this goal, we introduce TCSExam, a unified framework and benchmark covering the full range of TCS research. It evaluates theorem proving, solver engineering, and constructions alongside direct attempts to resolve open conjectures, capturing both concrete research accomplishments and progress toward long-standing research goals. TCSExam-Full contains 100 expert-reviewed tasks, with submissions checked by the Lean kernel or an executable task checker. TCSExam-Lite selects 20 tasks, five per track, reducing the number of task attempts by 80% at the same per-attempt budget. We evaluate eight agents on Full and nine on Lite. The TCSExam Index combines all four tracks: GPT-6 Astra leads Full (71.9), and Opus 5.5 leads Lite (72.3). Full and Lite rankings are strongly aligned across eight shared agents (Spearman's $ρ=0.93$), supporting Lite as a compact, discriminative benchmark. The evaluations yield improved solver outputs and mathematical constructions, together with independently verified special cases and bounds from open-conjecture attempts. TCSExam provides an extensible framework with task sources, Docker build recipes, and evaluation tools for reproducible use.",
+        "title": "Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO",
+        "url": "https://arxiv.org/abs/2611.08453v1",
+        "publishedAt": "2026-11-05T18:47:05.000Z",
+        "summary": "On-policy distillation (OPD) trains a student on its own rollouts under a frozen teacher's per-token supervision. Does this dense signal reduce the training FLOPs needed to reach a target accuracy compared with reinforcement learning? We systematically compare vanilla reverse-KL OPD with Group Relative Policy Optimization (GRPO) across task difficulty, student and teacher size, domain, and optimization choices, measuring held-out accuracy against training FLOPs. With an external post-trained teacher, OPD generally loses to GRPO in accuracy per training FLOP at matched settings, even when the teacher is further trained with GRPO, and often suffers response-length inflation. Yet a different teacher changes the picture: when the teacher is the student's own GRPO checkpoint, OPD recovers that checkpoint's accuracy on math with $50\\times$ fewer distillation FLOPs than GRPO needs to reach the same accuracy. Following the same teacher setting, we consistently observe this high efficiency with a larger student, on code, and in a second model family. On a single domain, however, the GRPO checkpoint is already the desired model, so distilling it adds to total compute. Across domains, separate GRPO checkpoints hold different capabilities, and no single checkpoint serves every domain. Multi-teacher OPD (DeepSeek-AI, 2026) consolidates per-domain GRPO experts into a single student that matches each expert's accuracy, with the distillation stage costing only 5.2% (on 2 domains) and 8.0% (on 4 domains) of the specialist training FLOPs. Counting specialist training and distillation together, this pipeline reaches joint GRPO's performance on the 2-domain mix with 42.0% fewer total FLOPs.",
         "authors": [
-          "Yifan Luo",
-          "Zhengying Liu",
-          "Yang Yuan",
-          "Zhilin Yang",
-          "Andrew Chi-Chih Yao"
+          "Zeyu Leo Liu",
+          "Yang Li",
+          "Bo Pang",
+          "Emre Can Acikgoz",
+          "Xuan-Phi Nguyen",
+          "Anurag Koul",
+          "Srijan Bansal",
+          "Erik Nijkamp",
+          "Shafiq Joty",
+          "Semih Yavuz"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 17
+      },
+      {
+        "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
+        "url": "https://arxiv.org/abs/2611.08452v1",
+        "publishedAt": "2026-11-05T18:45:36.000Z",
+        "summary": "Reproducing machine learning experiments requires reconstructing procedures from information scattered across papers, released code, and supporting artifacts. For coding agents, reproduction success can therefore depend on their ability to fill in missing details, rather than on the released artifacts alone. We ask whether preserving recovered procedures and decisions improves subsequent independent reproduction. We define a standardized artifact design comprising a refined codebase, environment setup, experiment launchers, and a reproduction guide, and introduce ReproBridge, an agent workflow for constructing these refined reproducible artifacts. ReproBridge-Bench provides 1,029 tasks from 387 experiments across 36 papers, anchored by five human-verified reference scores per task. Agents attempt tasks in fresh sessions with raw code or refined artifacts; a separate Auditor checks execution evidence. Across four evaluated models, refined artifacts raise mean reproduction success from 76.4% to 92.6% and reduce downstream API spending by 19.7% on average. The cross-model success-rate spread narrows from 21.6 to 3.9 percentage points, with all four models achieving mean success rates above 90%. Removing any component reduces success in the ablation study, with the largest losses from code and environment removal. These results suggest that preserving execution knowledge helps even models with lower raw-code success reproduce experiments more reliably and at lower API cost.",
+        "authors": [
+          "Yubo Wang",
+          "Rui Meng",
+          "Jaehyun Nam",
+          "Tomas Pfister",
+          "Jinsung Yoon"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
-        "title": "CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation",
-        "url": "https://arxiv.org/abs/2611.07959v1",
-        "publishedAt": "2026-11-05T12:55:51.000Z",
-        "summary": "On-policy distillation trains a student on its own rollouts, so states the teacher would reach but the student does not are seldom supervised. We introduce CoRD (coupled-rollout distillation), which keeps the on-policy loss and moves only the distribution of training states toward the teacher, drawing rollouts from a geometric interpolation of student and teacher through the maximal coupling of speculative decoding. The coupling keeps the student's token wherever the two distributions agree and otherwise substitutes a token from the part of the target the student underweights, so interventions are as rare as any exact sampler allows and recede as the student learns. Across six base students from two model families (Qwen3 and Qwen3.5, 0.6B to 4B), CoRD raises average pass@1 over on-policy distillation by 0.9 to 2.0 points and pass@8 by 1.2 to 3.4 points on five public math benchmarks at equal steps and data. On frozen teacher-reached states, a 4B student trained with CoRD reaches in 16 steps a gap closure that on-policy distillation does not reach in 80, and substitution rules intervening at least as often in other directions fall short of CoRD.",
+        "title": "A Hidden Markov Preference Model for Online Prediction of Adversary Actions",
+        "url": "https://arxiv.org/abs/2611.08445v1",
+        "publishedAt": "2026-11-05T18:37:07.000Z",
+        "summary": "A defender anticipating an attacker needs a probability distribution over the attacker's next action from information available before that action occurs. Two structures complicate this: the attacker's behavioral regime persists and can switch within an episode, and each action combines an operation with state-dependent arguments whose feasible values change over time. We capture both with a hidden Markov model whose latent state is the active regime and whose regime-conditioned action law is defined on a feasibility-masked tree of executable actions. The same likelihood forms the next-action distribution and updates the regime belief once the action is seen, and a partially observed prefix contributes its resolved local factors. Estimation separates into convex logistic fits that Baum-Welch reuses when regimes are unlabeled. We derive a reach-weighted nodewise KL expression for regime information, a sequence-wise log-loss bound for switching regime paths, and a uniform fallback guarantee. On the CAGE 2 cyber defense benchmark the filtered latent state is worth 0.8 nats per step, and after a controller switch the loss begins to fall in three steps against ten for a recurrent baseline.",
         "authors": [
-          "Guhan Chen",
-          "Bohan Li",
-          "Jun Rao",
-          "Hejin Wang",
-          "Songtao Tian",
-          "Yexin Xie",
-          "Xiaojun Meng",
-          "Peng Yuan",
-          "Jiansheng Wei",
-          "Xuebo Liu",
-          "Zixiong Yu"
+          "Angel Daruna",
+          "Michael Cogswell",
+          "Tixiao Shan",
+          "Yi Yao",
+          "Han-Pang Chiu",
+          "Ajay Divakaran"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 14
+        "ageHours": 17
       },
       {
-        "title": "A Behavioural Framework for Predicting and Understanding Loss of Control in Frontier Artificial Intelligence Systems",
-        "url": "https://arxiv.org/abs/2611.07953v1",
-        "publishedAt": "2026-11-05T12:49:20.000Z",
-        "summary": "Frontier artificial intelligence (AI) systems are increasingly operating over longer horizons with diminishing human oversight, raising the risk of loss of control: systems acting beyond effective human control with potentially irreversible consequences. Because such failures may become observable only after containment is difficult, they must be assessed prospectively. We introduce a behavioural framework that decomposes loss-of-control risk into three factors: misaligned motive, harm-enabling capability, and monitoring evasion. We operationalise these factors through 13 measurable aspects and 29 evaluation tasks, whose scores are combined into a single loss-of-control (LoC) score. Across 13 frontier models, the LoC score shows strong prospective validity, correlating with failure rates in contained long-horizon risk scenarios (Pearson r = 0.84). Risk varies systematically across models and cannot be explained by capability alone. We further show that the framework can guide targeted mitigations: fine-tuning and monitoring directed at diagnosed vulnerabilities reduce failure rates while largely preserving general performance. These results provide a practical basis for predicting, understanding, and mitigating loss-of-control risk before it materialises.",
+        "title": "Label-Wording Augmentation in a Typed-Decision Encoder: Gains on Unfamiliar Words, Not on Abbreviations or Codes",
+        "url": "https://arxiv.org/abs/2611.08439v1",
+        "publishedAt": "2026-11-05T18:31:24.000Z",
+        "summary": "Typed-decision models score options that the caller supplies at request time, so their accuracy depends on label wording that the model's developer does not control. We compare two releases of a 307M-parameter multilingual cross-encoder, Ru-Jev, trained on thirteen Russian-language tasks; the later release adds an augmentation that presents labels in several surface forms. Holding questions fixed and varying only how eighteen routing labels are worded, we evaluate ten label vocabularies, produced by three separate processes and checked for overlap with the training data, with five candidates per question and, for eight of them, also with eighteen. On held-out vocabularies made of ordinary or borrowed words (English-derived jargon, office slang, department names), the augmented release is more accurate in every setting, by up to 0.24. Eleven of these fourteen gains survive a Holm correction (slang with eighteen candidates and descriptive sentences with five do not), and for jargon on all labels the label-level interval excludes zero in both settings. On abbreviations and opaque codes it gives no usable gain: on abbreviations it is not better, and worse on the clean slice, and on opaque codes both releases stay at or below chance once labels related to training options are removed. In most cells where accuracy rises, the risk-coverage area falls, but with eighteen candidates confident errors rise on jargon and slang. On two datasets neither release saw, accuracy moves by -8.4 and +5.6 points. We also report four evaluation hazards from comparing the two releases.",
         "authors": [
-          "Yao Huang",
-          "Yichi Zhang",
-          "Yifan Wang",
-          "Yitong Sun",
-          "Haoyu Dong",
-          "Jifan Ma",
-          "Jinzhe Tu",
-          "Xiaojian Li",
-          "Sören Mindermann",
-          "Wei Xu",
-          "Yinpeng Dong"
+          "Vladimir Beskorovainyi"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 17
       },
       {
-        "title": "Invariance before structure: two modes of emergent compression in representation learning",
-        "url": "https://arxiv.org/abs/2611.07952v1",
-        "publishedAt": "2026-11-05T12:49:05.000Z",
-        "summary": "Learned representations show striking invariance across biological and artificial neural networks, with different substrates and variations driven by drift, heterogeneity and initialisation. To understand this invariance, we propose Emergent Adaptive Representation Learning (EARL), a framework that distinguishes two modes of emergence in learned representations: state-space compression, where a learned representation gains predictive power over its own future beyond what the network's units can predict individually, and parameter-space compression, where networks with different micro-level parameters converge to the same representation. We formalise both as Fisher sensitivities and introduce ensemble-level information-theoretic measures for each. In a recurrent reservoir with a trained bottleneck, parameter-space compression rises within the first few epochs of training and partly independently of the task, whereas state-space compression rises about 30 epochs later and only when the network begins to learn the temporal structure of the task. These results suggest that invariance to the substrate and task-specific emergent structure are acquired in distinct phases of learning.",
+        "title": "Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety",
+        "url": "https://arxiv.org/abs/2611.08438v1",
+        "publishedAt": "2026-11-05T18:30:54.000Z",
+        "summary": "Neural networks are likely to be among the most consequential artefacts in human history. As these systems become more capable and autonomous, their potential to cause societal harm also grows, making AI safety one of the defining challenges of our time. Yet we continue to build increasingly powerful systems without fully understanding how they work, how they will behave in unfamiliar situations, or how to reliably control them. Mechanistic interpretability offers a path towards understanding these systems by studying their internal representations and computations, with the aim of evaluating, predicting, and controlling behaviour. We survey mechanistic interpretability for AI safety in order to answer the question: Does understanding how models work actually make them safer? We place mechanistic interpretability in the broader context of interpretability research and compare its mechanistic evidence with behavioural evaluation. We introduce the foundations of mechanistic interpretability, including features, polysemanticity, transformer computation, and circuits, and survey methods for feature extraction and analysis, circuit discovery and causal verification, explaining intermediate representations in natural language, learning dynamics, and training-data attribution. Beyond surveying existing methods, we propose a unified framework for evaluating mechanistic interpretability claims and characterise six research orientations by their goals, assumptions, and trade-offs. Finally, we examine how mechanistic understanding can support AI safety, including knowledge editing, steering, and monitoring, and assess its limitations, failure modes, open problems, and relationship to behavioural safety measures. We also release a repository of code notebooks with worked examples that reproduce key findings from surveyed methods, allowing readers to build intuition through hands-on experimentation.",
         "authors": [
-          "Hardik Rajpal",
-          "Dan Goodman"
+          "Fazl Barez",
+          "Tung-Yu Wu",
+          "Hunar Batra",
+          "Gabriele Dominici",
+          "Florent Draye",
+          "Yanai Elazar",
+          "Damiano Fornasiere",
+          "Antía García",
+          "Abir Harrasse",
+          "Riley Harris",
+          "Sara Hooker",
+          "Michael Lan",
+          "Belinda Z. Li",
+          "Aaron Maiwald",
+          "Narmeen Fatimah Oozeer",
+          "Naomi Saphra",
+          "Or David Shafran",
+          "Adi Simhi",
+          "Robert Trager",
+          "Shriyash Kaustubh Upadhyay",
+          "Ziyu Yao",
+          "Yu Zhao",
+          "Shay B. Cohen",
+          "Mor Geva",
+          "Yoshua Bengio",
+          "Stella Biderman",
+          "Hassan Sajjad"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Infrastructure",
-        "ageHours": 15
-      },
-      {
-        "title": "Leakage- and Label-Aware Benchmarking of Class-Imbalance Strategies for Multimodal Chest X-Ray and EHR Classification",
-        "url": "https://arxiv.org/abs/2611.07950v1",
-        "publishedAt": "2026-11-05T12:47:38.000Z",
-        "summary": "Benchmarks of class-imbalance strategies for multimodal chest X-ray (CXR) and electronic health record (EHR) prediction are often evaluated on record-level splits of cohorts in which one patient contributes several radiographs. We audit such a benchmark on 29,083 MIMIC-CXR radiographs of 10,479 patients with eight diagnosis targets. First, the record-split benchmark was misleading: a lookup table that copies the label of a development-set radiograph with the same EHR vector nearly matched the best model, and on unseen patients every model fell to the level of predicting every case positive. Second, tracing the labels back to MIMIC-IV explained why: each patient's labels are keyword matches on the diagnosis codes of a single admission, copied, with one EHR vector per patient, to all of the patient's radiographs, so about a third of the radiographs carry labels that differ from the codes of their own admission. Third, under patient-separated evaluation with admission-aligned and rule-refined labels, the initial conclusions do not hold: in the evaluated configurations no imbalance strategy raised the observed mean macro F2 over no augmentation by more than 0.01, tuned tree ensembles showed no consistent advantage over tuned logistic regression, and the released EHR variables stayed at the level of the all-positive baseline, whereas the diagnostic history available at imaging time and image embeddings exceeded it, including, with rule-refined labels, a CheXpert-trained encoder that never saw these radiographs; RAD-DINO had seen 96.6% of them during self-supervised pretraining. Adding either encoder to the diagnostic history gave no statistically significant F2 gain; exploratory AUROC gains were significant with RAD-DINO but not with DenseNet. We provide reusable diagnostics, a leakage-aware protocol and a checklist.",
-        "authors": [
-          "Dang-Khoa Bui",
-          "Quang-Huy Tran",
-          "Minh-Khoi Nguyen-Bui",
-          "Duc-Tuan Ngo",
-          "Thanh-Trong Tran",
-          "Tuan-Khoi Nguyen",
-          "Hoang-Anh Ngo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 18
       }
     ],
     "news": [
+      {
+        "title": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M",
+        "url": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/",
+        "publishedAt": "2026-11-06T06:28:32.000Z",
+        "summary": "Clutch, backed by Lightspeed and SignalFire, was last valued at $85 million, according to a source.",
+        "authors": [
+          "Marina Temkin"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 6
+      },
       {
         "title": "Airbnb says it&#8217;s launching an AI travel agent in the first half of 2027",
         "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
@@ -313,7 +347,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 5
+        "ageHours": 13
       },
       {
         "title": "Cult.fit builds operational muscle with Codex",
@@ -325,7 +359,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Products",
-        "ageHours": 7
+        "ageHours": 16
       },
       {
         "title": "Meta says US users can now video chat with their Muse AI avatar",
@@ -339,7 +373,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 8
+        "ageHours": 16
       },
       {
         "title": "Meta warns that election backlash against data centers could make AI expansion harder",
@@ -353,7 +387,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 17
       },
       {
         "title": "OpenAI released a new cybersecurity model. Is that enough?",
@@ -367,7 +401,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 8
+        "ageHours": 17
       },
       {
         "title": "OpenAI president Greg Brockman says company could be IPO ready in 2027",
@@ -381,7 +415,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 18
       },
       {
         "title": "Claude can now analyze your spending with its new Personal Finance tool",
@@ -395,7 +429,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 9
+        "ageHours": 18
       },
       {
         "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
@@ -407,7 +441,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 10
+        "ageHours": 19
       },
       {
         "title": "Australian universities are creating AI-native graduates",
@@ -419,7 +453,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 10
+        "ageHours": 19
       },
       {
         "title": "Axiom Math wants to keep AI slop out of mathematics",
@@ -433,7 +467,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 11
+        "ageHours": 20
       },
       {
         "title": "Dropbox acquires Tigris Data for $350M to bolster its AI infrastructure",
@@ -447,21 +481,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 12
-      },
-      {
-        "title": "Aina&#8217;s smart ring has a screen, a joystick, and a mic so you can talk to AI agents",
-        "url": "https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/",
-        "publishedAt": "2026-11-05T14:42:00.000Z",
-        "summary": "Aina's ring can also take calls and help you dictate notes on your Mac.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 13
+        "ageHours": 21
       }
     ],
     "threads": []
@@ -472,18 +492,18 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 14
+        "count": 13
       },
       {
         "name": "Models",
-        "count": 6
+        "count": 8
       },
       {
         "name": "General",
         "count": 2
       },
       {
-        "name": "Infrastructure",
+        "name": "Products",
         "count": 1
       }
     ]
