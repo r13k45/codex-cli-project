@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T22:39:19.735Z",
+  "generatedAt": "2026-11-06T03:22:54.751Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,310 +85,248 @@
   "sections": {
     "research": [
       {
-        "title": "A Framework for Context Enrichment and Selective Robustness in LLM Social Agents",
-        "url": "https://arxiv.org/abs/2611.06914v1",
-        "publishedAt": "2026-11-04T18:58:23.000Z",
-        "summary": "Researchers use large language models as agents in social simulations, where agents are prompted with observations and background information intended to shape their actions. Yet LLM agents have been shown to substantially change their behavior under meaning-preserving prompt variations, creating a validation problem for social simulation. One plausible hypothesis is that this brittleness reflects a lack of grounding and can be reduced by enriching the context provided to the agents. Whether richer context improves robustness remains unclear, in part because context richness and robustness are rarely defined in ways that support controlled comparisons. We address the first need with controlled context enrichment, a set of prompt substitution rules that systematically enriches distinct types of context: neutral padding, generic social background, descriptive decision grounding, and normative decision grounding. We address the second by introducing selective robustness as a validation criterion: insensitivity to meaning-preserving prompt variation combined with a directional response to decision-relevant changes in the social world. We demonstrate the framework in a Prisoner's Dilemma-like game, showing how it can be used to identify which forms of context enrichment produce more desirable and robust agent behavior. We find that these forms of enrichment produce distinct behavioral patterns that vary between the two models tested.",
+        "title": "Automatic keyphrase extraction and annotation: modern theoretical approaches and practical solutions for text and speech",
+        "url": "https://arxiv.org/abs/2611.08006v1",
+        "publishedAt": "2026-11-05T13:31:35.000Z",
+        "summary": "The exponential growth of textual and audiovisual information has made the task of automatic keyphrase extraction (KE) increasingly significant. This article provides a comprehensive analysis of contemporary theoretical approaches and practical solutions for KE across both text and speech modalities. The primary contribution of this work is its systematic synthesis of these often-disparate research strands into a unified analytical framework, highlighting the evolution of the field from statistical methods towards large language models (LLMs) and end-to-end speech processing. We examine the stages of KE, the characteristics of keyphrases in written and spoken language, and terminological nuances. Various methods for automatic KE are discussed and analyzed in detail: statistical, hybrid, machine learning-based, and structural. The review dedicates substantial attention to emerging paradigms, including keyphrase generation using LLMs, and provides a detailed overview of methodologies and challenges in automatic corpus annotation. Furthermore, we specifically analyze current directions and inherent difficulties in KE for spoken language, comparing transcript based and end-to-end acoustic approaches. This synthesis leads us to conclude that the field is moving towards a more integrated, context-aware paradigm. Future progress will depend on addressing key challenges such as data scarcity for low-resource languages, effective multimodal fusion, and the nuanced evaluation of generative KE systems.",
         "authors": [
-          "Mattia Greiche",
-          "Reihaneh Rabbany",
-          "Maximilian Puelma Touzel"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "FlowReconBench: Accuracy, calibration and cost of learned and classical flow reconstruction from sparse sensors",
-        "url": "https://arxiv.org/abs/2611.06912v1",
-        "publishedAt": "2026-11-04T18:57:47.000Z",
-        "summary": "Reconstructing full flow fields from sparse sensors requires prior assumptions about unmeasured regions and physical variables. Yet it remains unclear when learned models outperform classical estimators and which aspects of their predictions can be trusted. FlowReconBench evaluates ten learned and five classical methods on three regimes: a laminar cylinder wake across Reynolds numbers, two-dimensional Kolmogorov turbulence and a large-scale three-dimensional (3D) isotropic turbulence. Methods share leakage-controlled splits and sensor draws and are scored on per-channel error, ensemble spread, calibration, spectra and cost. The leading method changes for each regime. Classical methods perform strongly in low-order and dense-sensing regimes. On the cylinder wake, linear stochastic estimation and gappy proper orthogonal decomposition lead, including for unobserved pressure. In 3D, inverse-distance weighting matches the best learned methods on observed channels. Data-driven methods become superior at decreasing sensor density or poor sensor observability. On Kolmogorov flow, continuous ranked probability score and error yield different method rankings: generative models offer broader but underdispersed ensembles, while deterministic models prioritize pointwise error. Generative models balance this tradeoff through their sampler budget, with a larger budget improving ensemble quality at higher computational cost. In 3D, scaling tests demonstrate that queryable methods are flat in memory, while full-grid construction methods run out of memory. Observing only 2 of 4 fields leaves the problem kinematically underconstrained, yet a latent model can reproduce structural similarities to the ground truth.",
-        "authors": [
-          "Nicolas Tricard",
-          "Linzheng Wang",
-          "Jason Chen",
-          "Sili Deng"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 28
-      },
-      {
-        "title": "BEAKER: An Expert-Curated Benchmark for Embodied Brains in Self-Driving Chemical Laboratories",
-        "url": "https://arxiv.org/abs/2611.06911v1",
-        "publishedAt": "2026-11-04T18:57:17.000Z",
-        "summary": "Self-Driving Chemical Laboratories (SDCLs) are moving chemical experimentation toward embodied automation, where machines must perceive laboratory scenes, reason about experimental states, and act under physical, procedural, and safety constraints. Although Multimodal Large Language Models (MLLMs) are increasingly considered as embodied brains for such systems, existing laboratory benchmarks mainly focus on safety, anomaly detection, or general scientific understanding, leaving their execution-oriented embodied capabilities underexplored. To fill this gap, we introduce BEAKER, a Benchmark for evaluating Embodied Actionability, Knowledge, Experimentation, and Reasoning in SDCLs. BEAKER contains 1,000 expert-curated question-answer samples across 11 image and video task types, covering key judgments required for chemical laboratory execution, including affordance grounding, trajectory planning, equipment, state, and safety recognition, apparatus setup, operation and step reasoning, and temporal procedure reasoning. All questions and annotations are manually created and reviewed by chemistry and embodied Artificial Intelligence (AI) experts, without AI-assisted generation or annotation. We evaluate 28 general-purpose, science-oriented, chemistry-specialized, and embodied MLLMs in an offline, single-turn setting. Results show that current models can follow coarse experimental procedures in videos, but still struggle to ground actions into operable regions and feasible trajectories, to recognize fine-grained laboratory apparatus, states, and safety norms, and to order steps in mid-length procedures. BEAKER thus reveals a clear gap between coarse procedural understanding and the precise, action-grounded perception required for laboratory execution, providing a diagnostic benchmark for future MLLMs in SDCLs.",
-        "authors": [
-          "Fei Lin",
-          "Tengchao Zhang",
-          "Ziyang Gong",
-          "Xiaotong Yu",
-          "Bohan Zhang",
-          "Yifan Zhou",
-          "Qihao Yang",
-          "Ji Dai",
-          "Dong Li",
-          "Yining Jiang",
-          "Qinghua Ni",
-          "Jun Huang",
-          "Qiang Zhang",
-          "Yue Zhou",
-          "Zhihang Zhong",
-          "Yonglin Tian",
-          "Fei-Yue Wang",
-          "Xue Yang"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
-        "url": "https://arxiv.org/abs/2611.06910v1",
-        "publishedAt": "2026-11-04T18:56:22.000Z",
-        "summary": "AI agents are playing an increasingly important role in physics research. However, existing physics benchmarks only evaluate fixed questions, isolated sub-tasks, or paper reproduction with given solutions, and rarely check research quality alongside correctness. We introduce FrontierPhysics, an end-to-end benchmark with 56 tasks made by 42 physicists based on their own research, covering nine domains across theoretical, computational, and experimental physics. Each task requires agents to review the literature, develop a research plan, conduct research and experiments, and produce structured outputs and scientific manuscripts. Combining deterministic verifiers with expert-authored rubrics, FrontierPhysics evaluates whether agents' research is correct and publishable. Across 22 models in 26 configurations, no configuration passes more than 46 of its 168 rollouts. Manual review of agent trajectories shows that frontier agents' main weaknesses are insufficiently rigorous reasoning and limited expert intuition, rather than gaps in physics knowledge or execution errors.",
-        "authors": [
-          "Bingran You",
-          "Wenjun Ke",
-          "Ria Rosenauer",
-          "Bo Liu",
-          "Wenbo Chen",
-          "Min Chen",
-          "Shuqi Xu",
-          "Yue Ma",
-          "Jiechao Feng",
-          "Bo Chen",
-          "Xiangkai Sun",
-          "Jiarui Liu",
-          "Jinen Guo",
-          "Zeyu Zhou",
-          "Xu Huang",
-          "Zhuohan Li",
-          "Haoyu Li",
-          "Heguang Lin",
-          "Lijie Ding",
-          "Yadong Zeng",
-          "Kangqi Zhang",
-          "Xinge Liu",
-          "Hanwen Liu",
-          "Zhenghong Li",
-          "Alexander von Recum",
-          "Yuchen Zhu",
-          "Felix Schwarzfischer",
-          "Yizhou Zhao",
-          "Jicheng Wang",
-          "Binxu Li",
-          "Qian Yu",
-          "Chan Li",
-          "Cheng Dai",
-          "Di Wang",
-          "Haoyu Zhang",
-          "Jiankai Sun",
-          "Kaituo Feng",
-          "Mian Qin",
-          "Ruihong Yin",
-          "Yiqun Luo",
-          "Weiwei Wu",
-          "Shihong Pan",
-          "Tsung Yeh Hsieh",
-          "Xiao Huang",
-          "Yan Zhang",
-          "Sihan Li",
-          "Zirui Ren",
-          "Zengji Tu",
-          "Kyoung Whan Choe",
-          "Ke Sun",
-          "Vincenzo Galia",
-          "Vaisakhi Mishra",
-          "Jiashu He",
-          "Hongyang Wang",
-          "Zhiheng Yang",
-          "Shubham Gaur",
-          "Yifan Gu",
-          "Shuyi Wang",
-          "Zihao Zuo",
-          "Steven Dillmann",
-          "Yiyou Sun",
-          "Xinyang Han",
-          "Hanchung Lee",
-          "Molei Tao",
-          "Yue Zhao",
-          "Shilong Liu",
-          "Yuchen Wu",
-          "Xuandong Zhao",
-          "Xiangyi Li",
-          "Florian Brand",
-          "Gerbrand Ceder",
-          "Hartmut Haeffner"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Perceptive Humanoid Motion from Simulation",
-        "url": "https://arxiv.org/abs/2611.06908v1",
-        "publishedAt": "2026-11-04T18:55:33.000Z",
-        "summary": "Humanoid robots have the potential to automate a wide range of physical tasks. Progress toward generalist humanoid autonomy, however, remains constrained by a data bottleneck: mapping pixels and free-form language to low-level joint commands requires paired supervision, and no corpus of such data exists at sufficiently large scale. Some approaches rely on human teleoperation and wearable capture devices, which require at least an hour of human time to produce an hour of data. We present HALO, a humanoid autonomy system powered by a pipeline that synthesizes vision-language-motion data across a thousand procedurally generated homes. The corpus scales with compute rather than human labor. HALO acquires a repertoire of physical skills, including sitting on chairs, navigating to named objects, stepping sideways through half-open doors, crouching and crawling beneath tables, and pushing boxes. It orchestrates these skills to solve composite, long-horizon tasks. Without ever seeing a real home during training, HALO transfers zero-shot to the physical world, achieving a 91% success rate across 360 trials in six unmapped real-world environments. See https://apple-aiml-research.github.io/ml-halo/ for code and videos.",
-        "authors": [
-          "Siyuan Hu",
-          "Abulikemu Abuduweili",
-          "Yue Meng",
-          "Shipeng Liu",
-          "Quentin Leboutet",
-          "Chen Chen",
-          "Matthias Müller",
-          "Vladlen Koltun"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Infrastructure",
-        "ageHours": 28
-      },
-      {
-        "title": "Reinforcement Learning Enables Scaling Generalist Robot Policy Improvement",
-        "url": "https://arxiv.org/abs/2611.06905v1",
-        "publishedAt": "2026-11-04T18:52:28.000Z",
-        "summary": "The introduction of generalist robot policies has enabled a single, large model to learn to perform a variety of tasks from a vast pre-training corpus. While these models often exhibit powerful zero-shot generalization capabilities, they typically require an adaptation phase to achieve sufficient performance in deployment. Iterated self-improvement via reinforcement learning (RL) has demonstrated promise in enabling this adaptation, yet such approaches have been largely explored in single-task settings - where the goal is to simply improve on a narrow deployment task - which lies in stark contrast to the multi-task capabilities of the base policy. In this work we ask whether generalist robot policies are capable of multi-task, generalist improvement in deployment - targeting many diverse tasks simultaneously - and what algorithmic recipe enables this. To answer this question, we first develop a set of structured evaluations to test generalist improvement capabilities, and systematically evaluate algorithmic and practical design choices regarding value estimation, policy extraction and resource allocation. We show that not only can generalist policies be improved online across diverse tasks, but that the right recipe can enable generalization and increase performance on tasks not considered during online training. We characterize when this generalization occurs and show that both the training task distribution and the use of value-based RL are critical. To the best of our knowledge, this is among the first evidence for online generalist improvement for robot foundation models.",
-        "authors": [
-          "Michal Korniak",
-          "Marco Bagatella",
-          "Ralf Römer",
-          "Michal Nauman",
-          "Yarden As",
-          "Pranav Vignesh",
-          "Manan Agarwal",
-          "Leander Diaz-Bone",
-          "Piotr Zalewski",
-          "Mikołaj Czarnecki",
-          "Lenart Treven",
-          "Shashwat Saxena",
-          "Sreyas Venkataraman",
-          "Sarvesh Patil",
-          "Zhiyuan Zhou",
-          "Daniel Marta",
-          "Oier Mees",
-          "Nur Muhammad Mahi Shafiullah",
-          "Carmelo Sferrazza",
-          "Bhavya Sukhija",
-          "Angela P. Schoellig",
-          "Andreas Krause",
-          "Max Simchowitz",
-          "Andrew Wagenmaker"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Occlusion for Free: Detecting Occlusion from the Disagreement Between Two Monocular Distance Cues",
-        "url": "https://arxiv.org/abs/2611.06899v1",
-        "publishedAt": "2026-11-04T18:49:13.000Z",
-        "summary": "Knowing that a pedestrian is occluded is useful to a robot even when the detector cannot recover the hidden pixels, but occlusion estimators are normally trained on occlusion annotations that deployment settings rarely have. We show that occlusion can be read off two distance estimates a camera-only pipeline already computes. Apparent height is largely unchanged by occlusion, because the detected box still spans the whole person; monocular metric depth is pulled toward the occluder, because the nearest surface inside the box is what a depth map reports. Only their ordering matters, so no focal length, stature, or depth scale is needed, provided the depth model's error is close to a pure gain, a condition that can be checked without labels. The score detects heavy occlusion on KITTI with AUC 0.909 (0.888 over all annotated pedestrians, including those the detector misses), requires no training and no occlusion labels, and is not a proxy for range: within fixed distance bands it holds AUC 0.894-0.925 while true distance alone sits near chance. On synthetic CARLA scenes with measured visibility it reaches 0.819, against 0.644 for distance alone. We arrived here after measuring three standard architectural responses to occlusion, depth fusion, occlusion-simulating augmentation, and attention, none of which improved detection outside its training distribution in the configurations we tested, and after finding that a detector trained on German roads loses half its accuracy on self-annotated street scenes in Lagos, Nigeria. Signals that need no local annotation are worth more in settings that benchmarks do not represent.",
-        "authors": [
-          "Chibueze Praise Onyenweaku",
-          "Toyibat Adele",
-          "Sikirulahi Opeyemi Abdulkareem",
-          "Obed Honour Eje"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "Dull, Dirty, Dangerous? Working Conditions and the Limits of Occupational AI Exposure",
-        "url": "https://arxiv.org/abs/2611.06888v1",
-        "publishedAt": "2026-11-04T18:41:40.000Z",
-        "summary": "Automation is often justified as relief from dull, dirty, and dangerous work. I examine how these conditions relate to occupational AI exposure using 21 O*NET items across 754 US occupations. Higher exposure is associated with lower condition scores under a large language model (LLM) measure and AI Occupational Exposure (AIOE), with equal occupation weights and employment weights. Adjustment for physical demands, required education, training and experience, and wages reduces the composite association. The adjusted confidence intervals include zero for LLM exposure and remain below zero for AIOE. Separating repetition from restricted discretion also changes what the combined Dull score conveys. These comparisons show how item groupings and occupational characteristics shape the interpretation of exposure estimates. Occupational profiles offer a starting point for selecting contrasting research settings. Establishing desired automation or realized relief requires evidence about workers' preferences and specific interventions.",
-        "authors": [
-          "Siyi Yu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 28
-      },
-      {
-        "title": "Adaptive Multi Mode: Budget-Aware Routing of Optimizers By Online Landscape Probes",
-        "url": "https://arxiv.org/abs/2611.06879v1",
-        "publishedAt": "2026-11-04T18:35:35.000Z",
-        "summary": "The best classical optimizer for a continuous black-box problem depends on its budget and landscape. Existing routers decide from the dimension and budget, past improvement or features fitted to one benchmark, and few test an optimizer's implicit assumptions online. AMM (Adaptive Multi Mode) routes a known budget among quasi-Newton, trust-region, coordinate, multistart and evolution-strategy optimization engines with online probes of curvature, plateaus, separability, kinks, basins and fractal structure. Each probe has a default, a dimension-by-budget validity range and a cost charged to the budget. In its pre-registered development loop on bbob, 32 of 36 predictions held over the last 16 confirmations. AMM was then tested once on held-out bbob instances 101-110 (D=2-40, 10*D-1000*D) against up to seven competitors. It has the highest target share in 382 of 600 function-dimension-budget cells (236 outright, 146 tied) and, by a descriptive posterior rule, is credibly behind in 35, mostly at 10*D and 30*D. At every budget it also leads the controls built from its own engines (the best engine alone, the best engine per dimension and budget, and a greedy schedule), narrowly at 10*D and 30*D, and nevergrad's NgIohTuned. In pre-registered runs its lead over IPOP-CMA-ES holds under affine and box transformations, on box-constrained bbob and, pooled, on rotated f2-f4, but rotating the separable f3 and f4 removes most of the lead there. On held-out MA-BBOB its final share at 2000*D is level with IPOP-CMA-ES's and its anytime area lower. We published AMM as an open-source Python package (pip install amm-optimizer; https://github.com/BjBodner/amm-optimizer).",
-        "authors": [
-          "Benjamin Jacob Bodner"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 28
-      },
-      {
-        "title": "SpecCompact: Accelerating LLM Agent Context Compaction with Slot-Parallel Semantic Speculative Verification",
-        "url": "https://arxiv.org/abs/2611.06876v1",
-        "publishedAt": "2026-11-04T18:34:41.000Z",
-        "summary": "LLM agents use context compaction to manage growing interaction histories, but summarizing long histories with large models can introduce substantial delays. Compaction therefore requires balancing information retention against latency. We observe that structured summary slots can retain information when generated independently. Based on this observation, we present SpecCompact, a framework that accelerates compaction through slot-parallel semantic speculation. SpecCompact fine-tunes a small drafter and generates slots in parallel. The target model verifies each proposed line and repairs rejected content, while subsequent drafting uses the updated slot prefix. System optimizations further reduce repeated context processing and model calls. Across AppWorld and $τ^3$ benchmarks with two target models, SpecCompact achieves $2.04$--$5.63\\times$ compaction speedups over Hermes-style summarization. Separate downstream evaluations reveal model- and task-dependent performance trade-offs. A user study within Hermes further shows an $8.68\\times$ median compaction speedup.",
-        "authors": [
-          "Yulu An",
-          "Yifei Feng",
-          "Xiangyang Yin"
+          "Daria Guseva",
+          "Olga Mitrofanova"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 28
+        "ageHours": 14
       },
       {
-        "title": "Learning to Decode Linear Codes with Generalized Belief Propagation Network",
-        "url": "https://arxiv.org/abs/2611.06874v1",
-        "publishedAt": "2026-11-04T18:29:31.000Z",
-        "summary": "Error correcting codes are a fundamental component of communication systems, enabling reliable data transmission over noisy channels. Recently, neural decoders have demonstrated notable performance gains over classical iterative algorithms. In this paper, we propose a Generalized Belief Propagation Network (GBPNet) that preserves message-passing symmetry while enhancing the decoder's learning capability. The architecture uses cascaded variable-node updates and learned element-wise message scaling while retaining the Tanner graph structure. We also introduce two training strategies, progressive training and high-SNR training, that improve decoding accuracy. Experimental results on several linear codes show that GBPNet achieves lower bit error rates than conventional belief propagation and the evaluated state-of-the-art neural decoders.",
+        "title": "Towards Multiscale Molecular Representation Learning through Geometry-Based Fragmentation for Polymer Property Prediction",
+        "url": "https://arxiv.org/abs/2611.07998v1",
+        "publishedAt": "2026-11-05T13:25:23.000Z",
+        "summary": "It is well established that molecular substructures can contribute unequally to chemical and physical properties, with specific motifs or side chains often playing dominant roles. Fragment-based representations have therefore emerged as an effective strategy for incorporating chemically meaningful inductive biases, as exemplified by molecular fingerprints and fragment-based attention mechanisms. However, many existing fragmentation-based machine learning methods rely on predefined chemical rules, which may yield suboptimal fragmentation for previously unseen or chemically unfamiliar structures and often overlook the importance of multiscale molecular representations. To address these limitations, we formulate molecular fragmentation as a radius-constrained optimization problem inspired by the k-center formulation, where the number of clusters is not fixed a priori but emerges from the specified radius, and propose a geometry-based fragmentation method that partitions arbitrary molecular or material structures using largely geometric information, without relying on predefined chemical fragmentation rules. The method provides flexible control over fragment size, enabling the construction of multiscale fragment representations for scale-adaptive modeling. Building on this framework, we develop a geometric fragment-based attention mechanism that integrates multiscale structural information and incorporate it into a multimodal machine learning model combining p-SMILES representations with three-dimensional (3D) conformational information. Experiments on a benchmark polymer dataset show that incorporating 3D conformational information improves prediction accuracy for several properties over models based exclusively on p-SMILES representations. Explainable artificial intelligence analyses further provide insights into the physical relevance of the learned representations.",
         "authors": [
-          "Samira Malek"
+          "Makoto Takamoto",
+          "Chaitanya Sampara",
+          "Viktor Zaverkin",
+          "Daniel Oñoro-Rubio",
+          "Mathias Niepert"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Compression Through a Context Lens: Evaluating Adaptation, Quantization, and Distillation in Arabic Legal LLMs",
+        "url": "https://arxiv.org/abs/2611.07988v1",
+        "publishedAt": "2026-11-05T13:15:55.000Z",
+        "summary": "Model compression can facilitate the deployment of large language models in resource-constrained legal settings, but its effects on domain-specific performance may depend on the evaluation protocol. We investigate this issue using ArabLegalEval, a Saudi Arabic legal benchmark, under both with-context and no-context evaluation. The former provides supporting legal passages, while the latter assesses performance without external context. Removing the context produces accuracy gaps of up to 27 percentage points for the base model. We examine three stages: domain adaptation, quantization, and knowledge distillation across FANAR-9B, JAIS-8B, and Qwen2.5-7B. Four-bit quantization reduces model memory by 64-71%, with changes in no-context MCQ accuracy ranging from -3.2 to +1.6 percentage points. Distillation produces more variable results, with accuracy generally declining as student size decreases. A Qwen2.5-7B student distilled from FANAR achieves 76.6% no-context accuracy, compared with 77.2% for its teacher. Our findings suggest that no-context evaluation provides a useful complement to context-supported testing when assessing the effects of adaptation and compression on Arabic legal language models.",
+        "authors": [
+          "Md. Rafiul Biswas",
+          "George Mikros",
+          "Wajdi Zaghouani"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Technohybridism: Recursive Semantic Normalization in AI-Mediated Societies",
+        "url": "https://arxiv.org/abs/2611.07984v1",
+        "publishedAt": "2026-11-05T13:14:00.000Z",
+        "summary": "Language-generating AI systems are no longer only objects of linguistic interaction: their outputs increasingly re-enter the communicative and institutional practices from which their training material was drawn. Drawing on social theory, social epistemology, and the philosophy of language, this article develops a sociotechnical account of that re-entry. We introduce recursive semantic normalization: the process through which machine-generated formulations, once recurrently taken up, evaluated, reused, and institutionally retained, participate in the reproduction and transformation of semantic regularities. Under the heading of technohybridism, we argue that the relevant unit of analysis is the hybrid semantic system, a recursively coupled configuration of human practices, computational generation, and institutional uptake. First, we distinguish the concept from neighbouring accounts, including model collapse, looping effects, machine habitus, machine culture, and the epistemology of AI testimony. Second, we develop an analytical model that separates generation, selection, uptake, and persistence and distinguishes machine-attributable change from change that would have occurred anyway. Third, we analyse uptake as routinized, institutionally diffused, and socially stratified practice and state conditions under which machine-derived regularities become norms. Fourth, we identify social-epistemic consequences: the laundering of provenance that weakens epistemic vigilance, the erosion of the cognitive diversity on which collective inquiry depends, and the narrowing of shared hermeneutical resources. An evidential ladder for empirical research follows. The account attributes no normative authority to machine outputs; what changes is the field within which human and institutional uptake operates.",
+        "authors": [
+          "Charalampos M. Liapis",
+          "Epameinondas Panagopoulos"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Infrastructure",
-        "ageHours": 28
+        "category": "Models",
+        "ageHours": 14
       },
       {
-        "title": "On Turn-Level Best-of-N Sampling for Scaling LLM Agents",
-        "url": "https://arxiv.org/abs/2611.06868v1",
-        "publishedAt": "2026-11-04T18:23:14.000Z",
-        "summary": "In this work, we evaluate a simple inference-time scaling approach based on \\textit{turn-level best-of-N sampling} (\\method) for large language model (LLM) agents on complex, long-horizon tasks. We instantiate this using a \\textit{generator-selector} framework with two LLMs; at each turn, a \\emph{generator} model generates $N$ candidate actions and a \\emph{selector} model selects one of them, which is then executed in the environment. This paper is closely related to the work of \\cite{zainullina2025guided} who used critic models for guided search at inference time. Different from their work, we evaluate if off-the-shelf, open-weight LLMs can be effective at comparing different candidate actions directly. Experiments on long-horizon terminal tasks show that \\method can lead to significant performance improvements, both in terms of accuracy (5--10\\%) and consistency across repeated attempts. Analysis of agent trajectories reveal a shift in agent behaviour towards desirable patterns such as reduction in number of attempts to solve the task, improved task instruction following, debugging and testing.",
+        "title": "How Far Can Lightweight LLMs Go in Intent-to-SLO Translation?",
+        "url": "https://arxiv.org/abs/2611.07982v1",
+        "publishedAt": "2026-11-05T13:12:30.000Z",
+        "summary": "Intent-based networking (IBN) promises QoS provisioning in which the network derives the configuration from operator-stated goals. Its first step, translating a natural-language intent into enforceable service-level objectives (SLOs) grounded in a live snapshot of the network state, increasingly relies on large language models (LLMs). These large models add cost and energy to the management loop and typically require multi-GPU, cloud-hosted infrastructure. Can lightweight open LLMs take over this step dependably? We answer this question with a five-dimensional evaluation of ten LLMs with <10B parameters from five families, under four prompting setups, on 716 placement intents. We evaluate translation performance, intent validation, hallucination, energy impact, and robustness to diverse phrasing. The best configurations translate intents with a strict F1 of 0.943 and reject up to 191 of 195 invalid intents. With few-shot reasoning, the strongest models hallucinate unsupported QoS requirements in only about one response in a hundred, whereas the zero-shot setup struggles. A translated intent costs 0.044-0.148 Wh of GPU energy without reasoning, and added energy cost for reasoning pays off for the weaker models. Furthermore, we show that realistic rephrasing lowers the rejection of invalid intents in 15 of 16 configurations for the best-performing models, leaving robust intent validation as a key open challenge for reliable IBN. Our code and data are available: https://github.com/ggck43/intent2slo.",
         "authors": [
-          "Jalaj Bhandari",
-          "Dhawal Gupta",
-          "Hongli Zhan",
-          "Zhenting Wang",
-          "Varad Pimpalkhute",
-          "Zhengzhong Liu",
-          "Eric Xing",
-          "Rupesh Srivastava"
+          "Sabbir Ahmed",
+          "Hazem Abbas",
+          "Salimur Choudhury"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents",
+        "url": "https://arxiv.org/abs/2611.07976v1",
+        "publishedAt": "2026-11-05T13:08:43.000Z",
+        "summary": "DeepSearch LLM agents repeatedly search and carry retrieved sources into subsequent reasoning steps. This expanding context increases token consumption and latency, although many results do not contribute to later reasoning. We propose Query-Relevant Attention Entropy (QRAE), an online context compression method that uses sparse evidence-assessment heads to decide which intact retrieved chunks should persist across reasoning steps. It scores bounded candidate batches through paired prefills: a query-free control suppresses shared attention responses, while normalized entropy measures the breadth of the positive response within each chunk. High-scoring chunks enter a persistent evidence whitelist and are included in the reasoning context. Uncertain chunks remain outside the reasoning context but are retained in a candidate cache, where they can be retrieved for later reevaluation. QRAE requires neither an additional generative compression pass nor modification of the attention operator. Across multiple DeepSearch benchmarks and reasoning models, QRAE improves task success by an average of 2.35 percentage points and reduces end-to-end latency and reported token usage by an average of 30% and 45%, respectively. These benefits generalize to a model with nearly 100B parameters.",
+        "authors": [
+          "Yingjie Tan",
+          "Haiquan Qiu",
+          "Quanming Yao",
+          "Manyi Zhong",
+          "Xianzhi Yu",
+          "Yaqing Wang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "Tight Asymptotic Bounds on the Maximum Number of Linear Regions of Piecewise-Linear Kolmogorov--Arnold networks",
+        "url": "https://arxiv.org/abs/2611.07973v1",
+        "publishedAt": "2026-11-05T13:05:28.000Z",
+        "summary": "Schoots et al.~\\citep{schoots2025relating} (AISTATS 2025) established a generally loose upper bound on the number of linear regions of continuous piecewise-linear (CPWL) Kolmogorov--Arnold networks (KANs), without providing a lower bound. We consider a $T$-layer network with width vector $\\mathbf n=(n_0,\\ldots,n_T)$, input dimension $n_0=d$, output width $n_T=1$, and at most $k\\geq2$ affine segments per edge. Our matching upper and lower bounds determine the tight growth order $Θ_{\\mathbf n}(k^{\\sum_{\\ell=1}^{T}ρ_{\\ell-1}})$ in $k$, where $ρ_{\\ell-1}:=\\min_{0\\leq s\\leq\\ell-1}n_s$. When every hidden width is at least $d$, the tight order simplifies to $Θ_{\\mathbf n}(k^{dT})$. The upper bound of \\citep{schoots2025relating} is $k^{\\sum_{\\ell=1}^{T}n_{\\ell-1}n_\\ell}$. Our upper bound improves it by a factor of $Θ_{\\mathbf n}\\!\\left(k^{\\sum_{\\ell=1}^{T}n_{\\ell-1}n_\\ell-\\sum_{\\ell=1}^{T}ρ_{\\ell-1}} \\right)$, with strict asymptotic improvement whenever a hidden layer has width greater than one. We further compare CPWL KANs with rectified linear unit (ReLU) networks using dense parameterizations with at most $Λ$ parameters per model and the same fixed nonlinear depth $T$. Counting trainable knot locations and optimizing the widths and $k$, we prove that the maximum region count of CPWL KANs divided by that of ReLU networks is $Θ_{d,T}(Λ^{d\\lfloor T/2\\rfloor})$ as $Λ\\to\\infty$, yielding a polynomial advantage for KANs when $T\\geq2$. These tight bounds characterize the attainable geometric complexity of CPWL KANs, providing a foundation for understanding their expressive power and guiding architectural design.",
+        "authors": [
+          "Ye Su",
+          "Yong Liu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 14
+      },
+      {
+        "title": "TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research",
+        "url": "https://arxiv.org/abs/2611.07962v1",
+        "publishedAt": "2026-11-05T12:58:43.000Z",
+        "summary": "Can large language models (LLMs) advance theoretical computer science and resolve its long-standing open conjectures? To study progress toward this goal, we introduce TCSExam, a unified framework and benchmark covering the full range of TCS research. It evaluates theorem proving, solver engineering, and constructions alongside direct attempts to resolve open conjectures, capturing both concrete research accomplishments and progress toward long-standing research goals. TCSExam-Full contains 100 expert-reviewed tasks, with submissions checked by the Lean kernel or an executable task checker. TCSExam-Lite selects 20 tasks, five per track, reducing the number of task attempts by 80% at the same per-attempt budget. We evaluate eight agents on Full and nine on Lite. The TCSExam Index combines all four tracks: GPT-6 Astra leads Full (71.9), and Opus 5.5 leads Lite (72.3). Full and Lite rankings are strongly aligned across eight shared agents (Spearman's $ρ=0.93$), supporting Lite as a compact, discriminative benchmark. The evaluations yield improved solver outputs and mathematical constructions, together with independently verified special cases and bounds from open-conjecture attempts. TCSExam provides an extensible framework with task sources, Docker build recipes, and evaluation tools for reproducible use.",
+        "authors": [
+          "Yifan Luo",
+          "Zhengying Liu",
+          "Yang Yuan",
+          "Zhilin Yang",
+          "Andrew Chi-Chih Yao"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 28
+        "ageHours": 14
+      },
+      {
+        "title": "CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation",
+        "url": "https://arxiv.org/abs/2611.07959v1",
+        "publishedAt": "2026-11-05T12:55:51.000Z",
+        "summary": "On-policy distillation trains a student on its own rollouts, so states the teacher would reach but the student does not are seldom supervised. We introduce CoRD (coupled-rollout distillation), which keeps the on-policy loss and moves only the distribution of training states toward the teacher, drawing rollouts from a geometric interpolation of student and teacher through the maximal coupling of speculative decoding. The coupling keeps the student's token wherever the two distributions agree and otherwise substitutes a token from the part of the target the student underweights, so interventions are as rare as any exact sampler allows and recede as the student learns. Across six base students from two model families (Qwen3 and Qwen3.5, 0.6B to 4B), CoRD raises average pass@1 over on-policy distillation by 0.9 to 2.0 points and pass@8 by 1.2 to 3.4 points on five public math benchmarks at equal steps and data. On frozen teacher-reached states, a 4B student trained with CoRD reaches in 16 steps a gap closure that on-policy distillation does not reach in 80, and substitution rules intervening at least as often in other directions fall short of CoRD.",
+        "authors": [
+          "Guhan Chen",
+          "Bohan Li",
+          "Jun Rao",
+          "Hejin Wang",
+          "Songtao Tian",
+          "Yexin Xie",
+          "Xiaojun Meng",
+          "Peng Yuan",
+          "Jiansheng Wei",
+          "Xuebo Liu",
+          "Zixiong Yu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 14
+      },
+      {
+        "title": "A Behavioural Framework for Predicting and Understanding Loss of Control in Frontier Artificial Intelligence Systems",
+        "url": "https://arxiv.org/abs/2611.07953v1",
+        "publishedAt": "2026-11-05T12:49:20.000Z",
+        "summary": "Frontier artificial intelligence (AI) systems are increasingly operating over longer horizons with diminishing human oversight, raising the risk of loss of control: systems acting beyond effective human control with potentially irreversible consequences. Because such failures may become observable only after containment is difficult, they must be assessed prospectively. We introduce a behavioural framework that decomposes loss-of-control risk into three factors: misaligned motive, harm-enabling capability, and monitoring evasion. We operationalise these factors through 13 measurable aspects and 29 evaluation tasks, whose scores are combined into a single loss-of-control (LoC) score. Across 13 frontier models, the LoC score shows strong prospective validity, correlating with failure rates in contained long-horizon risk scenarios (Pearson r = 0.84). Risk varies systematically across models and cannot be explained by capability alone. We further show that the framework can guide targeted mitigations: fine-tuning and monitoring directed at diagnosed vulnerabilities reduce failure rates while largely preserving general performance. These results provide a practical basis for predicting, understanding, and mitigating loss-of-control risk before it materialises.",
+        "authors": [
+          "Yao Huang",
+          "Yichi Zhang",
+          "Yifan Wang",
+          "Yitong Sun",
+          "Haoyu Dong",
+          "Jifan Ma",
+          "Jinzhe Tu",
+          "Xiaojian Li",
+          "Sören Mindermann",
+          "Wei Xu",
+          "Yinpeng Dong"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
+      },
+      {
+        "title": "Invariance before structure: two modes of emergent compression in representation learning",
+        "url": "https://arxiv.org/abs/2611.07952v1",
+        "publishedAt": "2026-11-05T12:49:05.000Z",
+        "summary": "Learned representations show striking invariance across biological and artificial neural networks, with different substrates and variations driven by drift, heterogeneity and initialisation. To understand this invariance, we propose Emergent Adaptive Representation Learning (EARL), a framework that distinguishes two modes of emergence in learned representations: state-space compression, where a learned representation gains predictive power over its own future beyond what the network's units can predict individually, and parameter-space compression, where networks with different micro-level parameters converge to the same representation. We formalise both as Fisher sensitivities and introduce ensemble-level information-theoretic measures for each. In a recurrent reservoir with a trained bottleneck, parameter-space compression rises within the first few epochs of training and partly independently of the task, whereas state-space compression rises about 30 epochs later and only when the network begins to learn the temporal structure of the task. These results suggest that invariance to the substrate and task-specific emergent structure are acquired in distinct phases of learning.",
+        "authors": [
+          "Hardik Rajpal",
+          "Dan Goodman"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Infrastructure",
+        "ageHours": 15
+      },
+      {
+        "title": "Leakage- and Label-Aware Benchmarking of Class-Imbalance Strategies for Multimodal Chest X-Ray and EHR Classification",
+        "url": "https://arxiv.org/abs/2611.07950v1",
+        "publishedAt": "2026-11-05T12:47:38.000Z",
+        "summary": "Benchmarks of class-imbalance strategies for multimodal chest X-ray (CXR) and electronic health record (EHR) prediction are often evaluated on record-level splits of cohorts in which one patient contributes several radiographs. We audit such a benchmark on 29,083 MIMIC-CXR radiographs of 10,479 patients with eight diagnosis targets. First, the record-split benchmark was misleading: a lookup table that copies the label of a development-set radiograph with the same EHR vector nearly matched the best model, and on unseen patients every model fell to the level of predicting every case positive. Second, tracing the labels back to MIMIC-IV explained why: each patient's labels are keyword matches on the diagnosis codes of a single admission, copied, with one EHR vector per patient, to all of the patient's radiographs, so about a third of the radiographs carry labels that differ from the codes of their own admission. Third, under patient-separated evaluation with admission-aligned and rule-refined labels, the initial conclusions do not hold: in the evaluated configurations no imbalance strategy raised the observed mean macro F2 over no augmentation by more than 0.01, tuned tree ensembles showed no consistent advantage over tuned logistic regression, and the released EHR variables stayed at the level of the all-positive baseline, whereas the diagnostic history available at imaging time and image embeddings exceeded it, including, with rule-refined labels, a CheXpert-trained encoder that never saw these radiographs; RAD-DINO had seen 96.6% of them during self-supervised pretraining. Adding either encoder to the diagnostic history gave no statistically significant F2 gain; exploratory AUROC gains were significant with RAD-DINO but not with DenseNet. We provide reusable diagnostics, a leakage-aware protocol and a checklist.",
+        "authors": [
+          "Dang-Khoa Bui",
+          "Quang-Huy Tran",
+          "Minh-Khoi Nguyen-Bui",
+          "Duc-Tuan Ngo",
+          "Thanh-Trong Tran",
+          "Tuan-Khoi Nguyen",
+          "Hoang-Anh Ngo"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 15
       }
     ],
     "news": [
+      {
+        "title": "Airbnb says it&#8217;s launching an AI travel agent in the first half of 2027",
+        "url": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+        "publishedAt": "2026-11-05T22:40:55.000Z",
+        "summary": "Airbnb says its upcoming AI agent will help travelers plan trips, compare options, manage bookings, and get assistance throughout their stay.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 5
+      },
+      {
+        "title": "Cult.fit builds operational muscle with Codex",
+        "url": "https://openai.com/index/cultfit-builds-with-codex",
+        "publishedAt": "2026-11-05T20:00:00.000Z",
+        "summary": "Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "Products",
+        "ageHours": 7
+      },
       {
         "title": "Meta says US users can now video chat with their Muse AI avatar",
         "url": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
@@ -401,7 +339,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 8
       },
       {
         "title": "Meta warns that election backlash against data centers could make AI expansion harder",
@@ -415,7 +353,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 8
       },
       {
         "title": "OpenAI released a new cybersecurity model. Is that enough?",
@@ -429,7 +367,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 8
       },
       {
         "title": "OpenAI president Greg Brockman says company could be IPO ready in 2027",
@@ -443,7 +381,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Claude can now analyze your spending with its new Personal Finance tool",
@@ -457,7 +395,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
+        "ageHours": 9
       },
       {
         "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
@@ -469,7 +407,19 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Models",
-        "ageHours": 6
+        "ageHours": 10
+      },
+      {
+        "title": "Australian universities are creating AI-native graduates",
+        "url": "https://openai.com/index/australian-universities-ai-native-graduates",
+        "publishedAt": "2026-11-05T17:00:00.000Z",
+        "summary": "Australian universities are expanding access to ChatGPT and bringing AI into teaching and learning to prepare students for an AI-enabled workforce.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "Models",
+        "ageHours": 10
       },
       {
         "title": "Axiom Math wants to keep AI slop out of mathematics",
@@ -483,7 +433,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 6
+        "ageHours": 11
       },
       {
         "title": "Dropbox acquires Tigris Data for $350M to bolster its AI infrastructure",
@@ -497,7 +447,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 12
       },
       {
         "title": "Aina&#8217;s smart ring has a screen, a joystick, and a mic so you can talk to AI agents",
@@ -511,60 +461,18 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 8
-      },
-      {
-        "title": "Box taps Nvidia’s Nemotron for new agent-first content retrieval system",
-        "url": "https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/",
-        "publishedAt": "2026-11-05T14:00:00.000Z",
-        "summary": "The system can supposedly answer queries four times faster, with 20% fewer errors and 90% fewer tokens used.",
-        "authors": [
-          "Russell Brandom"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 9
-      },
-      {
-        "title": "A YC startup is putting $1M behind 5 unsolved materials science problems for AI",
-        "url": "https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/",
-        "publishedAt": "2026-11-05T13:00:00.000Z",
-        "summary": "While frontier AI models have solved a remarkable series of outstanding mathematics problems and made progress in the life sciences, they have yet to truly plumb the complex physics in advanced materials.",
-        "authors": [
-          "Tim Fernholz"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 10
-      },
-      {
-        "title": "Agility is the first pure humanoid robot company on the stock market. Are you buying?",
-        "url": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
-        "publishedAt": "2026-11-05T12:00:00.000Z",
-        "summary": "Agility arrives on the Nasdaq today as the first publicly traded pure-play humanoid robotics company.",
-        "authors": [
-          "Tim Fernholz"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 11
+        "ageHours": 13
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
-        "count": 13
+        "count": 14
       },
       {
         "name": "Models",
@@ -572,11 +480,11 @@
       },
       {
         "name": "General",
-        "count": 3
+        "count": 2
       },
       {
         "name": "Infrastructure",
-        "count": 2
+        "count": 1
       }
     ]
   }
