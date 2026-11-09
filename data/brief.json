@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T00:47:57.574Z",
+  "generatedAt": "2026-11-09T07:53:30.689Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,242 +85,257 @@
   "sections": {
     "research": [
       {
-        "title": "User Embeddings are Superpositions of Interpretable Behavioral Modes",
-        "url": "https://arxiv.org/abs/2611.08487v1",
-        "publishedAt": "2026-11-05T18:59:42.000Z",
-        "summary": "User embeddings are central components of modern recommendation, personalization, and behavioral modeling systems. Though these embeddings can compactly encode rich behavioral information, they are inherently dense and opaque, limiting interpretability. To address this gap, we argue that user embeddings can be understood as sparse superpositions of interpretable behavioral modes. This structure is directly predicted by generative models of user behavior for linear embeddings and extends approximately to deep-learning representations by the superposition hypothesis. Superimposed modes can naturally be recovered by sparse dictionary learning methods, such as sparse autoencoders (SAEs), and recovered modes can be automatically named and queried in natural language. We validate mode recovery against known ground truth on synthetic data, where SAEs recover modes better than classical sparse baselines, including on transformer-encoded embeddings. We then apply the method to classical and transformer-based user embeddings from two real-world datasets. We also show how the corresponding natural-language labels enable zero-shot audience retrieval and characterization over embeddings never trained on text. The framework is post-hoc and model-agnostic, requiring no modification to the upstream embedding system.",
+        "title": "On Agentic Manipulation Policies",
+        "url": "https://arxiv.org/abs/2611.09892v1",
+        "publishedAt": "2026-11-06T18:59:34.000Z",
+        "summary": "Recent work on robot manipulation has focused on specialist policies trained on demonstrations. We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs). We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly, adapting its actions as the task unfolds. We present AMP1, a reference harness that runs unchanged across single-arm, bimanual, and mobile manipulation. AMP1 achieves state-of-the-art results on the RoboLab-120 and CaP-Gym benchmarks, with no demonstrations or task-specific training. On RoboLab-120, AMP1 reaches an 85.6\\% success rate zero-shot, compared to 49.2\\% and 42.9\\% for leading VLA and WAM policies. The agent succeeds zero-shot in 104 of 108 real-world trials spanning twelve tasks and three robot instances, reducing failure rates by 20x and 15x relative to strong VLA and WAM baselines. The basic harness supplies no grasping, pushing, or placing skills; the agent develops its own strategies, such as searching for hidden objects, using objects as tools, and calibrating its cameras. With the addition of a persistent memory store, the agent can also learn from experience: an augmented harness with a memory representation that is carried across episodes lowers the failure rate on RoboDojo bimanual manipulation tasks by 4.6x relative to zero-shot deployment. Our analysis suggests that AMPs are substantially more general and robust than specialist manipulation policies, providing a promising foundation for robot manipulation.",
         "authors": [
-          "Jonathan Kozaczuk",
-          "Zheng Dong",
-          "Noyan Evirgen",
-          "Keivan Majidi",
-          "Eddie K. H. Ng",
-          "Chris Porter",
-          "Qi Zhao",
-          "Jia Geng",
-          "Changmao Li",
-          "Brandon R. Feng"
+          "Chen Chen",
+          "Omid Bagherieh",
+          "Naveen Nikamanth Appiah Balaji",
+          "Jesse T. Gonzalez",
+          "Negin Heravi",
+          "Fahad Islam",
+          "Xueting Li",
+          "Jean-Baptiste Regli",
+          "Kejia Ren",
+          "Petr Švec",
+          "David J. Yoon",
+          "Matthias Müller",
+          "Vladlen Koltun"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 61
+      },
+      {
+        "title": "CPU-ARC: Agentic Reasoning Caching for on-CPU Reasoning Reuse",
+        "url": "https://arxiv.org/abs/2611.09891v1",
+        "publishedAt": "2026-11-06T18:58:50.000Z",
+        "summary": "Large language models reinvent the wheel all the time. They conflate task-solving with the execution of the solutions, which forces them to solve every problem from scratch. We show that once a task has been reasoned through, the application of its solution to a new problem instance can be done very efficiently and with little involvement from language models. We introduce agentic reasoning caching, a method for constructing robust CPU-executable agentic reasoning caches (ARCs) from LLM reasoning traces. ARCs show on-par performance with frontier LLMs across a range of difficult mathematical and scientific tasks, are fully explainable, continually trainable, robust to input perturbations, and 16-291x cheaper to invoke than the source model.",
+        "authors": [
+          "Peter Belcak",
+          "Greg Heinrich",
+          "Saurav Muralidharan",
+          "Shizhe Diao",
+          "Pavlo Molchanov"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 61
+      },
+      {
+        "title": "On the (non-)closedness of the set of ReLU networks",
+        "url": "https://arxiv.org/abs/2611.09887v1",
+        "publishedAt": "2026-11-06T18:58:06.000Z",
+        "summary": "We prove that the set $\\mathcal{N}_N$ of ReLU networks with one hidden layer and at most $N\\in\\mathbb N$ neurons is weakly closed in $W^{1,p}(Ω)$, for a bounded connected open set $Ω\\subset\\mathbb R^d$. Consequently, every coercive, weakly lower semicontinuous energy on this space attains its minimum over $\\mathcal{N}_N$. This covers the Deep Ritz method with convex integrands, Sobolev training and Lipschitz learning. Moreover, as the weight decay parameter tends to zero, minimizers of the regularized problem converge, up to subsequences, to minimizers with minimal parameter norm. We also prove that the set of ReLU networks with two hidden layers of bounded widths is not closed in $W^{1,p}(Ω)$ or in $C(\\overlineΩ)$. This disproves a conjecture of Petersen, Raslan and Voigtlaender.",
+        "authors": [
+          "Eloi Martinet",
+          "Leon Bungert"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Infrastructure",
+        "ageHours": 61
+      },
+      {
+        "title": "FlowMoP: Stochastic Multi-Person Motion Prediction",
+        "url": "https://arxiv.org/abs/2611.09882v1",
+        "publishedAt": "2026-11-06T18:56:41.000Z",
+        "summary": "Predicting the future motion of multiple people is inherently stochastic: the same observed history admits many plausible continuations depending on intent, coordination, and social context. Yet the dominant paradigm in multi-person 3D motion prediction remains deterministic, with existing methods producing a fixed number of outputs per agent. In contrast, we present a conditional flow matching framework that jointly generates diverse future motions for multiple agents, modeling both global trajectories and root-relative poses. A B-spline reparameterization compresses the generative state space while enforcing temporal smoothness, and a dual-stream transformer conditions each agent's predictions on observed neighbor motion for interaction-aware forecasting. Our method achieves state-of-the-art performance on CMU-Mocap (UMPM) and 3DPW, outperforming deterministic baselines on joint position error, pose error, and final displacement error despite producing a full predictive distribution. We additionally establish the first motion prediction baseline on WorldPose, a large-scale professional soccer dataset, where social conditioning demonstrably concentrates predictive uncertainty along interaction-constrained directions.",
+        "authors": [
+          "Aadya Agrawal",
+          "Ho Kei Cheng",
+          "Alexander Schwing"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 61
       },
       {
-        "title": "SwarmEvolve: Latent Agent Swarms for Evolutionary Discovery and Optimization",
-        "url": "https://arxiv.org/abs/2611.08483v1",
-        "publishedAt": "2026-11-05T18:59:29.000Z",
-        "summary": "LLM-guided evolutionary search uses AI agents to improve programs for mathematical and computational problems by iteratively refining solutions and combining high-scoring methods. However, the process is often slow because the LLM generates a long textual chain of thought for each round and must repeat this generation many times to maintain population diversity. We present SwarmEvolve, a framework in which hundreds of low-cost agents per round work in swarms, reason in latent space without decoding to text, and share information by passing KV caches. Each swarm studies the problem from a different angle. A novelty filter keeps the most distinct agent ideas by directly measuring the distances between the agents' hidden state vectors. Crossover of ideas happens naturally in latent space, as a summarizer agent receives the combined KV caches of all swarm members. On 21 problems in mathematical discovery and scientific computing, SwarmEvolve gets the highest average score and needs a median of only 3 to 8 minutes to reach the best scores that other state-of-the-art frameworks reach in 60 minutes. On several problems, SwarmEvolve with Qwen3 8B improves on the solutions that AlphaEvolve first found with frontier LLMs. Our work shows that agent swarms that communicate in latent space offer a fast, low-cost approach to program search for scientific problems.",
+        "title": "Graded convolutional networks: scale invariance without the scale and robustness to unknown blur",
+        "url": "https://arxiv.org/abs/2611.09878v1",
+        "publishedAt": "2026-11-06T18:54:03.000Z",
+        "summary": "The Gaussian jet of an image is a graded vector space: a dilation by $λ$ multiplies derivatives of order $k$ by $λ^{-k}$. Local graded convolutions are exactly homogeneous differential operators, and a local feature is dilation-invariant if and only if it factors through the scale-normalized jet or, without the scale, through the retraction onto the weighted sphere of the grading. Under unknown Gaussian blur the retraction changes only by a change of scale, whereas the scale-normalized jet acquires a grading factor that no radial normalization removes. At the zero jet the retraction separates image families that radial normalizations and continuous classifiers cannot. Networks built on the retraction are universal for invariant features. On MNIST such a network keeps 88.4% accuracy under a two-pixel blur, against 66.2% for the same network on scale-normalized derivatives; in Lindeberg's Gaussian derivative network the retraction raises accuracy at that blur from 91.5% to 95.1%.",
         "authors": [
-          "Qile Jiang",
-          "George Em Karniadakis"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Scientist World: Grow a Research World for AI-Scientists",
-        "url": "https://arxiv.org/abs/2611.08478v1",
-        "publishedAt": "2026-11-05T18:58:17.000Z",
-        "summary": "AI-Scientists arrived, but a world for them to grow in did not. Human scientists take theirs for granted $-$ centuries of open problems and shared ideas, waiting in the scientific literature. To AI-Scientists, that world is readable but not runnable, so we build Scientist World for them: every research paper becomes an executable environment. Our autonomous pipeline extracts each paper's open-ended research question and reproduces its proposed method as the baseline; an AI-Scientist entering the environment is evaluated against what the human authors achieved. We release the first 1,000 verified environments. With the world as an evaluation, we found that frontier AI-Scientists can already surpass the human researchers 74% of the time. As a record of how AI does science, it contains 6,400 hours of research traces, with every idea, experiment, failure, and success. As a training ground, we are able to raise (+158%) a small model to match frontier models in research ideation. At last, AI-Scientists' own world has arrived, grown from and growing with science itself.",
-        "authors": [
-          "Taiming Lu",
-          "Sachin Konan",
-          "Zhuang Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "XStack: A Benchmark for ML Repo Migration",
-        "url": "https://arxiv.org/abs/2611.08472v1",
-        "publishedAt": "2026-11-05T18:55:54.000Z",
-        "summary": "ML code should run where researchers choose, not where it was first written. Today, machine learning code mainly lives in two ecosystems, PyTorch on NVIDIA GPUs and JAX on Google TPUs. Migrating repositories between them means building and testing across frameworks and hardware. This migration is (1) a practical need, since it unlocks different hardware for researchers, and (2) a natural benchmark: it involves different frameworks and hardware, covers whole repositories, and is long-horizon and challenging. We introduce XStack, a benchmark that evaluates agents on migrating ML repositories between these two ecosystems. Each agent receives a PyTorch repository and a clean TPU machine and must deliver a JAX repository. Its output passes if it meets our grading criteria, based on the source repository's published result, authenticated and calibrated by us. Migration by agents remains unreliable: Claude Opus 5 passes 75%, GPT-5.6-sol 45%, and every other agent at most 40%. XStack is a step toward freeing ML code from its ecosystem. We release XStack to make progress toward reliable migration across frameworks and hardware measurable.",
-        "authors": [
-          "Linrong Cai",
-          "Taiming Lu",
-          "Haozhe Chen",
-          "Zhuang Liu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Same Behavior, Different Mechanism: What Finite Experiments Can Certify About Integrated Information",
-        "url": "https://arxiv.org/abs/2611.08469v1",
-        "publishedAt": "2026-11-05T18:55:31.000Z",
-        "summary": "Interpretability, AI auditing and assessments of machine consciousness increasingly rest on mechanism-level quantities: functionals of a system's causal transition law that describe how it computes, not what it outputs. Experiments see that law only through finite, partial and noisy interventions. We ask when such a quantity is identifiable from an experiment's access, continuous in the mechanism and certifiable from finite data, and answer exactly for a deliberately demanding case - the integrated information $\\varphi$ of integrated information theory - in stochastic networks of four and five units with known ground truth. Behavior can be silent: a recurrent and a feed-forward network with identical input-output laws at their response delay carry 0.28 and 0 bits, yet internal recordings separate them within 4-53 trials. Partial access can be just as blind: in our examples, units left out of a one-step recording impose precision floors of 0.30-1.02 bits that no sample size lowers, and in all-but-self parity networks, recordings of any length see several hidden units only through the product of their fidelities - a symmetry that one intervention broke in exact checks. The measure has sharp edges: because $\\varphi$ selects a partition, and the cause and effect it specifies, by one criterion and reports another, infinitesimal changes of mechanism that cross an edge change it by 25-100% at 99% of the edges we found in random networks, and about 1% of surrogate models that fit interventional data almost perfectly misreport it by more than 20%. One-sided claims survive: the same data certify a lower bound on both sides of an edge, and we prove $\\varphi>1.004$ bits throughout a 64-dimensional region of mechanisms and certify it from about $10^7$ controlled transitions with false-certificate probability at most $α$. Measurability is thus a design question with computable answers.",
-        "authors": [
-          "Linqian Wu",
-          "Diaoxuan He"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 78
-      },
-      {
-        "title": "Towards interpreting any residual stream direction by scaling activation inversion",
-        "url": "https://arxiv.org/abs/2611.08465v1",
-        "publishedAt": "2026-11-05T18:54:40.000Z",
-        "summary": "To interpret a direction in a language model's residual stream, we can look for text that strongly activates it. But when such text is found by scanning a corpus, it is limited to what that corpus contains. We develop Maximally-Activating Example Metamodels (MAEMs), language models which map residual stream directions from a subject model to text exemplars that strongly activate those directions. Our objective is to maximise the cosine similarity of a supplied residual stream direction with the activations of the text generated by the MAEM. This label-free RL objective helps to scale MAEMs on diverse sources of residual stream directions. Empirically, we find the resultant metamodel produces informative exemplars: a Qwen3.6-27B MAEM inverts held-out activations better than corpus search or a natural-language autoencoder (NLA), beats corpus search (at 10M tokens) on a majority of held-out languages/domains, and activates 89% of held-out SAE features. It also identifies concepts behind steering vectors about as well as NLAs, recovers the payloads of LoRA backdoors more often than corpus search, and can even verbalise some model workspace inner monologue. Unlike explanations produced by other metamodels (e.g. NLAs), MAEM exemplars can be verified with a forward pass on the subject model, making the MAEM objective a grounded alternative for scaling the training of metamodels.",
-        "authors": [
-          "Celeste De Schamphelaere",
-          "Juan J. Vazquez",
-          "Ari Spiesberger",
-          "Tomáš Gavenčiak",
-          "Gavin Leech",
-          "Euan Ong",
-          "Jiahai Feng"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 78
-      },
-      {
-        "title": "Adversarial Training with Large Step Sizes: Implicit Bias, Optimization, and Sharpness",
-        "url": "https://arxiv.org/abs/2611.08457v1",
-        "publishedAt": "2026-11-05T18:48:50.000Z",
-        "summary": "Adversarial Training (AT) is an important method for improving model robustness. We study the dynamics of deterministic Gradient Descent (GD) in AT. Most existing works in this direction focus on the small or vanishing step sizes regime, where GD resembles a continuous-time flow. However, such step sizes can make training inefficient and are rarely used in practice. In this paper, we study the AT dynamics of GD with large constant step sizes. We first study GD in adversarial linear logistic regression, focusing on two aspects: where the model parameters converge (implicit bias) and how quickly the losses decrease (optimization). We then turn to neural networks training and study how the sharpness of losses evolve during AT. Our results advance the understanding of the behaviors of GD with large step sizes in AT and highlight three key differences from its behavior in Standard Training (ST): (i) the implicit bias gap between AT and ST, previously established only for small step sizes, persists for arbitrarily large constant step sizes, (ii) different from ST, there is no uniform rate of convergence for the optimization error in AT, and (iii) sharpness can exhibit two-stage dynamics that differ from the Edge-of-Stability behavior observed in ST.",
-        "authors": [
-          "Yi Feng",
-          "Andrea Paudice"
+          "Tanush Shaska"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 78
+        "category": "Products",
+        "ageHours": 61
       },
       {
-        "title": "Unpacking the Compute Efficiency of Strong-to-Weak OPD against GRPO",
-        "url": "https://arxiv.org/abs/2611.08453v1",
-        "publishedAt": "2026-11-05T18:47:05.000Z",
-        "summary": "On-policy distillation (OPD) trains a student on its own rollouts under a frozen teacher's per-token supervision. Does this dense signal reduce the training FLOPs needed to reach a target accuracy compared with reinforcement learning? We systematically compare vanilla reverse-KL OPD with Group Relative Policy Optimization (GRPO) across task difficulty, student and teacher size, domain, and optimization choices, measuring held-out accuracy against training FLOPs. With an external post-trained teacher, OPD generally loses to GRPO in accuracy per training FLOP at matched settings, even when the teacher is further trained with GRPO, and often suffers response-length inflation. Yet a different teacher changes the picture: when the teacher is the student's own GRPO checkpoint, OPD recovers that checkpoint's accuracy on math with $50\\times$ fewer distillation FLOPs than GRPO needs to reach the same accuracy. Following the same teacher setting, we consistently observe this high efficiency with a larger student, on code, and in a second model family. On a single domain, however, the GRPO checkpoint is already the desired model, so distilling it adds to total compute. Across domains, separate GRPO checkpoints hold different capabilities, and no single checkpoint serves every domain. Multi-teacher OPD (DeepSeek-AI, 2026) consolidates per-domain GRPO experts into a single student that matches each expert's accuracy, with the distillation stage costing only 5.2% (on 2 domains) and 8.0% (on 4 domains) of the specialist training FLOPs. Counting specialist training and distillation together, this pipeline reaches joint GRPO's performance on the 2-domain mix with 42.0% fewer total FLOPs.",
+        "title": "On the Reliability of Majority-Vote Pseudo-Labels in Test-Time Reinforcement Learning",
+        "url": "https://arxiv.org/abs/2611.09872v1",
+        "publishedAt": "2026-11-06T18:49:02.000Z",
+        "summary": "Test-time reinforcement learning (TTRL) adapts pretrained language models to unlabeled target-domain data using self-generated pseudo-labels, whose reliability remains poorly understood. We analyze majority-vote supervision for TTRL with online Direct Preference Optimization (DPO) and decompose its error into population-majority bias and prompt-dependent finite-rollout variation. Because population-majority bias is generally unidentifiable without external supervision, we focus on mitigating the downstream effects of finite-rollout variation. We propose \\emph{Prompt-Conditional Distributionally Robust DPO (PC-Dr.DPO)}, which conditions within-prompt robust reweighting on observed vote reliability to make updates from sampling-sensitive prompts more conservative. We further introduce a cache-based mechanism to reduce self-supervised forgetting during online adaptation. Across six mathematical and knowledge-intensive reasoning benchmarks and five model backbones, PC-Dr.DPO matches or outperforms the strongest TTRL baseline in 24 of 30 settings.",
         "authors": [
-          "Zeyu Leo Liu",
-          "Yang Li",
-          "Bo Pang",
-          "Emre Can Acikgoz",
-          "Xuan-Phi Nguyen",
-          "Anurag Koul",
-          "Srijan Bansal",
-          "Erik Nijkamp",
-          "Shafiq Joty",
-          "Semih Yavuz"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 78
-      },
-      {
-        "title": "ReproBridge: Building Reproducibility into ML Research Artifacts",
-        "url": "https://arxiv.org/abs/2611.08452v1",
-        "publishedAt": "2026-11-05T18:45:36.000Z",
-        "summary": "Reproducing machine learning experiments requires reconstructing procedures from information scattered across papers, released code, and supporting artifacts. For coding agents, reproduction success can therefore depend on their ability to fill in missing details, rather than on the released artifacts alone. We ask whether preserving recovered procedures and decisions improves subsequent independent reproduction. We define a standardized artifact design comprising a refined codebase, environment setup, experiment launchers, and a reproduction guide, and introduce ReproBridge, an agent workflow for constructing these refined reproducible artifacts. ReproBridge-Bench provides 1,029 tasks from 387 experiments across 36 papers, anchored by five human-verified reference scores per task. Agents attempt tasks in fresh sessions with raw code or refined artifacts; a separate Auditor checks execution evidence. Across four evaluated models, refined artifacts raise mean reproduction success from 76.4% to 92.6% and reduce downstream API spending by 19.7% on average. The cross-model success-rate spread narrows from 21.6 to 3.9 percentage points, with all four models achieving mean success rates above 90%. Removing any component reduces success in the ablation study, with the largest losses from code and environment removal. These results suggest that preserving execution knowledge helps even models with lower raw-code success reproduce experiments more reliably and at lower API cost.",
-        "authors": [
-          "Yubo Wang",
-          "Rui Meng",
-          "Jaehyun Nam",
-          "Tomas Pfister",
-          "Jinsung Yoon"
+          "Haoyu Wang",
+          "Ru Wang",
+          "Yuanyuan Wang",
+          "Jiaxian Guo",
+          "Mingming Gong"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
+        "ageHours": 61
       },
       {
-        "title": "A Hidden Markov Preference Model for Online Prediction of Adversary Actions",
-        "url": "https://arxiv.org/abs/2611.08445v1",
-        "publishedAt": "2026-11-05T18:37:07.000Z",
-        "summary": "A defender anticipating an attacker needs a probability distribution over the attacker's next action from information available before that action occurs. Two structures complicate this: the attacker's behavioral regime persists and can switch within an episode, and each action combines an operation with state-dependent arguments whose feasible values change over time. We capture both with a hidden Markov model whose latent state is the active regime and whose regime-conditioned action law is defined on a feasibility-masked tree of executable actions. The same likelihood forms the next-action distribution and updates the regime belief once the action is seen, and a partially observed prefix contributes its resolved local factors. Estimation separates into convex logistic fits that Baum-Welch reuses when regimes are unlabeled. We derive a reach-weighted nodewise KL expression for regime information, a sequence-wise log-loss bound for switching regime paths, and a uniform fallback guarantee. On the CAGE 2 cyber defense benchmark the filtered latent state is worth 0.8 nats per step, and after a controller switch the loss begins to fall in three steps against ten for a recurrent baseline.",
+        "title": "CodeQuant2: Enhanced Outlier Mitigation and Adaptive Clustering for Low-Precision LRMs",
+        "url": "https://arxiv.org/abs/2611.09868v1",
+        "publishedAt": "2026-11-06T18:48:04.000Z",
+        "summary": "Large reasoning models (LRMs) improve task performance by generating longer intermediate reasoning traces, but this substantially increases inference costs and makes low-precision quantization increasingly important. However, aggressively quantized models often perform poorly on reasoning tasks. We observe larger activation fluctuations during the first decoding steps of reasoning. Calibration that omits these early states may miss their activation fluctuations. To address these reasoning-specific quantization challenges, we propose \\textbf{CodeQuant2}, a clustering-based LUT quantization framework for low-precision large reasoning models. CodeQuant2 mitigates activation outliers with rotation and scaling, uses clustering to represent non-uniform weight distributions, and adapts codebook sizes to the quantization difficulty of each layer. Guided by our observation of reasoning-time activation behavior, CodeQuant2 further improves calibration sample selection to better match actual decoding statistics. Combined with our customized LUT CUDA kernel, CodeQuant2 delivers substantial accuracy improvements on reasoning benchmarks while achieving up to $2.85\\times$ speedup over BF16.",
         "authors": [
-          "Angel Daruna",
-          "Michael Cogswell",
-          "Tixiao Shan",
-          "Yi Yao",
-          "Han-Pang Chiu",
-          "Ajay Divakaran"
+          "Xingyu Liu",
+          "Xiangyang Yin",
+          "Tianhua Xia",
+          "Haiyu Wang",
+          "Sai Qian Zhang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 61
+      },
+      {
+        "title": "GRAC: Graph-Based Retrieval-Augmented Captioning for Surgical Scene Description",
+        "url": "https://arxiv.org/abs/2611.09866v1",
+        "publishedAt": "2026-11-06T18:47:23.000Z",
+        "summary": "Purpose: Surgical operative reports support procedural documentation, surgical training, performance assessment, and workflow review. However, extracting meaningful information often requires extensive manual review and clinical expertise. Automated surgical scene descriptions could reduce this burden by leveraging recurring surgical activities and prior knowledge.\n  Methods: We propose GRAC (Graph-Based Retrieval-Augmented Captioning), a framework that represents surgical scenes as graphs capturing relationships among instruments, actions, and anatomical structures. Given an input scene graph, GRAC learns to retrieve relevant graph-caption pairs from training data. It compares instrument-tissue interactions between retrieved examples and the input scene, using comparison features to condition retrieved-caption representations during generation.\n  Results: On the EndoVis-18 benchmark, GRAC achieved a CIDEr-D of 5.88, compared with 4.23 for SGT and 3.36 for the strongest conventional Transformer baseline. Exact instrument-action-target triplet-set accuracy reached 52.6%, compared with 32.7% for SGT and 26.2% for the strongest conventional baseline. These results demonstrate improvements in language quality and factual agreement. On TORS, GRAC achieved a CIDEr-D of 5.06, compared with 3.80 for the strongest baseline.\n  Conclusion: GRAC demonstrates that combining structured surgical scene representations with retrieved examples improves surgical scene captioning and produces more contextually meaningful descriptions.",
+        "authors": [
+          "Rochak Dhakal",
+          "Chen Zhao",
+          "Soup Cobb",
+          "Xin Qian",
+          "Xiaofeng Yang",
+          "Weihua Zhou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 61
+      },
+      {
+        "title": "Grasp-TAGS: Task-Aware Grasp Selection via Critic Distillation for Prehensile Loco-Manipulation",
+        "url": "https://arxiv.org/abs/2611.09864v1",
+        "publishedAt": "2026-11-06T18:44:33.000Z",
+        "summary": "Loco-manipulation, which requires mobile manipulators to coordinate locomotion and manipulation over long horizons, is a key capability for large-object rearrangement in applications such as service robotics and warehouse automation. Despite recent progress, reliably executing these tasks remains challenging because performance depends on complex robot-object and object-environment interaction dynamics. Existing approaches address this challenge either through model-based methods, which often require accurate dynamics models, or through learning-based methods, which reduce this requirement but typically assume a fixed or predefined initial grasp. However, different geometrically stable grasps can lead to substantially different downstream manipulation performance. Therefore, we propose Grasp-TAGS, a task-aware grasp selection framework for goal-conditioned large-object rearrangement. We train a unified PPO-based reinforcement learning policy across multiple initial grasp configurations and distill the learned critic into a lightweight grasp utility network that ranks candidate grasps using only the candidate grasp configuration and goal information. At inference time, we select the grasp with the highest predicted downstream utility for the downstream policy to complete the task, before even making a contact. Experiments demonstrate that Grasp-TAGS improves rearrangement success over both fixed single-grasp policies and random grasp selection, achieving an average success rate of 89.84% compared with 79.87% for the best-performing single-grasp policies, an improvement of 9.97 percentage points. Grasp-TAGS also reduces final orientation errors across all evaluated objects. For more qualitative results, refer to the supplementary webpage: https://rpm-lab-umn.github.io/Grasp-TAGS-web-page/",
+        "authors": [
+          "Xun Tu",
+          "Minghao Zou",
+          "Karthik Desingh"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 61
+      },
+      {
+        "title": "Flow-Guided Target-Space Alignment via Path Consistency",
+        "url": "https://arxiv.org/abs/2611.09863v1",
+        "publishedAt": "2026-11-06T18:44:08.000Z",
+        "summary": "Many multimodal alignment problems require mapping a source modality into a fixed space defined by a target modality, where the target space is not merely an intermediate embedding but is used directly for downstream analysis. In this setting, successful alignment should preserve both the global structure of the target distribution and the instance-level correspondence observed in paired source--target training data. Existing objectives typically address only part of this goal: contrastive losses encourage relative similarity, distribution-matching losses improve marginal agreement, and pointwise regression fits each source sample to its paired target without explicitly modeling target-space path geometry. We propose FlowAlign, a flow-guided target-space alignment method that repurposes conditional flow matching as a training-time alignment signal rather than an inference-time transport model. FlowAlign uses the learned flow field to guide the alignment of source-side representations with the fixed target space, encouraging them to preserve paired correspondence while remaining compatible with the global target-space structure. We further provide theoretical analysis showing how FlowAlign helps improve paired correspondence by controlling endpoint accuracy and capturing local target-space geometry. Experiments on synthetic data, paired single-cell multiome benchmarks, and image--text alignment demonstrate that FlowAlign improves instance level correspondence while preserving target-space structure across different modality settings.",
+        "authors": [
+          "Ruizhi Yuan",
+          "Zeqiu Yu",
+          "Wei Gao",
+          "Wei Chen",
+          "Xiwei Tang",
+          "Lu Tang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 61
+      },
+      {
+        "title": "How far does a hash-only sender go? A pre-registered map of sender memory versus bits for short text messages",
+        "url": "https://arxiv.org/abs/2611.09848v1",
+        "publishedAt": "2026-11-06T18:31:24.000Z",
+        "summary": "Can a sender that only computes hashes, with a language model only at the receiver, transmit short human text more cheaply than a classical sender trained on the same domain? We answer with one pre-registered run on 1,000 English user utterances from Taskmaster-1. The primary endpoint is the cost per message to deliver 100% of the messages (hash bits, plus a 2-byte negative acknowledgement and the raw text when the first attempt fails), paired against an in-domain PPM order-1 sender. The hash-only sender delivered 857 of 1,000 messages on the first attempt and cost 192.8 bits per message, 18.4 bits more than PPM order 1 (95% bootstrap interval 10.9 to 26.3); by the pre-registered rule it spends more and is not equivalent within one byte. As secondary results we map measured sender memory against bits. The hash-only sender (8,190 B on a host build, keyed BLAKE2b tag included, as in every method) was the cheapest point in bits from 8,190 B up to, but excluding, PPM order 1 at 24,844 B, 45 to 46 bits below smaz2 and Unishox2; from PPM order 1 upwards, in-domain senders spend fewer bits, except order 2 pruned to 16 KiB. In airtime it loses to PPM order 1 on all five links priced, to Unishox2 on four, and to raw text with a tag on two, because each failure costs an acknowledgement frame and a fallback frame. A wider receiver search recovers half of the failures and makes the cost 7.7 bits lower than PPM order 1, at about three minutes of receiver time per failure, and still loses in airtime on four of five links. We report the measurement as a delimitation, with every deviation of the run.",
+        "authors": [
+          "Marcelo Samoilenko"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 61
+      },
+      {
+        "title": "Computer-Use Agents Are Embodied Generalists",
+        "url": "https://arxiv.org/abs/2611.09847v1",
+        "publishedAt": "2026-11-06T18:31:17.000Z",
+        "summary": "In many areas of AI, general-purpose models have increasingly replaced handcrafted methods and specialized architectures. We argue that embodied AI is poised for a similar shift. Our key claim is that embodied tasks can be formulated as interaction with digital software. Specifically, we build software that renders an agent's view of a physical environment on a screen and provides controls for acting in it. A computer-use agent (CUA) can then perform embodied tasks through the same screenshots and keyboard and mouse actions that it uses to operate ordinary software. Using a single CUA design and changing only the software, our entries win first-, second-, third-, and sixth-place prizes across four ECCV workshop competitions, without any competition-specific agent tuning. These results suggest that the skills CUAs learn on software, such as visual grounding, precise clicking, and exploration, already carry over to embodied tasks, giving CUAs a far broader scope in embodied AI than previously realized. We therefore advocate that computer-use agents can be embodied generalists. Further, we advocate that, by following the training strategy that made computer-use agents general, embodied AI can converge on a single general model as well, ushering in a new era of general embodied AI. Website: https://pranjal2041.github.io/cua-embodied",
+        "authors": [
+          "Pranjal Aggarwal",
+          "Sean Welleck"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Label-Wording Augmentation in a Typed-Decision Encoder: Gains on Unfamiliar Words, Not on Abbreviations or Codes",
-        "url": "https://arxiv.org/abs/2611.08439v1",
-        "publishedAt": "2026-11-05T18:31:24.000Z",
-        "summary": "Typed-decision models score options that the caller supplies at request time, so their accuracy depends on label wording that the model's developer does not control. We compare two releases of a 307M-parameter multilingual cross-encoder, Ru-Jev, trained on thirteen Russian-language tasks; the later release adds an augmentation that presents labels in several surface forms. Holding questions fixed and varying only how eighteen routing labels are worded, we evaluate ten label vocabularies, produced by three separate processes and checked for overlap with the training data, with five candidates per question and, for eight of them, also with eighteen. On held-out vocabularies made of ordinary or borrowed words (English-derived jargon, office slang, department names), the augmented release is more accurate in every setting, by up to 0.24. Eleven of these fourteen gains survive a Holm correction (slang with eighteen candidates and descriptive sentences with five do not), and for jargon on all labels the label-level interval excludes zero in both settings. On abbreviations and opaque codes it gives no usable gain: on abbreviations it is not better, and worse on the clean slice, and on opaque codes both releases stay at or below chance once labels related to training options are removed. In most cells where accuracy rises, the risk-coverage area falls, but with eighteen candidates confident errors rise on jargon and slang. On two datasets neither release saw, accuracy moves by -8.4 and +5.6 points. We also report four evaluation hazards from comparing the two releases.",
-        "authors": [
-          "Vladimir Beskorovainyi"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
-      },
-      {
-        "title": "Understanding AI from the Inside: The State of Mechanistic Interpretability for AI Safety",
-        "url": "https://arxiv.org/abs/2611.08438v1",
-        "publishedAt": "2026-11-05T18:30:54.000Z",
-        "summary": "Neural networks are likely to be among the most consequential artefacts in human history. As these systems become more capable and autonomous, their potential to cause societal harm also grows, making AI safety one of the defining challenges of our time. Yet we continue to build increasingly powerful systems without fully understanding how they work, how they will behave in unfamiliar situations, or how to reliably control them. Mechanistic interpretability offers a path towards understanding these systems by studying their internal representations and computations, with the aim of evaluating, predicting, and controlling behaviour. We survey mechanistic interpretability for AI safety in order to answer the question: Does understanding how models work actually make them safer? We place mechanistic interpretability in the broader context of interpretability research and compare its mechanistic evidence with behavioural evaluation. We introduce the foundations of mechanistic interpretability, including features, polysemanticity, transformer computation, and circuits, and survey methods for feature extraction and analysis, circuit discovery and causal verification, explaining intermediate representations in natural language, learning dynamics, and training-data attribution. Beyond surveying existing methods, we propose a unified framework for evaluating mechanistic interpretability claims and characterise six research orientations by their goals, assumptions, and trade-offs. Finally, we examine how mechanistic understanding can support AI safety, including knowledge editing, steering, and monitoring, and assess its limitations, failure modes, open problems, and relationship to behavioural safety measures. We also release a repository of code notebooks with worked examples that reproduce key findings from surveyed methods, allowing readers to build intuition through hands-on experimentation.",
-        "authors": [
-          "Fazl Barez",
-          "Tung-Yu Wu",
-          "Hunar Batra",
-          "Gabriele Dominici",
-          "Florent Draye",
-          "Yanai Elazar",
-          "Damiano Fornasiere",
-          "Antía García",
-          "Abir Harrasse",
-          "Riley Harris",
-          "Sara Hooker",
-          "Michael Lan",
-          "Belinda Z. Li",
-          "Aaron Maiwald",
-          "Narmeen Fatimah Oozeer",
-          "Naomi Saphra",
-          "Or David Shafran",
-          "Adi Simhi",
-          "Robert Trager",
-          "Shriyash Kaustubh Upadhyay",
-          "Ziyu Yao",
-          "Yu Zhao",
-          "Shay B. Cohen",
-          "Mor Geva",
-          "Yoshua Bengio",
-          "Stella Biderman",
-          "Hassan Sajjad"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 78
+        "ageHours": 61
       }
     ],
     "news": [
+      {
+        "title": "Is Jensen Huang’s job on the line? Yale’s Jeffrey Sonnenfeld estimates it’s “about a 50-50”",
+        "url": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50/",
+        "publishedAt": "2026-11-09T05:26:29.000Z",
+        "summary": "Nvidia’s board is investigating Jensen Huang over his relationship with a suspected Chinese spy, and Yale’s Jeffrey Sonnenfeld thinks it’s roughly a coin flip whether Huang stays on as CEO.",
+        "authors": [
+          "Connie Loizos"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 2
+      },
+      {
+        "title": "A single AI model simulates the behavior of many substances, from sliding sand to folding proteins",
+        "url": "https://news.mit.edu/2026/single-ai-model-simulates-many-substances-behavior-1109",
+        "publishedAt": "2026-11-09T05:00:00.000Z",
+        "summary": "Today, a scientist who wants to simulate a physical process must pick the right tool for that one job, such as a solver built for flowing water or another designed to model the way a protein folds. Each one is hand-coded around the specific equations that dictate how that process behaves. Researchers at MIT, the University of British Columbia (UBC), and elsewhere have now replaced that patchwork with a single deep-learning system, called WorldParticle , that could help engineers model different physical phenomena, from sliding sand to folding proteins, with one unified artificial intelligence architecture. Scientists and engineers could use this system to model processes that typically require separate simulators, such as a fluid sloshing against a deformable solid. This could offer a faster, more accurate way to simulate how sloshing oil might impact an elastic valve in a storage tank, for instance. It could also help engineers study where and how granular materials, like sand or soil, could move when a soft robot touches them. The system represents every material it simulates, from a dune of sand to a protein molecule, as tiny particles and predicts where those particles will move one step at a time. Because it learns the underlying dynamics rather than being programmed with an equation, the model can adapt to materials, forces, and environments it never encountered during training.&nbsp;&nbsp; In the long term, the researchers hope this work helps scientists discover new materials and explore physical processes they would be unable to effectively study with existing simulation methods. “We want to have a GPT moment for simulation,” says Peter Yichen Chen, a former MIT postdoc who is now an assistant professor at UBC, and is a co-corresponding author of an open-access paper on this technique. “Every time people want to build a simulator for a particular physical phenomenon, they need to code it up from scratch. Our vision is to have a foundation model that works out of the box for any scenario you want to simulate. This is a first step in that direction.” Chen is joined by co-corresponding and co-lead author Minghao Guo, an MIT postdoc; co-lead authors Caoliwen Wang and Siyuan Chen, UBC graduate students; Wojciech Matusik, an MIT professor of electrical engineering and computer science who leads the Computational Design and Fabrication Group within the Computer Science and Artificial Intelligence Laboratory (CSAIL); and others at UBC, Georgia Tech, Inria, Meta, the University of Pennsylvania, the University of Utah, the University of California at Los Angeles, and the University of Hong Kong. The research will be presented at the ACM SIGGRAPH Conference and Exhibition on Computer Graphics and Interactive Techniques in Asia. Unified simulation For this work, the researchers drew inspiration from world models. These powerful AI systems learn the rules that govern the physical world so they can predict how objects or environments will change over time in response to certain actions or conditions. The researchers applied these concepts to develop a unified AI architecture that can simulate multiple types of physical phenomena.&nbsp; “If you study deformable objects and fluids, you would need two simulators — one for each physical regime. But if you unify them into one model, maybe you could couple the physics of these two processes and gain insights into new problems?” Guo says. WorldParticle breaks an object into thousands or millions of tiny, three-dimensional dots, or particles, using what is known as a Lagrangian representation. It tracks the movement and velocity of the particles over space and time to simulate the material’s dynamics. Typically, when scientists model materials and physical processes using Lagrangian particles, they use a governing equation that defines the fundamental laws which control how that material behaves over time and space. They must convert that complex equation into a formula a numerical solver can handle, repeating these steps for each material and process they want to model. Instead, the researchers designed a neural network that learns to solve governing equations in general, eliminating the need to design a new model and solver to handle each one.&nbsp; Once WorldParticle converts an object into particles, a neural network takes the 3D positions and physical properties of the particles as inputs. It outputs their positions and properties for the next frame of the simulation, predicting the material’s motion over time and space in one-second increments.&nbsp; “It is a similar architecture to ChatGPT. But instead of predicting one word at a time to write a piece of text, we are predicting how these particles will move, one step at a time,” Chen says. Before each simulation step, WorldParticle separates the external forces that affect the physical system, like impulse forces that affect an ocean wave when it slams into a seawall.&nbsp; After predicting the initial states of the particles, WorldParticle integrates the external forces back into the simulation, correcting its particle predictions based on how those forces affect the object’s behavior. In this way, the system can generalize to unseen materials, changing environmental conditions, and varied forces. A general, scalable framework But because a complex object could be broken into millions of particles, the problem quickly becomes too computationally intensive for the model to handle.&nbsp; To streamline processing, the researchers employed a merging technique to combine and compress particles while still allowing WorldParticle to capture fine-grained details of their behavior. “We needed to do a lot of detailed engineering and employ many tweaks to the architecture for it to be truly generalizable and scalable,” Guo says. They demonstrated WorldParticle by modeling six different physical phenomena, including deformable objects, granular materials, and proteins, with higher accuracy than numerical simulation methods.&nbsp; For instance, WorldParticle effectively captured how a granular object would collapse into a pile while some baseline methods left sand particles floating in the air. Their method also modeled how protein structures change over time about 100 times faster than numerical simulators, Guo adds.&nbsp; The general-purpose framework could be applied to many materials and processes, including soft robot manipulation tasks, RNA evolution, and astrophysical phenomena like the merging of galaxies, the researchers say. Moving forward, they want to adapt WorldParticle to simulate these and other physical systems. They also want to build on this work toward the development of a full, general-purpose simulation pipeline for scientific discovery.&nbsp; &nbsp;“We see the unification of computation and science giving us new insights and tools to discover physical phenomena or explain some unexplainable physical phenomena,” Guo says. “With a unified model, we could unlock many discoveries that we can’t even imagine.”",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 3
+      },
+      {
+        "title": "AI-assisted learning platform helps robots reason beyond literal commands",
+        "url": "https://news.mit.edu/2026/ai-assisted-learning-platform-helps-robots-reason-beyond-literal-commands-1109",
+        "publishedAt": "2026-11-09T05:00:00.000Z",
+        "summary": "Humans are intuitive by nature. We can sense meaning beyond the literal words that we encounter. Now, a new artificial intelligence-assisted learning platform developed by MIT engineers is enabling robots to read larger meaning into a human’s natural language commands.&nbsp; In a study to be presented at the annual Conference on Robot Learning this month, researchers from MIT and New York University introduce FLEX , a flexible feature-editing pipeline for robot motion-planning.&nbsp; With FLEX, humans can interact with a robot by giving it instructions in natural, conversational language. The robot can not only follow the instructions literally but also read into the words to draw larger generalizations that help to improve its motion-planning task.&nbsp; The team demonstrated FLEX in several simulated scenarios, including one in which a robot serves a cup of coffee. In these virtual scenarios, a person interacts with a robotic arm by typing commands in natural language. As the robot moves the coffee cup over a cluttered table, the person might type “Don’t spill on the laptop!” In response, the robot will reason about why it should avoid the laptop. For this, FLEX incorporates a large language model (LLM) — a type of AI system that is trained on enormous libraries of text, including social media posts, video transcriptions, and web content, which the LLM uses to identify larger trends, patterns, and generalizations.&nbsp; “LLMs have seen so many texts from the internet,” says study author Nathan Dennler, a postdoc in MIT’s Computer Science and Artificial Intelligence Laboratory (CSAIL). “People might have written about, ‘Oh, my phone dropped in the water and now it doesn’t work,’ or ‘I spilled coffee on my computer and now it doesn’t work.’ So LLMs pick up on the idea that liquids plus devices leads to things not working.” Through the LLM, the robot reasons that it should also avoid bumping into all electronics. In its updated path, the robot adjusts to avoid both the laptop and a nearby phone, without the person having to explicitly spell this out. “The idea is that there is some higher-level intention behind the words that you say,” Dennler says. “People naturally get this. But you have to carefully explain that to a robot, which takes time and effort. FLEX gives you an interface of communication with a robot to say, ‘When people say this, they mean that.’” The study was led by Andreea Bobu, assistant professor of aeronautics and astronautics at MIT. Co-authors are Audrey Lee SM ’26 and Ilia Sucholutsky of New York University. Beyond what we say At MIT, Bobu heads up the Collaborative Learning and Autonomy Research (CLEAR) Lab, where her group develops autonomous agents that learn to work for, with, and around people. She is focused on developing assistive and household robots that can carry out physical tasks, and reason and adapt in real-time, in response to a person’s natural, conversational commands.&nbsp; “Robots use math to do their trajectory planning. But we can’t expect a consumer to learn to do this math in order to tell a robot what to do,” says Dennler, who is a member of the CLEAR Lab. “Instead of having to get people to learn how to use a robot in a specific way, the goal is to interact with the robot through natural language.” There is a large effort in the robotics community to incorporate natural language into robotic learning pipelines. Various strategies include using language to clarify a task’s goal, redirect a robot’s trajectory, and update its understanding of what is a safe path to take. These existing methods use natural language to tell the robot how to physically perform a task. But a robot could potentially learn much more from what we tell it.&nbsp; Bobu and her colleagues are expanding what robots can learn from natural language commands. In their new study, they focused on enabling a robot to interpret a person’s underlying, unspecified preference from limited natural language commands.&nbsp;&nbsp; Absorbing common sense The team’s new robot learning platform, FLEX, is a three-step process that helps a robot read more into a natural language command, beyond what it is explicitly told to do.&nbsp; The first step, “Add,” instructs a robot to add a feature to its list of things in its environment that matter for the task at hand, based on a user’s natural language command. For instance, as a robot is moving a bowling ball from one location to another, a person might interject with “Don’t drop it on my mug!” The robot would then add the mug to a list of things to avoid in its path. This first step is how previous methods have worked. Every time a person makes a correction, the robot adds to its features list, and updates its trajectory to avoid those features.&nbsp; “The problem happens when your feature list becomes super long, and some features are no longer relevant because your environment may have changed,” says Dennler, who notes that this approach can grow tiresome if a person has to specify every specific feature to avoid.&nbsp; The second step, “Generalize,” is the new solution that FLEX provides. This step incorporates an LLM — in this case, GPT-4o — that considers the mug, along with any other features that the person has so far specified to avoid. The LLM automatically searches through its vast cache of data for patterns and connections among these features, to ultimately make a generalization that it should avoid objects that are fragile, even when the person has not explicitly said so.&nbsp; “LLMs have&nbsp;seen so many texts from the internet, from all sorts of people and places,” Dennler says. “Because they’ve trained so much on those things, some of that common sense gets absorbed into the LLM.” In the third step, “Mask,” the robot’s standard computer vision system assesses its environment to determine what objects are no longer present, and then deletes those objects from its features list. This entire three-step process takes about five seconds.&nbsp; The team tested FLEX in simulations of a robot arm carrying out three different tasks: serving a cup of coffee, moving a candle, and carrying a bowling ball. In all three scenarios, volunteers interacted with the virtual robot by typing natural language commands, such as “Don’t spill on my laptop,” “Stay away from the stack of paper,” and “Don’t drop on the mug.” With FLEX, the robot followed all three commands literally and also reasoned at a higher level to not spill on electronics, stay away from flammable objects, and not drop its cargo on fragile things.&nbsp; “Everyone’s homes are different, and everyone cares about different things, so no robot comes out of the box knowing what matters to you,” Bobu says. “What excites me about FLEX is that it can pick that up from a sentence or two instead of asking you to spell out every rule — and that’s the difference between a robot people put up with and one they actually want in their home.” &nbsp; This work&nbsp;was partly supported by the MIT Generative AI Impact Consortium and the MIT Schwarzman College of Computing’s Social and Ethical Responsibilities of Computing program.",
+        "authors": [
+          "Jennifer Chu | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 3
+      },
       {
         "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
         "url": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
@@ -333,7 +348,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
+        "ageHours": 11
       },
       {
         "title": "After the midterms, things are looking rocky for Elon Musk and data centers",
@@ -347,7 +362,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 27
+        "ageHours": 34
       },
       {
         "title": "Megaspeed exec was recruited to spy on Nvidia CEO, according to US intelligence memo",
@@ -361,7 +376,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 28
+        "ageHours": 35
       },
       {
         "title": "Crusoe sells troubled Wyoming data center project to Google",
@@ -375,7 +390,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 47
+        "ageHours": 54
       },
       {
         "title": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
@@ -389,7 +404,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 50
+        "ageHours": 57
       },
       {
         "title": "How to predict the behavior of molecules from scant data",
@@ -403,7 +418,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 54
+        "ageHours": 61
       },
       {
         "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
@@ -417,7 +432,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 54
+        "ageHours": 61
       },
       {
         "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
@@ -431,7 +446,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 54
+        "ageHours": 61
       },
       {
         "title": "How a Blue Wave midterm might reshape the AI industry",
@@ -445,68 +460,26 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 55
-      },
-      {
-        "title": "After the midterms, is the AI industry in for a rough two years?",
-        "url": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years/",
-        "publishedAt": "2026-11-06T17:23:52.000Z",
-        "summary": "Democrats’ historic victories in this week’s U.S. midterm elections could also transform the tech industry. The public voted on 41 data center-related ballot measures on Tuesday — in all but one, the majority voted to impose more restrictions on data center development. And even when data centers weren’t on the ballot directly, they were a [&#8230;]",
-        "authors": [
-          "Theresa Loconsolo, Anthony Ha"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 55
-      },
-      {
-        "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
-        "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
-        "publishedAt": "2026-11-06T15:54:47.000Z",
-        "summary": "AI usage keeps climbing, but spending has stalled. Price cuts and smarter cost controls among the biggest spenders could challenge investor assumptions about AI hypergrowth.",
-        "authors": [
-          "Rebecca Bellan"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 57
-      },
-      {
-        "title": "After blocking Muse, Amazon now lets users text Alexa to help them shop",
-        "url": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop/",
-        "publishedAt": "2026-11-06T14:10:00.000Z",
-        "summary": "Amazon said that the feature will roll out to millions of users in coming weeks.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 59
+        "ageHours": 62
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 1,
+    "last24h": 4,
     "topCategories": [
       {
         "name": "Research",
-        "count": 9
+        "count": 10
       },
       {
         "name": "General",
-        "count": 8
+        "count": 7
       },
       {
         "name": "Models",
-        "count": 5
+        "count": 4
       },
       {
         "name": "Products",
