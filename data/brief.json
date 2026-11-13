@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T23:34:58.701Z",
+  "generatedAt": "2026-11-13T06:32:12.063Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,215 +85,256 @@
   "sections": {
     "research": [
       {
-        "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
-        "url": "https://arxiv.org/abs/2611.14519v1",
-        "publishedAt": "2026-11-10T18:59:54.000Z",
-        "summary": "Foundation models pretrained on large natural-image collections are increasingly adapted for medical image segmentation, in the expectation that they will replace models trained for each task. Most comparisons, however, use data from the training distribution and a single task-specific baseline whose configuration is rarely justified, and therefore provide limited evidence of performance at new clinical sites. It also remains unclear how much of a foundation model must be adapted, and what determines this. We adapted a foundation model, DINOv2, with strategies ranging from tuning only its bias terms to full fine-tuning, and compared it with U-Nets and ResU-Nets trained from scratch. Experiments covered colonoscopy, breast ultrasound and dermoscopy, with testing on held-out data from the training source and on independent datasets from other institutions. The adapted foundation model generalised better on every external dataset. Within the training distribution, the task-specific models remained competitive when training data were abundant, and delineated boundaries more precisely, while the foundation model more often missed small lesions. Only a small fraction of the foundation model required adaptation, and the capacity needed was determined by the imaging domain rather than by the adaptation method. A widely used polyp test set was also found to duplicate images from another benchmark. Foundation-model adaptation is therefore warranted where models must work across sites, with capacity selected on the target domain.",
+        "title": "Unbundling Multimodal Vision Encoding",
+        "url": "https://arxiv.org/abs/2611.17334v1",
+        "publishedAt": "2026-11-12T18:59:54.000Z",
+        "summary": "How multimodal language models should encode visual input remains up for debate. Most models use a pretrained vision encoder, while some recent recipes train the encoder from scratch with the language model or remove it entirely. Vision encoders bundle together three design choices: a visual prior from upstream pretraining, dedicated vision capacity, and pre-fusion placement of that capacity (i.e., before the multimodal backbone). Because published models also differ in data, architecture, and compute, comparing them cannot isolate the effect of each choice. We disentangle these choices via a controlled framework where we pretrain all models from scratch on common data and compare them on visual question answering and language benchmarks at matched lifetime compute. We find that the visual prior is not necessary; an encoder trained jointly from scratch is on par with a pretrained one, without a separate training stage. What matters instead is dedicated vision capacity: an encoder-free model trails on visual understanding even when its backbone is enlarged by the encoder's parameter count. Yet that capacity need not precede multimodal fusion, as vision-only modules added in-fusion to early backbone layers perform comparably to a pre-fusion encoder and can lower time to first token. These results also hold across backbone sizes, when encoder pretraining is treated as free, and when starting from a pretrained language model. Overall, our findings favor dedicated vision capacity trained jointly with the backbone and placed early within it.",
         "authors": [
-          "Emre Kutlusan",
-          "Yongmin Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 53
-      },
-      {
-        "title": "Toward Foundation Detection Models via Example-Based Grounding in EM-DETR",
-        "url": "https://arxiv.org/abs/2611.14518v1",
-        "publishedAt": "2026-11-10T18:59:17.000Z",
-        "summary": "DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise in supporting clinicians, but their performance heavily depends on the availability of large, well-annotated datasets. In medical lesion detection, the scarcity of comprehensive, stan dardized annotations and the heterogeneity of existing datasets limit the development of robust foundation models. In this work, we introduce a novel approach to building a multi-domain foundation model for le sion detection by integrating diverse medical image datasets annotated for both anatomical structures and abnormalities. We first propose a student-teacher training strategy to effectively combine datasets with heterogeneous label spaces, mitigating catastrophic forgetting, and im proving feature learning. In addition, building on our previously pro posed example-based EM-DETR framework, we adapt it to jointly learn from multiple domain-specific datasets, enabling fine-grained, example driven detection across modalities. Our model achieves state-of-the-art (SOTA) results, with image-level AUC scores exceeding previous SOTA by 1% point on four key findings in CXRs. We achieve a leading mAP50 in CXRs and mammography, surpassing EM-DETR trained on a single dataset by 2-3% points. This approach paves the way for scalable foundation models in medical imaging that leverage heterogeneous data while maintaining robust and generalizable performance.",
-        "authors": [
-          "Sheethal Bhat",
-          "Bogdan Georgescu",
-          "Awais Mansoor",
-          "Florin C. Ghesu",
-          "Sasa Grbic",
-          "Andreas Maier"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 53
-      },
-      {
-        "title": "TorchCurves: Differentiable Parametric Curves",
-        "url": "https://arxiv.org/abs/2611.14516v1",
-        "publishedAt": "2026-11-10T18:58:52.000Z",
-        "summary": "We present TorchCurves, a PyTorch library that treats vector-valued parametric curves as learnable primitives. Its central operation maps batches of scalar inputs to points on curves represented in B-spline or Legendre polynomial bases, with differentiation through both inputs and coefficients. Curve coefficients can be optimized jointly with the surrounding model or produced by another network. The library provides trainable modules, reusable basis modules, and a functional interface, supporting applications ranging from continuous feature embeddings to Kolmogorov-Arnold networks and functional regression. Its implementation combines classical evaluation algorithms with vectorized PyTorch operations, emphasizing readability and maintainability without custom hardware kernels. Timing experiments compare curve evaluation against NumPy and SciPy and KAN training against EfficientKAN across a range of problem sizes. The results illustrate where this generality remains computationally practical and where overhead is substantial. Library is available on GitHub at https://github.com/alexshtf/torchcurves.",
-        "authors": [
-          "Alex Shtoff"
+          "Ellis Brown",
+          "Chris Hoang",
+          "Shengyi Qian",
+          "Shang-Wen Li",
+          "Mike Lewis",
+          "Marjan Ghazvininejad",
+          "Luke Zettlemoyer",
+          "Lucas Beyer",
+          "Mengye Ren",
+          "Jakob Verbeek",
+          "Saining Xie",
+          "Hu Xu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 53
+        "ageHours": 12
       },
       {
-        "title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
-        "url": "https://arxiv.org/abs/2611.14515v1",
-        "publishedAt": "2026-11-10T18:58:46.000Z",
-        "summary": "Reinforcement learning with verifiable rewards (RLVR) produces rich training experience, yet outcome rewards reduce each attempt to a single number and leave most of this information unused. Training-time scaffolds, such as strategies or hints added to the prompt during training, offer a natural way to turn this information into guidance, but their design and adaptation are largely left to humans and tailored to specific domains. We introduce AutoScaffold, a unified AI-for-AI framework that turns a student's training experience into adaptive scaffolds, with minimal domain-specific information and no human intervention during training. A frozen teacher periodically examines this experience, diagnoses bottlenecks, and designs scaffolds in two forms: (i) strategies shared across a class of tasks and (ii) hints for individual hard tasks, adjusting the content and amount of support as the student learns. The scaffolds are removed at evaluation. We apply the same framework to ALFWorld, search-based QA, mathematical reasoning, and GPU kernel generation. When evaluated without scaffolds, students trained with AutoScaffold outperform those trained with the corresponding RL baselines in all four domains, with gains of 7.2 points in ALFWorld success and 4.0 points in average QA exact match. On GPU kernel generation, AutoScaffold increases the fraction of tasks with a correct kernel that runs faster than the PyTorch reference by up to 5.0 points. On math, our student surpasses QuestA's reported accuracy using approximately one-third as many student training steps. Analyses show that the teacher identifies a different failure in each task class and shifts its scaffolds from step-by-step workflows to targeted fixes as the student improves, and that its revised scaffolds help the student learn more than keeping the previous scaffold or using no scaffold.",
+        "title": "ArchSpace: Recording, Reviewing, and Referencing LLM Architecture Research",
+        "url": "https://arxiv.org/abs/2611.17332v1",
+        "publishedAt": "2026-11-12T18:59:52.000Z",
+        "summary": "Model architecture shapes the scaling behavior, training efficiency, and inference cost of LLMs, making it a central focus of both industry and academia. In industry, teams such as those behind DeepSeek, Qwen, and Kimi routinely introduce architectural innovations, yet public reports rarely document which ideas succeeded, which were abandoned, and why. In academia, limited compute and inconsistent baselines often restrict evaluations to small-scale, single-point comparisons, making it difficult to establish whether improvements hold at larger scales or translate into broader impact. ArchSpace addresses both gaps as a public platform for Recording, Reviewing, and Referencing Architecture Researc}: each proposal is recorded with its experiments and reasoning, reviewed by the community, and referenced by later work. To evaluate ideas before costly large-scale training, ArchSpace leverages scaling laws to predict model loss at larger scales from smaller experiments, a practice widely adopted in industry. We provide initial references that make the platform usable: Qwen3.5 and OLMo3 baselines, fitted scaling laws, and a reusable training recipe. Ideas validated through this review can in turn become new baselines, and ArchSpace thereby aims to broaden the range of ideas that shape the next generation of models.",
         "authors": [
-          "Zijian Zhang",
-          "Rizhen Hu",
-          "Jiangweizhi Peng",
-          "Shiyang Li",
-          "Sujay Bhatt",
-          "Sihan Zeng",
-          "Mingyi Hong"
+          "Jie Wang",
+          "Tong Zhu",
+          "JiaHao Kuang",
+          "Zhe Xu",
+          "Yunkai Chai",
+          "Dehong Zheng",
+          "Yu Cheng",
+          "Tao Ji",
+          "ZhouHan Lin",
+          "Qi Zhang",
+          "Bowen Zhou"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 53
+        "ageHours": 12
       },
       {
-        "title": "Contrastive Discovery: Open-Ended Scientific Discovery over Competing Explanations",
-        "url": "https://arxiv.org/abs/2611.14514v1",
-        "publishedAt": "2026-11-10T18:58:43.000Z",
-        "summary": "LLM agents are increasingly used for open-ended, data-driven scientific discovery, yet most of them evaluate hypotheses pointwise, testing an empirical claim $h$ only against its complement $\\neg h$. When evidence rejects $h$, the agent learns that one explanation is unlikely but not which alternative the evidence supports. To recover that alternative, we introduce Contrastive Discovery, which replaces the single hypothesis with a contrast set, a scientific question paired with mutually exclusive and collectively exhaustive competing explanations. Each experiment is scored by how its evidence redistributes belief across the set, and the question is resolved when belief concentrates on one explanation. Because contrast sets change only the unit an agent proposes and scores, an existing agent can use them to re-evaluate evidence it has already collected or to guide its search. Across six domains, $89\\%$ of the pointwise candidates with the largest belief shifts are rejections. On the same evidence, contrast sets resolve $73\\%$ of these candidates to a specific alternative. When contrast sets guide search, the agent resolves $67\\%$ more questions than pointwise surprisal under the same experiment budget. In a blinded study, $38$ human experts chose the same explanation on $78\\%$ of resolved questions and on $82\\%$ of questions where the pointwise agent rejected its hypothesis and stopped. Together, these results support explicit competing explanations as a way for discovery agents to resolve more scientific questions from the same evidence and validation budget.",
+        "title": "Internalizing Investment Mandates: A Neurosymbolic RL Approach to Portfolio Allocation",
+        "url": "https://arxiv.org/abs/2611.17329v1",
+        "publishedAt": "2026-11-12T18:59:37.000Z",
+        "summary": "Institutional portfolios operate under investment policy statements that specify asset allocation constraints, often conditioned on market regime information. Deep reinforcement learning has been shown to optimize financial performance but typically does not enforce rule compliance, making it unsuitable for real-world deployment. Existing neurosymbolic methods such as Probabilistic Logic Policy Gradient (PLPG) offer constraint-satisfying reinforcement learning (RL) via differentiable symbolic supervision but assume a finite, discrete action space. We present a PLPG-inspired continuous allocation method that estimates the probability that the policy's own executed action satisfies the investment mandate, using reparameterized Monte Carlo sampling, and adds it to the training objective. No post-hoc enforcement mechanism intercepts actions at inference time and compliance is learned by the agent. Audited directly on deterministic mean actions with no correction, the policy reduces violations of a six-rule regime-conditional mandate from 96-98% for unconstrained RL and 33.4% for a reward-penalty baseline to 4.8%, showing that a continuous-action neurosymbolic policy can substantially internalize a symbolic mandate.",
         "authors": [
+          "Zeynep Yıldız",
+          "Satchit Chatterji",
+          "Ercan Atam",
+          "Erman Acar"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "AgentSSL: Can MLE Agents Leverage Unlabeled Data?",
+        "url": "https://arxiv.org/abs/2611.17323v1",
+        "publishedAt": "2026-11-12T18:59:06.000Z",
+        "summary": "Applying machine learning systems to new domains introduces bottlenecks in both labeled data acquisition and manual pipeline engineering. While recent MLE agents show promise in automating pipeline design, they have been studied almost exclusively in fully supervised settings, leaving them untested in realistic regimes where labeled data is scarce but unlabeled data is abundant. In this work, we introduce Agentic Semi-Supervised Learning (AgentSSL), framing SSL as a program search problem and studying how agents navigate this space under limited supervision. We find that even under weak feedback and matched compute, agents can synthesize code that combines and adapts established SSL techniques, exceeding the strongest human-engineered baselines in 8 of 12 settings by up to +21.8%. However, our results identify program selection as a critical bottleneck in AgentSSL, where performance drops by as much as 47% when selecting based on the agent's feedback metric. To systematically study this bottleneck, we introduce ProgramSelectBench, a large-scale benchmark with a combined total of 16,977 agent-generated and human-engineered SSL programs, and evaluate both unsupervised and active program selection methods. We further evaluate AgentSSL on real-world ecology detection tasks, highlighting the opportunities and challenges of transferring agent-discovered strategies beyond controlled benchmarks.",
+        "authors": [
+          "Ethan Lin",
+          "Akanksha Sarkar",
           "Ziang Liu",
-          "James J. Kim",
-          "Yijia Dai",
+          "Kristin Branson",
           "Jennifer J. Sun"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 53
+        "ageHours": 12
       },
       {
-        "title": "Pyrite: Building and Benchmarking Protein-Ligand Pose Ranking Agents",
-        "url": "https://arxiv.org/abs/2611.14511v1",
-        "publishedAt": "2026-11-10T18:56:32.000Z",
-        "summary": "Predicting how a ligand binds to its target is central to small-molecule drug discovery. Modern cofolding models can generate diverse candidate poses, but reliably ranking these candidates remains challenging. We introduce Pyrite, a pairwise pose-ranking benchmark comprising 1,500 pose pairs across diverse protein-ligand complexes. Expert chemists equipped with 3D visualization tools and physics-based scores perform near chance, highlighting the difficulty of interpreting available chemical signals. To investigate automated ranking, we introduce PyriteRep, a structured representation of molecular geometry, protein-ligand interactions, and physicochemical scores, and develop two LLM-based agents: PyriteReasoner, which directly compares poses through text-based reasoning, and PyriteFeaturizer, which generates executable code to construct features for logistic regression, optionally incorporating features derived from LLM subcalls. These agents achieve up to 67% and 74% accuracy, respectively, exceeding observed expert performance. LLM-guided feature discovery generally outperforms direct reasoning, while Group Relative Policy Optimization (GRPO) improves open-weight models, enabling them to match or surpass closed-source frontier models in our evaluations. These results establish Pyrite as a challenging test of pose-ranking ability and highlight LLM-guided feature discovery as a promising approach to interpret and combine the outputs of computational chemistry tools.",
+        "title": "Learning When Diffusion Language Models Should Regenerate",
+        "url": "https://arxiv.org/abs/2611.17320v1",
+        "publishedAt": "2026-11-12T18:58:50.000Z",
+        "summary": "Remasking allows diffusion language models to revisit generated text, but effective correction requires knowing when and what to revise. Our diagnosis on Sudoku reveals two gaps. Hidden states contain error information that token confidence does not reliably expose, and remasking an isolated error usually reproduces it when the surrounding context remains fixed. These findings motivate DiVR , a verifier that predicts whether a partially generated sequence will reach a correct answer. Trained on the final correctness of the model's own trajectories, DiVR decides when to regenerate a block and which alternative to retain, while the generator itself stays unchanged. On five reasoning benchmarks with LLaDA-8B-Base, DiVR raises the average accuracy of the fine-tuned generator from 35.3\\% to 43.4\\% at $1.9$-$3.5\\times$ the cost of greedy decoding, above search baselines that use $3.8$-$7.4\\times$. It also complements post-training such as supervised fine-tuning and reinforcement learning, and generalizes to other generators, including Dream.",
         "authors": [
-          "Megha Srivastava",
-          "Michael H. Lim",
-          "Allison M. Keys",
-          "Pranav Murugan",
-          "Nate Gruver"
+          "Minhae Oh",
+          "Jeonghye Kim",
+          "Jinwoo Koo",
+          "Yeongoon Kim",
+          "Jimin Seo",
+          "Minsik Seol",
+          "Jungwoo Lee"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+        "url": "https://arxiv.org/abs/2611.17316v1",
+        "publishedAt": "2026-11-12T18:58:22.000Z",
+        "summary": "Coding agents tackle successive tasks on an evolving repository, carrying forward edits and writing memory before the next task is known. Selecting memory for unknown next tasks requires balancing future usefulness against the costs of writing and reading it. The actor must also decide when acting on available memory saves effort as the task unfolds. We introduce Coding-Repository Memory (CoReMem), a cost-internalizing framework that guides memory design and actor adaptation through measured memory value on the next task. Prospective segment valuation compares runs of the next task with and without individual trajectory segments from the same inherited repository state, guiding a compact memory built around anchors: repository locations and executable checks. Actor adaptation estimates on-policy memory value within rollout groups with and without memory, using a reward that prioritizes resolution and penalizes step count in successful runs. Provenance-gated value credit assigns the additional value term to steps identified as using memory-supplied anchors, while every step retains outcome credit. On ChainSWE, CoReMem raises the 27B actor's resolve rate from 21.0% to 25.7%, with 17% fewer steps and 11% fewer total cache-aware tokens, including memory-module calls, relative to the untrained actor model without memory.",
+        "authors": [
+          "Peiwen Li",
+          "Harshit Verma",
+          "Sophia Zhou",
+          "Haiwen Wang",
+          "Ngoc Bui",
+          "Heng Chang",
+          "Fei Fei",
+          "David van Dijk",
+          "Rex Ying"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Linking Rapid Learning to Compositional Structure in Neural Networks: Evidence from Additive Analogies in Meta-Learned Parameter Spaces",
+        "url": "https://arxiv.org/abs/2611.17314v1",
+        "publishedAt": "2026-11-12T18:57:49.000Z",
+        "summary": "Humans can learn rapidly from limited experience, while neural networks typically require extensive training. In this work, we investigate what properties of a neural network can enable it to learn rapidly. We study neural networks that have been optimized via meta-learning, a technique that exposes a network to many related functions to facilitate its subsequent learning of similar functions. Prior work has shown that these meta-learned networks can learn new functions rapidly, but how they do so remains unclear. To investigate their internal structure, we take inspiration from classic work demonstrating additive relationships among the learned vectors that neural networks use to represent words (e.g., \"king\" minus \"man\" plus \"woman\" approximates \"queen\"). Analogously, we look for additive relationships among a meta-learned network's \"representations\" of different functions; when a meta-learned network rapidly learns to implement a specific function, all of its adapted parameter values can be concatenated into a single vector that we treat as representing the function. We find that such parameter vectors can be added and subtracted according to symbolic relationships among the functions they represent, yielding new parameter vectors that successfully represent the functions predicted by the corresponding symbolic manipulations: the networks specified by these artificially recombined vectors actually implement the intended functions without any direct training on them. Our results suggest that meta-learning can tune a network's starting point to organize subsequent learning along systematic, functionally meaningful trajectories through the space of possible parameter vectors, providing a geometric basis for realizing inductive biases in neural networks.",
+        "authors": [
+          "Abigail L. Tenenbaum",
+          "R. Thomas McCoy"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 12
+      },
+      {
+        "title": "Sketching Language Models for Context Attribution",
+        "url": "https://arxiv.org/abs/2611.17313v1",
+        "publishedAt": "2026-11-12T18:57:48.000Z",
+        "summary": "Context attribution asks how removing parts of a prompt changes a language model's output. We study leave-one-out (LOO) attribution for a prompt of $n$ tokens and a fixed measurement function. Computing all LOO values directly requires $n$ model evaluations. Under a stability assumption, our algorithm estimates all LOO values to error proportional to $\\varepsilon$ with constant probability using $O(\\sqrt{\\log(1/\\varepsilon)}/\\varepsilon)$ evaluation calls. To complement our upper bound, we prove a matching $Ω(\\sqrt{\\log(1/\\varepsilon)}/\\varepsilon)$ lower bound on the number of evaluation calls in an oracle model. Empirically, we verify coefficient decay consistent with stability and evaluate the performance of our sketching algorithm on a small language-model retrieval task.\n  Technically, our result is based on a sketching algorithm for arithmetic circuits whose Taylor coefficients satisfy the stability condition recently introduced by Gunn [Gun26]. A direct adaptation of their forward differentiation sketches would require $\\widetilde{O}(\\log(n)/\\varepsilon^2)$ evaluation calls. Our key observation is that we can apply forward differentiation to the backpropagation circuit, with only constant overhead over a forward sketch of the same Taylor degree. This reduces the variance of the sketches and is key to our improved evaluation bound. Our lower bound builds on the techniques of Amsel, Chen, Duman Keles, Halikias, Musco, and Musco [ACDH+26, SIAM Journal on Matrix Analysis and Applications] for lower bounding the number of matrix-vector queries to estimate the diagonal elements of random matrices.",
+        "authors": [
+          "Christopher Liaw",
+          "Aranyak Mehta",
+          "Grigoris Velegkas",
+          "Felix Zhou"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 53
+        "ageHours": 12
       },
       {
-        "title": "When Does the Real Wiring Win? Testing connectome structure-function claims against unmeasured physiology",
-        "url": "https://arxiv.org/abs/2611.14508v1",
-        "publishedAt": "2026-11-10T18:55:48.000Z",
-        "summary": "Connectome-constrained models are often used to argue that a measured wiring diagram outperforms shuffled or rewired wiring, and hence that structure shapes function. Such comparisons can confound wiring with how the models are tuned: a connectome fixes who connects to whom, not the excitability, gains or plasticity rates the model also needs, and modellers often tune these until the real-wiring model works. We separate three estimands: physiology tuned on the real wiring and transferred to nulls (P1), each wiring tuned on its own (P2), and P2 restricted to physiology consistent with independent data (P3). The biases involved are known in machine learning (under-tuned baselines, inherited weights, winner's curse); we measure what they do to biological conclusions, using synthetic ground truth, placebo nulls and three Drosophila circuit models. Some claims survive every protocol we test: segregated reward and punishment dopamine improves learning, and head-direction topography is required for a persistent bump. Others do not. In the mushroom body, the real Kenyon-cell output wiring beats a cross-subtype identity shuffle by 0.09 under P1 and P2 but loses to it by 0.09 under P3 (95% CIs exclude zero; held-out runs confirm). The verdict is set by the share of alpha'beta' cells among active Kenyon cells, which P1 selects low; at the share implied by imaging (about 44%) the real-wiring model fails to learn, exposing a model inadequacy rather than a deficit of the fly's wiring. In flyvis, P1 penalises a mirrored connectome, which has a constructed solution within 0.07 (median) of the real error, more than a spatially shuffled one in 50 of 50 members; the ranking survives ten-fold longer retraining but depends on the checkpoint at fifty-fold. A credible structural claim needs matched optimisation, data-constrained physiology and a model that still works there.",
+        "title": "Classical Energies Learn to Reason 1,000x Faster than Looped Models",
+        "url": "https://arxiv.org/abs/2611.17309v1",
+        "publishedAt": "2026-11-12T18:56:56.000Z",
+        "summary": "Looped models have emerged as a prominent paradigm for reasoning, with successes on simple reasoning puzzles such as Sudoku-Extreme and Maze-Unique. However, these models can be unstable, slow to train, and use many parameters and FLOPs to solve simple puzzles. Descent on an energy not only mitigates these issues but also offers advantages: built-in early stopping, compute that adapts to problem difficulty, fast training without differentiating through a solver, and interpretable weights that learn the constraints of the puzzle. Here we demonstrate this with a learned version of Hopfield & Tank's energy from the 80s, which we term CRAM, solves 99.996% of Sudoku-Extreme and 100% of Maze-Unique test puzzles after 42 ms and 132 ms of training on one GPU, at least 1,000x faster than looped models on these tasks. CRAM also matches baseline looped models at their highest accuracy on Sudoku-Extreme using at least 282x fewer inference FLOPs. Our work suggests two things. First, that energies are an extremely promising direction for training reasoning from data. Second, a caution against using trivially solvable benchmarks like Sudoku and Maze to test the scalability of looped reasoning techniques.",
         "authors": [
-          "Yeyuan Liu"
+          "Benjamin Hoover",
+          "Hugh Blayney",
+          "James C. R. Whittington"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Quantifying structural stability of transparent models for general insurance pricing",
+        "url": "https://arxiv.org/abs/2611.17308v1",
+        "publishedAt": "2026-11-12T18:56:54.000Z",
+        "summary": "The short duration of general insurance contracts leads to rapid distributional shifts in the data, warranting regular model updates. This process may yield a post-update model that differs considerably from the pre-update model in both predictions and structure. Structural stability is upstream of predictive stability, yet existing structural stability metrics are mostly restricted to simple decision trees. Thus, we first introduce the notion of functional transparency, characterising models with a prediction function that can be expressed as a sum of univariate functions for main effects and bivariate functions for pairwise interactions. Then, we propose the Mean Squared Shape function distance, a metric to quantify the structural stability of functionally transparent models, which are particularly relevant in actuarial science. Using three public auto insurance datasets, we present a benchmark study to demonstrate the usefulness of our metric in identifying a stable and accurate transparent model. Generalised linear models with centred numerical covariates are stable, and explainable boosting machines (EBMs) offer a compromise between stability and performance. We also find that stabilisation strategies, such as sequential modelling and fixed hyperparameters, can substantially improve stability for both EBM and XGBoost models, with negligible impact on performance.",
+        "authors": [
+          "Félix Côté",
+          "Marie-Pier Côté"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 12
+      },
+      {
+        "title": "Towards a Theory of Learnability via Debate",
+        "url": "https://arxiv.org/abs/2611.17303v1",
+        "publishedAt": "2026-11-12T18:55:58.000Z",
+        "summary": "Debate has been recently proposed as a training protocol that is hoped to produce more aligned models even as model capabilities scale. The idea is that the human, instead of providing supervision in the form of labels, judges a debate between two models that compete to prove the correctness of opposite labels. It can be shown that functions of a much higher computational complexity can be correctly judged in this way, compared to the complexity of functions that can be directly evaluated using a computationally weak evaluator. This suggests that perhaps debate can be used to teach very complicated functions to models. However, previous work has largely ignored the fact that this is a training protocol, and simply analyzes the game being played between the two debaters for a known judge. We take the first steps towards understanding the learning problem implicit within the protocol, by formulating it as an online learning problem. We show that once we formulate the learning problem precisely, there are cases where the best way to learn given access to a judge is different from running an adversarial debate. This motivates us to define a cooperative version of the protocol, whose learnability we characterize using a combinatorial dimension. We also consider the possibility of the human judge being fallible and occasionally judging the debate incorrectly. We show that a small number of errors in judgement can lead to a large error in learning.",
+        "authors": [
+          "Tosca Lechner",
+          "Vinayak Pathak",
+          "Sivan Sabato",
+          "Ruth Urner"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 53
+        "ageHours": 12
       },
       {
-        "title": "Continual-ARC: Measuring Skill Acquisition over a Working Lifetime",
-        "url": "https://arxiv.org/abs/2611.14505v1",
-        "publishedAt": "2026-11-10T18:55:01.000Z",
-        "summary": "Agent harnesses have emerged as a promising mechanism for continual learning, alongside test-time parametric learning. However, the current benchmarks have several limitations: they generally focus on a single applied domain, serve each instance only once, and assume a single family of learner, so memory-based and weight-based systems are rarely compared on the same scale. We propose Continual-ARC, a lifelong stream built from the three ARC-AGI editions, whose tasks need no domain knowledge. The same tasks return after dormant gaps with fresh instances, while new tasks keep arriving. On each instance, the learner may pay for demonstrations, submit answers, or act inside the harness, with retries permitted on incorrect submissions, which are paid for. Each instance is scored based on the share of this feedback budget consumed. Since a learner may keep anything between instances, memory-based and weight-based systems are scored on the same scale. After the stream, the learner is frozen and tested on fresh instances of the tasks it met, which measures memorization, and on unseen tasks, which measures generalization. We run an agent harness with frozen weights, with and without persistence, on Qwen3.5-9B and GLM-5.3 Flash, comparing them with two prompting floors, a program-induction method and Qwen3.5-9B's weights trained to imitate GLM-5.3 Flash. Persistence in the harness generally does not improve memorization unless provided with explicit expert guidance. Most harness-based methods still learn less than a floor that simply caches each task's demonstrations, across all models we tested. No harness-based method gains on unseen tasks, whereas weight-based learning shows substantial gains. This opens the door to future weight-based continual learning that could teach models to drive harnesses in new domains.",
+        "title": "FLEX-LBP: Learning Local Binary Patterns with Exact Binary Inference for Texture Classification",
+        "url": "https://arxiv.org/abs/2611.17302v1",
+        "publishedAt": "2026-11-12T18:55:56.000Z",
+        "summary": "Local Binary Patterns (LBP) remain among the most widely used texture descriptors, from industrial inspection to medical imaging. Yet their radius, sampling angles, color transform and thresholds are fixed by hand for each dataset. We present FLEX-LBP, which learns these parameters by backpropagation while every forward pass computes exact binary codes and hard histogram counts. A straight-through estimator acts only in the backward pass, so the deployed descriptor is an interpretable hard-binary LBP with 90 learnable parameters and unchanged inference cost. In a controlled ablation on six color texture benchmarks, the component worth learning is dataset-dependent. One configuration, applied unchanged everywhere, learns the geometry and thresholds with the color transform frozen. It improves the nearest-neighbor accuracy of the identical fixed descriptor by 3.55 points on average over five seeds, significantly on five of six benchmarks and never significantly worse. With a linear discriminant readout, it gains 0.9 points; the fully learned descriptor gains 2.7 and has the highest mean. FLEX-LBP is more accurate than five classical LBP-family descriptors, PCANet and a neural LBP on five of six benchmarks. Its mean nearest-neighbor accuracy exceeds that of frozen ImageNet ResNet-50 features (23.5 million parameters). On the Kather colorectal cancer histology benchmark, the fully learned descriptor reaches 93.8%, significantly above the best classical descriptor (Completed LBP, 92.8%). The learned radii adapt in directions that recur across seeds. Noise drowns single-pixel comparisons and illuminant change flips inter-channel ones; median sampling or gray-world normalization restores 96-97%. The code is available as a drop-in PyTorch layer at https://github.com/medalimoussa/FLEX-LBP.",
         "authors": [
-          "Daniel Lenton"
+          "Mohamed Alimoussa",
+          "Amal El Kaid"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 53
-      },
-      {
-        "title": "Emergent Biological Capabilities in a Foundation Model for Molecular Interactions",
-        "url": "https://arxiv.org/abs/2611.14504v1",
-        "publishedAt": "2026-11-10T18:53:01.000Z",
-        "summary": "Foundation models trained on large unlabeled corpora develop emergent capabilities, tasks that go beyond the training objective. We extend this paradigm to multimodal biology with Bonbon, a foundation model for molecular interactions trained on approximately 3.2 trillion tokens of paired protein-ligand sequences. From a single representation space, Bonbon exhibits three zero-shot emergent capabilities at hierarchical levels of resolution: functional (mechanism of action), residue (binding site localization, including orthosteric/allosteric discrimination), and bond (covalent versus non-covalent engagement). All three capabilities generalize to out-of-distribution complexes. Bonbon was trained on protein-ligand sequences alone, without any task-specific supervision and without structural coordinates. We conducted controlled scaling experiments across six model scales from 42M to 1.6B parameters; every capability evaluated shows a sharp jump at the largest scale on continuous metrics, even as pretraining loss decreases smoothly. This demonstrates that loss-based scaling laws alone are insufficient to predict when zero-shot emergent capabilities become available. The capabilities reported here emerge after training at a 1:2,000 parameter-to-token ratio to accommodate the sparsity of paired biological interaction data. The same frozen representations achieve state-of-the-art binding and affinity prediction at five orders of magnitude greater speed than co-folding methods. In prospective wet-lab validation across nine disease targets spanning seven protein families, Bonbon achieves a 61.5% dose-response hit rate on de novo compounds, yielding structurally novel molecules not previously reported to inhibit these proteins, including for out-of-distribution targets.",
-        "authors": [
-          "Adi Mashiach"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 53
-      },
-      {
-        "title": "Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents",
-        "url": "https://arxiv.org/abs/2611.14493v1",
-        "publishedAt": "2026-11-10T18:50:06.000Z",
-        "summary": "Deploying LLM-based analytics agents in enterprise settings requires evaluation frameworks that can reliably detect failures across complex, multi-tool workflows. We present a three-phase comparative study of three evaluation frameworks, each representing a distinct evaluation paradigm (trace-based LLM judging, text-only LLM judging with red-teaming, and deterministic heuristics), applied to two analytics agents in a controlled research setting using frozen execution traces. Phase 1 quantifies evaluation harness stability through repeated measurements, finding that 97% of configurations meet the stability threshold and that stability patterns are agent-independent. Phase 2 measures known risk detection on 72 ground-truth test cases, where the trace-based framework achieves the best precision-recall balance (F1=0.90) while text-only evaluation matches on recall but generates 5x more false alarms. Phase 3 evaluates unknown risk discovery, uncovering 24 novel failures with zero overlap between functional testing and security red-teaming. Our results demonstrate that (1) the information available to the evaluation harness determines evaluation quality, (2) functional and security evaluation are complementary, and (3) LLM-based evaluation harnesses surface subtle errors that human reviewers miss. We recommend a two-framework strategy: trace-based evaluation for functional assessment and adversarial red-teaming for security validation.",
-        "authors": [
-          "Howard Zhang",
-          "Chuck Arvin",
-          "Logan Brown",
-          "Mihir Bhatia",
-          "Neelu Choudhary",
-          "Lily Miao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 53
-      },
-      {
-        "title": "ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows",
-        "url": "https://arxiv.org/abs/2611.14492v1",
-        "publishedAt": "2026-11-10T18:49:47.000Z",
-        "summary": "Business process automation runs the same Standard Operating Procedure (SOP) again and again on new inputs. Large Language Model (LLM) agents can follow an SOP written in natural language, but they call an LLM to choose every step of every run, which adds latency and cost at scale. We present ReTrace, which turns an SOP and a few logged agent runs into a reusable workflow in which code, not an LLM, selects the next step. The agent's reasoning, the explanation it writes with each tool call, often states why it took an action; the tool calls alone do not. ReTrace extracts the condition behind each step, merges these conditions across runs into a compact rule document, and generates an executable workflow from it. Only this last stage depends on the platform, so rule documents can be compiled for different orchestration platforms. On $79$ procedures from our production platform, ReTrace workflows reach $93.8\\%$ completion, against $96.8\\%$ for the agent, at $24\\%$ lower cost per task. On $τ^2$-Bench, they reach $75.8\\%$ task success (agent: $80.6\\%$) and run in $1.3$s instead of $170$s; three rounds of repair on training failures lift $k{=}2$ workflows from $66.7\\%$ to $81.2\\%$. On eight SOP-Bench procedures, ReTrace without repair trails few-shot generation ($80.6\\%$ vs. $83.6\\%$), but repair from labeled training failures lifts it to $87.8\\%$ at $0.40$s per task, compared to $85.5\\%$ in $46.6$s for the agent.",
-        "authors": [
-          "Kaiyuan Hou",
-          "Yang Ping Kuo",
-          "Indranil Bhattacharya",
-          "Rohith Nama",
-          "Arushi Gupta",
-          "Carlos D. Castillo",
-          "Prathap Ramachandra",
-          "Xiaofan Jiang",
-          "Francesco Carbone"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 53
-      },
-      {
-        "title": "TimeSeek: Multi-Task and Multi-Domain Pretraining for Generalized Time Series Analytics",
-        "url": "https://arxiv.org/abs/2611.14491v1",
-        "publishedAt": "2026-11-10T18:49:26.000Z",
-        "summary": "Time series analytics has been widely applied across various domains. While existing time series foundation models (TSFMs) have demonstrated promising results, they still face two major challenges: 1) Most TSFMs mainly rely on stacking Transformer layers to increase parameter size, lacking the ability to adaptively model complex time series patterns from multi-domain data. 2) Current TSFMs are primarily pre-trained for specific tasks, e.g., forecasting or anomaly detection, and a few models support multiple tasks, but they fail to fully leverage task specificity and commonality, resulting in suboptimal performance. To address these challenges, we propose TimeSeek, a novel generalized time series analytics model that adaptively models time series patterns from multi-domain data and unifies multiple tasks in pre-training. Conceptually, TimeSeek is guided by selective information sharing under domain and task heterogeneity. From the perspective of multi-domain data, we propose a Multi-Domain Feature Extractor that adaptively captures temporal dependencies and channel correlations based on domain-specific characteristics, including progressive multi-scale modeling and adaptive slot channel modeling. From the perspective of the diversity of tasks, we propose multi-task collaborative training, which leverages task specificity and task commonality through task customization and cross-task training, effectively unifying multiple tasks in pre-training and better adapting to diverse downstream scenarios. After pre-training on large-scale time series data, TimeSeek achieves state-of-the-art performance in forecasting, anomaly detection, and classification tasks across both few-shot learning and zero-shot situations, together with favorable inference efficiency.",
-        "authors": [
-          "Peng Chen",
-          "Yihang Wang",
-          "Zhongwen Rao",
-          "Yang Shu",
-          "Yuying Qiu",
-          "Yuxuan Chen",
-          "Lujia Pan",
-          "Bin Yang",
-          "Chenjuan Guo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 53
+        "ageHours": 12
       }
     ],
     "news": [
+      {
+        "title": "New AI “copilot” helps engineers design better structures",
+        "url": "https://news.mit.edu/2026/new-ai-copilot-helps-engineers-design-better-structures-1113",
+        "publishedAt": "2026-11-13T05:00:00.000Z",
+        "summary": "The use of algorithms to design structures has led to new parts optimized for ultralight aircraft, high-bandwidth antennas, and F1 racing cars. But the best algorithmic design techniques still require lots of computation and time: Users only see the final design after it’s complete, after which they often must start the design process all over again to make changes. That process also makes it harder to trust that the final designs are structurally sound. MIT researchers are making algorithmic designs more collaborative with a system that acts like an AI copilot. As the algorithm is generating the structure, it presents regions to the human designer for feedback. In an open-access Communications Engineering paper describing the system, the researchers showed it led to more easily manufacturable structures with higher buckling loads while adding only 15 seconds to the total design time compared to all-algorithmic approaches. The researchers believe the approach, which uses a design technique known as topology optimization, could make algorithmic design more accessible and manufacturable for a broader class of design engineers. “Right now, the human doesn’t have any agency or control over the design process as it’s playing out,” explains lead author Dat Ha PhD ’26, a recent MIT civil and environmental engineering doctoral student who is now a structural designer at LeMessurier. “For these really complex designs, we wanted to also tap into our brain, which is the most complex machine there is, to solve these design problems in a way that’s more practical to industry.” Joining Ha on the paper are Ferdous Alam, a former MIT postdoc who is now an assistant professor at Georgia Tech; Markus Buehler, the MIT Jerry McAfee (1940) Professor of Engineering; Faez Ahmed, MIT associate professor of mechanical engineering; and senior author Josephine Carstensen, MIT associate professor of civil and environmental engineering. Bringing a human in the loop Topology optimization is one of the most advanced and promising algorithmic design techniques. It uses formal optimization techniques to iteratively fill in the space given for a design in a way that maximally achieves the stated goals. For most applications, the process requires a lot of computation and time. When it’s finally done, the designs can be impractical to build or have other issues the engineer didn’t consider. For instance, some designs might have eight or more beam connections at a single point, which would be difficult to make in the real world. “Engineers are always very skeptical of computer programs, especially if they give you very weird-looking or unexpected designs,” Ha says. “On paper, topology optimization is really powerful and can achieve great, high-performing designs, but its black box nature has made it less widely adopted in industry.” Topology optimization has gotten traction in the automotive and aerospace industries, but it’s been used less to design buildings or bridges, partly because design engineers need to know they can trust the output. “A big limiting factor has been that the design engineer has very little influence over how the design evolves and therefore can’t control undesirable features,” Carstensen explains. “The lack of control and lack of ownership also inhibits its use.” To address those problems, the researchers made topology optimization more collaborative in an approach that Carstensen compares to having a design copilot. Prior attempts at adding human judgment slowed things down dramatically. The researchers’ new system uses machine learning to quickly identify the most likely regions of an algorithmic design that a human would want to change. To train the machine-learning model, the researchers created a synthetic dataset of probable human feedback to thousands of designs that critiqued things like aesthetics, performance criteria, and manufacturability. “We thought if we could create a record of where humans have made changes to these programs, then perhaps there’s a pattern to those choices, which is not very different from other types of machine-learning approaches,” Ha says. Carstensen sees the system as bringing together the best of algorithmic and human design approaches. “The idea is to tap into the brains of the designers and get them to infuse their domain knowledge as the design evolves,” Carstensen says. In demonstrations, the researchers showed their human-in-the-loop approach improved manufacturability and linear buckling load by 39 percent while only modestly increasing the total design time. Right now, the approach only allows users to make structures within identified regions thicker or thinner, but they hope to add other options for modification in future versions. “The hope is that by addressing these hurdles, we open up topology optimization to a much wider audience, not only in industry but also to researchers and students in academia,” Carstensen says. From designs to structures The researchers see their approach complementing AI only-approaches to design. “We are arguing there’s room for both,” Carstensen says. “If you are in a discipline that has a lot of computational resources, you can use the other approach. But if you really need the human input, you can use this collaborative approach.” Adding human input also serves to increase trust. “In some settings, the humans need to make the final decisions before advancing the final design,” Carstensen says. “By involving humans, we can get higher-performing designs to the real world to create higher-performing structures. Because it’s not just about designing good artifacts; it’s about creating good artifacts that humans will actually accept and make.” The work was supported, in part, by the MathWorks Engineering Fellowship Fund, TATA Steel,&nbsp;and the MIT Generative AI Impact Consortium.",
+        "authors": [
+          "Zach Winn | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 2
+      },
+      {
+        "title": "Helping robots fit into the human workplace",
+        "url": "https://news.mit.edu/2026/helping-robots-fit-into-human-workplace-1113",
+        "publishedAt": "2026-11-13T05:00:00.000Z",
+        "summary": "Despite fears about robots replacing humans at work, there are still plenty of things humans can do far better than machines. That’s fine with Robust AI, a startup building robots designed to complement what humans do best. The company’s mobile robot, named Carter, resembles a utility cart on wheels and is designed to fit seamlessly alongside humans in fast-changing warehouse and factory environments. Carter features a force-sensitive handlebar for easy guidance, an AI-powered vision system, and holonomic wheels for instant movement in any direction. As a result, humans can cut Carter off, push and pull it in any direction with one hand, and direct it with gestures or the onboard touch screen. The company’s robots are currently deployed in logistics warehouses and on factory floors, where they help humans while picking or stocking shelves and moving items across facilities autonomously. “In these environments, what really determines success is how the overall system performs,” explains Anthony Jules ’92, SM ’92, who co-founded the company with MIT Professor Emeritus Rodney Brooks. “The robot does some of the work, the people do some of the work, and the backend systems do some of the work. It’s that combination that determines how well your system performs. We believe it’s really important that people have an appropriate level of agency and input so that they’re always moving the system forward.” Collaborative robots Brooks was a faculty member at MIT from 1984 until 2010 and served as the director of the Computer Science and Artificial Intelligence Laboratory (CSAIL) from 1997 until 2007. While at MIT, he co-founded iRobot, which invented the popular Roomba vacuum and went public in 2005. Later, he co-founded the company Rethink Robotics, which also designed collaborative robots. Jules met Brooks as a graduate student at CSAIL in the 1990s. The two never worked together, but their labs were on the same floor. The pair kept in touch after Jules graduated and co-founded the company Sapient, which went public before being acquired by Publicis in 2015. In 2019, Brooks bumped into Jules at a robotics conference. He told Jules he was thinking of starting a robotics software company, which he compared to a video game engine for training robots. Robust AI was founded later that year. The Covid-19 pandemic caused the founders to shift to creating robots that could autonomously disinfect surfaces, but when it was discovered that Covid-19 was not transmitted via surfaces, they had to pivot again. “That forced us to decide how to use this technology we had been building, which was really about helping robots understand the world more fully,” Jules recalls. “Long story short, I said to Rodney, ‘I have an idea. You’re going to love it and you’re going to hate it. You’re going to love it because it’s solving problems for customers that we’ve been hearing about, and you’re going to hate it because we have to build hardware.” The founders had been interviewing potential customers for years through Robust AI’s early pivots. They finally decided on logistics and manufacturing as the industries to target early on. “When people think about automation in factories, they think about pictures of the 5 percent that are fully automated with $50 to $200 million dollar systems,” says Jules, who now serves as Robust AI’s chief innovation officer. “They don’t think about the vast majority of factories that aren’t automated at all. These factories don’t even have a conveyor belt. They are not going to tear everything out and replace it with a $200 million system.” Robust AI’s robots can be phased into operations as needed and offer several workflows for customers. In one workflow, the robot can guide human workers to specific spaces to retrieve items. In another it can follow humans to important spots for loading. The primary workflows involve Carter robots moving things from one place to another, often in large warehouses or factories, where they say human workers can walk on average 30,000 steps a day. “These are huge spaces, so a person might load the robot with things and then need to bring them to another station, but that could be 400 feet away,” says, Brooks, Robust AI’s chief technology officer. “Now the person can just say ‘done’ and the robot brings it instead. How the robots are integrated into the workspace is entirely up to the customer.” Getting work done Leila Takayama, Robust AI’s vice president of human robot interaction, recently discovered a peer-reviewed study of robots in hospitals, which were used to do things like gather dishes, move sheets, and transport other equipment. The researchers discovered that, in many hospitals, a large number of robots were turned off and against the walls. The nurses said they broke. “What really happened was the nurses were rushing with a patient on a gurney, and the robot sees them in the hallway and stops dead, and they couldn’t get the gurney around them,” Brooks says. “The robots were getting in the way of nurses’ primary tasks.” Robust AI’s approach to technology development is to understand workers’ primary tasks deeply and build features that accelerate those tasks, whether a human or a robot is doing them. “We let humans do what humans are good at in the physical world, which we’ve had millions of years of evolution to get good at, and have the digital system respond to that and provide us with all the things that it is good at,” Brooks explains.",
+        "authors": [
+          "Zach Winn | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Products",
+        "ageHours": 2
+      },
       {
         "title": "Democrats launch Nvidia investigation, write scathing letter on Huang&#8217;s &#8216;scheme&#8217; with Trump",
         "url": "https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/",
@@ -306,13 +347,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 1
+        "ageHours": 8
       },
       {
-        "title": "Muse can now place calls to U.S. businesses — if you pay",
+        "title": "Muse can now place calls to US businesses — if you pay",
         "url": "https://techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay/",
         "publishedAt": "2026-11-12T22:22:28.000Z",
-        "summary": "Muse's AI can now place outbound calls to US businesses — but it's not free.",
+        "summary": "Muse's AI can now place outbound calls to U.S. businesses — but it's not free.",
         "authors": [
           "Sarah Perez"
         ],
@@ -320,7 +361,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 8
       },
       {
         "title": "The unfolding Jensen Huang scandal: a timeline",
@@ -334,7 +375,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 9
       },
       {
         "title": "Nebius tests the neocloud playbook with $40 billion in planned spending",
@@ -348,7 +389,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 2
+        "ageHours": 9
       },
       {
         "title": "Three Lincoln Laboratory technologies receive 2026 R&D 100 Awards",
@@ -362,7 +403,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Policy",
-        "ageHours": 2
+        "ageHours": 9
       },
       {
         "title": "Jensen Huang was having a third affair, Reuters reports",
@@ -376,11 +417,11 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 10
       },
       {
         "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
-        "url": "https://openai.com/index/amplitude",
+        "url": "https://openai.com/business/customer-stories/amplitude",
         "publishedAt": "2026-11-12T20:00:00.000Z",
         "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
         "authors": [],
@@ -388,7 +429,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 11
       },
       {
         "title": "Google&#8217;s latest Search upgrade promises better answers to your most complicated questions",
@@ -402,7 +443,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 4
+        "ageHours": 11
       },
       {
         "title": "Nectar launches an AI agent to automate creator discovery and outreach for brands",
@@ -416,7 +457,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 4
+        "ageHours": 11
       },
       {
         "title": "Jensen Huang’s exit puts Nvidia’s support for open source in question",
@@ -430,40 +471,14 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 5
-      },
-      {
-        "title": "Introducing Gemini 4 Hydrogen",
-        "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
-        "publishedAt": "2026-11-12T18:00:50.000Z",
-        "summary": "",
-        "authors": [],
-        "source": "Google DeepMind",
-        "feed": "Google DeepMind Blog",
-        "provenance": "https://deepmind.google/blog/rss.xml",
-        "category": "Models",
-        "ageHours": 6
-      },
-      {
-        "title": "Hugging Face CEO vows to keep fighting for open source AI after Jensen Huang&#8217;s exit",
-        "url": "https://techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit/",
-        "publishedAt": "2026-11-12T17:36:40.000Z",
-        "summary": "Hugging Face's CEO pledged to keep fighting for open source AI after Huang's exit, raising questions about Nvidia's $12.9 billion acquisition.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 6
+        "ageHours": 12
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
@@ -471,15 +486,15 @@
       },
       {
         "name": "Models",
-        "count": 5
-      },
-      {
-        "name": "General",
         "count": 4
       },
       {
         "name": "Products",
-        "count": 1
+        "count": 3
+      },
+      {
+        "name": "General",
+        "count": 3
       }
     ]
   }
