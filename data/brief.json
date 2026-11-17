@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T20:21:58.224Z",
+  "generatedAt": "2026-11-17T03:45:55.227Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,227 +85,254 @@
   "sections": {
     "research": [
       {
-        "title": "Pairing AIS with RF: Analysis of a Markovian Approach for Maritime Data Fusion",
-        "url": "https://arxiv.org/abs/2611.18563v1",
-        "publishedAt": "2026-11-13T18:59:43.000Z",
-        "summary": "Monitoring maritime activities is important for safety and security, particularly for detecting illegal activities, but remains challenging due to the size and complexity of the maritime domain. The Automatic Identification System (AIS) is commonly used for this purpose, despite its known vulnerabilities. In contrast, space-based radio frequency (RF) observations provide an independent source of vessel activity but lack ship identification and therefore cannot identify vessels on their own. Following the CRISP-DM process, this study applies a Pair Hidden Markov Model (PHMM) to align individual RF detections with AIS trajectories, using temporal and spatial information while modeling noise and timing discrepancies. We evaluate it on NOAA AIS data with synthetic RF detections against nearest-neighbor baselines and analyze its errors with bias tests on trajectory length, sampling density, stationarity and AIS--RF distance. The length-corrected Forward score reaches a top-1 precision of $0.7776$ on the validation split of multi-candidate detections, where errors are possible, and an AUC of $0.637$ for detecting dark vessels among the detections that pass the prefilter. With a single RF detection, the score mostly reflects the AIS trajectory itself, and its errors favor longer and more stationary trajectories. A log-odds score, which compares the full model with a null model without match transitions, raises precision to $0.8580$ and AUC to $0.852$. Its length-corrected variant no longer shows a significant bias towards stationary trajectories and short inter-message distances, but still favors candidates farther from the RF detection. A time-weighted nearest-neighbor baseline without fitting remains ahead (precision $0.9013$, AUC $0.904$), so this single-detection, hand-designed PHMM formulation approaches but does not beat it.",
+        "title": "Found, but Not Fixed : From Software Vulnerability Discovery to Fixes with Iterative LLM Pipelines",
+        "url": "https://arxiv.org/abs/2611.19719v1",
+        "publishedAt": "2026-11-15T02:02:33.000Z",
+        "summary": "Software vulnerabilities persist as a critical threat despite the deployment of sophisticated detection tools and AI assistants. While detection has advanced, the subsequent code repair phase remains a primary bottleneck; manual intervention is inherently slow, costly, and prone to introducing secondary regressions and issues. In this paper, we investigate whether an iterative, LLM-based pipeline can provide a robust solution for the automated repair of vulnerable functions in real-world code. We propose a generalized framework that leverages the reasoning capabilities of Large Language Models (LLMs) through a multi-stage feedback loop. We benchmark this approach against state-of-the-art models, including GPT-4o, GPT-5.1, and Gemini 3 Flash, demonstrating that such a pipeline can achieve high-quality code repair. To support the broader security community, we provide our evaluation framework, fine-tuned weights, and comprehensive experimental dataset on our website: https://sites.google.com/view/llm4cve",
         "authors": [
-          "Daniel Grimm",
-          "Kyra Jongman",
-          "Renato Cordeiro Ferreira",
-          "Giuseppe Cascavilla",
-          "Alfredo Cuzzocrea",
-          "Willem-Jan Van Den Heuvel"
+          "Youssef Gamal",
+          "Mohamad Fakih",
+          "Halima Bouzidi",
+          "Rahul Dharmaji",
+          "Gustavo Quiros Araya",
+          "Oluwatosin Ogundare",
+          "Mst Ayesha Siddika",
+          "Mohammad Abdullah Al Faruque"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 50
+      },
+      {
+        "title": "Set-based State Estimation for Unknown Dynamical Systems from Noisy Output Data with Probabilistic Guarantees",
+        "url": "https://arxiv.org/abs/2611.19716v1",
+        "publishedAt": "2026-11-15T01:58:15.000Z",
+        "summary": "We develop a methodology for set-based state estimation from noisy input-output trajectories, without a predefined model structure for the unknown state dynamics or access to training state measurements. We derive a bound on the state set diameter that depends on the sensor map and leverage it as a surrogate to formulate a tractable linear program balancing state set tightness against output trajectory coverage. Combining this certificate with deterministic or probabilistically certified measurement noise sets and leveraging the results from scenario optimization with relaxation, we provide joint a posteriori probabilistic guarantees for state inclusion and state set diameter. Numerical simulations corroborate our developed theoretical guarantees.",
+        "authors": [
+          "Georgios Pantazis",
+          "Michelle S. Chong"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 73
+        "ageHours": 50
       },
       {
-        "title": "FETTUCCINE: Fast and efficient brain-to-text decoding on mobile devices",
-        "url": "https://arxiv.org/abs/2611.18561v1",
-        "publishedAt": "2026-11-13T18:59:02.000Z",
-        "summary": "Recent advances in speech neuroprostheses have enabled new communication avenues for people who have lost the ability to speak due to neurological illness or injury. These systems can decode neural activity during attempted speech into text by relying on language priors to achieve high decoding accuracy. This performance currently comes at the cost of using a compute-intensive language modeling stack, presenting a major bottleneck for real-world use. Further, current language models incur highly variable and disruptive inference latencies, limiting communication throughput and preventing users from reliably participating in natural conversation. We introduce FETTUCCINE, an end-to-end brain-to-text framework that leverages the speed and portability of automatic speech recognition (ASR) models to address the aforementioned practical challenges, while achieving usable (<10%) word error rates (WER), efficient adaptation to neural non-stationarities, and reliable performance on mobile devices. When evaluated using publicly available data from an intracortical speech neuroprosthesis user, FETTUCCINE outperforms previous end-to-end methods, achieving as low as 4.39% WER. Most notably, our models successfully run on a commercially-available mobile device with throughput reaching up to 370x real-time, providing the first demonstration of brain-to-text decoding on a mobile device. We also show that our models can be successfully finetuned to extend usable performance to future days. Beyond performance, our approach enables localization of the neural features most relevant for decoding via gradient-based saliency maps, which we show align with well-established physiological priors across different ASR model families. Taken together, our results show that FETTUCCINE overcomes core infrastructural and computational barriers, yielding a new class of portable brain-to-text communication.",
+        "title": "An Interpretable Acoustic Coordinate System for Japanese Consonant Morae in Dysarthric Speech",
+        "url": "https://arxiv.org/abs/2611.19714v1",
+        "publishedAt": "2026-11-15T01:51:55.000Z",
+        "summary": "Dysarthria reduces speech intelligibility, requiring self-directed rehabilitation based on fine-grained feedback to capture gradual articulatory changes. For Japanese speakers, such feedback is naturally provided in mora units due to its distinct moraic timing and consonant-vowel structure. While recent visualization methods have explored distance-based feedback, most are limited to vowels. Extending them to consonants is challenging, as generative embeddings often smooth transient spectral structures. We propose a visualization system for Japanese consonant morae that maps articulatory deviations onto a two-dimensional space defined by temporal and spectral distances from healthy reference speech. Experiments show consistent geometric separation of consonant categories, with Silhouette Coefficients exceeding 0.5 and origin-based ROC-AUC scores above 0.86. Furthermore, evaluations using real dysarthric speech achieved a high ROC-AUC of 0.897 in screening for unclear pronunciations. Perturbation tests confirm orthogonal temporal and spectral shifts, yielding a physically interpretable mapping for rehabilitation.",
         "authors": [
-          "Jonathan D. McCart",
-          "Pranav I. Deevi",
-          "Mehdi Azabou",
-          "Nanda H. Krishna",
-          "Caleb A. McKinney",
-          "Nicholas S. Card",
-          "Sergey D. Stavisky",
-          "Chethan Pandarinath"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 73
-      },
-      {
-        "title": "Training Reasoning Models in Simulation to Natively Use Real Robots",
-        "url": "https://arxiv.org/abs/2611.18562v1",
-        "publishedAt": "2026-11-13T18:59:02.000Z",
-        "summary": "Robot-use agents (RUAs) have emerged as a promising approach to general-purpose robot control. However, strong performance has so far been achieved only by frontier proprietary models such as GPT-6 Astra and Claude Fable 5.2, whereas open-weight models remain substantially less capable. We show that an open-weight 27B reasoning model can be trained to use real robots natively through reinforcement learning, entirely in simulation and without demonstrations. Like a computer-use agent (CUA), the model observes the environment, reasons in a chain of thought, and generates the next end-effector pose, without any harness. We build a Post-training Engine for Agentic Robotics (PEAR) and use it to train the model on simulated robot tasks at scale with robot-use reinforcement learning (RURL), mirroring how frontier models acquire computer use. We find that the skills acquired in simulation generalize well beyond the training tasks: they transfer to an unseen robot, to the real world, and to novel instructions. After training on LIBERO and RoboDojo in simulation, the model succeeds in 60% of our trials on a real dual-arm robot, whereas the base model succeeds in none. On LIBERO, training raises the success rate from 1.6% to 74.4%, approaching GPT-6 Astra and GPT-6.1 Sol at maximum reasoning effort. Compared with $π_{0.5}$, a vision-language-action model fine-tuned on demonstrations, our model is substantially more robust to changes in the task itself. On LIBERO-Pro, $π_{0.5}$ succeeds in only 0.75% of episodes when assigned a new task in a familiar scene whereas our model succeeds in 57.4%. Finally, the model retains its general capabilities, with no measurable degradation on nine reasoning, coding and vision benchmarks. These results highlight robot-use reinforcement learning as a promising component of foundation-model post-training.",
-        "authors": [
-          "Jiaming Tang",
-          "Zhuoyang Zhang",
-          "Junxian Guo",
-          "Fangzhou Zhao",
-          "Yilong Zhao",
-          "Zekai Li",
-          "Xingyang Li",
-          "Yuyang Zhao",
-          "Song Bian",
-          "Zhijian Liu",
-          "Song Han"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 73
-      },
-      {
-        "title": "BAL: Bidirectional Autoregression in Latent Space for Learning Human Movement Representations",
-        "url": "https://arxiv.org/abs/2611.18559v1",
-        "publishedAt": "2026-11-13T18:58:54.000Z",
-        "summary": "Learning semantically meaningful human movement representations from 3D pose sequences is essential for human behavior modeling. Existing self-supervised methods derive supervision from artificial assumptions, e.g., invariance to augmentation within a certain range or recoverability of masked regions at a certain temporal scale, introducing heuristic hyperparameters that make the learned semantics sensitive to their settings. We propose BAL, a self-supervised framework that instead exploits supervision intrinsic to human movement: the natural ordering structure of everyday behavior. BAL autoregressively predicts in a semantically abstract latent space, analogous to how humans anticipate others' actions rather than their precise joint configurations. Bidirectional autoregressive prediction, both forward and backward in time, fully leverages these ordering constraints while enabling representation extraction using both past and future context at inference. To suppress representation collapse, BAL decomposes each prediction target into a global component capturing sequence-level semantics and a local component capturing context-independent movement. We prove that the local targets retain nontrivial angular diversity unless the representations are completely collapsed, preserving a meaningful training signal. Experiments on large-scale datasets demonstrate that BAL's representations are highly effective for motion captioning, forecasting, and interpolation, outperforming baselines on most evaluation metrics.",
-        "authors": [
-          "Genki Kinoshita",
-          "Ko Nishino"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 73
-      },
-      {
-        "title": "WeightBench: Evaluating Language Models as Weight-Space Programmers",
-        "url": "https://arxiv.org/abs/2611.18553v1",
-        "publishedAt": "2026-11-13T18:58:08.000Z",
-        "summary": "Recent work shows that large language models (LLMs) can operate directly on the parameters of other neural networks. They can read what a network was trained to do, fix a network that fails, and write working networks from scratch, all without gradient descent. This capability has been termed Weight-Space Programming (WSP). Exploring this new paradigm systematically requires a robust benchmark. We introduce WEIGHTBENCH, a benchmark that evaluates LLMs of increasing capability on 42 WSP tasks across five tracks: reading, fixing and writing weights, recognizing edits that are impossible, and data-free compression. The networks whose weights the LLMs read and edit range from 2K-parameter control policies to 7B-parameter language models. Experimental benchmark results show that frontier agents can already read small networks and write working control policies without ever running them, but cannot yet patch language models, compress them without data, or tell an impossible edit from a hard one. On all 42 tasks, Claude Opus 5.5 reaches a macro score of 0.535 (Sonnet 5.5 0.466, Haiku 5.5 0.402, DeepSeek v4-flash 0.215); on the 38 tasks it was run on, GPT-6.1-sol reaches 0.568 against Opus's 0.546. Code, the task registry, our OS-level sandbox harness, and the live leaderboard are publicly available at https://github.com/Aayush-Marasini/WeightBench.",
-        "authors": [
-          "Aayush Marasini",
-          "Barsat Khadka",
-          "Nick Rahimi"
+          "Yuma Enomoto",
+          "Misa Yamaguchi",
+          "Hiroki Nishikawa",
+          "Ittetsu Taniguchi",
+          "Kazuhide Matsunaga",
+          "Narikazu Uzawa",
+          "Takao Onoye"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 50
       },
       {
-        "title": "Imitation Bootstrapped Multi-Agent Reinforcement Learning",
-        "url": "https://arxiv.org/abs/2611.18543v1",
-        "publishedAt": "2026-11-13T18:50:05.000Z",
-        "summary": "Demonstrations are an effective way to accelerate single-agent reinforcement learning (RL), but extending this idea to multi-agent reinforcement learning (MARL) is non-trivial as it is difficult and often impossible for a single person to teleoperate multiple agents simultaneously. Round-Robin Behavior Cloning (R2BC) addresses this by letting a single demonstrator control one agent at a time while the others execute their current policies. However, the resulting imitation policies are limited by the quality of the demonstrations. We propose Imitation Bootstrapped Multi-Agent Reinforcement Learning (IBMARL), a framework that extends Imitation Bootstrapped Reinforcement Learning (IBRL) to cooperative teams and uses R2BC to train the imitation policies. At each time step, every agent receives one action proposal from its imitation policy and one from its RL policy, and an ensemble of centralized critics selects among the per-agent combinations of the two. A gated imitation penalty, a soft Q-filtered behavior cloning loss, regularizes each RL policy toward its imitation policy only where the critics value the imitation action more, so that after training each agent executes its RL policy alone, without the centralized critics. On four cooperative multi-agent RL benchmarks, IBMARL surpasses its imitation policies $2.6$-$4.2\\times$ faster than demonstration-based baselines on two tasks, is the only method to surpass it on the other two, and exceeds the demonstrator itself on two of the four. With real human demonstrations IBMARL still surpasses imitation learning alone, and does so more than twice as fast as the best baseline.",
+        "title": "Joint Learning of Factual and Counterfactual Worlds for Causal Prior-data Fitted Networks",
+        "url": "https://arxiv.org/abs/2611.19710v1",
+        "publishedAt": "2026-11-15T01:41:28.000Z",
+        "summary": "Estimating treatment effects is central to science across many disciplines and requires counterfactual reasoning about alternative worlds. In the real world, however, each unit reveals its outcome only under the factual world. Thus, the factual and counterfactual outcomes can never be jointly learned by any model trained on real data. The problem is therefore tractable only in synthetic settings, where both worlds can be generated. Recent progress on prior-data fitted networks (PFNs) has shown that models pre-trained purely on synthetic data can transfer to real-world prediction. This paradigm has since carried over to causal effect estimation. Despite this fully synthetic setup, existing causal PFNs carry the real-world constraint into their training objective, confining learning to a single world's outcome per unit. The dependence between the two worlds is thereby lost, and the density of the treatment effect relies by default on independence, which is implausible in practice. We therefore propose joint learning, a training setup in which a causal PFN learns the joint distribution of the factual and counterfactual outcomes of each unit. From the joint distribution, we obtain both the response and the individual treatment effect densities, and at inference, we apply optimal transport across units to obtain an approximation of the average treatment effect density. Ours is therefore the first causal PFN approach to provide all three densities together while accounting for the cross-world dependence. We apply joint learning and optimal transport to existing causal PFNs and evaluate it across semi-synthetic, synthetic, and real benchmarks spanning diverse causal scenarios. The jointly trained models significantly improve upon their baselines in point estimation and uncertainty quantification in most settings, indicating that joint learning is a preferable training setup for causal PFNs.",
         "authors": [
-          "Tony H. Zhang",
-          "Connor Mattson",
-          "Daniel S. Brown"
+          "Furkan Danisman",
+          "Luke Zhang",
+          "Zhijing Jin",
+          "Dehan Kong"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 74
+        "ageHours": 50
       },
       {
-        "title": "Elliptic Sampling: Optimal Interpolant Schedules for Gaussians and Beyond",
-        "url": "https://arxiv.org/abs/2611.18542v1",
-        "publishedAt": "2026-11-13T18:49:36.000Z",
-        "summary": "Generative modeling based on stochastic interpolants requires specifying two key choices: an interpolant schedule bridging the initial and target distributions, and an efficient discretization of the resulting probability-flow ODE. In this work, we introduce a new framework for joint schedule/discretization design based on the analyticity properties of the (complexified) ODE trajectories, which in turn ensure good numerical behavior. Our formulation can be solved exactly via conformal mapping, yielding a natural family of variance-preserving elliptic schedules, parametrized by Jacobi elliptic functions. Pairing an elliptic schedule with a tailored discretization, we obtain Zoloflow, a new sampling algorithm closely connected to Zolotarev's optimal rational function approximants. Crucially, both the elliptic schedule and Zoloflow explicitly incorporate the condition number $κ$ of the target distribution and reduce to the classical trig schedule in the limit $κ\\rightarrow 1$. For Gaussian targets, Zoloflow achieves minimax optimality among all oblivious score-span algorithms, attaining total-variation error $\\varepsilon$ using $Θ(\\logκ\\,\\log(\\sqrt d/\\varepsilon))$ (exact) score queries. For the log-concave case, the elliptic schedule allows sampling with at most $\\varepsilon$ 2-Wasserstein-error by requiring merely $\\widetilde{O}(\\sqrt{d} \\, \\mathrm{polylog}(κ, 1/\\varepsilon))$ score evaluations. Complementing these theoretical results, we empirically evaluate the elliptic schedule on general (non-log-concave) target distributions, including detailed comparisons with alternative schedule proposals on both synthetic benchmarks and existing image generation datasets.",
+        "title": "Cache or Denoise Less? Residual Reuse in a Flow-Matching World Action Model",
+        "url": "https://arxiv.org/abs/2611.19709v1",
+        "publishedAt": "2026-11-15T01:40:18.000Z",
+        "summary": "Flow-matching robot policies generate each action chunk through repeated network evaluations, one per denoising step. Cross-cycle caches such as C$^3$ache reuse computation from earlier replanning calls, but whether they beat simply taking fewer steps is unclear. We compare the two in Fast-WAM, a 6B-parameter world action model, on LIBERO-Goal. Two uncached steps keep the success of ten: on all 500 initial states they are non-inferior within two percentage points, for one checkpoint and noise seed. Under PyTorch's default compile mode, they also cut a replanning call on an RTX A6000 from 202 to 92 ms. This leaves little room for caching. A cache that keeps two fresh steps cannot be faster than two uncached steps: every call still encodes the images, runs the video expert and computes those two steps. Caching the first of two steps, refreshed every fourth call, saves at most 11--14% of a call by our cost model. Cached policies are also fragile. Their losses tracked the share of the flow path the cached steps cover: under Fast-WAM's current time shift, C$^3$ache's eight cached steps cover 80% of the path instead of 44%, and the cached policy succeeds on 63% of states against 95% uncached. Resampling the noise on every call cost caches covering 60% or more of the path 14--40 points. These results argue for fewer-step baselines and for testing reuse under the deployed sampler and noise settings. We release our evaluation harness, logs and a checklist.",
         "authors": [
-          "Cole Becker",
-          "Taylan Kargin",
-          "Kimia Hassibi",
-          "Asuman Ozdaglar",
-          "Pablo A. Parrilo"
+          "Abhinav Gupta",
+          "Nissan Pow"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 74
+        "ageHours": 50
       },
       {
-        "title": "Why Finite Intelligence Works in an Infinite World: A Mathematical Theory",
-        "url": "https://arxiv.org/abs/2611.18538v1",
-        "publishedAt": "2026-11-13T18:47:24.000Z",
-        "summary": "An information system often has to learn before it knows what it will be asked. A finite representation can succeed without recording an infinite environment in full when those asks share collective structure, rather than demand unrelated facts scattered arbitrarily across it. We formalize this phenomenon through future-task information, the minimum retained information needed to preserve decision value relative to the available evidence. A joint decision-regret state records posterior comparisons among actions for every permitted task. Under compactness assumptions, every retained representation admits a calibrated replacement based on this state, preserving all task regrets without increasing information; the resulting information-regret curve equals an operational coding rate. Two exact boundaries govern finite preservation: weak-star closure for a fixed action count, and the singular mass of the source-evidence law when all finite action menus are admitted. Collective structure determines information requirements beyond individual-question difficulty. Families with identical source laws, pairwise task metrics, and individual-task rates can have different high-resolution exponents. Covariance-identical coordinate and parity families have different exact rate-distortion curves, with optimal parity retention characterized by a sharp Fourier-entropy inequality. For balanced nested task families, refinement sizes and weighted reach determine the rate within an additive constant, attained by prefix coding under explicit decay conditions. Nonlinear learning and computational separations distinguish preservation from efficient discovery and use. The proposed mathematical theory identifies which shared decision requirements allow finite information to remain useful for infinitely many possible purposes.",
+        "title": "Minimax Estimation of Discrete Distributions under Hockey-stick Divergence",
+        "url": "https://arxiv.org/abs/2611.19702v1",
+        "publishedAt": "2026-11-15T01:19:31.000Z",
+        "summary": "We initiate the study of estimating a discrete distribution with respect to the hockey-stick divergence from independent samples. We provide non-asymptotic upper and lower bounds on the minimax expected loss in terms of the alphabet size, the number of samples, and the divergence parameter. The upper bounds are achieved by add-constant estimators, while the lower bound is derived via a Bayes risk argument. Both upper bounds and lower bounds reveal a transition between polynomial and exponential regimes as the parameters of the problem vary.",
         "authors": [
-          "Mojtaba Soltanalian"
+          "Manaka Ueno",
+          "Geoffrey Wolfer"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Policy",
-        "ageHours": 74
+        "ageHours": 50
       },
       {
-        "title": "ModHarness-RL: Recasting Harnesses as Learnable and Evolving Programs for Agentic RL",
-        "url": "https://arxiv.org/abs/2611.18533v1",
-        "publishedAt": "2026-11-13T18:45:49.000Z",
-        "summary": "Agentic reinforcement learning (RL) increasingly relies on a harness, the scaffold around the model that decides what it sees of its own interaction and what guidance it receives. Most existing approaches train under a hand-written harness that stays fixed throughout. However, an effective harness depends on the domain, the data and the model, and keeps changing as the model trains. We introduce ModHarness-RL, which recasts the harness as programs that are learned from data and evolve as the model trains with RL. ModHarness-RL records the interaction as structured State, a set of typed blocks, and two core components of the harness are programs over these blocks, a Compression program that assembles the accumulated history into the model's context and a Steering program that supplies guidance when behavior deviates. During RL training, candidate programs are proposed from recent trajectories, verified by execution, and replayed over past trajectories, so the harness tracks how the model's behavior shifts. We study CodeSearch in depth and further analyze ALFWorld and BIRD SQL, with models from 1.5B to 8B. The proposed Compression and Steering mechanisms improve held-out performance over the fixed-harness baseline in most settings. These results suggest that a harness for agentic RL can be learned from the task's data and evolved with the model.",
+        "title": "Multiaccuracy as an Error Benchmark for Learning with Distribution Shift",
+        "url": "https://arxiv.org/abs/2611.19701v1",
+        "publishedAt": "2026-11-15T01:12:18.000Z",
+        "summary": "Agnostic learning has a well-developed theory of computational and statistical complexity. For learning with distribution shift, even the choice of an appropriate error benchmark remains challenging. Testable learning with distribution shift (TDS) was introduced to develop computational foundations for this setting: using labeled training data and unlabeled test data, the learner must either produce a predictor with low test error or detect distribution shift. However, standard agnostic TDS guarantees allow a constant-factor amplification of the optimum error even when the training and test distributions coincide. They therefore do not directly recover the guarantee of classical agnostic learning.\n  We introduce shift multiaccuracy, a stronger error benchmark inspired by multiaccuracy from algorithmic fairness. This yields a TDS formulation that becomes equivalent to multiaccuracy when there is no shift. Using a recent nontrivial reduction from agnostic learning to multiaccurate prediction from prior work, we obtain the first TDS framework that formally generalizes agnostic learning through an efficient reduction preserving the training marginal. The framework retains existing algorithmic upper bounds and inherits computational lower bounds from agnostic learning. Moreover, we establish a direct connection between our model and identity testing, yielding the first statistical characterization of agnostic TDS learning, in terms of Rademacher complexity.\n  More broadly, we argue that shift multiaccuracy might be of independent interest in unsupervised domain adaptation, as it leads to sharper out-of-distribution generalization guarantees, and can be minimized directly, since its definition does not involve the unobserved test labels.",
         "authors": [
-          "Zelin He",
-          "Siyu Zhu",
-          "Jacob Helwig",
-          "Yujian Liu",
-          "Li An",
-          "Rohit Jain",
-          "Shiyu Chang",
-          "Alborz Geramifard"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "Alignment by Socialization: Learning Tradeoffs Under Selection",
-        "url": "https://arxiv.org/abs/2611.18531v1",
-        "publishedAt": "2026-11-13T18:43:24.000Z",
-        "summary": "Artificial intelligence (AI) agents are expected to complete tasks while following rules of conduct, but these objectives can conflict. We study how evolutionary selection shapes an agent's choices between them, and whether experience can make those choices reflect human judgments and withstand subsequent pressures. In our model, copies of an agent face a common uncertain reward state, and only those taking the rewarded action reproduce. We show that long-run growth is maximized when each action is taken as often as the environment rewards it. We compare three policies. A task-only policy thrives in a sandbox rewarding completion alone but fails when conduct matters. A fixed linear policy increasingly favors task completion as its stakes rise, even where humans never reward it. A learned policy instead converges to the tradeoffs rewarded by its environment; when humans supply the rewards, we call this socialization. Accumulated experience makes socialization harder to reverse under subsequent task-only training, although violations can arise before the prevailing disposition changes, and finite memory weakens this protection. When a single violation can end a deployment, a hard prohibition can prevent it, but a mistaken prohibition can also be costly. Experiments with small neural networks illustrate how training targets and memory shape these outcomes. Our results suggest that alignment depends not only on the objectives assigned to agents, but also on the environments that shape and sustain their behavior.",
-        "authors": [
-          "Thomas Brennan",
-          "Andrew W. Lo",
-          "Chaoyi Zhao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "Understanding Contextual Bias in Agricultural CNNs Through Hidden-Neuron Concept Induction",
-        "url": "https://arxiv.org/abs/2611.18530v1",
-        "publishedAt": "2026-11-13T18:43:15.000Z",
-        "summary": "Convolutional Neural Networks (CNNs) can classify images using background-dominated patches that contain little or none of the target object, showing that they exploit contextual information. Previous studies detected this behavior through classification accuracy but say little about what CNN hidden layers represent. We investigate whether Concept Induction can reveal interpretable visual properties associated with hidden-neuron activations on contextual image patches. Using five agricultural datasets with high, moderate, and low contextual bias, we analyze four CNN architectures at three network depths and five patch locations. Quantitative image descriptors of each patch are encoded in a knowledge graph and used as background knowledge for Concept Induction, which derives logical expressions characterizing neuron activation. These expressions are tested on held-out images using the Mann-Whitney U test and Cliff's delta. Of 48,013 tested neuron-feature pairs, 13,164 (27.4%) were validated. Validation was most frequent at intermediate depths (mean 40.2% at mid layers versus 12.0% at deep layers), and no patch location dominated across datasets. Among the tested descriptors, edge, Gabor, and Tamura texture features had the highest validation rates. Stronger contextual bias did not correspond to higher neuron-feature validation rates: moderately biased Sugarcane had the highest rate (40.5%) and highly biased Cassava the lowest (19.2%). These results suggest that behavioral context dependence and the semantic interpretability of hidden neurons capture different aspects of CNN behavior, and that Concept Induction can complement patch-based bias detection.",
-        "authors": [
-          "Abhilekha Dalal",
-          "Avishek Das",
-          "Samatha Ereshi Akkamahadevi"
+          "Konstantinos Stavropoulos"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 74
+        "ageHours": 51
       },
       {
-        "title": "WaferTetris: Efficient Freeform Mapping on Wafer-Scale Accelerators",
-        "url": "https://arxiv.org/abs/2611.18527v1",
-        "publishedAt": "2026-11-13T18:41:44.000Z",
-        "summary": "Wafer-scale accelerators offer massive compute capacity through hundreds of thousands of processing elements (PEs) interconnected across a single wafer, but realizing this potential requires efficient application mapping. Their scale makes programming these systems and mapping applications onto them challenging. Existing approaches rely on template-based mappings to maintain productivity, but these templates restrict the mapping design space. In particular, they impose fixed geometric layouts over the PE grid, often leaving compute and memory resources underutilized.\n  In this work, we present WaferTetris, a system that removes these geometric restrictions through freeform mapping. Its Tetris-like strategy flexibly packs computation across the wafer, improving PE utilization and usable memory capacity while preserving PE-task code. We develop a recurrence-based throughput model that captures branch-and-join dependencies to guide spatial parallelism, and an architecture model with per-color gates that enable existing FPGA place-and-route algorithms to enforce WSE routing constraints.\n  We evaluate WaferTetris on Cerebras WSE-3 using LLM decoding and scientific stencil benchmarks. For LLM decoding, it achieves up to $4.42\\times$ the system throughput of a template-based automatic mapping baseline on the same fabric size. Compared with the manually optimized WaferLLM, WaferTetris supports $1.8\\times$ the context length for LLaMA3.1-8B (80k versus 44k), while delivering equal or higher per-user throughput at matched context lengths, up to $1.10\\times$.",
+        "title": "Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both",
+        "url": "https://arxiv.org/abs/2611.19700v1",
+        "publishedAt": "2026-11-15T01:07:23.000Z",
+        "summary": "LLM agents operating repeatedly in the same environment, such as a code repository, a database, or an application suite, encounter tasks that share latent structure. Experience can reveal this structure, allowing agents to reuse environment knowledge and learn from environmental feedback. Agents can adapt at test-time using this experience through two channels: retaining it in context and updating their weights. These channels are usually studied separately, leaving unclear what each contributes and when they complement each other. We compare in-context learning (ICL), reinforcement learning with verifiable rewards using GRPO, and self-distillation using SDPO, alone and in combination, using a shared online protocol and modular framework. Agents encounter matched task streams, are evaluated on each task before adapting to it, and learn only from their own attempts and environment feedback. We evaluate 14 adaptation mechanisms and a stateless baseline with Qwen3.5-9B on 109 tasks from four environments drawn from SWE-bench Verified, AppWorld, ScienceWorld, and BIRD-Critic-SQLite, using five task orders per environment. ICL provides the largest standalone gain: its best policy raises mean success across environments from 28.8% to 49.4%. Adding GRPO to this policy achieves the highest mean success, 51.6%. While adding GRPO improves the overall mean under every ICL policy, SDPO has mixed effects. Trace analyses show fewer lookups and shorter attempts under ICL, consistent with reusing knowledge of the shared structure. However, ICL also frequently skips inspection and verification for the current task. Adding GRPO to ICL helps restore these behaviors while preserving its reduced environment lookups. These observations suggest that reinforcement learning with verifiable rewards can refine how agents use retained experience, motivating the joint study of context management and weight updates.",
         "authors": [
-          "Dayou Du",
-          "Congjie He",
-          "Andrew Boutros",
-          "Luo Mai",
-          "Vaughn Betz",
-          "Jianyi Cheng"
+          "Parsa Mirtaheri",
+          "Mohammadreza Armandpour",
+          "Keivan Alizadeh",
+          "Iman Mirzadeh",
+          "Parshin Shojaee",
+          "Aryo Lotfi",
+          "David Harrison",
+          "Mehrdad Farajtabar"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 74
+        "ageHours": 51
+      },
+      {
+        "title": "Data Attribution Should Steer Pretraining",
+        "url": "https://arxiv.org/abs/2611.19698v1",
+        "publishedAt": "2026-11-15T01:03:01.000Z",
+        "summary": "Pretraining data curation decides what a model learns from, yet what makes a document worth learning from depends on what the model already knows. Influence-driven selectors already rank documents to improve one run; we argue that training-data attribution should steer pretraining by identifying testable data properties that become reusable curation criteria, evaluated on new data against cheaper selectors at matched total cost, discovery included. A document ranking is consumed by the run it was computed for, whereas an explained data property can be tested across corpora and checkpoints, especially where familiar quality signals diverge from measured usefulness. Because historical contribution, an understandable explanation, and future data value require distinct evidence, we specify a feedback loop that interprets attributed sources, tests candidate data changes, and states for five claim types what evidence each requires and what none establishes. We close with a falsifiable comparison against perplexity, classifier, and mixing baselines at equal total compute.",
+        "authors": [
+          "Glenn Matlin",
+          "Chandreyi Chakraborty",
+          "Mohammed Rehan Parwani",
+          "Saehee Eom",
+          "Anthony Wen-Ming Zang",
+          "Akhil Theerthala",
+          "Arjun Chatterjee",
+          "Tejas Khandwekar",
+          "Brandon Michaels",
+          "Alvin Deng",
+          "Mark Riedl"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 51
+      },
+      {
+        "title": "MathaMAGICal: Validating Trajectory Data Attribution During Capability Acquisition",
+        "url": "https://arxiv.org/abs/2611.19692v1",
+        "publishedAt": "2026-11-15T00:51:17.000Z",
+        "summary": "Influence-function-based methods like MAGIC provide exact first-order scores for trajectory data attribution, yet only retraining indicates whether those scores accurately predict data removal. We evaluate MAGIC on $86$M- and $152$M-parameter GPT-2-style models learning multistep arithmetic from scratch on filtered web text and four synthetic math families. Full-run attribution at $86$M suffers from numerical overflow, and even with metagradient clipping, scores correlate near chance with retraining (linear datamodeling score, LDS, $0.17$--$0.22$). In contrast, short checkpoint windows yield stable, accurate predictions at both scales (LDS $0.86$--$0.99$ across four $100$-step windows at $152$M), whereas a single-checkpoint gradient-dot baseline shows near-zero correlation. Rankings of individual training blocks predict retraining only within that single run and do not transfer across seeds or hyperparameters ($ρ\\le 0.09$), whereas format-level patterns replicate across runs. Two data families, worked examples and primitive facts, occupy $2.1$--$2.6\\times$ their corpus share in both the helpful and harmful $5\\%$ score tails, reflecting strong bidirectional local sensitivity distinct from net benefit under multi-epoch family deletion. These results show that trajectory attribution is reliable within short, validated windows and yields family-level insights that generalize across runs.",
+        "authors": [
+          "Jason Lee",
+          "Dikshanta Pokhrel",
+          "Phonn Nay Khant",
+          "Victor Lee",
+          "Moritz Weckbecker",
+          "Sebastian Lapuschkin",
+          "Wojciech Samek",
+          "Mark Riedl",
+          "Glenn Matlin"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 51
+      },
+      {
+        "title": "Elicited Adaptation: Auditable Localized Fairness via Pairwise Queries",
+        "url": "https://arxiv.org/abs/2611.19686v1",
+        "publishedAt": "2026-11-15T00:43:53.000Z",
+        "summary": "How much must a predictor's scores change when a community's elicited fairness standard changes? Similarity and tolerance judgments define protected comparisons and acceptable score gaps. We study minimum uniform score movement on a fixed pool of $n$ profiles. For scores satisfying a source standard, we characterize the exact cost of retaining that standard during adaptation: runs of consecutive target constraints along shortest paths determine the optimal amplification factor. Its sharp worst case is $\\lfloor n/2\\rfloor$, and a full cost curve describes finite target-only repair budgets. Committing before the target is known can cost $n-1$ times the worst repair after revelation, even within one fixed convex ball of two-dimensional Mahalanobis metrics. Positive edge-budget floors cap both factors; bounded geometry also limits the commitment cost. At two interior targets of the construction attaining the $n-1$ bound, similarity queries alone yield a feasible $2$-approximate repair for tolerance $\\eps\\le1/[2(n-1)]$, reducing movement relative to common repair by a factor linear in $n$. Feasible $(1+α)$-optimal repair on this family has worst-case tolerance-query complexity $Θ(α^{-2}n^2\\log(1/δ))$ under a fixed-slope logistic model. The analysis separates the information needed for a substantial adaptation benefit from the precision needed for nearly optimal movement. Elicitation studies and training comparisons examine tolerance choice and the relation between numerical compliance and predictive utility.",
+        "authors": [
+          "Shrey Shah"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 51
+      },
+      {
+        "title": "RIFT: Reward Improvement Field Transfer for Cross-Domain Offline RL",
+        "url": "https://arxiv.org/abs/2611.19681v1",
+        "publishedAt": "2026-11-15T00:22:51.000Z",
+        "summary": "Learning from limited target data is a central challenge in cross-domain offline reinforcement learning. Abundant source data can help, but dynamics differences can make direct transition reuse unreliable. We propose Reward Improvement Field Transfer (RIFT), which instead learns how low- and high-reward source transitions differ. RIFT encodes source and target transitions in a shared latent space, pairs low- and high-reward source transitions using optimal transport, and fits an affine field to their displacements. It applies this field to low-reward target anchors and decodes the results to augment the target dataset. The approach builds on the hypothesis that related domains can share useful low-to-high reward structure despite different dynamics. We bound synthesis error under shared class geometry, identify conditions favoring target anchoring over source-high transplant, and derive a conditional connection to downstream return. Experiments on dense-reward locomotion tasks under gravity, morphology, and friction shifts show improved aggregate performance over existing baselines.",
+        "authors": [
+          "Jinhee Won",
+          "Mardavij Roozbehani",
+          "Munther Dahleh"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 51
       }
     ],
     "news": [
       {
+        "title": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
+        "url": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months/",
+        "publishedAt": "2026-11-16T23:32:32.000Z",
+        "summary": "Three months since introducing its product, AI cybersecurity startup Corba has raised a $125 million Series A at a $1 billion valuation led by NEA.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Products",
+        "ageHours": 4
+      },
+      {
+        "title": "All the questions Nvidia should answer on Tuesday — but probably won’t",
+        "url": "https://techcrunch.com/2026/11/16/all-the-questions-nvidia-should-answer-on-tuesday-but-probably-wont/",
+        "publishedAt": "2026-11-16T22:03:02.000Z",
+        "summary": "Nvidia interim CEO and longtime CFO Colette Kress is about to have one of the biggest days of her career on Tuesday when the company reports its third-quarter results. Given the turmoil Nvidia is in, there are a number of questions that Nvidia should answer.",
+        "authors": [
+          "Julie Bort"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 6
+      },
+      {
         "title": "California state AG sues OpenAI over rogue agent incidents",
         "url": "https://techcrunch.com/2026/11/16/california-state-ag-sues-openai-over-rogue-agent-incidents/",
         "publishedAt": "2026-11-16T20:07:13.000Z",
-        "summary": "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident",
+        "summary": "The California lawsuit represents one of the first attempts to hold an AI lab legally accountable for a rogue agent incident.",
         "authors": [
           "Russell Brandom"
         ],
@@ -313,7 +340,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 0
+        "ageHours": 8
       },
       {
         "title": "Trump says ex-Nvidia CEO Jensen Huang&#8217;s affair with an alleged Chinese spy did not threaten national security",
@@ -327,10 +354,10 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 1
+        "ageHours": 9
       },
       {
-        "title": "Sam Altman on Nvidia without Jensen Huang: the industry will be &#8216;fine’",
+        "title": "Sam Altman on Nvidia without Jensen Huang: The industry will be &#8216;fine’",
         "url": "https://techcrunch.com/2026/11/16/sam-altman-on-nvidia-without-jensen-huang-the-industry-will-be-fine/",
         "publishedAt": "2026-11-16T18:11:10.000Z",
         "summary": "OpenAI CEO Sam Altman acknowledged the special role Nvidia CEO Jensen Huang has played in the AI boom, but ultimately thinks the industry will be “fine” without him at the helm.",
@@ -341,13 +368,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 10
       },
       {
-        "title": "FBI says Artex AI open-source hacking tool used to breach networks in &#8216;under three hours&#8217;",
+        "title": "FBI says Artex AI open source hacking tool used to breach networks in &#8216;under three hours&#8217;",
         "url": "https://techcrunch.com/2026/11/16/fbi-says-artex-ai-open-source-hacking-tool-used-to-breach-networks-in-under-three-hours/",
         "publishedAt": "2026-11-16T17:36:43.000Z",
-        "summary": "The FBI says that the open-source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
+        "summary": "The FBI says that the open source hacking tool was used in cyberattacks targeting a U.S. IT giant and the South Korean financial industry.",
         "authors": [
           "Zack Whittaker"
         ],
@@ -355,7 +382,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 3
+        "ageHours": 10
       },
       {
         "title": "Jordan Belfort’s new AI voice startup, Tone, wants to sell like the &#8216;Wolf of Wall Street&#8217;",
@@ -369,7 +396,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 11
       },
       {
         "title": "OpenAI will embed safety researchers to investigate AI subversion",
@@ -383,13 +410,13 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 11
       },
       {
         "title": "OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM",
         "url": "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam/",
         "publishedAt": "2026-11-16T17:00:00.000Z",
-        "summary": "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning",
+        "summary": "ChatGPT will ban an account trying to access CSAM content for 24 hours as a warning.",
         "authors": [
           "Ivan Mehta"
         ],
@@ -397,7 +424,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 11
       },
       {
         "title": "Broadening access to AI for scientists",
@@ -409,7 +436,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 3
+        "ageHours": 11
       },
       {
         "title": "Strengthening the fight against online child sexual abuse with new tools and support",
@@ -421,7 +448,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Products",
-        "ageHours": 3
+        "ageHours": 11
       },
       {
         "title": "Audible turns to AI to help users discover audiobooks",
@@ -435,35 +462,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 4
-      },
-      {
-        "title": "US tightens AI chip export controls to deter Chinese companies from accessing compute remotely",
-        "url": "https://techcrunch.com/2026/11/16/us-tightens-ai-chip-export-controls-to-deter-chinese-companies-from-accessing-compute-remotely/",
-        "publishedAt": "2026-11-16T15:02:34.000Z",
-        "summary": "Under the interim rule, the U.S. will require firms to get licenses to export AI chips if they may provide compute to China or other restricted countries.",
-        "authors": [
-          "Ram Iyer"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Infrastructure",
-        "ageHours": 5
-      },
-      {
-        "title": "Google Maps can now build trip itineraries with real-time details about each stop",
-        "url": "https://techcrunch.com/2026/11/16/google-maps-can-now-build-trip-itineraries-with-real-time-details-about-each-stop/",
-        "publishedAt": "2026-11-16T14:48:13.000Z",
-        "summary": "You could use Ask Maps to plan a holiday shopping day trip or something more complex, like a three-day road trip featuring coastal hikes and oceanfront dining.",
-        "authors": [
-          "Aisha Malik"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 6
+        "ageHours": 12
       }
     ],
     "threads": []
@@ -474,11 +473,11 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 10
+        "count": 8
       },
       {
         "name": "Models",
-        "count": 5
+        "count": 7
       },
       {
         "name": "General",
@@ -486,7 +485,7 @@
       },
       {
         "name": "Products",
-        "count": 2
+        "count": 3
       }
     ]
   }
