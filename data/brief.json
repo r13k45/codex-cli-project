@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T03:45:55.227Z",
+  "generatedAt": "2026-11-17T13:13:42.639Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,221 +85,271 @@
   "sections": {
     "research": [
       {
-        "title": "Found, but Not Fixed : From Software Vulnerability Discovery to Fixes with Iterative LLM Pipelines",
-        "url": "https://arxiv.org/abs/2611.19719v1",
-        "publishedAt": "2026-11-15T02:02:33.000Z",
-        "summary": "Software vulnerabilities persist as a critical threat despite the deployment of sophisticated detection tools and AI assistants. While detection has advanced, the subsequent code repair phase remains a primary bottleneck; manual intervention is inherently slow, costly, and prone to introducing secondary regressions and issues. In this paper, we investigate whether an iterative, LLM-based pipeline can provide a robust solution for the automated repair of vulnerable functions in real-world code. We propose a generalized framework that leverages the reasoning capabilities of Large Language Models (LLMs) through a multi-stage feedback loop. We benchmark this approach against state-of-the-art models, including GPT-4o, GPT-5.1, and Gemini 3 Flash, demonstrating that such a pipeline can achieve high-quality code repair. To support the broader security community, we provide our evaluation framework, fine-tuned weights, and comprehensive experimental dataset on our website: https://sites.google.com/view/llm4cve",
+        "title": "Latent Lattice Language Models",
+        "url": "https://arxiv.org/abs/2611.21608v1",
+        "publishedAt": "2026-11-16T18:59:38.000Z",
+        "summary": "Language models typically increase per-token computation through deeper or looped layers and latent reasoning steps, while richer residual connections improve information flow across layers. We instead increase computational capacity: the number of active computational states a model maintains. We introduce the Lattice of Latents, a set of per-layer horizontal latent streams that run recurrently along time, alongside the vertical residual stream that flows through depth. Like hyper-connections, mHC, and attention or value residuals, the Lattice enhances the residual stream, but rather than adding or rerouting residual pathways through depth, it provides companion computational states that persist across tokens. Unlike hybrid Transformer-SSM architectures, whose recurrent states primarily serve as internal memory for sequence mixing, these latents directly condition the vertical stream's attention, KV-cache writes, MLP computation, and decoding. On Transformers trained on 20B FineWeb-Edu tokens, a 406M-parameter Lattice model lowers validation perplexity from 15.41 to 14.40 over a parameter-matched Transformer. These gains extend across architectural variants. The Lattice composes with prior residual-stream enhancements: with hyper-connections and input residuals, it lowers validation perplexity from 15.41 (base Transformer) and 14.22 (Transformer with the same enhancements) to 13.61. On Gated DeltaNet, Mamba-2, Triadic GDN, and GDN-Mamba-2 hybrids, it improves perplexity at every tested native state size, with Lattice-GDN and Lattice-Triadic-GDN variants outperforming pure baselines with 4x larger native states. These results identify persistent per-layer state as a complementary axis for scaling language-model computation.",
         "authors": [
-          "Youssef Gamal",
-          "Mohamad Fakih",
-          "Halima Bouzidi",
-          "Rahul Dharmaji",
-          "Gustavo Quiros Araya",
-          "Oluwatosin Ogundare",
-          "Mst Ayesha Siddika",
-          "Mohammad Abdullah Al Faruque"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 50
-      },
-      {
-        "title": "Set-based State Estimation for Unknown Dynamical Systems from Noisy Output Data with Probabilistic Guarantees",
-        "url": "https://arxiv.org/abs/2611.19716v1",
-        "publishedAt": "2026-11-15T01:58:15.000Z",
-        "summary": "We develop a methodology for set-based state estimation from noisy input-output trajectories, without a predefined model structure for the unknown state dynamics or access to training state measurements. We derive a bound on the state set diameter that depends on the sensor map and leverage it as a surrogate to formulate a tractable linear program balancing state set tightness against output trajectory coverage. Combining this certificate with deterministic or probabilistically certified measurement noise sets and leveraging the results from scenario optimization with relaxation, we provide joint a posteriori probabilistic guarantees for state inclusion and state set diameter. Numerical simulations corroborate our developed theoretical guarantees.",
-        "authors": [
-          "Georgios Pantazis",
-          "Michelle S. Chong"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 50
-      },
-      {
-        "title": "An Interpretable Acoustic Coordinate System for Japanese Consonant Morae in Dysarthric Speech",
-        "url": "https://arxiv.org/abs/2611.19714v1",
-        "publishedAt": "2026-11-15T01:51:55.000Z",
-        "summary": "Dysarthria reduces speech intelligibility, requiring self-directed rehabilitation based on fine-grained feedback to capture gradual articulatory changes. For Japanese speakers, such feedback is naturally provided in mora units due to its distinct moraic timing and consonant-vowel structure. While recent visualization methods have explored distance-based feedback, most are limited to vowels. Extending them to consonants is challenging, as generative embeddings often smooth transient spectral structures. We propose a visualization system for Japanese consonant morae that maps articulatory deviations onto a two-dimensional space defined by temporal and spectral distances from healthy reference speech. Experiments show consistent geometric separation of consonant categories, with Silhouette Coefficients exceeding 0.5 and origin-based ROC-AUC scores above 0.86. Furthermore, evaluations using real dysarthric speech achieved a high ROC-AUC of 0.897 in screening for unclear pronunciations. Perturbation tests confirm orthogonal temporal and spectral shifts, yielding a physically interpretable mapping for rehabilitation.",
-        "authors": [
-          "Yuma Enomoto",
-          "Misa Yamaguchi",
-          "Hiroki Nishikawa",
-          "Ittetsu Taniguchi",
-          "Kazuhide Matsunaga",
-          "Narikazu Uzawa",
-          "Takao Onoye"
+          "Shivam Duggal",
+          "Zongze Wu",
+          "William T. Freeman",
+          "Antonio Torralba",
+          "Richard Zhang",
+          "Eli Shechtman"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 50
+        "ageHours": 18
       },
       {
-        "title": "Joint Learning of Factual and Counterfactual Worlds for Causal Prior-data Fitted Networks",
-        "url": "https://arxiv.org/abs/2611.19710v1",
-        "publishedAt": "2026-11-15T01:41:28.000Z",
-        "summary": "Estimating treatment effects is central to science across many disciplines and requires counterfactual reasoning about alternative worlds. In the real world, however, each unit reveals its outcome only under the factual world. Thus, the factual and counterfactual outcomes can never be jointly learned by any model trained on real data. The problem is therefore tractable only in synthetic settings, where both worlds can be generated. Recent progress on prior-data fitted networks (PFNs) has shown that models pre-trained purely on synthetic data can transfer to real-world prediction. This paradigm has since carried over to causal effect estimation. Despite this fully synthetic setup, existing causal PFNs carry the real-world constraint into their training objective, confining learning to a single world's outcome per unit. The dependence between the two worlds is thereby lost, and the density of the treatment effect relies by default on independence, which is implausible in practice. We therefore propose joint learning, a training setup in which a causal PFN learns the joint distribution of the factual and counterfactual outcomes of each unit. From the joint distribution, we obtain both the response and the individual treatment effect densities, and at inference, we apply optimal transport across units to obtain an approximation of the average treatment effect density. Ours is therefore the first causal PFN approach to provide all three densities together while accounting for the cross-world dependence. We apply joint learning and optimal transport to existing causal PFNs and evaluate it across semi-synthetic, synthetic, and real benchmarks spanning diverse causal scenarios. The jointly trained models significantly improve upon their baselines in point estimation and uncertainty quantification in most settings, indicating that joint learning is a preferable training setup for causal PFNs.",
+        "title": "ViRA: Toward Ultra-High-Resolution Visual Agents via Cross-Input Relative Policy Optimization",
+        "url": "https://arxiv.org/abs/2611.21605v1",
+        "publishedAt": "2026-11-16T18:59:04.000Z",
+        "summary": "Visual agents answer questions about ultra-high-resolution photos by zooming into the relevant regions. However, existing agents often answer from common sense instead of reading the evidence. Reinforcement learning (RL) on the final answer cannot correct this, because a guess earns the same reward as reading. We propose Cross-Input Relative Policy Optimization (CrossRPO), which trains agents on contrast sets. A contrast set asks one question about several versions of an image that differ only in a small region with the evidence and have different answers, so only reading the evidence solves the whole set. CrossRPO rewards solving the whole set, and we prove that it does not reinforce a set answered from common sense. We build contrast sets for training (ViRA-Train) and evaluation (ViRA-Bench) by editing one small object in images of 21 to 120 megapixels, and we photograph further sets with real changes (ViRA-Bench-Real) to exclude editing traces. We train two Visual Reasoning Agents, ViRA-9B and ViRA-27B, with CrossRPO on only about 3,500 items of ViRA-Train each. CrossRPO achieves 63.3% set accuracy on ViRA-Bench at the maximum resolution, against 59.3% for GRPO. ViRA-9B is the most accurate open model of its size on all benchmarks, and ViRA-27B outperforms Claude Haiku 5.5 and GPT-6-Luna, both at their highest thinking level, on most benchmarks.",
         "authors": [
-          "Furkan Danisman",
-          "Luke Zhang",
-          "Zhijing Jin",
-          "Dehan Kong"
+          "Huawei Lin",
+          "Jinting Liu",
+          "Tongyan Wang",
+          "Xuyang Chen",
+          "Ruihua Shi",
+          "Zhichao Xu",
+          "Jiaxin Qin",
+          "Guoshenghui Zhao",
+          "Baijian Yang",
+          "Yingjie Victor Chen",
+          "Tan Yu",
+          "Weijie Zhao"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 50
+        "ageHours": 18
       },
       {
-        "title": "Cache or Denoise Less? Residual Reuse in a Flow-Matching World Action Model",
-        "url": "https://arxiv.org/abs/2611.19709v1",
-        "publishedAt": "2026-11-15T01:40:18.000Z",
-        "summary": "Flow-matching robot policies generate each action chunk through repeated network evaluations, one per denoising step. Cross-cycle caches such as C$^3$ache reuse computation from earlier replanning calls, but whether they beat simply taking fewer steps is unclear. We compare the two in Fast-WAM, a 6B-parameter world action model, on LIBERO-Goal. Two uncached steps keep the success of ten: on all 500 initial states they are non-inferior within two percentage points, for one checkpoint and noise seed. Under PyTorch's default compile mode, they also cut a replanning call on an RTX A6000 from 202 to 92 ms. This leaves little room for caching. A cache that keeps two fresh steps cannot be faster than two uncached steps: every call still encodes the images, runs the video expert and computes those two steps. Caching the first of two steps, refreshed every fourth call, saves at most 11--14% of a call by our cost model. Cached policies are also fragile. Their losses tracked the share of the flow path the cached steps cover: under Fast-WAM's current time shift, C$^3$ache's eight cached steps cover 80% of the path instead of 44%, and the cached policy succeeds on 63% of states against 95% uncached. Resampling the noise on every call cost caches covering 60% or more of the path 14--40 points. These results argue for fewer-step baselines and for testing reuse under the deployed sampler and noise settings. We release our evaluation harness, logs and a checklist.",
+        "title": "Quantifying the added value of human forecaster discussions for tropical cyclone intensity prediction",
+        "url": "https://arxiv.org/abs/2611.21602v1",
+        "publishedAt": "2026-11-16T18:58:55.000Z",
+        "summary": "The National Hurricane Center routinely releases Tropical Cyclone Discussions that offer insights into its tropical cyclone forecasts. This study examines the added value of these discussions for intensity forecasting beyond a set of numerical predictors. For 637 Atlantic and eastern North Pacific tropical cyclones from the 2002-2023 hurricane seasons, we analyze the discussion text and its combination with 13 hurricane environmental predictors from SHIPS and ERA5 10-meter wind fields, for forecasting intensity changes at lead times of 24 to 120 hours using three modeling methods. In one approach, an end-to-end deep learning framework for the text shows that the discussions alone offer comparable value for 24-hour intensity forecasts to the SHIPS predictors. Adding discussion information to the SHIPS predictors in an ensemble of five such models reduces the mean absolute error of 24-hour maximum sustained wind forecasts for 2022-2023 cyclones from 9.89 to 8.90 kt, with a confidence interval that excludes zero when whole storms are resampled. The ERA5 wind fields have a minor effect on mean absolute error in wind predictions, and model rankings differ across predicted variables, lead times and model types. We provide prediction intervals for these forecasts, whose coverage falls below the 90% target during rapid intensification. Analysis of the text shows that words related to intensity and intensity change (such as intensify, weaken, eyewall and category) are important for the model predictions. This retrospective study shows the added value of the forecasters' discussions and suggests that multi-modal learning can help understand the predictive contribution of expert human judgment. The reanalysis data differ from real-time analyses, and the discussions are issued at least three hours after the valid time of the other inputs, so these results should not be interpreted operationally.",
         "authors": [
-          "Abhinav Gupta",
-          "Nissan Pow"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 50
-      },
-      {
-        "title": "Minimax Estimation of Discrete Distributions under Hockey-stick Divergence",
-        "url": "https://arxiv.org/abs/2611.19702v1",
-        "publishedAt": "2026-11-15T01:19:31.000Z",
-        "summary": "We initiate the study of estimating a discrete distribution with respect to the hockey-stick divergence from independent samples. We provide non-asymptotic upper and lower bounds on the minimax expected loss in terms of the alphabet size, the number of samples, and the divergence parameter. The upper bounds are achieved by add-constant estimators, while the lower bound is derived via a Bayes risk argument. Both upper bounds and lower bounds reveal a transition between polynomial and exponential regimes as the parameters of the problem vary.",
-        "authors": [
-          "Manaka Ueno",
-          "Geoffrey Wolfer"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 50
-      },
-      {
-        "title": "Multiaccuracy as an Error Benchmark for Learning with Distribution Shift",
-        "url": "https://arxiv.org/abs/2611.19701v1",
-        "publishedAt": "2026-11-15T01:12:18.000Z",
-        "summary": "Agnostic learning has a well-developed theory of computational and statistical complexity. For learning with distribution shift, even the choice of an appropriate error benchmark remains challenging. Testable learning with distribution shift (TDS) was introduced to develop computational foundations for this setting: using labeled training data and unlabeled test data, the learner must either produce a predictor with low test error or detect distribution shift. However, standard agnostic TDS guarantees allow a constant-factor amplification of the optimum error even when the training and test distributions coincide. They therefore do not directly recover the guarantee of classical agnostic learning.\n  We introduce shift multiaccuracy, a stronger error benchmark inspired by multiaccuracy from algorithmic fairness. This yields a TDS formulation that becomes equivalent to multiaccuracy when there is no shift. Using a recent nontrivial reduction from agnostic learning to multiaccurate prediction from prior work, we obtain the first TDS framework that formally generalizes agnostic learning through an efficient reduction preserving the training marginal. The framework retains existing algorithmic upper bounds and inherits computational lower bounds from agnostic learning. Moreover, we establish a direct connection between our model and identity testing, yielding the first statistical characterization of agnostic TDS learning, in terms of Rademacher complexity.\n  More broadly, we argue that shift multiaccuracy might be of independent interest in unsupervised domain adaptation, as it leads to sharper out-of-distribution generalization guarantees, and can be minimized directly, since its definition does not involve the unobserved test labels.",
-        "authors": [
-          "Konstantinos Stavropoulos"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 51
-      },
-      {
-        "title": "Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both",
-        "url": "https://arxiv.org/abs/2611.19700v1",
-        "publishedAt": "2026-11-15T01:07:23.000Z",
-        "summary": "LLM agents operating repeatedly in the same environment, such as a code repository, a database, or an application suite, encounter tasks that share latent structure. Experience can reveal this structure, allowing agents to reuse environment knowledge and learn from environmental feedback. Agents can adapt at test-time using this experience through two channels: retaining it in context and updating their weights. These channels are usually studied separately, leaving unclear what each contributes and when they complement each other. We compare in-context learning (ICL), reinforcement learning with verifiable rewards using GRPO, and self-distillation using SDPO, alone and in combination, using a shared online protocol and modular framework. Agents encounter matched task streams, are evaluated on each task before adapting to it, and learn only from their own attempts and environment feedback. We evaluate 14 adaptation mechanisms and a stateless baseline with Qwen3.5-9B on 109 tasks from four environments drawn from SWE-bench Verified, AppWorld, ScienceWorld, and BIRD-Critic-SQLite, using five task orders per environment. ICL provides the largest standalone gain: its best policy raises mean success across environments from 28.8% to 49.4%. Adding GRPO to this policy achieves the highest mean success, 51.6%. While adding GRPO improves the overall mean under every ICL policy, SDPO has mixed effects. Trace analyses show fewer lookups and shorter attempts under ICL, consistent with reusing knowledge of the shared structure. However, ICL also frequently skips inspection and verification for the current task. Adding GRPO to ICL helps restore these behaviors while preserving its reduced environment lookups. These observations suggest that reinforcement learning with verifiable rewards can refine how agents use retained experience, motivating the joint study of context management and weight updates.",
-        "authors": [
-          "Parsa Mirtaheri",
-          "Mohammadreza Armandpour",
-          "Keivan Alizadeh",
-          "Iman Mirzadeh",
-          "Parshin Shojaee",
-          "Aryo Lotfi",
-          "David Harrison",
-          "Mehrdad Farajtabar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 51
-      },
-      {
-        "title": "Data Attribution Should Steer Pretraining",
-        "url": "https://arxiv.org/abs/2611.19698v1",
-        "publishedAt": "2026-11-15T01:03:01.000Z",
-        "summary": "Pretraining data curation decides what a model learns from, yet what makes a document worth learning from depends on what the model already knows. Influence-driven selectors already rank documents to improve one run; we argue that training-data attribution should steer pretraining by identifying testable data properties that become reusable curation criteria, evaluated on new data against cheaper selectors at matched total cost, discovery included. A document ranking is consumed by the run it was computed for, whereas an explained data property can be tested across corpora and checkpoints, especially where familiar quality signals diverge from measured usefulness. Because historical contribution, an understandable explanation, and future data value require distinct evidence, we specify a feedback loop that interprets attributed sources, tests candidate data changes, and states for five claim types what evidence each requires and what none establishes. We close with a falsifiable comparison against perplexity, classifier, and mixing baselines at equal total compute.",
-        "authors": [
-          "Glenn Matlin",
-          "Chandreyi Chakraborty",
-          "Mohammed Rehan Parwani",
-          "Saehee Eom",
-          "Anthony Wen-Ming Zang",
-          "Akhil Theerthala",
-          "Arjun Chatterjee",
-          "Tejas Khandwekar",
-          "Brandon Michaels",
-          "Alvin Deng",
-          "Mark Riedl"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 51
-      },
-      {
-        "title": "MathaMAGICal: Validating Trajectory Data Attribution During Capability Acquisition",
-        "url": "https://arxiv.org/abs/2611.19692v1",
-        "publishedAt": "2026-11-15T00:51:17.000Z",
-        "summary": "Influence-function-based methods like MAGIC provide exact first-order scores for trajectory data attribution, yet only retraining indicates whether those scores accurately predict data removal. We evaluate MAGIC on $86$M- and $152$M-parameter GPT-2-style models learning multistep arithmetic from scratch on filtered web text and four synthetic math families. Full-run attribution at $86$M suffers from numerical overflow, and even with metagradient clipping, scores correlate near chance with retraining (linear datamodeling score, LDS, $0.17$--$0.22$). In contrast, short checkpoint windows yield stable, accurate predictions at both scales (LDS $0.86$--$0.99$ across four $100$-step windows at $152$M), whereas a single-checkpoint gradient-dot baseline shows near-zero correlation. Rankings of individual training blocks predict retraining only within that single run and do not transfer across seeds or hyperparameters ($ρ\\le 0.09$), whereas format-level patterns replicate across runs. Two data families, worked examples and primitive facts, occupy $2.1$--$2.6\\times$ their corpus share in both the helpful and harmful $5\\%$ score tails, reflecting strong bidirectional local sensitivity distinct from net benefit under multi-epoch family deletion. These results show that trajectory attribution is reliable within short, validated windows and yields family-level insights that generalize across runs.",
-        "authors": [
-          "Jason Lee",
-          "Dikshanta Pokhrel",
-          "Phonn Nay Khant",
-          "Victor Lee",
-          "Moritz Weckbecker",
-          "Sebastian Lapuschkin",
-          "Wojciech Samek",
-          "Mark Riedl",
-          "Glenn Matlin"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 51
-      },
-      {
-        "title": "Elicited Adaptation: Auditable Localized Fairness via Pairwise Queries",
-        "url": "https://arxiv.org/abs/2611.19686v1",
-        "publishedAt": "2026-11-15T00:43:53.000Z",
-        "summary": "How much must a predictor's scores change when a community's elicited fairness standard changes? Similarity and tolerance judgments define protected comparisons and acceptable score gaps. We study minimum uniform score movement on a fixed pool of $n$ profiles. For scores satisfying a source standard, we characterize the exact cost of retaining that standard during adaptation: runs of consecutive target constraints along shortest paths determine the optimal amplification factor. Its sharp worst case is $\\lfloor n/2\\rfloor$, and a full cost curve describes finite target-only repair budgets. Committing before the target is known can cost $n-1$ times the worst repair after revelation, even within one fixed convex ball of two-dimensional Mahalanobis metrics. Positive edge-budget floors cap both factors; bounded geometry also limits the commitment cost. At two interior targets of the construction attaining the $n-1$ bound, similarity queries alone yield a feasible $2$-approximate repair for tolerance $\\eps\\le1/[2(n-1)]$, reducing movement relative to common repair by a factor linear in $n$. Feasible $(1+α)$-optimal repair on this family has worst-case tolerance-query complexity $Θ(α^{-2}n^2\\log(1/δ))$ under a fixed-slope logistic model. The analysis separates the information needed for a substantial adaptation benefit from the precision needed for nearly optimal movement. Elicitation studies and training comparisons examine tolerance choice and the relation between numerical compliance and predictive utility.",
-        "authors": [
-          "Shrey Shah"
+          "Ilia Azizi",
+          "Frederick Iat-Hin Tam",
+          "Marc-Olivier Boldi",
+          "Valérie Chavez-Demoulin",
+          "Tom Beucler"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 51
+        "ageHours": 18
       },
       {
-        "title": "RIFT: Reward Improvement Field Transfer for Cross-Domain Offline RL",
-        "url": "https://arxiv.org/abs/2611.19681v1",
-        "publishedAt": "2026-11-15T00:22:51.000Z",
-        "summary": "Learning from limited target data is a central challenge in cross-domain offline reinforcement learning. Abundant source data can help, but dynamics differences can make direct transition reuse unreliable. We propose Reward Improvement Field Transfer (RIFT), which instead learns how low- and high-reward source transitions differ. RIFT encodes source and target transitions in a shared latent space, pairs low- and high-reward source transitions using optimal transport, and fits an affine field to their displacements. It applies this field to low-reward target anchors and decodes the results to augment the target dataset. The approach builds on the hypothesis that related domains can share useful low-to-high reward structure despite different dynamics. We bound synthesis error under shared class geometry, identify conditions favoring target anchoring over source-high transplant, and derive a conditional connection to downstream return. Experiments on dense-reward locomotion tasks under gravity, morphology, and friction shifts show improved aggregate performance over existing baselines.",
+        "title": "How VLMs Plan What's Next",
+        "url": "https://arxiv.org/abs/2611.21600v1",
+        "publishedAt": "2026-11-16T18:58:30.000Z",
+        "summary": "When a vision-language model describes an image, it names one object at a time and it rarely repeats itself, yet how the model plans this order is far from obvious. We characterize the mechanism a VLM uses to decide where to look before it looks. The mechanism has four main parts. First, binding heads match the relevant text tokens against the image and resolve them into pointers to the matched image region. Second, the same binding heads bind each written answer to the region it came from, and the model turns it into a progress signal: a cursor, the position in the image up to which the list has been written. Third, a select step chooses the nearest unwritten region after the cursor, or stops. Finally, gaze heads execute the chosen pointer and return a concept of what is drawn there, which language heads and the late MLPs turn into a word in the language of the question. We validate each part of this mechanism through causal patching in Qwen3-VL models on a synthetic visual retrieval task, and test our mechanisms against alternative hypotheses. We further show that the mechanism holds across input formats, natural photographs, and languages, and that its binding, relay, and gaze heads appear at every model size from 2B to 32B. This work allows us to investigate how a VLM turns a question and an image into a sequence of answers, layer by layer and token by token. More broadly, it opens a way to study how models plan over complex multi-step tasks with long rollouts. Our project is available at https://plan.baulab.info/",
         "authors": [
-          "Jinhee Won",
-          "Mardavij Roozbehani",
-          "Munther Dahleh"
+          "Rohit Gandikota",
+          "Arnab Sen Sharma",
+          "Adam Belfki",
+          "David Bau"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 18
+      },
+      {
+        "title": "Hyperlyve: Parallelized Enumeration and Exact Lyapunov Stability Certification for Deep ReLU Networks",
+        "url": "https://arxiv.org/abs/2611.21599v1",
+        "publishedAt": "2026-11-16T18:58:29.000Z",
+        "summary": "We introduce Hyperlyve (Hyperplane Partitioned Lyapunov Verification and Enumeration), a framework for proving the asymptotic stability of nonlinear dynamical systems, including those with neural network controllers. Hyperlyve learns and formally certifies continuous piecewise-affine (CPA) neural Lyapunov functions within a counterexample-guided inductive synthesis (CEGIS) loop. Hyperlyve's key innovation is a parallel algorithm that enumerates the hyperplane arrangement formed by the ReLU activations of deep networks and certifies that Lyapunov conditions hold within each polyhedral region. We derive sound and complete regional tests to verify the asymptotic stability of the exact smooth dynamics (rather than a piecewise-linear approximation) within a compact domain of interest. Furthermore, we formally characterize the computational complexity of the CPA neural Lyapunov verification problem as co-NP-complete, filling a key gap in the literature. Empirical results demonstrate that Hyperlyve enumerates ReLU networks over 150-times faster than competing tools, which contributes to Hyperlyve proving the asymptotic stability of systems that are currently intractable for state-of-the-art verifiers.",
+        "authors": [
+          "Brian Yarbrough",
+          "Jesse Wayment",
+          "Jingbo Wang",
+          "Philip E. Paré",
+          "Shreyas Sundaram"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 18
+      },
+      {
+        "title": "Mitigating Catastrophic Forgetting with Physics-Indexed Specialist Memory: the Evolutionary Neuroplastic Agent",
+        "url": "https://arxiv.org/abs/2611.21598v1",
+        "publishedAt": "2026-11-16T18:58:20.000Z",
+        "summary": "Continual reinforcement learning requires adaptation to changing conditions while preserving performance under previously encountered dynamics. It was investigated whether specialists generated by evolutionary search can provide a reusable memory when combined with environment detection and failure-driven search. The Evolutionary Neuroplastic Agent (ENA) evolves small neural networks without gradients, archives selected policies by detected dynamic regime, and retrieves them through Bayesian policy reuse. The architecture was evaluated in non-stationary CartPole and HalfCheetah environments. In the 30-replicate CartPole ablation, the complete architecture achieved a mean success rate of 83.2% across the five test environments. Among variants that learned the harder CartPole environments, the complete architecture showed the most consistent retention. A selection ablation also showed that the retrieval rule affected performance. In the evaluated sequences, ENA adapted more slowly than PPO on CartPole and achieved lower returns than SAC on HalfCheetah. The evidence concerns the complete architecture and does not isolate gradient-free optimization as the cause of retention or establish superiority over other continual-learning methods.",
+        "authors": [
+          "Blas Eugenio Vicco Zarate",
+          "Miguel Hernán Vicco"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
+      },
+      {
+        "title": "Optimal Autoregressive Chain-of-Thought Learning via Bagging",
+        "url": "https://arxiv.org/abs/2611.21597v1",
+        "publishedAt": "2026-11-16T18:58:07.000Z",
+        "summary": "We study how to learn an autoregressive next-token generator $f\\colonΣ^\\star\\toΣ$ from a class $\\mathcal{F}$, given chain-of-thought (CoT) demonstrations of length $T$ generated by $f$. We present a simple algorithm based on bagging, which outputs a majority vote of generators that are trained to be CoT-consistent on bootstrap samples of the training data. For binary token sets, it achieves the optimal sample complexity of $O((d_{\\mathrm{VC}}+\\log(1/δ))/ε)$, independent of the CoT length $T$, where $d_{\\mathrm{VC}}$ is the VC dimension of $\\mathcal{F}$. For finite token sets $Σ$, the VC dimension is replaced by a multiclass analogue, the Graph dimension $d_{\\mathrm{G}}$, and the sample complexity is optimal up to a $\\log|Σ|$ factor. The number of generators in the majority-vote ensemble is $O(\\log(T/δ))$, and we show that the ensemble can be distilled into a single generator in $\\mathcal{F}$ at the expense of $n\\log(nT)$ unlabeled prompts.",
+        "authors": [
+          "Awni Altabaa",
+          "John Lafferty",
+          "Omar Montasser"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 18
+      },
+      {
+        "title": "SADL: On the Demand-Supply Geometry of Representation Collapse",
+        "url": "https://arxiv.org/abs/2611.21596v1",
+        "publishedAt": "2026-11-16T18:58:03.000Z",
+        "summary": "In Joint-Embedding Predictive Architectures (JEPAs), a well-constrained projector output does not by itself prevent representation collapse. We find that, from initialization, the encoder representation is dominated by a component shared by different inputs. A batch-normalized projector removes this component, so regularization after the projector cannot correct it, and the differences between representations shrink until they collapse. We propose SADL (Supply And Demand Loss), which keeps the original training objective and constrains the encoder directly when needed. SADL compares the representation differences that the projector output demands with the differences the encoder can retain and pass on to the projector, and adds a constraint on the encoder only when supply falls short of demand. It works with different Demand Regularizers and introduces no auxiliary networks, additional trainable parameters, or architectural changes. In single-task and jointly trained four-task LeWorldModel (LeWM) and INTACT experiments, SADL lowers the collapse rate over ten random seeds from 50% to 0%. After one epoch of training, encoder effective rank is 3.4-6.4 times that of the corresponding baseline without SADL, and latent prediction error falls to 1/20-1/303 of it. Without additional tuning, SADL stays robust as its loss weight spans orders of magnitude, and with several Demand Regularizers INTACT exceeds 95% mean search-free control success. On four image datasets, SADL also consistently improves accuracy and stability across random seeds. These results show that matching the representation differences a regularizer demands with the differences the encoder can supply leads to faster and more stable representation learning in control and image classification.",
+        "authors": [
+          "Junhan Sun",
+          "Yigui Feng",
+          "Mingzhe Liu",
+          "Haoyan Xu",
+          "Lei Ye",
+          "Ziqi Han",
+          "Hanru Bai",
+          "Yanzhao Zhang",
+          "Hao Zhao",
+          "Guofeng Zhang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 51
+        "ageHours": 18
+      },
+      {
+        "title": "Surrogate-Assisted Compact-Model Extraction for SKY130 CMOS at 77 K",
+        "url": "https://arxiv.org/abs/2611.21594v1",
+        "publishedAt": "2026-11-16T18:57:06.000Z",
+        "summary": "Cryogenic circuit design requires compact transistor models that reproduce measured low-temperature behavior and run in standard circuit simulators. We fit BSIM4 parameters to measured I-V curves of SkyWater 130 nm (SKY130) transistors at 77 K using a neural surrogate of NGSpice. The surrogate maps compact-model parameters and device geometry to the complete set of output and transfer characteristics. Extraction is a bounded least-squares search: a bank of NGSpice simulations supplies initial candidates, finite differences of the surrogate supply the local Jacobian, and NGSpice re-simulates the resulting cards before selection. On 18 measured geometries, we compare a search over seven card parameters with a search over 43 parameters selected by NGSpice sensitivity. Relative to NGSpice re-simulations of the previously released cards, the two searches reduce the in-sample mean relative root-mean-square error (RRMS) by 17% and 26%, respectively. The 43-parameter search has the lower overall error, but the seven-parameter search has the lower mean on high-bias curves, and some individual curves have higher error than with the released cards under both searches.",
+        "authors": [
+          "Aaron Wang",
+          "Olivia Gzamouranis",
+          "Vaibhav Lohia",
+          "Hershel Fei Xun Weiner",
+          "Olivia Seidel",
+          "Richard Cavanaugh",
+          "Giuseppe Di Guglielmo",
+          "Nhan Tran",
+          "Davide Braga"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 18
+      },
+      {
+        "title": "Beyond Job Titles: Interpreting Early-Career Job Advertisements with Sparse Autoencoders and Semantic Clustering",
+        "url": "https://arxiv.org/abs/2611.21586v1",
+        "publishedAt": "2026-11-16T18:54:40.000Z",
+        "summary": "Job titles and job descriptions alone provide limited insight into how technical roles differ in a changing job market. To assess how such roles differ in their work and industry applications, we design and compare two methods based on deep learning and transformer representations using 36,081 early-career job postings collected from LinkedIn in the United States between December 2025 and October 2026.\n  We first apply PERC, short for Preprocessing (P), Embedding (E), Dimensionality Reduction (R) and Clustering (C). We employ GPT-6 Luna to classify job description passages into Team context, Role task and Qualifications. We then create combinations of these sections and examine whether embedding and clustering the segmented passages produce meaningful semantic clusters about different job roles. We use Maximum Mean Discrepancy (MMD) to rank observed differences between embedding distributions and employ a pretrained sparse autoencoder (SAE) to extract features from layer-19 representations of Llama-3.1-8B-Instruct. Lastly, we employ GPT-6 Luna to come up with hypotheses about job roles' feature patterns, and GPT-6.1 Terra to investigate whether those patterns exist in held-out job descriptions from unseen companies.\n  Some example findings include Data Scientist advertisements placing more emphasis on machine learning model development, Data Analyst advertisements on reporting business performance, and Machine Learning Engineer advertisements on applying developed models in real-world settings. We also observe differences in the applications described by Data Analyst and Business Analyst advertisements across selected months, although our dataset's scale and uneven coverage limit their interpretation. Overall, we present a realistic application of SAEs and PERC to unstructured textual data and examine how automated insight extraction could support manual analysis of job descriptions.",
+        "authors": [
+          "Yisong Cao",
+          "Leah Kim",
+          "Brian Wright",
+          "Ali Rivera"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
+      },
+      {
+        "title": "CertiSum: Bitwise-Identical MXFP4 Training Across Platforms and Parallelism Layouts",
+        "url": "https://arxiv.org/abs/2611.21584v1",
+        "publishedAt": "2026-11-16T18:54:07.000Z",
+        "summary": "Training with MXFP4, a 4-bit microscaling format, is non-deterministic: identical inputs can produce different results across parallelism layouts and GPU vendors. These differences complicate debugging and training audits and can cause training and inference engines to disagree. We present CertiSum to make MXFP4 training bitwise invariant across runs, parallelism layouts, and GPU vendors. Its key insight is that native FP32 accumulation of MXFP4 products is often already exact for every summation order. CertiSum collects statistics during quantization to certify native matrix multiplication results, recomputes uncertified outputs exactly, and uses exact kernels directly where certification rarely succeeds. CertiSum keeps quantization blocks unchanged across layouts and merges partial sums without rounding, including in attention and weight-gradient computation. In 200-step Qwen3-8B-Base experiments, CertiSum preserves training states bit for bit across AMD MI350X and NVIDIA GB200 and across changes in data, tensor, and context parallelism on MI350X. Across three 8B--14B models on FineWeb-Edu using MI350X, it adds 11.8--60.5% to training-step latency relative to its non-exact MXFP4 counterpart at the larger evaluated input shapes, with speedups of up to $1.24\\times$ over BF16 and $1.70\\times$ over deterministic BF16.",
+        "authors": [
+          "Steve Rhyner",
+          "Yubo Gao",
+          "Stefan de Lasa",
+          "Sankeerth Durvasula",
+          "Nandita Vijaykumar"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 18
+      },
+      {
+        "title": "ScenarioForge: Resource-Grounded Generation and Execution Validation of Cyber Exercises",
+        "url": "https://arxiv.org/abs/2611.21579v1",
+        "publishedAt": "2026-11-16T18:49:56.000Z",
+        "summary": "Cyber-range and capture-the-flag scenario construction remains labor-intensive because authors must coordinate infrastructure, vulnerable services, attack paths, artifacts, and success conditions. LLMs can propose detailed exercises, but plausible descriptions do not guarantee deployable software or verifiable objectives. We present ScenarioForge, which turns high-level requirements into resource-grounded topologies, services, traffic, segmentation, and challenge chains, then instantiates and validates them in the Common Open Research Emulator (CORE). The ScenarioForge Execution Dataset contains 226 materialized scenarios covering 294 Vulhub images and all 85 custom-built challenge-resource generators developed with our AI-assisted scaffolding. All 226 passed construction, preview, sequencing, deployment, strict runtime validation, and live artifact checks; their 867 steps, each an individually verifiable challenge objective, comprise 457 vulnerability-backed and 410 generated-resource-backed instances. In a separate 50-prompt matched benchmark, ScenarioForge+Qwen3.8 and ScenarioForge+GPT5.6 each achieved 50/50 (100%) topology/build success and 160/160 intent fields; direct frontier generation reached 41/50 builds and 147/160 fields only with the full cumulative scaffold: structure, vocabulary, policy, and container-image guidance. The test still omitted ScenarioForge's downstream challenge-resource generation, dependency/flag sequencing, deployment, and live validation. The artifacts support operationally rich, reproducible exercises for training and evaluation.",
+        "authors": [
+          "Jaime C. Acosta",
+          "Anantaa Kotal",
+          "Aritran Piplai"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
       }
     ],
     "news": [
+      {
+        "title": "Q&A: Why building math muscles remains important in the AI era",
+        "url": "https://news.mit.edu/2026/qa-why-building-math-muscles-remains-important-ai-era-1117",
+        "publishedAt": "2026-11-17T05:00:00.000Z",
+        "summary": "John Urschel PhD ’21, the Class of 1956 Career Development&nbsp;Assistant Professor in the MIT Department of Mathematics, is no stranger to building muscle: Before earning his PhD at MIT, Urschel strengthened his offensive muscles as a lineman for the Baltimore Ravens. He remains committed to helping his students exercise, but now his focus is on critical thinking skills. In the classroom, Urschel shares with his students his lifelong love for solving puzzles, while honing their abilities to be strong qualitive thinkers — skills he argues will be essential in an artificial intelligence-enabled world.&nbsp; Urschel recently published two preprints on arXiv, one on the growth factor of random matrices , the other on worst-case behavior in&nbsp; Gaussian elimination , in which he used a combination of human insight and AI tools to solve problems that had stumped mathematicians for decades. That experience provided Urschel with new insights into the future of mathematics and higher education, and the enduring importance of the in-person, residential education offered on college campuses, where students can experience the importance of struggle, problem solving, and human connection. Urschel recently chatted with&nbsp; MIT News about education, AI, and mathematics; excerpts from the conversation follow.&nbsp; Q : What is it about studying math that you hope to share with your students? A : When I was very little, I loved solving puzzles, whether that’s Sudoku puzzles or Martin Gardner math puzzles or crossword puzzles. I think there’s something really enjoyable about being faced with some problem that you don’t quite understand, trying to get your bearings, trying to make your way through it, and finally gleaning some sort of understanding from it. That’s a process that I’ve enjoyed for as long as I can remember, and that’s the thing that I’ve really enjoyed most about math. When it comes to teaching, first, I want to help our students train themselves and hone their ability to solve problems and their ability to be strong quantitative thinkers. The second part, which is more specific to whichever course I’m teaching, is to help them assimilate the big ideas or tools or techniques or themes that help them become better problem solvers in that specific discipline. If they’re taking a course on a specific subject, the idea is for me to try to convey important fundamentals so that they can use that learned expertise to become better problem solvers out in the world. Q : You recently used AI to assist in solving two proofs. Can you talk a bit about the experience? A : These are the first two papers where I’ve ever touched the machine, and it does feel different. It’s not unlike having a collaborator, but it’s a collaborator who has access to unlimited resources, seemingly, and does certain things much, much faster than I ever could.&nbsp; In the same way that computers can do calculations much faster than any of us can, I think at this point it’s very clear that artificial intelligence systems can do certain types of mathematics much, much more efficiently than any of us can.&nbsp; Q : What was it like using AI to solve math problems? Was it just as rewarding? A : For me, personally, I would say that the feeling that I talked about of problem solving, of thinking your way through a problem, I find that that’s most joyful for me when I do that by myself, without AI.&nbsp; One thing that I think is really important is to have an independent sense of problem-solving ability, a sense of curiosity — this idea of building those mathematics muscles, which I think are important, even in the era of AI. Especially when you are talking with a machine, asking the machine for things, I think it’s very important to elevate the idea of understanding. If you’re talking to a machine, let’s say, and it gives you a proof of some mathematical fact, I think the true value in that proof comes from a human understanding and assimilating the way in which the machine combines certain mathematical ideas, and then internalizing that and communicating that knowledge to others. Understanding is the big thing that I stress to my students who use AI systems. And then for the students who do not use AI systems, I focus on building their problem-solving abilities, which is what we’ve done for centuries in mathematics.&nbsp; I think in the age of modern AI machines, as long as there is a role for humans to think and try to solve problems, which I believe there is, then building these skills remains important. Q : The recent report from MIT’s Ad Hoc Committee on AI Use in Teaching, Learning and Research Training stressed the importance of experiencing the necessary and productive struggle of learning, along with the collaborative aspect of learning. I’m curious what you think about the role of AI in math education going forward.&nbsp; A : On one hand, the development of AI technologies should be viewed as a giant win for education, a giant win for leveling playing fields when you have technology that’s easily accessible, that gives you access to vast amounts of knowledge.&nbsp; Neither of my parents are professors; I remember when I was a kid, I didn’t know what a mathematician was until I got to college. And the way I learned about advanced mathematical concepts in high school, but also when I got to college, was with a laptop, and with Google. I was able to Google some topic I want to learn about, and it was amazing that I could find papers written by some of the world’s leading experts, just freely available online at my fingertips to learn from. That was really important for me and so helpful for my education. But I think we’re at a point where modern technology is a bit of a double-edged sword. Because on one hand, with AI systems you can learn something faster than ever, and the resources I had when I was a kid would seem like small potatoes compared to the sorts of things you can do to help yourself learn nowadays.&nbsp; But the issue is that this also can take away your ability to think and learn for yourself. I think it’s hard if you’re a high school student or you’re a college student. You have a lot going on, you’re tired, and thanks to AI, you can just finish your homework with the push of a button. You can write your 10-page essay with the push of a button. Also, you can get the false impression that you more or less understand what’s going on when you really don’t. I think that’s one of the big dangers when you don’t try to learn things for yourself.&nbsp; People don’t like the word “struggle.” But when you don’t struggle with a certain material on your own, I think you can get the impression of learning without actually learning. Connecting with the material and really pushing yourself, that’s quite an important skill.&nbsp; Certainly, there’s work to do from the faculty and instructor side: to make sure that our recitations are maximally useful; to make sure that our office hours are serving students in the best way possible; to encourage the students and try to remind them that they have some responsibility for their education, and that the best way is to come and show up and interact with the material. But we should also recognize our responsibility to the students to deliver them the best learning experience possible and to give them an educational system that challenges them but also is a quality product they want to come and take part in. Q : Why would you still encourage students to pursue studies in mathematics given the advances AI technologies have made? Do you still see the future of mathematics as exciting? A : Yes, for a multitude of reasons. The act of learning how to think is going to be more important than ever. This idea of being an expert, of knowing all these things, which are easily available and at your fingertips, is perhaps a little less important when you have a machine that has all these resources. I think something that may become even more important is the ability to think for yourself. Because with the existence of these machines, I think a natural fear is that that skill set is going to lessen in the general population as generations move on and on, and so I think that ability will be at a premium. I think training in mathematics and quantitative sciences more generally is quite important for that.&nbsp; The second thing is community. I think learning, not by yourself, but with a group of peers, greatly improves the overall experience. It’s an integral part of the experience. I would say those two things are the reason why I think it’s still important to study math, to study quantitative sciences, and also why it’s still important to come and go to class.&nbsp; The world is changing fairly rapidly. I think we as an institution have a responsibility to prepare students for that. We’re having lots of conversations about this right now because the ability to think, reason, and solve problems are core skills that our students, I think, will need now more than ever. I also think we need to make sure that we’re preparing our students for the world that they’re about to enter into. The exact way that we teach our students, or prepare our students for the world, absolutely cannot look like what it was 10 years ago. Because this world simply looks quite different.&nbsp;",
+        "authors": [
+          "Abby Abazorius | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Products",
+        "ageHours": 8
+      },
+      {
+        "title": "Learning the language of machine learning",
+        "url": "https://news.mit.edu/2026/learning-language-of-machine-learning-jacob-andreas-1117",
+        "publishedAt": "2026-11-17T05:00:00.000Z",
+        "summary": "When deploying deep learning models in high-stakes scenarios, researchers would like to understand how they work. Today, this requires unraveling an enormously complex network of internal processing nodes to understand what the model knows and how it will likely behave in practice. Jacob Andreas would rather have the models explain themselves.&nbsp; The newly tenured associate professor develops techniques that enable artificial intelligence models to communicate accurately about what they learned from their training data, in language humans can understand. “Rather than needing to use all these external tools to try and understand what is going on under the hood, maybe we can train models to talk about themselves in a way that is accurate,” says Andreas, an associate professor in the Department of Electrical Engineering and Computer Science (EECS) and a member of the Computer Science and Artificial Intelligence Laboratory (CSAIL). By studying how machines come to understand language, Andreas and his group work toward building intelligent systems that can learn about the world from human guidance and communicate effectively with human collaborators. They develop methods to make the training process more natural and efficient, so AI models learn in a way that is more like human learning. Ultimately, he and his group want to help people design more accurate and robust deep-learning models that are better suited for their intended application.&nbsp; “We used to debug systems just by looking at their parameters and figuring out whether they make sense or not. Now, we need ‘mind-reading tools’ that can take this really complicated neural computation and translate it for us because it is just not in a language that we, as humans, know how to speak,” he says. A love of language Andreas’ fascination with language blossomed at a young age. As a child growing up in the San Francisco Bay Area, he was a voracious reader of any book he could get his hands on.&nbsp; One such book, passed along to him by a family friend, contained a pivotal scene where the main character hacked into a computer system to save the day. That piqued his interest in computers. A few years later, his father brought home a simple BASIC Engine that Andreas could run on their home computer, and he started immersing himself in the world of computer programming. Andreas chose to major in computer science as an undergraduate at Columbia University but wasn’t sure if he wanted to pursue a career as a researcher, as a software engineer, or at a startup. His friends signed up for research projects in faculty labs, so Andreas figured he would try that, too. “I just blast emailed everyone in the computer science department who was working on anything vaguely AI-related, and the natural language processing faculty got back to me first. That is how I wound up in the field where I am now,” he says. Working in the lab of Michael Collins, the Vikram S. Pandit Professor of Computer Science at Columbia University, Andreas completed an undergraduate thesis project on machine translation. His project involved adapting existing statistical techniques for representing the meaning of language into more powerful AI systems that could translate passages of text. “I always felt like these deeper questions about how thought works or how to model the world were closer to the surface in language processing problems than in the other tasks that AI people were working on at the time,” he recalls. A seismic shift He wanted to keep exploring deep questions, so Andreas enrolled in graduate school at the University of California at Berkeley to pursue a career as an academic researcher.&nbsp; Before starting his PhD studies, he spent a year earning a master’s degree at Cambridge University in England. In that historic environment, he was inspired to contemplate the nature of language learning as he worked on computational translation problems. Those studies fueled his research when he joined the lab of Berkeley professor of computer science Dan Klein.&nbsp; Andreas began his studies at the time when neural networks were starting to take off. The field of natural language processing was making a seismic shift from statistical methods to this new world of deep learning.&nbsp; Statistical methods utilize transparent, mathematical formulas to analyze text, while deep learning techniques use opaque algorithms to automatically learn complex meanings from massive amounts of text data. “It was fun to be there as we made this transition to the modern toolkit, and learning and inventing all of that stuff when it was still new,” Andreas says. He began collaborating with scientists in computer vision labs to tackle increasingly complex questions about language learning. Together, they designed AI systems that excelled at generating natural language by teaching those systems to “see” and understand the world around them.&nbsp; “This was all super-exciting because there really hadn’t been a common set of tools for working with both language and vision data. Then, all of a sudden, neural networks gave us this common language,” he recalls. He completed a thesis project on the use of neural module networks, which are small fragments of neural networks that perform specific tasks, like localizing objects or logical reasoning, in a larger AI system. But it was the more speculative projects he tackled alongside his thesis, like interpretability and creating natural language descriptions of an AI model’s internal states, that would drive the focus of his group at MIT. Faculty focus After spending a year at the startup Semantic Machines (which spun out of his lab at Berkeley), Andreas joined the MIT faculty in 2019. “It felt like this was a fantastic opportunity to be in the homeland of AI research and collaborate with all these amazing, established people, but also do something new and figure out what the modern era in machine learning was going to look like,” he says. His group focuses on two main areas. First, they are studying the science of large language models to understand the algorithms these models deploy as they learn and process information.&nbsp; The tools they develop help scientists and researchers better predict how a trained model will behave in the real world. For instance, one family of techniques they developed trains large language models to explain what is going on inside other neural networks using language a human could understand.&nbsp; These techniques can assign a natural language description to every information-processing node in a massive neural network. For example, one such description might represent an individual node that identifies&nbsp; “patches of grass near animals” in input images .&nbsp; “That work serves as a jumping off point for a bunch of higher-level questions we ask about how these models represent meaning,” he says. On the other side, his team designs new algorithms for training machine-learning models, and for predicting how specific datasets or examples will affect different aspects of model behavior.&nbsp; “We don’t have a good scientific theory of what is going to happen when you train a model on a particular dataset. This is a big challenge for the field right now,” he says. A changing environment The speed of AI advancement presents one of the biggest challenges his lab faces. The field seems to completely change every three to five years, Andreas says, forcing him to stay nimble and ready to learn something new. That same dilemma carries over into the courses 6.461 and 6.861 (undergraduate and graduate Natural Language Processing), which Andreas co-teaches. He and his fellow instructors must redesign the course each year to keep up with the newest developments. It’s also challenging to teach the technical pieces of machine learning in an era where every assignment could be completed by a large language model rather than a human pupil. “I try to impress upon the students that having a really deep foundation in how all this technology works under the hood is the only way they are going to understand it, and will differentiate them in a world where everyone has access to a coding agent,” he says. With so much change, it is difficult to predict where the field is headed next, Andreas says. He foresees that his group’s work on interpretability will become even more important for making advanced systems like AI agents safe enough to deploy in high-stakes situations. This will be especially true as researchers design deep-learning models that can aid in scientific discovery. These models will be trained on troves of raw data from research labs that may not be well-understood by scientists yet.&nbsp; “Figuring out how to enable these models to verbalize all of this hidden knowledge they have about things people have never written about explicitly will be a huge challenge and opportunity for people who work in machine learning,” he says. In addition to tackling challenges in the lab, Andreas enjoys pushing himself as a hiker and backpacker. He has loved spending time in the outdoors since his childhood in California and goes on at least one or two backpacking trips each summer. He and a colleague in the Department of Mathematics are working their way across all the 4,000-foot peaks in the White Mountains of New Hampshire, making slow but steady progress. And now that he has earned tenure, Andreas is looking forward to getting back into an old hobby — singing in a chamber choir. He’s always enjoyed music and became enamored with chapel choirs and bell ringing during his time at Cambridge University.",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 8
+      },
+      {
+        "title": "Strengthening NATO and allied cyber defenses with AI",
+        "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
+        "publishedAt": "2026-11-17T00:00:00.000Z",
+        "summary": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "General",
+        "ageHours": 13
+      },
       {
         "title": "Cybersecurity AI startup Corma reaches $1B valuation in about 3 months",
         "url": "https://techcrunch.com/2026/11/16/cybersecurity-ai-startup-corma-reaches-1b-valuation-in-about-3-months/",
@@ -312,7 +362,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 4
+        "ageHours": 14
       },
       {
         "title": "All the questions Nvidia should answer on Tuesday — but probably won’t",
@@ -326,7 +376,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 15
       },
       {
         "title": "California state AG sues OpenAI over rogue agent incidents",
@@ -340,7 +390,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 8
+        "ageHours": 17
       },
       {
         "title": "Trump says ex-Nvidia CEO Jensen Huang&#8217;s affair with an alleged Chinese spy did not threaten national security",
@@ -354,7 +404,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 9
+        "ageHours": 18
       },
       {
         "title": "Sam Altman on Nvidia without Jensen Huang: The industry will be &#8216;fine’",
@@ -368,7 +418,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 10
+        "ageHours": 19
       },
       {
         "title": "FBI says Artex AI open source hacking tool used to breach networks in &#8216;under three hours&#8217;",
@@ -382,7 +432,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Products",
-        "ageHours": 10
+        "ageHours": 20
       },
       {
         "title": "Jordan Belfort’s new AI voice startup, Tone, wants to sell like the &#8216;Wolf of Wall Street&#8217;",
@@ -396,7 +446,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 11
+        "ageHours": 20
       },
       {
         "title": "OpenAI will embed safety researchers to investigate AI subversion",
@@ -410,7 +460,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 11
+        "ageHours": 20
       },
       {
         "title": "OpenAI releases a new image classifier and ChatGPT warnings to combat CSAM",
@@ -424,52 +474,14 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 11
-      },
-      {
-        "title": "Broadening access to AI for scientists",
-        "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
-        "publishedAt": "2026-11-16T17:00:00.000Z",
-        "summary": "We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Models",
-        "ageHours": 11
-      },
-      {
-        "title": "Strengthening the fight against online child sexual abuse with new tools and support",
-        "url": "https://openai.com/index/strengthening-online-child-safety",
-        "publishedAt": "2026-11-16T17:00:00.000Z",
-        "summary": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "Products",
-        "ageHours": 11
-      },
-      {
-        "title": "Audible turns to AI to help users discover audiobooks",
-        "url": "https://techcrunch.com/2026/11/16/audible-turns-to-ai-to-help-users-discover-audiobooks/",
-        "publishedAt": "2026-11-16T15:52:19.000Z",
-        "summary": "Audible's new AI-generated audio previews summarize a book's themes and what readers liked about it, in addition to playing the narrated sample.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 12
+        "ageHours": 20
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
@@ -485,7 +497,7 @@
       },
       {
         "name": "Products",
-        "count": 3
+        "count": 4
       }
     ]
   }
