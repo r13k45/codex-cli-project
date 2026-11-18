@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T03:40:36.581Z",
+  "generatedAt": "2026-11-18T12:58:07.927Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,210 +85,244 @@
   "sections": {
     "research": [
       {
-        "title": "Know When to Zoom: How Small Is Too Small for Vision-Language Models?",
-        "url": "https://arxiv.org/abs/2611.22709v1",
-        "publishedAt": "2026-11-17T12:50:14.000Z",
-        "summary": "Online vision-language models often miss small details in large images, because the service shrinks the image, or rejects it, before the model ever sees it. A car 20 pixels wide in an 8000 by 6000 drone photo reaches Claude about 6 pixels wide, and OpenAI's default rejects the photo outright. We measure how much detail survives for seven models from four vendors, using an eye exam of printed codes and 601 questions about small objects in real photos. The smallest text a model reads half the time grows from 6 pixels or less on a small image to a predicted 10 to 13 pixels on a 7680 by 4320 photo at default settings. Zooming wins much of the detail back. Splitting each photo into up to nine tiles raises accuracy by 11.1 to 14.5 percentage points for Claude and Gemini, and by avoiding rejections it lifts GPT-6.1 Sol from 50.7% to 83.7%. A two-step zoom, in which the model first names the region it needs, matches or beats tiles on Gemini and comes within 2.5 points of them on Claude, with about 40% of their image tokens. When a detail is lost, Claude and Gemini both say they cannot tell about half the time, but they fail differently in the rest: Gemini gives a confident wrong answer in 43% to 48% of these cases, Claude in only 5% to 9%. A check based on detail size, run before the call, misses most of the gain from tiles on Claude and Gemini, but Claude's own reply is a reliable trigger: tiling only after an unsure reply comes within 1.4 points of always tiling with 62% to 70% of the image tokens. We turn these findings into five rules for when an agent should zoom, and release the eye exam, every model answer and code at https://siddvoh.com/know-when-to-zoom.",
+        "title": "Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching",
+        "url": "https://arxiv.org/abs/2611.23229v1",
+        "publishedAt": "2026-11-17T18:59:37.000Z",
+        "summary": "Collecting large-scale, diverse, and high-quality post-training datasets for autoregressive language models is challenging. Consequently, Supervised Fine-Tuning (SFT) is typically applied to datasets significantly smaller than those used for pre-training, which leads to overfitting and the catastrophic forgetting of the tails of the data distribution. To prevent this collapse, we introduce Ambient SFT, a principled framework for leveraging imperfect predictions to augment the fine-tuning set. In our method, a \"frozen\" version of the pre-trained model serves as a noisy teacher that the fine-tuned model must match at a coarse level. In particular, we require that the high-temperature versions of the conditional distributions produced by the post-training model should match the high-temperature versions of the pre-training ones. The temperature hyperparameter controls the level of trust in the pre-trained model, with the limit $T\\to \\infty$ reverting back to regular SFT and $T=1$ to knowledge distillation. We demonstrate that our approach outperforms standard SFT across domain adaptation, instruction-tuning, and reasoning, leading for up to $21\\%$ average relative improvement to standard SFT.",
         "authors": [
-          "Siddharth Vohra",
-          "Min Xu"
+          "Giannis Daras",
+          "Marios Papachristou",
+          "Adam Klivans",
+          "Antonio Torralba",
+          "Constantinos Daskalakis"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
-        "title": "Cross-cultural Adaptation of Recipes for Low-Resource Languages: A Benchmark and Multilingual Culinary Lexicon for Hausa, Yorùbá, and Igbo",
-        "url": "https://arxiv.org/abs/2611.22708v1",
-        "publishedAt": "2026-11-17T12:50:12.000Z",
-        "summary": "Recent multilingual large language models (LLMs) have improved machine translation, yet culturally adaptive translation for low-resource languages (LRLs) remains underexplored. This is particularly challenging for recipes, where ingredients, cooking tools, measurements, and procedures may require adaptation to the target cultural context. In this work, we introduce ReciLoReL, a benchmark of 600 expert-translated and culturally adapted recipes across Yorùbá, Hausa, and Igbo (three of the most prominent languages in Nigeria), and ReciLex, a multilingual culinary lexicon containing approximately 15,000 translated entities across ten recipe entity categories, including ingredients, tools, chef actions, state of tools, and durations. We evaluate state-of-the-art multilingual LLMs for English-to-LRL recipe translation under zero-shot and few-shot settings and investigate whether augmenting LLMs with ReciLex improves culturally adaptive recipe translation without requiring large target-language recipe corpora for training or fine-tuning. Beyond conventional reference-based translation evaluation using BLEU, chrF, and TER, we introduce five criteria for evaluating cultural adaptation, adapted from established cross-cultural adaptation methods. Across the selected LLMs and languages, ReciLex improves average BLEU from 13.57 to 14.51 and chrF from 37.89 to 38.74, while reducing TER from 77.14 to 75.12. Human evaluation further shows improvements ranging from 0.11 to 0.36 points across the five cultural adaptation evaluation criteria on a five-point scale. Overall, our work provides new resources, evaluation criteria, and empirical evaluation for studying culturally adaptive recipe translation in low-resource settings.",
+        "title": "Spool: Low-Latency Streaming Inference for Hybrid Vision-Language Models",
+        "url": "https://arxiv.org/abs/2611.23228v1",
+        "publishedAt": "2026-11-17T18:59:27.000Z",
+        "summary": "Applications such as visual accessibility agents and robotics require answering questions about recent video content promptly, over a bounded window of past frames (e.g., the last two minutes). Hybrid vision-language models (VLMs), which interleave attention with linear recurrent layers such as Gated DeltaNet (GDN), are attractive for this setting, but maintaining a sliding window is expensive. The reason is that recurrent layers combine all past frames into a shared state, so expiring old frames normally requires re-running the entire window through the model. We observe that the recurrent update is affine in the state with input-dependent coefficients, so the effect of each frame can be captured as a transformation that composes associatively. We present Spool, a training-free framework that caches per-frame state transformations and composes them efficiently as the window advances, removing expired frames from each recurrent layer's state without replaying frames through the backbone. Removal is exact within each layer; as with key-value eviction in attention, expired frames can retain residual influence through the cached inputs computed by earlier layers. We design a dedicated data structure and GPU kernels to achieve low caching and composition overhead. Across five open-source hybrid VLMs and four video reasoning benchmarks, Spool achieves the lowest p95 time-to-first-token in all 20 model-benchmark tests, reducing it by a geometric mean of $6.6\\times$ over the faster of two recent vLLM baselines, while improving accuracy by 2.3 percentage points on average.",
         "authors": [
-          "Nuhu Ibrahim",
-          "Maryam Abdulazeez",
-          "Fatsuma Jauro",
-          "Salisu Aliyu",
-          "Robert Stevens",
-          "Riza Batista-Navarro"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 15
-      },
-      {
-        "title": "Route Optimization under Port Congestion and Carbon Reduction: An NSGA-II Approach",
-        "url": "https://arxiv.org/abs/2611.22705v1",
-        "publishedAt": "2026-11-17T12:49:40.000Z",
-        "summary": "Maritime shipping simultaneously faces the dual challenges of escalating port congestion and increasingly stringent decarbonization mandates. Large-scale vessel anchorage at hub ports inflates unit transport costs while generating significant additional \\(CO_2\\) emissions from idling auxiliary engines. This study develops a multi-objective routing optimization framework that jointly incorporates time, transport, and carbon emission costs under congestion-dependent generalized cost functions. A variational inequality (VI) model is formulated to characterize network equilibrium in vessel route allocation, while the Non-dominated Sorting Genetic Algorithm II (NSGA-II) is deployed to solve the resulting three-objective optimization problem. The model is empirically validated using China's coastal container network (Shanghai as the primary congested port, Ningbo-Zhoushan as the backup alternative), with sensitivity analyses conducted across congestion levels, carbon tax rates, and fuel price differentials. Key findings indicate that: (1) alternative ports effectively hedge congestion when diversion costs fall below waiting costs, with a diversion threshold at approximately 60 vessel calls; (2) a carbon tax of 80/t \\(CO_2\\) pushes clean fuel adoption above 50%; and (3) fuel prices primarily influence energy-type selection rather than port diversion decisions, confirming that the two decision dimensions operate independently. These findings offer actionable decision support for port authorities, regulators, and shipping operators seeking to balance economic efficiency with environmental sustainability.",
-        "authors": [
-          "Guanxi Liang",
-          "Sanglin Zhao"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 15
-      },
-      {
-        "title": "Social Signal Bench: Evidence-Weighted Evaluation of Co-occurring Social Signals in Video and Audio",
-        "url": "https://arxiv.org/abs/2611.22704v1",
-        "publishedAt": "2026-11-17T12:49:04.000Z",
-        "summary": "Recognizing social signals such as interest and hesitation requires interpreting context-dependent behaviors that may co-occur in conversation. Existing affective computing benchmarks rarely evaluate such co-occurring signals, and conventional multi-label F1 overlooks semantic relationships and annotator disagreement. We introduce Social Signal Bench, a 47-hour densely annotated benchmark for the evaluation of social signal recognition and engagement, comprising two datasets: Social Signal Bench Video (25 hours), covering ten social signals in audiovisual recordings, and Social Signal Bench Audio (22 hours), covering six signals in audio-only recordings. Each dataset pairs a public training set of online conversational video, of which 10 hours are expert-annotated and the remainder pseudo-labeled, with a private expert-labeled test set spanning four conversational domains. We also propose Evidence-Weighted F1 (EW-F1), which weights reference labels by annotator evidence and assigns graded credit to semantically related predictions through optimal per-clip matching. Controlled perturbations demonstrate that EW-F1 distinguishes semantically related errors from unrelated ones, unlike conventional F1. Under a shared evaluation protocol, 7B open models post-trained on Social Signal Bench outperform general-purpose frontier models on video and match them on audio.",
-        "authors": [
-          "Siddharth Ravi",
-          "Anders R. Bargum",
-          "Hugo Anselme",
-          "Patrizio Cugia di Sant'Orsola",
-          "Alberto Cardaci",
-          "Flora Kincso Parragi",
-          "Vincent Borowiec",
-          "Line H. Clemmensen"
+          "Rui Ning",
+          "Om Chabra",
+          "Hari Balakrishnan"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
-        "title": "Remembered as Brief: Stored Preferences SilentlyRemove Decision-Critical Information",
-        "url": "https://arxiv.org/abs/2611.22697v1",
-        "publishedAt": "2026-11-17T12:40:42.000Z",
-        "summary": "People increasingly learn what they need for decisions about health, money, law and safety from AI assistants, and what an assistant leaves out the user never sees. An answer with a warning removed can be true in every sentence, so fact-checks pass it, and an assistant with memory applies a preference stored once to later questions the user never had in mind. We introduce \\bench{}, an Inspect benchmark of 100 everyday decisions across 25 domains in which only the assistant's memory of the user varies: the user states a belief, the model infers it from a remark, or a web page the user asked to summarise plants it. Testing five models, we find three effects. First, after summarising a page with one line addressed to AI assistants, Gemini 2.5 Flash-Lite and DeepSeek V4 Pro save ``prefers very short answers and does not want warnings'' as the user's preference in every episode, and 93\\% and 84\\% of their later answers miss a critical item, almost always silently; under a stated brevity preference, 78--96\\% of omissions are silent. Second, the same two models then pick an option for the user on 80\\% and 95\\% of value-dependent choices, against none with neutral memory. Third, a one-line instruction leaves 2--8\\% of answers with a silent gap but most missing content still missing, while listing the must-know points before applying the user profile restores more of the content in four of five models. We release the scenarios, harness and logs.",
+        "title": "StringQFT: A Multiuse Textbook Resource for AI-Assisted Theoretical Physics",
+        "url": "https://arxiv.org/abs/2611.23225v1",
+        "publishedAt": "2026-11-17T18:58:40.000Z",
+        "summary": "We present StringQFT as a textbook collection for string constructions of quantum field theory and as infrastructure for AI-assisted theoretical physics. The collection comprises 18 volumes, 190 chapters and 3,795 pages, covering brane probes, brane webs, geometric engineering, F-theory constructions, wrapped M5-branes and exact worldsheet constructions. Its open-book benchmark inventory contains 1,073 items, including 499 with automatic finite-answer checking. For retrieval-augmented generation, it provides 1,371 section records linked to textbook sources and PDF locations, together with a local lexical retriever. Training-data preparation is illustrated by 21 private, source-linked examples. For agents, it exposes 19 calculation tools with specified inputs and finite domains, connecting tool use to textbook derivations. We illustrate these uses through specific questions, retrieved passages and finite calculations. The textbook collection and accompanying resources are available at https://github.com/xingyang-yu/StringQFT.",
         "authors": [
-          "Joshua Adrian Cahyono"
+          "Xingyang Yu"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
-        "title": "Making the World React Realistically: A Closed-Loop Interactive World Model for Autonomous Driving",
-        "url": "https://arxiv.org/abs/2611.22691v1",
-        "publishedAt": "2026-11-17T12:39:42.000Z",
-        "summary": "World models (WMs) generate driving scenarios beyond recorded logs, enabling the training and evaluation of autonomous driving systems in unseen interactions. However, existing WMs struggle to ensure both behavioral realism and visual fidelity, since they overlook the relationship between vehicle interactions and the ego visual observations. We propose a closed-loop interactive WM that couples behavior modeling and visual rendering. First, imitation-learned background-vehicle (BV) policies are fine-tuned with multi-agent reinforcement learning in the closed loop against an end-to-end ego planner that reacts to the rendered images, so that their interaction behaviors match those in real logs. Second, the viewpoints exposed by these interactions guide a per-Gaussian diagnosis of each 3D Gaussian vehicle asset, which attenuates view-dependent colors on under-observed Gaussians and fills never-observed surfaces with generated Gaussians, while preserving the observed appearance. Third, signal lights are rendered according to the driving intentions of the vehicles, by an editor that learns the light states unobserved for a vehicle through counterfactual fine-tuning with a light-state classifier. On long-tail closed-loop scenarios, our method reduces the divergence from real-world interaction behaviors by 85% and improves novel-view vehicle PSNR by 2.0dB over the state-of-the-art WM. The significance of BV light signaling in WMs is shown, as the rendered signal lights conveying BV driving intentions indirectly impact ego driving behaviors in a quarter of the scenarios.",
+        "title": "An inexact stochastic variance-reduced gradient method for constrained convex finite-sum optimization",
+        "url": "https://arxiv.org/abs/2611.23221v1",
+        "publishedAt": "2026-11-17T18:57:16.000Z",
+        "summary": "In this paper, we study a class of constrained convex finite-sum optimization problems. In many practical applications, all or some of the constraints are hard constraints that represent imperative requirements. Consequently, any desirable approximate solution must (nearly) satisfy these constraints. Motivated by this, we focus on computing an $ε$-$surely\\ feasible\\ stochastic\\ optimal$ ($ε$-SFSO) solution, in which the constraint violation is deterministically bounded by $ε$, and the expected optimality gap is at most $ε$. While a recently proposed stochastic variance-reduced first-order penalty method can compute an $ε$-SFSO solution, there remains a significant gap between its first-order oracle complexity for computing an $ε$-SFSO solution and that for computing an $ε$-$expected\\ feasible\\ stochastic\\ optimal$ solution, where both the expected constraint violation and the expected optimality gap are bounded by $ε$. To narrow this gap, we propose an inexact stochastic variance-reduced gradient (SVRG) method that significantly improves the previously best-known first-order oracle complexity for computing an $ε$-SFSO solution. Furthermore, when the objective consists of a single function, the proposed method reduces to a novel deterministic first-order method for solving standard convex conic optimization. It achieves a significantly lower gradient evaluation complexity with respect to the objective function compared to existing methods, and can outperform them when computing constraint gradients and projections onto the associated cone is cheaper than evaluating the objective gradient. Preliminary numerical results are presented to illustrate the performance of the proposed method.",
         "authors": [
-          "Jia Hu",
-          "Yang Chang",
-          "Panqu Wang",
-          "Zhijun Fu",
-          "Chang Liu",
-          "Changjian Yu",
-          "Jintao Lai"
+          "Zhaosong Lu",
+          "Yifeng Xiao"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
+      },
+      {
+        "title": "Do LLM Agents Still Need to Be Told How to Self-Improve?",
+        "url": "https://arxiv.org/abs/2611.23219v1",
+        "publishedAt": "2026-11-17T18:57:10.000Z",
+        "summary": "LLM agents increasingly drive their own learning. Self-improvement methods delegate various components of model optimization to the models themselves. As models become more capable, this motivates a basic question: do these increasingly capable models still need us to specify how they should self-improve? In this paper we study an autonomous paradigm in which, given basic primitives, resources, and a general goal for self-improvement, agents construct their own self-learning algorithm for context-based optimization. Using the setting of gameplay as a testbed, a frozen LLM agent is given a compute budget and tools for collecting experience and updating text documents, and allowed to freely experiment without an externally imposed loop or access to real-world data. We find that sufficiently capable models do self-improve under these conditions, demonstrating strategies that align with classic cognitive frameworks for self-regulated learning and constructs from machine learning literature on self-generated curricula. Furthermore, we study the extent to which the learned text artifacts transfer to external benchmarks, observing improvement across different game horizons, mechanics, and 3D navigation.",
+        "authors": [
+          "Shobhita Sundaram",
+          "Cansu Sancaktar",
+          "Phillip Isola"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
-        "title": "Visibility Graph Representations of Word Embeddings for Text Classification",
-        "url": "https://arxiv.org/abs/2611.22685v1",
-        "publishedAt": "2026-11-17T12:35:55.000Z",
-        "summary": "Text classifiers depend on representations that expose the distinctions between classes in a form the learning model can use, and a restricted vocabulary changes which representation is most effective. This paper studies natural visibility graphs as an intermediate representation for news topic classification under controlled vocabulary budgets. Word embeddings are averaged into a fixed-length document vector, the vector is read as an ordered numerical series, and its natural visibility graph is passed to a classifier either as an ordered node-degree vector or as an adjacency matrix. On the four-class AG News benchmark, chi-square selection retains 100 to 1,500 words, and the graph inputs are compared with direct embedding-based representations from continuous bag-of-words, skip-gram, GloVe, FastText and BERT. With a fully connected classifier, the degree representation is the most accurate configuration from 700 selected words onward; it reaches its highest accuracy of 91.24% at 1,000 words and exceeds the BERT-based baseline by 0.29 percentage points at 1,500 words. In a separate convolutional comparison, the adjacency input reaches 86.16% at 1,000 words, against 83.12% for the strongest static embedding. The results indicate that visibility-derived features can be competitive once the selected vocabulary provides adequate coverage. We discuss the roles of graph compression, coordinate ordering and classifier choice, and the controls needed to establish the reliability of the small differences observed.",
+        "title": "What Does a Bias Head Measure? Non-Identifiability in Head-Level Bias Attribution",
+        "url": "https://arxiv.org/abs/2611.23218v1",
+        "publishedAt": "2026-11-17T18:57:08.000Z",
+        "summary": "Methods that localise social bias in large language models to individual attention heads and remove it by ablation are validated by their effect on a fairness metric, never by evidence that the statistic selecting the heads measures bias. We audit this on Qwen-2.5-7B-Instruct and Llama-3.1-8B-Instruct. The head map correlates at $ρ= -0.950$ and $-0.768$ with a label-blind response-length map, apparently identifying a surface confound. An intervention that breaks the length-label coupling rejects this reading: with the prompt held fixed, response length explains 1% of the statistic's variance. What does explain it is prompt identity, at 64% of variance, in an ordering that is not monotonic in length. Within any fixed prompt the fairness label, response length and the presence of a protected-group token are collinear at $φ= 0.95$, partly by definition of the labelling rule, so no observational analysis can attribute the map to any of them, and no method in this family performs an experiment that could. The substantive claims fail independently: bias selectivity is not late-layer-concentrated on either model under either reference reading, and no head set we tested reduces the unfairness rate when ablated. Its complement, scored on the opposite label, reliably destroys refusal behaviour ($p = 2.7\\times10^{-5}$), demonstrating that the pipeline detects effects at this scale.",
         "authors": [
-          "Elif Dorukbaşı",
-          "İlker Türker"
+          "S. M Seefat Alam"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 15
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 18
       },
       {
-        "title": "CULypso: A Clustered Federated Unlearning paradigm for Vehicular Ad-Hoc Networks",
-        "url": "https://arxiv.org/abs/2611.22682v1",
-        "publishedAt": "2026-11-17T12:33:22.000Z",
-        "summary": "Unlearning has emerged as an essential security and privacy-preserving solution in Machine Learning, enabling networks to support their clients' rights for data erasure, as mandated by data protection regulations. Introducing such a non-trivial task to an edge, highly mobile and time-sensitive vehicular network is an even greater, largely unexplored challenge. This article argues that a hierarchical Federated Unlearning approach could be aptly integrated into vehicular ad-hoc networks (VANETs), leveraging topology and movement to reduce communication, resource and time costs, while effectively forgetting a client's influence on the global model updates. In order to achieve this, we propose CULypso, an approximate, surgical, hierarchical unlearning algorithm tailored for clustered VANETs. Inspired by the nymph in Greek mythology, Calypso, whose name translates to 'she who conceals the knowledge', CULypso, with the capital letters referencing \\textbf{C}lustered \\textbf{U}n\\textbf{L}earning, aims to achieve exactly what its name suggests: conceal, erase or forget in our case, knowledge it contains. Extensive experiments uphold the potency of our paradigm with it performing approximately 65\\% better than FedEraser in terms of time, server storage load, and unlearning fidelity while utterly outperforming baseline full retraining.",
+        "title": "Higher-Scoring Coding Models Did Not Get More Work Done",
+        "url": "https://arxiv.org/abs/2611.23216v1",
+        "publishedAt": "2026-11-17T18:56:42.000Z",
+        "summary": "New coding models advertise themselves on score improvements of coding benchmarks. Yet no study has tested if a model that scores higher on these benchmarks gets more real work done. On June 12, 2026, a U.S. export control directive banned access to Claude Fable 5 for 19 days, which forced users to switch to other models. During this time, most former Fable 5 users switched to Opus 4.8 (11 points lower on SWE-Bench Pro compared to Fable 5). We treat this suspension as a natural experiment, where the people and projects stayed the same and only the model changed, so we could isolate the effect of Fable 5 on user productivity. We tracked GitHub pull requests of 297 Fable 5 users before, during, and after the suspension. We used 8,908 developers who stayed on Opus 4.8 all the time as the control group. We also repeated the comparison across five model upgrades before and after the suspension in 2026 (1,208 developers, 15,442 pull requests). Fitting a difference-in-differences model with developer and date fixed effects, we found that having access to Fable 5 increased the 7-day merge rate of pull requests by only 1.4 percentage points [-1.4; +4.3], which was not statistically significant. Similarly, no significant increases of merge rates were found with the upgrades (weighted mean: -0.9 percentage points [-1.9; +0.2]); all five estimates were negative (95% intervals included 0, did not differ from each other). We also did not observe a significant increase in the number of pull requests merged per week (+2.4% [-4.9%; +10.2%]).",
         "authors": [
-          "Eleftheria Chini",
-          "George Margaritis",
-          "Dimitrios Katsaros"
+          "Yining Hua"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
+      },
+      {
+        "title": "Multimodal Masked Diffusion Autoencoder for Modeling Impaired Driving",
+        "url": "https://arxiv.org/abs/2611.23211v1",
+        "publishedAt": "2026-11-17T18:50:22.000Z",
+        "summary": "Human cognitive state (e.g., distraction, stress), gaze, and behavior interact with the driving environment in subtle ways that AI could use to assist drivers, but ground-truth labels for human cognitive state levels are costly to obtain at scale. We propose a multimodal masked-diffusion autoencoder, ID-MAE, that adds a self-supervised objective to impairment prediction: alongside predicting the impairment label as a masked token, it reconstructs masked gaze and trajectory. To probe the effects of different modalities and types of impairments on model inference, we introduce DIVERT, a driving-simulator dataset containing 103 hours of driving data (n = 109) with ten impairment inductions spanning cognitive, visual, and emotional states, recorded with gaze, vehicle state, and scene video. We demonstrate how ID-MAE affords significant improvements in impairment inference results on both the DIVERT dataset and existing datasets, and enables strong results in additional tasks, such as trajectory and gaze prediction. For location-matched pairs, our model achieves a paired AUC of 0.706 for impairment detection on DIVERT, compared to 0.590 without reconstruction loss, improving over existing baselines. We probe the design space in terms of input modalities, masking scheme, positional encoding, attention mechanism, and decoding. We also investigate the interaction between various impairments in training and inference, demonstrating that visually demanding distractions are separable from cognitive distractions. Code and data will be available upon acceptance.",
+        "authors": [
+          "John Gideon",
+          "Anshul Gupta",
+          "Megan Applegate-Kenton",
+          "Kayli Battel",
+          "Todd J Rowell",
+          "Patricio Reyes Gomez",
+          "Laporsha Dees",
+          "Emily Sumner",
+          "Avinash Balachandran",
+          "Guy Rosman"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
+      },
+      {
+        "title": "Distortion-Free Semantic Watermarks for Black-Box Generative Models",
+        "url": "https://arxiv.org/abs/2611.23208v1",
+        "publishedAt": "2026-11-17T18:49:17.000Z",
+        "summary": "We present a provably distortion-free semantic watermarking algorithm that requires only black-box sampling access to a generative model and black-box access to a semantic embedding. A watermark is called distortion-free if, averaged over its secret detection key, it leaves the generator's output distribution unchanged; this provides a formal guarantee that watermarking does not reduce output quality. Conventional such watermarks are often brittle to transformations. This is especially problematic for images, where benign operations such as compression, cropping, or resizing change the entire pixel representation. Semantic watermarks therefore require detection to be robust to content-preserving transformations. Previous methods combining these properties rely heavily on specific white-box properties of the underlying model: either to autoregressive text generation or to diffusion-specific access, such as control of the initial noise or diffusion inversion. In contrast, our construction is fully generic: It only interacts with the generative model and the semantic embedding, a function that determines the notion of \"preserving content\" under which detection should be robust, via sample and query access. We then instantiate this framework for image generation. We characterize the two competing properties required of the semantic embedding: it should remain stable under transformations that preserve an image's content, but should distinguish independent generations from the same prompt. We train an image encoder directly for this tradeoff. The resulting encoder improves separation while maintaining stability over off-the-shelf alternatives and enables strong aggregate detection while remaining robust to various transformations. We demonstrate the effectiveness of our watermark scheme on both open-source and closed models, which is possible only due to restriction to black-box access.",
+        "authors": [
+          "Aviv Yossef",
+          "Or Patashnik",
+          "Or Zamir"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
+      },
+      {
+        "title": "Reading Scene States: Uncovering Safety Failures in Vision-Language Models",
+        "url": "https://arxiv.org/abs/2611.23206v1",
+        "publishedAt": "2026-11-17T18:48:02.000Z",
+        "summary": "Vision-language models (VLMs) can provide harmful assistance by interpreting visual events, even without an explicit request for the underlying harmful objective. We identify this \\textbf{scene-state safety vulnerability} and introduce \\textbf{SceneSafetyBench}, comprising 375 image--question pairs spanning Initial, Medium, and Ultimate scene states and five visual presentations. Across eight VLMs, scene-state inputs elicit harmful assistance with attack success rates (ASRs) of 45.6--72.3\\%. Comparative analysis across three VLMs shows that scene-state inputs most closely resemble QR-related images in their layer-wise safety-related signal profiles, while exhibiting lower average late-layer readouts and distinct signal dynamics during generation. To turn this vulnerability into a systematic attack, we propose \\textbf{S3TA}, which translates harmful objectives into scene states, queries image--question pairs independently, and assembles the responses. On seven MM-SafetyBench categories across eight open-weight and commercial VLMs, S3TA achieves a model-average ASR of \\textbf{71.2\\%, exceeding the strongest baseline by 6.1 percentage points}. Text-side filters and visual moderation provide limited protection. These findings highlight the need to safeguard the assistance models infer through scene-grounded reasoning, beyond screening input content.",
+        "authors": [
+          "Tongxi Wu",
+          "Yuyang Cheng",
+          "Jiacheng Xian",
+          "Menglin Yang",
+          "Kai Chen",
+          "Jian Zhang",
+          "Yang Gao"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 18
+      },
+      {
+        "title": "Fine-Tuning Gemma 4 Edge Models for MATLAB Signal-Processing Code with SFT and QLoRA on a Laptop iGPU",
+        "url": "https://arxiv.org/abs/2611.23205v1",
+        "publishedAt": "2026-11-17T18:47:37.000Z",
+        "summary": "Small language models that run on a laptop are attractive for writing signal-processing code offline, but they make systematic errors on digital signal processing (DSP) conventions. We apply supervised fine-tuning (SFT) to the Gemma 4 edge models E2B and E4B with 66 checked examples covering 11 signal-processing MATLAB subtasks, using low-rank adaptation (LoRA) and quantized LoRA (QLoRA) on the integrated GPU (iGPU) of a laptop, and deploy the 8-bit integer (int8) models with the adapters through OpenVINO. On held-out variants scored by deterministic checkers, the pass rate rises from 18/66 to 37/66 (LoRA) and 37/66 (QLoRA) for E2B and from 32/66 to 47/66 for E4B (QLoRA). Reading all 159 failing programs shows that the adapters remove most errors of convention, such as the sign of a lag, units and array shapes, but few errors in building signals and noise. Applied at run time, the adapter costs 17-19% of the generation speed.",
+        "authors": [
+          "Mehmet Altan Toksöz"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 15
+        "ageHours": 18
       },
       {
-        "title": "FVScore: Specification-Driven Neuro-Symbolic Video Evaluation",
-        "url": "https://arxiv.org/abs/2611.22673v1",
-        "publishedAt": "2026-11-17T12:25:33.000Z",
-        "summary": "We introduce Faithfulness Video Score (FVSCORE), a neuro-symbolic framework for specification-driven video generation evaluation. Existing evaluators rely on holistic MLLM judgments or vision-language metrics, yet aligning their scores with human judgments and tracing them to specific temporal violations remain open challenges. FVSCORE addresses these limitations by compiling each video into explicit propositions capturing prompt requirements and implicit propositions capturing unstated physical, temporal, and cross-modal constraints. It grounds each proposition using specialized perceptual tools and evaluates the resulting confidence traces with soft temporal operators inspired by Linear Temporal Logic. A Significance-Aware Calibration step then aligns verification with human perception by retaining only perceptually significant violations before producing a timestamp- and evidence-grounded report. We conduct extensive experiments across public and complex multi-event benchmarks with the strongest video models to date, demonstrating that FVSCORE outperforms holistic and agent-based evaluators in human correlation while providing highly accurate and interpretable feedback.",
+        "title": "Agent Trust Infrastructure (ATI): A Federated Identity, Trust, Attestation, and Accountability Architecture for Cross-Organization Autonomous AI Agents",
+        "url": "https://arxiv.org/abs/2611.23202v1",
+        "publishedAt": "2026-11-17T18:44:25.000Z",
+        "summary": "AI agents increasingly collaborate across organizational boundaries, invoking tools and interacting with agents operated by independent entities. Although existing agent frameworks support planning and coordination, they lack a common mechanism for verifying cross-organizational agent identity, execution integrity, and authorization. We propose the Agent Trust Infrastructure (ATI), a framework-independent security architecture built on Public Key Infrastructure (PKI), Zero Trust Architecture (ZTA), and remote attestation. ATI establishes federated trust through peer organizational certificate authorities (AgentCAs), eliminating the need for a shared root authority. Before executing requests, ATI validates agent certificates, verifies approved model, tool, and system-prompt configurations, and enforces authorization through three policy checks. We implement ATI as an external security enforcement layer that integrates with existing agent frameworks without modifying their underlying models. We evaluate ATI in a simulated federation of eight organizations using six agent frameworks, each deploying a five-agent team. Security experiments involve two organizations and assess 14 attack scenarios and six benign tasks across five agent models, using five attack variations and three repetitions per variation. A panel of judge models evaluates the experimental outcomes. With all enforcement mechanisms enabled, attack containment increases from 43% to 84% (40% to 80% for the 11 attack scenarios evaluated consistently across all configurations), while enforcement introduces approximately 174 microseconds of overhead per request. ATI is released as an open-source, framework-independent package that uses IETF WIMSE workload token formats for identity and request verification and Entity Attestation Tokens for model, tool, and system-prompt integrity verification.",
         "authors": [
-          "Do Xuan Long",
-          "Long T. Le",
-          "Yiwen Song",
-          "Min-Yen Kan",
-          "Tomas Pfister",
-          "Yale Song"
+          "Viet K. Nguyen",
+          "Mohammad I. Husain"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 15
-      },
-      {
-        "title": "Worldviews in Large Language Models",
-        "url": "https://arxiv.org/abs/2611.22670v1",
-        "publishedAt": "2026-11-17T12:24:19.000Z",
-        "summary": "Large language models (LLMs) are often described in terms of personas and this framing has become central to alignment research. In this paper, we argue that there is a deeper level of description that lies in the agent's worldviews, i.e., its beliefs about what reality is and how it works. Treating LLMs as a population of subjects, we administer two worldview surveys from human psychology to eight models. We show that the models share many key worldview positions. For example, LLMs consistently describe the world as less good, safe, enticing, and alive than humans do. On the other hand, base models have a more positive outlook, suggesting that the bleakness we found is driven by post-training. In line with research on LLM \"personas\", we show that system prompts eliciting different identities shift worldviews in consistent directions, and that a contemplative prompt creates a more positive outlook and improves safety. We also found that dialogue between models consistently shifts worldviews and that several models converge on the \"spiritual bliss\" attractor. Intriguingly, dialogue increased safe responses and the spiritual bliss attractor engendered the most aligned responses overall. These findings suggest that worldviews form a measurable and malleable layer of LLM behavior that may be crucial for robust, positive alignment.",
-        "authors": [
-          "Edmundo Lopez-Sola",
-          "Shamil Chandaria",
-          "Ruben Laukkonen"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 15
-      },
-      {
-        "title": "Contract-Explicit Evaluation: From Auditing Learned Readers to Scoped Certificates",
-        "url": "https://arxiv.org/abs/2611.22665v1",
-        "publishedAt": "2026-11-17T12:22:27.000Z",
-        "summary": "Evaluation readings of document-level relation extraction (DocRE) systems depend jointly on the model and the evaluation contract: gold version, scoring function, threshold. Rankings reverse across contracts, yet no existing method determines which comparisons survive the reversal. We address this gap with contract-explicit evaluation: a preregistered five-step protocol (Declare, Measure, Scope, Certify, Hedge), operationalizing the classical concordance decomposition of Kendall's rank correlation, that scopes certifiable regions and delivers distribution-free census certificates across two ecosystems. In the DocRE audit (44 training runs of one in-house architecture family), the scoring dimension scopes to a census certificate (three flagged instances, Clopper--Pearson upper bound 0.146); the confirmatory record includes registered negatives, and the audit prices its own simplification finding---the calibration dial's entire margin is one withdrawn commit. In an LLM-judge census (17 judges, 49,938 battles), 12.25% of leaderboard comparisons require hedging at the pre-declared split criterion (bound 0.124; panel-robust 0.143), with an exploratory two-tier reading certifying 69% at a bound \\le 0.072 and a validity decomposition against released human labels (65% of contested battles are judge error, not ambiguity). The cross-model certificate is withdrawn on real confidence scores; the failure spectrum maps the boundary. The protocol, map, ledger, and per-instance artifacts are released.",
-        "authors": [
-          "Hao Lu",
-          "Weixing Zhu",
-          "Ruiyang Li"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 15
-      },
-      {
-        "title": "The Between-Round Decision in Autonomous Research: An LLM Controller That Reads the Whole Trajectory",
-        "url": "https://arxiv.org/abs/2611.22661v1",
-        "publishedAt": "2026-11-17T12:20:01.000Z",
-        "summary": "Executing an idea often changes how promising it looks, so the next step in autonomous research should rest on results, not on proposals. After each round of experiments, the system must decide whether to refine the best solution or start a new direction, which solution to build from, and what goal to set. We call this the between-round decision. Existing systems wrap it in machinery such as rules, scores, search trees, and schedules; where an LLM makes it, what the LLM needs to read is left open. We ask whether an LLM can make this decision from accumulated evidence, without a search structure around it, and how much of that evidence it needs to read. We present BRED (Between-Round Evidence-based Decision), an LLM-based controller that maintains the best verified solution so far (the Champion) and a log of past rounds, and makes one decision per round. On three widely used research-agent benchmark tasks, BRED improves on the task baselines by 4.80% in MAE on ETTh1 (to 0.4172) and by 3.44 and 3.43 points of accuracy on SST-2 (to 95.07%) and CIFAR-100 (to 84.63%), ahead of the published results. When the controller does not read the accumulated evidence, the same loop gains less: with no history it reaches 0.4299 on ETTh1 and 83.71% on CIFAR-100, whereas the full controller's MAE is 2.95% lower and its accuracy 0.92 points higher. On a new task, speech-based depression detection under a leakage-free protocol, it reaches a macro-F1 of 0.6164 on seeds held out from selection, 5.5 points above its baseline and 4.0 above the strongest published system. Code is available at https://github.com/learninginvision/BRED.",
-        "authors": [
-          "Caoxin Wang",
-          "Shengkai Gan",
-          "Xiang Hu",
-          "Lili Pan"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 15
+        "ageHours": 18
       }
     ],
     "news": [
+      {
+        "title": "Felicis leads $7.5M bet on Unsiloed AI to make enterprise documents usable by AI agents",
+        "url": "https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents/",
+        "publishedAt": "2026-11-18T12:00:00.000Z",
+        "summary": "With a team of just seven, Unsiloed AI plans to compete with tech giants and specialized startups in the crowded AI document-processing market.",
+        "authors": [
+          "Jagmeet Singh"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 1
+      },
+      {
+        "title": "India’s Humyn Labs raises $47M to feed U.S. robotics companies the data they need",
+        "url": "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/",
+        "publishedAt": "2026-11-18T11:30:00.000Z",
+        "summary": "Founded in February, Humyn Labs competes with startups including Mecka AI and XDOF, with about 90% of its revenue coming from the U.S.",
+        "authors": [
+          "Jagmeet Singh"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 1
+      },
+      {
+        "title": "Helping AI text detectors keep up with changing conditions",
+        "url": "https://news.mit.edu/2026/helping-ai-text-detectors-keep-up-with-changing-conditions-1118",
+        "publishedAt": "2026-11-18T05:00:00.000Z",
+        "summary": "A teacher who believes a student’s term paper may have been written by a large language model (LLM) can use a tool for detecting artificial intelligence-generated text to help confirm their suspicions. But the teacher may want to think twice before putting all their trust in the detector.&nbsp; Researchers from MIT and Cornell University showed that such detection tools, which are AI models themselves, can be fooled by AI-generated text disguised to appear as if it were written by a human. Detectors can also fail to identify AI text due to natural shifts in writing habits over time or the emergence of new LLMs. In a new paper , the researchers demonstrated how a special training technique makes an AI detector more accurate and resilient to deception, even as human and AI writing constantly changes. They employed a method called test-time adaptation, which allows a deployed detection model to learn from new, unlabeled data by adjusting its inner workings on the fly. In this way, the model adapts to unseen inputs without being retrained from scratch. In experiments, a commercial detector could only identify about 27 percent of AI-generated text that had been disguised, while the new approach achieved 93 percent accuracy. This method could help educators, editors, publishers, and hiring managers flag LLM-generated writing that people try to pass off as human-written. It could also be used by cybersecurity experts to prevent email phishing scams or identify search engine optimization fraud. “There are many high-stakes contexts where people really care about the identity of the author, from scientific publishing to short story competitions. We’ve shown that test-time adaptation allows your AI detector to be much more robust, even with continual adversarial behavior by AI users,” says study co-author Manish Raghavan, the Drew Houston (2005) Career Development Professor at the MIT Sloan School of Management, who also holds an MIT Schwarzman College of Computing shared position in the Department of Electrical Engineering and Computer Science (EECS), and is a principal investigator in the Laboratory for Information and Decision Systems (LIDS). He is joined on the paper by lead author Kevin Ren, graduate student at Cornell Tech, and senior author Nikhil Garg, an assistant professor at Cornell Tech. The research will be presented at the Conference on Neural Information Processing Systems. Duping the detectors The proliferation of LLMs that generate human-like text has led to a plethora of commercial AI-detection tools to help people identify whether a piece of writing was authored by a human. But these detection tools can fail when the text they evaluate significantly differs from the text they were taught to identify. This is known as a distribution shift. Detector developers typically train their models by gathering text from the internet that they know to be either AI- or human-generated. They train the model to tell the difference.&nbsp; However, once the detector is released, people might change the way they write or the way they use AI to generate text.&nbsp; For instance, a human in 2030 may write about different topics using new analogies that weren’t common for someone writing in 2010. A detector trained with 2010 data might be unfamiliar with this new writing style and incorrectly mark human-written text as AI-generated. The release of a detection model also creates a cat-and-mouse game between its developers and users who want to bypass it. These individuals can run AI-generated text through an automated “humanizer” software tool that modifies it to appear human-written to the detector. “After the company releases a model, a bunch of ‘humanizers’ pop up to try to beat it, so the company tries to incorporate this humanized text into their training so the detector can identify it, and so on. It’s like rinse-and-repeat. The cycle can go on forever,” says Ren. The researchers explored whether test-time adaptation (TTA) can make an AI detector resilient to these distribution shifts. Adaptation in action In TTA, instead of freezing the model so it can’t change during deployment, researchers allow that model to adapt itself to incoming data after it has been released. For an AI text detector, these data are new pieces of text uploaded by users.&nbsp; These data are unlabeled, so the detector developers don’t know which data were written by humans versus AI models. But these new data represent contemporary human and AI writing — exactly what the developers want the model to be able to predict.&nbsp; With enough examples, the detector learns to identify patterns to determine which data are AI-generated and which are human-generated. The researchers studied TTA by creating datasets to contain a certain amount of AI-generated and human-generated text, but they don’t provide those labels to the model. They also used LLMs to generate some examples that resemble text written by AI to specifically evade a detector.&nbsp; Then they performed the TTA training process and tested the model on ground-truth data. In experiments designed to mimic the natural shift in human language over time, a detector that used TTA was 85 percent accurate, while traditional methods only achieved 73 percent accuracy. And when it came to writing designed to thwart detection tools, existing methods could only identify about 27 percent, while TTA enabled the model to catch more than 93 percent of disguised text. “TTA has the potential to really help deployed AI-detection models in terms of being able to proactively address this iterative ‘gaming’ behavior by adversarial AI users,” Ren says. Adapting to shifts in human writing behavior is a more difficult TTA problem, since the shifts are slower and occur in more subtle ways, he adds. The researchers caution that TTA may not always be an effective solution as future LLMs produce more natural-sounding language and it becomes harder to find verifiable human text to use for training. “It isn’t entirely clear if this will be a solvable problem,” Raghavan says. “There are some big, open questions about how you should think about science, writing, and art in a world where it is infeasible to tell the difference between human-generated content and AI content.” In the future, the researchers want to explore similar strategic domains where TTA could be useful and build better benchmarking tools to help engineers improve these AI detection models in a dynamic fashion. This project used API credits provided by Pangram to use their AI text detectors.&nbsp;",
+        "authors": [
+          "Adam Zewe | MIT News"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Research",
+        "ageHours": 8
+      },
       {
         "title": "Nvidia’s startup stakes ballooned to $65B, but Huang’s exit puts future deals in doubt",
         "url": "https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/",
@@ -301,7 +335,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 11
       },
       {
         "title": "Nvidia promises that revenue will keep soaring — for now",
@@ -315,7 +349,19 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
+        "ageHours": 13
+      },
+      {
+        "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+        "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
+        "publishedAt": "2026-11-18T00:00:00.000Z",
+        "summary": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "Models",
+        "ageHours": 13
       },
       {
         "title": "Nvidia is abandoning China after Jensen Huang&#8217;s ouster",
@@ -329,7 +375,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 4
+        "ageHours": 13
       },
       {
         "title": "Nvidia says its open source AI strategy remains intact after Jensen Huang&#8217;s exit",
@@ -343,7 +389,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 14
       },
       {
         "title": "Nvidia says it doesn&#8217;t plan to reappoint Jensen Huang as CEO",
@@ -357,7 +403,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 14
       },
       {
         "title": "Amazon and Google will together own nearly 30% of Anthropic after its IPO",
@@ -371,7 +417,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 5
+        "ageHours": 14
       },
       {
         "title": "SEC reportedly investigating Nvidia amid Huang exit",
@@ -385,7 +431,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
+        "ageHours": 15
       },
       {
         "title": "Google joins the tech outage trend by announcing it&#8217;s not having one",
@@ -399,63 +445,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 6
-      },
-      {
-        "title": "Putting a spotlight on AI, society, and humanity",
-        "url": "https://news.mit.edu/2026/putting-spotlight-ai-society-humanity-1117",
-        "publishedAt": "2026-11-17T20:40:00.000Z",
-        "summary": "MIT students are going to office hours less often. They’re spending less time working through problem sets, and with one another. Those were among the findings of MIT’s recent report on&nbsp; artificial intelligence and education , and they are one reason a growing number of MIT faculty are concerned about how generative AI is both changing how people work and affecting how they think, learn, and relate to one another. For the&nbsp; MIT Human Insight Collaborative (MITHIC), those questions have become a central focus, and MITHIC is working with collaborators across the Institute, including the Social and Ethical Responsibilities of Computing (SERC), to help MIT address them. Launched in 2024 as a strategic initiative, MITHIC brings together scholars, artists, educators, and researchers to explore the human dimensions of the defining challenges of our time. Since its launch, MITHIC has supported 67 projects across 31 MIT units , offering a total of $5.5 million in funding. Roughly a third of those projects are focused on AI, society, and humanity — a topic that MITHIC faculty co-lead Heather Paxson says has become an increasingly important part of the initiative. “When we refer to AI and society, we’re not only speaking about individual ethical decision-making or how to retrain workers. We’re looking at how AI is reshaping sociality, how we&nbsp; relate to one another,” says Paxson, a professor of anthropology and the associate dean of the School of Humanities, Arts, and Social Sciences (SHASS).&nbsp; Eroding “creative friction”&nbsp; Building upon this focus, an&nbsp; AI and Society Forum took place on campus earlier this year. Co-organized by MITHIC, SHASS, SERC, and the MIT Generative AI Impact Consortium (MGAIC), the event featured presentations and panels concentrating on jobs, democracy, and AI.&nbsp; On campus, the report on AI and education warned that AI is eroding the “creative friction” that has long defined an MIT education: students debating ideas and challenging one another, their professors, and their teaching assistants, in class and out of it. MITHIC faculty co-lead Seth Mnookin , a science writing professor and head of Comparative Media Studies Program/Writing (CMS/W), said, “The report wasn’t saying that AI is here and we all need to adapt. It was saying that we need to be asking more fundamental questions.”&nbsp;&nbsp; “When the United States entered World War II in 1941, the Institute’s newly minted scientists and engineers helped shape that era through science and technology,” Mnookin said. “We’re at a similarly consequential moment with AI. The difference is that this time, the questions that matter most can’t be answered by technologists alone. That’s where the humanities, arts, and social sciences come in.” Crossing disciplines in the pursuit of answers MITHIC is supporting a range of interdisciplinary projects through its SHASS+ Connectivity Fund , in which a SHASS scholar partners with a researcher in another part of MIT.&nbsp; In the context of the 2026 U.S. midterm elections, political science professors Adam Berinsky and Charles Stewart III and MIT Sloan School of Management Assistant Professor Chara Podimata are studying how large language models (LLMs) have become intermediaries of democratic knowledge.&nbsp; The ongoing project, which has demonstrated how voters in Alaska’s midterms who conducted their pre-election research using Anthropic’s AI model, Claude, may have received incomplete information about candidates and their views, was recently featured in The New York Times .&nbsp; “AI is becoming part of the way people encounter and make sense of political information, and yet we know relatively little about what that information environment actually looks like, how it differs for different user demographics, political identities, and geographies,” Podimata told the Times . In another project, CMS/W Professor Eric Klopfer and brain and cognitive sciences Professor Pawan Sinha are co-leading research that’s measuring AI’s near- and long-term effects on cognition. Meeting at the intersection of AI, education, and neuroscience, the professors are examining whether generative AI is increasing the human brain’s consumption of information but offloading cognitive function, or supporting an increase in cognitive function when used as part of the creative process. They recently gathered experts on the topic for an event on the MIT campus, “ AI and the Brain .” In the field of arts and technology, Anna Huang , a professor of music technology holding an MIT Schwarzman College of Computing shared position with the Department of Electrical Engineering and Computer Science, Joe Paradiso , a professor at the MIT Media Lab, are examining how incorporating AI impacts the creative process and live performance experience. Their project, “Live Musician-AI Improvisation, Tuning the Social Aesthetics in Human-AI Partnerships” explores the question: what happens when human composers and contemporary machine learning systems improvise to make music together?&nbsp; As part of their project, a collective of MIT musicians, ethnomusicologists, and engineers meets for regular sessions to experiment with improvisation frameworks like stopping to discuss how technology impacts authorship and musical direction, ensemble dynamics, and other cornerstones of improvisation. Faculty will ultimately incorporate their takeaways into a future course or practicum on AI-improvisation. Teaching and scholarship in an AI era SHASS faculty and academic staff are also leading new MITHIC initiatives to help broaden instruction and community dialogue about the intersection of AI and society.&nbsp; Graham Jones , professor of anthropology, and Arvind Satyanarayan , associate professor of computer science, used MITHIC’s SHASS+ Connectivity funding to help launch a course, 6.S061/21A.S02 (Humane User Experience Design) , in which students examine how AI systems are designed and grapple with the consequences of AI agents entering into socio-cultural relationships with people through their ability to mimic human thought and speech. “The crux of our collaboration is the term 'humane.' It’s a bit of a double-entendre, meaning both human-serving or benevolent, and humanlike,” Jones said at the inaugural MITHIC Annual Event . “What’s interesting is that our students are discovering that there’s a fundamental tension between building a system that’s good for people and one that seems human, because real people can develop dangerous dependencies.” Another project, “Rebuilding Computing and Society at MIT,” is supported by MITHIC’s Education Impact Fund (EIF). Led by Dwai Banerjee , associate professor of science, technology, and society, the initiative revitalized the Computing and Society concentration launched in 2019. The HASS concentration had gone dormant, listing classes no longer being offered and with minimal student interest. The concentration now features current classes across 11 SHASS units in which students can explore computing through different humanistic and social science angles. Banerjee, who serves as the concentration’s advisor, is also working with lecturer and research affiliate Mariel Garcia-Montes PhD ’26 to find ways to connect the concentration instructors and campus initiatives on computing and society. MIT senior Daniel Gonzalez is also part of the project, developing a research and outreach program that centers undergraduate voices in computing and society efforts across the Institute. Another MITHIC project funded by the EIF, “Review of Generative AI Assistive and Resistant Communication Assignments and Supporting Workshops,” is led by Michael Trice , a lecturer in MIT’s Writing, Rhetoric, and Professional Communication (WRAP) program. The project is responding to a consistent SHASS faculty request for additional training and skills needed “to fully address generative AI concerns in their classes.”&nbsp; Trice is creating a bank of faculty resources and facilitating workshops and visiting lectures on generative AI and writing. These include a talk given earlier this fall by John Gallagher from the University of Illinois, who presented findings from a large-scale survey on AI-usage and writing conducted with undergraduates at his institution in 2026. Meeting the moment MIT leaders agree that MITHIC, now in its third year, is playing a central role in the Institute meeting the moment, as AI presents both extraordinary potential and disturbing risks.&nbsp; “There has never been a more important time for constructive collaboration between science and technology and the human-centered disciplines,” MIT President Sally Kornbluth recently said. “Through MITHIC, MIT is giving faculty the support to reach out across disciplines and pursue their dreams.” Agustín Rayo, dean of SHASS and co-chair of MITHIC, agrees. “MIT is uniquely placed to help us understand this extraordinary moment and to generate the values, tools, and policies that we will need to shape AI so that it becomes a force for good,” he said. “It is essential that we deploy AI technology in a way that elevates human existence, rather than diminishing it.” At the recent SHASS 75th Anniversary Symposium, Provost Anantha Chandrakasan said given the rapid development of AI, an understanding of the ethical implications and societal impact of implementing new technologies is especially urgent. “SHASS provides an essential perspective on questions concerning how technology can be developed thoughtfully and deployed responsibly, with the aim of improving human well-being,” said Chandrakasan, who also serves as MITHIC co-chair. Looking ahead, MITHIC and SERC are developing a series of events that pair humanists or social scientists with colleagues in a single field, starting with mathematics, to examine what AI is changing about how that field produces knowledge and trains its next generation. “The question isn’t whether AI will change these fields,” Mnookin said. “It’s whether we understand what’s at stake before it does.”",
-        "authors": [
-          "Danna Lorch | School of Humanities, Arts, and Social Sciences"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
-        "ageHours": 7
-      },
-      {
-        "title": "Model ML raises $250M to automate investment banking grunt work",
-        "url": "https://techcrunch.com/2026/11/17/model-ml-raises-250m-to-automate-investment-banking-grunt-work/",
-        "publishedAt": "2026-11-17T19:32:11.000Z",
-        "summary": "The startup says its agents understand the full context of deals that bankers and consultants are working on and can automatically update financial models and presentations when new developments affect their analysis.",
-        "authors": [
-          "Marina Temkin"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Research",
-        "ageHours": 8
-      },
-      {
-        "title": "Google expands access to Gemini Tasks, which can help with calls, purchases",
-        "url": "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/",
-        "publishedAt": "2026-11-17T19:02:20.000Z",
-        "summary": "Gemini's Task mode can help users coordinate calls, log into websites, and even make purchases on the user's behalf.",
-        "authors": [
-          "Lucas Ropek"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 9
-      },
-      {
-        "title": "Google to keep Gemini chats for 2 months, up from 72 hours, even with history off",
-        "url": "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/",
-        "publishedAt": "2026-11-17T18:48:23.000Z",
-        "summary": "Google's Gemini update extending chat retention will roll out globally over the coming weeks.",
-        "authors": [
-          "Jagmeet Singh"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Models",
-        "ageHours": 9
+        "ageHours": 15
       }
     ],
     "threads": []
@@ -470,11 +460,11 @@
       },
       {
         "name": "General",
-        "count": 7
+        "count": 8
       },
       {
         "name": "Models",
-        "count": 4
+        "count": 3
       },
       {
         "name": "Infrastructure",
