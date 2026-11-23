@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T18:28:09.899Z",
+  "generatedAt": "2026-11-23T00:14:10.182Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -27,7 +27,10 @@
         }
       ],
       "itemCount": 12,
-      "errors": []
+      "errors": [
+        "research:arXiv cs.LG -> HTTP 429",
+        "research:arXiv cs.CL -> HTTP 429"
+      ]
     },
     {
       "group": "news",
@@ -85,25 +88,6 @@
   "sections": {
     "research": [
       {
-        "title": "RL Post-Training in Diffusion Transformers Is Activation Steering",
-        "url": "https://arxiv.org/abs/2611.26627v1",
-        "publishedAt": "2026-11-19T18:59:53.000Z",
-        "summary": "Reinforcement learning (RL) post-training substantially improves the visual quality, text rendering, and compositional accuracy of diffusion transformers. Because capabilities such as rendering requested text or composing multiple objects are inherently prompt-dependent, a natural hypothesis is that improving them requires learning complex, input-dependent transformations. To isolate how much of these gains an input-independent shift explains, we probe each RL-tuned model with a deliberately simple parameterization: a fixed set of steering vectors added to the block outputs of the frozen base model. On SD3.5-M, these vectors hold 65x fewer parameters than the RL-tuned LoRA (0.29M against 18.8M). We fit them to match the velocity predictions of public RL-tuned checkpoints, with no reward in the objective. Although the vectors are identical for every prompt, token, and sampling seed, they recover 90.0-96.3% of the reward gains of six RL-tuned image models, and 89.8% and 111.9% on two RL-tuned video models. Initialized at zero and trained with online RL, the vectors alone exceed the reward gains of weight-based RL on text rendering (OCR) and human preference (PickScore) on SD3.5-M. A constant shift thus suffices for most of the gain of policy-gradient RL post-training: without new input-dependent transformations, it steers the pretrained generator toward what it can already compute.",
-        "authors": [
-          "Tuna Han Salih Meral",
-          "Kaan Oktay",
-          "Alec Helbling",
-          "Atakan Kara",
-          "Duen Horng Chau",
-          "Pinar Yanardag"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 71
-      },
-      {
         "title": "PlayCraft: Designing Engaging Games from Agent Play Experience",
         "url": "https://arxiv.org/abs/2611.26624v1",
         "publishedAt": "2026-11-19T18:59:34.000Z",
@@ -115,26 +99,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 71
-      },
-      {
-        "title": "TideCache: Efficient Hybrid LLM Serving with Transparent Cache Management and Layer-Wise Streaming",
-        "url": "https://arxiv.org/abs/2611.26619v1",
-        "publishedAt": "2026-11-19T18:58:31.000Z",
-        "summary": "Hybrid architectures have become mainstream among open-weight language models. Their global-attention and bounded-state layers maintain heterogeneous caches whose demands vary with context length and concurrency. We present TideCache, a serving system on CPU--GPU superchips with three components for allocating GPU memory among caches and managing their residency across GPU and host memory. The Transparent Cache Pool redistributes physical pages among cache components behind fixed virtual addresses, preserving cache layouts and backend interfaces. The Cache Streamer uses computation intervals provided by bounded-state layers to prefetch the next global-attention layer's prefix into GPU slots shared across global-attention layers, reducing GPU residency while overlapping layer-wise transfers with computation. Generated KV remains resident. The Request Scheduler selects resident or streamed execution and triggers capacity adjustments according to request size and queue state. Together, they let HBM released by streaming accommodate other cache components and additional requests. Implemented in SGLang and evaluated on GB300 and GH200 across seven model/platform configurations, TideCache completes up to 2.04x as many agent turns, reduces overall P50 per-token latency by 20--59%, and improves agent P50 TTFT by 1.40--3.05x compared with SGLang with HiCache.",
-        "authors": [
-          "Jinbin Luo",
-          "Xiaozhe Yao",
-          "Shang Yang",
-          "Zhijian Liu",
-          "Song Han",
-          "Qinghao Hu"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 71
+        "ageHours": 77
       },
       {
         "title": "One Prior, Two Dynamics: Repurposing Video Diffusion Transformers for Self-Supervised Latent Action Learning",
@@ -154,67 +119,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 71
-      },
-      {
-        "title": "AgentRoboCritic: Understanding the Capability of Frontier Agents on Direct Robot Control",
-        "url": "https://arxiv.org/abs/2611.26613v1",
-        "publishedAt": "2026-11-19T18:57:25.000Z",
-        "summary": "Frontier multimodal language agents such as GPT-6 Astra have demonstrated strong capabilities in controlling robots directly via low-level numerical actions without high-level primitives. However, existing benchmarks report only episode-level success rates, which show neither how these agents succeed nor where they fail. In this paper, we present a systematic action-level analysis of frontier agents on direct robot control across 12 manipulation benchmarks. We introduce AgentRoboCritic, an intent-grounded critique framework in which the policy agent states a local intent alongside each action, and a critic evaluates the action's outcome and failure mode against this intent. Our action-level analysis demonstrates the promising capabilities of frontier agents on direct robot control, including closed-loop recovery from local execution failures, reliable semantic grounding across diverse scenes, and strong zero-shot manipulation without task-specific adaptation. It also identifies their current limitations, including task-relevant physical execution bottlenecks such as grasping and alignment, and uneven recovery across failure modes. Finally, we validate our critic on a 400-action human-annotated benchmark and release a dataset of 12,844 annotated actions alongside a fine-tuned open-source critic, Muse-Glimmer-30B, whose failure-mode accuracy rises from 32.58% to 74.24%, enabling low-cost action-level analysis.",
-        "authors": [
-          "Yiyang Du",
-          "Yuxuan Kuang",
-          "Qitao Zhao",
-          "Yixuan Wang",
-          "Zhanqiu Guo",
-          "Yi Xu",
-          "Xin Li",
-          "Wenbin He",
-          "Liu Ren",
-          "Chenyan Xiong"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 72
-      },
-      {
-        "title": "Bio-PM-Guided Synthetic IMU Generation",
-        "url": "https://arxiv.org/abs/2611.26607v1",
-        "publishedAt": "2026-11-19T18:56:25.000Z",
-        "summary": "Collecting and labeling inertial measurement unit (IMU) data for human activity recognition (HAR) is expensive, and models trained on one group of subjects often fail to generalize to unseen individuals. Even with balanced data, classifiers struggle to distinguish dynamically similar activity classes and benefit from targeted augmentation. We explore whether synthetic IMU data generated in the representation space of a pretrained biosignal encoder, Bio-PM \\cite{b1}, can serve as a practical augmentation source. Rather than synthesizing raw signals, we leverage Bio-PM's frozen encoder to convert 10-second IMU windows into token embedding sequences and train class-conditional decoders in this space: (1) an autoregressive transformer decoder that predicts tokens sequentially, and (2) a diffusion decoder that learns the token distribution through a denoising objective. We analyze generation realism through distributional metrics and embedding-space visualizations, evaluate downstream utility through leave-one-subject-out HAR classification, and present a PatchDecoder for approximate raw waveform reconstruction. Our diffusion decoder achieves a Train-on-Synthetic-Test-on-Real (TSTR) macro-F1 of 0.68, demonstrating that generated tokens are realistic enough to train a classifier that transfers to real data. Combining synthetic-token augmentation with a 320-dimensional gravity-aware feature representation raises LOSO macro-F1 from 0.729 to 0.809 over a real-only baseline across 51 subjects on the WISDM benchmark, with statistically significant gains concentrated in the most challenging activity classes. These results demonstrate that high-fidelity generation in a pretrained encoder's representation space is achievable and practically useful for cross-subject HAR augmentation.",
-        "authors": [
-          "Deepali Singh",
-          "Deepesh Parpani",
-          "Aviral Gupta"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 72
-      },
-      {
-        "title": "Depth Pro 2: Sharp and Temporally Consistent Metric Monocular Depth",
-        "url": "https://arxiv.org/abs/2611.26603v1",
-        "publishedAt": "2026-11-19T18:55:41.000Z",
-        "summary": "We present Depth Pro 2, an approach to estimating dense metric depth for images and video at full resolution. By analyzing prior methods for monocular depth estimation, we find that they commonly trade off temporal consistency and boundary sharpness: multi-frame methods favor consistency, single-frame methods favor sharpness. To overcome this trade-off, we train a single, scalable network that processes both images and video and predicts depth maps at native resolution. Depth Pro 2 produces depth maps that are metrically accurate, sharp, and temporally consistent all at once, outperforming prior work in all of these dimensions. We release a family of models that define a new Pareto frontier in terms of metric accuracy, sharpness, temporal consistency, and runtime. We release code and weights at https://apple-aiml-research.github.io/ml-depth-pro-2/",
-        "authors": [
-          "Peiyun Hu",
-          "Marko Mihajlovic",
-          "Lyndon Duong",
-          "Lahav Lipson",
-          "Wei Dong",
-          "Amaël Delaunoy",
-          "Stephan R. Richter",
-          "Vladlen Koltun"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Models",
-        "ageHours": 72
+        "ageHours": 77
       },
       {
         "title": "SoK: Assessing the Evolution of LLM Capability in Software Vulnerability Research",
@@ -233,7 +138,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 72
+        "ageHours": 77
       },
       {
         "title": "Active Feature Acquisition by Distilling an Oracle Teacher",
@@ -250,7 +155,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 72
+        "ageHours": 77
       },
       {
         "title": "PGX: Physically Grounded Execution for Long-Horizon Humanoid Loco-Manipulation",
@@ -266,7 +171,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 72
+        "ageHours": 77
       },
       {
         "title": "Realized versus Population Reliability: Anytime-Valid Self-Consistency Certification under Correlated Reasoning",
@@ -281,7 +186,7 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 72
+        "ageHours": 77
       },
       {
         "title": "Probing the \"Conscious\" Mind: Selective Access and Global Workspace in Vision-Language Models",
@@ -296,10 +201,131 @@
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 72
+        "ageHours": 77
+      },
+      {
+        "title": "Verify the Verifier: Specification-Grounded LLM Cross-Checking for Bugs That Escape UVM Scoreboards",
+        "url": "https://arxiv.org/abs/2611.26588v1",
+        "publishedAt": "2026-11-19T18:45:54.000Z",
+        "summary": "A passing UVM regression shows the design agrees with the reference model on what the scoreboard checks, not that it meets the specification. Bugs that pass every test yet violate the specification, termed scoreboard escapes, survive mature testbenches. We present Verify the Verifier, to our knowledge the first framework whose LLM-based Anomaly Cross-Checker examines a passing regression's traces against the specification. Of 564 bugs inserted into four OpenTitan IPs, 68 are candidate scoreboard escapes: non-equivalent, exercised by the tests, yet passing. The framework confirmed 41 as scoreboard escapes with assertions failing on the buggy design and proven on the original.",
+        "authors": [
+          "Ana E. Sanchez Villalobos",
+          "Michael D. Quinn",
+          "Aakash Tyagi",
+          "Minh D. Luu",
+          "David Kebo Houngninou"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 77
+      },
+      {
+        "title": "ProtoDiffusion: Token-per-Layer Generative Modeling of Multi-Layer Images",
+        "url": "https://arxiv.org/abs/2611.26586v1",
+        "publishedAt": "2026-11-19T18:45:31.000Z",
+        "summary": "Graphic designs are ordered compositions of RGBA layers whose separation enables selection, movement, and reuse. Existing layered models represent each layer with a full-canvas or region-sized spatial latent grid, so representation size grows with the cumulative spatial extent of the layers. We present ProtoDiffusion, a latent-diffusion framework built on ProtoVAE, a multi-layer variational autoencoder that encodes a design into one shared spatial prototype and one candidate vector per layer. Each candidate conditions a shared decoder to reconstruct its corresponding RGBA layer. For $N$ layers, the representation contains $HW+N$ tokens before backbone-specific packing, compared with $NHW$ for full-grid-per-layer representations. ProtoDiffusion jointly denoises the prototype and a fixed set of candidate slots, conditioned on an image or text, with bounding boxes as optional layout guidance. The model leaves unneeded slots empty and determines the number of layers and, in absence of boxes, their layout, requiring neither as input. The same architecture supports both image-to-design and text-to-design. ProtoVAE achieves high-fidelity reconstruction from its compact shared latent representation, reaching 40.43 dB PSNR on layer crops. On the LayerD evaluation split, image-to-design achieves RGB L1 scores of 0.040 with bounding boxes and 0.057 without, with box-guided alpha soft IoU (0.850) comparable to the strongest fine-tuned baseline (0.871). On merged images, text-to-design reaches 66.41 FID versus 86.84 for FLUX.2 [klein], achieves a 0.860 text-accuracy score, and runs $19.1\\times$ faster than the same-backbone generation-then-decomposition cascade.",
+        "authors": [
+          "Adrià Ciurana Lanau",
+          "Harleen Hanspal",
+          "Lusine Abrahamyan",
+          "Emilio Tylson Baixauli",
+          "Yu Cao",
+          "Danai Triantafyllidou",
+          "Stefano Zorzi",
+          "Gustavo Zanoni Felipe",
+          "Peter Griger",
+          "Stefan Sietzen",
+          "Petru-Daniel Tudosiu"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 77
+      },
+      {
+        "title": "GEOHunter: Mapping a Generative Engine Optimization Network in the Wild",
+        "url": "https://arxiv.org/abs/2611.26564v1",
+        "publishedAt": "2026-11-19T18:33:42.000Z",
+        "summary": "Generative engines synthesize retrieved web pages into answers, recommendations, and rankings. Generative engine optimization (GEO) services sell visibility in these answers by publishing promotional articles on user-generated-content (UGC) platforms for paying clients. Such promotion raises concerns in medical and financial domains, where misleading advice can cause harm. To study the severity of this problem, we measure one such paid-content operation across three major Chinese UGC platforms, uncovering 1,985 accounts associated with the network comprising 466,357 inferred promotional placements. We find that the network promotes products across diverse categories through a growing pool of accounts, conducting coordinated campaigns spanning months across multiple platforms while evolving its listicle content over time. Across nine generative engines from both the US and China, we find that 4.5% to 20% of retrievable cited pages are attributable to the network, depending on how strictly attribution is drawn. On eight of these engines, its clients are named in 52% of answers, against 68% for category leaders. Our work demonstrates the effectiveness of UGC GEO placement at influencing generative engine outcomes, and reveals content-level defenses as insufficient against coordinated UGC placements, where account-level and platform-level signals are necessary for proper defense.",
+        "authors": [
+          "Sean Tang",
+          "Peiran Wang",
+          "Ying Li",
+          "Esha Shivakumar",
+          "Tao Meng",
+          "Yuan Tian"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Products",
+        "ageHours": 78
+      },
+      {
+        "title": "Multi-institutional grading of Barrett's esophagus dysplasia without stain normalization using a pathology foundation model and multiple instance learning",
+        "url": "https://arxiv.org/abs/2611.26562v1",
+        "publishedAt": "2026-11-19T18:27:59.000Z",
+        "summary": "Barrett's esophagus dysplasia grading suffers substantial inter-observer variability, particularly for low-grade dysplasia, complicating clinical decision-making. We conducted a retrospective multi-institutional diagnostic accuracy study of a foundation model-based deep learning system for dysplasia grading, using 969 H\\&E-stained whole slide images from four institutions. Patch-level classifiers trained on expert annotations identified diagnostically relevant regions, followed by attribute-aware multiple instance learning for slide-level classification as non-dysplastic Barrett's esophagus (NDBE), low-grade dysplasia, or high-grade dysplasia. On a held-out test set (n = 130), macro-averaged AUC was 0.96 (95\\% CI 0.93--0.98). For binary dysplasia detection, sensitivity was 98\\% (80/82) and specificity 81\\% (39/48), with a negative likelihood ratio of 0.030 and quadratic-weighted \\kap{} of 0.83 against expert consensus. No high-grade dysplasia case was misclassified as NDBE. Performance was consistent across institutions without stain normalization, indicating that stain-robust foundation-model representations may remove the site-specific preprocessing that has constrained prior systems to institution-specific deployment.",
+        "authors": [
+          "Amirali Khosravi",
+          "Jaidip M. Jagtap",
+          "D. Chamil Codipilly",
+          "Catherine E. Hagen",
+          "Jason T. Lewis",
+          "Rickey E. Carter",
+          "Shahriar Faghani",
+          "Vani J. A. Konda",
+          "Fouad Otaki",
+          "Shajan Peter",
+          "Nicholas Shaheen",
+          "Sachin Wani",
+          "Prasad G. Iyer",
+          "Bradley J. Erickson"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 78
+      },
+      {
+        "title": "MM-SystemOneBias: Evaluating Bias in Multimodal Jev-Style System One Decision Models",
+        "url": "https://arxiv.org/abs/2611.26557v1",
+        "publishedAt": "2026-11-19T18:25:41.000Z",
+        "summary": "When multimodal decision models determine actions, moderation outcomes, or quality judgments, their reliability depends on preserving semantic decisions across presentation changes, ignoring irrelevant additions, and distinguishing information consistent with task evidence from information that conflicts with it. Existing evaluations study decision-interface biases and multimodal model behavior in separate settings, leaving no common protocol to compare multimodal decision models with their backbones on practical tasks. We introduce \\textbf{MM-SystemOneBias}, which evaluates 13 models on 5,323 original instances from nine public datasets and 11 task scenarios using six paired interventions: option order, option label, external judgment, image--text description, irrelevant information, and rating scale. Across seven matched decision-model--backbone pairs, decision models are more stable under option-label, irrelevant-information, and rating-scale changes in all seven pairs; six pairs also show lower option-order flip rates. They incur smaller accuracy losses under incorrect external judgments in all seven pairs and conflicting descriptions in six. In six pairs, they gain less accuracy from correct external judgments and show less favorable accuracy changes under consistent descriptions. Among pairs with unchanged semantic decisions, mean absolute changes in answer probabilities range from 4.56 to 11.55 percentage points, revealing input effects that accuracy alone misses.",
+        "authors": [
+          "Jinzhe Li",
+          "Qi Wang",
+          "Dandan Guo",
+          "Li Liu",
+          "Yuan Wu",
+          "Yi Chang"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 78
       }
     ],
     "news": [
+      {
+        "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
+        "url": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
+        "publishedAt": "2026-11-22T21:14:07.000Z",
+        "summary": "To establish a speed limit on AI development, you need to agree on how to measure speed.",
+        "authors": [
+          "Anthony Ha"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 3
+      },
       {
         "title": "Why data centers are at the center of the Big Tech backlash",
         "url": "https://techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash/",
@@ -312,7 +338,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 0
+        "ageHours": 6
       },
       {
         "title": "Perplexity and Intelligence",
@@ -324,7 +350,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "Models",
-        "ageHours": 18
+        "ageHours": 24
       },
       {
         "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
@@ -338,7 +364,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 21
+        "ageHours": 27
       },
       {
         "title": "A tale of two Nvidias",
@@ -352,7 +378,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 21
+        "ageHours": 27
       },
       {
         "title": "Here are the top AI agents that can live in your text messages",
@@ -366,7 +392,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 25
+        "ageHours": 31
       },
       {
         "title": "Is selling an AI version of your face to this microdrama startup the future of Hollywood?",
@@ -380,7 +406,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 26
+        "ageHours": 32
       },
       {
         "title": "Q&A: Enabling more human-like interactions and understanding in multimodal foundation models",
@@ -394,7 +420,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Research",
-        "ageHours": 45
+        "ageHours": 51
       },
       {
         "title": "New approach enables physically consistent AI models of chaotic systems",
@@ -408,7 +434,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 46
+        "ageHours": 52
       },
       {
         "title": "Daniel Ek backs AI researcher&#8217;s fusion power startup. Here&#8217;s what they&#8217;re building.",
@@ -422,7 +448,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 47
+        "ageHours": 52
       },
       {
         "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
@@ -436,7 +462,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 47
+        "ageHours": 53
       },
       {
         "title": "Chips can survive the space environment — can their financing?",
@@ -450,43 +476,29 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 49
-      },
-      {
-        "title": "Following the “mathocalypse,” mathematicians consider the future",
-        "url": "https://news.mit.edu/2026/following-mathocalypse-mathematicians-consider-future-1120",
-        "publishedAt": "2026-11-20T15:20:00.000Z",
-        "summary": "It’s been a tumultuous year for math. Big open questions that have occupied mathematicians for decades are now being solved in a matter of hours by artificial intelligence agents that companies deploy by the thousands to work on a single problem in tireless lockstep.&nbsp; AI’s relentless rise is raising existential questions for the field: How will the tools affect humans’ understanding of mathematical concepts? In the face of AI’s brute-force productivity, will mathematicians still have jobs? And what will all this mean for mathematics as an intellectual pursuit?&nbsp; At MIT, mathematicians grappled with these and other questions at a panel discussion on Monday titled “AI and Society: The Future of Math.” Leading mathematicians from MIT, Harvard University, Northwestern University, and New York University — each experts in their respective fields — sat down for a conversation that touched on the quality of AI math, how AI is challenging long-established research norms, and the evolving opportunities for mathematicians, whether they embrace the machines or remain “AI vegans.” The wide-ranging discussion, which took place in a packed lecture hall in MIT’s Building 3, was moderated by science writer Kevin Hartnett, author of “The Proof in the Code,” and featured Jacopo Borga, the Cecil and Ida Green Career Development Assistant Professor of Mathematics at MIT; Michael Hopkins, the George Putnam Professor of Pure and Applied Mathematics at Harvard University; Bryna Kra, the Sarah Rebecca Roland Professor of Mathematics at Northwestern University; and Tristan Buckmaster, professor of mathematics at New York University's Courant Institute of Mathematical Sciences. As the panelists shared their various and at times conflicting perspectives on AI’s impact, one thing was clear: “Math has changed more in the last two months than in the last 100 years,” said Kra, who cautioned that AI’s power will change what it is to be a mathematician and what it will take to advance human knowledge in meaningful ways. “It’s like the first sentence in ‘A Tale of Two Cities’: ‘It was the best of times, it was the worst of times.’ It’s a really exciting moment … and also scary.” AI’s sprint Artificial intelligence has made steady strides over the last decade thanks in large part to mathematicians themselves, who out of curiosity have been honing AI models to solve problems with known solutions. These early exercises proved successful, most notably in 2025. That summer, at the International Mathematical Olympiad, Google DeepMind’s AI models achieved gold-medal status by quickly finding solutions to most of the problems that were posed to the world’s best high school mathematicians.&nbsp; Around that same time, other mathematicians found that some AI systems could solve problems with known solutions, but in ways that were slightly improved compared to the solutions that human mathematicians had derived.&nbsp; In 2026, AI’s power took a quantum leap. In several instances, scientists found that models could solve open-ended research questions — mathematical problems that had no known answer. Then, in September, OpenAI made a field-shaking announcement: The company focused thousands of its AI agents on a singular challenge, and after 88 hours, the agents produced a proof related to the Navier-Stokes equation — a Millienum Prize Problem that is one of seven unsolvable mathematical Holy Grails.&nbsp; OpenAI’s sudden interest in the Navier-Stokes challenge coincided with work by Tristan Buckmaster, one of the panelists. After a year of progress, he and his collaborator, at rival AI behemoth Anthropic, were on the cusp of solving the problem when OpenAI made its announcement. OpenAI’s sprint to be first to the proof opened up a huge debate, about whether proper credit was given, whether the mathematicians’ data was leaked, how the AI agents arrived at their solution, whether that solution makes any meaningful sense, and above all, how AI will change mathematical research.&nbsp; A month later, the company doubled down, releasing 722 manuscripts, organized into categories that ran the gamut of mathematical topics. The manuscripts claimed to have used AI entirely to solve many of math’s major, unsolved problems — an achievement that has widely been coined the “mathocalypse.”&nbsp; But many mathematicians insist that it isn’t just about whether a problem can be solved, but also, how. And, they say, when they’ve looked into the details of AI proofs, it’s not clear how the agents arrived at their conclusions.&nbsp; “The papers themselves are nonsense,”&nbsp;Hopkins said during Monday’s discussion, noting that AI-generated proofs contain “strange ideas.” He continued: “There still is a sense of AI math versus human math.” “For math to be important, it has to have human understanding,” Buckmaster added.&nbsp; New norms For mathematicians like Kra, this moment in math’s history presents an opportunity to let go of certain long-held norms of mathematical research, such as competition among research groups and the prestige of being the first to prove an idea, also known as priority. “It shouldn’t matter that you’re first,” Kra said. “Speed should not be a priority. It’s not about the proof production anymore. We need to find other ways to assess understanding.” However, “We can throw away priority, but people are going to want to be pioneers,” Hopkins countered, noting the challenge that mathematicians will now face in making in-roads where AI has already clear-cut.&nbsp; Kra, however, struck a hopeful counterpoint:&nbsp; “You can be a pioneer in different ways, for instance in communicating [how a proof came to be],” said Kra, who helped this year to draft the Leiden Declaration on Artificial Intelligence and Mathematics — a statement signed by mathematicians around the world that calls for action to address the risks that AI poses to mathematical research. “Communication of math is even more important now.”&nbsp; Indeed, the panelists have already seen a subtle shift in what is expected of a mathematician, at all levels, from undergraduate students to early and established career mathematicians.&nbsp; “The interview is becoming more important,” said Kra, noting that it’s no longer enough to accept, hire, or promote a mathematician based on ideas they have written or published — they have to also show that they understand and can explain those ideas to another person.&nbsp; Human math AI is also making mathematicians question the role of academic journals, which have long been the benchmark for evaluating and validating mathematical advances. “Ninety percent of how we’ve judged [mathematicians] are through journals,” says Jacopo Borga, who is an early-career mathematician at MIT. “I’m not sure that’s how we should do this anymore. We should come up with a new metric and let it evolve.” Kra, who is a managing editor of a specialty journal, is seeing a huge increase in the number of papers submitted, primarily reporting results that were generated or assisted by AI. To deal with the deluge, that particular journal has had to hire an additional managing editor.&nbsp; Where journal editors have traditionally prioritized publishing new proofs that push the field forward, Kra sees that, in response to AI “slop,” some publications are putting more value on exposition — the section of a paper that explains the reasoning behind a conjecture or proof. For now, humans have the advantage over AI in communicating mathematical ideas. “There’s a real art to exposition, if you can explain something in a clear and elegant way,” Hopkins echoed.&nbsp; Kra noted that there are experimental journals coming online now, that are designed to highlight uniquely human contributions to mathematics. For instance, there are journals that publish expositions, such as papers that explain an old result in a new way that modern mathematicians can understand. “There is a lot of opportunity to curate and translate knowledge,” said Hopkins, who shared that one of his students has been working to prove a theorem from the 1970s. The original language and construction from that decades-old theorem, he said, was just as foreign as some of AI’s proofs today.&nbsp; In noting novel approaches journals are taking in response to AI, Kra also mentioned Mathematical Discourse , a new peer-reviewed “video journal” that will feature videos of people giving talks about mathematical research. The journal’s preliminary site states that “giving a mathematical talk captures the human side of mathematics in a unique way, and supporting these human aspects of our discipline will be ever more important in the coming years.” “A new kind of mathematician” The rise of AI may be hitting especially hard for students, who are still learning the fundamentals in the presence of so many AI shortcuts.&nbsp; “Mathematics is probably the slowest science you can do,” said Borga, to appreciative laughs from the audience. “Students today are bombarded by [conflicting messages of] what they should do, and are overwhelmed. We need to give them space to learn.” How they should learn could be a matter of personal belief.&nbsp; “There is a big faction of my group who are ‘AI vegans’ [people who do not use AI], while others are using it,” said Hopkins, who is finding ways to support both groups. He also highlighted one particular student, who seemed to be a sort of “horse whisperer of AI.” This student has good mathematical instincts, Hopkins said, but struggles with execution. They are motivated by curiosity, rather than being first to a solution, and have a way of prompting AI to produce interesting insights.&nbsp; “This may be a new kind of mathematician,” Hopkins said.&nbsp; As AI forces the field of mathematics to adapt and change its centuries-long ways of pursuing knowledge, Borga and others see the moment as a new beginning, rather than math’s end. “The castle is collapsing,” Borga says. “There’s open ground to explore.” “AI is going to affect everyone (beyond mathematicians),” said Buckmaster, who urged&nbsp;students to stay the course “rather than escape or jump ship to another field. … Think of new ways to be creative and communicate your ideas,” he said. “Just do what you love.” The panel discussion,&nbsp;co-sponsored by the Department of Mathematics, is the first of a planned series hosted by MITHIC and SERC exploring how AI is reshaping our personal and professional lives.",
-        "authors": [
-          "Jennifer Chu | MIT News"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
-        "ageHours": 51
+        "ageHours": 55
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 4,
+    "last24h": 2,
     "topCategories": [
       {
         "name": "Research",
-        "count": 14
+        "count": 11
       },
       {
         "name": "General",
-        "count": 6
+        "count": 7
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 4
       },
       {
-        "name": "Infrastructure",
+        "name": "Products",
         "count": 1
       }
     ]
