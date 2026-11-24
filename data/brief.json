@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T04:43:16.793Z",
+  "generatedAt": "2026-11-24T15:46:51.816Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,221 +85,250 @@
   "sections": {
     "research": [
       {
-        "title": "When Does Fine-Tuning Beat Prompting for Qiskit-to-CUDA-Q Translation? An Execution-Verified Study",
-        "url": "https://arxiv.org/abs/2611.29793v1",
-        "publishedAt": "2026-11-22T21:50:27.000Z",
-        "summary": "Moving quantum code from Qiskit to NVIDIA CUDA-Q is a practical adoption cost that language models are starting to automate. We ask whether a small open model can learn this translation, and how to measure it so that the result can be trusted. Both programs can be executed and their state vectors compared, so a kernel counts as correct only if it prepares the same state as the Qiskit reference (fidelity >= 0.999), with no text matching and no LLM judge. We build a 640-task benchmark with three test sets (larger circuits, an unseen circuit family, an unseen Qiskit coding style) and a QuantumKatas regression probe, and we test the evaluator before training. Measurement counts miss every phase-only error; a surface rule-based translator solves two of three original splits (text substitution); a converter that executes the Qiskit input and maps the circuit solves all 640 tasks -- so the benchmark measures source-level translation, not whether a circuit can be ported after running it. No base model emits a valid CUDA-Q kernel zero-shot. On Nemotron 3 Nano 4B, LoRA reaches 83.9%, tying a 4-shot prompt (83.1%), but generalizes worse to unseen style (48.5% vs. 65.5%) and cuts QuantumKatas from 23.8% to 8.9%; on Qwen2.5-Coder 7B, LoRA beats the prompt overall (92.0% vs. 82.8%) and on unseen style (78.5% vs. 65.0%), and on the 1.5B model as well, so whether fine-tuning pays off depends on the base model, while the Qiskit regression appears in all three. Mixing two replay formats is the best mitigation trade-off (84.4% translation, Katas 21.5%). On 48 parametric functions that must become kernels with arguments -- where executing the input cannot yield a parametric kernel -- models reach up to 83%; on 27 real QED-C kernels, every model scores 0%. Language models can do source-level translation of simple parametric code, but not yet of real programs.",
+        "title": "Pruning Autonomous Driving VLAs: What to Preserve for Reasoning and Action",
+        "url": "https://arxiv.org/abs/2611.31240v1",
+        "publishedAt": "2026-11-23T18:59:52.000Z",
+        "summary": "Reasoning vision-language-action (VLA) models for autonomous driving use chain-of-thought (CoT) reasoning to guide action generation, but incur substantial memory and computational costs. We study structured pruning for these models, focusing on preserving both scene understanding and trajectory prediction. Our analysis of Taylor importance in Alpamayo-1.5-10B shows that reasoning and trajectory objectives assign different importance to the same vision-language model (VLM) structures. In the action expert, MLP channels exhibit more stable importance rankings across denoising steps than query heads, and a small fraction of channels accounts for most of the measured importance. Based on these findings, we propose MoOP, which combines importance ranks from both objectives for VLM pruning and aggregates stepwise importance to select a fixed subset of expert MLP channels. At 24.0% total parameter reduction, VLM-only pruning with MoOP performs comparably to or slightly better than the strongest baselines in driving, while retaining 94.0% of the dense model's LingoQA score, far above all other methods. At a higher reduction of 30.0%, MoOP degrades much less than every other method, as it is the only one whose reasoning does not collapse. Removing 93.75% of expert MLP channels increases total parameter reduction to 39.4%, with nearly unchanged open-loop errors relative to VLM-only pruning and competitive closed-loop performance. The resulting model achieves a 1.37x end-to-end inference speedup and 36.6% lower peak memory than the dense model, without post-pruning fine-tuning.",
         "authors": [
-          "Ana Paula Appel"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "A Cascaded Framework with a Cross-Attention-Guided Mamba-CNN Model for Pre- and Post-Treatment Glioma Segmentation",
-        "url": "https://arxiv.org/abs/2611.29792v1",
-        "publishedAt": "2026-11-22T21:50:14.000Z",
-        "summary": "Accurate glioma segmentation is vital for diagnosis and follow-up, but manual segmentation is time-consuming, subjective, and variable across interpreters. Gliomas are heterogeneous in size, shape, and location. Deep learning has therefore emerged as a potential solution. CNNs excel at local features but may struggle with long-range dependencies, whereas Vision Transformers capture global context efficiently but incur higher computational complexity. Most previous studies focused on pre-treatment gliomas; post-treatment cases with resection cavities (RCs) remain less explored. This study proposes a Cross-Attention-Guided Mamba-CNN (CMC-Seg) model within a cascaded framework for pre- and post-treatment diffuse glioma segmentation, aiming to balance accuracy and computational cost. Experiments used BraTS 2025 mpMRI of diffuse glioma patients. After preprocessing, a coarse segmentation model extracted tumor-centered patches, which were fed to CMC-Seg for fine-grained segmentation. CMC-Seg was compared with 3D U-Net, SegResNet, SwinUNETR, UNETR, nnFormer, and SegMamba. On the test set, CMC-Seg achieved the highest mean Dice (81.20%) and non-enhancing tumor core (NETC) Dice (77.09%). It also achieved an RC Dice of 78.63% and the lowest 95% Hausdorff distance (HD95; 4.39 mm). Results were comparable to CNN and Mamba baselines and significantly better than Transformer-based baselines (P < 0.05). CMC-Seg required the fewest inference GFLOPs (381.49). Ablation experiments indicated that multi-direction scanning and cross-attention improved performance, particularly for RC (P < 0.05). Grad-CAM explainability experiments showed that CMC-Seg focuses on diagnostically relevant tumor regions.",
-        "authors": [
-          "Siavash Taremi",
-          "Mahmoud Heidari",
-          "Seyed Mohammad Hossein Hashemi",
-          "Mohsen Hooshmand"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "Tabular Foundation Models for Weighted Regression and Classification",
-        "url": "https://arxiv.org/abs/2611.29789v1",
-        "publishedAt": "2026-11-22T21:47:48.000Z",
-        "summary": "Weighted regression and classification have applications ranging from missing-data analysis and causal inference to insurance pricing and particle physics. Existing weighted methods must be fitted and tuned on each dataset, which is costly for flexible nonlinear learners. Tabular foundation models avoid this cost. A Transformer is pretrained once on many simulated datasets and then predicts on a new dataset by in-context learning, using its observations as context without further fitting. Recent models such as TabPFN-3.5 surpass tuned conventional methods, but they cannot use sample weights. We develop a general pipeline that adapts such models to weighted prediction through weighted attention, a normalized weighted loss, and pretraining on synthetic weighted prediction tasks from missing-data problems. Applied to TabPFN-3.5, it yields WeightedPFN, which performs strongly on real datasets, both in missing-data problems and in out-of-distribution causal tasks, while running about as fast as linear baselines. We also establish a statistical theory showing that a suitably pretrained weighted Transformer attains the nonparametric minimax rate for weighted regression on new datasets without further fitting.",
-        "authors": [
-          "Junwen Xia",
-          "Yan He",
-          "Dehan Kong",
-          "Zhenhua Lin"
+          "Seongchan Kim",
+          "Soowon Son",
+          "Sangoh Kim",
+          "Hyunah Ko",
+          "Eunbeen Hong",
+          "Hyunkoo Lee",
+          "Sanghyun Lee",
+          "WonJun Moon",
+          "Kihong Kim",
+          "Dongyeon Son",
+          "Woongchan Nam",
+          "Seungryong Kim"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 31
+        "ageHours": 21
       },
       {
-        "title": "Constrained Diffusion from Binary Evaluations via Learned Doob h-Functions",
-        "url": "https://arxiv.org/abs/2611.29779v1",
-        "publishedAt": "2026-11-22T21:26:00.000Z",
-        "summary": "Conditional generation under constraints that can only be checked on a finished sample, such as a molecular property filter, remains challenging for diffusion models: most guidance methods require differentiable measurement operators, paired conditional data, or rollouts of the base model at every step. We present a framework grounded in the Doob $h$-transform that reduces conditional generation to learning a single function, the probability that a noisy sample denoises into the constraint set. We learn this function from binary clean-sample evaluations alone, by squared-error regression on forward-noised labels; the base model is frozen, one lightweight head is trained per constraint, and noisy-state classifier guidance arises as a special case. The exact guidance step fades where the constraint signal provably vanishes and carries a factor of the inverse probability across samples, which normalized guidance discards: with the schedule and mean step size held fixed, equalizing the step costs 17.0 to 18.5 points of constraint satisfaction on CIFAR-10 at comparable FID, across independently trained estimators. Guidance is more than 50$\\times$ cheaper per satisfying sample than rejection sampling at a 1.7% base rate, raises a Lipinski-type property filter on QM9 from 54.3% to 96.8%, and lifts satisfaction on Stable Diffusion 1.5 from 7.2% to 60.0% at one sixteenth of the cost of derivative-free selection, which reaches 9.0%. These results demonstrate that binary evaluations of clean samples are sufficient supervision for constrained generation across pixel, latent, and molecular diffusion.",
+        "title": "Let Vision-Language Models Generate Images through Their Representations",
+        "url": "https://arxiv.org/abs/2611.31237v1",
+        "publishedAt": "2026-11-23T18:59:32.000Z",
+        "summary": "Recent unified multimodal models aim to combine visual understanding and generation within a single model, yet effectively integrating the two capabilities remains challenging. Leveraging pretrained vision-language models offers a way to build on already learned multimodal knowledge, but making this knowledge effectively accessible to visual generation remains nontrivial. We find that a central challenge lies in the heterogeneous visual representations used for understanding and generation. To address this challenge, we introduce Integral, which converts a pretrained vision-language model into a unified multimodal model by constructing a shared visual representation space across the two capabilities. Integral implements this design through two complementary components. Abstraction Fusion constructs shared visual tokens by aggregating hierarchical representations from the frozen vision encoder, while Block-wise MoT introduces a lightweight generative stream that interacts with the vision-language model only at block boundaries. Our approach effectively preserves the pretrained understanding capability while extending it to strong visual generation. Controlled comparisons further demonstrate that sharing visual representations between understanding and generation substantially improves generative learning compared with using a separate visual representation space, despite comparable reconstruction fidelity. These results suggest that representations learned by pretrained vision-language models already provide an effective foundation for visual generation.",
         "authors": [
-          "Ssaumya Kammal Jaiswal",
-          "Mahfuza Farooque"
+          "JB Kim",
+          "Byungwoo Jeon",
+          "Kyungmin Lee",
+          "Hyeonmo Kang",
+          "Cheonbok Park",
+          "Shinyoung Joo",
+          "Jinwoo Shin",
+          "Jeonghoon Kim"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 31
+        "ageHours": 21
       },
       {
-        "title": "ComplexIF: A Challenging Multi-Turn, Multi-Constraint Instruction-Following Benchmark",
-        "url": "https://arxiv.org/abs/2611.29775v1",
-        "publishedAt": "2026-11-22T21:16:00.000Z",
-        "summary": "As frontier LLMs saturate existing instruction-following benchmarks, measuring further progress requires harder tests that remain faithful to real use. In practice, users often combine several constraints, add them at different turns of a conversation, and expect all of them to hold in the assistant's response. We introduce ComplexIF, a challenging benchmark for this setting, together with the automatic pipeline that generates it. The pipeline expands seed requests into multi-turn conversations, weaves constraints into their turns, and keeps only tasks that a strong model can solve, so difficulty can be raised by adding constraints or turns while every task stays solvable. ComplexIF's two splits test complementary sides of instruction following: a verifiable split of format constraints, checked by programs, and a rubric split of semantic instructions, such as a tone or an audience, checked with an LLM judge. Across 14 proprietary and open-weight models, even the strongest satisfies every constraint on fewer than half of the verifiable tasks, and no model leads on both splits.",
+        "title": "TowerBridge: Bridging the Dual-Encoder Modality Gap via Weight-Space Programming",
+        "url": "https://arxiv.org/abs/2611.31233v1",
+        "publishedAt": "2026-11-23T18:59:13.000Z",
+        "summary": "CLIP-style dual encoders map images and text through two separate towers into a shared embedding space, where the two modalities occupy distinct regions separated by a modality gap. Retrieval fails when wrong matches, or hard negatives, outrank the correct one, and the gap is the usual suspect. Yet removing it post hoc degrades retrieval on every CLIP checkpoint we test. We introduce a paired statistic that identifies directions where the two towers agree more on hard negatives than on matched pairs. Mildly attenuating these directions improves retrieval while largely preserving the gap. We arrive at this correction through weight-space programming: guided by the statistic, an LLM agent inspects both towers and writes closed-form weight edits without backpropagation. Free to edit any component, the agent improves COCO test retrieval on all 13 CLIP checkpoints and edits an output projection in 12 of the 13. We distill and refine its recurring correction into TowerBridge, a closed-form recipe motivated by a first-order analysis of the hard-negative margin. Computed in seconds from 25,000 labelled pairs, it requires no model-specific tuning and leaves the architecture and inference cost unchanged. TowerBridge improves COCO test retrieval by 16.8 RSUM and Flickr30k test retrieval by 6.6 on average across all 21 evaluated CLIP checkpoints, including 8 unseen by the agent, while limiting any drop in ImageNet zero-shot accuracy to 0.5 points. It also reduces hubness on all 21 checkpoints and improves retrieval on 4 of 5 dual encoders from other families.",
         "authors": [
-          "Zhichao Xu",
-          "Bingsen Chen",
-          "Yawei Wang",
-          "Tao Li",
-          "Haoyu Wang",
-          "Dan Roth",
-          "Vivek Srikumar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 31
-      },
-      {
-        "title": "S1Arena-MM: Which Multimodal Decisions Can Be Left to System 1?",
-        "url": "https://arxiv.org/abs/2611.29773v1",
-        "publishedAt": "2026-11-22T21:08:30.000Z",
-        "summary": "Perception systems often make discrete decisions: flag a hateful meme, predict whether a pedestrian will cross, detect a spoofed voice, or select the next move in a game. System-1 models, such as OneJev and Jev-Omni, read the media and return probabilities over the options in a single forward pass, while multimodal large language models (MLLMs) generate text. Which multimodal decisions can System-1 models handle, and where do MLLMs perform better? We introduce S1Arena-MM, a benchmark that gives every model the same decision requests and scores the probabilities it returns. It contains 51,060 questions across 94 tasks with image, video, and audio input, drawn from 94 public datasets and three program-generated ones. It also includes 102 closed-loop game environments that a model plays from screenshots; in real-time mode, the game continues while the model decides. We evaluate 33 open models: 12 System-1 models and 21 MLLMs read at the answer token. On static decisions, the best System-1 model leads the best MLLM by 4.9 percentage points on images and is within one point of it on video and audio. Post-training for decisions mainly improves the probabilities: on video, a System-1 model has a lower Brier score than the MLLM that it is post-trained from in 10 of 12 pairs. With up to 2,048 thought tokens per question, the most accurate MLLMs pass the best System-1 models only slightly, and thinking raises the Brier score of most MLLMs. Closed loops separate the models: three System-1 models built on a 27B MLLM reach 22.0-33.3% progression in BALROG, and no other model exceeds 9.7% with thinking off. In real-time GameWorld, latencies of up to 1.1 s per decision cause no measurable loss of progress for System-1 models. Code and data: https://github.com/zhaoyang02/S1Arena-MM.",
-        "authors": [
-          "Lang Lin",
-          "Tianyu Chen",
-          "Yi Gu",
-          "Yang Zhao",
-          "Xinran Song",
-          "Xinyang Liu",
-          "Jianpeng Cheng",
-          "Mingyuan Zhou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 32
-      },
-      {
-        "title": "Into My Arms: Structured reinforcement learning for autonomous transport of objects and humans",
-        "url": "https://arxiv.org/abs/2611.29771v1",
-        "publishedAt": "2026-11-22T21:03:09.000Z",
-        "summary": "Whole-body humanoid manipulation remains bottlenecked by high-dimensional state-action spaces, contact-rich environments, and long task horizons. This trilemma is a challenge that state-of-the-art reinforcement learning (RL) methods are yet to resolve reliably. We address it with three contributions that add just enough structure to guide exploration: Sparse Interaction Edges (SIE) for whole-body manipulation, Interaction Gated Transport (IGT) for sustained transport over long horizons, and a Hinted Object Path (HOP) that resolves collision and search complexity bottlenecks. Across all three, the policy remains free to discover its own manipulation strategy. The method generalises from rigid object to human transport. As a flagship demonstration, we show, to our knowledge, the first bed-to-wheelchair transfer of a medical mannequin by a humanoid robot completed with no human intervention during execution. In the domain of human transfer, we show that a single policy can adapt across substantial variations in body mass, size, and random force perturbations, all while training on a single GPU in under an hour. Our approach offers a pathway to fully RL-driven humanoid manipulation, enabling assistive robots that can help humans. Website: https://elle-miller.github.io/into_my_arms",
-        "authors": [
-          "Elle Miller",
-          "Reem Almheiri",
-          "Takuma Tsukakoshi",
-          "Ben Sanati",
-          "Tamon Miyake",
-          "Yushi Wang",
-          "Namiko Saito",
-          "Shigeki Sugano",
-          "Tetsuya Ogata",
-          "Rika Antonova",
-          "Oisin Mac Aodha",
-          "Sethu Vijayakumar"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Policy",
-        "ageHours": 32
-      },
-      {
-        "title": "When Simpler Beats Learned: Dual-Weighted Sampling vs. Machine Learning for the Pricing Subproblem in Graph Coloring",
-        "url": "https://arxiv.org/abs/2611.29769v1",
-        "publishedAt": "2026-11-22T21:01:31.000Z",
-        "summary": "The graph coloring problem can be solved to optimality by branch-and-price (B&P), but its performance hinges on the column generation (CG) step, where each iteration requires solving a maximum weight independent set (MWIS) pricing problem. The state-of-the-art machine-learning (ML) pricing heuristic follows a prediction-sampling paradigm: a learned model scores each vertex of a graph, and independent sets are sampled from the induced distribution. We observe, however, that the scoring procedure does not need to be learned, and critically assess the role of ML by replacing the learned scores with the dual solution of the restricted master problem, resulting in Dual-Weighted Sampling, a proposed lightweight alternative that requires no feature engineering or training. Within a unified CG and B&P framework that varies only the pricing oracle, Dual-Weighted Sampling outperforms MLPH, hand-crafted heuristics, and exact solvers on the established graph coloring benchmark in both runtime and solution quality. In particular, it remains competitive on the DIMACS random family, where MLPH was shown strongest in the original evaluation, while achieving more than a two-fold speedup in CG runtime on recursive-sparse and real-world graph families.",
-        "authors": [
-          "Nikolai Antonov",
-          "Přemysl Šůcha",
-          "Mikoláš Janota",
-          "Jan Hůla"
+          "Hani Alomari",
+          "Md Atabuzzaman",
+          "Chris Thomas"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 32
+        "ageHours": 21
       },
       {
-        "title": "Estimating a Transition Point from Gibbs and Ground States",
-        "url": "https://arxiv.org/abs/2611.29768v1",
-        "publishedAt": "2026-11-22T21:00:58.000Z",
-        "summary": "We study how observed many-body system size affects the number of state copies needed to estimate a zero-temperature first-order transition point. The unknown Hamiltonian has bounded, translation-invariant on-site and nearest-neighbour interactions on a 3D cubic lattice with local dimension three. The field coupling is known, and all models share a known boundary field penalizing one local level. The limiting order parameter is uniformly separated across the transition. Each query returns an independently prepared Gibbs or ground state at an adaptive field and system size.\n  For error $ε$ and fixed confidence, we prove an exponential separation between two size caps at the same temperature. There are absolute constants $0<c_0<C$ and $c_1>0$ such that, at inverse temperature $β=c_1/ε$, restricting side lengths to $L\\le c_0/ε$ requires $\\exp(Ω(1/ε))$ copies in worst-case expectation, even with collective measurements. Allowing $L\\le C/ε$ permits $O(\\log^2(1/ε))$ copies and $O(ε^{-3})$ total spins, using local measurements and polynomial classical postprocessing. The minimax expected total spin count is $Θ(ε^{-3})$ uniformly for $β\\ge c_1/ε$. At fixed positive temperature it is $Θ_β(ε^{-2})$, attained from one- and eight-site Gibbs states followed by exponential classical computation. For ground-state copies it is $Θ(ε^{-3})$.\n  The lower bound uses a three-state ferromagnet whose boundary suppresses the sector carrying transition information. A spanning-forest argument and edge-boundary counting control its Gibbs weight uniformly over fields and allowed sizes, and a trace-distance hybrid argument handles adaptive learners with quantum memory. The upper bound combines finite-volume free-energy estimates, concavity and local order-parameter measurements.",
+        "title": "Language Models Steer on Injected Uncertainty Tokens, but Fail to Self-Monitor In Situ",
+        "url": "https://arxiv.org/abs/2611.31228v1",
+        "publishedAt": "2026-11-23T18:58:52.000Z",
+        "summary": "Prompting language models to verbalize stepwise numerical confidence during generation is an increasingly popular approach for triggering backtracking and error correction in agentic reasoning. This strategy presupposes two capabilities: (1) in-situ monitoring fidelity (does confidence drop when an error occurs?) and (2) downstream steering control (does an uncertainty token causally steer the model to repair its error?). We evaluated four open-weights models (Qwen2.5-7B, Llama-3.1-8B, Mistral-7B, and Phi-4, 14.7B) across 15,200 math benchmark attempts, isolating 2,017 reasoning errors within each model's capability frontier. Applying 27,568 counterfactual continuations across these failure points, we demonstrate a consistent decoupling between monitoring and control.\n  On monitoring, all four models fail to detect their own errors. Verbalized confidence does not distinguish mistake steps from sound reasoning, yielding near-chance within-position AUROCs between 0.500 and 0.561. Even at a model's first reasoning error, trajectory confidence remains saturated at 95.1% to 99.9%, with noticeable drops ($\\ge 10$ points) appearing on fewer than 9% of errors in Llama and under 1.6% in the other three models. In contrast, models respond readily to external uncertainty: injecting a low-confidence tag (10%) at the error step significantly increases downstream correction across all models (+3.7 to +22.5 points over format-matched 95% certainty; all $p \\le 0.0022$), reaching up to 38.5% under active rethinking instructions. However, injecting doubt onto already-correct steps causes models to discard valid reasoning, reducing solve rates by up to 22.8 points. Inference-time self-correction is thus bottlenecked by in-situ error detection rather than downstream repair capacity: models readily steer toward recovery when prompted with doubt, yet fail to self-monitor during generation.",
         "authors": [
-          "Yuhao Cai",
-          "Zhenzhang Li"
+          "Daniel Theron"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "How Far Can Linear Go? BiPert, a Unified Framework for Single-Cell Perturbation Modelling",
+        "url": "https://arxiv.org/abs/2611.31227v1",
+        "publishedAt": "2026-11-23T18:58:32.000Z",
+        "summary": "Understanding how genetic perturbations affect cellular behaviour is essential for studying gene function and regulatory mechanisms. Large-scale CRISPR screens measure these effects across thousands of genes, but cover relatively few cellular contexts. Predicting perturbation responses in unseen cell types and identifying perturbed genes from their transcriptional effects therefore remain challenging. Here, we show that both tasks can be addressed through a common linear decomposition of transcriptional responses into shared and perturbation-specific components. Building on this principle, we introduce BiPert, a simple linear framework for both forward perturbation prediction and inverse identification. For forward prediction, BiPert outperforms existing methods that use no external biological knowledge when predicting gene expression changes in unseen cell lines. Its few-shot extension, BiPert-FS, adapts to new cell lines using as few as ten measured perturbations. For inverse identification, BiPert-ID identifies perturbed genes from single-cell expression profiles, outperforming deep-learning methods in unseen cell lines and donors. We further show that perturbations whose effects transfer more consistently across cellular contexts are also easier to identify, even after controlling for perturbation effect size. Together, these results establish a connection between perturbation transfer and identification, and demonstrate that simple linear models provide strong, interpretable baselines for both tasks.",
+        "authors": [
+          "Abhishek Sharma",
+          "Aleksej Zelezniak"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 32
+        "ageHours": 21
       },
       {
-        "title": "Sánchez, Feijóo, or Abascal? Speaker Attribution and Ideological Congruence in LLM Personas Reading Posts on X of the Leaders of the Three Main Parties of the 29N General Election in Spain",
-        "url": "https://arxiv.org/abs/2611.29765v1",
-        "publishedAt": "2026-11-22T20:55:14.000Z",
-        "summary": "Source cues are central to political communication, yet reception studies with large language model (LLM) personas as synthetic audiences have not tested whether personas respond to who speaks and not only to what is said. With Spain's general election of 29 November 2026 in mind, we run a speaker-attribution experiment using 1,075 anonymised X posts by the leaders of PSOE, PP and VOX on four topics (the economy and employment, household costs, immigration and corruption) and 791 distinct value-grounded, LLM-generated personas. Each post was assigned to 300 topic-selected persona profiles, 150 grounded in the Inglehart-Welzel cultural map and 150 in Moral Foundations Theory, under four conditions: no author, Sánchez, Feijóo or Abascal, yielding 322,470 complete persona-post quartets. Naming any leader lowered support for identical text, with the penalty for Abascal nearly twice as large as those for Sánchez and Feijóo. The penalty follows the persona's elicited left-right self-placement (ideological congruence): left personas spare Sánchez and right personas spare Feijóo, although ideology was never in the message-evaluation prompt. Corruption posts were penalised under every name, whereas on other topics the ideologically closest leader generally produced little or no penalty. The leader order matches public opinion in 48 CIS barometers (2022-2026) in all three groups and the sign of all twelve differences, but fits barometers before the model's 2024 knowledge cutoff better than recent ones. Our findings demonstrate that LLM personas evaluate political speakers through systematic, value-congruent priors: however, while they replicate human candidate rank-orders across survey barometers, this alignment is ordinal rather than quantitative, highlighting their utility for controlled source-effect experiments though not as substitutes for empirical public opinion surveys.",
+        "title": "Self-Supervised Dataset Distillation via Mutual Information Maximization",
+        "url": "https://arxiv.org/abs/2611.31225v1",
+        "publishedAt": "2026-11-23T18:58:27.000Z",
+        "summary": "Dataset distillation (DD) aims to compress a large dataset into a small synthetic one that remains effective for training neural networks. Despite its success in supervised learning, DD remains underexplored in self-supervised learning (SSL), where distilled data must preserve the information needed to learn representations that remain consistent across augmentations. To bridge this gap, we introduce Mutual Information Prototype Alignment (MIPA), an efficient SSL dataset distillation approach that optimizes synthetic images to preserve augmentation-invariant information. Specifically, MIPA treats synthetic images as learnable prototypes and uses a frozen encoder to assign real samples to them based on feature similarity. A synthetic dataset that preserves such augmentation invariance should yield stable prototype assignments across multiple augmented views of the same real image. MIPA encourages this by maximizing mutual information between cross-view assignments while avoiding trivial solutions in which all real samples are assigned to only a few synthetic prototypes. Evaluations on image classification benchmarks show that synthetic data generated by MIPA yield higher-quality representations than existing distillation approaches while reducing time and storage demands during distillation.",
         "authors": [
-          "Víctor Yeste",
-          "Candida Maria Greco",
-          "Paolo Rosso",
-          "Andrea Tagarelli"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.CL",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 32
-      },
-      {
-        "title": "Selecting Stable Sampling Dynamics for Compositional Diffusion: A Feynman-Kac Weight Reduction",
-        "url": "https://arxiv.org/abs/2611.29764v1",
-        "publishedAt": "2026-11-22T20:52:46.000Z",
-        "summary": "Given $K$ separately trained diffusion models, how should one sample from a $β_k$-weighted product of their terminal laws without jointly retraining the experts? Existing Feynman--Kac constructions provide many weighted stochastic differential equations (SDEs) with the correct target marginal. The consequential question is how to select useful proposal dynamics among them. We study an explicit family of weighted diffusions that realizes the same product-of-intermediate-experts trajectory. A scalar parameter $λ$ controls how strongly the proposal drift follows the composed expert score, while an additional Langevin component can be varied independently. Writing $B=\\sum_{k=1}^{K}β_k>0$, we identify the distinguished choice $λ=1/B$. At this value, the aggregate squared-score term in the instantaneous Feynman--Kac log-weight rate cancels exactly. For positive expert exponents, the remaining score-disagreement contribution is non-positive. We call this structural cancellation Feynman--Kac reduction. Under bounded-divergence assumptions, it yields an upper bound on the instantaneous unnormalized log-weight rate for all $λ\\leq 1/B$. For linear diffusion protocols with compactly supported expert data, $λ=1/B$ yields two-sided bounds at every nonterminal time, for exponents of either sign. A corresponding result holds for a single expert under the same divergence assumption. In these two-sided settings, the selected value is unique within the specified family in a universal worst-case sense. Experiments on Gaussian mixtures and molecular sampling compare the analytically predicted stability with actual sampling quality, including instances in which parameter choices different from $λ=1/B$ perform better empirically.",
-        "authors": [
-          "Sunjin Kim",
-          "Sungsoo Ahn",
-          "Michael Chertkov"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 32
-      },
-      {
-        "title": "probly: Uncertainty-Aware Machine Learning",
-        "url": "https://arxiv.org/abs/2611.29762v1",
-        "publishedAt": "2026-11-22T20:51:06.000Z",
-        "summary": "As machine learning systems are increasingly deployed in real-world applications, the question of how to represent and quantify uncertainty has moved from a methodological side issue to a central concern. In practice, however, making a model uncertainty-aware is still surprisingly difficult: relevant tools tend to be scattered across libraries, each tied to a particular framework and a particular approach to modeling uncertainty, and the choice of representation, quantification, and evaluation is typically left to the user without much guidance. In this paper, we present probly, a Python package that addresses these issues in a single, modular framework. probly offers (i) lightweight transformations that turn existing models into uncertainty-aware ones, currently supporting PyTorch, scikit-learn, and Flax, (ii) several representations, including second-order distributions, credal sets, and conformal prediction, (iii) the corresponding quantification measures, and (iv) a number of evaluation protocols, which can be combined more or less arbitrarily. Using probly, we conduct a benchmark study on three standard tasks --- selective prediction, out-of-distribution detection, and active learning. In addition, and unlike existing benchmarks, we evaluate suitable methods on first-order data, i.e., datasets for which the target itself is a distribution over outcomes. We further illustrate the flexibility of the package on a number of less standard case studies, including large language models, graph neural networks, and data streams. The package is publicly available at https://github.com/pwhofman/probly.",
-        "authors": [
-          "Paul Hofman",
-          "Clemens Damke",
-          "Timo Löhr",
-          "Santo M. A. R. Thies",
-          "Alireza Javanmardi",
-          "Valentin Margraf",
-          "Jakub Paplham",
-          "Yusuf Sale",
-          "Eyke Hüllermeier",
-          "Maximilian Muschalik"
+          "Mohammad Hossein Moslemi",
+          "Mahdi Beitollahi",
+          "Zhimin Mei",
+          "Jiale Cai",
+          "Bissan Ghaddar",
+          "Boyu Wang"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 32
+        "ageHours": 21
+      },
+      {
+        "title": "Agentic AI for Intent Management and Control in Autonomous Communication Networks",
+        "url": "https://arxiv.org/abs/2611.31223v1",
+        "publishedAt": "2026-11-23T18:57:32.000Z",
+        "summary": "Artificial intelligence (AI)-driven automation will help future mobile networks translate high-level network intents into concrete network optimization or control actions. However, existing approaches often focus on intent management and orchestration, leaving the adaptation of underlying network optimization and control functions largely unaddressed. This article proposes a triadic agentic AI framework that co-designs intent management and intent fulfillment through three agents: an interpreter, powered by a language model, that translates and refines intents into machine-readable optimization templates; an optimizer that adapts controller policies to intent specifications; and a controller that performs fast decision-making. We discuss the design space of each agent and how the workflow can be embedded across network architectural domains. Finally, we develop a concrete realization combining a language-model interpreter with Bayesian optimization for the optimizer and multi-objective reinforcement learning for the controller, and evaluate it in a radio resource management case study for differentiated connectivity. Results demonstrate how the agentic AI framework can connect high-level intents with runtime network control, showing adaptability of intent specifications and control policies to service requirements and changing network conditions.",
+        "authors": [
+          "Burak Demirel",
+          "Yu Wang",
+          "Pablo Soldati"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "CTLink: A Text-Prompted Segmentation Model for Linking Radiology Report Findings to 3D Chest CT Scans",
+        "url": "https://arxiv.org/abs/2611.31222v1",
+        "publishedAt": "2026-11-23T18:57:26.000Z",
+        "summary": "Radiology reports describe findings in text only, without visually marking them on the scan, so readers cannot directly see which abnormality each reported finding refers to. We introduce CTLink, a text-prompted 3D segmentation model that segments findings described in a chest CT report. CTLink was trained on 4123 noncontrast chest CT scans with 9547 segmented report findings, including ReXGroundingCTv2, a newly annotated dataset of 1134 scans and 1895 findings with every instance of each finding segmented. On the 200 ReXGroundingCT validation scans, CTLink achieved a hit rate of 0.816, an instance F1 score of 0.456, and a mean Dice score of 0.400, compared with 0.533, 0.175, and 0.234 for VoxTell, a publicly available text-prompted segmentation model (P < .001 for all). On the test set of the MICCAI 2026 ReXGrounding challenge, an ensemble of seven CTLink models achieved the highest hit rate (0.782) and instance F1 score (0.386) of all 48 participating teams. On 50 test scans segmented twice by independent radiologists, CTLink matched or exceeded inter-rater agreement. Diffuse non-focal findings remained the main limitation, partly because their extent is outlined inconsistently even between radiologists. The CTLink model weights are available at https://huggingface.co/rajpurkarlab/CTLink, and the dataset at https://huggingface.co/datasets/rajpurkarlab/ReXGroundingCT.",
+        "authors": [
+          "Mohammed Baharoon",
+          "Sung Eun Kim",
+          "Mahmoud Hussain Alabbad",
+          "Lucas Bijnens",
+          "Ali Piracha",
+          "Reem Alwasiah",
+          "Talal Yahyan",
+          "Abdulrahman Alamoudi",
+          "Mashael Alshehri",
+          "Rayan Alsager",
+          "Hannah Hancock",
+          "Anna M. Hunkemöller",
+          "Peter Youssef",
+          "Mona A. Alhammad",
+          "Afnan Aljumayan",
+          "Brecht Van Berkel",
+          "Eric Bijnens",
+          "Saud Alhussain",
+          "Maarten Steyvers",
+          "Rolf Symons",
+          "Bryan Eelen",
+          "Ayed Alaklubi",
+          "Maha Buraykan Alshammari",
+          "Amirah Fahad Alshammeri",
+          "Tomas Gilvydis",
+          "Ibrahim AlTurki",
+          "Monerah Almohideb",
+          "Ali Alburkani",
+          "Shahad Alhomaiani",
+          "Fatima Jabali",
+          "Abdulrhman Aljouie",
+          "Daesung Kim",
+          "Junha Im",
+          "Michael Moritz",
+          "Hassan R. Alomaish",
+          "Pranav Rajpurkar"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "LeJEPA Features Are Not Isotropic, and Should Not Be",
+        "url": "https://arxiv.org/abs/2611.31216v1",
+        "publishedAt": "2026-11-23T18:56:04.000Z",
+        "summary": "The SIGReg term in LeJEPA regularizes features to have an isotropic Gaussian distribution. Our first result is to show that this regularizer, in practice, cannot achieve its goal. We design a modified regularizer to enforce the objective better. This leads to slightly improved performance. For example, on ImageNet-100, our modified regularizer reaches the final accuracy of SIGReg in 1.3$\\times$ fewer epochs. Our second result argues that self-supervised encoders should not have isotropic Gaussian features. We show that the alignment term in LeJEPA conflicts with SIGReg, because it couples the magnitude of the features with their directions. In contrast, isotropic Gaussian features would entail independent magnitude and directions. Features obtained with LeJEPA are, in fact, not isotropic. So LeJEPA has two issues. Its regularizer is weak, and the isotropic Gaussian target is too strict. Our third result is about reformulating the isotropic Gaussian regularizer to enforce only the marginal distributions of the magnitude and direction, without enforcing independence. This leads to a simple regularization term, PolarReg, that can be optimized reliably across many different datasets, batch sizes and embedding dimensions without any hyper-parameter changes. On ImageNet-1k, our technique matches the accuracy of LeJEPA and its variants in 4.7$\\times$ fewer epochs. It improves the final accuracy by 1.8 points.",
+        "authors": [
+          "Richeek Das",
+          "Pratik Chaudhari"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Seeking in Space: Benchmarking Purposeful Active Exploration of Vision-Language Models for Spatial Reasoning",
+        "url": "https://arxiv.org/abs/2611.31215v1",
+        "publishedAt": "2026-11-23T18:55:44.000Z",
+        "summary": "Humans explore unfamiliar spaces with purpose, deciding where to look until they have gathered the evidence a spatial question requires. However, can vision-language models (VLMs), which reason increasingly well over curated images and videos, also seek in space when the evidence is not handed to them? We present ActSpace-Bench, a benchmark of 994 questions across 234 exploration episodes in 72 real-scanned indoor scenes, where a model starts from a single view, navigates real captured frames, and must gather evidence before answering. To assess whether such exploration is purposeful, we introduce a controlled evaluation protocol that fixes each model as the reasoner and compares its own exploration against a same-budget random walk and an oracle route, separating evidence seeking from spatial reasoning. Every question is verified to require exploration and answered from 3D annotations, masked-evidence questions test whether models know when to abstain, and over 95% of sampled questions are confirmed correct by human verification. Evaluations of 23 proprietary, open-weight, and spatially specialized VLMs reveal that the strongest models do seek evidence with purpose but lose much of it to limited memory, whereas weaker and specialized models explore no better than a random walk or fail to reason over the evidence they are given, pointing to memory and evidence-grounded reasoning as the next targets for active spatial intelligence.",
+        "authors": [
+          "Xiwei Liu",
+          "Yulong Li",
+          "Xuhui Li",
+          "Xinlin Zhuang",
+          "Zhixiang Lu",
+          "Haolin Yang",
+          "Jianxu Chen",
+          "Yifan Lu",
+          "Zhiran Zhang",
+          "Yutong Xie"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Flood forecasting using a physics-guided conditional denoising diffusion probabilistic model",
+        "url": "https://arxiv.org/abs/2611.31212v1",
+        "publishedAt": "2026-11-23T18:55:29.000Z",
+        "summary": "High-resolution flood forecasting with full two-dimensional shallow water equation (SWE) solvers remains computationally expensive, even on GPUs. We develop a conditional denoising diffusion probabilistic model (DDPM) that forecasts the evolution of 30 m water-depth fields over a four-day horizon for the Des Plaines River watershed, Illinois. The model is trained on SynxFlow SWE simulations of 113 historical storms observed across twelve Midwestern states (2003-2024), each under three antecedent-wetness scenarios, and can optionally be conditioned on coarse 100 m or 150 m hydrodynamic simulations. Because reverse diffusion is stochastic, every forecast is a 20-member ensemble drawn from the same trained model. Coarse conditioning reduces the four-day mean water-depth RMSE of the ensemble mean from 0.170 m to 0.054 m (100 m) and 0.048 m (150 m). The coarser 150 m conditioning also gives the best critical success index (0.839), false alarm ratio, CRPS and Brier score at lower cost, so finer conditioning does not guarantee better skill. Averaging members reduces error by 5-11% relative to a single realization, and the ensemble provides spatially explicit exceedance probabilities, although the ensembles are under-dispersive (spread-to-error ratios 0.35-0.73). On a single GPU, a four-day forecast over 26 non-overlapping patches is 7.8x, 11.0x and 16.3x faster than the 30 m simulation for the 100 m, 150 m and unconditioned configurations, and projected speedups for a 14-day forecast reach 12-49x for one member and 48-58x for 20 members. Physics-guided diffusion models are thus promising probabilistic surrogates for regional-scale flood forecasting.",
+        "authors": [
+          "Omar Sallam",
+          "David Coe",
+          "Jeremy Feinstein",
+          "Hugo Torres",
+          "Sofia Sahagun Covarrubias",
+          "Eugene Yan"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 21
+      },
+      {
+        "title": "Verifying the Outputs of PDE Solvers: From Finite Elements to Neural Surrogates",
+        "url": "https://arxiv.org/abs/2611.31211v1",
+        "publishedAt": "2026-11-23T18:55:06.000Z",
+        "summary": "Physics simulation outputs increasingly come from solvers that no expert inspects, such as third-party packages in automated pipelines, programs written by large language models (LLMs), and learned surrogates. In earlier work on cardiac pulsed field ablation, we proposed that solvers return a certificate with their answers. The certificate consists of an admissible potential and an exactly charge-conserving current, and a small independent checker turns it into guaranteed error bounds against a written specification of the physics. Here, the same checker verifies the outputs of other solvers on the same problem. Specifically, FEniCSx computes both fields and receives the same bounds as our own solver. Five plausible bugs in a correct solver, one of them about 0.2% from the true impedance, all converge and pass a grid convergence study, yet the certificate rejects or refutes all five. Of three solvers written by LLMs, one is correct and certified to 0.1%, and one never solves the equation but converges. Neural networks that predict the coefficients of a reduced basis emit admissible fields and receive valid per-prediction bounds, at most 0.0021% wide inside their training range and 0.3-25% wide outside it, where 90% conformal intervals cover none of 14 tests. Untuned Fourier neural operators with free nodal outputs receive valid but uninformative bounds. On a uniform grid, interpolation onto the certificate grid limits them, and on the certificate grid, thin cells turn small nodal errors into large energy errors. Energy-norm training narrows the certified interval tenfold, and projecting the nodal-loss outputs onto the reduced basis narrows it by two to four orders of magnitude, still uninformative. The guarantee concerns the stated model and holds for any output, wherever its input lies. It is informative only when the output is accurate in energy on a grid that resolves the problem.",
+        "authors": [
+          "Konstantinos Dovelos"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Models",
+        "ageHours": 21
       }
     ],
     "news": [
@@ -315,7 +344,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 18
       },
       {
         "title": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
@@ -329,7 +358,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Research",
-        "ageHours": 7
+        "ageHours": 18
       },
       {
         "title": "Elon Musk and others rejoice as Jensen Huang is reinstated at Nvidia amid scandal",
@@ -343,7 +372,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 7
+        "ageHours": 18
       },
       {
         "title": "Megaspeed, the company at the center of the Jensen Huang scandal, appears headed for a US blacklist",
@@ -357,7 +386,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 7
+        "ageHours": 18
       },
       {
         "title": "OpenAI and Cisco introduce Shirudo",
@@ -369,7 +398,7 @@
         "feed": "OpenAI News",
         "provenance": "https://openai.com/news/rss.xml",
         "category": "General",
-        "ageHours": 7
+        "ageHours": 18
       },
       {
         "title": "Many languages, one common neural code",
@@ -383,7 +412,7 @@
         "feed": "MIT News AI",
         "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
         "category": "Models",
-        "ageHours": 7
+        "ageHours": 19
       },
       {
         "title": "Nvidia employees greet Jensen Huang like a hero as he returns to company&#8217;s HQ",
@@ -397,7 +426,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 8
+        "ageHours": 19
       },
       {
         "title": "Google Search&#8217;s AI Mode can now tap into Drive and Wallet for more personalized responses",
@@ -411,7 +440,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 9
+        "ageHours": 21
       },
       {
         "title": "Jensen Huang scheduled to testify next week in Senate following reinstatement as Nvidia CEO",
@@ -425,7 +454,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 11
+        "ageHours": 22
       },
       {
         "title": "Amazon snaps up Decart&#8217;s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
@@ -439,7 +468,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 11
+        "ageHours": 23
       },
       {
         "title": "Finding faster quantum algorithms with agents and formal verification",
@@ -451,7 +480,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Research",
-        "ageHours": 12
+        "ageHours": 23
       },
       {
         "title": "Jensen Huang isn&#8217;t out of the woods yet",
@@ -465,14 +494,14 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 12
+        "ageHours": 23
       }
     ],
     "threads": []
   },
   "summary": {
     "totalItems": 24,
-    "last24h": 12,
+    "last24h": 24,
     "topCategories": [
       {
         "name": "Research",
@@ -484,10 +513,10 @@
       },
       {
         "name": "Models",
-        "count": 3
+        "count": 4
       },
       {
-        "name": "Policy",
+        "name": "Infrastructure",
         "count": 1
       }
     ]
