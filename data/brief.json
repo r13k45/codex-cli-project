@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T20:05:54.202Z",
+  "generatedAt": "2026-11-24T04:43:16.793Z",
   "methodology": {
     "title": "Curated source-first AI intelligence brief",
     "summary": "This dataset is generated from public source feeds. Items are linked back to their original URLs, timestamped, and auto-categorized for triage rather than treated as infallible truth.",
@@ -85,233 +85,320 @@
   "sections": {
     "research": [
       {
-        "title": "Optimal Linear Regression Without a Variance",
-        "url": "https://arxiv.org/abs/2611.27983v1",
-        "publishedAt": "2026-11-20T18:58:45.000Z",
-        "summary": "We study high-probability linear regression in the infinite variance regime, wherecthe regression noise has only a finite conditional $α$-moment $ν$ for some unknown $α\\in(1,2)$, and the covariates may only have finite moments up to a given order (e.g., 4th moment). We give a black-box reduction that converts finite-variance regression procedures into weak-moment procedures. The reduction is based on empirical residual pruning and is agnostic to the moment exponent, the noise scale, the covariance, and the design moment. Under a finite fourth-moment condition on the covariates, any finite-variance subroutine attaining the sub-Gaussian rate yields the following when the number of samples $n$ is above a suitably defined threshold: Without knowing $α$ or $ν$, we have with probability at least $1-δ$ that $ \\|\\widehatθ-θ^*\\|_Σ\n  \\lesssim_α\n  ν^{1/α}\n  \\big(\\frac{d+\\log(1/δ)}{n}\\big)^{\\frac{α-1}α}, $ where $d$ is the dimension, $Σ$ is the covariate covariance matrix, and $\\|v\\|_Σ:=(v^\\topΣv)^{1/2}$. We further prove a matching minimax lower bound that holds under the same conditions. The reduction is computationally efficient whenever the finite-variance subroutine is. We also obtain a distribution-free prediction guarantee under a bounded raw $α$-moment assumption on the response, and give an analogous $α$-agnostic reduction for mean estimation.",
+        "title": "When Does Fine-Tuning Beat Prompting for Qiskit-to-CUDA-Q Translation? An Execution-Verified Study",
+        "url": "https://arxiv.org/abs/2611.29793v1",
+        "publishedAt": "2026-11-22T21:50:27.000Z",
+        "summary": "Moving quantum code from Qiskit to NVIDIA CUDA-Q is a practical adoption cost that language models are starting to automate. We ask whether a small open model can learn this translation, and how to measure it so that the result can be trusted. Both programs can be executed and their state vectors compared, so a kernel counts as correct only if it prepares the same state as the Qiskit reference (fidelity >= 0.999), with no text matching and no LLM judge. We build a 640-task benchmark with three test sets (larger circuits, an unseen circuit family, an unseen Qiskit coding style) and a QuantumKatas regression probe, and we test the evaluator before training. Measurement counts miss every phase-only error; a surface rule-based translator solves two of three original splits (text substitution); a converter that executes the Qiskit input and maps the circuit solves all 640 tasks -- so the benchmark measures source-level translation, not whether a circuit can be ported after running it. No base model emits a valid CUDA-Q kernel zero-shot. On Nemotron 3 Nano 4B, LoRA reaches 83.9%, tying a 4-shot prompt (83.1%), but generalizes worse to unseen style (48.5% vs. 65.5%) and cuts QuantumKatas from 23.8% to 8.9%; on Qwen2.5-Coder 7B, LoRA beats the prompt overall (92.0% vs. 82.8%) and on unseen style (78.5% vs. 65.0%), and on the 1.5B model as well, so whether fine-tuning pays off depends on the base model, while the Qiskit regression appears in all three. Mixing two replay formats is the best mitigation trade-off (84.4% translation, Katas 21.5%). On 48 parametric functions that must become kernels with arguments -- where executing the input cannot yield a parametric kernel -- models reach up to 83%; on 27 real QED-C kernels, every model scores 0%. Language models can do source-level translation of simple parametric code, but not yet of real programs.",
         "authors": [
-          "Artin Tajdini",
-          "Jasper C. H. Lee",
-          "Jonathan Scarlett",
-          "Kevin Jamieson"
+          "Ana Paula Appel"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 73
+        "category": "Research",
+        "ageHours": 31
       },
       {
-        "title": "A Methodologically Rigorous Benchmark of Linear Regression,RNN, and LSTM for S&P 500 Forecasting:Identifying Sources of Performance Inflation in Financial DeepLearning",
-        "url": "https://arxiv.org/abs/2611.27978v1",
-        "publishedAt": "2026-11-20T18:57:15.000Z",
-        "summary": "This study examines one-day-ahead forecasting of the S&P 500 closing level using a 2006-2025 dataset that includes fundamental price data, macroeconomic indicators, and engineered technical features. We benchmark three model families, namely linear regression, vanilla recurrent neural networks (RNN), and long short-term memory networks (LSTM), within a unified preprocessing and chronological evaluation pipeline. A central contribution of this work is a methodological audit of common practices in the deep-learning-for-stock-prediction literature. We identify three sources of result inflation that frequently appear in published methodologies: wavelet-denoised evaluation targets, the absence of a naive persistence baseline, and best-of-N replicate reporting. We then re-evaluate all model families under a corrected protocol that controls for each. Performance is reported using root mean squared error, mean absolute percentage error, and the Pearson correlation coefficient, averaged across N = 30 independent replicates per configuration. We compare models on accuracy, stability across replicates, and architectural depth sensitivity, using the naive persistence forecast (predicting today's close as tomorrow's close) as a primary baseline against which all candidate models must demonstrate improvement.",
+        "title": "A Cascaded Framework with a Cross-Attention-Guided Mamba-CNN Model for Pre- and Post-Treatment Glioma Segmentation",
+        "url": "https://arxiv.org/abs/2611.29792v1",
+        "publishedAt": "2026-11-22T21:50:14.000Z",
+        "summary": "Accurate glioma segmentation is vital for diagnosis and follow-up, but manual segmentation is time-consuming, subjective, and variable across interpreters. Gliomas are heterogeneous in size, shape, and location. Deep learning has therefore emerged as a potential solution. CNNs excel at local features but may struggle with long-range dependencies, whereas Vision Transformers capture global context efficiently but incur higher computational complexity. Most previous studies focused on pre-treatment gliomas; post-treatment cases with resection cavities (RCs) remain less explored. This study proposes a Cross-Attention-Guided Mamba-CNN (CMC-Seg) model within a cascaded framework for pre- and post-treatment diffuse glioma segmentation, aiming to balance accuracy and computational cost. Experiments used BraTS 2025 mpMRI of diffuse glioma patients. After preprocessing, a coarse segmentation model extracted tumor-centered patches, which were fed to CMC-Seg for fine-grained segmentation. CMC-Seg was compared with 3D U-Net, SegResNet, SwinUNETR, UNETR, nnFormer, and SegMamba. On the test set, CMC-Seg achieved the highest mean Dice (81.20%) and non-enhancing tumor core (NETC) Dice (77.09%). It also achieved an RC Dice of 78.63% and the lowest 95% Hausdorff distance (HD95; 4.39 mm). Results were comparable to CNN and Mamba baselines and significantly better than Transformer-based baselines (P < 0.05). CMC-Seg required the fewest inference GFLOPs (381.49). Ablation experiments indicated that multi-direction scanning and cross-attention improved performance, particularly for RC (P < 0.05). Grad-CAM explainability experiments showed that CMC-Seg focuses on diagnostically relevant tumor regions.",
         "authors": [
-          "Hari Sitaula",
-          "Joseph Opitz"
+          "Siavash Taremi",
+          "Mahmoud Heidari",
+          "Seyed Mohammad Hossein Hashemi",
+          "Mohsen Hooshmand"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.AI",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 31
+      },
+      {
+        "title": "Tabular Foundation Models for Weighted Regression and Classification",
+        "url": "https://arxiv.org/abs/2611.29789v1",
+        "publishedAt": "2026-11-22T21:47:48.000Z",
+        "summary": "Weighted regression and classification have applications ranging from missing-data analysis and causal inference to insurance pricing and particle physics. Existing weighted methods must be fitted and tuned on each dataset, which is costly for flexible nonlinear learners. Tabular foundation models avoid this cost. A Transformer is pretrained once on many simulated datasets and then predicts on a new dataset by in-context learning, using its observations as context without further fitting. Recent models such as TabPFN-3.5 surpass tuned conventional methods, but they cannot use sample weights. We develop a general pipeline that adapts such models to weighted prediction through weighted attention, a normalized weighted loss, and pretraining on synthetic weighted prediction tasks from missing-data problems. Applied to TabPFN-3.5, it yields WeightedPFN, which performs strongly on real datasets, both in missing-data problems and in out-of-distribution causal tasks, while running about as fast as linear baselines. We also establish a statistical theory showing that a suitably pretrained weighted Transformer attains the nonparametric minimax rate for weighted regression on new datasets without further fitting.",
+        "authors": [
+          "Junwen Xia",
+          "Yan He",
+          "Dehan Kong",
+          "Zhenhua Lin"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 31
       },
       {
-        "title": "MemOnce: A Scalable Memory Architecture for Large Language Models",
-        "url": "https://arxiv.org/abs/2611.27973v1",
-        "publishedAt": "2026-11-20T18:51:29.000Z",
-        "summary": "Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures. Standard Transformers accumulate layer-wise, token-level KV caches, incurring linear GPU memory growth and quadratic computational complexity as the context expands. In contrast, linear-time architectures compress history into fixed-size states, but struggle to retain fine-grained details. We introduce MemOnce, a foundation architecture that learns scalable memory states for language models. MemOnce is based on two core designs: (a) Memory encoder-decoder: it caches only a small subset of final-layer hidden states as compact memory representations and dynamically decodes them back into KV caches for attention layers; (b) Memory sparse attention: for each continual input, MemOnce adaptively retrieves relevant memory representations, with the sparse indices computed only once across layers. Coupling these two designs enables efficient on-the-fly memory loading and KV cache decoding, drastically reducing the GPU memory footprint and achieving linear-time complexity. We conduct extensive experiments to show that MemOnce outperforms Transformers and other architectures across varying model sizes, context lengths, and training paradigms (pretraining and post-training adaptation). In particular, adapting Qwen3.5-4B with MemOnce reduces memory state cache by 1313$\\times$ and prefill latency by 6.9$\\times$ at 1M context, and improves throughput by 3.5$\\times$ and overall memory performance by +5.77%. Finally, MemOnce generalizes zero-shot to downstream representation tasks, achieving competitive results against specialized models.",
+        "title": "Constrained Diffusion from Binary Evaluations via Learned Doob h-Functions",
+        "url": "https://arxiv.org/abs/2611.29779v1",
+        "publishedAt": "2026-11-22T21:26:00.000Z",
+        "summary": "Conditional generation under constraints that can only be checked on a finished sample, such as a molecular property filter, remains challenging for diffusion models: most guidance methods require differentiable measurement operators, paired conditional data, or rollouts of the base model at every step. We present a framework grounded in the Doob $h$-transform that reduces conditional generation to learning a single function, the probability that a noisy sample denoises into the constraint set. We learn this function from binary clean-sample evaluations alone, by squared-error regression on forward-noised labels; the base model is frozen, one lightweight head is trained per constraint, and noisy-state classifier guidance arises as a special case. The exact guidance step fades where the constraint signal provably vanishes and carries a factor of the inverse probability across samples, which normalized guidance discards: with the schedule and mean step size held fixed, equalizing the step costs 17.0 to 18.5 points of constraint satisfaction on CIFAR-10 at comparable FID, across independently trained estimators. Guidance is more than 50$\\times$ cheaper per satisfying sample than rejection sampling at a 1.7% base rate, raises a Lipinski-type property filter on QM9 from 54.3% to 96.8%, and lifts satisfaction on Stable Diffusion 1.5 from 7.2% to 60.0% at one sixteenth of the cost of derivative-free selection, which reaches 9.0%. These results demonstrate that binary evaluations of clean samples are sufficient supervision for constrained generation across pixel, latent, and molecular diffusion.",
         "authors": [
-          "Chang Nie",
-          "Chaoyou Fu",
-          "Songlin Liu",
-          "Yiqing Hu",
-          "Caifeng Shan"
+          "Ssaumya Kammal Jaiswal",
+          "Mahfuza Farooque"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 31
+      },
+      {
+        "title": "ComplexIF: A Challenging Multi-Turn, Multi-Constraint Instruction-Following Benchmark",
+        "url": "https://arxiv.org/abs/2611.29775v1",
+        "publishedAt": "2026-11-22T21:16:00.000Z",
+        "summary": "As frontier LLMs saturate existing instruction-following benchmarks, measuring further progress requires harder tests that remain faithful to real use. In practice, users often combine several constraints, add them at different turns of a conversation, and expect all of them to hold in the assistant's response. We introduce ComplexIF, a challenging benchmark for this setting, together with the automatic pipeline that generates it. The pipeline expands seed requests into multi-turn conversations, weaves constraints into their turns, and keeps only tasks that a strong model can solve, so difficulty can be raised by adding constraints or turns while every task stays solvable. ComplexIF's two splits test complementary sides of instruction following: a verifiable split of format constraints, checked by programs, and a rubric split of semantic instructions, such as a tone or an audience, checked with an LLM judge. Across 14 proprietary and open-weight models, even the strongest satisfies every constraint on fewer than half of the verifiable tasks, and no model leads on both splits.",
+        "authors": [
+          "Zhichao Xu",
+          "Bingsen Chen",
+          "Yawei Wang",
+          "Tao Li",
+          "Haoyu Wang",
+          "Dan Roth",
+          "Vivek Srikumar"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.CL",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 31
       },
       {
-        "title": "On the Complete Feature Set for ADHD Classification in Children and Adolescents Based on EEG Signals",
-        "url": "https://arxiv.org/abs/2611.27970v1",
-        "publishedAt": "2026-11-20T18:51:08.000Z",
-        "summary": "Attention-deficit/hyperactivity disorder is a neurodevelopmental condition that can affect attention, activity and impulse control. Electroencephalography (EEG) records brain activity as children and adolescents perform cognitive tasks. However, comparing features derived from these recordings requires consistent signal preparation, shared analysis windows and documented quality decisions. We curated 669 existing BALLADEER recordings from 156 participants across five task conditions so that researchers can compare seven EEG feature families on the same time intervals for each participant and task. The dataset links continuous signals to precomputed measurements from 115 feature definitions or templates and records the quality decisions made for each recording. Analyses must still account for repeated measurements within participants, residual artefacts and differences between acquisition systems. Technical validation covered signal integrity, numerical checks on feature estimators and completeness of the released files. In every task, the median proportion of recording time retained after preprocessing was 100%. To illustrate reuse, we report saved participant-held-out evaluations comparing XGBoost using all seven families on eight-second windows with a predictor based only on recruitment-group prevalence in the training fold. Recruitment-group discrimination was stronger in Robots than in the three Slackline conditions. These descriptive results from overlapping cohorts do not establish diagnostic validity. The dataset, curation software and aggregate results for the predictive example are publicly available.",
+        "title": "S1Arena-MM: Which Multimodal Decisions Can Be Left to System 1?",
+        "url": "https://arxiv.org/abs/2611.29773v1",
+        "publishedAt": "2026-11-22T21:08:30.000Z",
+        "summary": "Perception systems often make discrete decisions: flag a hateful meme, predict whether a pedestrian will cross, detect a spoofed voice, or select the next move in a game. System-1 models, such as OneJev and Jev-Omni, read the media and return probabilities over the options in a single forward pass, while multimodal large language models (MLLMs) generate text. Which multimodal decisions can System-1 models handle, and where do MLLMs perform better? We introduce S1Arena-MM, a benchmark that gives every model the same decision requests and scores the probabilities it returns. It contains 51,060 questions across 94 tasks with image, video, and audio input, drawn from 94 public datasets and three program-generated ones. It also includes 102 closed-loop game environments that a model plays from screenshots; in real-time mode, the game continues while the model decides. We evaluate 33 open models: 12 System-1 models and 21 MLLMs read at the answer token. On static decisions, the best System-1 model leads the best MLLM by 4.9 percentage points on images and is within one point of it on video and audio. Post-training for decisions mainly improves the probabilities: on video, a System-1 model has a lower Brier score than the MLLM that it is post-trained from in 10 of 12 pairs. With up to 2,048 thought tokens per question, the most accurate MLLMs pass the best System-1 models only slightly, and thinking raises the Brier score of most MLLMs. Closed loops separate the models: three System-1 models built on a 27B MLLM reach 22.0-33.3% progression in BALROG, and no other model exceeds 9.7% with thinking off. In real-time GameWorld, latencies of up to 1.1 s per decision cause no measurable loss of progress for System-1 models. Code and data: https://github.com/zhaoyang02/S1Arena-MM.",
         "authors": [
-          "Javier Sanchis",
-          "Álvaro Navarro",
-          "Jorge García-Carrasco",
-          "Tahar Kechadi",
-          "Juan Trujillo"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 73
-      },
-      {
-        "title": "Non-penetrating World Models",
-        "url": "https://arxiv.org/abs/2611.27963v1",
-        "publishedAt": "2026-11-20T18:44:57.000Z",
-        "summary": "We study a new problem of preventing object penetration in interactive video world models. To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles. Our evaluation reveals that none of the open-source models can reliably prevent such failures. Surprisingly, however, these models already encode the information needed to predict such violations. We find that the hidden states of diffusion transformers (DiTs) can predict whether a candidate action will penetrate an obstacle. Building on this, we introduce NoPeWorld, a lightweight framework that detects and prevents penetration. Specifically, we train a small prediction head on top of a frozen DiT's hidden states to read out if a candidate action is safe or not. Unsafe actions are then replaced with safe ones that best preserve the original intent. Despite its simplicity, NoPeWorld substantially reduces the physical violation rate, averaged over six video world models, from 74% to 16%. Remarkably, our method shows zero-shot generalization to open-domain imagery, third-person viewpoints, and moving obstacles. We publicly release our code, the NoPeBench benchmark, and model weights. Project Page: https://nopeworld.github.io .",
-        "authors": [
-          "Yuhang Dai",
-          "Yinwei Wu",
-          "Ziyue Lin",
-          "Han Ji",
-          "Xingyi Yang"
+          "Lang Lin",
+          "Tianyu Chen",
+          "Yi Gu",
+          "Yang Zhao",
+          "Xinran Song",
+          "Xinyang Liu",
+          "Jianpeng Cheng",
+          "Mingyuan Zhou"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 73
+        "ageHours": 32
       },
       {
-        "title": "Model Carving: Training Transformers That Optimize Their Own Topology",
-        "url": "https://arxiv.org/abs/2611.27962v1",
-        "publishedAt": "2026-11-20T18:41:39.000Z",
-        "summary": "Machine learning has largely kept separate the choice of architecture and the process of training. A classic Transformer, for instance, trains a fixed set of attention and MLP sublayers at every layer, in the same order, and optimizes the weights within. This uniformity is a convention rather than a principled design choice, and it is likely suboptimal: the best architecture for a given task may be smaller, more efficient, and far from uniform. We believe that, ideally, training itself should shape the model's topology. To this end, we introduce Model Carving, which learns both a Transformer's weights and its architecture in a single run. By applying learnable, scalar gates to each sublayer, we allow the training loss to remove the model's own components during training -- freeing a smaller heterogeneous network inside. We evaluate Model Carving by pre-training standard Transformers from 140M to 2.7B parameters and looped Transformers from 140M to 1.3B. At equal training compute, carved models reach a lower validation loss than dense models trained with up to 1.7 times more compute. Furthermore, carved models also outperform size-matched models produced by pruning or distillation, suggesting that the best way to obtain small models for edge devices is to carve them during training, not to compress a large one afterwards. This advantage both grows with scale and carries over to downstream tasks such as few-shot evaluation and generation. Because the removed sublayers no longer run, carved models also cost up to 34% fewer FLOPs per token and decode up to 1.6 times faster without cost in quality. Our results show that architecture, like weights, should be learned and not fixed in advance, and that inside every large transformer is a smaller, faster, stronger one waiting to be carved out.",
+        "title": "Into My Arms: Structured reinforcement learning for autonomous transport of objects and humans",
+        "url": "https://arxiv.org/abs/2611.29771v1",
+        "publishedAt": "2026-11-22T21:03:09.000Z",
+        "summary": "Whole-body humanoid manipulation remains bottlenecked by high-dimensional state-action spaces, contact-rich environments, and long task horizons. This trilemma is a challenge that state-of-the-art reinforcement learning (RL) methods are yet to resolve reliably. We address it with three contributions that add just enough structure to guide exploration: Sparse Interaction Edges (SIE) for whole-body manipulation, Interaction Gated Transport (IGT) for sustained transport over long horizons, and a Hinted Object Path (HOP) that resolves collision and search complexity bottlenecks. Across all three, the policy remains free to discover its own manipulation strategy. The method generalises from rigid object to human transport. As a flagship demonstration, we show, to our knowledge, the first bed-to-wheelchair transfer of a medical mannequin by a humanoid robot completed with no human intervention during execution. In the domain of human transfer, we show that a single policy can adapt across substantial variations in body mass, size, and random force perturbations, all while training on a single GPU in under an hour. Our approach offers a pathway to fully RL-driven humanoid manipulation, enabling assistive robots that can help humans. Website: https://elle-miller.github.io/into_my_arms",
         "authors": [
-          "Kaden Zheng",
-          "Pratyusha Sharma"
+          "Elle Miller",
+          "Reem Almheiri",
+          "Takuma Tsukakoshi",
+          "Ben Sanati",
+          "Tamon Miyake",
+          "Yushi Wang",
+          "Namiko Saito",
+          "Shigeki Sugano",
+          "Tetsuya Ogata",
+          "Rika Antonova",
+          "Oisin Mac Aodha",
+          "Sethu Vijayakumar"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 73
+        "category": "Policy",
+        "ageHours": 32
       },
       {
-        "title": "Ranking-Preserving Coreset Selection for Efficient Evolutionary Hyperparameter Optimization",
-        "url": "https://arxiv.org/abs/2611.27959v1",
-        "publishedAt": "2026-11-20T18:35:28.000Z",
-        "summary": "Hyperparameter optimization (HPO) is essential for high predictive performance, but its computational cost becomes prohibitive when candidate configurations require repeated training on large datasets. This paper proposes a ranking-preserving coreset (RPC) selection framework for accelerating evolutionary HPO. The method constructs a compact coreset that preserves the relative ranking of hyperparameter configurations observed on the full training data. Coreset selection is formulated as an evolutionary optimization problem that maximizes Spearman rank correlation between full-data and subset-based configuration rankings while penalizing subset size. The selected coreset is then used for HPO with three evolutionary algorithms: Genetic Algorithm (GA), Cross-generational elitist Selection, Heterogeneous Recombination and Cataclysmic Mutation (CHC), and Particle Swarm Optimization (PSO). Experiments on seven tabular, two text, and two image benchmark datasets show that RPC substantially reduces HPO time while maintaining test accuracy comparable to full-dataset HPO across decision tree, text classification, and image classification tasks. Across datasets and optimizers, HPO-stage speedups range from approximately 1.14x to 8.80x, while the one-time coreset construction cost is accounted for separately through end-to-end runtime and break-even analysis. On 20 held-out configurations excluded from coreset construction, RPC achieves higher ranking correlation than same-size random sampling on 8 of 11 datasets (dataset-level Wilcoxon signed-rank test, p = 0.014). These results show that ranking preservation extends beyond the configurations used during selection. The one-time construction cost can be amortized when the coreset is reused across HPO runs.",
+        "title": "When Simpler Beats Learned: Dual-Weighted Sampling vs. Machine Learning for the Pricing Subproblem in Graph Coloring",
+        "url": "https://arxiv.org/abs/2611.29769v1",
+        "publishedAt": "2026-11-22T21:01:31.000Z",
+        "summary": "The graph coloring problem can be solved to optimality by branch-and-price (B&P), but its performance hinges on the column generation (CG) step, where each iteration requires solving a maximum weight independent set (MWIS) pricing problem. The state-of-the-art machine-learning (ML) pricing heuristic follows a prediction-sampling paradigm: a learned model scores each vertex of a graph, and independent sets are sampled from the induced distribution. We observe, however, that the scoring procedure does not need to be learned, and critically assess the role of ML by replacing the learned scores with the dual solution of the restricted master problem, resulting in Dual-Weighted Sampling, a proposed lightweight alternative that requires no feature engineering or training. Within a unified CG and B&P framework that varies only the pricing oracle, Dual-Weighted Sampling outperforms MLPH, hand-crafted heuristics, and exact solvers on the established graph coloring benchmark in both runtime and solution quality. In particular, it remains competitive on the DIMACS random family, where MLPH was shown strongest in the original evaluation, while achieving more than a two-fold speedup in CG runtime on recursive-sparse and real-world graph families.",
         "authors": [
-          "Mamoona Tasadduq",
-          "Maryam Bashir"
+          "Nikolai Antonov",
+          "Přemysl Šůcha",
+          "Mikoláš Janota",
+          "Jan Hůla"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.LG",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 74
+        "ageHours": 32
       },
       {
-        "title": "Topology Hub Optimal Transport: Eliminating Long Context Dilution at Flash Speed",
-        "url": "https://arxiv.org/abs/2611.27951v1",
-        "publishedAt": "2026-11-20T18:23:42.000Z",
-        "summary": "Long-context models use sparse or structured attention to avoid quadratic cost, yet retrieving a small set of relevant facts embedded among hundreds of thousands of distractors degrades as normalization mass disperses with length. Hub-and-spoke optimal transport (OT) replaces the dense $L \\times L$ matrix with a linear-size graph over local windows and $K$ shared hubs balanced by Sinkhorn scaling. Building on block-wise tail refinement and fixed-support transport topology (arXiv:2605.08123, arXiv:2609.07954), we introduce Topology Hub Optimal Transport (THOT): (1) bounded-support capacity gating via simplex sparsemax ($O(L\\log L)$) or sorting-free token-local thresholded ReLU ($O(L)$), driving excess distractor mass to zero; (2) a three-sweep $1+2$ annealed row-closed Sinkhorn schedule that damps bipartite residuals; (3) an exact rank-$(D+2R+1)$ One-Reference-Tile adjoint in batched split-factor Triton kernels (BF16 Tensor Cores, FP32 potentials); and (4) a chunked exclusive-prefix causal variant with verified zero future leakage. On NVIDIA L4, sparsemax THOT trained at $L=128$ reaches 97.40% zero-shot recall of fixed bindings at $L=262{,}144$ under pure task loss ($α=0$) and 98.83% at $α=0.05$ (matched by $O(L)$ thresholded ReLU at $α=0.05$, vs. 80.60% at $α=0$), while softmax-gated hub OT drops to 3.52%. In bidirectional operator microbenchmarks, our kernel runs forward+VJP in 100.1 ms at $H=8, D=64, L=262\\mathrm{K}$ (2.2x faster with 4.0x smaller compiler temporaries than latent softmax) and 1.34 ms vs. 4.37 ms for cuDNN FlashAttention at $L=4{,}096$; multi-layer LM runs use the unfused path. Zero-shot WikiText-103 multi-needle retrieval hits 100.00% (128/128 queries at $L=65\\mathrm{K}$) vs. 0.78% for short-trained RoPE FlashAttention, and compact 4-layer WikiText-4K runs show modest causal and masked LM gains.",
+        "title": "Estimating a Transition Point from Gibbs and Ground States",
+        "url": "https://arxiv.org/abs/2611.29768v1",
+        "publishedAt": "2026-11-22T21:00:58.000Z",
+        "summary": "We study how observed many-body system size affects the number of state copies needed to estimate a zero-temperature first-order transition point. The unknown Hamiltonian has bounded, translation-invariant on-site and nearest-neighbour interactions on a 3D cubic lattice with local dimension three. The field coupling is known, and all models share a known boundary field penalizing one local level. The limiting order parameter is uniformly separated across the transition. Each query returns an independently prepared Gibbs or ground state at an adaptive field and system size.\n  For error $ε$ and fixed confidence, we prove an exponential separation between two size caps at the same temperature. There are absolute constants $0<c_0<C$ and $c_1>0$ such that, at inverse temperature $β=c_1/ε$, restricting side lengths to $L\\le c_0/ε$ requires $\\exp(Ω(1/ε))$ copies in worst-case expectation, even with collective measurements. Allowing $L\\le C/ε$ permits $O(\\log^2(1/ε))$ copies and $O(ε^{-3})$ total spins, using local measurements and polynomial classical postprocessing. The minimax expected total spin count is $Θ(ε^{-3})$ uniformly for $β\\ge c_1/ε$. At fixed positive temperature it is $Θ_β(ε^{-2})$, attained from one- and eight-site Gibbs states followed by exponential classical computation. For ground-state copies it is $Θ(ε^{-3})$.\n  The lower bound uses a three-state ferromagnet whose boundary suppresses the sector carrying transition information. A spanning-forest argument and edge-boundary counting control its Gibbs weight uniformly over fields and allowed sizes, and a trace-distance hybrid argument handles adaptive learners with quantum memory. The upper bound combines finite-volume free-energy estimates, concavity and local order-parameter measurements.",
         "authors": [
-          "Dylan Forde"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "Research",
-        "ageHours": 74
-      },
-      {
-        "title": "The Optimal Sample Complexity of Agnostic PAC Learning for Partial Concept Classes",
-        "url": "https://arxiv.org/abs/2611.27946v1",
-        "publishedAt": "2026-11-20T18:18:09.000Z",
-        "summary": "Let $\\mathcal H\\subseteq\\{-1,+1,\\star\\}^{\\mathcal X}$ be a partial concept class of finite VC dimension $d$. We construct a deterministic agnostic PAC learner that, for every $\\varepsilon,δ\\in(0,1)$, uses $O((d+\\log(1/δ))/\\varepsilon^2)$ i.i.d. examples from an arbitrary distribution $\\mathcal D$ over $\\mathcal X\\times\\{-1,+1\\}$ and returns a total concept $\\hat h:\\mathcal X\\to\\{-1,+1\\}$ satisfying $\\text{er}_{\\mathcal D}(\\hat h)\\leq \\min_{h\\in\\mathcal H}\\text{er}_{\\mathcal D}(h)+\\varepsilon$ with probability at least $1-δ$, where $\\text{er}_{\\mathcal D}(h)=\\mathbb P_{(x,y)\\sim\\mathcal D}[h(x)\\neq y]$. This establishes the optimal sample complexity, matching the lower bound of Alon et al. (FOCS 2021).",
-        "authors": [
-          "Liang-Yu Zou"
-        ],
-        "source": "arXiv",
-        "feed": "arXiv cs.LG",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
-        "category": "General",
-        "ageHours": 74
-      },
-      {
-        "title": "BioEmu2: Scalable Emulation of Biomolecular Dynamics",
-        "url": "https://arxiv.org/abs/2611.27924v1",
-        "publishedAt": "2026-11-20T17:58:47.000Z",
-        "summary": "Despite major advances in structure prediction, modelling the motions and interactions that drive biomolecular function at scale remains a central challenge. We introduce BioEmu2, a generative model for atomically resolved biomolecular structures combining static structure prediction, equilibrium sampling and time evolution, that samples orders of magnitude faster than molecular dynamics (MD). Trained on experimental and synthetic structures and extensive MD data, it supports multi-component systems containing proteins, nucleic acids, modified residues, ligands and ions. Structure-prediction accuracy is comparable to top open-weight biomolecular folding models, and a context parallel mode enables prediction of megadalton complexes. Equilibrium distributions approximate MD references with free-energy errors near 1 kcal/mol across tested proteins and complexes. Time propagation predicts long-timescale dynamical trajectories and kinetics of binding and conformational changes. Generated structures can be controlled by conditioning on residue contacts or steering with user-defined bias potentials. Enhanced sampling enables free energy calculation involving rare states. BioEmu2 makes the study of biomolecular ensembles and dynamics scalable.",
-        "authors": [
-          "Michael Gastegger",
-          "Adam E. Foster",
-          "José Jiménez-Luna",
-          "Tim Hempel",
-          "Sarah Lewis",
-          "Yu Xie",
-          "Lixin Sun",
-          "Iryna Zaporozhets",
-          "J. Thorben Frank",
-          "Yaoyi Chen",
-          "Michael Plainer",
-          "Ludwig Winkler",
-          "Pedro B. P. S. Reis",
-          "Sven H. Giese",
-          "Roberto Sordillo",
-          "Victor García Satorras",
-          "Eray Inanc",
-          "Kacper Kapuśniak",
-          "Soojung Yang",
-          "Rishwanth Raghu",
-          "Rachel Kim",
-          "Gabriel Dernbach",
-          "Deniz Gunceler",
-          "Hannes Schulz",
-          "Bonnie Kruft",
-          "Marwin Segler",
-          "Christopher M. Bishop",
-          "Cecilia Clementi",
-          "Ryota Tomioka",
-          "Frank Noé"
+          "Yuhao Cai",
+          "Zhenzhang Li"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Models",
-        "ageHours": 74
+        "ageHours": 32
       },
       {
-        "title": "SUAF: Spectral Universal Advantage Features for Zero-Shot Policy Improvement",
-        "url": "https://arxiv.org/abs/2611.27919v1",
-        "publishedAt": "2026-11-20T17:53:21.000Z",
-        "summary": "Reward-independent representations enable reinforcement learning agents to reuse knowledge across tasks, but limited representation capacity raises three fundamental questions: what statistical dependence should these representations capture, which components of that dependence should be retained for policy improvement, and how does discarding the remaining components affect decision-making? We address these questions through canonical dependence analysis. For a reference policy, we construct an action-centered, positive-lag canonical dependence matrix (CDM) that isolates the additional predictive contribution of the current action beyond the current state. Its singular value decomposition yields Spectral Universal Advantage Features (SUAF), paired features that recover delayed advantage through linear reward projections. We show that the spectrum quantifies mutual information between current action and future state-action visitation conditioned on current state and determines reward specific approximation errors. Retaining the leading modes gives optimal rank-constrained approximations under both isotropic average-case and reward-uniform minimax criteria. Separating the immediate reward contrast also avoids the spectral floor arising from direct compression of the full advantage operator. To learn SUAF from reward-free data, we develop an action-centered Soft-HGR objective with bidirectional temporal-difference estimation. We further connect spectral approximation errors to sufficient conditions for policy improvement. Finite-state experiments validate the spectral predictions and feature-learning method, while zero-shot evaluations on discrete tasks and continuous-control benchmarks demonstrate the utility of the learned representations across rewards.",
+        "title": "Sánchez, Feijóo, or Abascal? Speaker Attribution and Ideological Congruence in LLM Personas Reading Posts on X of the Leaders of the Three Main Parties of the 29N General Election in Spain",
+        "url": "https://arxiv.org/abs/2611.29765v1",
+        "publishedAt": "2026-11-22T20:55:14.000Z",
+        "summary": "Source cues are central to political communication, yet reception studies with large language model (LLM) personas as synthetic audiences have not tested whether personas respond to who speaks and not only to what is said. With Spain's general election of 29 November 2026 in mind, we run a speaker-attribution experiment using 1,075 anonymised X posts by the leaders of PSOE, PP and VOX on four topics (the economy and employment, household costs, immigration and corruption) and 791 distinct value-grounded, LLM-generated personas. Each post was assigned to 300 topic-selected persona profiles, 150 grounded in the Inglehart-Welzel cultural map and 150 in Moral Foundations Theory, under four conditions: no author, Sánchez, Feijóo or Abascal, yielding 322,470 complete persona-post quartets. Naming any leader lowered support for identical text, with the penalty for Abascal nearly twice as large as those for Sánchez and Feijóo. The penalty follows the persona's elicited left-right self-placement (ideological congruence): left personas spare Sánchez and right personas spare Feijóo, although ideology was never in the message-evaluation prompt. Corruption posts were penalised under every name, whereas on other topics the ideologically closest leader generally produced little or no penalty. The leader order matches public opinion in 48 CIS barometers (2022-2026) in all three groups and the sign of all twelve differences, but fits barometers before the model's 2024 knowledge cutoff better than recent ones. Our findings demonstrate that LLM personas evaluate political speakers through systematic, value-congruent priors: however, while they replicate human candidate rank-orders across survey barometers, this alignment is ordinal rather than quantitative, highlighting their utility for controlled source-effect experiments though not as substitutes for empirical public opinion surveys.",
         "authors": [
-          "Huaze Tang",
-          "Runqing Miao",
-          "Tianren Peng",
-          "Lam Nguyen",
-          "Chao Wang",
-          "Jairong Li",
-          "Wenbo Ding"
+          "Víctor Yeste",
+          "Candida Maria Greco",
+          "Paolo Rosso",
+          "Andrea Tagarelli"
+        ],
+        "source": "arXiv",
+        "feed": "arXiv cs.CL",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "category": "Research",
+        "ageHours": 32
+      },
+      {
+        "title": "Selecting Stable Sampling Dynamics for Compositional Diffusion: A Feynman-Kac Weight Reduction",
+        "url": "https://arxiv.org/abs/2611.29764v1",
+        "publishedAt": "2026-11-22T20:52:46.000Z",
+        "summary": "Given $K$ separately trained diffusion models, how should one sample from a $β_k$-weighted product of their terminal laws without jointly retraining the experts? Existing Feynman--Kac constructions provide many weighted stochastic differential equations (SDEs) with the correct target marginal. The consequential question is how to select useful proposal dynamics among them. We study an explicit family of weighted diffusions that realizes the same product-of-intermediate-experts trajectory. A scalar parameter $λ$ controls how strongly the proposal drift follows the composed expert score, while an additional Langevin component can be varied independently. Writing $B=\\sum_{k=1}^{K}β_k>0$, we identify the distinguished choice $λ=1/B$. At this value, the aggregate squared-score term in the instantaneous Feynman--Kac log-weight rate cancels exactly. For positive expert exponents, the remaining score-disagreement contribution is non-positive. We call this structural cancellation Feynman--Kac reduction. Under bounded-divergence assumptions, it yields an upper bound on the instantaneous unnormalized log-weight rate for all $λ\\leq 1/B$. For linear diffusion protocols with compactly supported expert data, $λ=1/B$ yields two-sided bounds at every nonterminal time, for exponents of either sign. A corresponding result holds for a single expert under the same divergence assumption. In these two-sided settings, the selected value is unique within the specified family in a universal worst-case sense. Experiments on Gaussian mixtures and molecular sampling compare the analytically predicted stability with actual sampling quality, including instances in which parameter choices different from $λ=1/B$ perform better empirically.",
+        "authors": [
+          "Sunjin Kim",
+          "Sungsoo Ahn",
+          "Michael Chertkov"
         ],
         "source": "arXiv",
         "feed": "arXiv cs.AI",
         "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 74
+        "ageHours": 32
       },
       {
-        "title": "StereoVLM: Binocular Vision-Language Models for Metric 3D Spatial Reasoning",
-        "url": "https://arxiv.org/abs/2611.27915v1",
-        "publishedAt": "2026-11-20T17:52:02.000Z",
-        "summary": "Vision-language models (VLMs) exhibit strong semantic understanding but remain limited in their ability to reason about metric 3D space in the physical world. Existing VLMs typically infer 3D scene structure from one or more images without known camera calibration or cross-view geometric constraints. This makes metric 3D inference inherently ambiguous and leaves it unclear whether their spatial predictions are grounded in visual evidence or driven primarily by semantic priors. In contrast, calibrated stereo provides explicit cross-view geometry that resolves this ambiguity and offers a more reliable foundation for metric 3D perception and geometric generalization. We investigate how VLMs can learn transferable 3D representations directly from calibrated binocular observations. To this end, we introduce StereoVLM, the first geometry-aware binocular VLM for metric 3D spatial reasoning. StereoVLM follows a hierarchical learning paradigm spanning from cross-view correspondence and disparity estimation to calibration-conditioned metric depth perception and semantic spatial reasoning. We further find that disparity supervision generalizes substantially better than direct binocular depth supervision on unseen environments. To evaluate these capabilities, we introduce Stereo3D-Bench, a comprehensive benchmark across three levels, from point-level geometry to object-level spatial reasoning. StereoVLM-8B achieves 95.17% depth accuracy ($δ_1$) and a 66.98 average object-level score on Stereo3D-Bench. Intervention results further indicate that the model's performance on Stereo3D-Bench benefits from valid cross-view geometry and cannot be explained solely by additional visual tokens or semantic priors. Hierarchical geometric supervision also yields average gains of 3.54 points across five spatial benchmarks and 4.3 percentage points in RoboCasa manipulation success.",
+        "title": "probly: Uncertainty-Aware Machine Learning",
+        "url": "https://arxiv.org/abs/2611.29762v1",
+        "publishedAt": "2026-11-22T20:51:06.000Z",
+        "summary": "As machine learning systems are increasingly deployed in real-world applications, the question of how to represent and quantify uncertainty has moved from a methodological side issue to a central concern. In practice, however, making a model uncertainty-aware is still surprisingly difficult: relevant tools tend to be scattered across libraries, each tied to a particular framework and a particular approach to modeling uncertainty, and the choice of representation, quantification, and evaluation is typically left to the user without much guidance. In this paper, we present probly, a Python package that addresses these issues in a single, modular framework. probly offers (i) lightweight transformations that turn existing models into uncertainty-aware ones, currently supporting PyTorch, scikit-learn, and Flax, (ii) several representations, including second-order distributions, credal sets, and conformal prediction, (iii) the corresponding quantification measures, and (iv) a number of evaluation protocols, which can be combined more or less arbitrarily. Using probly, we conduct a benchmark study on three standard tasks --- selective prediction, out-of-distribution detection, and active learning. In addition, and unlike existing benchmarks, we evaluate suitable methods on first-order data, i.e., datasets for which the target itself is a distribution over outcomes. We further illustrate the flexibility of the package on a number of less standard case studies, including large language models, graph neural networks, and data streams. The package is publicly available at https://github.com/pwhofman/probly.",
         "authors": [
-          "Chi Yan",
-          "Guoyang Zhao",
-          "Wentao Yuan",
-          "Yixiao Ge",
-          "Yanning Zhou",
-          "Dan Xu"
+          "Paul Hofman",
+          "Clemens Damke",
+          "Timo Löhr",
+          "Santo M. A. R. Thies",
+          "Alireza Javanmardi",
+          "Valentin Margraf",
+          "Jakub Paplham",
+          "Yusuf Sale",
+          "Eyke Hüllermeier",
+          "Maximilian Muschalik"
         ],
         "source": "arXiv",
-        "feed": "arXiv cs.AI",
-        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
+        "feed": "arXiv cs.LG",
+        "provenance": "https://export.arxiv.org/api/query?search_query=cat:cs.LG&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12",
         "category": "Research",
-        "ageHours": 74
+        "ageHours": 32
       }
     ],
     "news": [
+      {
+        "title": "Anthropic launches Claude Ship, letting AI agents review, fix, and approve code changes",
+        "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+        "publishedAt": "2026-11-23T22:05:50.000Z",
+        "summary": "As AI-generated code piles up, Anthropic's new developer tools aim to eliminate another bottleneck by letting agents handle routine approvals.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 7
+      },
+      {
+        "title": "Supertake raises $20M to let AI agents turn your market predictions into stock portfolios",
+        "url": "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/",
+        "publishedAt": "2026-11-23T22:02:05.000Z",
+        "summary": "Think you know where the market is headed? A startup called Supertake lets you put money behind your ideas without having to pick the stocks yourself.",
+        "authors": [
+          "Sarah Perez"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "Research",
+        "ageHours": 7
+      },
+      {
+        "title": "Elon Musk and others rejoice as Jensen Huang is reinstated at Nvidia amid scandal",
+        "url": "https://techcrunch.com/2026/11/23/elon-musk-and-others-rejoice-as-jensen-huang-is-reinstated-at-nvidia-amid-scandal/",
+        "publishedAt": "2026-11-23T21:47:41.000Z",
+        "summary": "\"The mistake has been corrected,\" Elon Musk chimed in.",
+        "authors": [
+          "Amanda Silberling"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 7
+      },
+      {
+        "title": "Megaspeed, the company at the center of the Jensen Huang scandal, appears headed for a US blacklist",
+        "url": "https://techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist/",
+        "publishedAt": "2026-11-23T21:25:42.000Z",
+        "summary": "Megaspeed, which was previously led by Alice Huang, would be barred from doing business with U.S. companies unless those companies attained a special license from the federal government.",
+        "authors": [
+          "Lucas Ropek"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 7
+      },
+      {
+        "title": "OpenAI and Cisco introduce Shirudo",
+        "url": "https://openai.com/index/introducing-shirudo",
+        "publishedAt": "2026-11-23T21:20:00.000Z",
+        "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+        "authors": [],
+        "source": "OpenAI",
+        "feed": "OpenAI News",
+        "provenance": "https://openai.com/news/rss.xml",
+        "category": "General",
+        "ageHours": 7
+      },
+      {
+        "title": "Many languages, one common neural code",
+        "url": "https://news.mit.edu/2026/many-languages-one-common-neural-code-1123",
+        "publishedAt": "2026-11-23T21:15:00.000Z",
+        "summary": "Languages take on thousands of forms. Some are tonal, like Vietnamese, where shifts in pitch convey distinct meanings. English relies on precise word orders, but this matters less for Russian, where words can be swapped without changing the intended message.&nbsp; Despite so much variety in the linguistic kingdom, an MIT study has found that the human brain may process all sorts of languages in a universal way. Artificial intelligence made this finding possible. In the study published today in Nature Neuroscience , the researchers used multilingual models to predict how the human brain responds to various languages. Those models also helped the researchers detect a shared brain process across people who collectively spoke 21 different languages. “Of course, there are many differences in the ways humans converse with each other. But our team found that there is something fundamentally similar in how the brain communicates,” says Evelina Fedorenko , who is an investigator at MIT’s McGovern Institute for Brain Research, an associate professor of brain and cognitive sciences, and the senior author of the paper. The study is the first to use multilingual models to predict brain responses across many languages. As researchers develop AI language tools to diagnose brain disorders, this work can extend their benefit to speakers of more languages, and may one day even keep endangered ones from vanishing. Parsing the linguistic mind Language allows us to share our thoughts about the outside world and the ones we create in our minds. That power lives within a network of brain regions located in the left hemisphere. “Every language is managed by these same parts of the brain,” explains Andrea Gregor de Varda, the lead author of the new study, a postdoc in the Fedorenko lab, and fellow in the K. Lisa Yang Integrative Computational Neuroscience (ICoN) Center . While scientists know that all languages activate the same parts of the brain, de Varda and Fedorenko wanted to know if that meant the brain processes them in the same way. For example, they wondered, does the brain of someone who speaks Korean operate comparably to the brains of a Hindi or Spanish speaker? It’s extremely hard to answer that question if you lack the right tools, de Varda says. And they needed one capable of creating a common code for comparing all sorts of languages — a task that is well-suited to artificial intelligence. Where AI meets the brain Large language models (LLMs) —&nbsp;such as those powering ChatGPT and Claude — interpret language much like the human brain, although they weren’t designed to do so. That surprising similarity is allowing de Varda and others in the field to wield these tools as a piercing lens into the human mind . Such studies often explore LLMs’ ability to learn or make sense of linguistic elements, such as grammar and meaning, to glean insights into how the brain might handle communication. But early LLMs used to work within a single language. The MIT researchers thought another class of models might help expand that scope. “Multilingual language models are LLMs that can process hundreds of languages at once,” explains Fedorenko. Like other AIs of their kind, multilingual models ingest words or phrases and output numbers that scientists can extract. “Those numbers show how the model represents that bit of language,” she says. Now the team could study many languages at once using a single numerical code from the models. But the extent to which the models aligned with the human mind still lurked in the unknowns. De Varda believed he could coax an answer into light through a computational approach. Using machine learning, he merged two data sources: the multilingual models’ code and scans of people’s brains as they performed linguistic tasks. The product was an AI tool known as an encoding model. It takes a multilingual model’s code, say, for a sentence, and predicts how the human brain might light up in response to the same input. Encoding models at the time only existed for a handful of languages including English, French, and Chinese. But de Varda sought to test whether those models could be extended to more — and importantly, understudied ones. Doing so could reveal new aspects in which AI mirrors the human brain, and even detect a shared neural component across speakers of various languages. A mental bridge between languages The Fedorenko lab already had preexisting brain imaging data from speakers of 12 languages: Afrikaans, Dutch, Farsi, French, Lithuanian, Marathi, Norwegian, Romanian, Spanish, Tamil, Turkish, and Vietnamese. They recruited speakers of nine additional ones for their new study —&nbsp;Italian, Portuguese, German, Russian, Polish, Hindi, Arabic, Mandarin, and Korean — and recorded their brain activity while they listened to stories from “Alice in Wonderland” in their native language. By coupling that brain imaging data with outputs from multilingual models, the team created encoding models for those 21 languages. “We found that the encoding models accurately predicted brain responses in all of the languages we studied —&nbsp;even in Marathi and Lithuanian, that, in contrast to English, we only have a limited amount of data on,” says Fedorenko. “The fact that there’s this emergent similarity between models and humans across so many languages is really quite exciting.” Another finding was more interesting still. Even though the researchers trained an encoding model in a single language, it could predict brain activity for a language it had never seen before. For example, an encoding model trained to predict brain responses in French could also predict responses in Vietnamese, without ever being trained in Vietnamese. It was a truly fascinating discovery, de Varda says, because this was only possible if all the speakers’ brains were representing language in a shared way: a neural thread binding human communication. What was that shared component? Dissecting different linguistic features across all the languages suggested that it has something to do with meaning. “That’s the intended power of communication, right? To share meaning; new information or our feelings about the world. So it’s fascinating we see that reflected in this work,” says Fedorenko. In science, this new study gives brain researchers some explanations for long-held curiosities among them. In society, it could steer emerging technologies into a more inclusive direction. Scientists are starting to explore clinical uses of AI language tools, such as those that can detect cognitive decline based on brain activity patterns during language. &nbsp; But most of those studies, and the methods clinicians use today, are in common and well-studied languages like English. By showing how AI and the human brain overlap across many diverse languages, this new research may be a step toward clinical tools that do not leave most speakers out. In another vein, reversing the Fedorenko lab’s approach might help preserve languages on the brink of extinction. “Say you had one single speaker of a language that is dying out. You might imagine a case in which we can train a model in the opposite direction: give it images of that speaker’s brain, and it could translate those into language,” notes Fedorenko. De Varda adds that there are features that clearly differ between languages, too, and that those must be somehow represented in the brain and even LLMs. Defining those differences in future research, he says, might unearth new fragments of knowledge to complete the puzzle of the linguistic mind.",
+        "authors": [
+          "Rubina Veerakone | McGovern Institute for Brain Research"
+        ],
+        "source": "MIT News",
+        "feed": "MIT News AI",
+        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
+        "category": "Models",
+        "ageHours": 7
+      },
+      {
+        "title": "Nvidia employees greet Jensen Huang like a hero as he returns to company&#8217;s HQ",
+        "url": "https://techcrunch.com/2026/11/23/nvidia-employees-greet-jensen-huang-like-a-hero-as-he-returns-to-companys-hq/",
+        "publishedAt": "2026-11-23T20:38:53.000Z",
+        "summary": "\"I'm going to be a better CEO the second time around,\" Huang told employees.",
+        "authors": [
+          "Amanda Silberling"
+        ],
+        "source": "TechCrunch",
+        "feed": "TechCrunch AI",
+        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "General",
+        "ageHours": 8
+      },
       {
         "title": "Google Search&#8217;s AI Mode can now tap into Drive and Wallet for more personalized responses",
         "url": "https://techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses/",
@@ -324,7 +411,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Models",
-        "ageHours": 1
+        "ageHours": 9
       },
       {
         "title": "Jensen Huang scheduled to testify next week in Senate following reinstatement as Nvidia CEO",
@@ -338,7 +425,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 2
+        "ageHours": 11
       },
       {
         "title": "Amazon snaps up Decart&#8217;s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
@@ -352,7 +439,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "Infrastructure",
-        "ageHours": 3
+        "ageHours": 11
       },
       {
         "title": "Finding faster quantum algorithms with agents and formal verification",
@@ -364,7 +451,7 @@
         "feed": "Google DeepMind Blog",
         "provenance": "https://deepmind.google/blog/rss.xml",
         "category": "Research",
-        "ageHours": 3
+        "ageHours": 12
       },
       {
         "title": "Jensen Huang isn&#8217;t out of the woods yet",
@@ -378,103 +465,7 @@
         "feed": "TechCrunch AI",
         "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
         "category": "General",
-        "ageHours": 3
-      },
-      {
-        "title": "Trump reportedly called into Nvidia board meeting to advocate for Huang&#8217;s return",
-        "url": "https://techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return/",
-        "publishedAt": "2026-11-23T16:39:10.000Z",
-        "summary": "\"I spoke to them, let me put it that way … And I convinced them,\" the president told CNBC.",
-        "authors": [
-          "Amanda Silberling"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 3
-      },
-      {
-        "title": "Trump endorses Jensen Huang&#8217;s return to Nvidia, says US has no evidence of wrongdoing",
-        "url": "https://techcrunch.com/2026/11/23/trump-endorses-jensen-huangs-return-to-nvidia-says-us-has-no-evidence-of-wrongdoing/",
-        "publishedAt": "2026-11-23T15:04:01.000Z",
-        "summary": "The president cited the U.S. attorney general in defending Huang's return, while urging Nvidia to continue its export-control investigation.",
-        "authors": [
-          "Sarah Perez"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 5
-      },
-      {
-        "title": "Sierra doubles valuation to $30B within six months as demand for AI in CX takes off",
-        "url": "https://techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off/",
-        "publishedAt": "2026-11-23T14:43:03.000Z",
-        "summary": "Enterprise customer experience company Sierra, co-founded by former Salesforce co-CEO Bret Taylor, said on Monday that it has raised $1.75 billion in a Series F round.",
-        "authors": [
-          "Ivan Mehta"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 5
-      },
-      {
-        "title": "Nvidia reverses course and brings Jensen Huang back as CEO",
-        "url": "https://techcrunch.com/2026/11/23/nvidia-reverses-course-and-brings-jensen-huang-back-as-ceo/",
-        "publishedAt": "2026-11-23T14:21:59.000Z",
-        "summary": "The stunning reversal was supported by senior officials in the U.S. government.",
-        "authors": [
-          "Kirsten Korosec"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "General",
-        "ageHours": 6
-      },
-      {
-        "title": "Connected intelligence for in-house legal",
-        "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
-        "publishedAt": "2026-11-23T08:00:00.000Z",
-        "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
-        "authors": [],
-        "source": "OpenAI",
-        "feed": "OpenAI News",
-        "provenance": "https://openai.com/news/rss.xml",
-        "category": "General",
         "ageHours": 12
-      },
-      {
-        "title": "AI-driven technique could help engineers design analog chips faster and with less expense",
-        "url": "https://news.mit.edu/2026/ai-driven-technique-could-help-engineers-design-analog-chips-faster-and-less-expensive-1123",
-        "publishedAt": "2026-11-23T05:00:00.000Z",
-        "summary": "A new technique developed by MIT researchers could help engineers use artificial intelligence to streamline the design and innovation of analog integrated circuits, semiconductor chips that perform vital functions like communication and power management in electronic devices. In the future, this method could allow engineers to prototype faster, explore a wider range of chip designs, and discover new design schemes that might improve the performance and energy efficiency of robots, medical monitors, or industrial sensors. Designing analog integrated circuits that meet specific requirements is usually a cumbersome manual process due to the enormous number of possibilities. Frontier generative AI models have shown success in automating the process, but using these resource-intensive, cloud-hosted models could expose proprietary circuit design and semiconductor foundry data to malicious users. The MIT method, called Small LM Iterating on Circuits, or SLIC (pronounced “slick”), enables engineers to train a small language model to perform analog circuit design as well as or better than a frontier large language model (LLM).&nbsp; This small model is inexpensive and efficient enough to run on a laptop. Because it’s trained and deployed locally, it can use a company’s circuit design data without raising privacy risks.&nbsp; When compared to complementary baselines and open-weight frontier LLMs, a small model trained by SLIC more effectively generated designs that achieved the circuit objectives.&nbsp; “We’ve provided an alternative option to automate analog circuit design. With our technique, engineers can train a small, locally deployable model, using their own confidential data, and then deploy it in their own environment to ensure their assets remain protected,” says Yan Xu, an electrical engineering and computer science (EECS) graduate student and lead author of a paper on this technique. She is joined on the paper by senior author Ruonan Han, a professor of EECS and a member of the MIT Research Laboratory of Electronics; Zhengqi Gao PhD ’26; Wenjie Lu PhD ’18, a former MIT postdoc who is now a principal research scientist at Analog Devices, Inc.; Xin Zhang, a research manager at IBM Research; Duane S. Boning, the Clarence J. LeBel Professor in EECS and MIT vice provost for international activities; and others at IBM Research and Analog Devices. The research will be presented at the 2026 Conference on Neural Information Processing Systems.&nbsp; “Through some specialized training and area-specific research, we can use much smaller models that consume far fewer resources to achieve almost the same results as flagship models in analog circuit design,” says Han. “This opens many more possibilities in the design of complex chips, especially if we care about costs, data privacy, and customization.” Mimicking human learning Analog integrated circuits enable a device to interact with the physical world. For instance, these circuits boost incoming wireless signals in smartphones and process outputs from sensors that track a car’s engine temperature.&nbsp; Real-world signals tend to be unpredictable, so engineers must balance a wide and complex array of targets and tradeoffs to maximize analog circuit performance. This has made the design problem especially challenging for AI models. “To design a circuit, engineers find a good starting point based on their intuition and then, drawing on their knowledge of circuit design, tune a few knobs toward the performance they want,” says Xu. “There is no universal way to solve every circuit design problem.” Even if a powerful, cloud-based model could design a circuit as well as a human, most companies would be reluctant to send their foundry-specific data to external AI service providers. With SLIC, the MIT researchers created a training method that teaches a smaller, less expensive, faster language model to design analog integrated circuits that meet user specifications.&nbsp; The SLIC model uses a few billion parameters, making it several thousand times smaller than frontier models that use trillions of parameters and require enormous amounts of computational resources.&nbsp; “We tried to mimic the behavior of how a human learns to design a circuit,” Xu says. They used a technique called multi-turn reinforcement learning with verifiable rewards, where a model works through a multi-step task while adapting to environmental feedback.&nbsp; When given an analog circuit optimization task, SLIC uses a large LLM to generate several demonstrations of the open source design process. Then SLIC then uses these demonstrations to guide the small model in mimicking this design process.&nbsp; After the small model gains some initial knowledge about circuit design, SLIC lets it practice by tackling a new design problem on its own. The model makes an initial guess of the design parameters, performs simulations, evaluates the results, and iteratively refines the design using knowledge it gained about analog circuits. Once a design achieves the user’s goals, SLIC prioritizes additional marginal gains. This means the model keeps learning to make improvements that boost performance even when several designs meet the user-defined targets.&nbsp; An interpretable process Importantly, because SLIC employs models that describe their reasoning using natural language, the user can understand the decisions it makes along the way. “Although the whole process is automated, the user can see what is going on inside the model. This could help the user gain some new ideas about circuit design, and it also adds a lot of confidence about the decision-making process,” Han says. An engineer could utilize SLIC by adapting the researchers’ trained model to their data using a fine-tuning process. Or they could employ the SLIC training process to build their own model with company data, allowing for more customization. “We are seeing an increasing demand for analog chips, but the speed of design has not kept up. This research is trying to bring new capabilities to AI to solve a problem that industry has been stuck on for decades,” Lu says. When the researchers tested SLIC’s ability to design a circuit that met desired performance metrics, their small model came close to matching the performance of the latest GPT model (GPT-6-Astra). It did this while using a fraction of the computational resources.&nbsp; The researchers also found that the SLIC model maintained its performance when tackling previously unseen circuit structures and adapting to more advanced technology nodes (design and manufacturing rules) and real commercial processes. Because SLIC teaches a model the general chip design process, the system is not tied to any company. This makes it a more scalable approach that could be used by many organizations for a range of circuit applications. “The knowledge the model has gained about circuit design is universal in nature. That is the powerful aspect of this tool,” Han says. In the future, the researchers want to explore self-improving models that can independently learn to handle more diverse topologies and design targets. They also want to use SLIC to build a multi-agent framework, in which many small language models work on different parts of a complex circuit design task. “Yan’s work shows that a locally deployable model can learn transferable design behavior and iterate with a circuit simulator to improve a design, which could reduce repetitive manual tuning for engineers. This is the kind of work the MIT-IBM Computing Research Lab makes possible. We see it as opening the door to more sophisticated custom design, including RF and microwave circuits, in the settings where industry actually works,” says Zhang. This research is funded, in part, by Analog Device, Inc., IBM, and the John L. Ocampo Endowment Fund of MACOM Technology Solutions.",
-        "authors": [
-          "Adam Zewe | MIT News"
-        ],
-        "source": "MIT News",
-        "feed": "MIT News AI",
-        "provenance": "https://news.mit.edu/rss/topic/artificial-intelligence2",
-        "category": "Research",
-        "ageHours": 15
-      },
-      {
-        "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
-        "url": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo/",
-        "publishedAt": "2026-11-23T01:25:53.000Z",
-        "summary": "Three significant backers share what gave them conviction to bet billions on Anthropic.",
-        "authors": [
-          "Marina Temkin"
-        ],
-        "source": "TechCrunch",
-        "feed": "TechCrunch AI",
-        "provenance": "https://techcrunch.com/category/artificial-intelligence/feed/",
-        "category": "Products",
-        "ageHours": 19
       }
     ],
     "threads": []
@@ -485,18 +476,18 @@
     "topCategories": [
       {
         "name": "Research",
-        "count": 11
+        "count": 13
       },
       {
         "name": "General",
-        "count": 9
+        "count": 6
       },
       {
         "name": "Models",
-        "count": 2
+        "count": 3
       },
       {
-        "name": "Infrastructure",
+        "name": "Policy",
         "count": 1
       }
     ]
